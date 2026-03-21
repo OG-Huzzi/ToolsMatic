@@ -108,7 +108,18 @@
       </div>
     `;
 
-    // Insert before the first .section (SEO content) or before footer if no section exists
+    // Prefer explicit anchor for deterministic placement on tool pages
+    const explicitAnchor = document.getElementById('tool-feedback-anchor');
+    if (explicitAnchor) {
+      const container = document.createElement('section');
+      container.className = 'section';
+      container.innerHTML = suggestionsHTML;
+      explicitAnchor.insertAdjacentElement('beforebegin', container);
+      loadSuggestions();
+      return;
+    }
+
+    // Fallback: insert before first section or before footer if no section exists
     const firstSection = document.querySelector('main .section');
     if (firstSection) {
       const container = document.createElement('section');

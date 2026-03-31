@@ -227,6 +227,12 @@
   </header>
 
   <main>
+    <nav aria-label="Breadcrumb" style="margin: 10px auto 0; max-width: 1100px; font-size: 0.9rem;">
+      <a href="/">Home</a> /
+      <a href="/#tools">Tools</a> /
+      <span aria-current="page">Embed UUID Generator</span>
+    </nav>
+
     <h1 style="text-align: center; margin: 20px 0 10px;">Embed UUID Generator in Your Website</h1>
     <p style="text-align: center; color: var(--muted); max-width: 800px; margin: 0 auto 24px; line-height: 1.7;">Add a powerful UUID generator to your blog, documentation, course platform, or application. Multiple integration methods with full customization support.</p>
 
@@ -656,6 +662,63 @@ const iframeStyle = {
       </div>
 
       <p style="margin-top: 16px;"><strong>Performance:</strong> ~12KB gzipped • 99.9% uptime • Global CDN with edge caching</p>
+    </section>
+
+    <section class="section">
+      <h2>Embedding Methods Comparison</h2>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; min-width: 760px;">
+          <thead>
+            <tr style="background: var(--bg-soft, rgba(0,0,0,.02));">
+              <th style="padding: 10px; text-align: left; border-bottom: 1px solid var(--border);">Method</th>
+              <th style="padding: 10px; text-align: left; border-bottom: 1px solid var(--border);">Strengths</th>
+              <th style="padding: 10px; text-align: left; border-bottom: 1px solid var(--border);">Limitations</th>
+              <th style="padding: 10px; text-align: left; border-bottom: 1px solid var(--border);">Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);"><strong>Basic iFrame</strong></td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Fast setup, broad compatibility, minimal maintenance</td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Lower customization flexibility</td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Blogs, docs, CMS pages</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);"><strong>Responsive iFrame</strong></td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Better mobile behavior and layout consistency</td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Still limited by iframe isolation</td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Content-heavy sites and documentation portals</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);"><strong>Web Component</strong></td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Event-driven control and reusable integration</td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Requires JavaScript integration knowledge</td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Product teams and interactive applications</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);"><strong>JavaScript SDK</strong></td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Maximum control and custom UI freedom</td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Most implementation effort</td>
+              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Engineering teams building tailored workflows</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Frequently Asked Questions</h2>
+      <h3>Which embed method should I choose first?</h3>
+      <p>Start with the basic iframe if you need speed and compatibility. Move to web components or SDK when you need event handling, advanced customization, or deeper product integration.</p>
+
+      <h3>Can I embed the UUID generator in internal documentation portals?</h3>
+      <p>Yes. The iframe and component approaches work well in internal docs and knowledge portals, and they help teams generate and validate UUIDs without switching tools.</p>
+
+      <h3>Will embedding slow down my page performance?</h3>
+      <p>In most cases impact is minimal, especially with lazy loading and responsive containers. For performance-sensitive pages, test load behavior and defer non-critical embeds.</p>
+
+      <h3>How do I keep the embedded experience aligned with brand design?</h3>
+      <p>Use theme parameters for quick styling, then move to SDK-driven implementation when your design system requires tightly controlled typography, spacing, and behavior.</p>
     </section>
 
     <script>

@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Embed Regex Tester | Developer Widget & Embed Kit | ToolsMatic</title>
   <meta name="description" content="Embed the ToolsMatic Regex Tester widget in your blog, documentation, or learning platform. iframe embed, webcomponent, and JavaScript SDK available.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolsmatic.me/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://toolsmatic.me/tools"},
+      {"@type": "ListItem", "position": 3, "name": "Embed Regex Tester", "item": "https://toolsmatic.me/tools/embed-regex-tester.html"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Can I embed the regex tester for free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The iframe embed is free for tutorials, docs, and educational content."}},
+      {"@type": "Question", "name": "Does embedding require account registration?", "acceptedAnswer": {"@type": "Answer", "text": "No account is required for standard embed usage."}},
+      {"@type": "Question", "name": "Can I prefill pattern and flags?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use query parameters such as pattern, flags, text, and flavor in the embed URL."}},
+      {"@type": "Question", "name": "Is the embedded widget mobile-friendly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use the responsive iframe wrapper shown on this page for best results on mobile devices."}}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="../assets/styles.css">
   <style>
     .embed-example { background: var(--surface); border: 2px dashed var(--border); border-radius: 10px; padding: 16px; margin: 16px 0; min-height: 200px; display: flex; align-items: center; justify-content: center; }
@@ -30,6 +56,14 @@
   </header>
 
   <main>
+    <nav aria-label="Breadcrumb" style="max-width:900px;margin:14px auto 0;padding:0 20px;font-size:0.9em;">
+      <a href="/" style="color:var(--primary,#06b6d4);text-decoration:none;">Home</a>
+      <span style="margin:0 6px;color:var(--muted,#9ca3af);">></span>
+      <a href="/" style="color:var(--primary,#06b6d4);text-decoration:none;">Tools</a>
+      <span style="margin:0 6px;color:var(--muted,#9ca3af);">></span>
+      <span style="color:var(--muted,#9ca3af);">Embed Regex Tester</span>
+    </nav>
+
     <h1 style="text-align: center; margin: 20px 0 10px;">Embed the Regex Tester in Your Site</h1>
     <p style="text-align: center; color: var(--muted); max-width: 800px; margin: 0 auto 30px;">Add interactive regex testing to your blog, documentation, course, or platform with simple embed code. No payment required. Free for all use cases.</p>
 
@@ -324,6 +358,37 @@ flavor=javascript</pre></div>
         <li>💬 GitHub Issues: <a href="https://github.com/toolsmatic/embed-support">toolsmatic/embed-support</a></li>
         <li>🐦 Twitter: <a href="https://twitter.com/toolsmatic">@ToolsMatic</a></li>
       </ul>
+    </section>
+
+    <section class="section" aria-labelledby="embed-comparison">
+      <h2 id="embed-comparison">ToolsMatic Embed Kit vs Typical Widget Options</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;min-width:620px;background:var(--surface);border-radius:12px;overflow:hidden;">
+          <thead>
+            <tr style="background:rgba(34,211,238,.12);">
+              <th style="padding:12px;text-align:left;border-bottom:1px solid var(--border);">Feature</th>
+              <th style="padding:12px;text-align:center;border-bottom:1px solid var(--border);">ToolsMatic</th>
+              <th style="padding:12px;text-align:center;border-bottom:1px solid var(--border);">Code Sandbox Embeds</th>
+              <th style="padding:12px;text-align:center;border-bottom:1px solid var(--border);">Paid Tutorial Widgets</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:11px;border-bottom:1px solid var(--border);">1-click iframe embed</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);color:#10b981;font-weight:700;">Yes</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);">Partial</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);">Varies</td></tr>
+            <tr><td style="padding:11px;border-bottom:1px solid var(--border);">Prefill via query parameters</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);color:#10b981;font-weight:700;">Yes</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);">Limited</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);">Varies</td></tr>
+            <tr><td style="padding:11px;border-bottom:1px solid var(--border);">No paywall for basic usage</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);color:#10b981;font-weight:700;">Yes</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);">Yes</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);color:#ef4444;font-weight:700;">No</td></tr>
+            <tr><td style="padding:11px;border-bottom:1px solid var(--border);">SEO-friendly tutorial integration</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);color:#10b981;font-weight:700;">Yes</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);">Partial</td><td style="padding:11px;text-align:center;border-bottom:1px solid var(--border);">Partial</td></tr>
+            <tr><td style="padding:11px;">Cost</td><td style="padding:11px;text-align:center;color:#10b981;font-weight:700;">Free</td><td style="padding:11px;text-align:center;">Free/Freemium</td><td style="padding:11px;text-align:center;">Paid</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="embed-faq">
+      <h2 id="embed-faq">Frequently Asked Questions</h2>
+      <details><summary>Can I embed this in documentation platforms?</summary><p>Yes. Medium, Dev.to, Notion, WordPress, and static docs sites all support iframe-based embedding.</p></details>
+      <details><summary>Will the embed slow down my page?</summary><p>The iframe loads independently of your main content. Keep a reasonable height and lazy-load where needed.</p></details>
+      <details><summary>Can I track engagement from embedded usage?</summary><p>Yes. You can use your page analytics plus optional attribution links to measure click-through and interactions.</p></details>
+      <details><summary>Can I use this for commercial tutorials?</summary><p>Yes. Standard embedding is allowed for educational and documentation use cases.</p></details>
     </section>
 
     <!-- Call to Action -->

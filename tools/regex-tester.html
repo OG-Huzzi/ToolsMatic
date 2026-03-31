@@ -94,57 +94,6 @@
         "category": "Free Service"
       }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": 245,
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "reviews": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": 5,
-          "bestRating": 5,
-          "worstRating": 1
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Senior Developer"
-        },
-        "reviewBody": "Professional-grade regex debugging tool. The flavor compatibility hints and replace preview saved us hours of troubleshooting."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": 5,
-          "bestRating": 5,
-          "worstRating": 1
-        },
-        "author": {
-          "@type": "Person",
-          "name": "DevOps Engineer"
-        },
-        "reviewBody": "Best regex tester I've found. The token breakdown and split preview features are game-changers for validation pipelines."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": 5,
-          "bestRating": 5,
-          "worstRating": 1
-        },
-        "author": {
-          "@type": "Person",
-          "name": "QA Automation Lead"
-        },
-        "reviewBody": "Incredible tool. Cross-flavor regex testing with JavaScript, Python, and PCRE support made pattern migration trivial."
-      }
-    ],
     "featureList": [
       "Real-time regex pattern validation and matching",
       "Highlighted match visualization with color-coded results",
@@ -521,6 +470,12 @@
   </header>
 
   <main>
+    <nav aria-label="Breadcrumb" style="margin: 10px auto 0; max-width: 1100px; font-size: 0.9rem;">
+      <a href="/">Home</a> /
+      <a href="/#tools">Tools</a> /
+      <span aria-current="page">Regex Tester</span>
+    </nav>
+
     <h1 style="text-align:center; margin: 18px 0 10px;">Professional Regex Tester 2026 — Advanced Regular Expression Debugger & Pattern Analyzer</h1>
     <p class="hero-note">Real-time regex testing with match highlighting, capture group inspection, replacement preview, split analysis, regex flavor support (JavaScript/Python/PCRE), performance diagnostics, and expert presets. Free browser-native regex validator and debugger for developers, engineers, and DevOps professionals. No server uploads—100% privacy-first client-side processing.</p>
 
@@ -654,6 +609,8 @@
         </div>
       </div>
     </section>
+
+    <section class="section" aria-labelledby="deep-output">
       <h2 id="deep-output">Deep Match Inspector</h2>
       <div class="tool-grid">
         <div class="panel">

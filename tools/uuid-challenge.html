@@ -94,14 +94,7 @@
       "@type": "QuantitativeValue",
       "value": "87429"
     },
-    "gamePlatform": "Web Browser",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": 3421,
-      "bestRating": "5",
-      "worstRating": "1"
-    }
+    "gamePlatform": "Web Browser"
   }
   </script>
   
@@ -308,6 +301,12 @@
   </header>
 
   <main>
+    <nav aria-label="Breadcrumb" style="margin: 10px auto 0; max-width: 1100px; font-size: 0.9rem;">
+      <a href="/">Home</a> /
+      <a href="/#tools">Tools</a> /
+      <span aria-current="page">UUID Challenges</span>
+    </nav>
+
     <h1 style="text-align: center; margin: 20px 0 10px;">🏆 UUID Generation Challenges</h1>
     <p style="text-align: center; color: var(--muted); max-width: 800px; margin: 0 auto 24px; line-height: 1.7;">Test your UUID knowledge, compete with developers worldwide, and climb the global leaderboards. Master all UUID versions, speed challenges, and collision mathematics.</p>
 
@@ -642,6 +641,63 @@
           📚 Browse Full Library (420+ resources)
         </button>
       </div>
+    </section>
+
+    <section class="section">
+      <h2>UUID Challenge Formats Compared</h2>
+      <div style="overflow-x: auto;">
+        <table class="leaderboard-table" style="min-width: 760px;">
+          <thead>
+            <tr>
+              <th>Practice Format</th>
+              <th>Strengths</th>
+              <th>Limitations</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Interactive Challenge Hub</strong></td>
+              <td>Time-based scoring, progressive tasks, competition motivation</td>
+              <td>Can emphasize speed over deep architecture reasoning</td>
+              <td>Developers improving practical UUID fluency</td>
+            </tr>
+            <tr>
+              <td><strong>Documentation-Only Study</strong></td>
+              <td>Strong conceptual understanding of RFC behavior</td>
+              <td>Limited hands-on pressure testing and retention</td>
+              <td>Beginners building fundamentals</td>
+            </tr>
+            <tr>
+              <td><strong>Production Sandbox Benchmarks</strong></td>
+              <td>Real workload data, direct architecture relevance</td>
+              <td>Requires setup effort and monitoring discipline</td>
+              <td>Teams validating performance and collision assumptions</td>
+            </tr>
+            <tr>
+              <td><strong>Interview Drill Sets</strong></td>
+              <td>Fast pattern recognition and explanation practice</td>
+              <td>Less representative of full system constraints</td>
+              <td>Candidates preparing for technical assessments</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Frequently Asked Questions</h2>
+      <h3>Are UUID challenges useful for real engineering work?</h3>
+      <p>Yes. They improve your speed in selecting UUID versions, understanding timestamp behavior, and reasoning about uniqueness risks. These skills transfer directly to system design and database strategy.</p>
+
+      <h3>Do I need advanced math to understand collision probability challenges?</h3>
+      <p>No advanced degree is required. Most challenge tasks focus on practical interpretation of the birthday paradox and how probability changes with scale, version, and generation strategy.</p>
+
+      <h3>How should teams use challenge results internally?</h3>
+      <p>Treat challenge outcomes as training indicators rather than strict performance ratings. Combine them with code review quality, architecture decisions, and operational metrics for a full assessment.</p>
+
+      <h3>What is the best UUID version for modern database indexing?</h3>
+      <p>UUID v7 is usually preferred when you want chronological ordering with high uniqueness, while UUID v4 remains widely used for purely random identifiers and broad compatibility.</p>
     </section>
 
     <script>

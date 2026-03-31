@@ -59,6 +59,173 @@
     });
   };
 
+  const isToolPage = () => /^\/tools\/.+\.html$/i.test(window.location.pathname || '');
+
+  const hasSchemaType = (type) => {
+    const re = new RegExp(`"@type"\\s*:\\s*"${type}"`, 'i');
+    return [...document.querySelectorAll('script[type="application/ld+json"]')]
+      .some((node) => re.test(node.textContent || ''));
+  };
+
+  const injectJsonLd = (id, payload) => {
+    if (!payload || document.getElementById(id)) return;
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = id;
+    script.textContent = JSON.stringify(payload, null, 2);
+    document.head.appendChild(script);
+  };
+
+  const normalizeToolName = () => {
+    const h1 = document.querySelector('main h1')?.textContent?.trim();
+    if (h1) return h1;
+    const last = (window.location.pathname.split('/').pop() || 'Tool').replace('.html', '');
+    return last.replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  };
+
+  const ensureBreadcrumbNav = (toolName) => {
+    if (document.querySelector('nav[aria-label="Breadcrumb"]')) return;
+    const main = document.querySelector('main');
+    if (!main) return;
+
+    if (!document.getElementById('tm-breadcrumb-style')) {
+      const style = document.createElement('style');
+      style.id = 'tm-breadcrumb-style';
+      style.textContent = `
+        .tm-breadcrumb-nav {
+          margin: 10px 0 8px;
+          font-size: .95rem;
+          color: var(--muted);
+          text-align: center;
+        }
+        .tm-breadcrumb-nav a {
+          color: var(--accent);
+          text-decoration: none;
+        }
+        .tm-breadcrumb-nav span { opacity: .85; }
+      `;
+      document.head.appendChild(style);
+    }
+
+    const nav = document.createElement('nav');
+    nav.className = 'tm-breadcrumb-nav';
+    nav.setAttribute('aria-label', 'Breadcrumb');
+    nav.innerHTML = `<a href="/">Home</a> <span>›</span> <a href="/">Tools</a> <span>›</span> <span>${escapeHtml(toolName)}</span>`;
+    main.insertAdjacentElement('afterbegin', nav);
+  };
+
+  const collectFaqEntities = () => {
+    const entities = [];
+    const seen = new Set();
+
+    const pushEntity = (question, answer) => {
+      const q = (question || '').trim();
+      const a = (answer || '').trim();
+      if (!q || !a) return;
+      const key = q.toLowerCase();
+      if (seen.has(key)) return;
+      seen.add(key);
+      entities.push({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a }
+      });
+    };
+
+    document.querySelectorAll('details').forEach((details) => {
+      const summary = details.querySelector('summary');
+      if (!summary) return;
+      const question = summary.textContent;
+      const clone = details.cloneNode(true);
+      const cloneSummary = clone.querySelector('summary');
+      if (cloneSummary) cloneSummary.remove();
+      const answer = clone.textContent;
+      pushEntity(question, answer);
+    });
+
+    document.querySelectorAll('.faq-item').forEach((item) => {
+      const question = item.querySelector('.faq-question')?.textContent || '';
+      const answer = item.querySelector('.faq-answer')?.textContent || item.querySelector('p')?.textContent || '';
+      pushEntity(question, answer);
+    });
+
+    if (!entities.length) {
+      const heading = [...document.querySelectorAll('h2,h3')]
+        .find((node) => /faq|frequently asked questions/i.test(node.textContent || ''));
+      if (heading) {
+        let current = heading.nextElementSibling;
+        while (current && entities.length < 10) {
+          if (/^H3$/i.test(current.tagName) && current.nextElementSibling && /^P$/i.test(current.nextElementSibling.tagName)) {
+            pushEntity(current.textContent, current.nextElementSibling.textContent);
+          }
+          current = current.nextElementSibling;
+        }
+      }
+    }
+
+    return entities.slice(0, 12);
+  };
+
+  const initGlobalToolSeo = () => {
+    if (!isToolPage()) return;
+
+    const toolName = normalizeToolName();
+    const origin = window.location.origin || 'https://toolsmatic.me';
+    const url = `${origin}${window.location.pathname}`;
+
+    ensureBreadcrumbNav(toolName);
+
+    if (!hasSchemaType('BreadcrumbList')) {
+      injectJsonLd('tm-auto-breadcrumb-schema', {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: origin },
+          { '@type': 'ListItem', position: 2, name: 'Tools', item: `${origin}/tools` },
+          { '@type': 'ListItem', position: 3, name: toolName, item: url }
+        ]
+      });
+    }
+
+    if (!hasSchemaType('FAQPage')) {
+      let mainEntity = collectFaqEntities();
+      if (!mainEntity.length) {
+        mainEntity = [
+          {
+            '@type': 'Question',
+            name: `What does ${toolName} do?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `${toolName} helps you complete common web utility workflows quickly in your browser.`
+            }
+          },
+          {
+            '@type': 'Question',
+            name: `Is ${toolName} free?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Yes, ${toolName} is free to use on ToolsMatic.`
+            }
+          },
+          {
+            '@type': 'Question',
+            name: `Does ${toolName} process data locally?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Most tool operations run in your browser for speed and privacy.`
+            }
+          }
+        ];
+      }
+
+      injectJsonLd('tm-auto-faq-schema', {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity
+      });
+    }
+  };
+
   const handoffKey = 'toolsmatic-handoff';
 
   const setHandoff = (payload) => {
@@ -266,6 +433,7 @@
     if (typeof ensureAds === 'function') ensureAds();
     bindKeyboard();
     initThemeToggle();
+    initGlobalToolSeo();
     initSuggestions();
   };
 

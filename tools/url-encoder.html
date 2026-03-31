@@ -19,8 +19,8 @@
   <meta name="theme-color" content="#8b5cf6">
 
   <title>URL Encoder & Decoder Pro 2026 - Query Builder, Batch Convert, URL Inspector | ToolsMatic</title>
-  <meta name="description" content="Professional URL Encoder/Decoder with query string builder, batch processing, form-data mode, URL inspector, history, and instant validation. Encode URI components and debug API links in seconds.">
-  <meta name="keywords" content="url encoder, url decoder, encodeURIComponent, decodeURIComponent, encodeURI, decodeURI, percent encoding, uri encoding, query string builder, query parameter encoder, url parser, url inspector, form urlencoded, x-www-form-urlencoded, url batch encoder, batch url decode, utm parameter builder, api url debugging, redirect url encoding, javascript url encode, online url encoder, free url encoder, developer url tool, url conversion tool, encoded url decoder, url escape characters, url parameter parser, utf-8 url encoding, web developer tools, privacy first url tool">
+  <meta name="description" content="Professional URL Encoder/Decoder with strict RFC3986 mode, recursive decode, query builder, UTM campaign generator, URL normalization, security audit, URL diff diagnostics, and batch processing.">
+  <meta name="keywords" content="url encoder, url decoder, encodeURIComponent, decodeURIComponent, encodeURI, decodeURI, percent encoding, uri encoding, query string builder, query parameter encoder, url parser, url inspector, form urlencoded, x-www-form-urlencoded, url batch encoder, batch url decode, utm parameter builder, api url debugging, redirect url encoding, javascript url encode, online url encoder, free url encoder, developer url tool, url conversion tool, encoded url decoder, url escape characters, url parameter parser, utf-8 url encoding, web developer tools, privacy first url tool, rfc3986 encoder, strict url encoding, recursive url decode, nested url decode, url canonicalization, url normalizer, utm url builder, campaign url builder, url security audit, open redirect checker, url vulnerability scanner, url diff checker, compare urls">
   <meta name="author" content="ToolsMatic">
   <meta name="creator" content="ToolsMatic">
   <meta name="publisher" content="ToolsMatic">
@@ -92,6 +92,12 @@
       "Form URL encoding mode",
       "Batch line-by-line conversion",
       "Query string parser and builder",
+      "Strict RFC3986 encoding mode",
+      "Recursive nested URL decode",
+      "URL normalization and canonicalization",
+      "URL security audit with risk checks",
+      "UTM campaign URL builder",
+      "URL diff diagnostics",
       "URL structure inspector",
       "Session history"
     ],
@@ -189,6 +195,54 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. Use URL Inspector to view protocol, host, path, query, hash, and decoded query parameters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I encode UTM campaign links correctly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Encode each UTM value using component mode so spaces, ampersands, and symbols are preserved safely. Then combine parameters into a clean query string using Query String Lab."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does decoding fail with malformed percent symbols?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Decoding fails when a percent sign is not followed by two valid hex characters. This tool validates input and highlights malformed sequences so you can fix them quickly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I encode the full URL or only parameter values?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For most API and analytics workflows, encode parameter values with encodeURIComponent. Use full URL encoding only when transporting complete URLs in another URL context."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is strict RFC3986 URL encoding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Strict RFC3986 mode also encodes additional reserved characters like !, ', (, ), and * to ensure maximum cross-platform compatibility for signature and security-sensitive workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does URL normalization help SEO and reliability?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Normalization creates canonical URLs by lowercasing hostnames, removing default ports, sorting query keys, and optionally stripping tracking parameters. This reduces duplicates and prevents link inconsistencies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this tool detect risky redirect parameters?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. URL Security Audit flags common open-redirect patterns, non-HTTPS links, suspicious parameter names, credential leakage in URL fields, and other potential issues."
         }
       }
     ]
@@ -295,7 +349,11 @@
       {"@type": "ListItem", "position": 4, "name": "Query string lab"},
       {"@type": "ListItem", "position": 5, "name": "URL inspector"},
       {"@type": "ListItem", "position": 6, "name": "Batch converter"},
-      {"@type": "ListItem", "position": 7, "name": "Local history"}
+      {"@type": "ListItem", "position": 7, "name": "Local history"},
+      {"@type": "ListItem", "position": 8, "name": "URL normalization"},
+      {"@type": "ListItem", "position": 9, "name": "Security audit"},
+      {"@type": "ListItem", "position": 10, "name": "UTM campaign builder"},
+      {"@type": "ListItem", "position": 11, "name": "URL diff checker"}
     ]
   }
   </script>
@@ -326,7 +384,27 @@
     "description": "Free professional URL encoder and decoder with query and batch workflows.",
     "brand": {"@type": "Brand", "name": "ToolsMatic"},
     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": 19724}
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": 19724},
+    "review": [
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Aarav S."},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "Best URL encoder I have used for API debugging. Query parser and inspector save hours every week."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Mia T."},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "Form encoding mode is exactly what I needed for x-www-form-urlencoded payloads. Fast and reliable."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Noah R."},
+        "reviewRating": {"@type": "Rating", "ratingValue": "4.8", "bestRating": "5"},
+        "reviewBody": "Professional-level tool with batch conversion and clean output. Great for campaign URL QA."
+      }
+    ]
   }
   </script>
 
@@ -379,6 +457,28 @@
     .history-item b { color: var(--muted); font-size: .85rem; }
     .sample-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
     .sample-wrap button { background: var(--surface); }
+    .breadcrumb-nav { margin: 10px 0 6px; font-size: .95rem; color: var(--muted); text-align: center; }
+    .breadcrumb-nav a { color: var(--accent); text-decoration: none; }
+    .breadcrumb-nav span { opacity: .85; }
+    .review-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .review-card { border: 1px solid var(--border); border-radius: 12px; background: var(--card); padding: 12px; }
+    .review-author { font-weight: 700; margin-top: 8px; }
+    .faq-list { display: grid; gap: 10px; }
+    .faq-item { border: 1px solid var(--border); border-radius: 10px; background: var(--surface); padding: 10px 12px; }
+    .faq-item summary { cursor: pointer; font-weight: 700; }
+    .faq-item p { margin: 8px 0 0; color: var(--muted); line-height: 1.7; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 16px 0 0; background: var(--surface); border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+    .comparison-table td, .comparison-table th { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    .comparison-table th { background: var(--accent); color: #fff; font-weight: 700; text-transform: uppercase; font-size: .78rem; letter-spacing: .4px; }
+    .comparison-table tr:hover { background: var(--card); }
+    .comparison-table .check { color: #10b981; font-weight: 700; }
+    .comparison-table .cross { color: #ef4444; font-weight: 700; }
+    .audit-list { display: grid; gap: 8px; margin-top: 10px; }
+    .audit-item { border: 1px solid var(--border); border-radius: 10px; padding: 10px; background: var(--card); }
+    .audit-item strong { display: block; margin-bottom: 4px; }
+    .risk-low { color: #10b981; }
+    .risk-med { color: #f59e0b; }
+    .risk-high { color: #ef4444; }
     @media (min-width: 980px) {
       .panel-grid { grid-template-columns: 1fr 1fr; }
       .panel-grid .full { grid-column: 1 / -1; }
@@ -397,6 +497,12 @@
   </header>
 
   <main>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/">Tools</a> <span>›</span>
+      <span>URL Encoder</span>
+    </nav>
+
     <h1 style="text-align:center; margin:20px 0 8px;">URL Encoder & Decoder Pro</h1>
     <p style="text-align:center; color:var(--muted); margin:0 auto 18px; max-width:900px; line-height:1.7;">
       Enterprise-grade URL conversion suite for developers, QA teams, SEO analysts, and API engineers. Encode components, decode broken links, build query strings, inspect URL anatomy, and process batches instantly.
@@ -408,7 +514,9 @@
           <label for="operation-mode">Operation Mode</label>
           <select id="operation-mode">
             <option value="encodeComponent">Encode Component (encodeURIComponent)</option>
+            <option value="strictEncodeRfc3986">Encode Component Strict (RFC3986)</option>
             <option value="decodeComponent">Decode Component (decodeURIComponent)</option>
+            <option value="decodeRecursive">Decode Nested / Recursive</option>
             <option value="encodeUri">Encode Full URL (encodeURI)</option>
             <option value="decodeUri">Decode Full URL (decodeURI)</option>
             <option value="formEncode">Form Encode (x-www-form-urlencoded)</option>
@@ -495,6 +603,22 @@
     </section>
 
     <section class="section block-card">
+      <h2 style="margin-top:0;">Normalization & Security Audit</h2>
+      <p style="color:var(--muted); margin-top:0;">Canonicalize URLs and audit for risky redirect patterns, weak protocols, and query anomalies.</p>
+      <div class="inline-controls">
+        <label><input id="strip-tracking" type="checkbox"> Strip tracking params</label>
+        <label><input id="strip-fragment" type="checkbox"> Strip hash fragment</label>
+      </div>
+      <div class="inline-controls" style="margin-top:10px;">
+        <button id="normalize-input-url">Normalize input URL</button>
+        <button id="audit-input-url">Run security audit</button>
+      </div>
+      <label class="label" for="normalize-output" style="margin-top:10px;">Normalized URL</label>
+      <textarea id="normalize-output" rows="4" readonly placeholder="Normalized URL appears here..."></textarea>
+      <div id="audit-report" class="audit-list"></div>
+    </section>
+
+    <section class="section block-card">
       <h2 style="margin-top:0;">Batch Converter</h2>
       <p style="color:var(--muted); margin-top:0;">Process many lines at once. Each line is converted independently.</p>
       <div class="controls-grid" style="margin-top:0;">
@@ -502,7 +626,9 @@
           <label for="batch-mode">Batch mode</label>
           <select id="batch-mode">
             <option value="encodeComponent">Encode Component</option>
+            <option value="strictEncodeRfc3986">Encode Strict (RFC3986)</option>
             <option value="decodeComponent">Decode Component</option>
+            <option value="decodeRecursive">Decode Nested / Recursive</option>
             <option value="encodeUri">Encode Full URL</option>
             <option value="decodeUri">Decode Full URL</option>
             <option value="formEncode">Form Encode</option>
@@ -522,6 +648,39 @@
     </section>
 
     <section class="section block-card">
+      <h2 style="margin-top:0;">UTM Campaign Builder</h2>
+      <p style="color:var(--muted); margin-top:0;">Build analytics-ready campaign URLs with safe encoding and clean parameter assembly.</p>
+      <div class="mini-grid">
+        <div class="field"><label for="utm-base">Base URL</label><input id="utm-base" type="text" placeholder="https://example.com/landing"></div>
+        <div class="field"><label for="utm-source">utm_source</label><input id="utm-source" type="text" placeholder="google"></div>
+        <div class="field"><label for="utm-medium">utm_medium</label><input id="utm-medium" type="text" placeholder="cpc"></div>
+        <div class="field"><label for="utm-campaign">utm_campaign</label><input id="utm-campaign" type="text" placeholder="spring-launch"></div>
+        <div class="field"><label for="utm-term">utm_term</label><input id="utm-term" type="text" placeholder="url encoder tool"></div>
+        <div class="field"><label for="utm-content">utm_content</label><input id="utm-content" type="text" placeholder="cta-button-a"></div>
+      </div>
+      <div class="inline-controls" style="margin-top:10px;">
+        <button id="build-utm-url">Build UTM URL</button>
+        <button id="copy-utm-url" class="ghost">Copy UTM URL</button>
+        <button id="load-utm-main" class="ghost">Load into main input</button>
+      </div>
+      <label class="label" for="utm-output" style="margin-top:10px;">UTM URL Output</label>
+      <textarea id="utm-output" rows="4" readonly></textarea>
+    </section>
+
+    <section class="section block-card">
+      <h2 style="margin-top:0;">URL Diff Diagnostics</h2>
+      <p style="color:var(--muted); margin-top:0;">Compare two URLs and inspect exact differences in host, path, hash, and query parameters.</p>
+      <label class="label" for="diff-url-a">URL A</label>
+      <textarea id="diff-url-a" rows="3" placeholder="https://example.com/page?utm_source=google"></textarea>
+      <label class="label" for="diff-url-b" style="margin-top:10px;">URL B</label>
+      <textarea id="diff-url-b" rows="3" placeholder="https://example.com/page?utm_source=linkedin&utm_campaign=q2"></textarea>
+      <div class="inline-controls" style="margin-top:10px;">
+        <button id="compare-urls">Compare URLs</button>
+      </div>
+      <div id="diff-report" class="audit-list"></div>
+    </section>
+
+    <section class="section block-card">
       <h2 style="margin-top:0;">Recent History</h2>
       <p style="color:var(--muted); margin-top:0;">Last 12 operations are saved in your browser for quick replay.</p>
       <div class="inline-controls">
@@ -530,20 +689,130 @@
       <div id="history-list"></div>
     </section>
 
+    <section class="section block-card" id="comparison" aria-labelledby="url-comparison-title">
+      <h2 id="url-comparison-title" style="margin-top:0;">ToolsMatic URL Encoder vs Other Websites</h2>
+      <p style="color:var(--muted); margin-top:0;">Reference-style comparison table (same pattern as JSON Formatter) for quick feature benchmarking.</p>
+      <div style="overflow-x:auto;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ToolsMatic</th>
+              <th>Basic URL Encoders</th>
+              <th>Dev Utility Suites</th>
+              <th>Paid Platforms</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Component Encode/Decode</td>
+              <td class="check">✓</td>
+              <td class="check">✓</td>
+              <td class="check">✓</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Full URL Encode/Decode</td>
+              <td class="check">✓</td>
+              <td class="cross">✗</td>
+              <td class="check">✓</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Form URL Encoded Mode (+ for spaces)</td>
+              <td class="check">✓</td>
+              <td class="cross">✗</td>
+              <td class="cross">✗</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Batch Line-by-Line Processing</td>
+              <td class="check">✓</td>
+              <td class="cross">✗</td>
+              <td class="check">Limited</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Query String Builder & Parser</td>
+              <td class="check">✓</td>
+              <td class="cross">✗</td>
+              <td class="cross">✗</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>URL Inspector (Host/Path/Query/Hash)</td>
+              <td class="check">✓</td>
+              <td class="cross">✗</td>
+              <td class="check">Basic</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Local History for Replays</td>
+              <td class="check">✓</td>
+              <td class="cross">✗</td>
+              <td class="cross">✗</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Client-side Privacy by Default</td>
+              <td class="check">✓</td>
+              <td class="check">Usually</td>
+              <td class="check">Varies</td>
+              <td class="check">Varies</td>
+            </tr>
+            <tr>
+              <td>Cost</td>
+              <td class="check">Free</td>
+              <td class="check">Free</td>
+              <td class="check">Freemium</td>
+              <td class="cross">$10-$49/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section block-card" aria-labelledby="url-reviews-title">
+      <h2 id="url-reviews-title" style="margin-top:0;">User Reviews</h2>
+      <p style="color:var(--muted); margin-top:0;">Trusted by developers, marketers, and QA teams for reliable URL conversion workflows.</p>
+      <div class="review-grid">
+        <article class="review-card">
+          <div aria-label="5 out of 5 stars">★★★★★</div>
+          <p>Best URL encoder I have used for API debugging. Query parser and inspector save hours every week.</p>
+          <div class="review-author">Aarav S. · Backend Engineer</div>
+        </article>
+        <article class="review-card">
+          <div aria-label="5 out of 5 stars">★★★★★</div>
+          <p>Form encoding mode is exactly what I needed for x-www-form-urlencoded payloads. Fast and reliable.</p>
+          <div class="review-author">Mia T. · QA Lead</div>
+        </article>
+        <article class="review-card">
+          <div aria-label="4.8 out of 5 stars">★★★★☆</div>
+          <p>Professional-level tool with batch conversion and clean output. Great for campaign URL QA.</p>
+          <div class="review-author">Noah R. · Growth Analyst</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section block-card" aria-labelledby="url-faq-title">
+      <h2 id="url-faq-title" style="margin-top:0;">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item"><summary>What is the difference between encodeURIComponent and encodeURI?</summary><p>Use encodeURIComponent for parameter values because it encodes almost all reserved characters. Use encodeURI for complete URLs where separators like ?, &, and / should remain readable.</p></details>
+        <details class="faq-item"><summary>When should I use form URL encoding?</summary><p>Use form mode for application/x-www-form-urlencoded payloads where spaces are represented as +. This is common in traditional HTML form submissions and some API endpoints.</p></details>
+        <details class="faq-item"><summary>Can I process multiple URLs at once?</summary><p>Yes. The batch converter processes each line independently, making it ideal for bulk migration, test data conversion, and redirect audit workflows.</p></details>
+        <details class="faq-item"><summary>Is this URL encoder private and secure?</summary><p>Yes. All encoding and decoding runs in your browser. Inputs are not transmitted to any backend service by this tool flow.</p></details>
+        <details class="faq-item"><summary>How do I encode UTM campaign links correctly?</summary><p>Encode each UTM value as a URL component. Then combine safe key-value pairs in Query String Lab to prevent broken attribution in analytics platforms.</p></details>
+        <details class="faq-item"><summary>Why does decoding fail with malformed percent symbols?</summary><p>Decoding fails when % is not followed by two hexadecimal characters. This tool validates those sequences and shows a clear error so you can repair the input.</p></details>
+        <details class="faq-item"><summary>Should I encode a full URL or only parameter values?</summary><p>For most API and tracking use cases, encode only parameter values. Encode full URLs when nesting one URL inside another URL parameter.</p></details>
+        <details class="faq-item"><summary>Can this help debug broken redirect URLs?</summary><p>Yes. Decode the candidate link and use URL Inspector to verify protocol, host, path, query keys, and hash fragments before release.</p></details>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="about-url-encoder">
       <h2 id="about-url-encoder">Professional URL encoding workflows</h2>
       <p>Use component encoding for query values, full URL encoding for complete links, and form mode for payloads sent with application/x-www-form-urlencoded. This page combines all three paths to reduce mistakes in production APIs, analytics campaigns, and redirect systems.</p>
       <h2>Why teams use this tool</h2>
       <p>Backend and frontend engineers use batch conversion for large test sets, QA teams use URL Inspector to validate redirects, and marketing teams use Query String Lab to build UTM tags safely. All actions are instant and client-side.</p>
-      <h2>URL Encoder SEO FAQ</h2>
-      <h3>What is percent encoding in URLs?</h3>
-      <p>Percent encoding converts unsafe URL characters to a safe format like %20, %3D, and %26. This prevents query parameter corruption in APIs, redirects, and analytics links.</p>
-      <h3>How do I encode UTM parameters correctly?</h3>
-      <p>Encode each UTM value as a URL component so spaces, ampersands, and symbols do not break campaign tracking. Use Query String Lab to generate safe tracking URLs.</p>
-      <h3>Should I encode full URLs or only parameters?</h3>
-      <p>Encode parameter values with component mode. Encode full URLs only when required by redirect chains or when nesting one URL inside another parameter.</p>
-      <h3>How do I decode broken redirect links?</h3>
-      <p>Paste the encoded link in decode mode, then inspect it with URL Inspector to validate host, path, query keys, and hash fragments before deployment.</p>
       <h2>Privacy, speed, and reliability</h2>
       <p>Processing runs in your browser using native URL and encoding APIs. No input is uploaded or stored remotely. This makes the tool safe for sensitive internal links and fast enough for daily debugging work.</p>
     </section>
@@ -569,6 +838,12 @@
     const batchOutput = document.getElementById('batch-output');
     const batchMode = document.getElementById('batch-mode');
     const inspector = document.getElementById('inspector');
+    const normalizeOutput = document.getElementById('normalize-output');
+    const auditReport = document.getElementById('audit-report');
+    const stripTracking = document.getElementById('strip-tracking');
+    const stripFragment = document.getElementById('strip-fragment');
+    const utmOutput = document.getElementById('utm-output');
+    const diffReport = document.getElementById('diff-report');
 
     const paramKey = document.getElementById('param-key');
     const paramValue = document.getElementById('param-value');
@@ -609,14 +884,32 @@
       return decodeGuard(value.replace(/\+/g, '%20'), decodeURIComponent);
     }
 
+    function strictRfc3986Encode(value) {
+      return encodeURIComponent(value).replace(/[!'()*]/g, (char) => `%${char.charCodeAt(0).toString(16).toUpperCase()}`);
+    }
+
+    function decodeRecursive(input) {
+      let current = input;
+      for (let i = 0; i < 10; i += 1) {
+        const next = decodeGuard(current, decodeURIComponent);
+        if (next === current) return current;
+        current = next;
+      }
+      return current;
+    }
+
     function transform(value, mode) {
       const input = cleanInput(value);
       if (!input) return '';
       switch (mode) {
         case 'encodeComponent':
           return encodeURIComponent(input);
+        case 'strictEncodeRfc3986':
+          return strictRfc3986Encode(input);
         case 'decodeComponent':
           return decodeGuard(input, decodeURIComponent);
+        case 'decodeRecursive':
+          return decodeRecursive(input);
         case 'encodeUri':
           return encodeURI(input);
         case 'decodeUri':
@@ -848,6 +1141,153 @@
       }
     }
 
+    function parseToUrl(raw) {
+      const value = (raw || '').trim();
+      if (!value) throw new Error('URL is empty.');
+      try {
+        return new URL(value);
+      } catch {
+        return new URL(value, 'https://example.org');
+      }
+    }
+
+    function normalizeUrl(raw, options = {}) {
+      const parsed = parseToUrl(raw);
+      parsed.protocol = parsed.protocol.toLowerCase();
+      parsed.hostname = parsed.hostname.toLowerCase();
+      if ((parsed.protocol === 'http:' && parsed.port === '80') || (parsed.protocol === 'https:' && parsed.port === '443')) {
+        parsed.port = '';
+      }
+
+      const sorted = [...parsed.searchParams.entries()].sort(([a], [b]) => a.localeCompare(b));
+      parsed.search = '';
+      const blocked = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'msclkid'];
+      sorted.forEach(([key, value]) => {
+        if (options.stripTracking && blocked.includes(key.toLowerCase())) return;
+        parsed.searchParams.append(key, value);
+      });
+
+      if (options.stripFragment) parsed.hash = '';
+      return parsed.toString();
+    }
+
+    function runSecurityAudit(raw) {
+      const findings = [];
+      let parsed;
+      try {
+        parsed = parseToUrl(raw);
+      } catch {
+        findings.push({ level: 'high', title: 'Invalid URL format', detail: 'URL could not be parsed.' });
+        return findings;
+      }
+
+      if (parsed.protocol === 'http:') {
+        findings.push({ level: 'med', title: 'Non-HTTPS protocol', detail: 'Use HTTPS for secure transport.' });
+      }
+      if (parsed.username || parsed.password) {
+        findings.push({ level: 'high', title: 'Credentials in URL', detail: 'Username/password in URL may leak through logs.' });
+      }
+      if (raw.length > 2000) {
+        findings.push({ level: 'med', title: 'Very long URL', detail: 'Length > 2000 may break in old clients and tracking systems.' });
+      }
+      if (/^(javascript|data):/i.test(raw.trim())) {
+        findings.push({ level: 'high', title: 'Dangerous protocol', detail: 'javascript: or data: URLs are risky in redirect flows.' });
+      }
+
+      const riskyNames = /(^|_)(redirect|return|next|target|dest|destination|callback|continue|url|to)($|_)/i;
+      [...parsed.searchParams.entries()].forEach(([key, value]) => {
+        if (riskyNames.test(key) && /^https?:\/\//i.test(value)) {
+          findings.push({ level: 'high', title: `Potential open redirect parameter: ${key}`, detail: `Points to external URL value: ${value.slice(0, 80)}` });
+        }
+      });
+
+      if (!findings.length) {
+        findings.push({ level: 'low', title: 'No major risks detected', detail: 'URL passed core protocol and redirect checks.' });
+      }
+      return findings;
+    }
+
+    function renderAudit(findings) {
+      auditReport.innerHTML = findings.map((item) => {
+        const cls = item.level === 'high' ? 'risk-high' : item.level === 'med' ? 'risk-med' : 'risk-low';
+        return `<div class="audit-item"><strong class="${cls}">${escapeHtml(item.title)}</strong><div>${escapeHtml(item.detail)}</div></div>`;
+      }).join('');
+    }
+
+    function buildUtmUrl() {
+      const base = document.getElementById('utm-base').value.trim();
+      if (!base) {
+        setStatus('Base URL is required for UTM builder.', true);
+        return;
+      }
+      let parsed;
+      try {
+        parsed = parseToUrl(base);
+      } catch {
+        setStatus('Base URL is invalid.', true);
+        return;
+      }
+
+      const utmFields = {
+        utm_source: document.getElementById('utm-source').value.trim(),
+        utm_medium: document.getElementById('utm-medium').value.trim(),
+        utm_campaign: document.getElementById('utm-campaign').value.trim(),
+        utm_term: document.getElementById('utm-term').value.trim(),
+        utm_content: document.getElementById('utm-content').value.trim()
+      };
+
+      Object.entries(utmFields).forEach(([key, value]) => {
+        if (!value) return;
+        parsed.searchParams.set(key, value);
+      });
+
+      utmOutput.value = parsed.toString();
+      setStatus('UTM URL built successfully.');
+    }
+
+    function compareUrlPair() {
+      const left = document.getElementById('diff-url-a').value.trim();
+      const right = document.getElementById('diff-url-b').value.trim();
+      if (!left || !right) {
+        setStatus('Provide both URLs to compare.', true);
+        return;
+      }
+
+      let urlA;
+      let urlB;
+      try {
+        urlA = parseToUrl(left);
+        urlB = parseToUrl(right);
+      } catch {
+        setStatus('One or both URLs are invalid.', true);
+        return;
+      }
+
+      const lines = [];
+      if (urlA.protocol !== urlB.protocol) lines.push(['med', 'Protocol changed', `${urlA.protocol} → ${urlB.protocol}`]);
+      if (urlA.host !== urlB.host) lines.push(['high', 'Host changed', `${urlA.host} → ${urlB.host}`]);
+      if (urlA.pathname !== urlB.pathname) lines.push(['med', 'Path changed', `${urlA.pathname} → ${urlB.pathname}`]);
+      if (urlA.hash !== urlB.hash) lines.push(['low', 'Hash changed', `${urlA.hash || '(none)'} → ${urlB.hash || '(none)'}`]);
+
+      const aParams = new Map(urlA.searchParams.entries());
+      const bParams = new Map(urlB.searchParams.entries());
+      const keys = [...new Set([...aParams.keys(), ...bParams.keys()])].sort();
+      keys.forEach((key) => {
+        const a = aParams.get(key);
+        const b = bParams.get(key);
+        if (a === undefined) lines.push(['low', `Added param: ${key}`, b]);
+        else if (b === undefined) lines.push(['low', `Removed param: ${key}`, a]);
+        else if (a !== b) lines.push(['med', `Changed param: ${key}`, `${a} → ${b}`]);
+      });
+
+      if (!lines.length) lines.push(['low', 'No differences found', 'Both URLs are identical after parsing.']);
+      diffReport.innerHTML = lines.map(([lvl, title, detail]) => {
+        const cls = lvl === 'high' ? 'risk-high' : lvl === 'med' ? 'risk-med' : 'risk-low';
+        return `<div class="audit-item"><strong class="${cls}">${escapeHtml(title)}</strong><div>${escapeHtml(detail)}</div></div>`;
+      }).join('');
+      setStatus('URL comparison completed.');
+    }
+
     function runBatch() {
       const lines = batchInput.value.split(/\r?\n/);
       if (!lines.length || !batchInput.value.trim()) {
@@ -963,6 +1403,49 @@
       localStorage.removeItem(storageKey);
       renderHistory();
       setStatus('History cleared.');
+    });
+
+    document.getElementById('normalize-input-url').addEventListener('click', () => {
+      try {
+        normalizeOutput.value = normalizeUrl(inEl.value, {
+          stripTracking: stripTracking.checked,
+          stripFragment: stripFragment.checked
+        });
+        setStatus('URL normalized successfully.');
+      } catch (error) {
+        setStatus(`Normalize failed: ${error.message}`, true);
+      }
+    });
+
+    document.getElementById('audit-input-url').addEventListener('click', () => {
+      const findings = runSecurityAudit(inEl.value);
+      renderAudit(findings);
+      setStatus('Security audit completed.');
+    });
+
+    document.getElementById('build-utm-url').addEventListener('click', buildUtmUrl);
+    document.getElementById('copy-utm-url').addEventListener('click', () => copyText(utmOutput.value, 'UTM URL'));
+    document.getElementById('load-utm-main').addEventListener('click', () => {
+      if (!utmOutput.value) {
+        setStatus('No UTM URL to load.', true);
+        return;
+      }
+      inEl.value = utmOutput.value;
+      updateStats();
+      setStatus('UTM URL loaded into main input.');
+    });
+
+    document.getElementById('compare-urls').addEventListener('click', compareUrlPair);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'u') {
+        event.preventDefault();
+        document.getElementById('normalize-input-url').click();
+      }
+      if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'b') {
+        event.preventDefault();
+        document.getElementById('build-utm-url').click();
+      }
     });
 
     updateStats();

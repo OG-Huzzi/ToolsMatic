@@ -124,6 +124,194 @@
     });
   };
 
+  const GA_MEASUREMENT_ID = 'G-9VEPDS13HT';
+  const SCROLL_TRACK_THRESHOLD = 0.05;
+  const SCROLL_TRACK_PERCENT_LABEL = '5_percent';
+
+  const analyticsState = {
+    lastPageKey: `${window.location.pathname}${window.location.search}${window.location.hash}`,
+    scroll50Sent: false,
+    engagementSent: false,
+    pageStartTs: Date.now(),
+    interactedFields: new WeakSet()
+  };
+
+  const getToolNameForTracking = () => {
+    const pageH1 = document.querySelector('main h1')?.textContent?.trim();
+    if (pageH1) return pageH1;
+    const slug = (window.location.pathname.split('/').pop() || 'unknown').replace(/\.html$/i, '');
+    return slug.replace(/[-_]+/g, ' ').trim() || 'unknown';
+  };
+
+  const logTracking = (eventName, payload) => {
+    try {
+      console.log('[GA4]', eventName, payload || {});
+    } catch (_) {
+      // no-op
+    }
+  };
+
+  const trackEvent = (eventName, payload = {}) => {
+    logTracking(eventName, payload);
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, payload);
+  };
+
+  const trackPageView = (source = 'navigation') => {
+    const payload = {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: `${window.location.pathname}${window.location.search}`,
+      source
+    };
+    trackEvent('page_view', payload);
+  };
+
+  const initAnalyticsTracking = () => {
+    const gaScripts = document.querySelectorAll(`script[src*="googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"]`);
+    if (gaScripts.length > 1) {
+      console.warn('[GA4] Duplicate gtag.js scripts detected on this page:', gaScripts.length);
+    }
+
+    if (gaScripts.length === 0) {
+      console.warn('[GA4] Missing expected gtag.js script for measurement ID:', GA_MEASUREMENT_ID);
+    }
+
+    if (typeof window.gtag !== 'function') {
+      console.warn('[GA4] gtag is not available on this page.');
+    }
+
+    const routeChanged = (source) => {
+      const currentKey = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+      if (currentKey === analyticsState.lastPageKey) return;
+      analyticsState.lastPageKey = currentKey;
+      analyticsState.scroll50Sent = false;
+      analyticsState.engagementSent = false;
+      analyticsState.pageStartTs = Date.now();
+      trackPageView(source);
+    };
+
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+
+    history.pushState = function patchedPushState(...args) {
+      const result = originalPushState.apply(this, args);
+      window.dispatchEvent(new Event('toolsmatic:route-change'));
+      return result;
+    };
+
+    history.replaceState = function patchedReplaceState(...args) {
+      const result = originalReplaceState.apply(this, args);
+      window.dispatchEvent(new Event('toolsmatic:route-change'));
+      return result;
+    };
+
+    window.addEventListener('popstate', () => routeChanged('popstate'));
+    window.addEventListener('hashchange', () => routeChanged('hashchange'));
+    window.addEventListener('toolsmatic:route-change', () => routeChanged('history'));
+
+    const isToolActionButton = (button) => {
+      if (!button) return false;
+      if (button.matches('[data-primary]')) return true;
+      const id = (button.id || '').toLowerCase();
+      const text = (button.innerText || button.textContent || '').trim().toLowerCase();
+      if (id === 'theme-toggle' || button.classList.contains('nav-toggle')) return false;
+      if (/\b(generate|convert|format|validate|test|check|calculate|compress|minify|encode|decode|create|analyze|inspect|run|submit)\b/.test(text)) {
+        return true;
+      }
+      if (/^(btn-|generate|convert|format|validate|test|check|calculate|compress|minify|encode|decode|create|analyze|inspect|run)/.test(id)) {
+        return true;
+      }
+      return false;
+    };
+
+    document.addEventListener('click', (event) => {
+      const eventTarget = event.target instanceof Element ? event.target : null;
+      const button = eventTarget?.closest('button');
+      if (!button) return;
+
+      const label = (button.innerText || button.textContent || button.id || 'button').trim().slice(0, 120);
+      trackEvent('button_click', {
+        event_label: label,
+        page_path: window.location.pathname
+      });
+
+      if (isToolActionButton(button)) {
+        trackEvent('tool_used', {
+          event_label: getToolNameForTracking(),
+          action_label: label,
+          page_path: window.location.pathname
+        });
+      }
+    });
+
+    const onInputUsage = (event) => {
+      const eventTarget = event.target instanceof Element ? event.target : null;
+      const field = eventTarget?.closest('input, textarea, select');
+      if (!field || analyticsState.interactedFields.has(field)) return;
+      analyticsState.interactedFields.add(field);
+
+      trackEvent('input_used', {
+        input_type: field.type || field.tagName.toLowerCase(),
+        input_name: field.name || field.id || 'unnamed',
+        page_path: window.location.pathname
+      });
+    };
+
+    document.addEventListener('input', onInputUsage, true);
+    document.addEventListener('change', onInputUsage, true);
+
+    const checkScrollDepth = () => {
+      if (analyticsState.scroll50Sent) return;
+      const doc = document.documentElement;
+      const scrollHeight = doc.scrollHeight - window.innerHeight;
+      if (scrollHeight <= 0) return;
+      const ratio = window.scrollY / scrollHeight;
+      if (ratio >= SCROLL_TRACK_THRESHOLD) {
+        analyticsState.scroll50Sent = true;
+        trackEvent('scroll_5_percent', {
+          event_label: SCROLL_TRACK_PERCENT_LABEL,
+          scroll_threshold_percent: 5,
+          page_path: window.location.pathname
+        });
+      }
+    };
+
+    window.addEventListener('scroll', checkScrollDepth, { passive: true });
+
+    let lastActivityTs = Date.now();
+    const markActivity = () => {
+      lastActivityTs = Date.now();
+    };
+
+    ['click', 'keydown', 'scroll', 'touchstart'].forEach((name) => {
+      window.addEventListener(name, markActivity, { passive: true });
+    });
+
+    const sendEngagementFallback = (source) => {
+      if (analyticsState.engagementSent) return;
+      const elapsed = Date.now() - analyticsState.pageStartTs;
+      if (elapsed < 10000) return;
+      analyticsState.engagementSent = true;
+      trackEvent('user_engagement', {
+        engagement_time_msec: elapsed,
+        event_label: source,
+        page_path: window.location.pathname
+      });
+    };
+
+    window.setInterval(() => {
+      const isActive = Date.now() - lastActivityTs < 30000;
+      if (isActive) sendEngagementFallback('activity_timer');
+    }, 15000);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        sendEngagementFallback('visibility_hidden');
+      }
+    });
+  };
+
   const isToolPage = () => /^\/tools\/.+\.html$/i.test(window.location.pathname || '');
 
   const hasSchemaType = (type) => {
@@ -486,7 +674,8 @@
     handoffAndGo, 
     consumeHandoff,
     submitSuggestion,
-    likeSuggestion
+    likeSuggestion,
+    trackEvent
   };
   // Back-compat alias for pages using `ToolsMatic` casing
   window.ToolsMatic = window.toolsMatic;
@@ -499,6 +688,7 @@
     initResponsiveNav();
     bindKeyboard();
     initThemeToggle();
+    initAnalyticsTracking();
     initGlobalToolSeo();
     initSuggestions();
   };

@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Righteous&display=swap');
 
 :root {
@@ -32,8 +36,21 @@ body {
     var(--bg);
   color: var(--text);
   font-family: var(--font-body);
+  font-size: 16px;
   line-height: 1.6;
   min-height: 100vh;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
 }
 
 a {
@@ -115,6 +132,34 @@ header {
 .theme-toggle:hover {
   transform: scale(1.1);
   border-color: var(--accent);
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 12px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex-wrap: wrap;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.nav-toggle-text {
+  margin-left: 6px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 html.dark-mode {
@@ -466,6 +511,19 @@ select:focus-visible {
   width: 100%;
 }
 
+pre,
+code {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+[style*="overflow-x:auto"],
+[style*="overflow-x: auto"] {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .gradient-preview {
   height: 200px;
   border-radius: 12px;
@@ -668,138 +726,151 @@ select:focus-visible {
   50% { transform: scale(1.2); }
 }
 
-/* Mobile Responsive Styles - Under 768px */
-@media (max-width: 767px) {
-  /* Typography */
-  h1 {
-    font-size: 26px !important;
-    line-height: 1.2;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  h3 {
-    font-size: 16px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-
-  /* Prevent horizontal scrolling */
-  html, body {
+/* Mobile and tablet responsive layout */
+@media (max-width: 768px) {
+  html,
+  body {
     overflow-x: hidden;
     width: 100%;
   }
 
   main {
-    padding: 16px;
-    overflow-x: hidden;
+    padding: 16px 16px 40px;
     width: 100%;
   }
 
-  /* Cards and containers */
-  .card {
-    padding: 14px;
-    margin-bottom: 12px;
+  h1 {
+    font-size: clamp(1.6rem, 6vw, 2rem) !important;
+    line-height: 1.2;
   }
 
-  .section {
-    padding: 14px;
-    margin: 12px 0;
+  h2 {
+    font-size: clamp(1.25rem, 4.8vw, 1.5rem);
   }
 
-  .tool-shell {
-    padding: 14px;
-    margin: 12px 0;
+  h3 {
+    font-size: clamp(1.1rem, 4.4vw, 1.25rem);
   }
 
-  .hero {
-    padding: 14px;
-    margin-bottom: 12px;
-  }
-
-  /* Banner ads with 16px margin below */
-  .ad-container {
-    margin-bottom: 16px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .update-banner {
-    left: 10px;
-    right: 10px;
-    max-width: none;
-  }
-
-  /* All buttons full width */
-  button,
-  .btn,
-  input[type="submit"],
-  input[type="reset"],
-  input[type="button"] {
-    width: 100%;
-    padding: 12px;
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  /* Form controls full width */
-  textarea,
-  input[type="text"],
-  input[type="number"],
-  input[type="url"],
-  input[type="email"],
-  input[type="password"],
-  input[type="search"],
-  input[type="tel"],
-  select {
-    width: 100%;
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  /* Reduce vertical spacing between sections */
-  header {
-    padding: 8px 0;
+  p,
+  li,
+  .label,
+  .muted-text,
+  .faq-answer {
+    font-size: 0.95rem;
   }
 
   .nav {
     padding: 12px 16px;
-    gap: 8px;
-  }
-
-  .nav-links {
-    gap: 8px;
-  }
-
-  footer {
-    padding: 12px 16px;
-    font-size: 12px;
-  }
-
-  /* Grid layout for cards */
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin: 12px 0;
-  }
-
-  .two-col {
-    grid-template-columns: 1fr;
     gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
-  /* Inline controls stacked */
-  .inline-controls {
+  .brand {
+    max-width: calc(100% - 70px);
+  }
+
+  .nav-toggle {
+    display: none;
+    margin-left: auto;
+  }
+
+  .nav.has-mobile-menu .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav.has-mobile-menu .nav-links {
+    display: none;
+    width: 100%;
     flex-direction: column;
+    align-items: stretch;
     gap: 8px;
-    margin-top: 8px;
+    padding-top: 6px;
   }
 
-  .inline-controls button {
+  .nav.has-mobile-menu .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a,
+  .nav-links .theme-toggle,
+  .nav-links button {
+    width: 100%;
+    justify-content: flex-start;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  textarea,
+  input,
+  select,
+  button {
+    min-height: 44px;
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  main,
+  .hero,
+  .section,
+  .tool-shell,
+  .card,
+  .grid,
+  .about-section,
+  .json-pro-container {
+    max-width: 100%;
+  }
+
+  .hero,
+  .section,
+  .tool-shell,
+  .card,
+  .about-section,
+  .team-section,
+  .suggestions-section,
+  .value-card,
+  .suggestion-item,
+  .faq-item,
+  .toc,
+  .testimonial-card,
+  .feature-card {
+    padding: 14px;
+  }
+
+  .grid,
+  .two-col,
+  .values-grid,
+  .feature-grid,
+  .testimonial-grid,
+  .json-stats,
+  .json-editor-container,
+  .json-editor-container.compare-mode {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .inline-controls,
+  .json-toolbar,
+  .json-modes {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .inline-controls > *,
+  .json-toolbar > *,
+  .json-modes > * {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  button:not(.nav-toggle),
+  .btn,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
     width: 100%;
   }
 
@@ -807,87 +878,46 @@ select:focus-visible {
     max-width: 100%;
   }
 
-  /* Page intro section */
-  .page-intro {
-    margin: 16px 0;
-    padding: 16px;
+  .table,
+  table,
+  pre,
+  [style*="min-width:580"],
+  [style*="min-width: 580"],
+  [style*="min-width:600"],
+  [style*="min-width: 600"],
+  [style*="width:728"],
+  [style*="width: 728"] {
+    max-width: 100% !important;
   }
 
-  .page-intro-title {
-    font-size: 28px;
-    margin-bottom: 12px;
+  [style*="max-width:900px"],
+  [style*="max-width: 900px"],
+  [style*="max-width:1100px"],
+  [style*="max-width: 1100px"],
+  [style*="max-width:1200px"],
+  [style*="max-width: 1200px"],
+  [style*="max-width:1400px"],
+  [style*="max-width: 1400px"] {
+    max-width: 100% !important;
   }
 
-  .page-intro-description {
-    font-size: 14px;
-    margin: 0;
+  [style*="font-size: 2.5em"],
+  [style*="font-size:2.5em"],
+  [style*="font-size: 2.4em"],
+  [style*="font-size:2.4em"],
+  [style*="font-size: 2em"],
+  [style*="font-size:2em"] {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
   }
 
-  /* Suggestions section */
-  .suggestions-section {
-    padding: 14px;
-    margin-bottom: 12px;
+  .json-textarea {
+    min-height: 320px;
   }
 
-  .suggestions-section h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  .gradient-preview {
+    height: 150px;
   }
 
-  .suggestion-form {
-    gap: 10px;
-    padding: 12px;
-    margin-bottom: 12px;
-  }
-
-  .suggestion-item {
-    padding: 12px;
-    margin-bottom: 8px;
-  }
-
-  .suggestion-header {
-    gap: 8px;
-  }
-
-  /* Result boxes and displays */
-  .result-box {
-    padding: 10px;
-    font-size: 14px;
-    min-height: auto;
-  }
-
-  .muted-text {
-    font-size: 12px;
-  }
-
-  .label {
-    font-size: 13px;
-    margin: 8px 0 4px;
-  }
-
-  /* Code and preformatted text */
-  pre {
-    font-size: 12px;
-    padding: 10px;
-    overflow-x: auto;
-    max-width: 100%;
-  }
-
-  code {
-    font-size: 12px;
-  }
-
-  /* Tables */
-  .table {
-    font-size: 12px;
-  }
-
-  .table th,
-  .table td {
-    padding: 8px;
-  }
-
-  /* Toast notifications */
   .toast-host {
     bottom: 10px;
     right: 10px;
@@ -895,167 +925,75 @@ select:focus-visible {
     max-width: none;
   }
 
-  .toast {
-    padding: 10px 12px;
-    font-size: 13px;
+  .update-banner {
+    left: 10px;
+    right: 10px;
+    max-width: none;
   }
 
-  /* Pill and badge */
-  .pill {
-    font-size: 12px;
-    padding: 5px 8px;
-  }
-
-  .badge {
-    font-size: 11px;
-    padding: 2px 6px;
-  }
-
-  .tag {
-    font-size: 11px;
-  }
-
-  /* History items */
-  .history-item {
-    padding: 8px 10px;
-    font-size: 13px;
-    gap: 8px;
-  }
-
-  /* Gradient preview */
-  .gradient-preview {
-    height: 150px;
-  }
-
-  /* Meter */
-  .meter {
-    height: 10px;
-  }
-
-  /* Muted background */
-  .muted-bg {
-    padding: 10px;
-    margin: 8px 0;
-  }
-
-  /* Reduce spacing in lists */
-  .section ul,
-  .section ol {
-    margin: 8px 0 8px 16px;
-  }
-
-  .section li {
-    margin-bottom: 4px;
-  }
-
-  /* Hero h1 specific */
-  .hero h1 {
-    font-size: 26px;
-  }
-
-  /* Section headings */
-  .section h2 {
-    font-size: 18px;
-    margin: 10px 0 8px 0;
-  }
-
-  .section h3 {
-    font-size: 16px;
-    margin: 8px 0 6px 0;
-  }
-
-  .section p {
+  footer {
+    padding: 12px 16px;
     font-size: 14px;
-    margin-bottom: 8px;
   }
 }
 
-/* Extra small screens - 480px and below */
 @media (max-width: 480px) {
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 16px;
-  }
-
-  p {
-    font-size: 13px;
-  }
-
   main {
-    padding: 12px;
+    padding: 14px 12px 32px;
   }
 
   .nav {
     padding: 10px 12px;
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .brand {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
+  .nav-toggle-text {
+    display: none;
+  }
+
+  h1 {
+    font-size: clamp(1.4rem, 7vw, 1.75rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.1rem, 5.5vw, 1.3rem);
+  }
+
+  p,
+  li,
+  .label,
+  .muted-text,
+  .faq-answer {
+    font-size: 0.9rem;
+  }
+
+  .hero,
+  .section,
+  .tool-shell,
+  .card,
+  .about-section,
+  .team-section,
+  .suggestions-section,
+  .value-card,
+  .suggestion-item,
+  .faq-item,
+  .toc,
+  .testimonial-card,
+  .feature-card {
+    padding: 12px;
+  }
+
+  .json-textarea {
+    min-height: 280px;
+  }
+}
+
+@media (min-width: 769px) {
   .nav-links {
-    width: 100%;
-    gap: 6px;
-  }
-
-  .nav-links a {
-    padding: 6px 10px;
-    font-size: 13px;
-  }
-
-  .theme-toggle {
-    padding: 6px 10px;
-    font-size: 14px;
-  }
-
-  .card {
-    padding: 12px;
-  }
-
-  .section {
-    padding: 12px;
-  }
-
-  .tool-shell {
-    padding: 12px;
-  }
-
-  button, .btn {
-    padding: 10px;
-    font-size: 13px;
-  }
-
-  .hero h1 {
-    font-size: 22px;
-  }
-
-  .page-intro-title {
-    font-size: 20px;
-  }
-
-  .toast-host {
-    bottom: 8px;
-    right: 8px;
-    left: 8px;
-  }
-
-  .update-banner {
-    left: 8px;
-    right: 8px;
-  }
-
-  footer {
-    padding: 10px 12px;
-    font-size: 11px;
-  }
-
-  pre {
-    font-size: 11px;
+    display: flex !important;
   }
 }
 
@@ -1099,3 +1037,4 @@ select:focus-visible {
   .toast { transform: none; }
   .suggestion-like-btn:hover { transform: none; }
   .suggestion-like-btn.liked i { animation: none; }
+}

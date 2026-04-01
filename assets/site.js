@@ -59,6 +59,71 @@
     });
   };
 
+  const initResponsiveNav = () => {
+    const nav = document.querySelector('header .nav');
+    const navLinks = nav?.querySelector('.nav-links');
+    if (!nav || !navLinks) return;
+
+    nav.classList.add('has-mobile-menu');
+
+    if (!navLinks.id) {
+      navLinks.id = 'site-navigation';
+    }
+
+    let toggleBtn = nav.querySelector('.nav-toggle');
+    if (!toggleBtn) {
+      toggleBtn = document.createElement('button');
+      toggleBtn.type = 'button';
+      toggleBtn.className = 'nav-toggle';
+      toggleBtn.setAttribute('aria-controls', navLinks.id);
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.setAttribute('aria-label', 'Open navigation menu');
+      toggleBtn.innerHTML = '<span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-text">Menu</span>';
+
+      const brand = nav.querySelector('.brand');
+      if (brand) {
+        brand.insertAdjacentElement('afterend', toggleBtn);
+      } else {
+        nav.prepend(toggleBtn);
+      }
+    }
+
+    const closeMenu = () => {
+      navLinks.classList.remove('is-open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.setAttribute('aria-label', 'Open navigation menu');
+    };
+
+    const openMenu = () => {
+      navLinks.classList.add('is-open');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.setAttribute('aria-label', 'Close navigation menu');
+    };
+
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
+  };
+
   const isToolPage = () => /^\/tools\/.+\.html$/i.test(window.location.pathname || '');
 
   const hasSchemaType = (type) => {
@@ -431,6 +496,7 @@
     if (typeof ensureMbiAdScript === 'function') ensureMbiAdScript();
     if (typeof ensureLegacyAdScript === 'function') ensureLegacyAdScript();
     if (typeof ensureAds === 'function') ensureAds();
+    initResponsiveNav();
     bindKeyboard();
     initThemeToggle();
     initGlobalToolSeo();

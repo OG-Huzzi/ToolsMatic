@@ -72,13 +72,6 @@
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "3142",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "creator": {
       "@type": "Organization",
       "name": "ToolsMatic",
@@ -97,16 +90,13 @@
       "Speaking time calculator (150 WPM)",
       "Keyword density and frequency analysis",
       "SEO optimization metrics",
-      "Academic writing analysis mode",
-      "Creative writing mode",
-      "Content marketing mode",
       "Bulk text analyzer",
       "OCR image-to-text conversion",
       "Handwriting recognition",
       "Favorites and history system",
       "Keyboard shortcuts (Ctrl+A, Ctrl+C, Ctrl+S)",
       "Multiple export formats (CSV, JSON, TXT)",
-      "Tab-based interface (Text, History, Analysis modes)",
+      "Tab-based interface (Text, OCR, Favorites, History)",
       "Dark and light theme support",
       "Offline support - 100% client-side processing",
       "Privacy-first - no data uploads",
@@ -343,16 +333,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .mode-card {
-      background: var(--bg-tertiary);
-    }
-
-    .mode-card:hover {
-      border-color: var(--accent-color);
-      background: var(--bg-primary);
-      transform: translateY(-2px);
-    }
-    
     @media (max-width: 768px) {
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -415,7 +395,6 @@
       <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); flex-wrap: wrap;">
         <button class="tab-btn active" data-tab="text-mode" style="padding: 0.75rem 1.25rem; border: none; background: transparent; cursor: pointer; color: var(--text-secondary); border-bottom: 3px solid transparent; font-weight: 500; transition: all 0.2s ease;">📝 Text Analysis</button>
         <button class="tab-btn" data-tab="image-mode" style="padding: 0.75rem 1.25rem; border: none; background: transparent; cursor: pointer; color: var(--text-secondary); border-bottom: 3px solid transparent; font-weight: 500; transition: all 0.2s ease;">🖼️ OCR (Image to Text)</button>
-        <button class="tab-btn" data-tab="modes" style="padding: 0.75rem 1.25rem; border: none; background: transparent; cursor: pointer; color: var(--text-secondary); border-bottom: 3px solid transparent; font-weight: 500; transition: all 0.2s ease;">⚙️ Analysis Modes</button>
         <button class="tab-btn" data-tab="favorites" style="padding: 0.75rem 1.25rem; border: none; background: transparent; cursor: pointer; color: var(--text-secondary); border-bottom: 3px solid transparent; font-weight: 500; transition: all 0.2s ease;">⭐ Favorites</button>
         <button class="tab-btn" data-tab="history" style="padding: 0.75rem 1.25rem; border: none; background: transparent; cursor: pointer; color: var(--text-secondary); border-bottom: 3px solid transparent; font-weight: 500; transition: all 0.2s ease;">⏱️ History</button>
       </div>
@@ -574,44 +553,6 @@
         </div>
       </div>
 
-      <!-- ANALYSIS MODES TAB -->
-      <div id="modes-panel" class="tab-panel" style="display: none; padding: 2rem; background: var(--bg-secondary); border-radius: 12px;">
-        <h3>⚙️ Analysis Modes</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Choose a mode to optimize analysis for your specific use case.</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-          <div style="padding: 1rem; border: 2px dashed var(--border-color); border-radius: 8px; cursor: pointer; transition: all 0.2s;" class="mode-card" data-mode="general">
-            <h4>📖 General Writing</h4>
-            <small>Balanced analysis for any text</small>
-          </div>
-          <div style="padding: 1rem; border: 2px dashed var(--border-color); border-radius: 8px; cursor: pointer; transition: all 0.2s;" class="mode-card" data-mode="academic">
-            <h4>🎓 Academic</h4>
-            <small>Focus on formality and complexity</small>
-          </div>
-          <div style="padding: 1rem; border: 2px dashed var(--border-color); border-radius: 8px; cursor: pointer; transition: all 0.2s;" class="mode-card" data-mode="creative">
-            <h4>✨ Creative Writing</h4>
-            <small>Analyze narrative and variety</small>
-          </div>
-          <div style="padding: 1rem; border: 2px dashed var(--border-color); border-radius: 8px; cursor: pointer; transition: all 0.2s;" class="mode-card" data-mode="seo">
-            <h4>🔍 SEO Content</h4>
-            <small>Keyword density & optimization</small>
-          </div>
-          <div style="padding: 1rem; border: 2px dashed var(--border-color); border-radius: 8px; cursor: pointer; transition: all 0.2s;" class="mode-card" data-mode="social">
-            <h4>📱 Social Media</h4>
-            <small>Platform length & engagement</small>
-          </div>
-          <div style="padding: 1rem; border: 2px dashed var(--border-color); border-radius: 8px; cursor: pointer; transition: all 0.2s;" class="mode-card" data-mode="technical">
-            <h4>⚙️ Technical Docs</h4>
-            <small>Precision and clarity metrics</small>
-          </div>
-        </div>
-
-        <div id="mode-info" style="margin-top: 2rem; padding: 1rem; background: var(--bg-primary); border-radius: 8px; border-left: 4px solid var(--accent-color); display: none;">
-          <h4 id="mode-title"></h4>
-          <p id="mode-description"></p>
-        </div>
-      </div>
-
       <!-- FAVORITES TAB -->
       <div id="favorites-panel" class="tab-panel" style="display: none;">
         <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; min-height: 300px; text-align: center; color: var(--text-secondary);">
@@ -646,7 +587,6 @@
         <li>⏱️ <strong>Dual Time Calculations</strong>: Reading time (200 WPM based on average reading speed) and speaking time (150 WPM for presentations) for exact duration planning.</li>
         <li>🔑 <strong>Keyword Frequency Analysis</strong>: Automatically identifies your top 15 most-used keywords (3+ letters, 2+ occurrences) to analyze content themes and detect repetition.</li>
         <li>🖼️ <strong>OCR Image-to-Text Conversion</strong>: Upload images, screenshots, PDFs, or handwritten documents and extract text using advanced Tesseract.js OCR technology. Supports JPG, PNG, GIF, WebP (up to 10MB).</li>
-        <li>⚙️ <strong>6 Advanced Analysis Modes</strong>: General Writing, Academic, Creative Writing, SEO Content, Social Media, and Technical Documentation modes with specialized metrics for each.</li>
         <li>⭐ <strong>Favorites & History System</strong>: Save up to 50 frequently analyzed texts and automatically track your last 20 analyses.</li>
         <li>⌨️ <strong>Power User Keyboard Shortcuts</strong>: Ctrl+C (copy stats), Ctrl+S (save favorite), Ctrl+Enter (analyze).</li>
         <li>📥 <strong>Multi-Format Export</strong>: Download analysis as CSV spreadsheet or copy all statistics with one click.</li>
@@ -672,15 +612,11 @@
           <p>Scroll to see detailed metrics including syllable counts, Flesch Reading Ease, Flesch-Kincaid Grade, Gunning Fog Index, Coleman-Liau Index, and keyword frequency cloud.</p>
         </div>
         <div class="panel">
-          <h3>Step 4: Choose Analysis Mode</h3>
-          <p>Switch to "⚙️ Analysis Modes" tab and select from General, Academic, Creative, SEO, Social Media, or Technical modes for specialized metrics suited to your content type.</p>
-        </div>
-        <div class="panel">
-          <h3>Step 5: Use OCR for Images</h3>
+          <h3>Step 4: Use OCR for Images</h3>
           <p>Click the "🖼️ OCR" tab, upload an image or document, and click "Extract Text". The tool uses OCR to recognize text from images, then auto-analyzes the extracted content.</p>
         </div>
         <div class="panel">
-          <h3>Step 6: Save & Export</h3>
+          <h3>Step 5: Save & Export</h3>
           <p>Save favorite texts to your favorites list (Ctrl+S) or export analysis as CSV. All data is stored locally—no accounts needed.</p>
         </div>
       </div>
@@ -839,57 +775,6 @@
       </table>
     </section>
 
-    <section class="section" id="word-counter-guide-extra">
-      <h2>More Expert Guidance on Why a Strong Word Counter Matters</h2>
-      <p>A word counter is one of those tools that looks simple until the work around it gets serious. At first glance it seems like a small utility for checking whether a paragraph is long or short, but in practice it supports a wide range of real writing decisions. Students use it to stay within assignment limits. Editors use it to compare draft sizes and tighten passages. Copywriters use it to shape headlines, product descriptions, ads, landing pages, and newsletter blocks. Content marketers use it to balance detail, readability, and SEO intent. Researchers use it to manage abstracts, summaries, and structured submissions. A better word counter helps with all of these tasks because it turns raw text into usable signals. When a tool shows words, characters, sentence counts, paragraphs, reading time, and readability metrics in one place, it stops being a tiny convenience and becomes part of how people improve writing efficiently.</p>
-
-      <h3>Word count is often the first quality check in writing</h3>
-      <p>Many writing jobs begin with a target length. That might be a 500-word article, a 160-character description, a 60-character title, a 1500-word essay, or a short answer with strict limits. Without a reliable counter, people either guess or waste time checking manually. Good writing tools remove that friction immediately. But the best counters go beyond a single number. They help users understand the shape of the text. Is it too dense for the audience? Are the sentences too long? Is the reading level too high? Is the content too short for the intended purpose? These are the questions a stronger counter helps answer, and that is why serious writers keep one open regularly instead of treating it like a one-time helper.</p>
-
-      <h3>Readability metrics turn counting into real analysis</h3>
-      <p>Once the tool starts measuring readability, it becomes far more useful for professional work. A piece of text may technically meet the required length while still being harder to read than it should be. Long sentences, heavy phrasing, and unnecessary complexity can make content weaker even when the word count looks right. Readability scores help surface that problem quickly. They are especially useful for blog posts, landing pages, educational writing, email campaigns, documentation, and customer-facing content where clarity directly affects performance. When a word counter combines word totals with readability signals, users can revise more intelligently instead of editing blindly.</p>
-
-      <h3>Writers, students, and teams all need different kinds of feedback</h3>
-      <p>Not everyone opens a word counter for the same reason. A student may only care about hitting a minimum and avoiding over-length submissions. A marketer may care about scannability, reading time, and keyword density. An editor may care about sentence balance and paragraph flow. A product team may care about microcopy character counts for interface limits. A speaker may care about estimated speaking time. That is why strong word counters are so widely useful. They meet multiple needs without forcing users into a complicated workflow. The best ones make the obvious stats available instantly, then provide deeper metrics for users who need more than a basic count.</p>
-
-      <h3>Why browser-based text analysis remains so practical</h3>
-      <p>People often need text analysis in the middle of other work. They may be editing in a CMS, reviewing copy in a doc, drafting in email, or testing content blocks during a launch. In those moments, a browser-based word counter is ideal because it is fast, accessible, and easy to revisit. There is no install process, no heavy software overhead, and no need to shift into a separate writing environment for a quick check. If the analysis also stays local in the browser, the tool becomes more comfortable to use for sensitive drafts, internal notes, student work, and unpublished content. That privacy-first convenience is one of the reasons word counter tools continue to get so much search demand year after year.</p>
-
-      <p>A great word counter earns repeat visits because it solves small but constant writing problems with less friction than everything around it. When the tool helps users hit limits, improve clarity, estimate reading time, and understand their draft at a glance, it becomes much more than a counting box. It becomes part of the writing process itself, which is exactly what makes a word counter page worth remembering and returning to.</p>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="section">
-      <h2>What Users Are Saying</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0;">
-        <div style="padding: 15px; background: var(--surface); border-radius: 8px; border-left: 4px solid #22c55e;">
-          <p style="margin: 0 0 10px 0;">"The readability scores transformed how I write. Now I know exactly why my articles are hard to read. Changed everything."</p>
-          <p style="font-weight: bold; margin: 0; color: var(--primary);">— Maria T., Content Writer</p>
-          <p style="color: var(--muted); font-size: 12px; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐</p>
-        </div>
-        <div style="padding: 15px; background: var(--surface); border-radius: 8px; border-left: 4px solid #22c55e;">
-          <p style="margin: 0 0 10px 0;">"OCR feature is magical. Tested it on my handwritten notes. Works better than expensive software. Worth its weight in gold (it's free!)."</p>
-          <p style="font-weight: bold; margin: 0; color: var(--primary);">— Jason L., Student</p>
-          <p style="color: var(--muted); font-size: 12px; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐</p>
-        </div>
-        <div style="padding: 15px; background: var(--surface); border-radius: 8px; border-left: 4px solid #22c55e;">
-          <p style="margin: 0 0 10px 0;">"Speaking time calculator saved my life for presentations. No more guessing how long talks will run. Works offline on my laptop during meetings."</p>
-          <p style="font-weight: bold; margin: 0; color: var(--primary);">— David P., Manager</p>
-          <p style="color: var(--muted); font-size: 12px; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐</p>
-        </div>
-        <div style="padding: 15px; background: var(--surface); border-radius: 8px; border-left: 4px solid #22c55e;">
-          <p style="margin: 0 0 10px 0;">"SEO metrics are incredible. Keyword density analysis helped me optimize without keyword stuffing. Finally, a legitimate tool for content optimization."</p>
-          <p style="font-weight: bold; margin: 0; color: var(--primary);">— Rachel K., SEO Specialist</p>
-          <p style="color: var(--muted); font-size: 12px; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐</p>
-        </div>
-        <div style="padding: 15px; background: var(--surface); border-radius: 8px; border-left: 4px solid #22c55e;">
-          <p style="margin: 0 0 10px 0;">"Teaching composition is easier now. Students understand exactly why their writing is tough. Flesch-Kincaid numbers make it concrete."</p>
-          <p style="font-weight: bold; margin: 0; color: var(--primary);">— Professor Ellen W., English Dept</p>
-          <p style="color: var(--muted); font-size: 12px; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐</p>
-        </div>
-      </div>
-    </section>
-
     <!-- Related Tools Section -->
     <section class="section">
       <h2>Other Writing & Analysis Tools</h2>
@@ -956,9 +841,7 @@
     const clearTextBtn = document.getElementById('clear-text');
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-panel');
-    const modeCards = document.querySelectorAll('.mode-card');
 
-    let currentAnalysisMode = 'general';
     let toastTimeout;
 
     // Toast notification
@@ -974,17 +857,28 @@
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const tabName = btn.dataset.tab;
-        tabBtns.forEach(b => b.classList.remove('active'));
-        tabPanels.forEach(p => p.classList.remove('active'));
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.style.borderBottomColor = 'transparent';
+          b.style.color = 'var(--text-secondary)';
+        });
+        tabPanels.forEach(p => {
+          p.classList.remove('active');
+          p.style.display = 'none';
+        });
         btn.classList.add('active');
         btn.style.borderBottomColor = 'var(--accent-color)';
         btn.style.color = 'var(--accent-color)';
         document.getElementById(tabName + '-panel').classList.add('active');
         document.getElementById(tabName + '-panel').style.display = 'block';
+        if (tabName === 'image-mode') {
+          showToast('Scroll down to use this feature');
+        }
       });
     });
 
-    // Analysis modes
+    /*
+    // Removed feature
     modeCards.forEach(card => {
       card.addEventListener('click', () => {
         modeCards.forEach(c => c.style.borderColor = 'var(--border-color)');
@@ -993,7 +887,7 @@
         card.style.background = 'var(--bg-secondary)';
         
         const mode = card.dataset.mode;
-        currentAnalysisMode = mode;
+        selectedMode = mode;
         
         const modeInfo = {
           general: { title: '📖 General Writing', description: 'Balanced analysis for all text types. Shows comprehensive metrics.' },
@@ -1011,6 +905,7 @@
       });
     });
 
+    */
     // Syllable counter
     const countSyllables = (word) => {
       const cleaned = word.toLowerCase().replace(/[^a-z]/g, '');
@@ -1418,17 +1313,6 @@ Grade Level,${document.getElementById('gradeLevel').textContent}`;
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

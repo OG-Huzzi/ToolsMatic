@@ -52,7 +52,7 @@
   <meta name="twitter:site" content="@ToolsMatic">
 
   <meta property="article:published_time" content="2026-03-21T00:00:00+00:00">
-  <meta property="article:modified_time" content="2026-03-21T00:00:00+00:00">
+  <meta property="article:modified_time" content="2026-04-04T00:00:00+00:00">
   <meta property="article:author" content="ToolsMatic">
 
   <script type="application/ld+json">
@@ -100,14 +100,7 @@
       "URL diff diagnostics",
       "URL structure inspector",
       "Session history"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": 19724,
-      "bestRating": "5",
-      "worstRating": "1"
-    }
+    ]
   }
   </script>
 
@@ -333,7 +326,7 @@
     "description": "Professional URL encoding and query debugging tool.",
     "inLanguage": "en-US",
     "datePublished": "2026-03-21",
-    "dateModified": "2026-03-21"
+    "dateModified": "2026-04-04"
   }
   </script>
 
@@ -371,7 +364,7 @@
       "logo": {"@type": "ImageObject", "url": "https://toolsmatic.me/assets/logo.png"}
     },
     "datePublished": "2026-03-21",
-    "dateModified": "2026-03-21",
+    "dateModified": "2026-04-04",
     "keywords": ["url encoding", "query parameters", "api debugging", "percent encoding"]
   }
   </script>
@@ -383,28 +376,7 @@
     "name": "ToolsMatic URL Encoder",
     "description": "Free professional URL encoder and decoder with query and batch workflows.",
     "brand": {"@type": "Brand", "name": "ToolsMatic"},
-    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": 19724},
-    "review": [
-      {
-        "@type": "Review",
-        "author": {"@type": "Person", "name": "Aarav S."},
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "reviewBody": "Best URL encoder I have used for API debugging. Query parser and inspector save hours every week."
-      },
-      {
-        "@type": "Review",
-        "author": {"@type": "Person", "name": "Mia T."},
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "reviewBody": "Form encoding mode is exactly what I needed for x-www-form-urlencoded payloads. Fast and reliable."
-      },
-      {
-        "@type": "Review",
-        "author": {"@type": "Person", "name": "Noah R."},
-        "reviewRating": {"@type": "Rating", "ratingValue": "4.8", "bestRating": "5"},
-        "reviewBody": "Professional-level tool with batch conversion and clean output. Great for campaign URL QA."
-      }
-    ]
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
   }
   </script>
 
@@ -457,9 +429,14 @@
     .history-item b { color: var(--muted); font-size: .85rem; }
     .sample-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
     .sample-wrap button { background: var(--surface); }
-    .breadcrumb-nav { margin: 10px 0 6px; font-size: .95rem; color: var(--muted); text-align: center; }
-    .breadcrumb-nav a { color: var(--accent); text-decoration: none; }
+    .breadcrumb-nav { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin: 10px auto 8px; padding: 10px 16px; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,.03); font-size: .95rem; color: var(--muted); text-align: center; }
+    .breadcrumb-nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
     .breadcrumb-nav span { opacity: .85; }
+    .workspace-tabbar { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 14px; padding: 14px; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(135deg, rgba(139,92,246,.08), rgba(59,130,246,.06)); }
+    .workspace-tabbar button { min-height: 44px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-weight: 700; padding: 10px 16px; }
+    .workspace-tabbar button.active { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; border-color: transparent; box-shadow: 0 12px 28px rgba(139,92,246,.18); }
+    .workspace-panel[hidden] { display: none !important; }
+    .tabbar-note { width: 100%; color: var(--muted); font-size: .92rem; line-height: 1.6; }
     .review-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
     .review-card { border: 1px solid var(--border); border-radius: 12px; background: var(--card); padding: 12px; }
     .review-author { font-weight: 700; margin-top: 8px; }
@@ -499,7 +476,7 @@
   <main>
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
       <a href="/">Home</a> <span>›</span>
-      <a href="/">Tools</a> <span>›</span>
+      <a href="/#tools">Tools</a> <span>›</span>
       <span>URL Encoder</span>
     </nav>
 
@@ -508,7 +485,19 @@
       Enterprise-grade URL conversion suite for developers, QA teams, SEO analysts, and API engineers. Encode components, decode broken links, build query strings, inspect URL anatomy, and process batches instantly.
     </p>
 
-    <section class="tool-shell">
+    <div class="workspace-tabbar" role="tablist" aria-label="URL tool workspaces">
+      <button type="button" class="workspace-tab active" data-workspace-target="workspace-encoder" role="tab" aria-selected="true">Encoder / Decoder</button>
+      <button type="button" class="workspace-tab" data-workspace-target="workspace-query" role="tab" aria-selected="false">Query Lab</button>
+      <button type="button" class="workspace-tab" data-workspace-target="workspace-inspector" role="tab" aria-selected="false">Inspector</button>
+      <button type="button" class="workspace-tab" data-workspace-target="workspace-normalize" role="tab" aria-selected="false">Normalize & Audit</button>
+      <button type="button" class="workspace-tab" data-workspace-target="workspace-batch" role="tab" aria-selected="false">Batch</button>
+      <button type="button" class="workspace-tab" data-workspace-target="workspace-utm" role="tab" aria-selected="false">UTM Builder</button>
+      <button type="button" class="workspace-tab" data-workspace-target="workspace-diff" role="tab" aria-selected="false">URL Diff</button>
+      <button type="button" class="workspace-tab" data-workspace-target="workspace-history" role="tab" aria-selected="false">History</button>
+      <div class="tabbar-note">All URL tools stay on the page, but only one workspace is shown at a time so the suite is easier to scan and use.</div>
+    </div>
+
+    <section class="tool-shell workspace-panel" id="workspace-encoder">
       <div class="controls-grid">
         <div class="field">
           <label for="operation-mode">Operation Mode</label>
@@ -570,7 +559,7 @@
 
     <div id="tool-feedback-anchor" aria-hidden="true"></div>
 
-    <section class="section block-card">
+    <section class="section block-card workspace-panel" id="workspace-query" hidden>
       <h2 style="margin-top:0;">Query String Lab</h2>
       <p style="color:var(--muted); margin-top:0;">Build or parse query parameters with automatic encoding.</p>
       <div class="mini-grid">
@@ -592,19 +581,25 @@
       <div id="param-table-wrap"></div>
     </section>
 
-    <section class="section block-card">
+    <section class="section block-card workspace-panel" id="workspace-inspector" hidden>
       <h2 style="margin-top:0;">URL Inspector</h2>
       <p style="color:var(--muted); margin-top:0;">Parse a URL into protocol, host, path, query, hash, and decoded query map.</p>
-      <div class="inline-controls">
-        <button id="inspect-input">Inspect input</button>
-        <button id="inspect-output">Inspect output</button>
+      <label class="label" for="inspect-source">Inspector input</label>
+      <textarea id="inspect-source" rows="4" placeholder="Paste any full URL, redirect target, callback link, or query-heavy URL here..."></textarea>
+      <div class="inline-controls" style="margin-top:10px;">
+        <button id="inspect-current">Inspect this URL</button>
+        <button id="inspect-load-input" class="ghost">Load main input</button>
+        <button id="inspect-load-output" class="ghost">Load main output</button>
+        <button id="inspect-clear" class="ghost">Clear inspector</button>
       </div>
       <div id="inspector" class="inspector-list"></div>
     </section>
 
-    <section class="section block-card">
+    <section class="section block-card workspace-panel" id="workspace-normalize" hidden>
       <h2 style="margin-top:0;">Normalization & Security Audit</h2>
       <p style="color:var(--muted); margin-top:0;">Canonicalize URLs and audit for risky redirect patterns, weak protocols, and query anomalies.</p>
+      <label class="label" for="normalize-source">Normalize / audit input</label>
+      <textarea id="normalize-source" rows="4" placeholder="Paste any URL you want to normalize, sanitize, or review for redirect and protocol risks..."></textarea>
       <div class="inline-controls">
         <label><input id="strip-tracking" type="checkbox"> Strip tracking params</label>
         <label><input id="strip-fragment" type="checkbox"> Strip hash fragment</label>
@@ -612,13 +607,16 @@
       <div class="inline-controls" style="margin-top:10px;">
         <button id="normalize-input-url">Normalize input URL</button>
         <button id="audit-input-url">Run security audit</button>
+        <button id="normalize-load-input" class="ghost">Load main input</button>
+        <button id="normalize-load-output" class="ghost">Load main output</button>
+        <button id="normalize-clear" class="ghost">Clear</button>
       </div>
       <label class="label" for="normalize-output" style="margin-top:10px;">Normalized URL</label>
       <textarea id="normalize-output" rows="4" readonly placeholder="Normalized URL appears here..."></textarea>
       <div id="audit-report" class="audit-list"></div>
     </section>
 
-    <section class="section block-card">
+    <section class="section block-card workspace-panel" id="workspace-batch" hidden>
       <h2 style="margin-top:0;">Batch Converter</h2>
       <p style="color:var(--muted); margin-top:0;">Process many lines at once. Each line is converted independently.</p>
       <div class="controls-grid" style="margin-top:0;">
@@ -647,7 +645,7 @@
       <textarea id="batch-output" rows="8" readonly></textarea>
     </section>
 
-    <section class="section block-card">
+    <section class="section block-card workspace-panel" id="workspace-utm" hidden>
       <h2 style="margin-top:0;">UTM Campaign Builder</h2>
       <p style="color:var(--muted); margin-top:0;">Build analytics-ready campaign URLs with safe encoding and clean parameter assembly.</p>
       <div class="mini-grid">
@@ -667,7 +665,7 @@
       <textarea id="utm-output" rows="4" readonly></textarea>
     </section>
 
-    <section class="section block-card">
+    <section class="section block-card workspace-panel" id="workspace-diff" hidden>
       <h2 style="margin-top:0;">URL Diff Diagnostics</h2>
       <p style="color:var(--muted); margin-top:0;">Compare two URLs and inspect exact differences in host, path, hash, and query parameters.</p>
       <label class="label" for="diff-url-a">URL A</label>
@@ -680,7 +678,7 @@
       <div id="diff-report" class="audit-list"></div>
     </section>
 
-    <section class="section block-card">
+    <section class="section block-card workspace-panel" id="workspace-history" hidden>
       <h2 style="margin-top:0;">Recent History</h2>
       <p style="color:var(--muted); margin-top:0;">Last 12 operations are saved in your browser for quick replay.</p>
       <div class="inline-controls">
@@ -691,7 +689,7 @@
 
     <section class="section block-card" id="comparison" aria-labelledby="url-comparison-title">
       <h2 id="url-comparison-title" style="margin-top:0;">ToolsMatic URL Encoder vs Other Websites</h2>
-      <p style="color:var(--muted); margin-top:0;">Reference-style comparison table (same pattern as JSON Formatter) for quick feature benchmarking.</p>
+      <p style="color:var(--muted); margin-top:0;">Reference-style comparison table for quick feature benchmarking.</p>
       <div style="overflow-x:auto;">
         <table class="comparison-table">
           <thead>
@@ -704,93 +702,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Component Encode/Decode</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-            </tr>
-            <tr>
-              <td>Full URL Encode/Decode</td>
-              <td class="check">✓</td>
-              <td class="cross">✗</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-            </tr>
-            <tr>
-              <td>Form URL Encoded Mode (+ for spaces)</td>
-              <td class="check">✓</td>
-              <td class="cross">✗</td>
-              <td class="cross">✗</td>
-              <td class="check">✓</td>
-            </tr>
-            <tr>
-              <td>Batch Line-by-Line Processing</td>
-              <td class="check">✓</td>
-              <td class="cross">✗</td>
-              <td class="check">Limited</td>
-              <td class="check">✓</td>
-            </tr>
-            <tr>
-              <td>Query String Builder & Parser</td>
-              <td class="check">✓</td>
-              <td class="cross">✗</td>
-              <td class="cross">✗</td>
-              <td class="check">✓</td>
-            </tr>
-            <tr>
-              <td>URL Inspector (Host/Path/Query/Hash)</td>
-              <td class="check">✓</td>
-              <td class="cross">✗</td>
-              <td class="check">Basic</td>
-              <td class="check">✓</td>
-            </tr>
-            <tr>
-              <td>Local History for Replays</td>
-              <td class="check">✓</td>
-              <td class="cross">✗</td>
-              <td class="cross">✗</td>
-              <td class="check">✓</td>
-            </tr>
-            <tr>
-              <td>Client-side Privacy by Default</td>
-              <td class="check">✓</td>
-              <td class="check">Usually</td>
-              <td class="check">Varies</td>
-              <td class="check">Varies</td>
-            </tr>
-            <tr>
-              <td>Cost</td>
-              <td class="check">Free</td>
-              <td class="check">Free</td>
-              <td class="check">Freemium</td>
-              <td class="cross">$10-$49/mo</td>
-            </tr>
+            <tr><td>Component Encode/Decode</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+            <tr><td>Full URL Encode/Decode</td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td></tr>
+            <tr><td>Form URL Encoded Mode (+ for spaces)</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td></tr>
+            <tr><td>Batch Line-by-Line Processing</td><td class="check">✓</td><td class="cross">✗</td><td class="check">Limited</td><td class="check">✓</td></tr>
+            <tr><td>Query String Builder & Parser</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td></tr>
+            <tr><td>URL Inspector (Host/Path/Query/Hash)</td><td class="check">✓</td><td class="cross">✗</td><td class="check">Basic</td><td class="check">✓</td></tr>
+            <tr><td>Local History for Replays</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td></tr>
+            <tr><td>Client-side Privacy by Default</td><td class="check">✓</td><td class="check">Usually</td><td class="check">Varies</td><td class="check">Varies</td></tr>
+            <tr><td>Cost</td><td class="check">Free</td><td class="check">Free</td><td class="check">Freemium</td><td class="cross">$10-$49/mo</td></tr>
           </tbody>
         </table>
-      </div>
-    </section>
-
-    <section class="section block-card" aria-labelledby="url-reviews-title">
-      <h2 id="url-reviews-title" style="margin-top:0;">User Reviews</h2>
-      <p style="color:var(--muted); margin-top:0;">Trusted by developers, marketers, and QA teams for reliable URL conversion workflows.</p>
-      <div class="review-grid">
-        <article class="review-card">
-          <div aria-label="5 out of 5 stars">★★★★★</div>
-          <p>Best URL encoder I have used for API debugging. Query parser and inspector save hours every week.</p>
-          <div class="review-author">Aarav S. · Backend Engineer</div>
-        </article>
-        <article class="review-card">
-          <div aria-label="5 out of 5 stars">★★★★★</div>
-          <p>Form encoding mode is exactly what I needed for x-www-form-urlencoded payloads. Fast and reliable.</p>
-          <div class="review-author">Mia T. · QA Lead</div>
-        </article>
-        <article class="review-card">
-          <div aria-label="4.8 out of 5 stars">★★★★☆</div>
-          <p>Professional-level tool with batch conversion and clean output. Great for campaign URL QA.</p>
-          <div class="review-author">Noah R. · Growth Analyst</div>
-        </article>
       </div>
     </section>
 
@@ -809,12 +731,49 @@
     </section>
 
     <section class="section" aria-labelledby="about-url-encoder">
-      <h2 id="about-url-encoder">Professional URL encoding workflows</h2>
-      <p>Use component encoding for query values, full URL encoding for complete links, and form mode for payloads sent with application/x-www-form-urlencoded. This page combines all three paths to reduce mistakes in production APIs, analytics campaigns, and redirect systems.</p>
-      <h2>Why teams use this tool</h2>
-      <p>Backend and frontend engineers use batch conversion for large test sets, QA teams use URL Inspector to validate redirects, and marketing teams use Query String Lab to build UTM tags safely. All actions are instant and client-side.</p>
-      <h2>Privacy, speed, and reliability</h2>
-      <p>Processing runs in your browser using native URL and encoding APIs. No input is uploaded or stored remotely. This makes the tool safe for sensitive internal links and fast enough for daily debugging work.</p>
+      <h2 id="about-url-encoder">Complete URL Encoding Guide for APIs, Query Parameters, Redirects, SEO, and Campaign Links</h2>
+      <p>URL encoding looks simple until it breaks something important. A redirect loop, a lost campaign parameter, a malformed API request, or a query string that silently changes meaning can all trace back to one small encoding mistake. That is why a serious URL encoder and decoder is more than a basic convert box. It is a debugging workspace for developers, marketers, QA teams, and technical SEO professionals who need to see exactly how URLs are transformed before they go live. The strongest URL workflows combine encoding, decoding, query building, inspection, normalization, and security checks in one place so teams stop bouncing between multiple tools and guessing which character or parameter caused the problem.</p>
+      <p>At a practical level, most people land on a URL encoder because something broke. They are trying to pass a value into an API request, embed one URL inside another URL, preserve a callback parameter during login, debug analytics tags, or clean up a messy query string before shipping a campaign. In all of those cases, the right fix depends on context. Sometimes you need to encode only a single component, such as a query parameter value. Sometimes you need to encode an entire URL because it will be nested inside another one. Sometimes you need form-style encoding where spaces become plus signs. The point is not to memorize every rule. The point is to use the correct path for the workflow in front of you.</p>
+
+      <h2>Why URL encoding errors are so common</h2>
+      <p>URLs carry more structure than they seem to at first glance. Protocol, hostname, path, query string, fragment, and individual parameter values all behave differently. Characters such as spaces, ampersands, equals signs, slashes, hashes, question marks, percent signs, and plus signs can change meaning depending on where they appear. A value that is safe inside a path may be dangerous inside a query string. A link that looks readable in raw text may decode into something very different once the browser or backend parser touches it. That is why URL handling causes so many subtle production bugs. Teams often treat the whole string as one unit when they really need to work at the component level.</p>
+      <p>The problem gets worse when multiple systems touch the same URL. A frontend app may encode a parameter, a backend service may re-encode it, a redirect service may partially decode it, and an analytics platform may append new campaign fields afterward. By the time the final link reaches a user, one incorrectly encoded character can corrupt the whole chain. Good tooling helps you catch this earlier by showing not only the encoded output, but also the parsed structure, normalized form, decoded parameters, and security implications.</p>
+
+      <h2>encodeURIComponent vs encodeURI is still one of the biggest mistakes</h2>
+      <p>The most common URL encoding confusion is the difference between encoding a full URL and encoding a URL component. `encodeURIComponent` is usually the right choice for parameter values because it encodes characters that would otherwise be interpreted as query delimiters. If your value contains an ampersand, equal sign, slash, or question mark, component encoding protects it. `encodeURI`, on the other hand, preserves separators such as `:`, `/`, `?`, and `&`, which makes it useful when you are handling a complete URL string. Problems happen when teams use the full URL encoder on a parameter value or use the component encoder on an entire link without understanding why the result changed.</p>
+      <p>That distinction matters in API clients, redirect parameters, search links, OAuth callback flows, and embedded tracking URLs. If you are passing `https://example.com/page?a=1&b=2` as the value of another parameter, you usually need to encode the inner URL as a component. If you do not, the outer URL parser will treat the inner query delimiters as its own. This is why a professional URL tool needs both modes, plus decode modes that help you reverse mistakes quickly and see what the real payload became.</p>
+
+      <h2>Query strings, forms, and application workflows</h2>
+      <p>Query strings deserve their own workflow because they are rarely just a blob of text. They are a collection of key-value pairs that often need to be edited, reordered, rebuilt, or audited. A query string lab is useful because it turns raw parameter text into a structured list you can inspect before building the final output again. This is especially helpful for analytics tags, partner links, search filters, signed request payloads, and app states preserved in URLs. Instead of manually typing `&` and `=`, teams can add fields one by one, validate the output, and avoid common punctuation mistakes.</p>
+      <p>Form encoding is another frequent source of confusion. In `application/x-www-form-urlencoded`, spaces become `+` instead of `%20`, and decoding rules are slightly different from component encoding. This matters in traditional form posts, older integrations, and any system that expects form-style payloads rather than raw percent encoding. If a team applies normal component encoding when a system expects form encoding, values may arrive malformed or decode inconsistently. That is why it is valuable to keep form encode and form decode available as first-class modes rather than forcing people to improvise around them.</p>
+
+      <h2>URL inspection is critical for debugging and QA</h2>
+      <p>A good URL inspector saves time because it separates the string into the parts that actually matter. When a redirect breaks or a landing page fails to read a campaign parameter, the first question is rarely "what is the whole URL?" It is "what did the parser think the host was, what ended up in the path, what survived in the query string, and what is sitting in the fragment?" Inspection helps QA teams verify redirect targets, helps developers debug nested links, and helps analysts confirm that campaign tags remain intact after publishing or sharing. A raw encoder alone cannot answer those questions. You need inspection to understand how the browser and URL parser are interpreting the final result.</p>
+      <p>Inspection also matters for relative URLs and mixed environments. A URL may parse differently when a base is applied, or when an application strips the fragment, lowercases the hostname, or reorders parameters. Seeing the anatomy of a URL in one structured panel makes it much easier to spot missing protocols, broken hashes, duplicate parameters, or unexpected query decoding. That is why inspection belongs beside encoding rather than in a separate disconnected tool.</p>
+
+      <h2>Normalization matters for reliability and SEO</h2>
+      <p>Normalization is useful whenever multiple versions of the same URL are floating around. Lowercasing the hostname, removing default ports, sorting parameters, and stripping selected tracking fields can reduce duplication and make links easier to reason about. For technical SEO, normalization supports canonicalization workflows by reducing accidental URL variants created through campaign tags, parameter order changes, or minor formatting differences. For engineering teams, it supports cache consistency, redirect audits, deduplication, and cleaner testing. The goal is not to erase every difference blindly. The goal is to create a controlled, repeatable representation of a URL when consistency matters.</p>
+      <p>Many teams think of normalization as a search-only concern, but it is equally relevant in operations and debugging. If two links differ only in tracking noise, a normalization step can show that they are functionally the same page. If a link behaves differently because of a fragment or a parameter order change, normalization can help isolate the meaningful parts. When teams combine normalization with diff diagnostics, they can move from guesswork to exact URL comparisons very quickly.</p>
+
+      <h2>UTM links and marketing URLs break more often than people admit</h2>
+      <p>Campaign URLs are one of the highest-volume real-world uses of URL encoding. `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, and `utm_content` often include spaces, punctuation, symbols, and naming patterns that need to survive distribution through emails, ads, CMS tools, and analytics dashboards. If one field is encoded incorrectly, reporting can fragment across multiple campaign names or fail to attribute traffic correctly. This is why marketers and growth teams benefit from the same disciplined encoding workflow developers use for APIs. A UTM builder with proper parameter handling reduces manual copy-paste mistakes and creates more reliable attribution data.</p>
+      <p>The value of a builder is not just convenience. It standardizes the output. Teams can enter clean source values, build the final URL safely, copy it, and then load it back into the main workspace for inspection, normalization, or security checks. That creates a better handoff between campaign planning, QA review, and final publishing.</p>
+
+      <h2>Recursive decoding and nested URLs are essential for redirect debugging</h2>
+      <p>Modern apps frequently pass one URL inside another URL. Login flows, payment callbacks, share links, analytics wrappers, redirect routers, and app deep links all do this. Once nesting starts, a single decode pass is often not enough. A recursive decode mode helps you peel back layers until the original value becomes readable. This is especially useful when debugging third-party integrations that encode a callback URL multiple times or when checking whether a supposedly safe redirect parameter actually resolves to an unexpected external destination. Without recursive decoding, teams often miss the real payload because they stop one layer too early.</p>
+      <p>Nested URLs are also where security issues hide. An innocent-looking redirect parameter might decode into an external destination, a risky protocol, or a credential-bearing URL. Pairing recursive decoding with inspection and security audit features gives teams a much better chance of catching those issues before release.</p>
+
+      <h2>URL security checks are not optional anymore</h2>
+      <p>URL security problems are often simple, but they are easy to overlook. Open redirects, non-HTTPS targets, credentials embedded in URLs, dangerous protocols such as `javascript:`, and misleading callback parameters all show up in production systems more often than teams expect. A lightweight security audit does not replace a full application review, but it is extremely useful for surfacing obvious risks during everyday work. Engineers can check a URL before wiring it into auth flows, analysts can review destination links before publishing, and QA teams can test redirect candidates without needing a separate security tool for every small review.</p>
+      <p>The biggest gain here is speed. If a tool can immediately flag risky redirect parameter names, suspicious external targets, malformed structures, or dangerous schemes, teams make better decisions faster. That kind of fast review is especially valuable when links are being generated dynamically or assembled under deadline pressure.</p>
+
+      <h2>Batch conversion is what makes a URL tool production-friendly</h2>
+      <p>One-off conversion is useful, but batch processing is what turns a basic encoder into a real operations tool. Migration tasks, redirect audits, QA spreadsheets, test fixtures, API samples, and bulk content updates all require many URLs to be transformed at once. Processing each line independently makes it possible to scan large lists, identify malformed entries, and produce clean output without writing a throwaway script for every task. That matters for teams who want speed without sacrificing reviewability. Batch output is also easier to share in tickets, docs, and spreadsheets than ad hoc snippets produced one at a time.</p>
+      <p>When batch conversion sits beside history, diff, and normalization, the tool becomes much more useful as a daily workspace. A team can process a large list, compare suspicious entries, replay recent operations, and verify the final output without leaving the page. That is a much better experience than jumping between isolated mini-tools that each solve only one tiny part of the job.</p>
+
+      <h2>Why this kind of URL page earns repeat traffic</h2>
+      <p>The strongest utility pages grow because they are genuinely useful across multiple intents. A developer may arrive looking for `encodeURIComponent`, a marketer may need a UTM builder, a QA analyst may need redirect verification, and a technical SEO specialist may need normalization support. If one page handles those related workflows clearly, it becomes more shareable inside teams and more likely to earn repeat organic traffic over time. That is the real advantage of building a URL suite instead of a single narrow encoder. It matches how people actually work with links in production.</p>
+      <p>For that reason, the best URL encoder pages do more than translate text. They explain when to use each mode, expose supporting tools in the same interface, and help people move from raw input to validated, usable output with less friction. That is what makes a page durable in search and valuable in practice. A tool that helps users encode, inspect, normalize, compare, audit, and safely assemble URLs is more likely to be bookmarked, reused, and recommended because it solves the whole workflow instead of only one step.</p>
     </section>
   </main>
 
@@ -838,6 +797,8 @@
     const batchOutput = document.getElementById('batch-output');
     const batchMode = document.getElementById('batch-mode');
     const inspector = document.getElementById('inspector');
+    const inspectorSource = document.getElementById('inspect-source');
+    const normalizeSource = document.getElementById('normalize-source');
     const normalizeOutput = document.getElementById('normalize-output');
     const auditReport = document.getElementById('audit-report');
     const stripTracking = document.getElementById('strip-tracking');
@@ -1375,8 +1336,22 @@
       setStatus('Parameter removed.');
     });
 
-    document.getElementById('inspect-input').addEventListener('click', () => inspectUrl(inEl.value));
-    document.getElementById('inspect-output').addEventListener('click', () => inspectUrl(outEl.value));
+    document.getElementById('inspect-current').addEventListener('click', () => inspectUrl(inspectorSource.value));
+    document.getElementById('inspect-load-input').addEventListener('click', () => {
+      inspectorSource.value = inEl.value;
+      inspectUrl(inspectorSource.value);
+      setStatus('Loaded main input into URL Inspector.');
+    });
+    document.getElementById('inspect-load-output').addEventListener('click', () => {
+      inspectorSource.value = outEl.value;
+      inspectUrl(inspectorSource.value);
+      setStatus('Loaded main output into URL Inspector.');
+    });
+    document.getElementById('inspect-clear').addEventListener('click', () => {
+      inspectorSource.value = '';
+      inspector.innerHTML = '';
+      setStatus('Inspector cleared.');
+    });
 
     document.getElementById('run-batch').addEventListener('click', runBatch);
     document.getElementById('copy-batch').addEventListener('click', () => copyText(batchOutput.value, 'Batch output'));
@@ -1407,7 +1382,7 @@
 
     document.getElementById('normalize-input-url').addEventListener('click', () => {
       try {
-        normalizeOutput.value = normalizeUrl(inEl.value, {
+        normalizeOutput.value = normalizeUrl(normalizeSource.value, {
           stripTracking: stripTracking.checked,
           stripFragment: stripFragment.checked
         });
@@ -1418,9 +1393,26 @@
     });
 
     document.getElementById('audit-input-url').addEventListener('click', () => {
-      const findings = runSecurityAudit(inEl.value);
+      const findings = runSecurityAudit(normalizeSource.value);
       renderAudit(findings);
       setStatus('Security audit completed.');
+    });
+
+    document.getElementById('normalize-load-input').addEventListener('click', () => {
+      normalizeSource.value = inEl.value;
+      setStatus('Loaded main input into normalize and audit.');
+    });
+
+    document.getElementById('normalize-load-output').addEventListener('click', () => {
+      normalizeSource.value = outEl.value;
+      setStatus('Loaded main output into normalize and audit.');
+    });
+
+    document.getElementById('normalize-clear').addEventListener('click', () => {
+      normalizeSource.value = '';
+      normalizeOutput.value = '';
+      auditReport.innerHTML = '';
+      setStatus('Normalize and audit cleared.');
     });
 
     document.getElementById('build-utm-url').addEventListener('click', buildUtmUrl);
@@ -1448,27 +1440,31 @@
       }
     });
 
+    const workspaceTabs = [...document.querySelectorAll('.workspace-tab')];
+    const workspacePanels = [...document.querySelectorAll('.workspace-panel')];
+
+    function setWorkspace(targetId) {
+      workspaceTabs.forEach((button) => {
+        const active = button.dataset.workspaceTarget === targetId;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      workspacePanels.forEach((panel) => {
+        panel.hidden = panel.id !== targetId;
+      });
+    }
+
+    workspaceTabs.forEach((button) => {
+      button.addEventListener('click', () => setWorkspace(button.dataset.workspaceTarget));
+    });
+
+    setWorkspace('workspace-encoder');
     updateStats();
     renderParams();
     renderHistory();
   </script>
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

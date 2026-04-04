@@ -108,6 +108,42 @@
     {"@type": "Question", "name": "Is it safe to decode JWTs?", "acceptedAnswer": {"@type": "Answer", "text": "Decoding is safe because it reveals only encoded data. Signature verification is what confirms authenticity. This tool does not store or share tokens."}}
   ]}
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Complete Guide to JWT Decoding, Claim Validation, and Signature Verification",
+    "description": "Learn how to inspect JWT headers and payloads, verify signatures, validate exp, nbf, iat, iss, and aud claims, and debug bearer tokens for APIs, SSO, and microservices without sending tokens to remote servers.",
+    "author": {
+      "@type": "Organization",
+      "name": "ToolsMatic"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ToolsMatic",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://toolsmatic.me/assets/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://toolsmatic.me/tools/jwt-inspector.html"
+    },
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "about": [
+      "JWT decoder",
+      "JWT inspector",
+      "JWT signature verification",
+      "Bearer token debugging",
+      "Claim validation",
+      "HS256 verification",
+      "RS256 verification"
+    ]
+  }
+  </script>
   
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="stylesheet" href="../assets/styles.css">
@@ -218,6 +254,112 @@
       border-bottom: 1px solid var(--border-color);
       word-break: break-word;
     }
+    .jwt-breadcrumbs {
+      margin: 12px auto 0;
+      max-width: 1120px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+    .jwt-breadcrumbs a {
+      color: #67e8f9;
+      text-decoration: none;
+    }
+    .jwt-hero {
+      margin: 20px 0 14px;
+      padding: 28px 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(6, 182, 212, 0.14), transparent 34%),
+        radial-gradient(circle at 86% 22%, rgba(59, 130, 246, 0.14), transparent 30%),
+        linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(9, 15, 28, 0.94));
+      box-shadow: 0 24px 60px rgba(2, 6, 23, 0.22);
+    }
+    .jwt-shell {
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      box-shadow: 0 24px 60px rgba(2, 6, 23, 0.18);
+    }
+    .jwt-shell .muted-bg {
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(15, 23, 42, 0.62);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .jwt-shell textarea,
+    .jwt-shell input,
+    .jwt-shell select {
+      border-radius: 14px;
+    }
+    .jwt-shell pre {
+      max-width: 100%;
+      overflow: auto;
+    }
+    .jwt-seo-card,
+    .jwt-compare-card {
+      margin: 40px 0;
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      background: rgba(255, 255, 255, 0.025);
+      box-shadow: 0 18px 42px rgba(2, 6, 23, 0.16);
+    }
+    .jwt-seo-card p,
+    .jwt-seo-card li,
+    .jwt-compare-note {
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .jwt-seo-card code,
+    .jwt-compare-card code {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 1px 6px;
+      color: var(--text-primary);
+    }
+    .jwt-compare-card table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 880px;
+      table-layout: fixed;
+      background: rgba(2, 6, 23, 0.22);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .jwt-compare-card thead {
+      background: rgba(103, 232, 249, 0.08);
+    }
+    .jwt-compare-card th {
+      text-align: left;
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+    .jwt-compare-card td,
+    .jwt-compare-card th {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      vertical-align: top;
+    }
+    .jwt-compare-card a {
+      color: #67e8f9;
+      text-decoration: none;
+    }
+    .jwt-check {
+      color: #34d399;
+      font-weight: 700;
+    }
+    .jwt-muted-cell {
+      color: var(--text-secondary);
+    }
+    @media (max-width: 768px) {
+      .jwt-hero,
+      .jwt-seo-card,
+      .jwt-compare-card {
+        padding: 20px 16px;
+        border-radius: 18px;
+      }
+    }
   </style>
 
     <style>
@@ -253,7 +395,14 @@
   </header>
 
   <main>
-    <section style="text-align:center; margin: 24px 0 10px;">
+
+    <nav aria-label="Breadcrumb" class="jwt-breadcrumbs">
+      <a href="/">Home</a> /
+      <a href="/#tools">Tools</a> /
+      <span aria-current="page">JWT Inspector</span>
+    </nav>
+
+    <section class="jwt-hero" style="text-align:center;">
       <h1 style="font-size: 2.4em; margin: 0 0 8px;">Professional JWT Inspector</h1>
       <p style="max-width: 840px; margin: 0 auto; line-height: 1.7; color: var(--text-secondary);">
         Decode JWTs, validate claims, and verify signatures with HS256/RS256 locally. Inspect issuer, audience, clock skew, and token health in one place. Everything runs client-side with zero uploads.
@@ -267,8 +416,8 @@
       </div>
     </section>
 
-    <section class="tool-shell">
-      <h1>JWT Inspector Pro</h1>
+    <section class="tool-shell jwt-shell">
+      <h2>JWT Inspector Pro</h2>
       <label class="label" for="jwt-input">Paste a JWT</label>
       <textarea id="jwt-input" rows="6" placeholder="eyJhbGciOi..." spellcheck="false"></textarea>
       <div class="inline-controls" style="margin-top:12px;flex-wrap:wrap;gap:8px;">
@@ -349,74 +498,120 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="jwt-seo">
+    <section class="section jwt-seo-card" aria-labelledby="jwt-seo">
       <h2 id="jwt-seo">JWT Inspector for Professional Token Debugging</h2>
-      <p>ToolsMatic JWT Inspector is built for engineers who need fast, accurate answers when debugging authentication. It decodes JWT headers and payloads, validates exp/nbf/iat claims with clock skew, and verifies signatures for HS256/HS384/HS512 and RS256/RS384/RS512 without sending tokens to any server. That means you can inspect bearer tokens, access tokens, and refresh tokens in sensitive environments while keeping data private and offline-ready.</p>
-      <p>Unlike basic decoders, this inspector highlights token health and makes it obvious when a token is expired, not yet valid, or missing critical claims. Issuer and audience checks help confirm tokens belong to the right identity provider and client. For SSO, API gateways, or microservices, this saves hours of trial and error by surfacing the exact claim that fails validation.</p>
-      <h2>Signature Verification Without Risk</h2>
-      <p>Paste a shared secret for HS algorithms or a PEM public key for RS algorithms and verify signatures instantly. The verification runs in your browser using the Web Crypto API, so keys never leave your device. This protects sensitive keys and tokens while giving you the same verification outcome you would get from server-side libraries.</p>
-      <h2>JWT Claims, Clock Skew, and Validation Strategy</h2>
-      <p>Production systems often suffer from clock drift across servers and devices. The built-in clock skew control allows a safe time window so valid tokens do not fail exp/nbf checks by a few seconds. You can also override the current time to reproduce production incidents or investigate expired tokens from logs.</p>
-      <p>When troubleshooting JWT authentication, start by checking the header for the algorithm, then verify the payload claims for iss, aud, exp, nbf, and iat. If the signature fails, validate the exact key being used and confirm no token segment was modified. This inspector is optimized for these workflows with clear status messages and fast copy buttons.</p>
-      <h2>Built for Security, QA, and DevOps Teams</h2>
-      <p>Security analysts use it to validate tokens in restricted environments, QA teams use it to confirm automated test tokens match expected claims, and DevOps teams use it to quickly identify clock skew problems between services. Because everything runs locally, it is safe to use with production tokens under strict compliance requirements.</p>
+      <p>ToolsMatic JWT Inspector is built for engineers who need fast, accurate answers when debugging authentication. It decodes JWT headers and payloads, validates <code>exp</code>, <code>nbf</code>, and <code>iat</code> claims with clock skew, and verifies signatures for HS256, HS384, HS512, RS256, RS384, and RS512 without sending tokens to any server. That means you can inspect bearer tokens, access tokens, ID tokens, and refresh tokens in sensitive environments while keeping data private and offline-ready. This matters because most JWT issues happen under pressure: an API call starts returning <code>401</code>, an SSO login silently fails, a mobile client gets an expired token too early, or a service begins rejecting tokens from a provider you thought was configured correctly.</p>
+      <p>When people search for a JWT decoder, JWT inspector, or bearer token debugger, they rarely want a toy tool that only splits the token into three parts. They want to know why a token is failing, what the header says about the algorithm, whether the issuer and audience are correct, whether the token is expired, and whether the signature is actually valid. That is the gap this page is designed to fill. Instead of only decoding the JSON, it helps users answer the next level of questions that matter in production: does this token belong here, is it still valid now, and was it signed by the key I expect?</p>
+      <h2>Decode First, Verify Second: The JWT Workflow That Actually Saves Time</h2>
+      <p>One of the most common mistakes in JWT troubleshooting is treating decoding and verification as the same operation. They are not. Decoding reads the header and payload. Verification proves authenticity. A decoded token can still be expired, issued for the wrong audience, signed with the wrong key, or tampered with entirely. That distinction matters for every stack that uses JSON Web Tokens, whether you are handling OAuth access tokens, OpenID Connect ID tokens, API gateway bearer tokens, or custom tokens between microservices. Good JWT debugging starts with a fast decode because you immediately see the algorithm, issuer, subject, audience, timestamps, and any custom claims. But the next step should always be verification and validation, because readable JSON by itself does not mean a token can be trusted.</p>
+      <p>That is why this inspector keeps header, payload, signature, claim review, and verification controls in one workspace. You should not have to bounce across multiple tabs just to answer whether a token is malformed, expired, wrongly issued, or cryptographically invalid. A better JWT tool brings those answers together so you can go from incident to explanation in one pass.</p>
+      <h2>JWT Claims That Matter Most in Real Systems</h2>
+      <p>Most real JWT problems come down to a small set of claims. The <code>iss</code> claim tells you who issued the token. The <code>aud</code> claim tells you who the token was meant for. The <code>exp</code> claim controls expiry. The <code>nbf</code> claim marks when a token becomes valid. The <code>iat</code> claim indicates when the token was issued. The <code>sub</code> claim typically identifies the subject or user. In identity systems and API architectures, these values are not decorative. They are the difference between a valid session and a rejected request. If your <code>iss</code> is wrong, the token may come from a different identity provider or environment. If your <code>aud</code> is wrong, the token may not be intended for the resource server that is checking it. If <code>exp</code> and <code>nbf</code> are out of sync with server time, authentication can fail even when the rest of the token looks correct.</p>
+      <p>That is why issuer and audience inputs matter in a JWT inspector. They let you compare the token against the exact values your backend expects instead of mentally scanning the payload and hoping you did not miss a subtle mismatch. The same applies to a clock-skew setting. In distributed systems, a token can appear expired or not-yet-valid because two machines disagree by a few seconds. A proper validation workflow accounts for that reality. When you can reproduce time-sensitive behavior with a clock-skew window or an override for “now,” debugging becomes much faster and much more precise.</p>
+      <h2>Why Clock Skew Breaks More Tokens Than Teams Expect</h2>
+      <p>JWT failures caused by time are surprisingly common. Containers restart on nodes with slightly different system clocks. Mobile devices drift. Logging systems capture tokens after they have already aged. Reverse proxies and application servers do not always agree on the exact current second. That is where clock skew becomes more than a theoretical setting. A small allowed skew can prevent valid tokens from failing because one service is a few seconds ahead of another. The same feature is useful for incident review: if a production request failed fifteen minutes ago, you can override the current time and examine the token in the context of that exact moment. This helps answer whether the failure was caused by expiry, not-before, or a deeper signature or audience issue.</p>
+      <p>When users search for JWT expired but still valid, JWT nbf issue, or bearer token clock skew, they are usually dealing with these timing mismatches. A professional JWT inspector should make that class of problem obvious, not hidden. Time-based claims are small fields with outsized operational impact.</p>
+      <h2>HS256 vs RS256 and Why Key Type Confusion Causes Verification Failures</h2>
+      <p>Another source of pain in JWT debugging is algorithm and key confusion. HMAC-based algorithms such as HS256 use a shared secret for both signing and verification. RSA-based algorithms such as RS256 use a private key for signing and a public key for verification. Teams often paste the wrong kind of key into the wrong workflow, or they assume a token marked with one algorithm should be verified with a different one. When that happens, the token may decode perfectly and still fail verification every time. A good inspector reduces that confusion by showing the header algorithm, allowing an explicit override when needed, and making the verification input clear: secret for HS, PEM public key for RS.</p>
+      <p>This matters in real integrations with identity providers, internal auth services, and gateway products. If your API trusts RS256 tokens from an external issuer, you want to confirm the token header, the expected public key, and the exact signature outcome locally before you blame the application code. If your internal service issues HS256 tokens, you want to verify that the shared secret is the same one your service actually uses in production. Debugging authentication is usually easier when the cryptography step is visible and controllable instead of hidden behind a library error.</p>
+      <h2>JWT Debugging for APIs, SSO, Microservices, and QA</h2>
+      <p>JWT inspection is not only a security task. It is also a QA task, a DevOps task, and an integration task. API teams use JWT tools to diagnose authorization failures and scope mismatches. SSO implementers use them to confirm issuer, audience, and identity claims after login flows. Microservice teams use them to validate internal tokens moving through gateways, proxies, and service meshes. QA teams use them to confirm that automated test tokens contain the claims required for role-based scenarios. Support engineers use them to triage customer reports that say “the login worked but the app rejected the token.” In all of these cases, the fastest path is usually the same: paste the token, decode it, inspect the claims, verify the signature, and compare the token against the expected environment settings.</p>
+      <p>That is also why keeping the tool local matters. Engineers often work with production-like data, staging secrets, or real public keys during investigation. Browser-only inspection reduces the risk of copying sensitive tokens into third-party services that store or transmit the payload. For organizations with stricter compliance, that local workflow is not a convenience feature. It is the feature.</p>
+      <h2>How to Investigate a Failing Bearer Token Step by Step</h2>
+      <p>A reliable JWT debugging flow is straightforward when the tool supports it properly. Start by decoding the token and confirming it has exactly three parts. Check the header for the <code>alg</code> value and any <code>kid</code> or type information. Then inspect the payload for <code>iss</code>, <code>aud</code>, <code>sub</code>, <code>exp</code>, <code>nbf</code>, and <code>iat</code>. Compare the issuer and audience against the values your application expects, rather than assuming they are close enough. Review time-based claims with a clock-skew window. Finally, verify the signature with the exact secret or public key used by the issuing system. If verification fails, check whether the key is wrong, the algorithm is wrong, or the token body was altered. If verification passes but the request still fails, the problem is more likely to be claim policy, scope policy, or an application-level authorization rule.</p>
+      <p>This method seems simple, but the reason it works is that it forces clarity. Many JWT failures are caused by one incorrect assumption carried through multiple layers of a stack. When you can inspect the raw token in one clean interface, those assumptions become easier to test and eliminate.</p>
+      <h2>JWT Inspector vs Encoder vs Debugger Tools on Other Sites</h2>
+      <p>Some public JWT pages focus heavily on encoding and generation. Others prioritize broad token families such as JWE or PASETO. Others are intentionally simple decoders that expose header and payload fields without built-in claim checks. Those tools can still be useful, but they serve different workflows. ToolsMatic JWT Inspector is intentionally biased toward inspection and validation. The page is built for people who need to audit claims, check expiry logic, compare issuer and audience, verify signatures locally, and copy the decoded structures quickly into support tickets, test notes, or incident reports. That focus is practical. A developer resolving a live auth failure usually needs clarity more than feature sprawl.</p>
+      <p>That said, comparison matters. Some sites do offer JWT encoding or JWE features that this page does not try to duplicate. That is why the comparison table below is written carefully from public tool pages reviewed on April 3, 2026. Where a feature was not clearly shown on the reviewed page, the table says <code>Not shown</code> instead of guessing.</p>
+      <h2>Why Local JWT Inspection Is the Safer Default</h2>
+      <p>JWTs are often treated casually because they are text, but they can still contain sensitive identifiers, environment information, tenant IDs, email addresses, role sets, application IDs, and internal claims. A local JWT inspector reduces the chance that token contents or verification material will be sent to outside systems. That matters for restricted environments, regulated workloads, enterprise support, and any debugging session involving real production data. It also keeps the workflow faster. There is no wait for a backend round-trip just to decode a token, and there is no uncertainty about where the token went after you pasted it.</p>
+      <p>For teams that handle modern authentication across APIs, SPAs, mobile apps, and service-to-service traffic, a good JWT inspector should feel like a dependable troubleshooting instrument. It should decode quickly, explain clearly, and help users move from confusion to evidence without unnecessary risk. That is the standard this page is trying to meet.</p>
     </section>
 
-    <section style="margin: 40px 0; padding: 30px; background: rgba(6, 182, 212, 0.02); border-radius: 12px;">
-      <h2 style="text-align:center; margin-bottom: 24px;">Elite JWT Features</h2>
-      <div class="feature-grid">
-        <div class="feature-card"><strong>Signature Verification</strong><p>Verify HS256/HS384/HS512 and RS256/RS384/RS512 locally.</p></div>
-        <div class="feature-card"><strong>Claim Validation</strong><p>Check exp, nbf, iat with configurable clock skew.</p></div>
-        <div class="feature-card"><strong>Issuer & Audience</strong><p>Validate iss and aud for secure token scope checks.</p></div>
-        <div class="feature-card"><strong>Token Health</strong><p>Summary status with warnings for missing or invalid claims.</p></div>
-        <div class="feature-card"><strong>JSON Copy</strong><p>Copy header, payload, and signature instantly.</p></div>
-        <div class="feature-card"><strong>Offline Ready</strong><p>Runs entirely in the browser with no uploads.</p></div>
-        <div class="feature-card"><strong>PEM Support</strong><p>Paste public keys to validate RS signatures.</p></div>
-        <div class="feature-card"><strong>Humanized Times</strong><p>Readable timestamps with offsets from now.</p></div>
-        <div class="feature-card"><strong>Strict Parsing</strong><p>Clear errors for malformed JSON or base64url.</p></div>
-        <div class="feature-card"><strong>Security First</strong><p>No storage, no analytics, no token leaks.</p></div>
-        <div class="feature-card"><strong>Fast Debugging</strong><p>Instant decoding for logs, APIs, and SSO tokens.</p></div>
-        <div class="feature-card"><strong>Professional Output</strong><p>Clean panels for header, payload, claims, and status.</p></div>
-      </div>
-    </section>
-
-    <section style="margin: 40px 0;">
-      <h2 style="text-align:center; margin-bottom: 16px;">ToolsMatic vs Other JWT Inspectors</h2>
+    <section class="jwt-compare-card" aria-labelledby="jwt-compare">
+      <h2 id="jwt-compare" style="text-align:center; margin-bottom: 10px;">ToolsMatic vs Real JWT Tool Pages</h2>
+      <p class="jwt-compare-note" style="text-align:center; max-width: 920px; margin: 0 auto 18px;">
+        Comparison based on the public tool pages reviewed on April 3, 2026. <code>Not shown</code> means the feature was not clearly advertised on the reviewed tool page, so it is not claimed here.
+      </p>
       <div style="overflow-x:auto;">
-        <table style="width:100%; border-collapse: collapse; min-width: 800px; table-layout: fixed;">
+        <table>
           <thead>
             <tr>
-              <th style="text-align:left; padding: 10px;">Feature</th>
+              <th>Feature</th>
               <th>ToolsMatic</th>
-              <th>jwt.io</th>
-              <th>Auth0 Debugger</th>
-              <th>JWT Tool</th>
-              <th>DevUtils</th>
+              <th><a href="https://jwt.io/" target="_blank" rel="noopener noreferrer nofollow">JWT.io</a></th>
+              <th><a href="https://token.dev/jwt/" target="_blank" rel="noopener noreferrer nofollow">Token.dev</a></th>
+              <th><a href="https://www.authgear.com/tools/jwt-jwe-debugger" target="_blank" rel="noopener noreferrer nofollow">Authgear</a></th>
+              <th><a href="https://fusionauth.io/dev-tools/jwt-decoder" target="_blank" rel="noopener noreferrer nofollow">FusionAuth</a></th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Decode header/payload</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
-            <tr><td>Signature verification</td><td>Yes</td><td>Partial</td><td>Partial</td><td>Yes</td><td>Partial</td></tr>
-            <tr><td>Issuer/audience validation</td><td>Yes</td><td>No</td><td>No</td><td>Limited</td><td>No</td></tr>
-            <tr><td>Clock skew controls</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
-            <tr><td>Health summary</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
-            <tr><td>HS256 + RS256</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Partial</td><td>Partial</td></tr>
-            <tr><td>Offline ready</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
-            <tr><td>Privacy-first</td><td>Yes</td><td>Partial</td><td>Partial</td><td>Partial</td><td>Partial</td></tr>
-            <tr><td>Cost</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Paid</td></tr>
+            <tr>
+              <td>Decode JWT header and payload</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+            </tr>
+            <tr>
+              <td>Signature verification on the tool page</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Discussed, decode page focus</td>
+            </tr>
+            <tr>
+              <td>Issuer and audience validation inputs</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+            <tr>
+              <td>Clock-skew and “override now” claim checks</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Human-friendly warnings shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+            <tr>
+              <td>JWT generation / encoding workflow</td>
+              <td class="jwt-muted-cell">Inspection-focused</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+            <tr>
+              <td>Public-key / JWK / JWKS verification shown</td>
+              <td class="jwt-check">Public key</td>
+              <td class="jwt-muted-cell">Secret shown</td>
+              <td class="jwt-muted-cell">Signing key shown</td>
+              <td class="jwt-check">JWK, JWKS, PEM</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+            <tr>
+              <td>Explicit browser-local privacy wording</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-check">Browser-only verification shown</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+            <tr>
+              <td>JWE support on the same page</td>
+              <td class="jwt-muted-cell">No</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
           </tbody>
         </table>
-      </div>
-    </section>
-
-    <section style="margin: 40px 0;">
-      <h2 style="text-align:center; margin-bottom: 20px;">Trusted by Security Teams</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card"><p>"Signature verification plus clock skew checks replaced three separate tools."</p><strong>Leah Brooks</strong><span>Security Engineer, Cleargate</span></div>
-        <div class="testimonial-card"><p>"Issuer/audience validation made our SSO debugging twice as fast."</p><strong>Victor Shen</strong><span>Platform Lead, OrbitCloud</span></div>
-        <div class="testimonial-card"><p>"The PEM verifier works offline, which is critical in restricted networks."</p><strong>Maria Gomez</strong><span>SRE, Northwind Health</span></div>
-        <div class="testimonial-card"><p>"Token health summary makes triage easy for support teams."</p><strong>Jonas Patel</strong><span>Support Ops, Interscale</span></div>
-        <div class="testimonial-card"><p>"We can safely inspect tokens without sending them to third-party sites."</p><strong>Helen Cho</strong><span>Compliance Analyst, Arden Fintech</span></div>
       </div>
     </section>
 
@@ -681,9 +876,6 @@
 </script>
 </body>
 </html>
-
-
-
 
 
 

@@ -313,6 +313,531 @@
   };
 
   const isToolPage = () => /^\/tools\/.+\.html$/i.test(window.location.pathname || '');
+  const isHomePage = () => {
+    const path = (window.location.pathname || '').toLowerCase();
+    return path === '/' || path === '/index.html' || path.endsWith('/index.html');
+  };
+  const prefersReducedMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasCoarsePointer = () => window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  const slugify = (value) => (value || 'section')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 60) || 'section';
+
+  const ensureNodeId = (node, fallback, index = 0) => {
+    if (!node) return '';
+    if (!node.id) {
+      node.id = `${fallback}-${index + 1}-${slugify(node.textContent || fallback)}`;
+    }
+    return node.id;
+  };
+
+  const decorateSiteShell = () => {
+    const body = document.body;
+    const header = document.querySelector('header');
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
+
+    body.classList.add('site-shell');
+    if (isHomePage()) {
+      body.classList.add('page-home');
+    } else if (isToolPage()) {
+      body.classList.add('page-tool');
+    } else {
+      body.classList.add('page-standard');
+    }
+
+    if (header) header.classList.add('site-header');
+    if (main) main.classList.add('site-main');
+    if (footer) footer.classList.add('site-footer');
+
+    if (!prefersReducedMotion() && !document.querySelector('.site-orb')) {
+      const fragment = document.createDocumentFragment();
+      ['a', 'b', 'c'].forEach((suffix) => {
+        const orb = document.createElement('div');
+        orb.className = `site-orb site-orb-${suffix}`;
+        fragment.appendChild(orb);
+      });
+      body.prepend(fragment);
+    }
+  };
+
+  const decorateAdSlots = () => {
+    const candidates = new Set();
+
+    document.querySelectorAll('main div, main section, aside div').forEach((node) => {
+      if (!(node instanceof HTMLElement)) return;
+      if (node.classList.contains('ad-slot')) return;
+      if (node.querySelector('.ad-slot-label')) return;
+      if (node.closest('.suggestions-section')) return;
+
+      const directScripts = Array.from(node.children).filter((child) => child.tagName === 'SCRIPT');
+      const hasAdScript = directScripts.some((script) => {
+        const scriptText = `${script.src || ''} ${script.textContent || ''}`;
+        return /atOptions|adsbygoogle|highperformanceformat|fixesconsessionconsession/i.test(scriptText);
+      });
+      const hasIframe = !!node.querySelector('iframe');
+      if (!hasAdScript && !hasIframe) return;
+
+      const compactText = (node.textContent || '').replace(/\s+/g, ' ').trim();
+      if (compactText.length > 120 && !hasIframe) return;
+
+      candidates.add(node);
+    });
+
+    candidates.forEach((node) => {
+      node.classList.add('ad-slot');
+      if (node.closest('.hero')) {
+        node.classList.add('ad-slot-inline');
+      }
+      if (!node.querySelector('.ad-slot-label')) {
+        const label = document.createElement('span');
+        label.className = 'ad-slot-label';
+        label.textContent = 'Sponsored';
+        node.insertAdjacentElement('afterbegin', label);
+      }
+    });
+  };
+
+  const initScrollReveal = () => {
+    const targets = [...new Set([
+      ...document.querySelectorAll('.home-intro, .page-intro, .hero, .home-toolbar, .tool-stage, .section, .tool-shell, .card, .ad-slot, .rail-card, .about-section, .team-section, .value-card')
+    ])];
+
+    targets.forEach((target) => target.classList.add('scroll-reveal'));
+
+    if (prefersReducedMotion() || !('IntersectionObserver' in window)) {
+      targets.forEach((target) => target.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -8% 0px'
+    });
+
+    targets.forEach((target) => observer.observe(target));
+  };
+
+  const bindTilt = (element, intensity = 7) => {
+    if (!element || element.dataset.tiltBound === 'true') return;
+    element.dataset.tiltBound = 'true';
+
+    const reset = () => {
+      element.style.removeProperty('--tilt-x');
+      element.style.removeProperty('--tilt-y');
+      element.style.removeProperty('--glow-x');
+      element.style.removeProperty('--glow-y');
+    };
+
+    element.addEventListener('pointermove', (event) => {
+      const rect = element.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+      const rotateX = (0.5 - y) * intensity;
+      const rotateY = (x - 0.5) * intensity;
+
+      element.style.setProperty('--tilt-x', `${rotateX.toFixed(2)}deg`);
+      element.style.setProperty('--tilt-y', `${rotateY.toFixed(2)}deg`);
+      element.style.setProperty('--glow-x', `${(x * 100).toFixed(2)}%`);
+      element.style.setProperty('--glow-y', `${(y * 100).toFixed(2)}%`);
+    });
+
+    element.addEventListener('pointerleave', reset);
+    element.addEventListener('pointercancel', reset);
+  };
+
+  const initInteractiveMotion = () => {
+    if (prefersReducedMotion() || hasCoarsePointer()) return;
+
+    document.querySelectorAll('.page-home .card, .page-home .hero, .page-home .home-toolbar, .page-tool .tool-stage, .page-tool .rail-card, .page-standard .page-intro')
+      .forEach((element) => bindTilt(element, element.classList.contains('hero') ? 4 : 7));
+  };
+
+  const getHomeCategory = (title) => {
+    const key = (title || '').trim().toLowerCase();
+    const categoryMap = {
+      'word counter': 'Writing',
+      'quote generator': 'Writing',
+      'ascii art generator': 'Writing',
+      'case converter': 'Writing',
+      'markdown previewer': 'Writing',
+      'text diff checker': 'Writing',
+      'lorem ipsum generator': 'Writing',
+      'password generator': 'Developer',
+      'json formatter': 'Developer',
+      'base64 encoder': 'Developer',
+      'jwt inspector': 'Developer',
+      'regex tester': 'Developer',
+      'uuid maker': 'Developer',
+      'url encoder': 'Developer',
+      'html minifier': 'Developer',
+      'csv to json': 'Data',
+      'csv inspector': 'Data',
+      'gradient generator': 'Design',
+      'contrast checker': 'Design',
+      'image compressor': 'Design',
+      'qr code maker': 'Design',
+      'color picker': 'Design',
+      'unit converter': 'Everyday',
+      'timezone converter': 'Everyday'
+    };
+    return categoryMap[key] || 'Utility';
+  };
+
+  const initHomeExperience = () => {
+    if (!isHomePage()) return;
+
+    const main = document.querySelector('main');
+    const hero = main?.querySelector('.hero');
+    if (!main || !hero) return;
+
+    hero.classList.add('home-hero');
+    main.querySelector('.home-intro')?.remove();
+    main.querySelector('.home-toolbar')?.remove();
+
+    const cards = Array.from(hero.querySelectorAll('.card'));
+    const grids = Array.from(hero.querySelectorAll('.grid'));
+    const bandLabels = [
+      { title: 'Popular picks', subtitle: 'The fastest routes into the tools people use most.' },
+      { title: 'Writing and creativity', subtitle: 'Draft, refine, and generate without leaving the browser.' },
+      { title: 'Developer essentials', subtitle: 'Formatting, validation, and utility tools for daily technical work.' },
+      { title: 'Design workflow', subtitle: 'Color, gradients, visuals, and media helpers for polished output.' },
+      { title: 'Content workflow', subtitle: 'Preview and test content-heavy tasks in one place.' },
+      { title: 'Web utilities', subtitle: 'Encoding, picking, and converting for browser-first workflows.' },
+      { title: 'Everyday helpers', subtitle: 'Small practical utilities for quick comparisons and conversions.' },
+      { title: 'Data cleanup', subtitle: 'Transform and inspect structured data with less friction.' }
+    ];
+
+    cards.forEach((card, index) => {
+      const title = card.querySelector('h3')?.textContent?.trim() || `Tool ${index + 1}`;
+      const description = card.querySelector('p')?.textContent?.trim() || '';
+      const category = getHomeCategory(title);
+      card.dataset.category = category;
+      card.dataset.search = `${title} ${description} ${category}`.toLowerCase();
+
+      if (!card.querySelector('.card-meta')) {
+        const meta = document.createElement('div');
+        meta.className = 'card-meta';
+
+        const pill = document.createElement('span');
+        pill.className = 'pill';
+        pill.textContent = category;
+
+        const arrow = document.createElement('span');
+        arrow.className = 'card-arrow';
+        arrow.textContent = 'Open tool';
+
+        meta.append(pill, arrow);
+        card.appendChild(meta);
+      }
+    });
+
+    grids.forEach((grid, index) => {
+      grid.classList.add('home-grid');
+      const previous = grid.previousElementSibling;
+      if (previous && previous.classList.contains('home-grid-label')) return;
+
+      const band = bandLabels[index] || { title: `More tools ${index + 1}`, subtitle: 'Every feature remains available, just easier to browse.' };
+      const label = document.createElement('div');
+      label.className = 'home-grid-label';
+
+      const copy = document.createElement('div');
+      const kicker = document.createElement('span');
+      kicker.textContent = `Band ${index + 1}`;
+      const title = document.createElement('strong');
+      title.textContent = band.title;
+      const subtitle = document.createElement('p');
+      subtitle.textContent = band.subtitle;
+      copy.append(kicker, title, subtitle);
+
+      label.appendChild(copy);
+      grid.insertAdjacentElement('beforebegin', label);
+    });
+
+    const navLinks = document.querySelector('header .nav-links');
+    const allToolsLink = navLinks?.querySelector('.nav-btn');
+    let headerSearch = navLinks?.querySelector('.nav-search');
+
+    if (!headerSearch && navLinks) {
+      headerSearch = document.createElement('label');
+      headerSearch.className = 'nav-search';
+
+      const searchLabel = document.createElement('span');
+      searchLabel.className = 'sr-only';
+      searchLabel.textContent = 'Search tools';
+
+      const searchInput = document.createElement('input');
+      searchInput.type = 'search';
+      searchInput.placeholder = 'Search tools...';
+      searchInput.setAttribute('aria-label', 'Search tools');
+      searchInput.autocomplete = 'off';
+
+      headerSearch.append(searchLabel, searchInput);
+      navLinks.insertBefore(headerSearch, allToolsLink || navLinks.firstChild);
+    }
+
+    const searchInput = headerSearch?.querySelector('input[type="search"]');
+
+    let emptyState = hero.querySelector('.home-empty-state');
+    if (!emptyState) {
+      emptyState = document.createElement('div');
+      emptyState.className = 'home-empty-state';
+      emptyState.textContent = 'No tools match that search yet. Try a broader keyword.';
+      hero.appendChild(emptyState);
+    }
+
+    const applyFilters = () => {
+      const query = (searchInput?.value || '').trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const isVisible = !query || (card.dataset.search || '').includes(query);
+        card.classList.toggle('is-hidden', !isVisible);
+        if (isVisible) visibleCount += 1;
+      });
+
+      grids.forEach((grid) => {
+        const label = grid.previousElementSibling;
+        const hasVisibleCards = !!grid.querySelector('.card:not(.is-hidden)');
+        grid.classList.toggle('is-empty', !hasVisibleCards);
+        if (label && label.classList.contains('home-grid-label')) {
+          label.classList.toggle('is-hidden', !hasVisibleCards);
+        }
+      });
+
+      const isFiltering = Boolean(query);
+      document.body.classList.toggle('home-filtering', isFiltering);
+      emptyState.classList.toggle('is-active', visibleCount === 0);
+    };
+
+    if (searchInput && !searchInput.dataset.bound) {
+      searchInput.dataset.bound = 'true';
+      searchInput.addEventListener('input', applyFilters);
+    }
+
+    applyFilters();
+  };
+
+  const removeFakeSocialProof = () => {
+    const reviewHeadingPattern = /what users(?:\s+are)?\s+saying|what users say|what artists .* say|user reviews|trusted by .* teams/i;
+    const removable = new Set();
+
+    document.querySelectorAll('.testimonial-grid, .review-grid, .testimonial-card, .review-card').forEach((node) => {
+      const section = node.closest('section');
+      removable.add(section || node.parentElement || node);
+    });
+
+    document.querySelectorAll('h1, h2, h3').forEach((heading) => {
+      const text = (heading.textContent || '').replace(/\s+/g, ' ').trim();
+      if (!reviewHeadingPattern.test(text)) return;
+      removable.add(heading.closest('section') || heading.parentElement || heading);
+    });
+
+    removable.forEach((node) => {
+      if (!node || !node.parentElement) return;
+      node.remove();
+    });
+
+    const sanitizeStructuredData = (value) => {
+      if (Array.isArray(value)) {
+        return value
+          .map((item) => sanitizeStructuredData(item))
+          .filter((item) => item !== undefined);
+      }
+
+      if (value && typeof value === 'object') {
+        const next = {};
+        Object.entries(value).forEach(([key, child]) => {
+          if (key === 'review' || key === 'aggregateRating') return;
+          const cleaned = sanitizeStructuredData(child);
+          if (cleaned !== undefined) next[key] = cleaned;
+        });
+        return next;
+      }
+
+      return value;
+    };
+
+    document.querySelectorAll('script[type="application/ld+json"]').forEach((script) => {
+      const raw = script.textContent?.trim();
+      if (!raw || (!/review/i.test(raw) && !/aggregateRating/i.test(raw))) return;
+
+      try {
+        const parsed = JSON.parse(raw);
+        const cleaned = sanitizeStructuredData(parsed);
+        script.textContent = JSON.stringify(cleaned, null, 2);
+      } catch (_) {
+        // Leave malformed JSON-LD untouched.
+      }
+    });
+  };
+
+  const getSectionSummary = (section) => {
+    const text = Array.from(section.querySelectorAll('p, li'))
+      .map((node) => (node.textContent || '').replace(/\s+/g, ' ').trim())
+      .filter(Boolean)
+      .join(' ');
+
+    if (!text) return '';
+    return text.length > 140 ? `${text.slice(0, 140).trim()}...` : text;
+  };
+
+  const expandCollapsibleSection = (section) => {
+    if (!section || !section.classList.contains('is-collapsible')) return;
+    section.classList.remove('is-collapsed');
+    const toggle = section.querySelector('.section-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'true');
+  };
+
+  const collapseCollapsibleSection = (section) => {
+    if (!section || !section.classList.contains('is-collapsible')) return;
+    section.classList.add('is-collapsed');
+    const toggle = section.querySelector('.section-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  const makeSectionCollapsible = (section, index, collapsedByDefault) => {
+    if (!section || section.classList.contains('is-collapsible')) return;
+    if (section.querySelector('.suggestions-section')) return;
+
+    const hasInteractiveControls = !!section.querySelector('input, textarea, select, canvas, form, [contenteditable="true"]');
+    const buttonCount = section.querySelectorAll('button').length;
+    if (hasInteractiveControls || buttonCount > 2) return;
+
+    const heading = section.querySelector('h2, h3, h4');
+    const title = heading?.textContent?.trim() || `Section ${index + 1}`;
+    const summary = getSectionSummary(section);
+
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'section-toggle';
+    toggle.setAttribute('aria-expanded', collapsedByDefault ? 'false' : 'true');
+
+    const copy = document.createElement('span');
+    copy.className = 'section-toggle-copy';
+
+    const kicker = document.createElement('span');
+    kicker.className = 'section-toggle-kicker';
+    kicker.textContent = 'Guide section';
+
+    const titleNode = document.createElement('span');
+    titleNode.className = 'section-toggle-title';
+    titleNode.textContent = title;
+
+    copy.append(kicker, titleNode);
+
+    if (summary) {
+      const summaryNode = document.createElement('span');
+      summaryNode.className = 'section-toggle-summary';
+      summaryNode.textContent = summary;
+      copy.appendChild(summaryNode);
+    }
+
+    const icon = document.createElement('span');
+    icon.className = 'section-toggle-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = '+';
+
+    toggle.append(copy, icon);
+
+    const panel = document.createElement('div');
+    panel.className = 'section-panel';
+
+    const inner = document.createElement('div');
+    inner.className = 'section-panel-inner';
+
+    while (section.firstChild) {
+      inner.appendChild(section.firstChild);
+    }
+
+    if (heading) {
+      heading.classList.add('section-toggle-source');
+    }
+
+    panel.appendChild(inner);
+    section.append(toggle, panel);
+    section.classList.add('is-collapsible');
+    if (collapsedByDefault) section.classList.add('is-collapsed');
+
+    toggle.addEventListener('click', () => {
+      const isCollapsed = section.classList.contains('is-collapsed');
+      if (isCollapsed) {
+        expandCollapsibleSection(section);
+      } else {
+        collapseCollapsibleSection(section);
+      }
+    });
+  };
+
+  const createRailCard = (kickerText, titleText, bodyNode) => {
+    const card = document.createElement('div');
+    card.className = 'rail-card';
+
+    const kicker = document.createElement('div');
+    kicker.className = 'rail-card-kicker';
+    kicker.textContent = kickerText;
+
+    const title = document.createElement('h3');
+    title.textContent = titleText;
+
+    card.append(kicker, title, bodyNode);
+    return card;
+  };
+
+  const initToolPageExperience = () => {
+    if (!isToolPage()) return;
+    return;
+  };
+
+  const initStandardPageExperience = () => {
+    if (isHomePage() || isToolPage()) return;
+
+    const main = document.querySelector('main');
+    if (!main) return;
+
+    let intro = main.querySelector('.page-intro');
+    if (!intro) {
+      const directHeading = Array.from(main.children).find((child) => child.tagName === 'H1');
+      if (directHeading) {
+        const introNodes = [directHeading];
+        let sibling = directHeading.nextElementSibling;
+        while (sibling && sibling.tagName === 'P' && introNodes.length < 3) {
+          introNodes.push(sibling);
+          sibling = sibling.nextElementSibling;
+        }
+        intro = document.createElement('section');
+        intro.className = 'page-intro';
+        directHeading.insertAdjacentElement('beforebegin', intro);
+        introNodes.forEach((node) => intro.appendChild(node));
+      }
+    }
+
+    if (!intro) {
+      intro = Array.from(main.querySelectorAll('.section')).find((section) => section.querySelector('h1')) || null;
+      if (intro) intro.classList.add('page-intro');
+    }
+
+    const introHeading = intro?.querySelector('h1');
+    const introParagraph = intro?.querySelector('p');
+    if (introHeading) {
+      introHeading.classList.add('page-intro-title');
+      introHeading.removeAttribute('style');
+    }
+    if (introParagraph) {
+      introParagraph.classList.add('page-intro-description');
+      introParagraph.removeAttribute('style');
+    }
+  };
 
   const hasSchemaType = (type) => {
     const re = new RegExp(`"@type"\\s*:\\s*"${type}"`, 'i');
@@ -363,7 +888,7 @@
     const nav = document.createElement('nav');
     nav.className = 'tm-breadcrumb-nav';
     nav.setAttribute('aria-label', 'Breadcrumb');
-    nav.innerHTML = `<a href="/">Home</a> <span>›</span> <a href="/">Tools</a> <span>›</span> <span>${escapeHtml(toolName)}</span>`;
+    nav.innerHTML = `<a href="/">Home</a> <span>&rsaquo;</span> <a href="/">Tools</a> <span>&rsaquo;</span> <span>${escapeHtml(toolName)}</span>`;
     main.insertAdjacentElement('afterbegin', nav);
   };
 
@@ -510,6 +1035,8 @@
 
   // Suggestions Feature
   const initSuggestions = () => {
+    if (!isToolPage()) return;
+    if (document.querySelector('.suggestions-section')) return;
     const toolName = document.querySelector('h1')?.textContent || 'this tool';
     const suggestionsHTML = `
       <div class="suggestions-section">
@@ -528,24 +1055,14 @@
       </div>
     `;
 
-    // Prefer explicit anchor for deterministic placement on tool pages
-    const explicitAnchor = document.getElementById('tool-feedback-anchor');
-    if (explicitAnchor) {
+    // Always append feedback at the end so the tool UI remains first
+    // and suggestions stay last on every tool page.
+    const main = document.querySelector('main');
+    if (main) {
       const container = document.createElement('section');
       container.className = 'section';
       container.innerHTML = suggestionsHTML;
-      explicitAnchor.insertAdjacentElement('beforebegin', container);
-      loadSuggestions();
-      return;
-    }
-
-    // Fallback: insert before first section or before footer if no section exists
-    const firstSection = document.querySelector('main .section');
-    if (firstSection) {
-      const container = document.createElement('section');
-      container.className = 'section';
-      container.innerHTML = suggestionsHTML;
-      firstSection.insertAdjacentElement('beforebegin', container);
+      main.appendChild(container);
       loadSuggestions();
     } else {
       const footer = document.querySelector('footer');
@@ -685,12 +1202,20 @@
     if (typeof ensureMbiAdScript === 'function') ensureMbiAdScript();
     if (typeof ensureLegacyAdScript === 'function') ensureLegacyAdScript();
     if (typeof ensureAds === 'function') ensureAds();
+    decorateSiteShell();
     initResponsiveNav();
     bindKeyboard();
     initThemeToggle();
     initAnalyticsTracking();
     initGlobalToolSeo();
     initSuggestions();
+    removeFakeSocialProof();
+    initStandardPageExperience();
+    initHomeExperience();
+    initToolPageExperience();
+    decorateAdSlots();
+    initScrollReveal();
+    initInteractiveMotion();
   };
 
   if (document.readyState === 'loading') {

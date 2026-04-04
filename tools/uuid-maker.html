@@ -492,6 +492,23 @@
     .format-selector { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 8px; margin: 10px 0; }
     .format-btn { padding: 6px; border: 1px solid var(--border); background: var(--surface); border-radius: 6px; cursor: pointer; font-size: 0.85rem; text-align: center; }
     .format-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+    .uuid-breadcrumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px auto 0; max-width: 1100px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,.03); font-size: 0.92rem; color: var(--muted); }
+    .uuid-breadcrumbs a { color: var(--accent); font-weight: 600; }
+    .uuid-breadcrumb-sep { opacity: 0.55; }
+    .uuid-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,.02); }
+    .uuid-table { width: 100%; min-width: 820px; border-collapse: collapse; }
+    .uuid-table th, .uuid-table td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    .uuid-table thead th { background: rgba(255,255,255,.03); color: var(--text); font-size: 0.92rem; }
+    .uuid-table tbody tr:last-child td { border-bottom: 0; }
+    .uuid-table td strong { color: var(--text); }
+    .tm-col { background: rgba(139,92,246,.08); }
+    .tm-badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; background: linear-gradient(135deg, rgba(139,92,246,.18), rgba(59,130,246,.18)); color: var(--text); font-weight: 700; font-size: 0.8rem; letter-spacing: .01em; }
+    .faq-stack { display: grid; gap: 12px; }
+    .faq-item { border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,.02); overflow: hidden; }
+    .faq-item summary { cursor: pointer; list-style: none; padding: 16px 18px; font-weight: 700; color: var(--text); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item p { margin: 0; padding: 0 18px 18px; color: var(--muted); line-height: 1.7; }
+    .faq-item[open] summary { border-bottom: 1px solid var(--border); margin-bottom: 14px; }
     @media (max-width: 960px) { .tool-grid { grid-template-columns: 1fr; } .control-row { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -507,9 +524,11 @@
   </header>
 
   <main>
-    <nav aria-label="Breadcrumb" style="margin: 10px auto 0; max-width: 1100px; font-size: 0.9rem;">
-      <a href="/">Home</a> /
-      <a href="/#tools">Tools</a> /
+    <nav aria-label="Breadcrumb" class="uuid-breadcrumbs">
+      <a href="/">Home</a>
+      <span class="uuid-breadcrumb-sep">/</span>
+      <a href="/#tools">Tools</a>
+      <span class="uuid-breadcrumb-sep">/</span>
       <span aria-current="page">UUID Generator</span>
     </nav>
 
@@ -694,41 +713,110 @@
     </section>
 
     <section class="section">
-      <h2>UUID Version Comparison for Production Decisions</h2>
-      <div style="overflow-x: auto;">
-        <table style="width: 100%; border-collapse: collapse; min-width: 800px;">
+      <h2>UUID Tool Comparison</h2>
+      <p style="color: var(--muted); max-width: 920px;">This comparison focuses on workflow fit rather than hype. It helps you decide when an in-browser UUID workspace is enough, when a minimal generator is fine, and when you should move generation into code or automation.</p>
+      <div class="uuid-table-wrap">
+        <table class="uuid-table">
           <thead>
-            <tr style="background: var(--bg-soft, rgba(0,0,0,.02));">
-              <th style="padding: 10px; text-align: left; border-bottom: 1px solid var(--border);">Version</th>
-              <th style="padding: 10px; text-align: left; border-bottom: 1px solid var(--border);">Generation Model</th>
-              <th style="padding: 10px; text-align: left; border-bottom: 1px solid var(--border);">Strengths</th>
-              <th style="padding: 10px; text-align: left; border-bottom: 1px solid var(--border);">Common Use Cases</th>
+            <tr>
+              <th>Capability</th>
+              <th class="tm-col"><span class="tm-badge">ToolsMatic UUID Maker</span></th>
+              <th>Basic UUID Web Tool</th>
+              <th>Backend Library</th>
+              <th>CLI / Script Flow</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);"><strong>UUID v4</strong></td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Cryptographic randomness</td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Simple, widely supported, excellent uniqueness in practice</td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">General IDs, distributed records, external references</td>
+              <td><strong>UUID versions</strong></td>
+              <td class="tm-col">v1, v3, v4, v5, v6, v7, bulk workflow</td>
+              <td>Often v4 only</td>
+              <td>Depends on package support</td>
+              <td>Depends on installed tooling</td>
             </tr>
             <tr>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);"><strong>UUID v7</strong></td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Unix-time + randomness</td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Time ordering with high uniqueness and modern ergonomics</td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Database primary keys, event streams, ordered logs</td>
+              <td><strong>Bulk generation</strong></td>
+              <td class="tm-col">Built in with export formats</td>
+              <td>Usually limited or missing</td>
+              <td>Possible with custom code</td>
+              <td>Strong for automation</td>
             </tr>
             <tr>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);"><strong>UUID v5</strong></td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">SHA-1 namespace hash</td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Deterministic output for repeatable inputs</td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Idempotent mapping, stable IDs from business keys</td>
+              <td><strong>Validation and parsing</strong></td>
+              <td class="tm-col">Included on the same page</td>
+              <td>Usually separate tool or missing</td>
+              <td>Possible, but you write the logic</td>
+              <td>Possible, but not instant visually</td>
             </tr>
             <tr>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);"><strong>UUID v1/v6</strong></td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Timestamp-centric structures</td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Useful for legacy compatibility and ordered semantics</td>
-              <td style="padding: 10px; border-bottom: 1px solid var(--border);">Migration projects, historical system interoperability</td>
+              <td><strong>Format conversion</strong></td>
+              <td class="tm-col">Standard, hex, Base64, URN, binary</td>
+              <td>Often standard format only</td>
+              <td>Custom implementation</td>
+              <td>Custom implementation</td>
+            </tr>
+            <tr>
+              <td><strong>Namespace workflows</strong></td>
+              <td class="tm-col">UI for v3 and v5 inputs</td>
+              <td>Commonly absent</td>
+              <td>Good when already coding</td>
+              <td>Good if scripted carefully</td>
+            </tr>
+            <tr>
+              <td><strong>Install required</strong></td>
+              <td class="tm-col">No, runs in browser</td>
+              <td>No, runs in browser</td>
+              <td>Yes, part of app stack</td>
+              <td>Yes, local runtime or package needed</td>
+            </tr>
+            <tr>
+              <td><strong>Best fit</strong></td>
+              <td class="tm-col">Testing, validation, docs, quick engineering workflows</td>
+              <td>One-off random UUID copy</td>
+              <td>Production app logic</td>
+              <td>Repeatable ops and automation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>UUID Version Comparison for Production Decisions</h2>
+      <div class="uuid-table-wrap">
+        <table class="uuid-table">
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Generation Model</th>
+              <th>Strengths</th>
+              <th>Common Use Cases</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>UUID v4</strong></td>
+              <td>Cryptographic randomness</td>
+              <td>Simple, widely supported, excellent uniqueness in practice</td>
+              <td>General IDs, distributed records, external references</td>
+            </tr>
+            <tr>
+              <td><strong>UUID v7</strong></td>
+              <td>Unix-time + randomness</td>
+              <td>Time ordering with high uniqueness and modern ergonomics</td>
+              <td>Database primary keys, event streams, ordered logs</td>
+            </tr>
+            <tr>
+              <td><strong>UUID v5</strong></td>
+              <td>SHA-1 namespace hash</td>
+              <td>Deterministic output for repeatable inputs</td>
+              <td>Idempotent mapping, stable IDs from business keys</td>
+            </tr>
+            <tr>
+              <td><strong>UUID v1/v6</strong></td>
+              <td>Timestamp-centric structures</td>
+              <td>Useful for legacy compatibility and ordered semantics</td>
+              <td>Migration projects, historical system interoperability</td>
             </tr>
           </tbody>
         </table>
@@ -737,17 +825,32 @@
 
     <section class="section">
       <h2>Frequently Asked Questions</h2>
-      <h3>Which UUID version should I use for new applications in 2026?</h3>
-      <p>For most new systems, UUID v7 is the strongest default when you care about sortable IDs and database efficiency. UUID v4 remains a solid choice when randomness and broad compatibility are your only priorities.</p>
-
-      <h3>Can I safely generate UUIDs in the browser for production workflows?</h3>
-      <p>Yes, when using modern cryptographic APIs and well-defined validation rules. Browser generation is common for client-driven workflows, but teams should still validate IDs server-side before persistence.</p>
-
-      <h3>Do UUID collisions happen in real-world systems?</h3>
-      <p>With correctly implemented UUID v4 or v7 generation, collisions are extraordinarily unlikely at practical scales. Most collision incidents in production come from flawed implementations or misuse, not UUID math itself.</p>
-
-      <h3>How can I migrate from UUID v4 to UUID v7 without downtime?</h3>
-      <p>Use a phased dual-write or compatibility layer strategy: introduce v7 for new records, maintain read compatibility for v4, and gradually migrate downstream consumers. Plan schema, indexing, and API contract updates in controlled stages.</p>
+      <div class="faq-stack">
+        <details class="faq-item" open>
+          <summary>Which UUID version should I use for new applications in 2026?</summary>
+          <p>For most new systems, UUID v7 is the strongest default when you care about sortable IDs and database efficiency. UUID v4 remains a solid choice when randomness and broad compatibility are your only priorities.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I safely generate UUIDs in the browser for production workflows?</summary>
+          <p>Yes, when using modern cryptographic APIs and well-defined validation rules. Browser generation is common for client-driven workflows, but teams should still validate IDs server-side before persistence.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do UUID collisions happen in real-world systems?</summary>
+          <p>With correctly implemented UUID v4 or v7 generation, collisions are extraordinarily unlikely at practical scales. Most collision incidents in production come from flawed implementations or misuse, not UUID math itself.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How can I migrate from UUID v4 to UUID v7 without downtime?</summary>
+          <p>Use a phased dual-write or compatibility layer strategy: introduce v7 for new records, maintain read compatibility for v4, and gradually migrate downstream consumers. Plan schema, indexing, and API contract updates in controlled stages.</p>
+        </details>
+        <details class="faq-item">
+          <summary>When should I use namespace UUIDs instead of random UUIDs?</summary>
+          <p>Use namespace UUIDs like v3 or v5 when the same input should always resolve to the same identifier. They are useful for deterministic mapping, idempotent imports, and stable IDs generated from business keys.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are UUIDs good for API keys, passwords, or secure tokens?</summary>
+          <p>No. UUIDs are identifiers, not secrets. Use purpose-built token generation for authentication, session handling, password reset links, and API credentials.</p>
+        </details>
+      </div>
     </section>
 
     <script>

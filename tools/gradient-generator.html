@@ -346,6 +346,27 @@
       margin-top: 15px;
     }
 
+    .gradient-editor-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+      gap: 20px;
+      align-items: start;
+      margin-top: 25px;
+    }
+
+    .gradient-editor-layout > * {
+      min-width: 0;
+    }
+
+    .gradient-preview-panel {
+      display: grid;
+      gap: 10px;
+    }
+
+    .gradient-preview-panel .gradient-preview-box {
+      min-height: 300px;
+    }
+
     #presetsPanel {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -437,6 +458,14 @@
       .export-controls {
         grid-template-columns: 1fr;
         gap: 8px;
+      }
+
+      .gradient-editor-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .gradient-preview-panel {
+        order: -1;
       }
       
       #presetsPanel {
@@ -580,6 +609,393 @@
         padding: 10px 8px;
       }
     }
+
+    .gradient-controls {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.95fr);
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 30px;
+    }
+
+    .gradient-main-panel,
+    .gradient-sidebar {
+      min-width: 0;
+    }
+
+    .gradient-sidebar {
+      display: grid;
+      gap: 18px;
+      position: sticky;
+      top: 96px;
+    }
+
+    .gradient-block {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.82)),
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.08), transparent 35%);
+      box-shadow: 0 18px 40px rgba(2, 8, 23, 0.18);
+    }
+
+    .gradient-main-panel .gradient-block + .gradient-block {
+      margin-top: 18px;
+    }
+
+    .gradient-block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .gradient-block-header .label,
+    .gradient-section-title {
+      margin: 0;
+    }
+
+    .gradient-type-btns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 0;
+    }
+
+    .gradient-type-btn {
+      min-height: 52px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .control-section {
+      display: grid;
+      gap: 18px;
+    }
+
+    .control-cluster {
+      display: grid;
+      gap: 12px;
+    }
+
+    .angle-control {
+      gap: 16px;
+      margin-bottom: 0;
+    }
+
+    .angle-control input[type="range"] {
+      height: 8px;
+    }
+
+    .angle-display {
+      width: auto;
+      min-width: 76px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(34, 211, 238, 0.22);
+      background: rgba(15, 23, 42, 0.72);
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e2e8f0;
+    }
+
+    .quick-angles,
+    .radial-pos-grid {
+      gap: 10px;
+    }
+
+    .quick-angle-btn,
+    .shape-btn,
+    .position-btn,
+    .utility-btn,
+    .preset-btn,
+    #addColorBtn {
+      min-height: 48px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .quick-angle-btn.is-active,
+    .shape-btn.is-active,
+    .position-btn.is-active {
+      background: rgba(34, 211, 238, 0.16);
+      border-color: rgba(34, 211, 238, 0.55);
+      color: #ecfeff;
+      box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.14);
+    }
+
+    .gradient-editor-layout {
+      display: block;
+      margin-top: 0;
+    }
+
+    .color-stop-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    #colorStops {
+      display: grid;
+      gap: 14px;
+    }
+
+    .color-stop-item {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr) 92px auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      margin-bottom: 0;
+      border-radius: 20px;
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.86), rgba(22, 28, 47, 0.9));
+      box-shadow: 0 14px 30px rgba(2, 8, 23, 0.16);
+    }
+
+    .color-stop-swatch {
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .stop-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.22);
+      background: rgba(34, 211, 238, 0.08);
+      color: #67e8f9;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .stop-hex {
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      letter-spacing: 0.04em;
+    }
+
+    .color-stop-item input[type="color"] {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.56);
+    }
+
+    .stop-range-wrap {
+      display: grid;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .stop-range-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .stop-range-label strong {
+      color: #f8fafc;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    .stop-number-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .stop-number-wrap span {
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    .color-stop-item input[type="range"] {
+      width: 100%;
+      height: 8px;
+    }
+
+    .color-stop-item input[type="number"] {
+      width: 100%;
+      min-width: 0;
+      padding: 10px 12px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .stop-delete-btn {
+      min-width: 88px;
+      min-height: 46px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .gradient-preview-card {
+      display: grid;
+      gap: 16px;
+    }
+
+    .gradient-preview-card .gradient-preview-box {
+      min-height: 360px;
+      height: 360px;
+      border-radius: 24px;
+    }
+
+    .preview-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .preview-stat {
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      background: rgba(15, 23, 42, 0.58);
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
+    .preview-stat strong {
+      display: block;
+      margin-top: 3px;
+      color: #f8fafc;
+      font-size: 15px;
+    }
+
+    .gradient-code-card .result-box {
+      min-height: 132px;
+      max-height: none;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .export-controls {
+      gap: 12px;
+      margin-top: 0;
+    }
+
+    .export-controls > div {
+      min-width: 0;
+    }
+
+    .export-actions,
+    .utility-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .preset-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .preset-btn {
+      padding: 12px 14px;
+    }
+
+    #presetsPanel {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-height: none;
+      overflow: visible;
+    }
+
+    .custom-color-btn {
+      width: 100%;
+      min-height: 56px;
+      margin-bottom: 0;
+      border-radius: 16px;
+      font-weight: 700;
+    }
+
+    .control-inline-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .radial-pos-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: 1100px) {
+      .gradient-controls {
+        grid-template-columns: 1fr;
+      }
+
+      .gradient-sidebar {
+        position: static;
+      }
+
+      #presetsPanel,
+      .preset-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gradient-type-btns,
+      .quick-angles,
+      .export-actions,
+      .utility-actions,
+      .control-inline-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .radial-pos-grid,
+      #presetsPanel,
+      .preset-grid,
+      .preview-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .color-stop-item {
+        grid-template-columns: 1fr;
+      }
+
+      .stop-delete-btn {
+        width: 100%;
+      }
+
+      .gradient-preview-card .gradient-preview-box {
+        min-height: 260px;
+        height: 260px;
+      }
+    }
   </style>
 
     <style>
@@ -620,10 +1036,6 @@
       Create beautiful CSS gradients with live preview. Generate<br>linear, radial, and conic gradients with custom colors<br>and export ready-to-use CSS code.
     </p>
 
-    <div style="text-align: center; margin: 20px 0;">
-      </div>
-      
-      </div>
     <section class="tool-shell">
       <div class="mobile-notice" style="background: var(--primary); color: white; padding: 15px; border-radius: 10px; margin-bottom: 20px; display: none; text-align: center;">
         <p style="margin: 0; font-size: 14px; line-height: 1.6;">
@@ -639,102 +1051,91 @@
       <h1>Advanced CSS Gradient Generator</h1>
       
       <div class="gradient-controls">
-        <!-- Left Panel: Controls -->
-        <div>
-          <!-- Gradient Type Selector -->
-          <label class="label">Gradient Type</label>
-          <div class="gradient-type-btns">
-            <button class="gradient-type-btn active" data-type="linear">Linear</button>
-            <button class="gradient-type-btn" data-type="radial">Radial</button>
-            <button class="gradient-type-btn" data-type="conic">Conic</button>
-          </div>
+        <div class="gradient-main-panel">
+          <div class="gradient-block control-section">
+            <div class="control-cluster">
+              <label class="label">Gradient Type</label>
+              <div class="gradient-type-btns">
+                <button class="gradient-type-btn active" data-type="linear">Linear</button>
+                <button class="gradient-type-btn" data-type="radial">Radial</button>
+                <button class="gradient-type-btn" data-type="conic">Conic</button>
+              </div>
+            </div>
 
-          <!-- Linear Direction Controls -->
-          <div id="linearControls">
-            <label class="label">Angle</label>
-            <div class="angle-control">
-              <input type="range" id="gradAngle" min="0" max="360" value="90">
-              <span class="angle-display" id="angleDisplay">90</span>
+            <div id="linearControls" class="control-cluster">
+              <label class="label">Angle</label>
+              <div class="angle-control">
+                <input type="range" id="gradAngle" min="0" max="360" value="90">
+                <span class="angle-display" id="angleDisplay">90°</span>
+              </div>
+              <div class="quick-angles">
+                <button class="ghost quick-angle-btn" data-angle="0" onclick="setAngle(0)">Top</button>
+                <button class="ghost quick-angle-btn" data-angle="90" onclick="setAngle(90)">Right</button>
+                <button class="ghost quick-angle-btn" data-angle="180" onclick="setAngle(180)">Bottom</button>
+                <button class="ghost quick-angle-btn" data-angle="270" onclick="setAngle(270)">Left</button>
+                <button class="ghost quick-angle-btn" data-angle="45" onclick="setAngle(45)">45°</button>
+                <button class="ghost quick-angle-btn" data-angle="135" onclick="setAngle(135)">135°</button>
+                <button class="ghost quick-angle-btn" data-angle="225" onclick="setAngle(225)">225°</button>
+                <button class="ghost quick-angle-btn" data-angle="315" onclick="setAngle(315)">315°</button>
+              </div>
             </div>
-            <div class="quick-angles">
-              <button class="ghost quick-angle-btn" onclick="setAngle(0)">Top</button>
-              <button class="ghost quick-angle-btn" onclick="setAngle(90)">Right</button>
-              <button class="ghost quick-angle-btn" onclick="setAngle(180)">Bottom</button>
-              <button class="ghost quick-angle-btn" onclick="setAngle(270)">Left</button>
-              <button class="ghost quick-angle-btn" onclick="setAngle(45)"></button>
-              <button class="ghost quick-angle-btn" onclick="setAngle(135)"></button>
-              <button class="ghost quick-angle-btn" onclick="setAngle(225)"></button>
-              <button class="ghost quick-angle-btn" onclick="setAngle(315)"></button>
-            </div>
-          </div>
 
-          <!-- Radial Controls -->
-          <div id="radialControls" style="display: none;">
-            <label class="label">Shape</label>
-            <div style="display: flex; gap: 8px; margin-bottom: 15px;">
-              <button class="ghost" onclick="setRadialShape('circle')">Circle</button>
-              <button class="ghost" onclick="setRadialShape('ellipse')">Ellipse</button>
-            </div>
-            <label class="label">Position</label>
-            <div class="radial-pos-grid">
-              <button class="ghost quick-angle-btn" onclick="setRadialPos('top left')"></button>
-              <button class="ghost quick-angle-btn" onclick="setRadialPos('top center')"></button>
-              <button class="ghost quick-angle-btn" onclick="setRadialPos('top right')"></button>
-              <button class="ghost quick-angle-btn" onclick="setRadialPos('center left')"></button>
-              <button class="ghost quick-angle-btn" onclick="setRadialPos('center')"></button>
-              <button class="ghost quick-angle-btn" onclick="setRadialPos('center right')"></button>
-              <button class="ghost quick-angle-btn" onclick="setRadialPos('bottom left')"></button>
-              <button class="ghost quick-angle-btn" onclick="setRadialPos('bottom center')"></button>
-              <button class="ghost quick-angle-btn" onclick="setRadialPos('bottom right')"></button>
-            </div>
-          </div>
-
-          <!-- Conic Controls -->
-          <div id="conicControls" style="display: none;">
-            <label class="label">Starting Angle</label>
-            <div class="angle-control">
-              <input type="range" id="conicAngle" min="0" max="360" value="0">
-              <span class="angle-display" id="conicAngleDisplay">0</span>
-            </div>
-          </div>
-
-          <!-- Color Stops with Live Preview Side by Side -->
-          <div style="margin-top: 25px;">
-            <div style="display: flex; gap: 20px; align-items: flex-start;">
-              <!-- Left: Color Stops (flexible width) -->
-              <div style="flex: 1; min-width: 400px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                  <label class="label" style="margin: 0;">Color Stops</label>
-                  <button class="ghost" id="addColorBtn" onclick="addColorStop()">+ Add</button>
+            <div id="radialControls" class="control-cluster" style="display: none;">
+              <div>
+                <label class="label">Shape</label>
+                <div class="control-inline-buttons" style="margin-top: 10px;">
+                  <button class="ghost shape-btn" data-radial-shape="circle" onclick="setRadialShape('circle')">Circle</button>
+                  <button class="ghost shape-btn" data-radial-shape="ellipse" onclick="setRadialShape('ellipse')">Ellipse</button>
                 </div>
-                <div id="colorStops"></div>
               </div>
-              
-              <!-- Right: Live Preview (fixed width) -->
-              <div style="flex: 0 0 500px;">
-                <label class="label" style="margin-bottom: 10px; display: block;">Live Preview</label>
-                <div id="gradientPreview" class="gradient-preview-box" style="height: 300px; width: 100%;"></div>
+              <div>
+                <label class="label">Position</label>
+                <div class="radial-pos-grid" style="margin-top: 10px;">
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="top left" onclick="setRadialPos('top left')">TL</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="top center" onclick="setRadialPos('top center')">TC</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="top right" onclick="setRadialPos('top right')">TR</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="center left" onclick="setRadialPos('center left')">CL</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="center" onclick="setRadialPos('center')">C</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="center right" onclick="setRadialPos('center right')">CR</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="bottom left" onclick="setRadialPos('bottom left')">BL</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="bottom center" onclick="setRadialPos('bottom center')">BC</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="bottom right" onclick="setRadialPos('bottom right')">BR</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="conicControls" class="control-cluster" style="display: none;">
+              <label class="label">Starting Angle</label>
+              <div class="angle-control">
+                <input type="range" id="conicAngle" min="0" max="360" value="0">
+                <span class="angle-display" id="conicAngleDisplay">0°</span>
               </div>
             </div>
           </div>
 
-          <!-- Custom Color Picker -->
-          <div style="margin-top: 25px;">
-            <label class="label">Custom Color</label>
-            <button class="custom-color-btn" onclick="document.getElementById('customColorInput').click()">
-              <span style="font-size: 24px;"></span>
-              <span>Pick Your Own Color</span>
-            </button>
-            <input type="color" id="customColorInput" class="custom-color-input" onchange="applyCustomColor(this.value)">
+          <div class="gradient-block">
+            <div class="color-stop-toolbar">
+              <label class="label" style="margin: 0;">Color Stops</label>
+              <button class="ghost" id="addColorBtn" onclick="addColorStop()">+ Add stop</button>
+            </div>
+            <div class="gradient-editor-layout">
+              <div id="colorStops"></div>
+            </div>
+            <div style="margin-top: 18px;">
+              <label class="label">Custom Color</label>
+              <button class="custom-color-btn" onclick="document.getElementById('customColorInput').click()">
+                <span>Pick Your Own Color</span>
+              </button>
+              <input type="color" id="customColorInput" class="custom-color-input" onchange="applyCustomColor(this.value)">
+            </div>
           </div>
 
-          <!-- Preset Gradients (Collapsible) -->
-          <div style="margin-top: 25px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <div class="gradient-block">
+            <div class="gradient-block-header">
               <label class="label" style="margin: 0;">Gradient Presets</label>
-              <button class="ghost" id="togglePresetsBtn" onclick="togglePresetsPanel()" style="padding: 6px 12px; font-size: 14px;"> Show</button>
+              <button class="ghost" id="togglePresetsBtn" onclick="togglePresetsPanel()" style="padding: 6px 12px; font-size: 14px;">Show</button>
             </div>
-            <div style="font-size: 15px; color: var(--text-secondary); margin-bottom: 15px; opacity: 0.9;"> Click "Show" to browse 50+ ready-made gradient presets</div>
+            <div style="font-size: 15px; color: var(--text-secondary); margin-bottom: 15px; opacity: 0.9;">Choose a preset to get a polished starting point, then refine the stops, angle, and export size.</div>
             <div id="presetsPanel" class="preset-grid collapsed">
               <button class="ghost preset-btn" onclick="applyPreset('instagram')">Instagram</button>
               <button class="ghost preset-btn" onclick="applyPreset('neon')">Neon</button>
@@ -787,32 +1188,31 @@
               <button class="ghost preset-btn" onclick="applyPreset('earth')">Earth</button>
               <button class="ghost preset-btn" onclick="applyPreset('mars')">Mars</button>
             </div>
-            </div>
-          </div>
-
-          <!-- Advanced Options -->
-          <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border);">
-            <label class="label">Advanced Options</label>
-            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
-              <button class="ghost" onclick="randomizeGradient()"> Randomize</button>
-              <button class="ghost" onclick="reverseGradient()"> Reverse</button>
-            </div>
           </div>
         </div>
 
-        <!-- Right Panel: Code & Export -->
-        <div style="display: flex; flex-direction: column;">
-          <!-- CSS Code Output -->
-          <div style="flex: 1;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-              <label class="label" style="margin: 0;">CSS Code</label>
-              <button class="ghost" onclick="copyGradientCSS()"> Copy</button>
+        <div class="gradient-sidebar">
+          <div class="gradient-block gradient-preview-card">
+            <div class="gradient-block-header">
+              <label class="label" style="margin: 0;">Live Preview</label>
+              <span style="color: var(--text-secondary); font-size: 14px;">Instant visual feedback</span>
             </div>
-            <div class="result-box" id="cssCode" style="max-height: 150px; overflow-y: auto;"></div>
+            <div id="gradientPreview" class="gradient-preview-box" style="width: 100%;"></div>
+            <div class="preview-meta">
+              <div class="preview-stat">Type<strong id="previewTypeLabel">Linear</strong></div>
+              <div class="preview-stat">Stops<strong id="previewStopsLabel">2 stops</strong></div>
+            </div>
           </div>
 
-          <!-- Export Options -->
-          <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border);">
+          <div class="gradient-block gradient-code-card">
+            <div class="gradient-block-header" style="margin-bottom: 10px;">
+              <label class="label" style="margin: 0;">CSS Code</label>
+              <button class="ghost" onclick="copyGradientCSS()">Copy</button>
+            </div>
+            <div class="result-box" id="cssCode"></div>
+          </div>
+
+          <div class="gradient-block">
             <label class="label">Export as Image</label>
             <div class="export-controls">
               <div>
@@ -824,12 +1224,19 @@
                 <input type="number" id="exportHeight" value="1080" min="100" max="4000">
               </div>
             </div>
-            <div style="display: flex; gap: 10px; margin-top: 12px;">
-              <button class="ghost" onclick="exportGradient('png')" style="flex: 1;"> Export PNG</button>
-              <button class="ghost" onclick="exportGradient('jpg')" style="flex: 1;"> Export JPG</button>
+            <div class="export-actions">
+              <button class="ghost utility-btn" onclick="exportGradient('png')">Export PNG</button>
+              <button class="ghost utility-btn" onclick="exportGradient('jpg')">Export JPG</button>
             </div>
           </div>
+
+          <div class="gradient-block">
+            <label class="label">Quick Actions</label>
+            <div class="utility-actions">
+              <button class="ghost utility-btn" onclick="randomizeGradient()">Randomize</button>
+              <button class="ghost utility-btn" onclick="reverseGradient()">Reverse</button>
             </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1116,38 +1523,6 @@
 
     <div style="text-align: center; margin: 30px 0;">
     </div>
-
-    <!-- Testimonials Section -->
-    <section class="section" id="testimonials">
-      <h2>💬 What Users Say About This Gradient Generator</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0;">
-        <div style="padding: 15px; background: var(--surface); border-radius: 8px; border-left: 4px solid #22c55e;">
-          <p style="margin: 0 0 10px 0;">"This gradient generator is a game-changer. The live preview and ability to export high-res images saved me hours in Photoshop. Built my entire website's color scheme here."</p>
-          <p style="font-weight: bold; margin: 0; color: var(--primary);">— Emily R., Web Designer</p>
-          <p style="color: var(--muted); font-size: 12px; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐ Verified User</p>
-        </div>
-        <div style="padding: 15px; background: var(--surface); border-radius: 8px; border-left: 4px solid #22c55e;">
-          <p style="margin: 0 0 10px 0;">"Finally, a gradient tool that does radial AND conic gradients. The CSS code it generates is perfect—works everywhere. No more wrestling with syntax."</p>
-          <p style="font-weight: bold; margin: 0; color: var(--primary);">— Marcus T., Frontend Developer</p>
-          <p style="color: var(--muted); font-size: 12px; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐ Verified User</p>
-        </div>
-        <div style="padding: 15px; background: var(--surface); border-radius: 8px; border-left: 4px solid #22c55e;">
-          <p style="margin: 0 0 10px 0;">"The preset gradients are stunning. I use Cyberpunk and Sunset constantly for my YouTube thumbnails. Export quality is perfect for 4K graphics."</p>
-          <p style="font-weight: bold; margin: 0; color: var(--primary);">— Jordan K., Content Creator</p>
-          <p style="color: var(--muted); font-size: 12px; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐ Verified User</p>
-        </div>
-        <div style="padding: 15px; background: var(--surface); border-radius: 8px; border-left: 4px solid #22c55e;">
-          <p style="margin: 0 0 10px 0;">"Lightweight, fast, works offline. I bookmark this tool on every project. The unlimited color stops let me create exactly the gradient I envision."</p>
-          <p style="font-weight: bold; margin: 0; color: var(--primary);">— Priya S., UI/UX Designer</p>
-          <p style="color: var(--muted); font-size: 12px; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐ Verified User</p>
-        </div>
-        <div style="padding: 15px; background: var(--surface); border-radius: 8px; border-left: 4px solid #22c55e;">
-          <p style="margin: 0 0 10px 0;">"Tested every free gradient generator online. This one has the best combination of features and ease of use. The preview quality is unmatched."</p>
-          <p style="font-weight: bold; margin: 0; color: var(--primary);">— Alex H., Graphic Designer</p>
-          <p style="color: var(--muted); font-size: 12px; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐ Verified User</p>
-        </div>
-      </div>
-    </section>
 
     <div style="text-align: center; margin: 30px 0;">
     </div>
@@ -1691,29 +2066,55 @@
       panel.classList.toggle('collapsed');
       
       if (panel.classList.contains('collapsed')) {
-        btn.textContent = ' Show';
+        btn.textContent = 'Show';
       } else {
-        btn.textContent = ' Hide';
+        btn.textContent = 'Hide';
       }
+    }
+
+    function formatAngle(value) {
+      return `${value}°`;
+    }
+
+    function updateAngleDisplays() {
+      document.getElementById('angleDisplay').textContent = formatAngle(gradientState.angle);
+      document.getElementById('conicAngleDisplay').textContent = formatAngle(gradientState.conicAngle);
+      document.getElementById('gradAngle').value = gradientState.angle;
+      document.getElementById('conicAngle').value = gradientState.conicAngle;
+    }
+
+    function updateSelectedControls() {
+      document.querySelectorAll('.quick-angle-btn[data-angle]').forEach((btn) => {
+        btn.classList.toggle('is-active', parseInt(btn.dataset.angle, 10) === gradientState.angle);
+      });
+
+      document.querySelectorAll('.shape-btn[data-radial-shape]').forEach((btn) => {
+        btn.classList.toggle('is-active', btn.dataset.radialShape === gradientState.radialShape);
+      });
+
+      document.querySelectorAll('.position-btn[data-radial-pos]').forEach((btn) => {
+        btn.classList.toggle('is-active', btn.dataset.radialPos === gradientState.radialPos);
+      });
     }
 
     // Initialize
     function init() {
       updateTypeControls('linear');
+      updateAngleDisplays();
       renderColorStops();
       updatePreview();
       
       // Angle slider
       document.getElementById('gradAngle').addEventListener('input', (e) => {
         gradientState.angle = parseInt(e.target.value);
-        document.getElementById('angleDisplay').textContent = e.target.value + '';
+        updateAngleDisplays();
         updatePreview();
       });
       
       // Conic angle slider
       document.getElementById('conicAngle').addEventListener('input', (e) => {
         gradientState.conicAngle = parseInt(e.target.value);
-        document.getElementById('conicAngleDisplay').textContent = e.target.value + '';
+        updateAngleDisplays();
         updatePreview();
       });
       
@@ -1734,6 +2135,7 @@
       document.getElementById('linearControls').style.display = type === 'linear' ? 'block' : 'none';
       document.getElementById('radialControls').style.display = type === 'radial' ? 'block' : 'none';
       document.getElementById('conicControls').style.display = type === 'conic' ? 'block' : 'none';
+      updateSelectedControls();
     }
 
     function changeGradientType(type) {
@@ -1744,18 +2146,19 @@
 
     function setAngle(angle) {
       gradientState.angle = angle;
-      document.getElementById('gradAngle').value = angle;
-      document.getElementById('angleDisplay').textContent = angle + '';
+      updateAngleDisplays();
       updatePreview();
     }
 
     function setRadialShape(shape) {
       gradientState.radialShape = shape;
+      updateSelectedControls();
       updatePreview();
     }
 
     function setRadialPos(pos) {
       gradientState.radialPos = pos;
+      updateSelectedControls();
       updatePreview();
     }
 
@@ -1772,36 +2175,69 @@
           const div = document.createElement('div');
           div.className = 'color-stop-item';
           div.dataset.idx = idx;
+
+          const swatchWrap = document.createElement('div');
+          swatchWrap.className = 'color-stop-swatch';
+
+          const stopChip = document.createElement('span');
+          stopChip.className = 'stop-chip';
+          stopChip.textContent = `Stop ${idx + 1}`;
           
           const colorInput = document.createElement('input');
           colorInput.type = 'color';
           colorInput.value = stop.color;
           colorInput.addEventListener('change', (e) => updateColor(idx, e.target.value));
+
+          const hexLabel = document.createElement('span');
+          hexLabel.className = 'stop-hex';
+          hexLabel.textContent = stop.color.toUpperCase();
           
+          swatchWrap.appendChild(stopChip);
+          swatchWrap.appendChild(colorInput);
+          swatchWrap.appendChild(hexLabel);
+
+          const rangeWrap = document.createElement('div');
+          rangeWrap.className = 'stop-range-wrap';
+
+          const rangeLabel = document.createElement('div');
+          rangeLabel.className = 'stop-range-label';
+          rangeLabel.innerHTML = `<span>Position</span><strong>${stop.position}%</strong>`;
+
           const rangeInput = document.createElement('input');
           rangeInput.type = 'range';
           rangeInput.min = '0';
           rangeInput.max = '100';
           rangeInput.value = stop.position;
           rangeInput.addEventListener('input', (e) => updatePositionRange(idx, e.target.value));
+
+          rangeWrap.appendChild(rangeLabel);
+          rangeWrap.appendChild(rangeInput);
           
+          const numberWrap = document.createElement('div');
+          numberWrap.className = 'stop-number-wrap';
+
           const numberInput = document.createElement('input');
           numberInput.type = 'number';
           numberInput.min = '0';
           numberInput.max = '100';
           numberInput.value = stop.position;
           numberInput.addEventListener('change', (e) => updatePosition(idx, e.target.value));
+
+          const percentLabel = document.createElement('span');
+          percentLabel.textContent = '%';
+
+          numberWrap.appendChild(numberInput);
+          numberWrap.appendChild(percentLabel);
           
           const deleteBtn = document.createElement('button');
-          deleteBtn.className = 'ghost';
-          deleteBtn.textContent = '';
-          deleteBtn.style.cssText = 'padding: 6px 8px; font-size: 12px;';
+          deleteBtn.className = 'ghost stop-delete-btn';
+          deleteBtn.textContent = 'Remove';
           deleteBtn.disabled = gradientState.colors.length === 2;
           deleteBtn.addEventListener('click', () => removeColor(idx));
           
-          div.appendChild(colorInput);
-          div.appendChild(rangeInput);
-          div.appendChild(numberInput);
+          div.appendChild(swatchWrap);
+          div.appendChild(rangeWrap);
+          div.appendChild(numberWrap);
           div.appendChild(deleteBtn);
           container.appendChild(div);
         });
@@ -1813,10 +2249,16 @@
           const rangeInput = item.querySelector('input[type="range"]');
           const numberInput = item.querySelector('input[type="number"]');
           const deleteBtn = item.querySelector('button');
+          const stopChip = item.querySelector('.stop-chip');
+          const hexLabel = item.querySelector('.stop-hex');
+          const rangeValue = item.querySelector('.stop-range-label strong');
           
+          stopChip.textContent = `Stop ${idx + 1}`;
           colorInput.value = stop.color;
           rangeInput.value = stop.position;
           numberInput.value = stop.position;
+          hexLabel.textContent = stop.color.toUpperCase();
+          rangeValue.textContent = `${stop.position}%`;
           deleteBtn.disabled = gradientState.colors.length === 2;
         });
       }
@@ -1826,22 +2268,33 @@
 
     function updateColor(idx, color) {
       gradientState.colors[idx].color = color;
+      const item = document.querySelectorAll('.color-stop-item')[idx];
+      if (item) {
+        const hexLabel = item.querySelector('.stop-hex');
+        if (hexLabel) hexLabel.textContent = color.toUpperCase();
+      }
       updatePreview();
     }
 
     function updatePosition(idx, position) {
       gradientState.colors[idx].position = parseInt(position);
-      const numberInput = document.querySelectorAll('.color-stop-item')[idx].querySelector('input[type="number"]');
-      const rangeInput = document.querySelectorAll('.color-stop-item')[idx].querySelector('input[type="range"]');
+      const item = document.querySelectorAll('.color-stop-item')[idx];
+      const numberInput = item.querySelector('input[type="number"]');
+      const rangeInput = item.querySelector('input[type="range"]');
+      const rangeValue = item.querySelector('.stop-range-label strong');
       numberInput.value = position;
       rangeInput.value = position;
+      rangeValue.textContent = `${position}%`;
       updatePreview();
     }
 
     function updatePositionRange(idx, position) {
       gradientState.colors[idx].position = parseInt(position);
-      const numberInput = document.querySelectorAll('.color-stop-item')[idx].querySelector('input[type="number"]');
+      const item = document.querySelectorAll('.color-stop-item')[idx];
+      const numberInput = item.querySelector('input[type="number"]');
+      const rangeValue = item.querySelector('.stop-range-label strong');
       numberInput.value = position;
+      rangeValue.textContent = `${position}%`;
       updatePreview();
     }
 
@@ -1871,11 +2324,27 @@
       
       preview.style.background = css;
       document.getElementById('cssCode').textContent = `background: ${css};`;
+      const typeLabel = gradientState.type === 'radial'
+        ? `Radial ${gradientState.radialShape === 'ellipse' ? 'Ellipse' : 'Circle'}`
+        : gradientState.type.charAt(0).toUpperCase() + gradientState.type.slice(1);
+      document.getElementById('previewTypeLabel').textContent = typeLabel;
+      document.getElementById('previewStopsLabel').textContent = `${gradientState.colors.length} stop${gradientState.colors.length === 1 ? '' : 's'}`;
+      updateSelectedControls();
+    }
+
+    function getSortedColorStops() {
+      return [...gradientState.colors].sort((a, b) => a.position - b.position);
+    }
+
+    function getRadialGradientDescriptor() {
+      if (gradientState.radialShape === 'ellipse') {
+        return `ellipse 82% 58% at ${gradientState.radialPos}`;
+      }
+      return `circle 58% at ${gradientState.radialPos}`;
     }
 
     function generateGradientCSS() {
-      const colorStr = gradientState.colors
-        .sort((a, b) => a.position - b.position)
+      const colorStr = getSortedColorStops()
         .map(s => `${s.color} ${s.position}%`)
         .join(', ');
       
@@ -1885,7 +2354,7 @@
           css = `linear-gradient(${gradientState.angle}deg, ${colorStr})`;
           break;
         case 'radial':
-          css = `radial-gradient(${gradientState.radialShape} at ${gradientState.radialPos}, ${colorStr})`;
+          css = `radial-gradient(${getRadialGradientDescriptor()}, ${colorStr})`;
           break;
         case 'conic':
           css = `conic-gradient(from ${gradientState.conicAngle}deg, ${colorStr})`;
@@ -1935,10 +2404,7 @@
       
       updateTypeControls(preset.type);
       renderColorStops();
-      if (document.getElementById('gradAngle')) {
-        document.getElementById('gradAngle').value = gradientState.angle;
-        document.getElementById('angleDisplay').textContent = gradientState.angle + '';
-      }
+      updateAngleDisplays();
       updatePreview();
       if (window.ToolsMatic) window.ToolsMatic.showToast(`${presetName.charAt(0).toUpperCase() + presetName.slice(1)} preset applied!`, 'success');
     }
@@ -1961,10 +2427,7 @@
       
       updateTypeControls(gradientState.type);
       renderColorStops();
-      if (document.getElementById('gradAngle')) {
-        document.getElementById('gradAngle').value = gradientState.angle;
-        document.getElementById('angleDisplay').textContent = gradientState.angle + '';
-      }
+      updateAngleDisplays();
       updatePreview();
       if (window.ToolsMatic) window.ToolsMatic.showToast('Random gradient generated!', 'success');
     }
@@ -1993,6 +2456,7 @@
       canvas.width = width;
       canvas.height = height;
       const ctx = canvas.getContext('2d');
+      const sortedStops = getSortedColorStops();
       
       // Apply gradient to canvas
       if (gradientState.type === 'linear') {
@@ -2003,8 +2467,9 @@
           width/2 + Math.cos(angle - Math.PI/2) * width/2,
           height/2 + Math.sin(angle - Math.PI/2) * height/2
         );
-        gradientState.colors.forEach(c => gradient.addColorStop(c.position / 100, c.color));
+        sortedStops.forEach(c => gradient.addColorStop(c.position / 100, c.color));
         ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
       } else if (gradientState.type === 'radial') {
         const posMap = {
           'center': [width/2, height/2],
@@ -2018,16 +2483,35 @@
           'bottom right': [width, height]
         };
         const pos = posMap[gradientState.radialPos] || [width/2, height/2];
-        const gradient = ctx.createRadialGradient(pos[0], pos[1], 0, pos[0], pos[1], Math.max(width, height)/2);
-        gradientState.colors.forEach(c => gradient.addColorStop(c.position / 100, c.color));
-        ctx.fillStyle = gradient;
+        if (gradientState.radialShape === 'ellipse') {
+          const offscreen = document.createElement('canvas');
+          offscreen.width = 1200;
+          offscreen.height = 1200;
+          const offCtx = offscreen.getContext('2d');
+          const gradient = offCtx.createRadialGradient(600, 600, 0, 600, 600, 600);
+          sortedStops.forEach(c => gradient.addColorStop(c.position / 100, c.color));
+          offCtx.fillStyle = gradient;
+          offCtx.fillRect(0, 0, offscreen.width, offscreen.height);
+
+          const outerColor = sortedStops[sortedStops.length - 1].color;
+          const ellipseWidth = width * 1.64;
+          const ellipseHeight = height * 1.16;
+
+          ctx.fillStyle = outerColor;
+          ctx.fillRect(0, 0, width, height);
+          ctx.drawImage(offscreen, pos[0] - ellipseWidth / 2, pos[1] - ellipseHeight / 2, ellipseWidth, ellipseHeight);
+        } else {
+          const gradient = ctx.createRadialGradient(pos[0], pos[1], 0, pos[0], pos[1], Math.min(width, height) * 0.58);
+          sortedStops.forEach(c => gradient.addColorStop(c.position / 100, c.color));
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, width, height);
+        }
       } else if (gradientState.type === 'conic') {
         const gradient = ctx.createConicGradient(gradientState.conicAngle * Math.PI / 180, width/2, height/2);
-        gradientState.colors.forEach(c => gradient.addColorStop(c.position / 100, c.color));
+        sortedStops.forEach(c => gradient.addColorStop(c.position / 100, c.color));
         ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
       }
-      
-      ctx.fillRect(0, 0, width, height);
       
       canvas.toBlob(blob => {
         const url = URL.createObjectURL(blob);
@@ -2056,17 +2540,6 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

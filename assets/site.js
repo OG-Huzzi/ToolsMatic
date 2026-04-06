@@ -1186,6 +1186,52 @@
     return div.innerHTML;
   };
 
+  const enhanceFooter = () => {
+    const footer = document.querySelector('footer');
+    if (!footer || footer.dataset.footerEnhanced === 'true') return;
+    footer.dataset.footerEnhanced = 'true';
+
+    const clone = footer.cloneNode(true);
+    clone.querySelectorAll('a, button, nav').forEach((node) => node.remove());
+
+    let copy = clone.textContent
+      .replace(/[Â]+/g, ' ')
+      .replace(/[•·]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (!copy || copy.length < 12) {
+      copy = 'ToolsMatic - Fast, privacy-first utilities for the web.';
+    }
+
+    footer.classList.add('footer-shell');
+    footer.innerHTML = '';
+
+    const copyEl = document.createElement('div');
+    copyEl.className = 'footer-copy';
+    copyEl.textContent = copy;
+
+    const actions = document.createElement('nav');
+    actions.className = 'footer-actions';
+    actions.setAttribute('aria-label', 'Footer links');
+
+    [
+      { href: '/about.html', label: 'About' },
+      { href: '/terms.html', label: 'Terms' },
+      { href: '/privacy.html', label: 'Privacy Policy' },
+      { href: '/contact.html', label: 'Contact' }
+    ].forEach(({ href, label }) => {
+      const link = document.createElement('a');
+      link.className = 'footer-link';
+      link.href = href;
+      link.textContent = label;
+      actions.appendChild(link);
+    });
+
+    footer.appendChild(copyEl);
+    footer.appendChild(actions);
+  };
+
   window.toolsMatic = { 
     showToast, 
     handoffAndGo, 
@@ -1216,6 +1262,7 @@
     decorateAdSlots();
     initScrollReveal();
     initInteractiveMotion();
+    enhanceFooter();
   };
 
   if (document.readyState === 'loading') {

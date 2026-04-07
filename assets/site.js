@@ -467,6 +467,7 @@
     const key = (title || '').trim().toLowerCase();
     const categoryMap = {
       'word counter': 'Writing',
+      'character counter': 'Writing',
       'quote generator': 'Writing',
       'ascii art generator': 'Writing',
       'case converter': 'Writing',
@@ -475,13 +476,16 @@
       'lorem ipsum generator': 'Writing',
       'password generator': 'Developer',
       'json formatter': 'Developer',
+      'hash generator': 'Developer',
       'base64 encoder': 'Developer',
       'jwt inspector': 'Developer',
       'regex tester': 'Developer',
       'uuid maker': 'Developer',
       'url encoder': 'Developer',
       'html minifier': 'Developer',
+      'css minifier': 'Developer',
       'csv to json': 'Data',
+      'json to csv': 'Data',
       'csv inspector': 'Data',
       'gradient generator': 'Design',
       'contrast checker': 'Design',
@@ -489,7 +493,9 @@
       'qr code maker': 'Design',
       'color picker': 'Design',
       'unit converter': 'Everyday',
-      'timezone converter': 'Everyday'
+      'timezone converter': 'Everyday',
+      'pomodoro timer': 'Everyday',
+      'stopwatch & timer': 'Everyday'
     };
     return categoryMap[key] || 'Utility';
   };

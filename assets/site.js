@@ -512,7 +512,8 @@
     main.querySelector('.home-toolbar')?.remove();
 
     const cards = Array.from(hero.querySelectorAll('.card'));
-    const grids = Array.from(hero.querySelectorAll('.grid'));
+    let grids = Array.from(hero.querySelectorAll('.grid'));
+    const cardsPerBand = 4;
     const bandLabels = [
       { title: 'Popular picks', subtitle: 'The fastest routes into the tools people use most.' },
       { title: 'Writing and creativity', subtitle: 'Draft, refine, and generate without leaving the browser.' },
@@ -547,6 +548,23 @@
         card.appendChild(meta);
       }
     });
+
+    hero.querySelectorAll('.home-grid-label').forEach((label) => label.remove());
+    hero.querySelectorAll('.grid').forEach((grid) => grid.remove());
+
+    if (cards.length) {
+      const rebuiltGrids = [];
+
+      for (let index = 0; index < cards.length; index += cardsPerBand) {
+        const grid = document.createElement('div');
+        grid.className = 'grid home-grid';
+        cards.slice(index, index + cardsPerBand).forEach((card) => grid.appendChild(card));
+        hero.appendChild(grid);
+        rebuiltGrids.push(grid);
+      }
+
+      grids = rebuiltGrids;
+    }
 
     grids.forEach((grid, index) => {
       grid.classList.add('home-grid');

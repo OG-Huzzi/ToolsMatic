@@ -946,6 +946,10 @@ code {
 }
 
 @media (max-width: 480px) {
+  body.page-home .home-grid {
+    grid-template-columns: 1fr;
+  }
+
   main {
     padding: 14px 12px 32px;
   }
@@ -1582,6 +1586,19 @@ body.page-home .hero::after {
   gap: 18px;
 }
 
+body.page-home .home-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+body.page-home .home-grid > .card {
+  min-height: 216px;
+  height: 100%;
+}
+
 .card {
   min-height: 194px;
   padding: 20px;
@@ -2106,6 +2123,10 @@ footer.footer-shell {
 }
 
 @media (max-width: 1120px) {
+  body.page-home .home-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .tool-layout {
     grid-template-columns: 1fr;
   }
@@ -2121,6 +2142,10 @@ footer.footer-shell {
 }
 
 @media (max-width: 768px) {
+  body.page-home .home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   main {
     padding: 24px 16px 48px;
   }
@@ -2145,6 +2170,10 @@ footer.footer-shell {
   }
 
   .card {
+    min-height: 0;
+  }
+
+  body.page-home .home-grid > .card {
     min-height: 0;
   }
 

@@ -472,6 +472,52 @@
       color: rgba(148, 163, 184, 0.72);
     }
 
+    .result-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .result-box.warning {
+      background: rgba(251, 191, 36, 0.12);
+      color: #fef3c7;
+      border: 1px solid rgba(251, 191, 36, 0.36);
+    }
+
+    .status-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .status-details {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .status-details li {
+      position: relative;
+      padding-left: 16px;
+      line-height: 1.5;
+      font-size: 13px;
+      opacity: 0.95;
+    }
+
+    .status-details li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: currentColor;
+      opacity: 0.75;
+    }
+
     @media (max-width: 1100px) {
       .json-workspace {
         grid-template-columns: 1fr;
@@ -1220,11 +1266,25 @@
   // UTILITY FUNCTIONS
   // ============================================================================
 
-  function showStatus(message, type = 'info') {
-    els.status.textContent = message;
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function showStatus(message, type = 'info', details = []) {
+    const safeDetails = Array.isArray(details) ? details.filter(Boolean).slice(0, 6) : [];
+    const detailMarkup = safeDetails.length
+      ? `<ul class="status-details">${safeDetails.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+      : '';
+
+    els.status.innerHTML = `<div class="status-title">${escapeHtml(message)}</div>${detailMarkup}`;
     els.status.className = `result-box ${type}`;
     if (window.ToolsMatic && type !== 'info') {
-      window.ToolsMatic.showToast(message, type);
+      window.ToolsMatic.showToast(message, type === 'warning' ? 'info' : type);
     }
   }
 
@@ -1966,7 +2026,701 @@
   // AUTO-REPAIR JSON (AI-POWERED)
   // ============================================================================
 
+  function createRepairTracker() {
+    const fixes = new Map();
+
+    return {
+      add(label, count = 1) {
+        if (!label || count <= 0) return;
+        fixes.set(label, (fixes.get(label) || 0) + count);
+      },
+      list(limit = Infinity) {
+        return Array.from(fixes.entries())
+          .slice(0, limit)
+          .map(([label, count]) => (count > 1 ? `${label} x${count}` : label));
+      },
+      count() {
+        return Array.from(fixes.values()).reduce((sum, value) => sum + value, 0);
+      },
+      size() {
+        return fixes.size;
+      },
+      has(label) {
+        return fixes.has(label);
+      }
+    };
+  }
+
+  function stripJsonComments(source, tracker) {
+    let output = '';
+    let inString = false;
+    let quoteChar = '';
+    let escaped = false;
+    let removedComments = 0;
+
+    for (let index = 0; index < source.length; index++) {
+      const char = source[index];
+      const next = source[index + 1];
+
+      if (inString) {
+        output += char;
+        if (escaped) {
+          escaped = false;
+          continue;
+        }
+        if (char === '\\') {
+          escaped = true;
+          continue;
+        }
+        if (char === quoteChar) {
+          inString = false;
+          quoteChar = '';
+        }
+        continue;
+      }
+
+      if (char === '"' || char === "'") {
+        inString = true;
+        quoteChar = char;
+        output += char;
+        continue;
+      }
+
+      if (char === '/' && next === '/') {
+        const trailingContext = output.slice(-12).toLowerCase().replace(/\s+/g, '');
+        if (/(https?|ftp|file):$/.test(trailingContext)) {
+          output += char;
+          continue;
+        }
+
+        removedComments++;
+        index += 2;
+        while (index < source.length && source[index] !== '\n') index++;
+        if (index < source.length) output += '\n';
+        continue;
+      }
+
+      if (char === '/' && next === '*') {
+        removedComments++;
+        index += 2;
+        while (index < source.length && !(source[index] === '*' && source[index + 1] === '/')) index++;
+        index++;
+        continue;
+      }
+
+      output += char;
+    }
+
+    if (removedComments > 0) {
+      tracker.add('removed comments', removedComments);
+    }
+
+    return output;
+  }
+
+  function extractLikelyJsonSlice(source, tracker) {
+    const firstBrace = source.indexOf('{');
+    const firstBracket = source.indexOf('[');
+    const startCandidates = [firstBrace, firstBracket].filter((value) => value >= 0);
+
+    if (!startCandidates.length) {
+      return source;
+    }
+
+    const startIndex = Math.min(...startCandidates);
+    if (startIndex > 0 && /\S/.test(source.slice(0, startIndex))) {
+      source = source.slice(startIndex);
+      tracker.add('removed leading non-JSON text');
+    }
+
+    const lastBrace = source.lastIndexOf('}');
+    const lastBracket = source.lastIndexOf(']');
+    const endIndex = Math.max(lastBrace, lastBracket);
+
+    if (endIndex >= 0 && endIndex < source.length - 1 && /\S/.test(source.slice(endIndex + 1))) {
+      source = source.slice(0, endIndex + 1);
+      tracker.add('removed trailing non-JSON text');
+    }
+
+    return source;
+  }
+
+  function normalizeJsonRepairInput(raw, tracker) {
+    let source = String(raw || '').replace(/\r\n?/g, '\n');
+
+    if (source.charCodeAt(0) === 0xfeff) {
+      source = source.slice(1);
+      tracker.add('removed byte-order mark');
+    }
+
+    const fencePattern = /^\s*```(?:json|javascript|js)?\s*([\s\S]*?)\s*```\s*$/i;
+    if (fencePattern.test(source)) {
+      source = source.replace(fencePattern, '$1');
+      tracker.add('removed code fences');
+    }
+
+    const normalizedPunctuation = source
+      .replace(/[\u201c\u201d\u201e\u201f]/g, '"')
+      .replace(/[\u2018\u2019\u201a\u201b]/g, "'")
+      .replace(/\uFF0C/g, ',')
+      .replace(/\uFF1A/g, ':')
+      .replace(/\uFF1B/g, ';');
+
+    if (normalizedPunctuation !== source) {
+      source = normalizedPunctuation;
+      tracker.add('normalized smart punctuation');
+    }
+
+    const cleanedControls = source.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u200b\u200c\u200d]/g, '');
+    if (cleanedControls !== source) {
+      source = cleanedControls;
+      tracker.add('removed hidden control characters');
+    }
+
+    source = stripJsonComments(source, tracker);
+    source = extractLikelyJsonSlice(source, tracker);
+
+    return source.trim();
+  }
+
+  function createLooseJsonParser(source, tracker) {
+    let index = 0;
+
+    const peek = (offset = 0) => source[index + offset];
+    const eof = () => index >= source.length;
+    const next = () => source[index++];
+    const skipWhitespace = () => {
+      while (!eof() && /\s/.test(peek())) index++;
+    };
+    const isIdentifierStart = (char) => !!char && /[A-Za-z_$]/.test(char);
+    const isIdentifierPart = (char) => !!char && /[A-Za-z0-9_$.\-]/.test(char);
+    const isValueStart = (char) => char === '{' || char === '[' || char === '"' || char === "'" || char === '-' || char === '.' || (char >= '0' && char <= '9') || isIdentifierStart(char);
+
+    function decodeEscape(char) {
+      switch (char) {
+        case '"': return '"';
+        case "'": return "'";
+        case '\\': return '\\';
+        case '/': return '/';
+        case 'b': return '\b';
+        case 'f': return '\f';
+        case 'n': return '\n';
+        case 'r': return '\r';
+        case 't': return '\t';
+        default: return char;
+      }
+    }
+
+    function looksLikePropertyStart() {
+      const fragment = source.slice(index).trimStart();
+      if (!fragment) return false;
+      if (/^[A-Za-z_$][A-Za-z0-9_$.\-]*\s*:(?!\/\/)/.test(fragment)) return true;
+      if (!/^["']/.test(fragment)) return false;
+
+      const quote = fragment[0];
+      let escaped = false;
+      for (let cursor = 1; cursor < fragment.length; cursor++) {
+        const char = fragment[cursor];
+        if (escaped) {
+          escaped = false;
+          continue;
+        }
+        if (char === '\\') {
+          escaped = true;
+          continue;
+        }
+        if (char === quote) {
+          return /^\s*:/.test(fragment.slice(cursor + 1));
+        }
+      }
+
+      return false;
+    }
+
+    function readBareKey() {
+      const start = index;
+      while (!eof() && isIdentifierPart(peek())) {
+        index++;
+      }
+      return source.slice(start, index).trim();
+    }
+
+    function readBareValueToken() {
+      const start = index;
+      while (!eof()) {
+        const char = peek();
+        if (char === ',' || char === '}' || char === ']' || char === '\n' || char === '\r') break;
+        index++;
+      }
+      return source.slice(start, index).trim();
+    }
+
+    function parseString(quoteChar) {
+      next();
+      let value = '';
+      let closed = false;
+
+      while (!eof()) {
+        const char = next();
+
+        if (char === '\\') {
+          if (eof()) {
+            tracker.add('closed dangling escape sequences');
+            break;
+          }
+
+          const escapedChar = next();
+          if (escapedChar === 'u') {
+            const hex = source.slice(index, index + 4);
+            if (/^[0-9a-fA-F]{4}$/.test(hex)) {
+              value += String.fromCharCode(parseInt(hex, 16));
+              index += 4;
+              continue;
+            }
+            tracker.add('fixed malformed unicode escapes');
+          }
+
+          value += decodeEscape(escapedChar);
+          continue;
+        }
+
+        if (char === quoteChar) {
+          const previous = value[value.length - 1] || '';
+          const upcoming = peek() || '';
+          if (quoteChar === "'" && /[A-Za-z0-9]/.test(previous) && /[A-Za-z0-9]/.test(upcoming)) {
+            value += char;
+            tracker.add('kept apostrophes inside text');
+            continue;
+          }
+
+          closed = true;
+          break;
+        }
+
+        if (char === '\n' || char === '\r') {
+          tracker.add('closed unterminated strings');
+          break;
+        }
+
+        value += char;
+      }
+
+      if (!closed) {
+        tracker.add('closed unterminated strings');
+      }
+
+      return value;
+    }
+
+    function parseNumber() {
+      const match = source.slice(index).match(/^-?(?:\d+\.\d+|\d+\.?|\.\d+)(?:[eE][+-]?\d+)?/);
+      if (!match) {
+        next();
+        tracker.add('recovered malformed numbers as null');
+        return null;
+      }
+
+      let token = match[0];
+      index += token.length;
+
+      if (token.endsWith('.')) {
+        token = token.slice(0, -1);
+        tracker.add('completed truncated numbers');
+      }
+
+      const value = Number(token);
+      if (!Number.isFinite(value)) {
+        tracker.add('replaced non-finite numbers with null');
+        return null;
+      }
+
+      return value;
+    }
+
+    function parseIdentifierValue() {
+      const token = readBareValueToken();
+      const lower = token.toLowerCase();
+
+      if (lower === 'true' || lower === 'false') {
+        if (token !== lower) tracker.add('normalized boolean casing');
+        return lower === 'true';
+      }
+
+      if (lower === 'null') {
+        return null;
+      }
+
+      if (lower === 'none' || lower === 'undefined' || lower === 'nan' || lower === 'infinity' || lower === '+infinity' || lower === '-infinity') {
+        tracker.add('converted non-JSON literals to null');
+        return null;
+      }
+
+      if (/^-?(?:\d+\.\d+|\d+\.?|\.\d+)(?:[eE][+-]?\d+)?$/.test(token)) {
+        const numeric = Number(token.endsWith('.') ? token.slice(0, -1) : token);
+        if (token.endsWith('.')) tracker.add('completed truncated numbers');
+        return Number.isFinite(numeric) ? numeric : null;
+      }
+
+      tracker.add('wrapped bare values as strings');
+      return token;
+    }
+
+    function parseKey() {
+      skipWhitespace();
+      const char = peek();
+
+      if (char === '"' || char === "'") {
+        const key = parseString(char);
+        if (char === "'") tracker.add('converted single-quoted strings');
+        return key;
+      }
+
+      const key = readBareKey();
+      if (key) {
+        tracker.add('quoted unquoted keys');
+        return key;
+      }
+
+      return null;
+    }
+
+    function parseValue() {
+      skipWhitespace();
+      const char = peek();
+
+      if (char === '{') return parseObject(false);
+      if (char === '[') return parseArray();
+      if (char === '"' || char === "'") {
+        const value = parseString(char);
+        if (char === "'") tracker.add('converted single-quoted strings');
+        return value;
+      }
+      if (char === '-' || char === '.' || (char >= '0' && char <= '9')) return parseNumber();
+      if (isIdentifierStart(char)) return parseIdentifierValue();
+
+      if (char === ':' || char === ',') {
+        tracker.add('filled missing values with null');
+        return null;
+      }
+
+      if (eof()) {
+        tracker.add('filled missing values with null');
+        return null;
+      }
+
+      next();
+      tracker.add('removed stray characters');
+      return parseValue();
+    }
+
+    function parseObject(isFragment) {
+      const result = {};
+      const openedWithBrace = peek() === '{';
+      let propertyCount = 0;
+
+      if (openedWithBrace) next();
+
+      while (!eof()) {
+        skipWhitespace();
+
+        if (!isFragment && peek() === '}') {
+          next();
+          return result;
+        }
+
+        if (isFragment && !looksLikePropertyStart() && propertyCount > 0) {
+          return result;
+        }
+
+        if (peek() === ',') {
+          next();
+          skipWhitespace();
+          tracker.add(peek() === '}' || eof() ? 'removed trailing commas' : 'removed stray commas');
+          continue;
+        }
+
+        if (eof()) break;
+
+        const key = parseKey();
+        if (!key) {
+          if (peek() === '}') {
+            if (openedWithBrace) next();
+            return result;
+          }
+
+          if (isFragment && propertyCount > 0) {
+            return result;
+          }
+
+          next();
+          tracker.add('removed stray characters');
+          continue;
+        }
+
+        skipWhitespace();
+        if (peek() === ':') {
+          next();
+        } else {
+          tracker.add('inserted missing colons');
+        }
+
+        skipWhitespace();
+        let value = null;
+
+        if (peek() === ',' || peek() === '}' || eof()) {
+          tracker.add('filled missing values with null');
+        } else {
+          value = parseValue();
+        }
+
+        result[key] = value;
+        propertyCount++;
+        skipWhitespace();
+
+        if (peek() === ',') {
+          next();
+          skipWhitespace();
+          if (peek() === '}' || eof()) tracker.add('removed trailing commas');
+          continue;
+        }
+
+        if (!isFragment && peek() === '}') {
+          next();
+          return result;
+        }
+
+        if (eof()) break;
+
+        if (looksLikePropertyStart()) {
+          tracker.add('inserted missing commas');
+          continue;
+        }
+
+        if (peek() === ']') {
+          return result;
+        }
+
+        next();
+        tracker.add('removed stray characters');
+      }
+
+      if (openedWithBrace) {
+        tracker.add('closed unterminated objects');
+      }
+
+      return result;
+    }
+
+    function parseArray() {
+      const result = [];
+      const openedWithBracket = peek() === '[';
+
+      if (openedWithBracket) next();
+
+      while (!eof()) {
+        skipWhitespace();
+
+        if (peek() === ']') {
+          next();
+          return result;
+        }
+
+        if (peek() === ',') {
+          next();
+          skipWhitespace();
+          tracker.add(peek() === ']' || eof() ? 'removed trailing commas' : 'removed empty array items');
+          continue;
+        }
+
+        if (eof()) break;
+
+        result.push(parseValue());
+        skipWhitespace();
+
+        if (peek() === ',') {
+          next();
+          skipWhitespace();
+          if (peek() === ']' || eof()) tracker.add('removed trailing commas');
+          continue;
+        }
+
+        if (peek() === ']') {
+          next();
+          return result;
+        }
+
+        if (eof()) break;
+
+        if (isValueStart(peek())) {
+          tracker.add('inserted missing commas');
+          continue;
+        }
+
+        next();
+        tracker.add('removed stray characters');
+      }
+
+      if (openedWithBracket) {
+        tracker.add('closed unterminated arrays');
+      }
+
+      return result;
+    }
+
+    function parseRoot() {
+      skipWhitespace();
+
+      if (eof()) return null;
+      if (peek() === '{') return parseObject(false);
+      if (peek() === '[') return parseArray();
+      if (looksLikePropertyStart()) {
+        tracker.add('wrapped loose key/value pairs in braces');
+        return parseObject(true);
+      }
+
+      const firstValue = parseValue();
+      skipWhitespace();
+
+      if (eof()) {
+        return firstValue;
+      }
+
+      const values = [firstValue];
+      while (!eof()) {
+        skipWhitespace();
+        if (peek() === ',') next();
+        skipWhitespace();
+        if (eof()) break;
+
+        if (looksLikePropertyStart()) {
+          values.push(parseObject(true));
+        } else if (isValueStart(peek())) {
+          values.push(parseValue());
+        } else {
+          next();
+          tracker.add('removed trailing non-JSON text');
+          continue;
+        }
+      }
+
+      tracker.add('wrapped multiple root values in an array');
+      return values;
+    }
+
+    return { parseRoot };
+  }
+
+  function summarizeRepairs(tracker, limit = 5) {
+    const items = tracker.list(limit);
+    const remaining = tracker.size() - items.length;
+    if (remaining > 0) {
+      items.push(`plus ${remaining} more repair step${remaining === 1 ? '' : 's'}`);
+    }
+    return items;
+  }
+
+  function repairJsonWithFallback(raw) {
+    const tracker = createRepairTracker();
+    const normalized = normalizeJsonRepairInput(raw, tracker);
+
+    if (!normalized) {
+      return { data: null, repairedText: '', error: 'Nothing parsable was found in the input.', tracker };
+    }
+
+    const directParse = parseJSON(normalized);
+    if (!directParse.error) {
+      return {
+        data: directParse.data,
+        repairedText: JSON.stringify(directParse.data, null, getIndent()),
+        tracker
+      };
+    }
+
+    const parser = createLooseJsonParser(normalized, tracker);
+    const recoveredData = parser.parseRoot();
+    const repairedText = JSON.stringify(recoveredData, null, getIndent());
+    const verification = parseJSON(repairedText);
+
+    if (verification.error) {
+      return { data: null, repairedText, error: verification.error, tracker };
+    }
+
+    return { data: verification.data, repairedText, tracker };
+  }
+
+  function isAggressiveRepair(tracker) {
+    return tracker.has('filled missing values with null')
+      || tracker.has('closed unterminated objects')
+      || tracker.has('closed unterminated arrays')
+      || tracker.has('wrapped multiple root values in an array')
+      || tracker.has('removed leading non-JSON text')
+      || tracker.has('removed trailing non-JSON text');
+  }
+
   function repairJSON() {
+    {
+      const raw = els.input.value.trim();
+      if (!raw) {
+        showStatus('Please paste JSON to repair', 'info');
+        return;
+      }
+
+      const { data, error } = parseJSON(raw);
+      if (!error) {
+        const formatted = JSON.stringify(data, null, getIndent());
+        els.input.value = formatted;
+        els.output.value = formatted;
+        state.currentJson = data;
+        updateStats(data);
+        showStatus('JSON is already valid. No repair steps were needed.', 'success', [
+          'The formatter verified the input and refreshed it with the active indentation setting.'
+        ]);
+        return;
+      }
+
+      showStatus('Repairing malformed JSON with the advanced recovery pipeline.', 'info', [
+        'Scanning for missing quotes, commas, braces, comments, broken strings, and loose JavaScript-style values.'
+      ]);
+
+      const result = repairJsonWithFallback(raw);
+
+      if (!result.error) {
+        els.input.value = result.repairedText;
+        els.output.value = result.repairedText;
+        state.currentJson = result.data;
+        updateStats(result.data);
+
+        const totalFixes = Math.max(result.tracker.count(), 1);
+        const detailItems = [
+          `${totalFixes} recovery step${totalFixes === 1 ? '' : 's'} applied.`,
+          ...summarizeRepairs(result.tracker)
+        ];
+        const statusType = isAggressiveRepair(result.tracker) ? 'warning' : 'success';
+        const statusMessage = statusType === 'warning'
+          ? 'Repair complete. Review the recovered JSON because aggressive fixes were required.'
+          : 'Repair complete. The formatter rebuilt a valid JSON structure.';
+
+        showStatus(statusMessage, statusType, detailItems);
+        return;
+      }
+
+      showStatus('Repair stalled before a valid JSON structure could be recovered.', 'error', [
+        `Parser error: ${result.error}`,
+        ...summarizeRepairs(result.tracker)
+      ]);
+      els.output.value = [
+        'Attempted repairs:',
+        ...result.tracker.list(),
+        '',
+        'Remaining parser error:',
+        result.error,
+        '',
+        'Best-effort repaired JSON:',
+        result.repairedText || raw
+      ].join('\n');
+      return;
+    }
+
     let raw = els.input.value.trim();
     if (!raw) {
       showStatus('Please paste JSON to repair', 'info');

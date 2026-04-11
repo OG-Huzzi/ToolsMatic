@@ -652,60 +652,6 @@
     applyFilters();
   };
 
-  const removeFakeSocialProof = () => {
-    const reviewHeadingPattern = /what users(?:\s+are)?\s+saying|what users say|what artists .* say|user reviews|trusted by .* teams/i;
-    const removable = new Set();
-
-    document.querySelectorAll('.testimonial-grid, .review-grid, .testimonial-card, .review-card').forEach((node) => {
-      const section = node.closest('section');
-      removable.add(section || node.parentElement || node);
-    });
-
-    document.querySelectorAll('h1, h2, h3').forEach((heading) => {
-      const text = (heading.textContent || '').replace(/\s+/g, ' ').trim();
-      if (!reviewHeadingPattern.test(text)) return;
-      removable.add(heading.closest('section') || heading.parentElement || heading);
-    });
-
-    removable.forEach((node) => {
-      if (!node || !node.parentElement) return;
-      node.remove();
-    });
-
-    const sanitizeStructuredData = (value) => {
-      if (Array.isArray(value)) {
-        return value
-          .map((item) => sanitizeStructuredData(item))
-          .filter((item) => item !== undefined);
-      }
-
-      if (value && typeof value === 'object') {
-        const next = {};
-        Object.entries(value).forEach(([key, child]) => {
-          if (key === 'review' || key === 'aggregateRating') return;
-          const cleaned = sanitizeStructuredData(child);
-          if (cleaned !== undefined) next[key] = cleaned;
-        });
-        return next;
-      }
-
-      return value;
-    };
-
-    document.querySelectorAll('script[type="application/ld+json"]').forEach((script) => {
-      const raw = script.textContent?.trim();
-      if (!raw || (!/review/i.test(raw) && !/aggregateRating/i.test(raw))) return;
-
-      try {
-        const parsed = JSON.parse(raw);
-        const cleaned = sanitizeStructuredData(parsed);
-        script.textContent = JSON.stringify(cleaned, null, 2);
-      } catch (_) {
-        // Leave malformed JSON-LD untouched.
-      }
-    });
-  };
-
   const getSectionSummary = (section) => {
     const text = Array.from(section.querySelectorAll('p, li'))
       .map((node) => (node.textContent || '').replace(/\s+/g, ' ').trim())
@@ -1279,7 +1225,6 @@
     initAnalyticsTracking();
     initGlobalToolSeo();
     initSuggestions();
-    removeFakeSocialProof();
     initStandardPageExperience();
     initHomeExperience();
     initToolPageExperience();

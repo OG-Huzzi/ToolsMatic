@@ -12,8 +12,8 @@
     gtag('config', 'G-9VEPDS13HT');
   </script>
   <title>Regex Tester API — Developer Integration & Webhooks | ToolsMatic</title>
-  <meta name="description" content="Integrate the ToolsMatic Regex Tester API into your applications. RESTful endpoints for pattern validation, challenge mode, leaderboards, and webhook support.">
-  <meta name="keywords" content="regex api, regex validation api, developer api, webhooks, integration, pattern testing, leaderboard api">
+  <meta name="description" content="Integrate the ToolsMatic Regex Tester API into your applications. RESTful endpoints for pattern validation, scoring, batch checks, diagnostics, and webhook support.">
+  <meta name="keywords" content="regex api, regex validation api, developer api, webhooks, integration, pattern testing, regex diagnostics api">
   <link rel="stylesheet" href="../assets/styles.css">
   <link rel="canonical" href="https://toolsmatic.me/tools/regex-tester-api.html">
   <script type="application/ld+json">
@@ -82,6 +82,29 @@
     .method-delete { background: #ef4444; color: white; }
     code.inline { background: var(--card); padding: 2px 6px; border-radius: 4px; }
   </style>
+  <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "WebApplication",
+    "name":  "Regex Tester API — Developer Integration \u0026 Webhooks",
+    "url":  "https://toolsmatic.me/tools/regex-tester-api.html",
+    "description":  "Integrate the ToolsMatic Regex Tester API into your applications. RESTful endpoints for pattern validation, scoring, batch checks, diagnostics, and webhook support.",
+    "applicationCategory":  "UtilityApplication",
+    "operatingSystem":  "Any",
+    "browserRequirements":  "Requires JavaScript and a modern web browser",
+    "isAccessibleForFree":  true,
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "ToolsMatic",
+                      "url":  "https://toolsmatic.me/"
+                  },
+    "offers":  {
+                   "@type":  "Offer",
+                   "price":  "0",
+                   "priceCurrency":  "USD"
+               }
+}
+  </script>
 </head>
 <body>
   <header>
@@ -102,7 +125,7 @@
     </nav>
 
     <h1 style="text-align: center; margin: 20px 0 10px;">Regex Tester API & Integration Documentation</h1>
-    <p style="text-align: center; color: var(--muted); max-width: 700px; margin: 0 auto 30px;">Power your applications with enterprise-grade regex validation, scoring, and leaderboard management through the ToolsMatic REST API.</p>
+    <p style="text-align: center; color: var(--muted); max-width: 700px; margin: 0 auto 30px;">Power your applications with regex validation, scoring, diagnostics, batch checks, and webhook-ready integration patterns through the ToolsMatic REST API.</p>
 
     <section class="section">
       <h2>Implementation Guide for Reliable Regex API Integrations</h2>
@@ -203,91 +226,66 @@
   "success": true,
   "scorePoints": 500,
   "golfScore": 17,
-  "globalRank": 42,
-  "personalBest": 18,
-  "achievement": "golfWin",
-  "leaderboardUpdate": true
+  "testsPassed": 10,
+  "testsTotal": 10,
+  "feedback": ["Pattern passed all fixtures", "Review boundaries before production use"]
 }</code></pre>
 
-      <h3>4. Get Leaderboard</h3>
-      <p>Retrieve global or team-specific leaderboards.</p>
+      <h3>4. Batch Validate Patterns</h3>
+      <p>Validate multiple patterns against fixtures in one request.</p>
       <div class="api-endpoint">
-        <span class="method-badge method-get">GET</span>/api/v1/regex/leaderboard?scope=global&limit=50
+        <span class="method-badge method-post">POST</span>/api/v1/regex/batch
       </div>
-      <p><strong>Query Parameters:</strong></p>
-      <ul>
-        <li><code class="inline">scope</code>: <code class="inline">global</code> | <code class="inline">team</code> | <code class="inline">personal</code> (default: global)</li>
-        <li><code class="inline">limit</code>: Number of results (1-100, default: 20)</li>
-        <li><code class="inline">offset</code>: Pagination offset (default: 0)</li>
-      </ul>
+      <p><strong>Request Body:</strong></p>
+      <pre style="background: var(--card); padding: 12px; border-radius: 8px; overflow-x: auto;"><code>{
+  "flavor": "javascript",
+  "checks": [
+    {
+      "id": "email_basic",
+      "pattern": "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}",
+      "flags": "i",
+      "samples": ["admin@toolsmatic.me", "not-an-email"]
+    }
+  ]
+}</code></pre>
       <p><strong>Response:</strong></p>
       <pre style="background: var(--card); padding: 12px; border-radius: 8px; overflow-x: auto;"><code>{
-  "leaderboard": [
+  "results": [
     {
-      "rank": 1,
-      "username": "RegexMaster",
-      "score": 15847,
-      "challengesWon": 127,
-      "bestGolfScore": 14,
-      "badges": 7,
-      "lastActive": "2026-02-24T14:30:00Z"
-    },
-    {
-      "rank": 2,
-      "username": "PatternHunter",
-      "score": 15201,
-      "challengesWon": 118,
-      "bestGolfScore": 16,
-      "badges": 6,
-      "lastActive": "2026-02-24T12:15:00Z"
+      "id": "email_basic",
+      "valid": true,
+      "matchCount": 1,
+      "timeMs": 0.31,
+      "warnings": []
     }
   ],
-  "totalPlayers": 12847,
-  "yourRank": 127
+  "summary": {
+    "totalChecks": 1,
+    "passed": 1,
+    "failed": 0
+  }
 }</code></pre>
 
-      <h3>5. Get User Achievements</h3>
-      <p>Retrieve badges and achievements for a user.</p>
+      <h3>5. Explain Pattern</h3>
+      <p>Return a compact token-level explanation and risk summary for a regex pattern.</p>
       <div class="api-endpoint">
-        <span class="method-badge method-get">GET</span>/api/v1/user/achievements
+        <span class="method-badge method-post">POST</span>/api/v1/regex/explain
       </div>
-      <p><strong>Response:</strong></p>
+      <p><strong>Request Body:</strong></p>
       <pre style="background: var(--card); padding: 12px; border-radius: 8px; overflow-x: auto;"><code>{
-  "achievements": [
-    { "id": "firstTest", "name": "🎯 First Test", "unlockedAt": "2026-01-15T09:22:00Z" },
-    { "id": "testsX10", "name": "⚡ Getting Warmed Up", "unlockedAt": "2026-01-16T14:30:00Z" },
-    { "id": "efficiencyPro", "name": "⚙️ Efficiency Pro", "unlockedAt": "2026-02-10T18:45:00Z" }
-  ],
-  "totalBadges": 3,
-  "nextMilestone": "testsX100"
+  "pattern": "^(?&lt;slug&gt;[a-z0-9-]+)$",
+  "flavor": "javascript"
 }</code></pre>
-
-      <h3>6. Pattern Library</h3>
-      <p>Search and browse community patterns.</p>
-      <div class="api-endpoint">
-        <span class="method-badge method-get">GET</span>/api/v1/patterns/library?query=email&sort=score
-      </div>
-      <p><strong>Query Parameters:</strong></p>
-      <ul>
-        <li><code class="inline">query</code>: Search term</li>
-        <li><code class="inline">sort</code>: <code class="inline">score</code> | <code class="inline">popular</code> | <code class="inline">recent</code> (default: popular)</li>
-        <li><code class="inline">category</code>: Pattern category tag</li>
-      </ul>
       <p><strong>Response:</strong></p>
       <pre style="background: var(--card); padding: 12px; border-radius: 8px; overflow-x: auto;"><code>{
-  "patterns": [
-    {
-      "id": "pat_email_rfc5322",
-      "name": "Email (RFC 5322 Compliant)",
-      "pattern": "(?&lt;user&gt;[a-z0-9._%+-]+)@(?&lt;domain&gt;[a-z0-9.-]+\\.[a-z]{2,})",
-      "author": "RegexMaster",
-      "score": 94,
-      "downloads": 15847,
-      "rating": 4.8,
-      "tags": ["email", "validation", "rfc5322"]
-    }
+  "tokens": [
+    { "token": "^", "meaning": "Start of string anchor" },
+    { "token": "(?&lt;slug&gt;...)", "meaning": "Named capture group" },
+    { "token": "[a-z0-9-]+", "meaning": "One or more lowercase slug characters" },
+    { "token": "$", "meaning": "End of string anchor" }
   ],
-  "total": 1247
+  "risk": "low",
+  "notes": ["Anchored pattern is suitable for full-string slug validation."]
 }</code></pre>
     </section>
 
@@ -297,10 +295,9 @@
 
       <h3>Webhook Events</h3>
       <ul>
-        <li><code class="inline">challenge.completed</code> — User completed a challenge</li>
-        <li><code class="inline">achievement.unlocked</code> — Achievement badge earned</li>
-        <li><code class="inline">pattern.shared</code> — Pattern shared by user</li>
-        <li><code class="inline">leaderboard.rank_changed</code> — User ranking changed</li>
+        <li><code class="inline">regex.validation_completed</code> — Validation run completed</li>
+        <li><code class="inline">regex.challenge_completed</code> — Challenge-style fixture run completed</li>
+        <li><code class="inline">regex.pattern_flagged</code> — Pattern diagnostics produced a warning</li>
       </ul>
 
       <h3>Webhook Example: Challenge Completed</h3>
@@ -311,14 +308,14 @@ X-Webhook-Signature: sha256=abc123...
 X-Webhook-ID: wh_abc123xyz
 
 {
-  "event": "challenge.completed",
+  "event": "regex.challenge_completed",
   "timestamp": "2026-02-24T14:30:00Z",
   "data": {
-    "userId": "user_abc123",
+    "runId": "run_abc123",
     "challengeId": "golf_email_extract",
-    "score": 18,
     "golfScore": 17,
-    "globalRank": 42
+    "testsPassed": 10,
+    "testsTotal": 10
   }
 }</code></pre>
     </section>

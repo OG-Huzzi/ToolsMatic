@@ -551,6 +551,29 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "WebApplication",
+    "name":  "Professional Markdown Previewer 2026 | Live Preview, HTML Export",
+    "url":  "https://toolsmatic.me/tools/markdown-previewer.html",
+    "description":  "Professional Markdown previewer with live rendering, split view, HTML export, Markdown download, GFM tables, task lists, syntax helpers, and privacy-first local preview.",
+    "applicationCategory":  "UtilityApplication",
+    "operatingSystem":  "Any",
+    "browserRequirements":  "Requires JavaScript and a modern web browser",
+    "isAccessibleForFree":  true,
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "ToolsMatic",
+                      "url":  "https://toolsmatic.me/"
+                  },
+    "offers":  {
+                   "@type":  "Offer",
+                   "price":  "0",
+                   "priceCurrency":  "USD"
+               }
+}
+  </script>
 </head>
 <body>
   <header>
@@ -1049,7 +1072,30 @@
         downloadHtml() {
           const html = refs.htmlPre.textContent.trim();
           if (!html) return;
-          downloadBlob("markdown-preview.html", "text/html", "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Markdown Export</title></head><body>" + html + "</body></html>");
+          downloadBlob("markdown-preview.html", "text/html", "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Markdown Export</title>  <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "WebApplication",
+    "name":  "Professional Markdown Previewer 2026 | Live Preview, HTML Export",
+    "url":  "https://toolsmatic.me/tools/markdown-previewer.html",
+    "description":  "Professional Markdown previewer with live rendering, split view, HTML export, Markdown download, GFM tables, task lists, syntax helpers, and privacy-first local preview.",
+    "applicationCategory":  "UtilityApplication",
+    "operatingSystem":  "Any",
+    "browserRequirements":  "Requires JavaScript and a modern web browser",
+    "isAccessibleForFree":  true,
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "ToolsMatic",
+                      "url":  "https://toolsmatic.me/"
+                  },
+    "offers":  {
+                   "@type":  "Offer",
+                   "price":  "0",
+                   "priceCurrency":  "USD"
+               }
+}
+  </script>
+</head><body>" + html + "</body></html>");
           toast("Downloaded HTML", "success");
         },
         downloadMarkdown() {

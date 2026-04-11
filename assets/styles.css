@@ -842,7 +842,6 @@ code {
   .suggestion-item,
   .faq-item,
   .toc,
-  .testimonial-card,
   .feature-card {
     padding: 14px;
   }
@@ -851,7 +850,6 @@ code {
   .two-col,
   .values-grid,
   .feature-grid,
-  .testimonial-grid,
   .json-stats,
   .json-editor-container,
   .json-editor-container.compare-mode {
@@ -993,7 +991,6 @@ code {
   .suggestion-item,
   .faq-item,
   .toc,
-  .testimonial-card,
   .feature-card {
     padding: 12px;
   }
@@ -1975,8 +1972,7 @@ body.page-tool .tool-shell {
 .value-card,
 .feature-card,
 .faq-item,
-.toc,
-.testimonial-card {
+.toc {
   border-radius: 22px;
 }
 
@@ -1986,8 +1982,7 @@ body.page-tool .json-stats,
 body.page-tool .feature-card,
 body.page-tool .faq-item,
 body.page-tool .comparison-table,
-body.page-tool .toc,
-body.page-tool .testimonial-card {
+body.page-tool .toc {
   border-radius: 18px;
 }
 

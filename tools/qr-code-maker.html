@@ -96,6 +96,36 @@
       background-position: center;
       background-size: contain;
     }
+    .qr-color-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 110px;
+    }
+    .qr-color-input {
+      width: 72px;
+      min-width: 72px;
+      height: 42px;
+      padding: 4px;
+      border-radius: 14px;
+      border: 1px solid rgba(146, 167, 192, 0.24);
+      background: rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+    .qr-color-input::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+    .qr-color-input::-webkit-color-swatch {
+      border: none;
+      border-radius: 10px;
+    }
+    .qr-color-input::-moz-color-swatch {
+      border: none;
+      border-radius: 10px;
+    }
   </style>
   <script src="https://www.highperformanceformat.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
 
@@ -285,7 +315,30 @@
         }
       }
     </style>
-    </head>
+      <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "WebApplication",
+    "name":  "Professional QR Code Generator 2026 | WiFi, vCard, Logo, SVG, PNG",
+    "url":  "https://toolsmatic.me/tools/qr-code-maker.html",
+    "description":  "Professional QR code generator with URL, WiFi, vCard, email, SMS, and event support. Customize colors, size, margin, style, and logo. Export PNG or SVG, instant preview, 100% client-side, offline-ready, privacy-first.",
+    "applicationCategory":  "UtilityApplication",
+    "operatingSystem":  "Any",
+    "browserRequirements":  "Requires JavaScript and a modern web browser",
+    "isAccessibleForFree":  true,
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "ToolsMatic",
+                      "url":  "https://toolsmatic.me/"
+                  },
+    "offers":  {
+                   "@type":  "Offer",
+                   "price":  "0",
+                   "priceCurrency":  "USD"
+               }
+}
+  </script>
+</head>
 <body>
   <header>
     <div class="nav">
@@ -471,8 +524,14 @@
             <option value="H">High (H)</option>
           </select>
         </label>
-        <label>Foreground <input type="color" id="qr-fore" value="#0b1222"></label>
-        <label>Background <input type="color" id="qr-back" value="#ffffff"></label>
+        <label class="qr-color-field">
+          <span>Foreground</span>
+          <input type="color" id="qr-fore" class="qr-color-input" value="#0b1222">
+        </label>
+        <label class="qr-color-field">
+          <span>Background</span>
+          <input type="color" id="qr-back" class="qr-color-input" value="#ffffff">
+        </label>
         <label style="display:flex; align-items:center; gap:8px;">
           <input type="checkbox" id="qr-transparent">
           <span>Transparent background</span>

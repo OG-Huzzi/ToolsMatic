@@ -464,6 +464,29 @@
     .section p,.section li,.section h2,.section h3,.section h4 { word-break:break-word; overflow-wrap:anywhere; }
     @media (max-width:960px){ .tool-grid{grid-template-columns:1fr;} .control-row{grid-template-columns:1fr;} }
   </style>
+  <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "WebApplication",
+    "name":  "Professional Regex Tester 2026 | Real-Time Regex Debugger, Replace \u0026 Split Constructor — ToolsMatic",
+    "url":  "https://toolsmatic.me/tools/regex-tester.html",
+    "description":  "Enterprise-grade regex tester with real-time highlighting, capture group inspection, replace preview, split analysis, flavor compatibility (JavaScript/Python/PCRE), performance diagnostics, and 7 expert presets. Free, privacy-first, browser-native, no server uploads.",
+    "applicationCategory":  "UtilityApplication",
+    "operatingSystem":  "Any",
+    "browserRequirements":  "Requires JavaScript and a modern web browser",
+    "isAccessibleForFree":  true,
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "ToolsMatic",
+                      "url":  "https://toolsmatic.me/"
+                  },
+    "offers":  {
+                   "@type":  "Offer",
+                   "price":  "0",
+                   "priceCurrency":  "USD"
+               }
+}
+  </script>
 </head>
 <body>
   <header>
@@ -606,15 +629,6 @@
 
       </div>
 
-      <!-- Leaderboard Preview -->
-      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-top: 20px;">
-        <h3 style="margin-top: 0; display: flex; align-items: center; gap: 8px;">🌍 Global Rankings
-          <button id="view-leaderboard" style="margin-left: auto; background: none; border: 1px solid var(--border); padding: 4px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">View Full</button>
-        </h3>
-        <div id="leaderboard-preview" style="font-size: 0.9rem;">
-          <p style="color: var(--muted);">Rankings calculated from challenge scores, pattern efficiency, and community votes.</p>
-        </div>
-      </div>
     </section>
 
     <section class="section" aria-labelledby="deep-output">
@@ -834,9 +848,7 @@
       efficiencyBadge: document.getElementById('efficiency-badge'),
       enterChallenge: document.getElementById('enter-challenge'),
       challengeStats: document.getElementById('challenge-stats'),
-      achievementsDisplay: document.getElementById('achievements-display'),
-      viewLeaderboard: document.getElementById('view-leaderboard'),
-      leaderboardPreview: document.getElementById('leaderboard-preview')
+      achievementsDisplay: document.getElementById('achievements-display')
     };
 
     const presets = {
@@ -1069,17 +1081,11 @@
       
       el.enterChallenge?.addEventListener('click', () => {
         if (window.ToolsMatic?.showToast) {
-          window.ToolsMatic.showToast('🏆 Challenge mode coming soon! Compete globally.', 'info');
+          window.ToolsMatic.showToast('Challenge practice mode coming soon.', 'info');
         }
       });
       
-      el.viewLeaderboard?.addEventListener('click', () => {
-        if (window.ToolsMatic?.showToast) {
-          window.ToolsMatic.showToast('🌍 Global leaderboard launching soon!', 'info');
-        }
-      });
-      
-      el.challengeStats.textContent = `${userData.challengesWon} challenges won`;
+      el.challengeStats.textContent = `${userData.challengesWon} practice runs completed`;
       updateAchievements();
     }
 
@@ -1201,4 +1207,3 @@
 <script src="https://fixesconsessionconsession.com/51/33/02/5133020b94dad7bafd96065840c47d76.js"></script>
 </body>
 </html>
-

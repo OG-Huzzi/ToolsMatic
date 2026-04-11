@@ -11,9 +11,9 @@
     gtag('js', new Date());
     gtag('config', 'G-9VEPDS13HT');
   </script>
-  <title>Regex Golf Challenge & Pattern Marketplace | ToolsMatic</title>
-  <meta name="description" content="Compete in regex challenges, solve problems with minimal characters, and climb the global leaderboard. Browse 1000s of community patterns rated by developers.">
-  <meta name="keywords" content="regex challenge, regex golf, code golf, regex leaderboard, pattern marketplace, regex competition">
+  <title>Regex Golf Challenge Practice | ToolsMatic</title>
+  <meta name="description" content="Practice regex golf challenges, solve pattern tasks with shorter expressions, and learn reliable regex strategy with local examples and browser-native guidance.">
+  <meta name="keywords" content="regex challenge, regex golf, regex practice, regex exercises, regex training, regular expression challenge">
   <link rel="stylesheet" href="../assets/styles.css">
   <link rel="canonical" href="https://toolsmatic.me/tools/regex-challenge.html">
   <script type="application/ld+json">
@@ -81,24 +81,32 @@
     .difficulty-easy { background: #10b981; color: white; }
     .difficulty-medium { background: #f59e0b; color: white; }
     .difficulty-hard { background: #ef4444; color: white; }
-    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin: 16px 0; }
-    .stat-item { text-align: center; padding: 12px; background: var(--surface); border-radius: 8px; }
-    .stat-value { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
-    .stat-label { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
-    .leaderboard-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-    .leaderboard-table th { background: var(--card); padding: 12px; text-align: left; font-weight: 600; border-bottom: 2px solid var(--border); }
-    .leaderboard-table td { padding: 12px; border-bottom: 1px solid var(--border); }
-    .leaderboard-table tr:hover { background: var(--surface); }
-    .rank-badge { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; font-weight: 700; color: white; }
-    .rank-1 { background: linear-gradient(135deg, #fbbf24, #f59e0b); }
-    .rank-2 { background: linear-gradient(135deg, #e5e7eb, #d1d5db); }
-    .rank-3 { background: linear-gradient(135deg, #f97316, #ea580c); }
-    .pattern-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin: 20px 0; }
-    .pattern-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; cursor: pointer; transition: all 0.3s; }
-    .pattern-item:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(34,211,238,.15); }
-    .pattern-rating { display: flex; align-items: center; gap: 4px; font-size: 0.9rem; }
-    .pattern-stars { color: #fbbf24; }
+    .challenge-meta { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0 16px; color: var(--muted); font-size: 0.92rem; }
+    .challenge-meta span { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; }
   </style>
+  <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "WebApplication",
+    "name":  "Regex Golf Challenge Practice",
+    "url":  "https://toolsmatic.me/tools/regex-challenge.html",
+    "description":  "Practice regex golf challenges, solve pattern tasks with shorter expressions, and learn reliable regex strategy with local examples and browser-native guidance.",
+    "applicationCategory":  "UtilityApplication",
+    "operatingSystem":  "Any",
+    "browserRequirements":  "Requires JavaScript and a modern web browser",
+    "isAccessibleForFree":  true,
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "ToolsMatic",
+                      "url":  "https://toolsmatic.me/"
+                  },
+    "offers":  {
+                   "@type":  "Offer",
+                   "price":  "0",
+                   "priceCurrency":  "USD"
+               }
+}
+  </script>
 </head>
 <body>
   <header>
@@ -119,282 +127,43 @@
       <span aria-current="page">Regex Challenge</span>
     </nav>
 
-    <h1 style="text-align: center; margin: 20px 0 10px;">Regex Challenge Mode & Pattern Marketplace</h1>
-    <p style="text-align: center; color: var(--muted); max-width: 800px; margin: 0 auto 30px;">Compete in daily regex challenges, solve problems with the fewest characters, climb global leaderboards, and discover patterns shared by the developer community.</p>
+    <h1 style="text-align: center; margin: 20px 0 10px;">Regex Challenge Mode</h1>
+    <p style="text-align: center; color: var(--muted); max-width: 800px; margin: 0 auto 30px;">Practice focused regex exercises, learn how to reduce pattern length safely, and use the strategy guide below to turn challenge practice into reliable production patterns.</p>
 
-    <!-- Stats Section -->
-    <section class="section" style="text-align: center;">
-      <h2 style="text-align: center; margin-bottom: 20px;">🌍 Community Stats</h2>
-      <div class="stat-row">
-        <div class="stat-item">
-          <div class="stat-value">127,482</div>
-          <div class="stat-label">Active Developers</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">47,291</div>
-          <div class="stat-label">Challenges Completed</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">12,847</div>
-          <div class="stat-label">Patterns Shared</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">489</div>
-          <div class="stat-label">Active Daily</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Challenges -->
     <section class="section">
-      <h2>🏆 Featured Challenges This Week</h2>
+      <h2>Practice Challenges</h2>
 
       <div class="challenge-card">
-        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
-          <div>
-            <span class="difficulty difficulty-easy">Easy</span>
-            <h3 style="margin: 8px 0;">Email Address Validation</h3>
-            <p style="color: var(--muted); margin: 4px 0;">Extract valid email addresses from mixed text. ⏱️ 2 hrs remaining</p>
-          </div>
-          <div style="text-align: right;">
-            <div style="font-size: 0.9rem; color: var(--muted);">Personal Best</div>
-            <div style="font-size: 1.3rem; font-weight: 700; color: var(--accent);">24 chars</div>
-          </div>
+        <span class="difficulty difficulty-easy">Easy</span>
+        <h3 style="margin: 8px 0;">Email Address Extraction</h3>
+        <p style="color: var(--muted); margin: 4px 0;">Write a pattern that extracts email-like strings from mixed text while avoiding obvious false positives.</p>
+        <div class="challenge-meta">
+          <span>Goal: correct matches first</span>
+          <span>Focus: boundaries and character classes</span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; font-size: 0.9rem;">
-          <div>
-            <div style="color: var(--muted);">Submissions</div>
-            <div style="font-weight: 700;">8,247</div>
-          </div>
-          <div>
-            <div style="color: var(--muted);">Avg Score</div>
-            <div style="font-weight: 700;">68 chars</div>
-          </div>
-          <div>
-            <div style="color: var(--muted);">Best Score</div>
-            <div style="font-weight: 700; color: var(--accent);">18 chars</div>
-          </div>
-        </div>
-        <button style="background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%;">🎯 Start Challenge</button>
+        <a href="regex-tester.html" style="display:block; text-align:center; background: var(--accent); color: white; text-decoration:none; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600;">Open in Regex Tester</a>
       </div>
 
       <div class="challenge-card">
-        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
-          <div>
-            <span class="difficulty difficulty-medium">Medium</span>
-            <h3 style="margin: 8px 0;">URL and Domain Extraction</h3>
-            <p style="color: var(--muted); margin: 4px 0;">Parse URLs with query parameters and fragments. ⏱️ 1 day remaining</p>
-          </div>
-          <div style="text-align: right;">
-            <div style="font-size: 0.9rem; color: var(--muted);">Personal Best</div>
-            <div style="font-size: 1.3rem; font-weight: 700; color: var(--accent);">31 chars</div>
-          </div>
+        <span class="difficulty difficulty-medium">Medium</span>
+        <h3 style="margin: 8px 0;">URL and Domain Extraction</h3>
+        <p style="color: var(--muted); margin: 4px 0;">Build a pattern that identifies URLs with optional query strings and fragments without swallowing surrounding punctuation.</p>
+        <div class="challenge-meta">
+          <span>Goal: precise stopping rules</span>
+          <span>Focus: optional groups</span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; font-size: 0.9rem;">
-          <div>
-            <div style="color: var(--muted);">Submissions</div>
-            <div style="font-weight: 700;">5,182</div>
-          </div>
-          <div>
-            <div style="color: var(--muted);">Avg Score</div>
-            <div style="font-weight: 700;">94 chars</div>
-          </div>
-          <div>
-            <div style="color: var(--muted);">Best Score</div>
-            <div style="font-weight: 700; color: var(--accent);">22 chars</div>
-          </div>
-        </div>
-        <button style="background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%;">🎯 Start Challenge</button>
+        <a href="regex-tester.html" style="display:block; text-align:center; background: var(--accent); color: white; text-decoration:none; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600;">Open in Regex Tester</a>
       </div>
 
       <div class="challenge-card">
-        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
-          <div>
-            <span class="difficulty difficulty-hard">Hard</span>
-            <h3 style="margin: 8px 0;">Nested Parentheses Matching</h3>
-            <p style="color: var(--muted); margin: 4px 0;">Match balanced parentheses with arbitrary nesting. ⏱️ 3 days remaining</p>
-          </div>
-          <div style="text-align: right;">
-            <div style="font-size: 0.9rem; color: var(--muted);">Personal Best</div>
-            <div style="font-size: 1.3rem; font-weight: 700; color: #999;">—</div>
-          </div>
+        <span class="difficulty difficulty-hard">Hard</span>
+        <h3 style="margin: 8px 0;">Nested Delimiter Limits</h3>
+        <p style="color: var(--muted); margin: 4px 0;">Explore where regex is helpful for delimiter matching and where a parser is safer for deeply nested structures.</p>
+        <div class="challenge-meta">
+          <span>Goal: understand regex limits</span>
+          <span>Focus: engine behavior and backtracking</span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; font-size: 0.9rem;">
-          <div>
-            <div style="color: var(--muted);">Submissions</div>
-            <div style="font-weight: 700;">1,204</div>
-          </div>
-          <div>
-            <div style="color: var(--muted);">Avg Score</div>
-            <div style="font-weight: 700;">187 chars</div>
-          </div>
-          <div>
-            <div style="color: var(--muted);">Best Score</div>
-            <div style="font-weight: 700; color: var(--accent);">47 chars</div>
-          </div>
-        </div>
-        <button style="background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%;">🎯 Start Challenge</button>
-      </div>
-    </section>
-
-    <!-- Global Leaderboard -->
-    <section class="section">
-      <h2>🌍 Global Leaderboard - Top Competitors</h2>
-      <table class="leaderboard-table">
-        <thead>
-          <tr>
-            <th style="width: 60px;">Rank</th>
-            <th>Player</th>
-            <th style="text-align: right;">Total Score</th>
-            <th style="text-align: right;">Challenges Won</th>
-            <th style="text-align: right;">Best Golf</th>
-            <th style="text-align: right;">Badges</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="rank-badge rank-1">🥇</span></td>
-            <td><strong>RegexMaster</strong></td>
-            <td style="text-align: right;">🌟 15,847</td>
-            <td style="text-align: right;">127</td>
-            <td style="text-align: right;">14 chars</td>
-            <td style="text-align: right;">7</td>
-          </tr>
-          <tr>
-            <td><span class="rank-badge rank-2">🥈</span></td>
-            <td><strong>PatternHunter</strong></td>
-            <td style="text-align: right;">15,201</td>
-            <td style="text-align: right;">118</td>
-            <td style="text-align: right;">16 chars</td>
-            <td style="text-align: right;">6</td>
-          </tr>
-          <tr>
-            <td><span class="rank-badge rank-3">🥉</span></td>
-            <td><strong>DevOpsNinja</strong></td>
-            <td style="text-align: right;">14,839</td>
-            <td style="text-align: right;">112</td>
-            <td style="text-align: right;">17 chars</td>
-            <td style="text-align: right;">6</td>
-          </tr>
-          <tr>
-            <td><span class="rank-badge" style="background: #6b7280;">4</span></td>
-            <td><strong>CodeQuill</strong></td>
-            <td style="text-align: right;">13,482</td>
-            <td style="text-align: right;">98</td>
-            <td style="text-align: right;">19 chars</td>
-            <td style="text-align: right;">5</td>
-          </tr>
-          <tr>
-            <td><span class="rank-badge" style="background: #6b7280;">5</span></td>
-            <td><strong>ByteMaster</strong></td>
-            <td style="text-align: right;">12,947</td>
-            <td style="text-align: right;">87</td>
-            <td style="text-align: right;">21 chars</td>
-            <td style="text-align: right;">4</td>
-          </tr>
-        </tbody>
-      </table>
-      <div style="text-align: center; margin-top: 16px;">
-        <button style="background: var(--accent); color: white; border: none; padding: 10px 24px; border-radius: 8px; cursor: pointer; font-weight: 600;">View Full Leaderboard (12,847 players)</button>
-      </div>
-    </section>
-
-    <!-- Pattern Marketplace -->
-    <section class="section">
-      <h2>📚 Community Pattern Marketplace</h2>
-      <p>Discover, rate, and use regex patterns created by the developer community. All patterns are tested and scored for efficiency.</p>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px;">
-        <button style="background: var(--accent); color: white; border: none; padding: 8px; border-radius: 6px; cursor: pointer;">🔥 Trending</button>
-        <button style="background: var(--surface); border: 1px solid var(--border); padding: 8px; border-radius: 6px; cursor: pointer;">⭐ Highly Rated</button>
-        <button style="background: var(--surface); border: 1px solid var(--border); padding: 8px; border-radius: 6px; cursor: pointer;">🆕 Latest</button>
-        <button style="background: var(--surface); border: 1px solid var(--border); padding: 8px; border-radius: 6px; cursor: pointer;">📥 Most Downloaded</button>
-      </div>
-
-      <div class="pattern-grid">
-        <div class="pattern-item">
-          <h4 style="margin: 0 0 8px;">Email Validator</h4>
-          <div class="pattern-rating">
-            <span class="pattern-stars">★★★★★</span>
-            <span>(4.9)</span>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--muted); margin: 8px 0 12px;">RFC 5322 compliant email validation with named groups.</p>
-          <div style="font-size: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <div>
-              <div style="color: var(--muted);">Score</div>
-              <div style="font-weight: 700; color: var(--accent);">94/100</div>
-            </div>
-            <div>
-              <div style="color: var(--muted);">Downloads</div>
-              <div style="font-weight: 700;">15.8K</div>
-            </div>
-          </div>
-          <button style="width: 100%; margin-top: 12px; background: var(--surface); border: 1px solid var(--border); padding: 8px; border-radius: 6px; cursor: pointer;">View Details</button>
-        </div>
-
-        <div class="pattern-item">
-          <h4 style="margin: 0 0 8px;">URL Parser</h4>
-          <div class="pattern-rating">
-            <span class="pattern-stars">★★★★☆</span>
-            <span>(4.7)</span>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--muted); margin: 8px 0 12px;">Extract domain, path, query, and fragment from URLs.</p>
-          <div style="font-size: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <div>
-              <div style="color: var(--muted);">Score</div>
-              <div style="font-weight: 700; color: var(--accent);">87/100</div>
-            </div>
-            <div>
-              <div style="color: var(--muted);">Downloads</div>
-              <div style="font-weight: 700;">12.3K</div>
-            </div>
-          </div>
-          <button style="width: 100%; margin-top: 12px; background: var(--surface); border: 1px solid var(--border); padding: 8px; border-radius: 6px; cursor: pointer;">View Details</button>
-        </div>
-
-        <div class="pattern-item">
-          <h4 style="margin: 0 0 8px;">Phone Number</h4>
-          <div class="pattern-rating">
-            <span class="pattern-stars">★★★★★</span>
-            <span>(4.8)</span>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--muted); margin: 8px 0 12px;">International phone number formats with country code.</p>
-          <div style="font-size: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <div>
-              <div style="color: var(--muted);">Score</div>
-              <div style="font-weight: 700; color: var(--accent);">92/100</div>
-            </div>
-            <div>
-              <div style="color: var(--muted);">Downloads</div>
-              <div style="font-weight: 700;">9.4K</div>
-            </div>
-          </div>
-          <button style="width: 100%; margin-top: 12px; background: var(--surface); border: 1px solid var(--border); padding: 8px; border-radius: 6px; cursor: pointer;">View Details</button>
-        </div>
-
-        <div class="pattern-item">
-          <h4 style="margin: 0 0 8px;">Credit Card</h4>
-          <div class="pattern-rating">
-            <span class="pattern-stars">★★★★☆</span>
-            <span>(4.6)</span>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--muted); margin: 8px 0 12px;">Validate major credit card formats (VISA, MC, AMEX).</p>
-          <div style="font-size: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <div>
-              <div style="color: var(--muted);">Score</div>
-              <div style="font-weight: 700; color: var(--accent);">85/100</div>
-            </div>
-            <div>
-              <div style="color: var(--muted);">Downloads</div>
-              <div style="font-weight: 700;">8.1K</div>
-            </div>
-          </div>
-          <button style="width: 100%; margin-top: 12px; background: var(--surface); border: 1px solid var(--border); padding: 8px; border-radius: 6px; cursor: pointer;">View Details</button>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 20px;">
-        <button style="background: var(--accent); color: white; border: none; padding: 10px 24px; border-radius: 8px; cursor: pointer; font-weight: 600;">Browse Full Marketplace (12,847 patterns)</button>
+        <a href="regex-tester.html" style="display:block; text-align:center; background: var(--accent); color: white; text-decoration:none; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600;">Open in Regex Tester</a>
       </div>
     </section>
 
@@ -407,7 +176,7 @@
       <p>Readable regex can still be compact. Use non-capturing groups where you do not need captured values, and reserve capturing groups for fields you will actively consume. When supported, free-spacing mode with inline comments can make complex patterns audit-friendly. If your environment lacks free-spacing, pair each production regex with a short documentation block that describes accepted formats, rejected examples, and known limitations. Teams that document regex intent prevent silent regressions when future contributors tweak a token and accidentally widen the match scope.</p>
       <p>Regex challenge progression should follow a structured sequence. Begin with extraction patterns for common entities like emails, domains, hashtags, and simple date formats. Move next to transformations and validation tasks, then to constrained parsing cases such as nested separators, escaped delimiters, or balanced-like patterns under engine limitations. Finally, practice portability tasks where you rewrite a solution for multiple engines with equivalent behavior. This sequence builds confidence while exposing the practical limits of regex and teaching when parser-based approaches are better.</p>
       <p>For teams, challenge-based learning can become a lightweight quality process. Create an internal repository of approved patterns for recurring needs: log parsing, API key masking, route matching, markdown processing, and form validation. Every pattern entry should include test fixtures, engine version notes, and examples of non-matches. Challenge sessions can then focus on improving readability, reducing false positives, and benchmarking speed rather than chasing novelty. The result is a shared regex standard that accelerates code review and lowers maintenance risk.</p>
-      <p>Marketplace-style discovery can help when combined with strict validation. Reusing community patterns can save time, but every imported expression should pass local tests before adoption. Confirm that the pattern license permits your use case, verify compatibility with your runtime engine, and inspect complexity for pathological inputs. This is especially important in security-sensitive contexts such as payment forms, identity fields, URL allowlists, and webhooks. A popular pattern is not automatically a safe pattern.</p>
+      <p>Snippet discovery can help when combined with strict validation. Reusing external patterns can save time, but every imported expression should pass local tests before adoption. Confirm that the pattern license permits your use case, verify compatibility with your runtime engine, and inspect complexity for pathological inputs. This is especially important in security-sensitive contexts such as payment forms, identity fields, URL allowlists, and webhooks. A popular pattern is not automatically a safe pattern.</p>
       <p>If your goal is interview readiness, challenge routines are excellent. Many technical interviews include regex questions around extraction, validation, and simple normalization. Build a practice set where each problem includes a basic requirement, edge-case extensions, and one performance trap. Explain your tradeoffs aloud: why you chose a boundary, why an alternative is risky, and how you would test correctness. Interviewers often evaluate your reasoning process more than the exact final syntax.</p>
       <p>Long-term regex mastery comes from treating patterns as code artifacts, not disposable snippets. Version your patterns, test them on every change, and document assumptions. Use challenge pages to sharpen your problem-solving speed, then harden your final expressions with production-quality validation. When you combine rapid iteration with disciplined testing, regex becomes a competitive advantage for development, data cleanup, content processing, and security-aware input handling.</p>
     </section>

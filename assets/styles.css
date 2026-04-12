@@ -2184,6 +2184,76 @@ footer.footer-shell {
     flex: 1 1 calc(50% - 10px);
     min-width: 140px;
   }
+
+  .scroll-reveal,
+  .scroll-reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .site-main,
+  .site-main > *,
+  .site-main .section,
+  .site-main .tool-shell,
+  .site-main .panel,
+  .site-main .tool-grid,
+  .site-main .gradient-controls,
+  .site-main .json-editor-container,
+  .site-main .detailed-stats,
+  .site-main .tool-layout,
+  .site-main .tool-layout-main,
+  .site-main .tool-layout-rail,
+  .home-breadcrumbs,
+  .home-guide,
+  .home-faq {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .site-main {
+    overflow-x: clip;
+  }
+
+  body.page-home .hero,
+  body.page-home .home-toolbar,
+  .tool-stage,
+  .section,
+  .tool-shell,
+  .rail-card,
+  .ad-slot {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.page-home .hero::after {
+    display: none;
+  }
+
+  .home-grid-label p,
+  .home-grid-label strong,
+  .footer-copy {
+    max-width: 100%;
+  }
+
+  .comparison-table,
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .comparison-table thead,
+  .comparison-table tbody,
+  .comparison-table tr,
+  table thead,
+  table tbody,
+  table tr {
+    width: max-content;
+    min-width: 100%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

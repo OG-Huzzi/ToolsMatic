@@ -407,7 +407,12 @@
 
     targets.forEach((target) => target.classList.add('scroll-reveal'));
 
-    if (prefersReducedMotion() || !('IntersectionObserver' in window)) {
+    const disableRevealAnimation = prefersReducedMotion()
+      || hasCoarsePointer()
+      || window.innerWidth <= 768
+      || !('IntersectionObserver' in window);
+
+    if (disableRevealAnimation) {
       targets.forEach((target) => target.classList.add('is-visible'));
       return;
     }
@@ -423,7 +428,13 @@
       rootMargin: '0px 0px -8% 0px'
     });
 
-    targets.forEach((target) => observer.observe(target));
+    targets.forEach((target) => {
+      const rect = target.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        target.classList.add('is-visible');
+      }
+      observer.observe(target);
+    });
   };
 
   const bindTilt = (element, intensity = 7) => {

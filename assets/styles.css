@@ -1765,6 +1765,32 @@ select:focus-visible {
   overflow: hidden;
 }
 
+.ad-slot-primary {
+  width: min(100%, 760px);
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(124, 217, 255, 0.12);
+  background:
+    radial-gradient(circle at top right, rgba(94, 234, 212, 0.1), transparent 12rem),
+    linear-gradient(180deg, rgba(10, 20, 34, 0.94), rgba(8, 15, 26, 0.9));
+  box-shadow: 0 18px 34px rgba(2, 8, 18, 0.22);
+}
+
+.ad-slot-frame {
+  width: min(100%, var(--ad-base-width, 728px));
+  min-height: var(--ad-render-height, var(--ad-base-height, 90px));
+  display: grid;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.ad-slot iframe {
+  display: block;
+  max-width: 100%;
+  border: 0;
+  background: transparent;
+}
+
 .ad-slot-label {
   display: inline-flex;
   align-items: center;
@@ -2253,6 +2279,32 @@ footer.footer-shell {
   table tr {
     width: max-content;
     min-width: 100%;
+  }
+
+  .ad-slot-primary {
+    width: min(100%, calc(100vw - 28px));
+    margin: 14px auto 18px;
+    padding: 12px 10px 10px;
+    gap: 10px;
+    border-radius: 16px;
+  }
+
+  .ad-slot-primary .ad-slot-label {
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+  }
+
+  .ad-slot-frame {
+    width: 100%;
+    min-height: var(--ad-render-height, 56px);
+  }
+
+  .ad-slot-frame iframe {
+    width: var(--ad-base-width, 728px) !important;
+    max-width: none;
+    height: var(--ad-base-height, 90px) !important;
+    transform: scale(var(--ad-scale, 1));
+    transform-origin: top center;
   }
 }
 

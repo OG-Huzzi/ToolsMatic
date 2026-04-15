@@ -375,7 +375,7 @@
       const directScripts = Array.from(node.children).filter((child) => child.tagName === 'SCRIPT');
       const hasAdScript = directScripts.some((script) => {
         const scriptText = `${script.src || ''} ${script.textContent || ''}`;
-        return /atOptions|adsbygoogle|highperformanceformat|fixesconsessionconsession/i.test(scriptText);
+        return /atOptions|fixesconsessionconsession/i.test(scriptText);
       });
       const hasIframe = !!node.querySelector('iframe');
       if (!hasAdScript && !hasIframe) return;
@@ -397,6 +397,61 @@
         label.textContent = 'Sponsored';
         node.insertAdjacentElement('afterbegin', label);
       }
+    });
+  };
+
+  const initResponsiveAds = () => {
+    const syncSlot = (slot) => {
+      if (!(slot instanceof HTMLElement)) return;
+
+      const frame = slot.querySelector('iframe');
+      if (!(frame instanceof HTMLIFrameElement)) return;
+
+      let wrapper = slot.querySelector('.ad-slot-frame');
+      if (!wrapper) {
+        wrapper = document.createElement('div');
+        wrapper.className = 'ad-slot-frame';
+        frame.insertAdjacentElement('beforebegin', wrapper);
+        wrapper.appendChild(frame);
+      } else if (!wrapper.contains(frame)) {
+        wrapper.appendChild(frame);
+      }
+
+      const baseWidth = Number(frame.getAttribute('width')) || frame.offsetWidth || 728;
+      const baseHeight = Number(frame.getAttribute('height')) || frame.offsetHeight || 90;
+      const mobileViewport = window.innerWidth <= 768;
+
+      slot.style.setProperty('--ad-base-width', `${baseWidth}px`);
+      slot.style.setProperty('--ad-base-height', `${baseHeight}px`);
+
+      if (!mobileViewport) {
+        slot.style.setProperty('--ad-scale', '1');
+        slot.style.setProperty('--ad-render-height', `${baseHeight}px`);
+        return;
+      }
+
+      const slotPadding = 24;
+      const availableWidth = Math.max(240, slot.clientWidth - slotPadding);
+      const scale = Math.min(1, availableWidth / baseWidth);
+      const renderHeight = Math.max(56, Math.round(baseHeight * scale));
+
+      slot.style.setProperty('--ad-scale', scale.toFixed(4));
+      slot.style.setProperty('--ad-render-height', `${renderHeight}px`);
+    };
+
+    document.querySelectorAll('.ad-slot-primary').forEach((slot) => {
+      if (!(slot instanceof HTMLElement)) return;
+      if (slot.dataset.adResponsiveBound === 'true') {
+        syncSlot(slot);
+        return;
+      }
+
+      slot.dataset.adResponsiveBound = 'true';
+      syncSlot(slot);
+
+      const observer = new MutationObserver(() => syncSlot(slot));
+      observer.observe(slot, { childList: true, subtree: true });
+      window.addEventListener('resize', () => syncSlot(slot), { passive: true });
     });
   };
 
@@ -1021,7 +1076,7 @@
     const toolName = document.querySelector('h1')?.textContent || 'this tool';
     const suggestionsHTML = `
       <div class="suggestions-section">
-        <h2>💡 Suggestions & Feedback</h2>
+        <h2>ðŸ’¡ Suggestions & Feedback</h2>
         <p>Help us improve ${toolName}! Share your ideas below.</p>
         
         <div class="suggestion-form">
@@ -1176,8 +1231,8 @@
     clone.querySelectorAll('a, button, nav').forEach((node) => node.remove());
 
     let copy = clone.textContent
-      .replace(/[Â]+/g, ' ')
-      .replace(/[•·]/g, ' ')
+      .replace(/[Ã‚]+/g, ' ')
+      .replace(/[â€¢Â·]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
 
@@ -1228,7 +1283,6 @@
     if (typeof ensureAdManagerInlineScript === 'function') ensureAdManagerInlineScript();
     if (typeof ensureMbiAdScript === 'function') ensureMbiAdScript();
     if (typeof ensureLegacyAdScript === 'function') ensureLegacyAdScript();
-    if (typeof ensureAds === 'function') ensureAds();
     decorateSiteShell();
     initResponsiveNav();
     bindKeyboard();
@@ -1240,6 +1294,7 @@
     initHomeExperience();
     initToolPageExperience();
     decorateAdSlots();
+    initResponsiveAds();
     initScrollReveal();
     initInteractiveMotion();
     enhanceFooter();

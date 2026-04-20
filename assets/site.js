@@ -391,12 +391,6 @@
       if (node.closest('.hero')) {
         node.classList.add('ad-slot-inline');
       }
-      if (!node.querySelector('.ad-slot-label')) {
-        const label = document.createElement('span');
-        label.className = 'ad-slot-label';
-        label.textContent = 'Sponsored';
-        node.insertAdjacentElement('afterbegin', label);
-      }
     });
   };
 

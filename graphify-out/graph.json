@@ -45,7 +45,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L110",
       "id": "json_to_csv_showtoast",
-      "community": 8,
+      "community": 7,
       "norm_label": "showtoast()"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L116",
       "id": "json_to_csv_setstatus",
-      "community": 8,
+      "community": 7,
       "norm_label": "setstatus()"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L578",
       "id": "json_to_csv_rendercolumnpicker",
-      "community": 9,
+      "community": 10,
       "norm_label": "rendercolumnpicker()"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L623",
       "id": "json_to_csv_updatemodeui",
-      "community": 9,
+      "community": 10,
       "norm_label": "updatemodeui()"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L770",
       "id": "json_to_csv_copytext",
-      "community": 8,
+      "community": 7,
       "norm_label": "copytext()"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L790",
       "id": "json_to_csv_downloadoutput",
-      "community": 8,
+      "community": 7,
       "norm_label": "downloadoutput()"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L804",
       "id": "json_to_csv_handlefile",
-      "community": 9,
+      "community": 7,
       "norm_label": "handlefile()"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L818",
       "id": "json_to_csv_fetchjsonurl",
-      "community": 8,
+      "community": 7,
       "norm_label": "fetchjsonurl()"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L836",
       "id": "json_to_csv_setmode",
-      "community": 9,
+      "community": 10,
       "norm_label": "setmode()"
     },
     {
@@ -504,7 +504,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L315",
       "id": "site_istoolpage",
-      "community": 7,
+      "community": 8,
       "norm_label": "istoolpage()"
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L316",
       "id": "site_ishomepage",
-      "community": 7,
+      "community": 8,
       "norm_label": "ishomepage()"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L320",
       "id": "site_prefersreducedmotion",
-      "community": 10,
+      "community": 9,
       "norm_label": "prefersreducedmotion()"
     },
     {
@@ -531,7 +531,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L321",
       "id": "site_hascoarsepointer",
-      "community": 10,
+      "community": 9,
       "norm_label": "hascoarsepointer()"
     },
     {
@@ -558,7 +558,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L336",
       "id": "site_decoratesiteshell",
-      "community": 7,
+      "community": 8,
       "norm_label": "decoratesiteshell()"
     },
     {
@@ -585,7 +585,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L452",
       "id": "site_initscrollreveal",
-      "community": 10,
+      "community": 9,
       "norm_label": "initscrollreveal()"
     },
     {
@@ -603,7 +603,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L519",
       "id": "site_initinteractivemotion",
-      "community": 10,
+      "community": 9,
       "norm_label": "initinteractivemotion()"
     },
     {
@@ -621,7 +621,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L569",
       "id": "site_inithomeexperience",
-      "community": 7,
+      "community": 8,
       "norm_label": "inithomeexperience()"
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L833",
       "id": "site_inittoolpageexperience",
-      "community": 7,
+      "community": 8,
       "norm_label": "inittoolpageexperience()"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L838",
       "id": "site_initstandardpageexperience",
-      "community": 7,
+      "community": 8,
       "norm_label": "initstandardpageexperience()"
     },
     {

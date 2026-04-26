@@ -1,7 +1,7 @@
-# Graph Report - D:\ToolsMatic  (2026-04-25)
+# Graph Report - D:\ToolsMatic  (2026-04-26)
 
 ## Corpus Check
-- 4 files · ~293,584 words
+- 4 files · ~263,709 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -39,15 +39,15 @@
 
 ## Surprising Connections (you probably didn't know these)
 - `runConversion()` --calls--> `setStatus()`  [EXTRACTED]
-  D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 8 → community 2_
-- `handleFile()` --calls--> `setStatus()`  [EXTRACTED]
-  D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 8 → community 9_
+  D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 7 → community 2_
 - `buildHelperNotes()` --calls--> `getDelimiterLabel()`  [EXTRACTED]
   D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 3 → community 11_
 - `runConversion()` --calls--> `normalizeJsonInput()`  [EXTRACTED]
   D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 1 → community 2_
 - `runConversion()` --calls--> `buildCsvFromJson()`  [EXTRACTED]
   D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 3 → community 2_
+- `runConversion()` --calls--> `renderColumnPicker()`  [EXTRACTED]
+  D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 10 → community 2_
 
 ## Communities
 
@@ -81,19 +81,19 @@ Nodes (7): ensureToastHost(), getUserId(), initSuggestions(), likeSuggestion(), 
 
 ### Community 7 - "Community 7"
 Cohesion: 0.4
-Nodes (6): decorateSiteShell(), initHomeExperience(), initStandardPageExperience(), initToolPageExperience(), isHomePage(), isToolPage()
+Nodes (6): copyText(), downloadOutput(), fetchJsonUrl(), handleFile(), setStatus(), showToast()
 
 ### Community 8 - "Community 8"
-Cohesion: 0.5
-Nodes (5): copyText(), downloadOutput(), fetchJsonUrl(), setStatus(), showToast()
+Cohesion: 0.4
+Nodes (6): decorateSiteShell(), initHomeExperience(), initStandardPageExperience(), initToolPageExperience(), isHomePage(), isToolPage()
 
 ### Community 9 - "Community 9"
-Cohesion: 0.5
-Nodes (4): handleFile(), renderColumnPicker(), setMode(), updateModeUi()
+Cohesion: 0.67
+Nodes (4): hasCoarsePointer(), initInteractiveMotion(), initScrollReveal(), prefersReducedMotion()
 
 ### Community 10 - "Community 10"
 Cohesion: 0.67
-Nodes (4): hasCoarsePointer(), initInteractiveMotion(), initScrollReveal(), prefersReducedMotion()
+Nodes (3): renderColumnPicker(), setMode(), updateModeUi()
 
 ### Community 11 - "Community 11"
 Cohesion: 1.0
@@ -118,9 +118,9 @@ Nodes (0):
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `runConversion()` connect `Community 2` to `Community 1`, `Community 3`, `Community 8`, `Community 9`, `Community 11`?**
+- **Why does `runConversion()` connect `Community 2` to `Community 1`, `Community 3`, `Community 7`, `Community 10`, `Community 11`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `boot()` connect `Community 4` to `Community 0`, `Community 5`, `Community 6`, `Community 7`, `Community 10`?**
+- **Why does `boot()` connect `Community 4` to `Community 0`, `Community 5`, `Community 6`, `Community 8`, `Community 9`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `initGlobalToolSeo()` connect `Community 5` to `Community 0`, `Community 4`, `Community 7`?**
+- **Why does `initGlobalToolSeo()` connect `Community 5` to `Community 0`, `Community 8`, `Community 4`?**
   _High betweenness centrality (0.002) - this node is a cross-community bridge._

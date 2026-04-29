@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Regex Pattern Examples for Email, URL, Password, UUID, and Logs | ToolsMatic</title>
+  <meta name="description" content="A practical regex examples guide covering email, URL, password, UUID, dates, and logs with notes on safer patterns, common mistakes, and browser testing workflows.">
+  <meta name="keywords" content="regex examples, email regex, url regex, password regex, uuid regex, regex for logs, regex pattern examples">
+  <link rel="canonical" href="https://toolsmatic.me/guides/regex-pattern-examples.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://toolsmatic.me/guides/regex-pattern-examples.html">
+  <meta property="og:title" content="Regex Pattern Examples for Real Developer Work | ToolsMatic">
+  <meta property="og:description" content="Use practical regex patterns and understand where they break before shipping them into code.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Regex Pattern Examples for Real Developer Work | ToolsMatic">
+  <meta name="twitter:description" content="Practical regex examples for validation, extraction, and debugging workflows.">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/guides.css">
+  <script src="/assets/site.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"Regex Pattern Examples for Email, URL, Password, UUID, and Logs","description":"Practical regex examples for common developer tasks with safer implementation notes.","url":"https://toolsmatic.me/guides/regex-pattern-examples.html","author":{"@type":"Organization","name":"ToolsMatic"},"publisher":{"@type":"Organization","name":"ToolsMatic"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://toolsmatic.me/guides/regex-pattern-examples.html"},{"@type":"ListItem","position":3,"name":"Regex Pattern Examples","item":"https://toolsmatic.me/guides/regex-pattern-examples.html"}]}
+  </script>
+</head>
+<body class="page-tool">
+  <header><div class="nav"><a class="brand" href="/">ToolsMatic</a><div class="nav-links"><a href="/" class="nav-btn">All tools</a><button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode" type="button"></button></div></div></header>
+  <main class="guide-page">
+    <nav class="guide-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/">Guides</a><span>/</span><span>Regex Pattern Examples</span></nav>
+    <section class="guide-shell">
+      <span class="guide-eyebrow">Developer guide</span>
+      <h1>Regex pattern examples that are actually useful</h1>
+      <p>Most regex examples online are either too simple to use in production or so strict that they become brittle immediately. This guide focuses on practical patterns for common developer jobs and shows where each one helps, where it breaks, and how to test it before you put it into code.</p>
+      <div class="guide-chip-row" style="margin-top:16px;">
+        <span class="guide-chip">Validation patterns</span><span class="guide-chip">Extraction examples</span><span class="guide-chip">Safer assumptions</span><span class="guide-chip">Flavor awareness</span>
+      </div>
+      <div class="guide-link-grid" style="margin-top:20px;"><a class="guide-cta" href="/tools/regex-tester.html">Open Regex Tester</a><a class="guide-cta secondary" href="/tools/uuid-maker.html">Generate UUIDs</a></div>
+    </section>
+
+    <section class="guide-ad-slot" aria-label="Advertisement">
+      <script>
+        atOptions = {
+          'key' : 'e61a3745429623f25315f86052a3ab7b',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      </script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+
+    <section class="guide-card guide-media-card">
+      <h2>Regex workflow snapshot</h2>
+      <figure class="guide-hero-media" aria-label="Illustration of regex workflow from pattern to match results">
+        <svg viewBox="0 0 1200 420" role="img" aria-label="Pattern, sample text, and grouped match results">
+          <rect width="1200" height="420" fill="#08131f"/>
+          <rect x="55" y="65" width="320" height="290" rx="22" fill="#0f1c2c" stroke="#234565"/>
+          <rect x="440" y="65" width="320" height="290" rx="22" fill="#0f1c2c" stroke="#234565"/>
+          <rect x="825" y="65" width="320" height="290" rx="22" fill="#0f1c2c" stroke="#234565"/>
+          <text x="90" y="115" fill="#7dd3fc" font-size="28" font-family="Consolas, monospace">Pattern</text>
+          <text x="90" y="170" fill="#d5efff" font-size="32" font-family="Consolas, monospace">(?&lt;user&gt;[^@]+)</text>
+          <text x="90" y="212" fill="#d5efff" font-size="32" font-family="Consolas, monospace">@(?&lt;domain&gt;.+)</text>
+          <text x="475" y="115" fill="#7dd3fc" font-size="28" font-family="Consolas, monospace">Sample text</text>
+          <rect x="475" y="145" width="240" height="54" rx="12" fill="#14314a"/>
+          <text x="495" y="180" fill="#d5efff" font-size="30" font-family="Consolas, monospace">hello@example.com</text>
+          <text x="860" y="115" fill="#7dd3fc" font-size="28" font-family="Consolas, monospace">Captured groups</text>
+          <rect x="860" y="150" width="225" height="54" rx="12" fill="#113422"/>
+          <text x="885" y="184" fill="#8cf0c3" font-size="28" font-family="Consolas, monospace">user = hello</text>
+          <rect x="860" y="225" width="250" height="54" rx="12" fill="#3b2b12"/>
+          <text x="885" y="259" fill="#ffd083" font-size="28" font-family="Consolas, monospace">domain = example.com</text>
+        </svg>
+      </figure>
+      <p class="guide-caption">Good regex work is less about memorizing syntax and more about seeing the relationship between the pattern, the real input, and the captured result. That is why match visualization and group inspection matter so much.</p>
+    </section>
+
+    <section class="guide-card">
+      <h2>Email regex</h2>
+      <p>A practical email pattern is usually better than an RFC-perfect monster. For many app flows, you mainly want to catch obvious invalid input and then rely on actual verification for the final truth.</p>
+      <p><code>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}</code></p>
+      <p>This is not perfect for every valid edge case in the email spec, but it works for most user-facing validation workflows. The mistake developers make is treating regex as the whole trust model. If the app depends on real delivery, confirmation email beats stricter regex every time.</p>
+    </section>
+
+    <section class="guide-card">
+      <h2>URL regex</h2>
+      <p>URL matching is another category where “good enough for the current job” matters. If you only want to detect obvious HTTP or HTTPS links in plain text, something restrained is usually safer than an ambitious universal parser.</p>
+      <p><code>https?:\/\/[^\s/$.?#].[^\s]*</code></p>
+      <p>If you need canonical validation for routing or parsing, a URL API or language-native parser is often more reliable. Regex shines when you are highlighting, finding, or roughly filtering links rather than fully interpreting them.</p>
+    </section>
+
+    <section class="guide-card">
+      <h2>Password policy regex</h2>
+      <p>Password rules are a classic regex use case. A practical example looks like this:</p>
+      <p><code>^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{12,}$</code></p>
+      <p>This checks for lowercase, uppercase, digit, special character, and minimum length. It is useful for custom enterprise policy flows, but do not confuse policy with strength. Generated passwords, passphrases, and rate-limited authentication matter more than just satisfying regex complexity gates.</p>
+    </section>
+
+    <section class="guide-card">
+      <h2>UUID and log extraction patterns</h2>
+      <p>UUID extraction is a common developer task when scanning logs, API payloads, or migration scripts.</p>
+      <p><code>\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}\b</code></p>
+      <p>For logs, regex often works best as a targeted extractor. You may not parse the whole line with one expression. Instead, you build smaller patterns for timestamps, request IDs, status codes, or error markers and combine them with structured post-processing.</p>
+    </section>
+
+    <section class="guide-card">
+      <h2>How to use examples without shipping bad regex</h2>
+      <ol class="guide-list">
+        <li>Pick the regex flavor first. JavaScript, Python, and PCRE do not behave the same.</li>
+        <li>Test on realistic payloads, not only ideal demo input.</li>
+        <li>Check replacement and split behavior if the regex is part of a transform.</li>
+        <li>Watch out for catastrophic backtracking on nested or ambiguous quantifiers.</li>
+        <li>Prefer simpler patterns plus follow-up logic over one giant unreadable expression.</li>
+      </ol>
+      <div class="guide-callout" style="margin-top:16px;">Use the <a href="/tools/regex-tester.html">Regex Tester</a> for highlighted matches, capture groups, replace previews, and flavor hints before the pattern reaches production code.</div>
+    </section>
+
+    <section class="guide-card">
+      <h2>Internal workflow links</h2>
+      <div class="guide-mini-grid">
+        <div class="guide-mini-card"><a href="/tools/regex-tester.html">Regex Tester</a><p>Run and debug all of the patterns from this guide in one browser workspace.</p></div>
+        <div class="guide-mini-card"><a href="/tools/uuid-maker.html">UUID Maker</a><p>Create sample identifiers you can validate or extract with UUID-focused regex.</p></div>
+        <div class="guide-mini-card"><a href="/tools/url-encoder.html">URL Encoder</a><p>Helpful when regex work overlaps with path extraction, query strings, or encoded routes.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer>ToolsMatic - Fast, privacy-first utilities for the web.</footer>
+</body>
+</html>

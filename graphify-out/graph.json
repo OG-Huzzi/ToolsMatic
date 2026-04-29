@@ -9,7 +9,7 @@
       "source_file": "D:\\ToolsMatic\\sw.js",
       "source_location": "L1",
       "id": "d_toolsmatic_sw_js",
-      "community": 12,
+      "community": 13,
       "norm_label": "sw.js"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L96",
       "id": "json_to_csv_escapehtml",
-      "community": 11,
+      "community": 12,
       "norm_label": "escapehtml()"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L103",
       "id": "json_to_csv_formatbytes",
-      "community": 2,
+      "community": 3,
       "norm_label": "formatbytes()"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L120",
       "id": "json_to_csv_getdelimitervalue",
-      "community": 3,
+      "community": 2,
       "norm_label": "getdelimitervalue()"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L121",
       "id": "json_to_csv_getdelimiterlabel",
-      "community": 3,
+      "community": 2,
       "norm_label": "getdelimiterlabel()"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L123",
       "id": "json_to_csv_revokebloburl",
-      "community": 2,
+      "community": 11,
       "norm_label": "revokebloburl()"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L130",
       "id": "json_to_csv_updatedownloadblob",
-      "community": 2,
+      "community": 11,
       "norm_label": "updatedownloadblob()"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L155",
       "id": "json_to_csv_detectdelimiter",
-      "community": 3,
+      "community": 2,
       "norm_label": "detectdelimiter()"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L178",
       "id": "json_to_csv_parsecsv",
-      "community": 3,
+      "community": 2,
       "norm_label": "parsecsv()"
     },
     {
@@ -198,7 +198,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L375",
       "id": "json_to_csv_serializecsv",
-      "community": 3,
+      "community": 2,
       "norm_label": "serializecsv()"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L384",
       "id": "json_to_csv_mergecolumnmeta",
-      "community": 3,
+      "community": 2,
       "norm_label": "mergecolumnmeta()"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L396",
       "id": "json_to_csv_buildcsvfromjson",
-      "community": 3,
+      "community": 2,
       "norm_label": "buildcsvfromjson()"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L441",
       "id": "json_to_csv_buildjsonfromcsv",
-      "community": 3,
+      "community": 2,
       "norm_label": "buildjsonfromcsv()"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L536",
       "id": "json_to_csv_renderissues",
-      "community": 2,
+      "community": 3,
       "norm_label": "renderissues()"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L548",
       "id": "json_to_csv_rendernotes",
-      "community": 2,
+      "community": 3,
       "norm_label": "rendernotes()"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L559",
       "id": "json_to_csv_renderpreview",
-      "community": 2,
+      "community": 3,
       "norm_label": "renderpreview()"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L571",
       "id": "json_to_csv_setstatcard",
-      "community": 2,
+      "community": 3,
       "norm_label": "setstatcard()"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L656",
       "id": "json_to_csv_buildhelpernotes",
-      "community": 11,
+      "community": 12,
       "norm_label": "buildhelpernotes()"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L668",
       "id": "json_to_csv_runconversion",
-      "community": 2,
+      "community": 3,
       "norm_label": "runconversion()"
     },
     {
@@ -369,7 +369,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L842",
       "id": "json_to_csv_setcolumnsenabled",
-      "community": 2,
+      "community": 3,
       "norm_label": "setcolumnsenabled()"
     },
     {
@@ -378,7 +378,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L849",
       "id": "json_to_csv_resetcolumnlabels",
-      "community": 2,
+      "community": 3,
       "norm_label": "resetcolumnlabels()"
     },
     {
@@ -396,7 +396,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\popunder-manager.js",
       "source_location": "L1",
       "id": "d_toolsmatic_assets_popunder_manager_js",
-      "community": 13,
+      "community": 14,
       "norm_label": "popunder-manager.js"
     },
     {

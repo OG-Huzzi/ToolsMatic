@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>HEX vs RGB vs HSL: Which Color Format Should You Use? | ToolsMatic</title>
+  <meta name="description" content="Understand the practical difference between HEX, RGB, HSL, and RGBA so you can choose the right color format for CSS, design tokens, gradients, and UI work.">
+  <meta name="keywords" content="hex vs rgb vs hsl, color format guide, css color formats, rgba vs hex, hsl for ui design">
+  <link rel="canonical" href="https://toolsmatic.me/guides/hex-rgb-hsl-color-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HEX vs RGB vs HSL: Which Color Format Should You Use? | ToolsMatic">
+  <meta property="og:description" content="Practical guide to choosing the right color format for CSS, design systems, and UI implementation.">
+  <meta property="og:url" content="https://toolsmatic.me/guides/hex-rgb-hsl-color-guide.html">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/guides.css">
+  <script src="/assets/site.js" defer></script>
+</head>
+<body class="page-tool">
+  <header><div class="nav"><a class="brand" href="/">ToolsMatic</a><div class="nav-links"><a href="/" class="nav-btn">All tools</a><button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode" type="button"></button></div></div></header>
+  <main class="guide-page">
+    <nav class="guide-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/">Guides</a><span>/</span><span>HEX vs RGB vs HSL</span></nav>
+    <section class="guide-shell">
+      <span class="guide-eyebrow">Color format guide</span>
+      <h1>HEX vs RGB vs HSL: which color format should you use?</h1>
+      <p>Color picker traffic often expands into format questions. People are not only asking for a tool. They are trying to understand which format is easiest for CSS, which is best for component systems, and which one makes color adjustment less painful. This page covers those adjacent searches while feeding directly into the main color tool.</p>
+      <div class="guide-chip-row" style="margin-top:16px;"><span class="guide-chip">HEX basics</span><span class="guide-chip">RGB and RGBA</span><span class="guide-chip">HSL for tuning</span><span class="guide-chip">CSS workflow</span></div>
+      <div class="guide-link-grid" style="margin-top:20px;"><a class="guide-cta" href="/tools/color-picker.html">Open Color Picker</a><a class="guide-cta secondary" href="/tools/contrast-checker.html">Check Contrast</a></div>
+    </section>
+
+    <section class="guide-ad-slot" aria-label="Advertisement">
+      <script>
+        atOptions = {
+          'key' : 'e61a3745429623f25315f86052a3ab7b',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      </script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+
+    <section class="guide-card guide-media-card">
+      <h2>Color format comparison visual</h2>
+      <figure class="guide-hero-media" aria-label="Illustration comparing HEX, RGB, RGBA, and HSL formats for the same color">
+        <svg viewBox="0 0 1200 420" role="img" aria-label="Same color represented in different formats">
+          <rect width="1200" height="420" fill="#08131f"/>
+          <rect x="72" y="70" width="230" height="280" rx="24" fill="#22c1ee"/>
+          <rect x="350" y="70" width="230" height="280" rx="24" fill="rgb(34,193,238)"/>
+          <rect x="628" y="70" width="230" height="280" rx="24" fill="rgba(34,193,238,0.6)"/>
+          <rect x="906" y="70" width="230" height="280" rx="24" fill="hsl(193, 85%, 53%)"/>
+          <text x="126" y="110" fill="#04131d" font-size="28" font-weight="700" font-family="Segoe UI, Arial">HEX</text>
+          <text x="98" y="308" fill="#04131d" font-size="24" font-family="Consolas, monospace">#22C1EE</text>
+          <text x="400" y="110" fill="#04131d" font-size="28" font-weight="700" font-family="Segoe UI, Arial">RGB</text>
+          <text x="380" y="308" fill="#04131d" font-size="22" font-family="Consolas, monospace">34, 193, 238</text>
+          <text x="667" y="110" fill="#d5efff" font-size="28" font-weight="700" font-family="Segoe UI, Arial">RGBA</text>
+          <text x="645" y="308" fill="#d5efff" font-size="22" font-family="Consolas, monospace">34, 193, 238, 0.6</text>
+          <text x="967" y="110" fill="#04131d" font-size="28" font-weight="700" font-family="Segoe UI, Arial">HSL</text>
+          <text x="940" y="308" fill="#04131d" font-size="21" font-family="Consolas, monospace">193°, 85%, 53%</text>
+        </svg>
+      </figure>
+      <p class="guide-caption">The same color can be represented in several formats, but each one is better suited to a different job. HEX is compact, RGBA handles transparency cleanly, and HSL is often the easiest format for intentional design tuning.</p>
+    </section>
+
+    <section class="guide-card">
+      <h2>When HEX is easiest</h2>
+      <p>HEX is compact, familiar, and still the most common format people copy around quickly. It works well for design handoff, quick CSS variables, and any workflow where you mostly need a short, portable color value. The downside is that HEX is not especially intuitive when you want to tune hue, saturation, or lightness by hand.</p>
+    </section>
+
+    <section class="guide-card">
+      <h2>When RGB and RGBA are better</h2>
+      <p>RGB is useful when you are thinking in channels, integrating with JavaScript, or matching APIs and canvas work that already expect red, green, and blue values. RGBA becomes especially useful for overlays, focus rings, frosted surfaces, and UI layers that need transparency. It is one of the fastest ways to move from a picked color to a practical interface treatment.</p>
+    </section>
+
+    <section class="guide-card">
+      <h2>Why HSL is often the easiest format for design tuning</h2>
+      <p>HSL makes relative edits easier. If you want a darker border version, a softer background tint, or a brighter hover accent, HSL often gives you a more intuitive path than editing raw RGB channels. That is why many design and frontend teams use HEX for storage but think in HSL when shaping a family of related colors.</p>
+    </section>
+
+    <section class="guide-card">
+      <h2>Best practical workflow</h2>
+      <ol class="guide-list">
+        <li>Pick the base color visually.</li>
+        <li>Use HSL when you need to tune nearby variants.</li>
+        <li>Use RGBA when the color needs transparency.</li>
+        <li>Store or share HEX when you want concise, familiar output.</li>
+        <li>Always check contrast once the final foreground and background pair is decided.</li>
+      </ol>
+      <div class="guide-callout" style="margin-top:16px;">The easiest route is to choose and convert values inside the <a href="/tools/color-picker.html">Color Picker</a>, then validate real text readability in the <a href="/tools/contrast-checker.html">Contrast Checker</a>, and if the color becomes part of a background effect, move into the <a href="/tools/gradient-generator.html">Gradient Generator</a>.</div>
+    </section>
+
+    <section class="guide-card">
+      <h2>Related tools</h2>
+      <div class="guide-mini-grid">
+        <div class="guide-mini-card"><a href="/tools/color-picker.html">Color Picker</a><p>Get HEX, RGB, HSL, and RGBA output in one workflow.</p></div>
+        <div class="guide-mini-card"><a href="/tools/contrast-checker.html">Contrast Checker</a><p>Verify that the final foreground and background pair stays readable.</p></div>
+        <div class="guide-mini-card"><a href="/tools/gradient-generator.html">Gradient Generator</a><p>Useful when your chosen color becomes part of a background, hero surface, or CTA.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer>ToolsMatic - Fast, privacy-first utilities for the web.</footer>
+</body>
+</html>

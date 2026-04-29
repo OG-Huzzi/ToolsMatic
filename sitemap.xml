@@ -32,6 +32,44 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Guide Pages -->
+  <url>
+    <loc>https://toolsmatic.me/guides/wcag-contrast-ratio-explained.html</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://toolsmatic.me/guides/regex-pattern-examples.html</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://toolsmatic.me/guides/css-gradient-examples.html</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://toolsmatic.me/guides/ascii-art-examples.html</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://toolsmatic.me/guides/timezone-conversion-guide.html</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://toolsmatic.me/guides/hex-rgb-hsl-color-guide.html</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Converter Tools -->
   <url>
     <loc>https://toolsmatic.me/tools/ascii-art-generator.html</loc>

@@ -826,7 +826,25 @@
         <p>Lookahead <code>(?=...)</code>, negative lookahead <code>(?!...)</code>, lookbehind <code>(?<=...)</code>, and negative lookbehind <code>(?<!...)</code> match positions without consuming characters. Use <code>\b</code> for word boundaries and <code>^/\$</code> for line boundaries. These zero-width assertions are essential for complex pattern validation without extract unnecessary characters.</p>
       </article>
     </section>
-  </main>
+    <section class="section" aria-labelledby="regex-next-searches">
+      <h2 id="regex-next-searches">Next searches developers usually make</h2>
+      <p>This page already targets the core regex tester query. The links below cover the adjacent searches people make right after testing a pattern: practical examples, ID generation, and URL-safe encoding work.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;">
+        <a href="/guides/regex-pattern-examples.html" style="display:block;padding:18px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);text-decoration:none;color:inherit;">
+          <strong style="display:block;margin-bottom:8px;color:var(--primary);">Regex examples for email, URL, password, and UUID</strong>
+          <span style="color:var(--muted);line-height:1.65;">Target long-tail developer searches with ready-to-test patterns and safer implementation notes.</span>
+        </a>
+        <a href="/tools/uuid-maker.html" style="display:block;padding:18px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);text-decoration:none;color:inherit;">
+          <strong style="display:block;margin-bottom:8px;color:var(--primary);">UUID Maker</strong>
+          <span style="color:var(--muted);line-height:1.65;">Generate real UUIDs, then validate or extract them here with the UUID preset and group inspector.</span>
+        </a>
+        <a href="/tools/url-encoder.html" style="display:block;padding:18px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);text-decoration:none;color:inherit;">
+          <strong style="display:block;margin-bottom:8px;color:var(--primary);">URL Encoder</strong>
+          <span style="color:var(--muted);line-height:1.65;">Useful when your regex work leads into query strings, route parsing, and encoded URL validation.</span>
+        </a>
+      </div>
+    </section>
+</main>
 <footer>ToolsMatic — Fast, privacy-first utilities for the web.</footer>
 
   <script>

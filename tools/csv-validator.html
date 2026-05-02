@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>CSV Validator | Check CSV Syntax Errors - ToolsMatic</title>
+  <meta name="description" content="Inspect CSV files in your browser with auto delimiter detection, row mismatch alerts, duplicate header checks, preview filtering, column profiles, JSON export, and private local processing.">
+  <meta name="keywords" content="csv inspector, csv validator, csv checker, csv delimiter detector, inspect csv online, csv column profile, csv row mismatch checker, csv header checker, csv preview tool, csv to json inspection">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://toolsmatic.me/tools/csv-inspector.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/csv-inspector.html">
+  <meta property="og:title" content="CSV Inspector | ToolsMatic">
+  <meta property="og:description" content="Audit CSV files faster with delimiter detection, issue summaries, preview filtering, column profiles, and JSON export.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CSV Inspector | ToolsMatic">
+  <meta name="twitter:description" content="Inspect CSV structure, find bad rows, profile columns, and export cleaned JSON without uploading data.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CSV Inspector","description":"Inspect CSV files locally with delimiter detection, row validation, duplicate header checks, preview filtering, column profiling, and JSON export.","url":"https://toolsmatic.me/tools/csv-inspector.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"Organization","name":"ToolsMatic"},"featureList":["CSV paste and file upload","Automatic delimiter detection","Custom delimiter support","Duplicate and blank header detection","Row length mismatch alerts","Column profile summary","Preview filtering","JSON export and download","Client-side processing"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Data Tools","item":"https://toolsmatic.me/tools"},{"@type":"ListItem","position":3,"name":"CSV Inspector","item":"https://toolsmatic.me/tools/csv-inspector.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does a CSV inspector do?","acceptedAnswer":{"@type":"Answer","text":"A CSV inspector checks the structure of a CSV file so you can spot delimiter problems, inconsistent rows, duplicate headers, empty columns, and other import issues before the file breaks a workflow."}},{"@type":"Question","name":"Can this CSV inspector detect the delimiter automatically?","acceptedAnswer":{"@type":"Answer","text":"Yes. ToolsMatic can auto-detect common delimiters such as comma, semicolon, tab, and pipe, and it also allows you to override the delimiter manually."}},{"@type":"Question","name":"Does the tool show row mismatch issues?","acceptedAnswer":{"@type":"Answer","text":"Yes. The inspector reports rows that do not match the expected column count so you can find bad exports, broken quoting, or incomplete records quickly."}},{"@type":"Question","name":"Can I export the inspected CSV as JSON?","acceptedAnswer":{"@type":"Answer","text":"Yes. After inspection, you can copy or download the parsed data as JSON for debugging, testing, or handoff to developers."}},{"@type":"Question","name":"Is my CSV uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Processing happens entirely in your browser, so your file contents stay local to your device."}},{"@type":"Question","name":"Why are column profiles useful?","acceptedAnswer":{"@type":"Answer","text":"Column profiles help you understand a dataset quickly by showing column names, dominant data types, empty-value counts, unique values, and sample content for each field."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"How to inspect CSV files before they break imports, dashboards, and automation","description":"A practical guide to CSV validation, delimiter detection, row mismatch repair, and private browser-side inspection.","author":{"@type":"Organization","name":"ToolsMatic"},"publisher":{"@type":"Organization","name":"ToolsMatic"},"mainEntityOfPage":"https://toolsmatic.me/tools/csv-inspector.html"}
+  </script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+  <style>
+    .csi-page {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto 56px;
+    }
+
+    .csi-breadcrumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 22px 0 18px;
+      padding: 14px 18px;
+      border: 1px solid rgba(94, 234, 212, 0.16);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(12, 24, 38, 0.92), rgba(11, 18, 29, 0.86));
+      color: rgba(227, 235, 244, 0.78);
+      font-size: 0.95rem;
+    }
+
+    .csi-breadcrumbs a {
+      color: #8fe8ff;
+      text-decoration: none;
+    }
+
+    .csi-breadcrumbs span {
+      opacity: 0.62;
+    }
+
+    .csi-hero,
+    .csi-panel,
+    .csi-copy,
+    .csi-compare-card,
+    .csi-faq-card,
+    .csi-seo-card {
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(94, 234, 212, 0.14), transparent 20rem),
+        radial-gradient(circle at bottom left, rgba(96, 165, 250, 0.12), transparent 22rem),
+        linear-gradient(180deg, rgba(16, 28, 44, 0.95), rgba(9, 16, 28, 0.92));
+      box-shadow: 0 26px 60px rgba(2, 8, 18, 0.28);
+    }
+
+    .csi-hero {
+      padding: 30px;
+      margin-bottom: 22px;
+    }
+
+    .csi-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      color: #71e9df;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .csi-eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #72f6de, #58a8ff);
+      box-shadow: 0 0 18px rgba(114, 246, 222, 0.3);
+    }
+
+    .csi-hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.2rem, 4vw, 3.7rem);
+      line-height: 1.02;
+    }
+
+    .csi-hero p {
+      margin: 0;
+      color: rgba(227, 235, 244, 0.8);
+      line-height: 1.72;
+      max-width: 78ch;
+    }
+
+    .csi-pills,
+    .csi-actions,
+    .csi-switches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .csi-pills {
+      margin-top: 22px;
+    }
+
+    .csi-pill,
+    .csi-stat,
+    .csi-status,
+    .csi-issues,
+    .csi-preview,
+    .csi-column-card,
+    .csi-faq details {
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .csi-pill {
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: rgba(238, 244, 248, 0.88);
+      font-size: 0.92rem;
+    }
+
+    .csi-workspace {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+      gap: 18px;
+      margin-bottom: 22px;
+      align-items: start;
+    }
+
+    .csi-panel {
+      padding: 22px;
+    }
+
+    .csi-panel h2,
+    .csi-copy h2,
+    .csi-compare-card h2,
+    .csi-faq-card h2,
+    .csi-seo-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+    }
+
+    .csi-panel p,
+    .csi-copy > p,
+    .csi-compare-card > p,
+    .csi-faq-card > p,
+    .csi-seo-card > p {
+      margin: 0 0 18px;
+      color: rgba(219, 229, 240, 0.78);
+      line-height: 1.7;
+    }
+
+    .csi-field + .csi-field {
+      margin-top: 16px;
+    }
+
+    .csi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .csi-label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: rgba(240, 245, 250, 0.92);
+    }
+
+    .csi-page textarea,
+    .csi-page select,
+    .csi-page input[type="text"],
+    .csi-page input[type="file"],
+    .csi-page input[type="search"] {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(5, 14, 24, 0.92);
+      color: #eff5fb;
+      padding: 14px 16px;
+      font: inherit;
+    }
+
+    .csi-page textarea:focus,
+    .csi-page select:focus,
+    .csi-page input[type="text"]:focus,
+    .csi-page input[type="file"]:focus,
+    .csi-page input[type="search"]:focus {
+      outline: none;
+      border-color: rgba(124, 217, 255, 0.4);
+      box-shadow: 0 0 0 3px rgba(88, 168, 255, 0.18);
+    }
+
+    .csi-page textarea {
+      min-height: 320px;
+      resize: vertical;
+      line-height: 1.65;
+    }
+
+    .csi-switches {
+      margin-top: 12px;
+    }
+
+    .csi-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      color: rgba(236, 243, 248, 0.9);
+      cursor: pointer;
+    }
+
+    .csi-switch input {
+      accent-color: #66dfe5;
+      margin: 0;
+    }
+
+    .csi-actions {
+      margin-top: 18px;
+    }
+
+    .csi-actions button,
+    .csi-actions a {
+      min-height: 50px;
+      border: 0;
+      border-radius: 18px;
+      padding: 0 18px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .csi-actions button:hover,
+    .csi-actions a:hover {
+      transform: translateY(-1px);
+    }
+
+    .csi-primary {
+      background: linear-gradient(135deg, #72f6de, #58a8ff);
+      color: #04121f;
+      box-shadow: 0 18px 34px rgba(88, 168, 255, 0.18);
+    }
+
+    .csi-secondary {
+      background: rgba(8, 18, 31, 0.76);
+      color: #ecf3f8;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+    }
+
+    .csi-status {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      color: rgba(237, 244, 248, 0.9);
+      line-height: 1.65;
+    }
+
+    .csi-copy {
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .csi-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .csi-stat {
+      padding: 18px;
+      border-radius: 20px;
+    }
+
+    .csi-stat strong {
+      display: block;
+      font-size: 1.9rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .csi-stat span {
+      color: rgba(222, 232, 240, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .csi-issues,
+    .csi-preview,
+    .csi-columns {
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .csi-card-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .csi-card-head h3 {
+      margin: 0;
+      font-size: 1.08rem;
+    }
+
+    .csi-issue-list,
+    .csi-column-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .csi-issue {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(5, 14, 24, 0.72);
+      border: 1px solid rgba(124, 217, 255, 0.12);
+      color: rgba(236, 243, 248, 0.9);
+      line-height: 1.6;
+    }
+
+    .csi-issue strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .csi-table-wrap {
+      overflow: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.12);
+    }
+
+    .csi-table,
+    .csi-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+    }
+
+    .csi-table th,
+    .csi-table td,
+    .csi-compare-table th,
+    .csi-compare-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(124, 217, 255, 0.12);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .csi-table th,
+    .csi-compare-table th {
+      background: rgba(7, 16, 28, 0.9);
+      color: #f4fbff;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .csi-table tbody tr:nth-child(even),
+    .csi-compare-table tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .csi-table code {
+      word-break: break-word;
+      color: #8fe8ff;
+    }
+
+    .csi-columns {
+      display: grid;
+      gap: 12px;
+    }
+
+    .csi-column-card {
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .csi-column-card header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .csi-column-card h4 {
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    .csi-column-card p {
+      margin: 0;
+      color: rgba(219, 229, 240, 0.76);
+      line-height: 1.65;
+    }
+
+    .csi-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .csi-meta span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(124, 217, 255, 0.1);
+      color: rgba(236, 243, 248, 0.84);
+      font-size: 0.9rem;
+    }
+
+    .csi-compare-card,
+    .csi-faq-card,
+    .csi-seo-card {
+      padding: 24px;
+      margin-top: 22px;
+    }
+
+    .csi-compare-table td:not(:first-child),
+    .csi-compare-table th:not(:first-child) {
+      text-align: center;
+    }
+
+    .csi-check {
+      color: #79f1c2;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .csi-cross {
+      color: #ff8e9e;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .csi-faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    .csi-faq details {
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .csi-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    .csi-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .csi-faq p {
+      margin: 12px 0 0;
+      color: rgba(219, 229, 240, 0.76);
+      line-height: 1.7;
+    }
+
+    .csi-seo-card h3 {
+      margin: 26px 0 10px;
+      font-size: 1.14rem;
+    }
+
+    .csi-seo-card p {
+      color: rgba(225, 233, 241, 0.82);
+      line-height: 1.78;
+    }
+
+    @media (max-width: 980px) {
+      .csi-workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .csi-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .csi-page {
+        width: min(100% - 20px, 100%);
+      }
+
+      .csi-hero,
+      .csi-panel,
+      .csi-copy,
+      .csi-compare-card,
+      .csi-faq-card,
+      .csi-seo-card {
+        border-radius: 22px;
+        padding: 20px;
+      }
+
+      .csi-grid,
+      .csi-stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .csi-page textarea {
+        min-height: 260px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "WebApplication",
+    "name":  "CSV Inspector Online | Delimiter Detection, Row Issues, Column Profiles",
+    "url":  "https://toolsmatic.me/tools/csv-inspector.html",
+    "description":  "Inspect CSV files in your browser with auto delimiter detection, row mismatch alerts, duplicate header checks, preview filtering, column profiles, JSON export, and private local processing.",
+    "applicationCategory":  "UtilityApplication",
+    "operatingSystem":  "Any",
+    "browserRequirements":  "Requires JavaScript and a modern web browser",
+    "isAccessibleForFree":  true,
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "ToolsMatic",
+                      "url":  "https://toolsmatic.me/"
+                  },
+    "offers":  {
+                   "@type":  "Offer",
+                   "price":  "0",
+                   "priceCurrency":  "USD"
+               }
+}
+  </script>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode"></button>
+      </div>
+    </div>
+  </header>
+  <main class="csi-page">
+    <nav class="csi-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/">Data Tools</a>
+      <span>/</span>
+      <strong>CSV Inspector</strong>
+    </nav>
+
+    <section class="csi-hero">
+      <div class="csi-eyebrow">Audit CSV faster</div>
+      <h1>CSV Validator</h1>
+      <section class="ad-slot ad-slot-primary" aria-label="Advertisement">
+        <script>
+          atOptions = {
+            'key' : 'e61a3745429623f25315f86052a3ab7b',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+      </section>
+<p>Paste or upload a CSV, let ToolsMatic detect the delimiter, and get a practical inspection report with row mismatch alerts, duplicate header checks, preview filtering, column profiles, and ready-to-export JSON. It is built for real import work, not a demo screen full of empty space.</p>
+      <div class="csi-pills">
+        <div class="csi-pill">Auto delimiter detection</div>
+        <div class="csi-pill">Row and header issue alerts</div>
+        <div class="csi-pill">Column profiles and sample values</div>
+        <div class="csi-pill">Private browser-side analysis</div>
+      </div>
+    </section>
+
+    <section class="csi-workspace" aria-label="CSV inspector workspace">
+      <div class="csi-panel">
+        <h2>Inspect your CSV</h2>
+        <p>Use the input area for pasted CSV, or upload a file. Then refine parsing with the delimiter, quote, and structure controls if needed. The tool keeps the simple path obvious, but the deeper controls are there when a file is messy.</p>
+
+        <div class="csi-field">
+          <label class="csi-label" for="csi-input">CSV input</label>
+          <textarea id="csi-input" placeholder="name,email,team,last_seen&#10;Aarav,aarav@example.com,Support,2026-04-03&#10;Mira,mira@example.com,Ops,2026-04-04"></textarea>
+        </div>
+
+        <div class="csi-field">
+          <label class="csi-label" for="csi-file">Upload CSV file</label>
+          <input id="csi-file" type="file" accept=".csv,text/csv,.txt">
+        </div>
+
+        <div class="csi-grid csi-field">
+          <div>
+            <label class="csi-label" for="csi-delimiter">Delimiter</label>
+            <select id="csi-delimiter">
+              <option value="auto">Auto detect</option>
+              <option value=",">Comma</option>
+              <option value=";">Semicolon</option>
+              <option value="\t">Tab</option>
+              <option value="|">Pipe</option>
+              <option value="custom">Custom</option>
+            </select>
+          </div>
+          <div>
+            <label class="csi-label" for="csi-custom-delimiter">Custom delimiter</label>
+            <input id="csi-custom-delimiter" type="text" maxlength="1" placeholder="~" disabled>
+          </div>
+        </div>
+
+        <div class="csi-grid csi-field">
+          <div>
+            <label class="csi-label" for="csi-quote">Quote character</label>
+            <select id="csi-quote">
+              <option value='"'>Double quote</option>
+              <option value="'">Single quote</option>
+              <option value="">None</option>
+            </select>
+          </div>
+          <div>
+            <label class="csi-label" for="csi-preview-limit">Preview rows</label>
+            <select id="csi-preview-limit">
+              <option value="15">15 rows</option>
+              <option value="30" selected>30 rows</option>
+              <option value="60">60 rows</option>
+              <option value="100">100 rows</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="csi-switches">
+          <label class="csi-switch"><input id="csi-has-header" type="checkbox" checked> First row contains headers</label>
+          <label class="csi-switch"><input id="csi-trim" type="checkbox" checked> Trim whitespace around cells</label>
+          <label class="csi-switch"><input id="csi-skip-empty" type="checkbox" checked> Skip completely empty rows</label>
+          <label class="csi-switch"><input id="csi-infer" type="checkbox" checked> Infer numbers, booleans, and nulls in JSON export</label>
+        </div>
+
+        <div class="csi-actions">
+          <button id="csi-run" class="csi-primary" type="button">Inspect CSV</button>
+          <button id="csi-sample" class="csi-secondary" type="button">Load sample</button>
+          <button id="csi-copy-json" class="csi-secondary" type="button">Copy rows JSON</button>
+          <a id="csi-download-json" class="csi-secondary" href="#" download="csv-inspection.json">Download JSON</a>
+          <button id="csi-clear" class="csi-secondary" type="button">Clear</button>
+        </div>
+
+        <div id="csi-status" class="csi-status" aria-live="polite">Paste a CSV or upload a file, then click <strong>Inspect CSV</strong>. The report will show row counts, issue flags, preview rows, and column profiles.</div>
+      </div>
+
+      <div class="csi-copy">
+        <h2>Inspection summary</h2>
+        <p>The report stays compact and practical: clear counts at the top, issue cards next, then preview rows and column profiles. It is designed for fast QA instead of forcing you through cluttered panels.</p>
+
+        <div class="csi-stat-grid">
+          <div class="csi-stat"><strong id="csi-stat-rows">0</strong><span>Data rows</span></div>
+          <div class="csi-stat"><strong id="csi-stat-columns">0</strong><span>Columns</span></div>
+          <div class="csi-stat"><strong id="csi-stat-issues">0</strong><span>Issues found</span></div>
+          <div class="csi-stat"><strong id="csi-stat-delimiter">Auto</strong><span>Detected delimiter</span></div>
+        </div>
+
+        <section class="csi-issues">
+          <div class="csi-card-head">
+            <h3>Issues and checks</h3>
+          </div>
+          <div id="csi-issue-list" class="csi-issue-list">
+            <div class="csi-issue"><strong>No report yet</strong>Run the inspection to see delimiter detection, header checks, row mismatch alerts, and empty-row notes.</div>
+          </div>
+        </section>
+
+        <section class="csi-preview">
+          <div class="csi-card-head">
+            <h3>Preview table</h3>
+            <input id="csi-filter" type="search" placeholder="Filter rows or cells">
+          </div>
+          <div class="csi-table-wrap">
+            <table class="csi-table">
+              <thead id="csi-preview-head"></thead>
+              <tbody id="csi-preview-body">
+                <tr><td>Run an inspection to preview parsed rows.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="csi-columns">
+          <div class="csi-card-head">
+            <h3>Column profiles</h3>
+          </div>
+          <div id="csi-column-list" class="csi-column-list">
+            <div class="csi-column-card">
+              <header>
+                <h4>Columns will appear here</h4>
+                <span>Profile</span>
+              </header>
+              <p>Profiles include name, dominant type, empty values, unique count, and sample entries so you can quickly understand the shape of a dataset before importing it.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section class="csi-compare-card">
+      <h2>Comparison table</h2>
+      <p>Ticks mean the feature is clearly highlighted on the reviewed public page. Crosses mean the feature was not clearly highlighted there when reviewed. The goal is fast scanning, not a wall of marketing text.</p>
+      <div class="csi-table-wrap">
+        <table class="csi-compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ToolsMatic</th>
+              <th>CSVLint</th>
+              <th>Datablist</th>
+              <th>ConvertCSV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>File upload</td><td class="csi-check">&#10003;</td><td class="csi-check">&#10003;</td><td class="csi-check">&#10003;</td><td class="csi-check">&#10003;</td></tr>
+            <tr><td>Auto delimiter detection</td><td class="csi-check">&#10003;</td><td class="csi-cross">&#10005;</td><td class="csi-check">&#10003;</td><td class="csi-check">&#10003;</td></tr>
+            <tr><td>Preview filtering or grid workflow</td><td class="csi-check">&#10003;</td><td class="csi-cross">&#10005;</td><td class="csi-check">&#10003;</td><td class="csi-check">&#10003;</td></tr>
+            <tr><td>Column profile summary</td><td class="csi-check">&#10003;</td><td class="csi-cross">&#10005;</td><td class="csi-cross">&#10005;</td><td class="csi-cross">&#10005;</td></tr>
+            <tr><td>JSON export from inspection</td><td class="csi-check">&#10003;</td><td class="csi-cross">&#10005;</td><td class="csi-cross">&#10005;</td><td class="csi-cross">&#10005;</td></tr>
+            <tr><td>URL import highlighted</td><td class="csi-cross">&#10005;</td><td class="csi-check">&#10003;</td><td class="csi-cross">&#10005;</td><td class="csi-check">&#10003;</td></tr>
+            <tr><td>Privacy-first local inspection highlighted</td><td class="csi-check">&#10003;</td><td class="csi-cross">&#10005;</td><td class="csi-cross">&#10005;</td><td class="csi-cross">&#10005;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="csi-faq-card">
+      <h2>FAQs</h2>
+      <p>The questions below cover the real issues that come up when CSV files look fine at a glance but fail in practice.</p>
+      <div class="csi-faq">
+        <details>
+          <summary>Why does a CSV file fail even when it opens in a spreadsheet?</summary>
+          <p>Spreadsheet software often hides structural problems. A file may still open visually while containing inconsistent row lengths, duplicated header names, unexpected delimiters, or broken quotes. Those problems show up later when a database import, API script, or analytics platform reads the file strictly.</p>
+        </details>
+        <details>
+          <summary>What is the fastest way to find a bad row in a CSV?</summary>
+          <p>Start by detecting the correct delimiter, then compare each row against the expected column count. That is exactly what the issue summary does here. Once the mismatch count is visible, the preview and filter make it easier to isolate the suspicious rows.</p>
+        </details>
+        <details>
+          <summary>Why do duplicate headers matter?</summary>
+          <p>Duplicate headers break downstream mappings because two columns compete for the same field name. A report may silently overwrite one value, or a JSON conversion may keep only the last matching key. Detecting duplicates early prevents subtle data loss.</p>
+        </details>
+        <details>
+          <summary>Should I inspect CSV before converting it to JSON?</summary>
+          <p>Yes. Inspection first is safer because it shows structural issues before conversion hides them. If the delimiter is wrong or a row is short, the JSON output may still exist but it will not represent the data correctly.</p>
+        </details>
+        <details>
+          <summary>Can this help with messy exports from CRMs, forms, and spreadsheets?</summary>
+          <p>Yes. Those exports frequently mix blank rows, inconsistent quoting, extra separators inside text, and renamed columns. The combination of issue alerts, preview filtering, and column profiles is built for exactly that kind of troubleshooting.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="csi-seo-card">
+      <h2>Why CSV inspection matters before the import fails</h2>
+      <p>A CSV file looks simple, which is exactly why it causes so many quiet problems. Teams export CSV from CRMs, dashboards, signup forms, ecommerce tools, spreadsheets, and billing systems every day. The file opens, the rows appear, and everyone assumes the data is ready. Then the import breaks, or worse, the import succeeds while mapping the wrong values to the wrong fields. A practical CSV inspector solves that gap between “the file opens” and “the file is structurally safe to use.” That is what this page is built for. Instead of burying the useful checks behind a cluttered workflow, ToolsMatic keeps the core path obvious: paste or upload the CSV, detect the delimiter, run the inspection, then review row mismatches, header problems, preview rows, and column profiles in one pass.</p>
+
+      <h3>Delimiter problems are more common than most teams think</h3>
+      <p>One of the most common reasons a CSV import fails is not the data itself, but the separator. A team expects commas and receives semicolons. A European export uses semicolons because commas are common in decimal formatting. A legacy system outputs tabs. A support export uses pipes. If you do not detect that correctly, every other conclusion becomes wrong because the parser is splitting cells in the wrong places. That is why auto delimiter detection is not a cosmetic feature. It changes whether the rest of the inspection is meaningful. This tool looks for the most common separators, shows the detected delimiter in the stat cards, and still lets you override it manually when you know the export is unusual. That combination makes it easy for beginners while still giving power users direct control.</p>
+
+      <h3>Headers decide whether the rest of the file stays understandable</h3>
+      <p>Most CSV workflows depend on header names. Headers tell an import map where email lives, where product SKU lives, where date values should be parsed, and which column should act as the unique key. If the file contains duplicate headers, blank headers, or a first row that is not really a header row at all, the downstream system can misread the dataset. Good inspection therefore starts with header discipline. ToolsMatic checks for blank header cells and repeated names, then builds the rest of the report around those findings. If the file has headers, the preview becomes easier to scan. If it does not, the tool still works with generated column names so you can keep moving. That matters for quick QA work because people often need answers immediately, not a long detour into manual cleanup.</p>
+
+      <h3>Row mismatch detection catches the issues spreadsheets hide</h3>
+      <p>A spreadsheet grid is forgiving. It can make a malformed CSV feel normal because the interface smooths over structural errors. A quoted value that never closes, an extra delimiter inside a free-text note, or a missing cell at the end of a row can all survive visually while remaining technically wrong. When that file reaches an API seed step, warehouse load, or internal admin tool, the real parsing rules apply. That is why row mismatch reporting is one of the highest-value features on a CSV inspector. The moment a row count differs from the expected column length, you know exactly where to focus. Instead of reading the whole file line by line, you can use the issue list, preview filter, and column profile summary to narrow the problem quickly. That is the kind of workflow improvement users actually remember, because it saves time on the files that feel impossible at first glance.</p>
+
+      <h3>Column profiles turn a large CSV into something understandable fast</h3>
+      <p>Inspection is not only about errors. It is also about understanding shape. If you receive a CSV with thirty columns and hundreds of rows, you often need a quick mental model before you can decide what to do next. Which columns are mostly empty? Which ones contain numbers versus plain text? Which fields look unique enough to serve as keys? Which columns contain repeated values that might be categories? A column profile answers those questions without forcing you to scroll through endless raw rows. ToolsMatic summarizes each field with its name, dominant type, empty-value count, unique-value count, and sample values. That is enough to spot suspicious data, understand export quality, and plan the next step, whether that is import mapping, JSON conversion, SQL loading, or handoff to another team.</p>
+
+      <h3>CSV inspection should stay private, fast, and browser based</h3>
+      <p>CSV files often contain customer records, internal IDs, transaction references, contact details, or operational metrics. In many teams, sending that file to a random online tool is not acceptable. That is why browser-side processing matters. When inspection runs locally, you get speed and privacy together. You do not wait for uploads, and you do not expose sensitive exports during a troubleshooting session. This is especially important for support teams, SaaS operators, analysts, and agency teams handling client data. The practical result is not only better security posture, but faster iteration. Paste, inspect, fix, rerun, export JSON if needed, and move on. The less friction there is, the more likely a team is to check a CSV before it causes trouble elsewhere.</p>
+
+      <h3>Why preview filtering and JSON export belong in the same tool</h3>
+      <p>Many CSV utilities do one narrow job, then send the user elsewhere for the next step. That breaks momentum. In real work, inspection is often followed by conversion, debugging, or developer handoff. Once the file is parsed correctly, you may want to copy the rows as JSON, download them for a bug report, or filter the preview to focus on a product ID, email address, or suspicious text string. That is why this tool keeps those actions in the same workspace. Preview filtering helps with investigation. JSON export helps with action. Together they turn a CSV inspector into something more useful than a checker. They make it a bridge between data QA and implementation work.</p>
+
+      <h3>The best CSV tools reduce friction without hiding power</h3>
+      <p>There is a reason some utilities feel professional while others feel exhausting. Good tools do not dump every option on top of the user or force people to open five panels to understand one file. They keep the main path obvious and let advanced controls support the job rather than dominate the screen. That is the design goal here. The input area is large enough for pasted data, the file upload is visible, the delimiter and quote controls are grouped logically, the important switches are readable, and the report flows from high-value summary to detailed evidence. There is no fake dashboard, no empty side rail, and no wasted space pretending to be premium. The premium part is the speed of understanding.</p>
+
+      <h3>How to use this page as part of a stronger data workflow</h3>
+      <p>If you work with CSV regularly, inspection should become a habit before import, not a rescue step after failure. Check new exports from vendors. Inspect form submissions before adding them to automation. Validate customer lists before bulk upload. Profile product feeds before turning them into JSON. Confirm column shapes before writing migration scripts. Those are small actions, but they prevent large cleanup sessions later. A strong CSV inspector earns traffic because it solves a real pain point repeatedly. The pages that get shared organically are usually the ones that make users look competent under deadline. That is the standard this page is built to meet: faster answers, cleaner signals, and enough control to handle both normal files and ugly ones without making the interface harder than the file itself.</p>
+    </section>
+  </main>
+<footer>ToolsMatic - Fast, privacy-first utilities for the web.</footer>
+  <script>
+    const sampleCsv = [
+      'name,email,team,last_seen,active',
+      'Aarav,aarav@example.com,Support,2026-04-03,true',
+      'Mira,mira@example.com,Operations,2026-04-04,true',
+      'Noah,"noah@example.com","Product, Growth",2026-04-02,true',
+      'Leah,leah@example.com,Finance,,false',
+      'Omar,omar@example.com,Support',
+      'Mira,mira@example.com,Operations,2026-04-04,true'
+    ].join('\n');
+
+    const els = {
+      input: document.getElementById('csi-input'),
+      file: document.getElementById('csi-file'),
+      delimiter: document.getElementById('csi-delimiter'),
+      customDelimiter: document.getElementById('csi-custom-delimiter'),
+      quote: document.getElementById('csi-quote'),
+      previewLimit: document.getElementById('csi-preview-limit'),
+      hasHeader: document.getElementById('csi-has-header'),
+      trim: document.getElementById('csi-trim'),
+      skipEmpty: document.getElementById('csi-skip-empty'),
+      infer: document.getElementById('csi-infer'),
+      run: document.getElementById('csi-run'),
+      sample: document.getElementById('csi-sample'),
+      copyJson: document.getElementById('csi-copy-json'),
+      download: document.getElementById('csi-download-json'),
+      clear: document.getElementById('csi-clear'),
+      status: document.getElementById('csi-status'),
+      filter: document.getElementById('csi-filter'),
+      statRows: document.getElementById('csi-stat-rows'),
+      statColumns: document.getElementById('csi-stat-columns'),
+      statIssues: document.getElementById('csi-stat-issues'),
+      statDelimiter: document.getElementById('csi-stat-delimiter'),
+      issueList: document.getElementById('csi-issue-list'),
+      previewHead: document.getElementById('csi-preview-head'),
+      previewBody: document.getElementById('csi-preview-body'),
+      columnList: document.getElementById('csi-column-list')
+    };
+
+    let currentReport = null;
+
+    function showToast(message, type) {
+      if (window.ToolsMatic && typeof window.ToolsMatic.showToast === 'function') {
+        window.ToolsMatic.showToast(message, type || 'info');
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function normalizeDelimiterValue(value) {
+      return value === '\\t' ? '\t' : value;
+    }
+
+    function countDelimiter(line, delimiter, quoteChar) {
+      let count = 0;
+      let inQuotes = false;
+      for (let i = 0; i < line.length; i += 1) {
+        const char = line[i];
+        if (quoteChar && char === quoteChar) {
+          if (inQuotes && line[i + 1] === quoteChar) {
+            i += 1;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (!inQuotes && char === delimiter) {
+          count += 1;
+        }
+      }
+      return count;
+    }
+
+    function detectDelimiter(text, quoteChar) {
+      const candidates = [',', ';', '\t', '|'];
+      const lines = text.split(/\r?\n/).map((line) => line.trim()).filter(Boolean).slice(0, 12);
+      if (!lines.length) {
+        return ',';
+      }
+      const scores = candidates.map((delimiter) => {
+        const counts = lines.map((line) => countDelimiter(line, delimiter, quoteChar));
+        const total = counts.reduce((sum, count) => sum + count, 0);
+        const nonZero = counts.filter((count) => count > 0).length;
+        const max = Math.max(...counts);
+        const min = Math.min(...counts);
+        return {
+          delimiter,
+          score: total + nonZero * 2 - (max - min)
+        };
+      });
+      scores.sort((a, b) => b.score - a.score);
+      return scores[0].score > 0 ? scores[0].delimiter : ',';
+    }
+
+    function parseCsv(text, delimiter, quoteChar, options) {
+      const rows = [];
+      let row = [];
+      let cell = '';
+      let inQuotes = false;
+      let sawQuoteMismatch = false;
+
+      const pushCell = () => {
+        let value = cell;
+        if (options.trim) {
+          value = value.trim();
+        }
+        row.push(value);
+        cell = '';
+      };
+
+      const pushRow = () => {
+        const isEmpty = row.every((value) => value === '');
+        if (!(options.skipEmpty && isEmpty)) {
+          rows.push(row.slice());
+        }
+        row = [];
+      };
+
+      for (let i = 0; i < text.length; i += 1) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (quoteChar && char === quoteChar) {
+          if (inQuotes && next === quoteChar) {
+            cell += quoteChar;
+            i += 1;
+          } else {
+            inQuotes = !inQuotes;
+          }
+          continue;
+        }
+
+        if (!inQuotes && char === delimiter) {
+          pushCell();
+          continue;
+        }
+
+        if (!inQuotes && (char === '\n' || char === '\r')) {
+          if (char === '\r' && next === '\n') {
+            i += 1;
+          }
+          pushCell();
+          pushRow();
+          continue;
+        }
+
+        cell += char;
+      }
+
+      if (cell.length || row.length) {
+        pushCell();
+        pushRow();
+      }
+
+      if (inQuotes) {
+        sawQuoteMismatch = true;
+      }
+
+      return { rows, sawQuoteMismatch };
+    }
+
+    function inferValue(value) {
+      if (value === '') {
+        return '';
+      }
+      const lower = value.toLowerCase();
+      if (lower === 'null' || lower === 'n/a') {
+        return null;
+      }
+      if (lower === 'true') {
+        return true;
+      }
+      if (lower === 'false') {
+        return false;
+      }
+      if (/^-?\d+(\.\d+)?$/.test(value)) {
+        return Number(value);
+      }
+      return value;
+    }
+
+    function dominantType(values) {
+      const counts = new Map();
+      values.forEach((value) => {
+        if (value === '') {
+          return;
+        }
+        let kind = 'text';
+        if (typeof value === 'number') {
+          kind = 'number';
+        } else if (typeof value === 'boolean') {
+          kind = 'boolean';
+        } else if (value === null) {
+          kind = 'null';
+        } else if (/^\d{4}-\d{2}-\d{2}/.test(String(value))) {
+          kind = 'date-like';
+        }
+        counts.set(kind, (counts.get(kind) || 0) + 1);
+      });
+      if (!counts.size) {
+        return 'empty';
+      }
+      return [...counts.entries()].sort((a, b) => b[1] - a[1])[0][0];
+    }
+
+    function buildReport() {
+      const raw = els.input.value;
+      if (!raw.trim()) {
+        els.status.textContent = 'Add CSV content first.';
+        showToast('Add CSV first', 'error');
+        return null;
+      }
+
+      const selectedDelimiter = els.delimiter.value === 'auto'
+        ? detectDelimiter(raw, els.quote.value)
+        : els.delimiter.value === 'custom'
+          ? (els.customDelimiter.value || ',')
+          : normalizeDelimiterValue(els.delimiter.value);
+
+      const { rows, sawQuoteMismatch } = parseCsv(raw, selectedDelimiter, els.quote.value, {
+        trim: els.trim.checked,
+        skipEmpty: els.skipEmpty.checked
+      });
+
+      if (!rows.length) {
+        els.status.textContent = 'No rows could be parsed from that input.';
+        showToast('No rows parsed', 'error');
+        return null;
+      }
+
+      const hasHeader = els.hasHeader.checked;
+      const detectedColumns = Math.max(...rows.map((row) => row.length), 0);
+      const rawHeaders = hasHeader ? rows[0].slice() : [];
+      const headers = hasHeader
+        ? rawHeaders.map((value, index) => value || 'Column ' + (index + 1))
+        : Array.from({ length: detectedColumns }, (_, index) => 'Column ' + (index + 1));
+      const dataRows = hasHeader ? rows.slice(1) : rows.slice();
+      const expectedColumns = headers.length;
+      const issues = [];
+      const mismatchedRows = [];
+      const duplicateHeaders = [];
+      const blankHeaders = [];
+      const seenHeaders = new Set();
+
+      headers.forEach((header, index) => {
+        const normalized = header.trim().toLowerCase();
+        if (hasHeader && !String(rawHeaders[index] || '').trim()) {
+          blankHeaders.push(index + 1);
+        }
+        if (seenHeaders.has(normalized)) {
+          duplicateHeaders.push(header || 'Column ' + (index + 1));
+        } else {
+          seenHeaders.add(normalized);
+        }
+      });
+
+      dataRows.forEach((row, index) => {
+        if (row.length !== expectedColumns) {
+          mismatchedRows.push({
+            rowNumber: index + (hasHeader ? 2 : 1),
+            actual: row.length
+          });
+        }
+      });
+
+      if (duplicateHeaders.length) {
+        issues.push({
+          title: 'Duplicate headers found',
+          body: 'Repeated column names can overwrite mapped values later. Duplicate labels: ' + duplicateHeaders.join(', ')
+        });
+      }
+
+      if (blankHeaders.length) {
+        issues.push({
+          title: 'Blank header cells found',
+          body: 'Header positions with no visible name: ' + blankHeaders.join(', ')
+        });
+      }
+
+      if (mismatchedRows.length) {
+        issues.push({
+          title: 'Rows with unexpected column counts',
+          body: mismatchedRows.slice(0, 6).map((item) => 'Row ' + item.rowNumber + ' has ' + item.actual + ' columns').join(' · ')
+        });
+      }
+
+      if (sawQuoteMismatch) {
+        issues.push({
+          title: 'Possible unmatched quote detected',
+          body: 'The parser reached the end of the file while still inside a quoted value. Check for an unclosed text field.'
+        });
+      }
+
+      if (!issues.length) {
+        issues.push({
+          title: 'No structural issues found',
+          body: 'The parsed rows match the expected column count and the headers look clean based on the current settings.'
+        });
+      }
+
+      const profiledRows = dataRows.map((row) => row.map((value) => els.infer.checked ? inferValue(value) : value));
+      const jsonRows = profiledRows.map((row) => {
+        const record = {};
+        headers.forEach((header, index) => {
+          record[header] = row[index] === undefined ? '' : row[index];
+        });
+        return record;
+      });
+
+      const columns = headers.map((header, index) => {
+        const values = profiledRows.map((row) => row[index] === undefined ? '' : row[index]);
+        const stringValues = values.map((value) => value === null ? 'null' : String(value));
+        const nonEmpty = stringValues.filter((value) => value !== '');
+        return {
+          name: header,
+          type: dominantType(values),
+          emptyCount: values.filter((value) => value === '').length,
+          uniqueCount: new Set(nonEmpty).size,
+          samples: nonEmpty.slice(0, 3)
+        };
+      });
+
+      return {
+        delimiter: selectedDelimiter,
+        headers,
+        rows: dataRows,
+        jsonRows,
+        issues,
+        columns,
+        dataRowCount: dataRows.length,
+        issueCount: issues[0].title === 'No structural issues found' ? 0 : issues.length
+      };
+    }
+
+    function renderIssues(report) {
+      els.issueList.innerHTML = report.issues.map((issue) => (
+        '<div class="csi-issue"><strong>' + escapeHtml(issue.title) + '</strong>' + escapeHtml(issue.body) + '</div>'
+      )).join('');
+    }
+
+    function renderPreview(report) {
+      const limit = Number(els.previewLimit.value) || 30;
+      const query = els.filter.value.trim().toLowerCase();
+      const filteredRows = report.rows.filter((row) => (
+        !query || row.some((cell) => String(cell).toLowerCase().includes(query))
+      )).slice(0, limit);
+
+      els.previewHead.innerHTML = '<tr><th>#</th>' + report.headers.map((header) => '<th>' + escapeHtml(header) + '</th>').join('') + '</tr>';
+      if (!filteredRows.length) {
+        els.previewBody.innerHTML = '<tr><td colspan="' + (report.headers.length + 1) + '">No rows match the current filter.</td></tr>';
+        return;
+      }
+
+      els.previewBody.innerHTML = filteredRows.map((row, index) => (
+        '<tr><td>' + (index + 1) + '</td>' + report.headers.map((header, headerIndex) => (
+          '<td><code>' + escapeHtml(row[headerIndex] === undefined ? '' : row[headerIndex]) + '</code></td>'
+        )).join('') + '</tr>'
+      )).join('');
+    }
+
+    function renderColumns(report) {
+      els.columnList.innerHTML = report.columns.map((column) => (
+        '<article class="csi-column-card">' +
+          '<header><h4>' + escapeHtml(column.name) + '</h4><span>' + escapeHtml(column.type) + '</span></header>' +
+          '<p>' + (column.samples.length ? 'Sample values: ' + escapeHtml(column.samples.join(' · ')) : 'No non-empty sample values yet.') + '</p>' +
+          '<div class="csi-meta">' +
+            '<span>Empty: ' + column.emptyCount + '</span>' +
+            '<span>Unique: ' + column.uniqueCount + '</span>' +
+            '<span>Type: ' + escapeHtml(column.type) + '</span>' +
+          '</div>' +
+        '</article>'
+      )).join('');
+    }
+
+    function updateDownload(report) {
+      const blob = new Blob([JSON.stringify(report.jsonRows, null, 2)], { type: 'application/json' });
+      if (els.download.dataset.url) {
+        URL.revokeObjectURL(els.download.dataset.url);
+      }
+      const url = URL.createObjectURL(blob);
+      els.download.href = url;
+      els.download.dataset.url = url;
+    }
+
+    function renderReport(report) {
+      currentReport = report;
+      els.statRows.textContent = String(report.dataRowCount);
+      els.statColumns.textContent = String(report.headers.length);
+      els.statIssues.textContent = String(report.issueCount);
+      els.statDelimiter.textContent = report.delimiter === '\t' ? 'Tab' : report.delimiter;
+      renderIssues(report);
+      renderPreview(report);
+      renderColumns(report);
+      updateDownload(report);
+      els.status.textContent = report.issueCount
+        ? 'Inspection finished. Review the flagged issues, then use the preview and column profiles to isolate the problem faster.'
+        : 'Inspection finished. The structure looks clean with the current parsing settings.';
+    }
+
+    function runInspection() {
+      const report = buildReport();
+      if (!report) {
+        return;
+      }
+      renderReport(report);
+      showToast('CSV inspected', 'success');
+    }
+
+    els.delimiter.addEventListener('change', () => {
+      els.customDelimiter.disabled = els.delimiter.value !== 'custom';
+      if (els.delimiter.value !== 'custom') {
+        els.customDelimiter.value = '';
+      }
+    });
+
+    els.sample.addEventListener('click', () => {
+      els.input.value = sampleCsv;
+      runInspection();
+    });
+
+    els.run.addEventListener('click', runInspection);
+
+    els.filter.addEventListener('input', () => {
+      if (currentReport) {
+        renderPreview(currentReport);
+      }
+    });
+
+    els.previewLimit.addEventListener('change', () => {
+      if (currentReport) {
+        renderPreview(currentReport);
+      }
+    });
+
+    els.copyJson.addEventListener('click', async () => {
+      if (!currentReport) {
+        els.status.textContent = 'Run an inspection first.';
+        showToast('Run inspection first', 'error');
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(JSON.stringify(currentReport.jsonRows, null, 2));
+        els.status.textContent = 'Rows JSON copied to clipboard.';
+        showToast('Copied JSON', 'success');
+      } catch (error) {
+        els.status.textContent = 'Copy failed. Your browser blocked clipboard access.';
+        showToast('Copy failed', 'error');
+      }
+    });
+
+    els.clear.addEventListener('click', () => {
+      els.input.value = '';
+      els.file.value = '';
+      els.filter.value = '';
+      currentReport = null;
+      els.statRows.textContent = '0';
+      els.statColumns.textContent = '0';
+      els.statIssues.textContent = '0';
+      els.statDelimiter.textContent = 'Auto';
+      els.issueList.innerHTML = '<div class="csi-issue"><strong>No report yet</strong>Run the inspection to see delimiter detection, header checks, row mismatch alerts, and empty-row notes.</div>';
+      els.previewHead.innerHTML = '';
+      els.previewBody.innerHTML = '<tr><td>Run an inspection to preview parsed rows.</td></tr>';
+      els.columnList.innerHTML = '<div class="csi-column-card"><header><h4>Columns will appear here</h4><span>Profile</span></header><p>Profiles include name, dominant type, empty values, unique count, and sample entries so you can quickly understand the shape of a dataset before importing it.</p></div>';
+      els.status.innerHTML = 'Paste a CSV or upload a file, then click <strong>Inspect CSV</strong>. The report will show row counts, issue flags, preview rows, and column profiles.';
+      showToast('Cleared', 'info');
+    });
+
+    els.file.addEventListener('change', async (event) => {
+      const file = event.target.files[0];
+      if (!file) {
+        return;
+      }
+      try {
+        els.input.value = await file.text();
+        els.status.textContent = 'Loaded ' + file.name + '. Inspect it when you are ready.';
+        showToast('CSV loaded', 'success');
+      } catch (error) {
+        els.status.textContent = 'Could not read that file.';
+        showToast('File read failed', 'error');
+      }
+    });
+
+    els.input.addEventListener('input', () => {
+      els.status.textContent = 'Input changed. Run the inspection again to refresh the report.';
+    });
+
+    els.input.value = sampleCsv;
+    runInspection();
+  </script>
+</body>
+</html>

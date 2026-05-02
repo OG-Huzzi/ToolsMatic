@@ -523,6 +523,46 @@
       .forEach((element) => bindTilt(element, element.classList.contains('hero') ? 4 : 7));
   };
 
+  const TOOL_CATALOG = [
+    { url: '/tools/word-counter.html', title: 'Word Counter', description: 'Count words and characters in real time.', category: 'Writing' },
+    { url: '/tools/character-counter.html', title: 'Character Counter', description: 'Track limits, dense sections, and live writing metrics instantly.', category: 'Writing' },
+    { url: '/tools/password-generator.html', title: 'Password Generator', description: 'Create strong, customizable passwords instantly.', category: 'Developer' },
+    { url: '/tools/quote-generator.html', title: 'Quote Generator', description: 'Surface a fresh, motivating quote on demand.', category: 'Writing' },
+    { url: '/tools/typing-speed-test.html', title: 'Typing Speed Test', description: 'Measure WPM, accuracy, consistency, and weak keys in one clean screen.', category: 'Writing' },
+    { url: '/tools/ascii-art-generator.html', title: 'ASCII Art Generator', description: 'Turn text into ASCII banners with nine fonts.', category: 'Writing' },
+    { url: '/tools/case-converter.html', title: 'Case Converter', description: 'Flip text between lower, upper, title, and sentence case.', category: 'Writing' },
+    { url: '/tools/gradient-generator.html', title: 'Gradient Generator', description: 'Blend colors and angles to export CSS gradients.', category: 'Design' },
+    { url: '/tools/contrast-checker.html', title: 'Contrast Checker', description: 'Test WCAG ratios, generate accessible pairs, copy CSS tokens.', category: 'Design' },
+    { url: '/tools/json-formatter.html', title: 'JSON Formatter', description: 'Clean and indent messy JSON for quick reviews.', category: 'Developer' },
+    { url: '/tools/hash-generator.html', title: 'Hash Generator', description: 'Generate, verify, compare, and batch-hash digests in one place.', category: 'Developer' },
+    { url: '/tools/base64-encoder.html', title: 'Base64 Encoder', description: 'Encode strings without leaving your browser.', category: 'Developer' },
+    { url: '/tools/number-converter.html', title: 'Number Converter', description: 'Convert decimal, binary, hex, and octal values instantly.', category: 'Developer' },
+    { url: '/tools/image-compressor.html', title: 'Image Compressor', description: 'Shrink image weight while keeping clarity.', category: 'Design' },
+    { url: '/tools/qr-code-maker.html', title: 'QR Code Maker', description: 'Create scannable QR codes for links and text.', category: 'Design' },
+    { url: '/tools/jwt-inspector.html', title: 'JWT Inspector', description: 'Decode JWTs locally, inspect claims, and flag expirations.', category: 'Developer' },
+    { url: '/tools/markdown-previewer.html', title: 'Markdown Previewer', description: 'Preview Markdown without installing anything.', category: 'Writing' },
+    { url: '/tools/regex-tester.html', title: 'Regex Tester', description: 'Test patterns against sample data on the fly.', category: 'Developer' },
+    { url: '/tools/uuid-maker.html', title: 'UUID Maker', description: 'Generate collision-resistant identifiers instantly.', category: 'Developer' },
+    { url: '/tools/url-encoder.html', title: 'URL Encoder', description: 'Encode and decode URLs safely.', category: 'Developer' },
+    { url: '/tools/color-picker.html', title: 'Color Picker', description: 'Grab hex and RGB values from a simple picker.', category: 'Design' },
+    { url: '/tools/unit-converter.html', title: 'Unit Converter', description: 'Convert length, weight, and temperature quickly.', category: 'Everyday' },
+    { url: '/tools/timezone-converter.html', title: 'Timezone Converter', description: 'Compare times across cities with zero setup.', category: 'Everyday' },
+    { url: '/tools/pomodoro-timer.html', title: 'Pomodoro Timer', description: 'Focus with a calm timer, tasks, stats, and ambient audio.', category: 'Everyday' },
+    { url: '/tools/stopwatch-timer.html', title: 'Stopwatch & Timer', description: 'Track laps, countdowns, and up to four named timers in one place.', category: 'Everyday' },
+    { url: '/tools/text-diff-checker.html', title: 'Text Diff Checker', description: 'Spot differences between two text blocks.', category: 'Writing' },
+    { url: '/tools/lorem-ipsum-generator.html', title: 'Lorem Ipsum Generator', description: 'Create filler copy for mockups.', category: 'Writing' },
+    { url: '/tools/reaction-time-test.html', title: 'Reaction Time Test', description: 'Benchmark reflexes with 5 rounds, false-start detection, and shareable results.', category: 'Everyday' },
+    { url: '/tools/csv-to-json.html', title: 'CSV to JSON', description: 'Turn CSV rows into JSON objects locally.', category: 'Data' },
+    { url: '/tools/json-to-csv.html', title: 'JSON to CSV', description: 'Flatten nested JSON into clean CSV, or reverse it back instantly.', category: 'Data' },
+    { url: '/tools/csv-inspector.html', title: 'CSV Inspector', description: 'Validate CSV shape, preview rows, and export JSON.', category: 'Data' },
+    { url: '/tools/html-minifier.html', title: 'HTML Minifier', description: 'Minify HTML before shipping.', category: 'Developer' },
+    { url: '/tools/css-minifier.html', title: 'CSS Minifier', description: 'Minify, format, validate, and inspect CSS in one place.', category: 'Developer' },
+    { url: '/tools/slug-generator.html', title: 'Slug Generator', description: 'Build cleaner SEO URLs with bulk mode, path previews, and redirect export.', category: 'Developer' },
+    { url: '/tools/meta-tag-generator.html', title: 'Meta Tag Generator', description: 'Create search snippets, social cards, robots tags, and JSON-LD faster.', category: 'Developer' },
+    { url: '/tools/robots-txt-generator.html', title: 'Robots.txt Generator', description: 'Create and test crawler rules with presets, imports, and live path checks.', category: 'Developer' },
+    { url: '/tools/sitemap-generator.html', title: 'Sitemap Generator', description: 'Generate XML and HTML sitemaps with audits and robots.txt helper output.', category: 'Developer' }
+  ];
+
   const getHomeCategory = (title) => {
     const key = (title || '').trim().toLowerCase();
     const categoryMap = {
@@ -1251,6 +1291,201 @@
     actions.className = 'footer-actions';
     actions.setAttribute('aria-label', 'Footer links');
 
+sessionStorage.removeItem(handoffKey);
+      return data;
+    } catch (_) {
+      return null;
+    }
+  };
+
+  const handoffAndGo = ({ target, kind = 'text', value, slot }) => {
+    if (!target || !value) return;
+    setHandoff({ kind, value, slot });
+    window.location.href = target;
+  };
+
+  // Suggestions Feature
+  const initSuggestions = () => {
+    if (!isToolPage()) return;
+    if (document.querySelector('.suggestions-section')) return;
+    const toolName = document.querySelector('h1')?.textContent || 'this tool';
+    const suggestionsHTML = `
+      <div class="suggestions-section">
+        <h2>ðŸ’¡ Suggestions & Feedback</h2>
+        <p>Help us improve ${toolName}! Share your ideas below.</p>
+        
+        <div class="suggestion-form">
+          <input type="text" id="suggestionName" placeholder="Your name *" maxlength="50" required>
+          <textarea id="suggestionText" placeholder="Share your suggestion or feedback here... *" rows="3" maxlength="500" required></textarea>
+          <button class="btn btn-primary" onclick="window.toolsMatic.submitSuggestion()">
+            <i class="fas fa-paper-plane"></i> Submit Suggestion
+          </button>
+        </div>
+
+        <div class="suggestions-list" id="suggestionsList"></div>
+      </div>
+    `;
+
+    // Always append feedback at the end so the tool UI remains first
+    // and suggestions stay last on every tool page.
+    const main = document.querySelector('main');
+    if (main) {
+      const container = document.createElement('section');
+      container.className = 'section';
+      container.innerHTML = suggestionsHTML;
+      main.appendChild(container);
+      loadSuggestions();
+    } else {
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const section = document.createElement('section');
+        section.className = 'section';
+        section.innerHTML = suggestionsHTML;
+        footer.insertAdjacentElement('beforebegin', section);
+        loadSuggestions();
+      }
+    }
+  };
+
+  const loadSuggestions = () => {
+    const toolPath = window.location.pathname;
+    const suggestions = JSON.parse(localStorage.getItem('toolsmatic-suggestions') || '{}');
+    const toolSuggestions = suggestions[toolPath] || [];
+    
+    const container = document.getElementById('suggestionsList');
+    if (!container) return;
+
+    if (toolSuggestions.length === 0) {
+      container.innerHTML = '<p class="no-suggestions">No suggestions yet. Be the first to share your ideas!</p>';
+      return;
+    }
+
+    container.innerHTML = toolSuggestions
+      .sort((a, b) => b.likes - a.likes)
+      .map((sug, index) => `
+        <div class="suggestion-item">
+          <div class="suggestion-header">
+            <strong>${escapeHtml(sug.name)}</strong>
+            <span class="suggestion-date">${new Date(sug.timestamp).toLocaleDateString()}</span>
+          </div>
+          <p class="suggestion-text">${escapeHtml(sug.text)}</p>
+          <button class="suggestion-like-btn ${sug.likedBy?.includes(getUserId()) ? 'liked' : ''}" 
+                  onclick="window.toolsMatic.likeSuggestion(${index})">
+            <i class="fas fa-heart"></i> <span>${sug.likes || 0}</span>
+          </button>
+        </div>
+      `).join('');
+  };
+
+  const submitSuggestion = () => {
+    const name = document.getElementById('suggestionName')?.value.trim();
+    const text = document.getElementById('suggestionText')?.value.trim();
+
+    if (!name) {
+      showToast('Please enter your name', 'error');
+      return;
+    }
+
+    if (!text) {
+      showToast('Please enter your suggestion', 'error');
+      return;
+    }
+
+    const toolPath = window.location.pathname;
+    const suggestions = JSON.parse(localStorage.getItem('toolsmatic-suggestions') || '{}');
+    
+    if (!suggestions[toolPath]) {
+      suggestions[toolPath] = [];
+    }
+
+    suggestions[toolPath].push({
+      name,
+      text,
+      timestamp: Date.now(),
+      likes: 0,
+      likedBy: []
+    });
+
+    localStorage.setItem('toolsmatic-suggestions', JSON.stringify(suggestions));
+    
+    document.getElementById('suggestionName').value = '';
+    document.getElementById('suggestionText').value = '';
+    
+    showToast('Thank you for your suggestion!', 'success');
+    loadSuggestions();
+  };
+
+  const likeSuggestion = (index) => {
+    const toolPath = window.location.pathname;
+    const suggestions = JSON.parse(localStorage.getItem('toolsmatic-suggestions') || '{}');
+    const toolSuggestions = suggestions[toolPath] || [];
+    
+    if (!toolSuggestions[index]) return;
+
+    const userId = getUserId();
+    const suggestion = toolSuggestions[index];
+    
+    if (!suggestion.likedBy) suggestion.likedBy = [];
+    
+    if (suggestion.likedBy.includes(userId)) {
+      suggestion.likedBy = suggestion.likedBy.filter(id => id !== userId);
+      suggestion.likes = Math.max(0, (suggestion.likes || 0) - 1);
+      showToast('Like removed', 'info');
+    } else {
+      suggestion.likedBy.push(userId);
+      suggestion.likes = (suggestion.likes || 0) + 1;
+      showToast('Thanks for the like!', 'success');
+    }
+
+    suggestions[toolPath] = toolSuggestions;
+    localStorage.setItem('toolsmatic-suggestions', JSON.stringify(suggestions));
+    loadSuggestions();
+  };
+
+  const getUserId = () => {
+    let userId = localStorage.getItem('toolsmatic-userid');
+    if (!userId) {
+      userId = 'user-' + Math.random().toString(36).substr(2, 9) + Date.now();
+      localStorage.setItem('toolsmatic-userid', userId);
+    }
+    return userId;
+  };
+
+  const escapeHtml = (text) => {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  };
+
+  const enhanceFooter = () => {
+    const footer = document.querySelector('footer');
+    if (!footer || footer.dataset.footerEnhanced === 'true') return;
+    footer.dataset.footerEnhanced = 'true';
+
+    const clone = footer.cloneNode(true);
+    clone.querySelectorAll('a, button, nav').forEach((node) => node.remove());
+
+    let copy = clone.textContent
+      .replace(/[Ã‚]+/g, ' ')
+      .replace(/[â€¢Â·]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (!copy || copy.length < 12) {
+      copy = 'ToolsMatic - Fast, privacy-first utilities for the web.';
+    }
+
+    footer.classList.add('footer-shell');
+    footer.innerHTML = '';
+
+    const copyEl = document.createElement('div');
+    copyEl.className = 'footer-copy';
+    copyEl.textContent = copy;
+
+    const actions = document.createElement('nav');
+    actions.className = 'footer-actions';
+    actions.setAttribute('aria-label', 'Footer links');
+
     [
       { href: '/about.html', label: 'About' },
       { href: '/terms.html', label: 'Terms' },
@@ -1266,6 +1501,75 @@
 
     footer.appendChild(copyEl);
     footer.appendChild(actions);
+  };
+
+  const initRelatedTools = () => {
+    if (!isToolPage()) return;
+    const currentPath = window.location.pathname;
+    const toolName = normalizeToolName();
+    const category = getHomeCategory(toolName);
+    
+    // Find related tools (same category, not the current tool)
+    const related = TOOL_CATALOG.filter(t => t.category === category && !t.url.includes(currentPath));
+    
+    // Fallback if not enough in category
+    if (related.length < 3) {
+      const others = TOOL_CATALOG.filter(t => !t.url.includes(currentPath) && !related.includes(t));
+      others.sort(() => 0.5 - Math.random());
+      related.push(...others.slice(0, 3 - related.length));
+    }
+    
+    // Pick exactly 3
+    related.sort(() => 0.5 - Math.random());
+    const selected = related.slice(0, 3);
+    
+    const relatedHTML = `
+      <div class="related-tools-section" style="margin-top: 10px;">
+        <h2 style="margin-bottom: 15px; font-size: 22px;">Related Tools</h2>
+        <p style="margin-bottom: 25px;">People who use this tool also use these related utilities.</p>
+        <div class="grid">
+          ${selected.map(t => `
+            <a class="card" href="${t.url}">
+              <h3>${t.title}</h3>
+              <p>${t.description}</p>
+            </a>
+          `).join('')}
+        </div>
+      </div>
+    `;
+
+    // Inject before suggestions or footer
+    const suggestions = document.querySelector('.suggestions-section');
+    const footer = document.querySelector('footer');
+    const main = document.querySelector('main');
+    
+    const container = document.createElement('section');
+    container.className = 'section';
+    container.innerHTML = relatedHTML;
+    
+    if (suggestions && suggestions.parentElement) {
+      suggestions.parentElement.insertAdjacentElement('beforebegin', container);
+    } else if (footer) {
+      footer.insertAdjacentElement('beforebegin', container);
+    } else if (main) {
+      main.appendChild(container);
+    }
+    
+    // Update Schema dynamically for Google
+    const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+    scripts.forEach(script => {
+      try {
+        const json = JSON.parse(script.textContent);
+        if (json['@type'] === 'SoftwareApplication' || json['@type'] === 'WebApplication') {
+          json.isRelatedTo = selected.map(t => ({
+            "@type": "SoftwareApplication",
+            "name": t.title,
+            "url": "https://toolsmatic.me" + t.url
+          }));
+          script.textContent = JSON.stringify(json, null, 2);
+        }
+      } catch (e) {}
+    });
   };
 
   window.toolsMatic = { 
@@ -1289,6 +1593,7 @@
     initThemeToggle();
     initAnalyticsTracking();
     initGlobalToolSeo();
+    initRelatedTools();
     initSuggestions();
     initStandardPageExperience();
     initHomeExperience();

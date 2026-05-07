@@ -560,7 +560,10 @@
     { url: '/tools/slug-generator.html', title: 'Slug Generator', description: 'Build cleaner SEO URLs with bulk mode, path previews, and redirect export.', category: 'Developer' },
     { url: '/tools/meta-tag-generator.html', title: 'Meta Tag Generator', description: 'Create search snippets, social cards, robots tags, and JSON-LD faster.', category: 'Developer' },
     { url: '/tools/robots-txt-generator.html', title: 'Robots.txt Generator', description: 'Create and test crawler rules with presets, imports, and live path checks.', category: 'Developer' },
-    { url: '/tools/sitemap-generator.html', title: 'Sitemap Generator', description: 'Generate XML and HTML sitemaps with audits and robots.txt helper output.', category: 'Developer' }
+    { url: '/tools/sitemap-generator.html', title: 'Sitemap Generator', description: 'Generate XML and HTML sitemaps with audits and robots.txt helper output.', category: 'Developer' },
+    { url: '/tools/open-graph-generator.html', title: 'Open Graph Generator', description: 'Build share-ready Open Graph tags for social previews.', category: 'Developer' },
+    { url: '/tools/twitter-card-generator.html', title: 'Twitter Card Generator', description: 'Create X and Twitter card tags with clean preview metadata.', category: 'Developer' },
+    { url: '/tools/wifi-qr-code-generator.html', title: 'WiFi QR Code Generator', description: 'Generate scannable WiFi QR codes for easy network sharing.', category: 'Design' }
   ];
 
   const getHomeCategory = (title) => {
@@ -584,6 +587,8 @@
       'meta tag generator': 'Developer',
       'robots.txt generator': 'Developer',
       'sitemap generator': 'Developer',
+      'open graph generator': 'Developer',
+      'twitter card generator': 'Developer',
       'jwt inspector': 'Developer',
       'regex tester': 'Developer',
       'uuid maker': 'Developer',
@@ -597,6 +602,7 @@
       'contrast checker': 'Design',
       'image compressor': 'Design',
       'qr code maker': 'Design',
+      'wifi qr code generator': 'Design',
       'color picker': 'Design',
       'unit converter': 'Everyday',
       'timezone converter': 'Everyday',
@@ -619,17 +625,6 @@
 
     const cards = Array.from(hero.querySelectorAll('.card'));
     let grids = Array.from(hero.querySelectorAll('.grid'));
-    const cardsPerBand = 4;
-    const bandLabels = [
-      { title: 'Popular picks', subtitle: 'The fastest routes into the tools people use most.' },
-      { title: 'Writing and creativity', subtitle: 'Draft, refine, and generate without leaving the browser.' },
-      { title: 'Developer essentials', subtitle: 'Formatting, validation, and utility tools for daily technical work.' },
-      { title: 'Design workflow', subtitle: 'Color, gradients, visuals, and media helpers for polished output.' },
-      { title: 'Content workflow', subtitle: 'Preview and test content-heavy tasks in one place.' },
-      { title: 'Web utilities', subtitle: 'Encoding, picking, and converting for browser-first workflows.' },
-      { title: 'Everyday helpers', subtitle: 'Small practical utilities for quick comparisons and conversions.' },
-      { title: 'Data cleanup', subtitle: 'Transform and inspect structured data with less friction.' }
-    ];
 
     cards.forEach((card, index) => {
       const title = card.querySelector('h3')?.textContent?.trim() || `Tool ${index + 1}`;
@@ -659,40 +654,12 @@
     hero.querySelectorAll('.grid').forEach((grid) => grid.remove());
 
     if (cards.length) {
-      const rebuiltGrids = [];
-
-      for (let index = 0; index < cards.length; index += cardsPerBand) {
-        const grid = document.createElement('div');
-        grid.className = 'grid home-grid';
-        cards.slice(index, index + cardsPerBand).forEach((card) => grid.appendChild(card));
-        hero.appendChild(grid);
-        rebuiltGrids.push(grid);
-      }
-
-      grids = rebuiltGrids;
+      const grid = document.createElement('div');
+      grid.className = 'grid home-grid home-tool-grid';
+      cards.forEach((card) => grid.appendChild(card));
+      hero.appendChild(grid);
+      grids = [grid];
     }
-
-    grids.forEach((grid, index) => {
-      grid.classList.add('home-grid');
-      const previous = grid.previousElementSibling;
-      if (previous && previous.classList.contains('home-grid-label')) return;
-
-      const band = bandLabels[index] || { title: `More tools ${index + 1}`, subtitle: 'Every feature remains available, just easier to browse.' };
-      const label = document.createElement('div');
-      label.className = 'home-grid-label';
-
-      const copy = document.createElement('div');
-      const kicker = document.createElement('span');
-      kicker.textContent = `Band ${index + 1}`;
-      const title = document.createElement('strong');
-      title.textContent = band.title;
-      const subtitle = document.createElement('p');
-      subtitle.textContent = band.subtitle;
-      copy.append(kicker, title, subtitle);
-
-      label.appendChild(copy);
-      grid.insertAdjacentElement('beforebegin', label);
-    });
 
     const navLinks = document.querySelector('header .nav-links');
     const allToolsLink = navLinks?.querySelector('.nav-btn');

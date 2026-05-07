@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Character Counter Privacy First | ToolsMatic</title>
+  <meta name="description" content="Character Counter Privacy First: use a fast ToolsMatic private browser workflow with local processing, clear steps, and no sign-up.">
+  <meta name="keywords" content="character counter, online character counter, character counter with spaces, character counter without spaces, word count, sentence count, paragraph count, line count, twitter character counter, instagram caption counter, meta description counter, linkedin post counter">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://toolsmatic.me/tools/character-counter-privacy-first.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/character-counter-privacy-first.html">
+  <meta property="og:title" content="Character Counter Privacy First | ToolsMatic">
+  <meta property="og:description" content="Character Counter Privacy First: use a fast ToolsMatic private browser workflow with local processing, clear steps, and no sign-up.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Character Counter Privacy First | ToolsMatic">
+  <meta name="twitter:description" content="Character Counter Privacy First: use a fast ToolsMatic private browser workflow with local processing, clear steps, and no sign-up.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Character Counter","description":"A browser-based character counter with custom limits, platform presets, real-time stats, read time, speak time, character breakdowns, density heatmap, and local history.","url": "https://toolsmatic.me/tools/character-counter-privacy-first.html","applicationCategory":"WritingApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"Organization","name":"ToolsMatic"},"featureList":["Characters with and without spaces","Word, sentence, paragraph, and line counts","Custom character limit with progress bar","Twitter, Instagram, Meta, YouTube, SMS, and LinkedIn presets","Countdown remaining mode","Most frequent characters breakdown","Uppercase and lowercase ratio","Digits, punctuation, and special character counts","Estimated reading and speaking time","Copy stats summary","Character density heatmap","Local history of the last 10 analyses","Client-side processing"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Writing Tools","item":"https://toolsmatic.me/tools"},{"@type":"ListItem","position":3,"name":"Character Counter","item":"https://toolsmatic.me/tools/character-counter.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between character count with spaces and without spaces?","acceptedAnswer":{"@type":"Answer","text":"Character count with spaces includes every visible character plus spaces and line breaks. Character count without spaces removes whitespace so you can measure only the non-space content length."}},{"@type":"Question","name":"Why is countdown mode useful in a character counter?","acceptedAnswer":{"@type":"Answer","text":"Countdown mode is useful when you have a hard platform limit because it shows how many characters remain instead of only showing the total used. That makes last-minute trimming much faster."}},{"@type":"Question","name":"Can I use this tool for social media and SEO limits?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool includes quick limit presets for Twitter or X, Instagram captions, Meta descriptions, YouTube titles, SMS, and LinkedIn posts, and you can also set your own custom limit."}},{"@type":"Question","name":"Does this character counter upload my text?","acceptedAnswer":{"@type":"Answer","text":"No. ToolsMatic processes the text in your browser, so your copy stays on your device."}},{"@type":"Question","name":"Why does line count matter in a character counter?","acceptedAnswer":{"@type":"Answer","text":"Line count helps with drafts, code snippets, poetry, subtitles, and platform fields where layout matters as much as raw character total."}},{"@type":"Question","name":"How are reading time and speaking time estimated?","acceptedAnswer":{"@type":"Answer","text":"The estimates are based on the current word count using common reading and speaking pace assumptions. They are useful for planning but should be treated as practical estimates rather than exact guarantees."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"How to count characters better for social posts, SEO limits, and cleaner writing","description":"A practical guide to character counting, platform limits, countdown mode, text density, and browser-side writing analysis.","author":{"@type":"Organization","name":"ToolsMatic"},"publisher":{"@type":"Organization","name":"ToolsMatic"},"mainEntityOfPage": "https://toolsmatic.me/tools/character-counter-privacy-first.html"}
+  </script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+  <style>
+    .cc-page {
+      width: min(1240px, calc(100% - 32px));
+      margin: 0 auto 56px;
+    }
+
+    .cc-breadcrumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 22px 0 18px;
+      padding: 14px 18px;
+      border: 1px solid rgba(94, 234, 212, 0.16);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(12, 24, 38, 0.92), rgba(11, 18, 29, 0.86));
+      color: rgba(227, 235, 244, 0.78);
+      font-size: 0.95rem;
+    }
+
+    .cc-breadcrumbs a {
+      color: #8fe8ff;
+      text-decoration: none;
+    }
+
+    .cc-breadcrumbs span {
+      opacity: 0.62;
+    }
+
+    .cc-hero,
+    .cc-panel,
+    .cc-card,
+    .cc-compare-card,
+    .cc-faq-card,
+    .cc-seo-card {
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(94, 234, 212, 0.16), transparent 20rem),
+        radial-gradient(circle at bottom left, rgba(96, 165, 250, 0.12), transparent 22rem),
+        linear-gradient(180deg, rgba(16, 28, 44, 0.95), rgba(9, 16, 28, 0.92));
+      box-shadow: 0 26px 60px rgba(2, 8, 18, 0.28);
+    }
+
+    .cc-hero {
+      padding: 30px;
+      margin-bottom: 22px;
+    }
+
+    .cc-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      color: #71e9df;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .cc-eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #72f6de, #58a8ff);
+      box-shadow: 0 0 18px rgba(114, 246, 222, 0.3);
+    }
+
+    .cc-hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.3rem, 4vw, 3.7rem);
+      line-height: 1.02;
+    }
+
+    .cc-hero p,
+    .cc-panel > p,
+    .cc-card > p,
+    .cc-compare-card > p,
+    .cc-faq-card > p,
+    .cc-seo-card > p {
+      margin: 0;
+      color: rgba(227, 235, 244, 0.8);
+      line-height: 1.72;
+      max-width: 78ch;
+    }
+
+    .cc-pills,
+    .cc-presets,
+    .cc-action-row,
+    .cc-ratio-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cc-pills {
+      margin-top: 22px;
+    }
+
+    .cc-pill,
+    .cc-ratio-chip,
+    .cc-type-item,
+    .cc-frequency-item,
+    .cc-history-item,
+    .cc-faq details {
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .cc-pill {
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: rgba(238, 244, 248, 0.88);
+      font-size: 0.92rem;
+    }
+
+    .cc-workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+      gap: 18px;
+      margin-bottom: 22px;
+      align-items: start;
+    }
+
+    .cc-editor-shell {
+      display: grid;
+      gap: 18px;
+    }
+
+    .cc-panel,
+    .cc-card {
+      padding: 22px;
+    }
+
+    .cc-panel h2,
+    .cc-card h2,
+    .cc-card h3,
+    .cc-compare-card h2,
+    .cc-faq-card h2,
+    .cc-seo-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+    }
+
+    .cc-card h3 {
+      font-size: 1.08rem;
+    }
+
+    .cc-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .cc-card-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .cc-label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: rgba(240, 245, 250, 0.92);
+    }
+
+    .cc-page textarea,
+    .cc-page input[type="number"] {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(5, 14, 24, 0.92);
+      color: #eff5fb;
+      padding: 14px 16px;
+      font: inherit;
+    }
+
+    .cc-page textarea:focus,
+    .cc-page input[type="number"]:focus {
+      outline: none;
+      border-color: rgba(124, 217, 255, 0.4);
+      box-shadow: 0 0 0 3px rgba(88, 168, 255, 0.18);
+    }
+
+    .cc-page textarea {
+      min-height: 320px;
+      resize: vertical;
+      line-height: 1.68;
+    }
+
+    .cc-presets {
+      margin: 20px 0 18px;
+    }
+
+    .cc-preset {
+      min-height: 46px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+      background: rgba(8, 18, 31, 0.76);
+      color: rgba(236, 243, 248, 0.9);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .cc-preset:hover,
+    .cc-preset:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(124, 217, 255, 0.32);
+      outline: none;
+    }
+
+    .cc-preset.is-active {
+      background: linear-gradient(135deg, #72f6de, #58a8ff);
+      color: #04121f;
+      box-shadow: 0 18px 34px rgba(88, 168, 255, 0.18);
+    }
+
+    .cc-limit-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 220px) minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: stretch;
+      margin-bottom: 18px;
+    }
+
+    .cc-limit-field,
+    .cc-limit-card,
+    .cc-toggle {
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      border-radius: 22px;
+      background: rgba(8, 18, 31, 0.72);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .cc-limit-field {
+      padding: 14px;
+    }
+
+    .cc-limit-field label {
+      display: block;
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
+
+    .cc-limit-field input {
+      min-height: 52px;
+    }
+
+    .cc-limit-card {
+      padding: 16px 18px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .cc-limit-card span {
+      color: rgba(217, 227, 237, 0.72);
+      font-size: 0.9rem;
+    }
+
+    .cc-limit-card strong {
+      font-size: 1.1rem;
+      line-height: 1.25;
+    }
+
+    .cc-limit-card p {
+      margin: 0;
+      color: rgba(217, 227, 237, 0.76);
+      line-height: 1.58;
+    }
+
+    .cc-toggle {
+      min-width: 220px;
+      padding: 14px 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(236, 243, 248, 0.92);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .cc-toggle input {
+      accent-color: #66dfe5;
+      inline-size: 18px;
+      block-size: 18px;
+      margin: 0;
+    }
+
+    .cc-action-row {
+      margin: 16px 0 14px;
+      align-items: center;
+    }
+
+    .cc-action-row button {
+      min-height: 48px;
+      border: 0;
+      border-radius: 18px;
+      padding: 0 18px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .cc-action-row button:hover {
+      transform: translateY(-1px);
+    }
+
+    .cc-primary {
+      background: linear-gradient(135deg, #72f6de, #58a8ff);
+      color: #04121f;
+      box-shadow: 0 18px 34px rgba(88, 168, 255, 0.18);
+    }
+
+    .cc-secondary {
+      background: rgba(8, 18, 31, 0.76);
+      color: #ecf3f8;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+    }
+
+    .cc-action-copy {
+      color: rgba(217, 227, 237, 0.76);
+      font-size: 0.95rem;
+    }
+
+    .cc-progress-card {
+      padding: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      border-radius: 22px;
+      background: rgba(8, 18, 31, 0.72);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      margin-bottom: 18px;
+    }
+
+    .cc-progress-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .cc-progress-head strong {
+      font-size: 1rem;
+    }
+
+    .cc-progress-head span {
+      color: rgba(227, 235, 244, 0.84);
+      font-weight: 700;
+    }
+
+    .cc-progress-track {
+      position: relative;
+      block-size: 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .cc-progress-fill {
+      block-size: 100%;
+      inline-size: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #4be2ae, #72f6de);
+      transition: inline-size 0.18s ease, background 0.18s ease;
+    }
+
+    .cc-progress-fill.is-warn {
+      background: linear-gradient(90deg, #f4cf67, #f6a84f);
+    }
+
+    .cc-progress-fill.is-danger {
+      background: linear-gradient(90deg, #ff856f, #ff5568);
+    }
+
+    .cc-progress-copy {
+      margin: 0;
+      color: rgba(220, 230, 239, 0.8);
+      line-height: 1.6;
+    }
+
+    .cc-status {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      color: rgba(237, 244, 248, 0.9);
+      line-height: 1.6;
+    }
+
+    .cc-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .cc-stat {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .cc-stat strong {
+      display: block;
+      font-size: 1.85rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .cc-stat span {
+      color: rgba(222, 232, 240, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .cc-heatmap-panel p {
+      margin: 0 0 14px;
+    }
+
+    .cc-heatmap {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0 10px;
+    }
+
+    .cc-heatmap-cell {
+      position: relative;
+      min-height: 58px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, calc(0.12 + var(--level, 0) * 0.26));
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+        linear-gradient(135deg, rgba(114, 246, 222, calc(0.08 + var(--level, 0) * 0.32)), rgba(88, 168, 255, calc(0.06 + var(--level, 0) * 0.28)));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      overflow: hidden;
+    }
+
+    .cc-heatmap-cell::after {
+      content: attr(data-label);
+      position: absolute;
+      inset: auto 10px 10px;
+      font-size: 0.78rem;
+      color: rgba(243, 248, 252, 0.78);
+    }
+
+    .cc-heatmap-cell.is-empty {
+      min-height: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      text-align: center;
+      color: rgba(226, 234, 241, 0.72);
+      background: rgba(8, 18, 31, 0.72);
+      grid-column: 1 / -1;
+    }
+
+    .cc-heatmap-legend {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: rgba(216, 226, 236, 0.74);
+      font-size: 0.9rem;
+    }
+
+    .cc-ratio-bar {
+      display: grid;
+      grid-template-columns: var(--upper, 0fr) var(--lower, 1fr);
+      min-height: 16px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.08);
+      margin-bottom: 12px;
+    }
+
+    .cc-ratio-upper {
+      background: linear-gradient(90deg, #58a8ff, #87d1ff);
+    }
+
+    .cc-ratio-lower {
+      background: linear-gradient(90deg, #72f6de, #4be2ae);
+    }
+
+    .cc-ratio-meta {
+      margin-top: 12px;
+    }
+
+    .cc-ratio-chip,
+    .cc-type-item {
+      padding: 12px 14px;
+      border-radius: 18px;
+      min-width: 130px;
+    }
+
+    .cc-ratio-chip strong,
+    .cc-type-item strong {
+      display: block;
+      font-size: 1.28rem;
+      margin-bottom: 6px;
+    }
+
+    .cc-ratio-chip span,
+    .cc-type-item span {
+      color: rgba(218, 228, 238, 0.72);
+      font-size: 0.92rem;
+    }
+
+    .cc-type-grid,
+    .cc-frequency-list,
+    .cc-history-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cc-type-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cc-frequency-item,
+    .cc-history-item {
+      padding: 14px 16px;
+      border-radius: 18px;
+    }
+
+    .cc-frequency-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .cc-frequency-token {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .cc-frequency-token code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 34px;
+      padding: 0 10px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #eff5fb;
+      font-family: "Cascadia Code", "Consolas", monospace;
+    }
+
+    .cc-frequency-count {
+      color: rgba(224, 232, 240, 0.84);
+      font-weight: 700;
+    }
+
+    .cc-frequency-meta {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: rgba(213, 223, 233, 0.68);
+    }
+
+    .cc-history-list {
+      max-height: 560px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .cc-history-item h4 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .cc-history-item p {
+      margin: 0 0 12px;
+      color: rgba(220, 230, 239, 0.74);
+      line-height: 1.58;
+    }
+
+    .cc-history-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: rgba(220, 230, 239, 0.68);
+      font-size: 0.9rem;
+    }
+
+    .cc-history-restore {
+      min-height: 40px;
+      border: 1px solid rgba(124, 217, 255, 0.18);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      color: #eff5fb;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0 14px;
+    }
+
+    .cc-compare-card,
+    .cc-faq-card,
+    .cc-seo-card {
+      padding: 24px;
+      margin-top: 22px;
+    }
+
+    .cc-table-wrap {
+      overflow: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.12);
+    }
+
+    .cc-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+    }
+
+    .cc-compare-table th,
+    .cc-compare-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(124, 217, 255, 0.12);
+    }
+
+    .cc-compare-table th {
+      background: rgba(7, 16, 28, 0.9);
+      color: #f4fbff;
+      text-align: left;
+    }
+
+    .cc-compare-table td:not(:first-child),
+    .cc-compare-table th:not(:first-child) {
+      text-align: center;
+    }
+
+    .cc-compare-table tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .cc-check {
+      color: #79f1c2;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .cc-cross {
+      color: #ff8e9e;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .cc-faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cc-faq details {
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .cc-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    .cc-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .cc-faq p {
+      margin: 10px 0 0;
+      color: rgba(217, 227, 237, 0.76);
+      line-height: 1.68;
+    }
+
+    .cc-seo-card h3 {
+      margin: 24px 0 10px;
+      font-size: 1.12rem;
+    }
+
+    .cc-seo-card p {
+      color: rgba(219, 229, 240, 0.8);
+      line-height: 1.78;
+      margin: 0 0 14px;
+    }
+
+    @media (max-width: 1120px) {
+      .cc-workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .cc-side {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 820px) {
+      .cc-page {
+        width: min(100% - 20px, 100%);
+      }
+
+      .cc-hero,
+      .cc-panel,
+      .cc-card,
+      .cc-compare-card,
+      .cc-faq-card,
+      .cc-seo-card {
+        border-radius: 22px;
+      }
+
+      .cc-limit-row {
+        grid-template-columns: 1fr;
+      }
+
+      .cc-toggle {
+        min-width: 0;
+      }
+
+      .cc-stats-grid,
+      .cc-type-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cc-heatmap {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .cc-side {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .cc-stats-grid,
+      .cc-type-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cc-action-row button,
+      .cc-preset {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .cc-action-copy {
+        width: 100%;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "WebApplication",
+    "name":  "Character Counter Online | Limits, Read Time, Breakdown, History",
+    "url": "https://toolsmatic.me/tools/character-counter-privacy-first.html",
+    "description":  "Count characters, words, sentences, paragraphs, and lines in real time. Set custom limits, use platform presets, track remaining characters, view read time, frequency, heatmap, and local history.",
+    "applicationCategory":  "UtilityApplication",
+    "operatingSystem":  "Any",
+    "browserRequirements":  "Requires JavaScript and a modern web browser",
+    "isAccessibleForFree":  true,
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "ToolsMatic",
+                      "url":  "https://toolsmatic.me/"
+                  },
+    "offers":  {
+                   "@type":  "Offer",
+                   "price":  "0",
+                   "priceCurrency":  "USD"
+               }
+}
+  </script>
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/character-counter-privacy-first.html">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">&#127769;</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="cc-page">
+    <nav class="cc-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/">Writing Tools</a>
+      <span>/</span>
+      <strong>Character Counter</strong>
+    </nav>
+
+    <section class="cc-hero">
+      <div class="cc-eyebrow">Writing analytics</div>
+      <h1>Character Counter Privacy First</h1>
+      <section class="ad-slot ad-slot-primary" aria-label="Advertisement">
+        <script>
+          atOptions = {
+            'key' : 'e61a3745429623f25315f86052a3ab7b',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+      </section>
+<p>Paste copy, hit a social limit, trim a meta description, or sanity-check a long draft without bouncing between multiple tools. This page tracks total characters, non-space characters, words, sentences, paragraphs, lines, read time, speak time, breakdowns, dense sections, and the last 10 analyses right in your browser.</p>
+      <div class="cc-pills">
+        <div class="cc-pill">Live count with and without spaces</div>
+        <div class="cc-pill">Preset platform limits plus custom caps</div>
+        <div class="cc-pill">Countdown mode, density heatmap, and local history</div>
+      </div>
+    </section>
+
+    <section class="cc-workspace">
+      <div class="cc-editor-shell">
+        <section class="cc-panel">
+          <h2>Live character analysis</h2>
+          <p>Type or paste once and watch every metric update instantly. The workspace is tuned for fast scanning, so the key numbers stay obvious without burying useful detail.</p>
+
+          <div class="cc-presets" id="cc-presets" aria-label="Platform presets">
+            <button class="cc-preset is-active" type="button" data-preset="twitter" data-limit="280">Twitter/X 280</button>
+            <button class="cc-preset" type="button" data-preset="instagram" data-limit="2200">Instagram 2200</button>
+            <button class="cc-preset" type="button" data-preset="meta" data-limit="160">Meta 160</button>
+            <button class="cc-preset" type="button" data-preset="youtube" data-limit="100">YouTube 100</button>
+            <button class="cc-preset" type="button" data-preset="sms" data-limit="160">SMS 160</button>
+            <button class="cc-preset" type="button" data-preset="linkedin" data-limit="3000">LinkedIn 3000</button>
+          </div>
+
+          <div class="cc-limit-row">
+            <div class="cc-limit-field">
+              <label for="cc-limit">Custom character limit</label>
+              <input id="cc-limit" type="number" min="1" step="1" value="280">
+            </div>
+            <div class="cc-limit-card">
+              <span>Current tracking mode</span>
+              <strong id="cc-limit-mode">Twitter/X preset with 280 characters</strong>
+              <p id="cc-limit-note">Use the preset buttons for common publishing targets or set a custom limit when the field you are writing for is more specific.</p>
+            </div>
+            <label class="cc-toggle"><input id="cc-countdown" type="checkbox"> Countdown mode: show remaining instead of used total</label>
+          </div>
+
+          <label class="cc-label" for="cc-input">Text to analyze</label>
+          <textarea id="cc-input" placeholder="Paste a title, post, description, draft, or message here. Everything updates while you type."></textarea>
+
+          <div class="cc-action-row">
+            <button id="cc-copy-stats" class="cc-primary" type="button">Copy stats</button>
+            <button id="cc-copy-text" class="cc-secondary" type="button">Copy text</button>
+            <button id="cc-load-sample" class="cc-secondary" type="button">Load sample</button>
+            <button id="cc-clear" class="cc-secondary" type="button">Clear</button>
+            <div class="cc-action-copy">No submit button needed. This tool recalculates live and keeps recent analyses locally.</div>
+          </div>
+
+          <div class="cc-progress-card">
+            <div class="cc-progress-head">
+              <strong id="cc-progress-title">Character limit usage</strong>
+              <span id="cc-progress-number">0 / 280</span>
+            </div>
+            <div class="cc-progress-track" aria-hidden="true">
+              <div id="cc-progress-fill" class="cc-progress-fill"></div>
+            </div>
+            <p id="cc-progress-copy" class="cc-progress-copy">280 characters remaining before you hit the current limit.</p>
+          </div>
+
+          <div class="cc-stats-grid" aria-live="polite">
+            <div class="cc-stat"><strong id="cc-stat-characters">0</strong><span>Characters</span></div>
+            <div class="cc-stat"><strong id="cc-stat-no-spaces">0</strong><span>Characters without spaces</span></div>
+            <div class="cc-stat"><strong id="cc-stat-words">0</strong><span>Words</span></div>
+            <div class="cc-stat"><strong id="cc-stat-sentences">0</strong><span>Sentences</span></div>
+            <div class="cc-stat"><strong id="cc-stat-paragraphs">0</strong><span>Paragraphs</span></div>
+            <div class="cc-stat"><strong id="cc-stat-lines">0</strong><span>Lines</span></div>
+            <div class="cc-stat"><strong id="cc-stat-limit">280</strong><span id="cc-stat-limit-label">Characters remaining</span></div>
+            <div class="cc-stat"><strong id="cc-stat-read-time">0s</strong><span>Estimated read time</span></div>
+            <div class="cc-stat"><strong id="cc-stat-speak-time">0s</strong><span>Estimated speak time</span></div>
+          </div>
+
+          <div id="cc-status" class="cc-status" aria-live="polite">Start typing or paste text to see live counts, remaining characters, density changes, and the top character breakdown.</div>
+        </section>
+
+        <section class="cc-panel cc-heatmap-panel">
+          <div class="cc-card-head">
+            <h3>Character density heatmap</h3>
+            <span id="cc-heatmap-summary">Light blocks are airy. Darker blocks are denser.</span>
+          </div>
+          <p>This surface helps you spot where copy is compact, heavy, or unusually dense. It is useful when you are trimming headlines, social captions, abstracts, or any field that has a tight ceiling.</p>
+          <div id="cc-heatmap" class="cc-heatmap" role="list" aria-label="Character density heatmap">
+            <div class="cc-heatmap-cell is-empty">Start typing to see how dense each chunk of your text is.</div>
+          </div>
+          <div class="cc-heatmap-legend">
+            <span>Light = more whitespace or shorter terms</span>
+            <span>Dense = more non-space content per chunk</span>
+          </div>
+        </section>
+      </div>
+
+      <aside class="cc-side">
+        <section class="cc-card">
+          <h3>Uppercase vs lowercase ratio</h3>
+          <p>Use this to spot accidental shouting, title-case overuse, or a mismatch between short-form social copy and body copy.</p>
+          <div id="cc-ratio-bar" class="cc-ratio-bar" style="--upper: 0fr; --lower: 1fr;">
+            <div class="cc-ratio-upper"></div>
+            <div class="cc-ratio-lower"></div>
+          </div>
+          <div class="cc-ratio-meta">
+            <div class="cc-ratio-chip"><strong id="cc-uppercase">0</strong><span>Uppercase letters</span></div>
+            <div class="cc-ratio-chip"><strong id="cc-lowercase">0</strong><span>Lowercase letters</span></div>
+            <div class="cc-ratio-chip"><strong id="cc-ratio-copy">0% / 0%</strong><span>Upper / lower share</span></div>
+          </div>
+        </section>
+
+        <section class="cc-card">
+          <h3>Character type split</h3>
+          <p>Digits, punctuation, and special symbols are separated so you can quickly understand whether the text is copy-heavy, data-heavy, or packed with formatting characters.</p>
+          <div class="cc-type-grid">
+            <div class="cc-type-item"><strong id="cc-digits">0</strong><span>Digits</span></div>
+            <div class="cc-type-item"><strong id="cc-punctuation">0</strong><span>Punctuation marks</span></div>
+            <div class="cc-type-item"><strong id="cc-special">0</strong><span>Special characters</span></div>
+            <div class="cc-type-item"><strong id="cc-spaces">0</strong><span>Whitespace characters</span></div>
+          </div>
+        </section>
+
+        <section class="cc-card">
+          <div class="cc-card-head">
+            <h3>Most frequent characters</h3>
+            <span id="cc-frequency-title">Top repeated characters in the current text</span>
+          </div>
+          <div id="cc-frequency-list" class="cc-frequency-list">
+            <div class="cc-frequency-item">The breakdown appears here after you enter text.</div>
+          </div>
+        </section>
+
+        <section class="cc-card">
+          <div class="cc-card-head">
+            <h3>Recent analyses</h3>
+            <span>Last 10 local snapshots</span>
+          </div>
+          <div id="cc-history-list" class="cc-history-list">
+            <div class="cc-history-item">
+              <h4>No saved analyses yet</h4>
+              <p>When you pause after typing, this page stores a local snapshot so you can reopen recent text states quickly without uploading anything.</p>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="cc-compare-card">
+      <h2>Comparison table</h2>
+      <p>Ticks mean the feature is clearly highlighted on the reviewed public page. Crosses mean it was not clearly highlighted there at the time of review on April 7, 2026.</p>
+      <div class="cc-table-wrap">
+        <table class="cc-compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ToolsMatic</th>
+              <th>Grammarly</th>
+              <th>WordCounter.net</th>
+              <th>Character-count.org</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Characters with and without spaces</td><td class="cc-check">&#10003;</td><td class="cc-check">&#10003;</td><td class="cc-check">&#10003;</td><td class="cc-check">&#10003;</td></tr>
+            <tr><td>Word, sentence, and paragraph counts</td><td class="cc-check">&#10003;</td><td class="cc-check">&#10003;</td><td class="cc-check">&#10003;</td><td class="cc-check">&#10003;</td></tr>
+            <tr><td>Line count</td><td class="cc-check">&#10003;</td><td class="cc-cross">&#10005;</td><td class="cc-check">&#10003;</td><td class="cc-check">&#10003;</td></tr>
+            <tr><td>Built-in platform limit buttons</td><td class="cc-check">&#10003;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td><td class="cc-check">&#10003;</td></tr>
+            <tr><td>Countdown remaining mode</td><td class="cc-check">&#10003;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td></tr>
+            <tr><td>Read and speak time together</td><td class="cc-check">&#10003;</td><td class="cc-cross">&#10005;</td><td class="cc-check">&#10003;</td><td class="cc-check">&#10003;</td></tr>
+            <tr><td>Digits, punctuation, and special chars split out</td><td class="cc-check">&#10003;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td></tr>
+            <tr><td>Most frequent character breakdown</td><td class="cc-check">&#10003;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td></tr>
+            <tr><td>Character density heatmap</td><td class="cc-check">&#10003;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td></tr>
+            <tr><td>Local history of recent analyses</td><td class="cc-check">&#10003;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td><td class="cc-cross">&#10005;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cc-faq-card">
+      <h2>FAQs</h2>
+      <p>These answers focus on the practical decisions people make when they are trying to hit a character limit without losing clarity.</p>
+      <div class="cc-faq">
+        <details>
+          <summary>Why count characters instead of just counting words?</summary>
+          <p>Many publishing surfaces care about characters, not words. Social posts, metadata, ad headlines, titles, and forms often have hard character limits. Word count alone cannot tell you whether a headline will fit.</p>
+        </details>
+        <details>
+          <summary>When should I use character count without spaces?</summary>
+          <p>Use the without-spaces number when a system excludes spaces from its limit or when you need to measure the raw non-space load of the message. It is also useful for comparing copy density across drafts.</p>
+        </details>
+        <details>
+          <summary>How does countdown mode help when editing fast?</summary>
+          <p>Countdown mode changes the mental model from "How much have I used?" to "How much room do I have left?" That is usually better when trimming a tweet, title, meta description, or short CTA under pressure.</p>
+        </details>
+        <details>
+          <summary>What is the heatmap useful for?</summary>
+          <p>The heatmap helps you see where the text gets heavy. If one chunk is much denser than the rest, that is a clue that the copy may be harder to scan, harder to fit, or harder to speak smoothly.</p>
+        </details>
+        <details>
+          <summary>Why show read time and speak time on a character counter page?</summary>
+          <p>Because short-form writing often has a pacing problem, not just a length problem. Read and speak estimates help you judge whether a script, post, description, or intro feels tight enough for the context.</p>
+        </details>
+        <details>
+          <summary>Is the history private?</summary>
+          <p>Yes. The recent analyses list is stored in localStorage in your browser on this device. It is meant to help you reopen recent drafts quickly without sending them anywhere.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cc-seo-card">
+      <h2>Why a modern character counter should do more than show one number</h2>
+      <p>A lot of character counters still behave like tiny widgets from another era. They tell you one or two numbers, maybe add word count, and then stop. That worked when the main job was checking whether a classroom assignment was long enough. It is not enough anymore. Modern writing moves through multiple constraints at once. A single draft can become a title, a caption, a meta description, a CTA, a product snippet, a text message, a social post, a preview line, and an internal handoff. Each surface has a different limit, a different tolerance for whitespace, a different pacing requirement, and a different audience expectation. That is why a stronger online character counter should not force people to open several other tabs just to finish a small task. The better approach is to keep the obvious workflow simple while quietly offering the extra analysis people actually use: characters with and without spaces, words, sentences, paragraphs, lines, read time, speak time, visible platform presets, and clear feedback when a draft is closing in on a limit. That combination makes the page useful for both quick checks and repeat use.</p>
+      <h3>Character count matters because publishing surfaces are strict</h3>
+      <p>People often talk about word count because it feels familiar, but character count is what decides whether a lot of real-world copy fits. Social posts are the most obvious example, yet they are far from the only one. Meta descriptions need to stay concise enough to avoid getting cut awkwardly. YouTube titles need to stay punchy without losing context. SMS copy needs to be short enough to remain direct and readable. LinkedIn posts may allow more length, but the opening still carries pressure because the first few lines shape whether someone keeps reading. Product teams deal with button labels, helper text, validation messages, and onboarding copy that all compete for limited space. Support teams need macros and templates that feel complete without becoming bloated. Students and researchers also face abstract limits, application fields, and concise summary requirements. In all of those cases, raw character count is the measurement that decides whether the copy will work. A serious tool has to respect that reality, which is why preset limits and custom caps make such a difference in day-to-day use.</p>
+      <h3>Characters with spaces versus without spaces is not a trivial distinction</h3>
+      <p>One of the easiest ways to make a character counter more useful is to surface both versions of the number at the same time. Characters with spaces tell you how much room the text truly occupies on most platforms. Characters without spaces tell you how much actual non-space content you have packed into the draft. That distinction is more useful than it first appears. For SEO work, ad copy, and social posts, the with-spaces number is usually the one that matters to the platform. For editing and comparison, the without-spaces number helps you understand how dense a message really is. Two drafts can have similar total length and still feel very different because one relies on spacing and short phrases while the other is packed with long, compressed wording. Showing both numbers lets writers judge length and density at once. That is a better editing signal than a single total alone.</p>
+      <h3>Writers need live feedback, not a submit button</h3>
+      <p>The fastest character counter experience is the one that disappears into the act of writing. That means no page reload, no unnecessary submit button, and no delay between typing and seeing the effect. Real-time updates are not just a nice touch. They change how people edit. If you can see the character total, remaining count, sentence count, and read time shift instantly, you can test phrasing while you are still in the flow of the sentence. That is especially useful when trimming copy because most of the work happens in tiny substitutions. You swap a longer verb for a shorter one. You remove one redundant adjective. You compress a title. You replace filler with something tighter. Live feedback turns those decisions into a loop instead of a repeated stop-and-check workflow. The result is faster editing and less frustration.</p>
+      <h3>Platform presets save attention, which is why they matter</h3>
+      <p>A lot of online tools mention platform limits in a paragraph of SEO text but do not bring those limits into the actual interface. That forces users to remember the number, type it manually, or scroll around for help that should already be built into the tool. A better character counter treats common limits as part of the product, not part of the marketing copy. That is why preset buttons for Twitter or X, Instagram captions, Meta descriptions, YouTube titles, SMS, and LinkedIn are useful. They collapse the gap between reading about a limit and actively writing against it. They also reduce errors. If you can switch from a 160-character meta description to a 3000-character LinkedIn draft with one tap, you are much less likely to test copy against the wrong limit or forget to update a manual value. This makes the tool more dependable, especially for marketers, social managers, founders, and support teams who switch contexts constantly.</p>
+      <h3>Countdown mode is better for high-pressure editing</h3>
+      <p>There is a subtle but important difference between showing how many characters have been used and showing how many remain. When the limit is far away, either mode is fine. But as soon as the draft gets close to the edge, remaining count becomes more useful because it matches the real question in the writer's head: how much room do I still have? That is why countdown mode is not a gimmick. It is a practical editing state for constrained writing. Titles, ads, bios, descriptions, app store copy, captions, and short messages all benefit from seeing the remaining room directly. It shortens the feedback loop and makes final trimming easier. Paired with a progress bar that changes from safe to warning to danger, countdown mode becomes a highly readable pressure gauge rather than just another number on the screen.</p>
+      <h3>Better writing metrics should still stay easy to scan</h3>
+      <p>One reason many tools feel amateurish is that they either overwhelm the screen with advanced information or hide useful information until it becomes hard to reach. The best version of a character counter avoids both mistakes. The main dashboard should show the numbers most people need immediately: characters, no-space characters, words, sentences, paragraphs, lines, remaining count, read time, and speak time. Deeper analysis should stay nearby rather than buried somewhere else. That is where breakdowns become valuable. Digits, punctuation, and special characters help you understand whether a draft is mostly copy, mostly structured data, or cluttered with symbols. Uppercase versus lowercase ratio can catch tone problems quickly, especially in titles, CTA blocks, or messy pasted text. A frequent-character view can reveal repetition patterns or formatting problems you would not notice from the total count alone. Done well, these additions make the page feel more capable without making it harder to use.</p>
+      <h3>Reading time and speaking time are not fluff metrics</h3>
+      <p>Short-form writing is often treated as if length is the only question, but pacing matters too. A social caption that technically fits may still feel too slow. A short script can feel too dense when read aloud. A product description can look concise but still become clumsy when spoken in a demo. Estimated reading time and speaking time are useful because they turn text length into a more human measure of effort. They help writers, marketers, educators, creators, and presenters make practical decisions about whether a piece of copy feels light enough for the context. They also help when coordinating across channels. A title, subheading, caption, and voiceover all need to carry different pacing expectations. When a character counter includes both timing estimates, it becomes more useful as a communication planning tool rather than only a length checker.</p>
+      <h3>Frequency breakdowns and density views expose patterns total count misses</h3>
+      <p>Total count can tell you whether a draft fits. It cannot tell you why the draft feels crowded or repetitive. That is where more advanced views help. A most-frequent-characters breakdown can surface patterns in punctuation, spacing, repeated separators, emoji use, or formatting characters that inflate the length more than expected. A density heatmap can show which parts of a draft are carrying most of the non-space weight. Those signals are especially useful for titles, excerpts, post openings, abstract fields, and other short surfaces where a single overloaded section can make the whole thing harder to scan. They are also useful in technical and product copy where repeated symbols, IDs, or punctuation can change the feel of the text dramatically. These are not vanity features when they are presented clearly. They are editing shortcuts.</p>
+      <h3>Local history makes repeat work less fragile</h3>
+      <p>Writers rarely work in a perfectly linear way. They try one version, cut it down, then realize an earlier draft was closer to the mark. They test a long version against LinkedIn, a shorter version against X, and a stripped version against a metadata field. Without history, that process becomes fragile. You copy, overwrite, undo, and hope the earlier version is still around. A simple local history of recent analyses makes the tool much more resilient. It lets users reopen recent snapshots quickly without accounts or server storage. That is especially useful on a page like this because the work is often iterative and constraint-heavy. Keeping the history local preserves privacy while still giving the user a better workflow. It is one of those features that feels small until you need it, and then it becomes hard to give up.</p>
+      <h3>Privacy is part of the value, not just a side note</h3>
+      <p>People paste more sensitive text into online counters than they expect. It might be a draft announcement, a client message, a job application answer, a product description before launch, an internal support macro, or copy tied to a campaign that has not gone live yet. Processing that text in the browser matters. It reduces friction, but it also reduces risk. There is no need to send quick writing tasks through a remote service when the browser can do the work immediately. Privacy-first handling also makes the tool easier to trust, and trust is a major part of why people come back to a utility site instead of treating it as a one-off. A strong browser tool earns repeat use by being fast, clear, and predictable. Local processing supports all three.</p>
+      <h3>Who benefits most from a stronger character counter</h3>
+      <p>Content teams use character counters for headlines, metadata, previews, descriptions, subject lines, and social posts. Marketers use them to fit value propositions into tight spaces without losing meaning. Product teams use them for UI labels, onboarding copy, and error states. Students use them for abstracts, application responses, and assignments with strict requirements. Researchers use them when working within submission fields and summaries. Journalists, editors, and copywriters use them whenever a piece of text has to fit a format without turning bland. Support teams use them to keep macros concise and readable. Founders and operators use them for bios, announcements, and campaign copy. That breadth is exactly why the best character counter is not the one with the most clutter. It is the one that makes these common jobs easier without making the interface itself a problem.</p>
+      <h3>Why this page is built to become a bookmark, not a one-time tool</h3>
+      <p>The highest-value browser tools are the ones people remember because they solve the task cleanly and then get out of the way. A character counter becomes that kind of tool when it combines the obvious metrics, useful presets, remaining mode, timing estimates, visual density feedback, and local history in one calm workspace. That is what makes a utility page feel premium and genuinely useful. Instead of acting like a thin wrapper around a textarea, it becomes a practical writing station for constrained copy. If a user can open it, paste text, switch limits, scan the dashboard, trim intelligently, and move on within seconds, the tool has done its job. That is the standard this page is built around, and that is why it is positioned to earn repeat organic use from writers, creators, marketers, and anyone else who works against text limits every week.</p>
+    </section>
+  
+    <section class="section programmatic-intent-section google-quality-page" aria-labelledby="character-counter-privacy-first-title">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:16px;">
+        <a href="/">Home</a> / <a href="/#tools">Tools</a> / <span>Character Counter Privacy First</span>
+      </nav>
+      <p class="eyebrow">Focused ToolsMatic Workflow</p>
+      <h2 id="character-counter-privacy-first-title">Character Counter Privacy First built for a private browser workflow</h2>
+      <p><strong>Character Counter Privacy First</strong> is a dedicated page for users handling sensitive text, data, passwords, tokens, URLs, files, or drafts that should not be uploaded. The core tool remains available above, but this page adds a clearer search-focused path: local-first processing, no account requirement, and a transparent workflow that keeps the task in the browser.</p>
+      <p>Track limits, dense sections, and live writing metrics instantly. This focused version helps users understand the exact job before they start, so they can move from question to result without scanning a broad utility page or guessing which option matters.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:22px 0;">
+        <div style="padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--surface);"><strong>Best use case</strong><p style="margin:8px 0 0;color:var(--muted);">Use this page when your search intent is specifically "Character Counter Privacy First" and you want the matching workflow immediately.</p></div>
+        <div style="padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--surface);"><strong>Quality check</strong><p style="margin:8px 0 0;color:var(--muted);">Review the result, copy or export only after checking the output, and repeat with small changes when precision matters.</p></div>
+        <div style="padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--surface);"><strong>Privacy model</strong><p style="margin:8px 0 0;color:var(--muted);">The workflow is designed for fast browser use without account friction, which is ideal for quick utility tasks and sensitive drafts.</p></div>
+      </div>
+
+      <h2>How to use Character Counter Privacy First</h2>
+      <ol>
+        <li>Open the tool area above and paste or enter the content you want to work with.</li>
+        <li>Use the default settings first; they are selected to fit the most common version of this task.</li>
+        <li>Adjust the visible controls only if your result needs a stricter format, a different output, or a more specialized workflow.</li>
+        <li>Check the output carefully, then copy, download, or reuse the result in your project.</li>
+      </ol>
+
+      <h2>Why this page is not a duplicate of the main tool</h2>
+      <p>The main <a href="https://toolsmatic.me/tools/character-counter.html">Character Counter</a> page covers the complete utility. This page is intentionally narrower: it answers a specific query, describes the exact scenario, and gives searchers a landing page that matches the words they used. That makes it more useful for people and cleaner for search engines than forcing every intent onto one overloaded page.</p>
+
+      <h2>Character Counter Privacy First FAQ</h2>
+      <div class="faq-grid">
+        <details><summary>What is Character Counter Privacy First?</summary><p>Character Counter Privacy First is a focused ToolsMatic page built for users handling sensitive text, data, passwords, tokens, URLs, files, or drafts that should not be uploaded. It keeps the same working tool available while adding intent-specific guidance, examples, and checks.</p></details>
+        <details><summary>Is Character Counter Privacy First private?</summary><p>Yes. ToolsMatic tools are designed for browser-based usage, so the workflow is fast and privacy-conscious without forcing sign-up before you can use the page.</p></details>
+        <details><summary>When should I use this page instead of the main Character Counter?</summary><p>Use this page when you specifically want a private browser workflow. Use the main Character Counter page when you want the broadest general overview of the tool.</p></details>
+        <details><summary>Does this page work on mobile?</summary><p>Yes. The page keeps the same responsive ToolsMatic interface and is meant to be usable on desktop, tablet, and mobile screens.</p></details>
+      </div>
+
+      <h2>Comparison</h2>
+      <table class="comparison-table">
+        <thead><tr><th>Feature</th><th>ToolsMatic</th><th>Generic Tool Pages</th><th>Installable Apps</th></tr></thead>
+        <tbody>
+          <tr><td>Focused private browser workflow</td><td>✓</td><td>✕</td><td>✕</td></tr>
+          <tr><td>No sign-up for basic usage</td><td>✓</td><td>✓</td><td>✕</td></tr>
+          <tr><td>Works in the browser</td><td>✓</td><td>✓</td><td>✕</td></tr>
+          <tr><td>Tool plus guidance on one page</td><td>✓</td><td>✕</td><td>✕</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Character Counter Privacy First","url":"https://toolsmatic.me/tools/character-counter-privacy-first.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Character Counter Privacy First: use a fast ToolsMatic private browser workflow with local processing, clear steps, and no sign-up.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Character Counter Privacy First","item":"https://toolsmatic.me/tools/character-counter-privacy-first.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Character Counter Privacy First?","acceptedAnswer":{"@type":"Answer","text":"Character Counter Privacy First is a focused ToolsMatic page built for users handling sensitive text, data, passwords, tokens, URLs, files, or drafts that should not be uploaded. It keeps the same working tool available while adding intent-specific guidance, examples, and checks."}},{"@type":"Question","name":"Is Character Counter Privacy First private?","acceptedAnswer":{"@type":"Answer","text":"Yes. ToolsMatic tools are designed for browser-based usage, so the workflow is fast and privacy-conscious without forcing sign-up before you can use the page."}},{"@type":"Question","name":"When should I use this page instead of the main Character Counter?","acceptedAnswer":{"@type":"Answer","text":"Use this page when you specifically want a private browser workflow. Use the main Character Counter page when you want the broadest general overview of the tool."}},{"@type":"Question","name":"Does this page work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. The page keeps the same responsive ToolsMatic interface and is meant to be usable on desktop, tablet, and mobile screens."}}]}]}</script>
+</main>
+<footer>ToolsMatic - Fast, privacy-first utilities for the web.</footer>
+  <script>
+    const cc = {
+      input: document.getElementById('cc-input'),
+      limit: document.getElementById('cc-limit'),
+      countdown: document.getElementById('cc-countdown'),
+      limitMode: document.getElementById('cc-limit-mode'),
+      limitNote: document.getElementById('cc-limit-note'),
+      progressTitle: document.getElementById('cc-progress-title'),
+      progressNumber: document.getElementById('cc-progress-number'),
+      progressFill: document.getElementById('cc-progress-fill'),
+      progressCopy: document.getElementById('cc-progress-copy'),
+      presets: Array.from(document.querySelectorAll('.cc-preset')),
+      copyStats: document.getElementById('cc-copy-stats'),
+      copyText: document.getElementById('cc-copy-text'),
+      loadSample: document.getElementById('cc-load-sample'),
+      clear: document.getElementById('cc-clear'),
+      status: document.getElementById('cc-status'),
+      heatmap: document.getElementById('cc-heatmap'),
+      heatmapSummary: document.getElementById('cc-heatmap-summary'),
+      frequencyList: document.getElementById('cc-frequency-list'),
+      frequencyTitle: document.getElementById('cc-frequency-title'),
+      historyList: document.getElementById('cc-history-list'),
+      ratioBar: document.getElementById('cc-ratio-bar'),
+      uppercase: document.getElementById('cc-uppercase'),
+      lowercase: document.getElementById('cc-lowercase'),
+      ratioCopy: document.getElementById('cc-ratio-copy'),
+      digits: document.getElementById('cc-digits'),
+      punctuation: document.getElementById('cc-punctuation'),
+      special: document.getElementById('cc-special'),
+      spaces: document.getElementById('cc-spaces'),
+      statCharacters: document.getElementById('cc-stat-characters'),
+      statNoSpaces: document.getElementById('cc-stat-no-spaces'),
+      statWords: document.getElementById('cc-stat-words'),
+      statSentences: document.getElementById('cc-stat-sentences'),
+      statParagraphs: document.getElementById('cc-stat-paragraphs'),
+      statLines: document.getElementById('cc-stat-lines'),
+      statLimit: document.getElementById('cc-stat-limit'),
+      statLimitLabel: document.getElementById('cc-stat-limit-label'),
+      statReadTime: document.getElementById('cc-stat-read-time'),
+      statSpeakTime: document.getElementById('cc-stat-speak-time')
+    };
+
+    const presets = {
+      twitter: { label: 'Twitter/X', limit: 280, note: 'Good for posts where the opening needs to stay sharp and the margin for trimming is small.' },
+      instagram: { label: 'Instagram caption', limit: 2200, note: 'Useful for longer captions, hooks, and CTA-driven post copy.' },
+      meta: { label: 'Meta description', limit: 160, note: 'A practical ceiling for search snippets and concise preview text.' },
+      youtube: { label: 'YouTube title', limit: 100, note: 'Helpful for title experiments where clarity and scan speed matter more than length.' },
+      sms: { label: 'SMS message', limit: 160, note: 'Useful when you want a clean, direct message that respects older SMS expectations.' },
+      linkedin: { label: 'LinkedIn post', limit: 3000, note: 'A wider limit for longer professional posts while still making the opening count.' }
+    };
+
+    const sampleText = [
+      'Launch faster with a browser-first workflow that keeps small writing tasks simple.',
+      '',
+      'A strong character counter is not just for social posts. It helps with meta descriptions, titles, messages, and tight product copy where every symbol matters.',
+      '',
+      'This sample gives you a mix of sentences, punctuation, numbers like 280 and 160, and enough structure to make the dashboard useful immediately.'
+    ].join('\n');
+
+    const historyKey = 'toolsmatic-character-counter-history-v1';
+    let activePreset = 'twitter';
+    let saveTimer = null;
+    let lastSavedSignature = '';
+
+    function showToast(message, type) {
+      if (window.toolsMatic && typeof window.toolsMatic.showToast === 'function') {
+        window.toolsMatic.showToast(message, type || 'info');
+      }
+    }
+
+    function formatNumber(value) {
+      return new Intl.NumberFormat('en-US').format(value);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function countMatches(text, pattern) {
+      const matches = text.match(pattern);
+      return matches ? matches.length : 0;
+    }
+
+    function getCurrentLimit() {
+      const parsed = parseInt(cc.limit.value, 10);
+      return Number.isFinite(parsed) && parsed > 0 ? parsed : 280;
+    }
+
+    function formatDurationFromWords(words, wordsPerMinute) {
+      const seconds = Math.round((words / wordsPerMinute) * 60);
+      if (!seconds) return '0s';
+      const minutes = Math.floor(seconds / 60);
+      const remainder = seconds % 60;
+      if (minutes && remainder) return minutes + 'm ' + remainder + 's';
+      if (minutes) return minutes + 'm';
+      return remainder + 's';
+    }
+
+    function describeCharacter(char) {
+      if (char === ' ') {
+        return { label: '[space]', code: '&nbsp;' };
+      }
+      if (char === '\n') {
+        return { label: '[newline]', code: '\\n' };
+      }
+      if (char === '\t') {
+        return { label: '[tab]', code: '\\t' };
+      }
+      if (char === '\r') {
+        return { label: '[return]', code: '\\r' };
+      }
+      return { label: char, code: escapeHtml(char) };
+    }
+
+    function calculateMetrics(text) {
+      const characters = Array.from(text).length;
+      const charactersNoSpaces = Array.from(text.replace(/\s/gu, '')).length;
+      const words = text.trim() ? (text.match(/[\p{L}\p{N}]+(?:['’_-][\p{L}\p{N}]+)*/gu) || []).length : 0;
+      const sentenceSource = text.replace(/\n+/g, ' ').trim();
+      const sentences = sentenceSource ? (sentenceSource.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || []).filter(Boolean).length : 0;
+      const paragraphs = text.trim() ? text.trim().split(/\n\s*\n+/).filter((part) => part.trim()).length : 0;
+      const lines = text ? text.split(/\r\n|\r|\n/).length : 0;
+      const digits = countMatches(text, /\p{N}/gu);
+      const punctuation = countMatches(text, /\p{P}/gu);
+      const special = countMatches(text, /\p{S}/gu);
+      const whitespace = countMatches(text, /\s/gu);
+      const uppercase = countMatches(text, /\p{Lu}/gu);
+      const lowercase = countMatches(text, /\p{Ll}/gu);
+      const limit = getCurrentLimit();
+      const remaining = limit - characters;
+      const ratio = limit ? characters / limit : 0;
+      const readTime = formatDurationFromWords(words, 225);
+      const speakTime = formatDurationFromWords(words, 130);
+
+      return {
+        text,
+        characters,
+        charactersNoSpaces,
+        words,
+        sentences,
+        paragraphs,
+        lines,
+        digits,
+        punctuation,
+        special,
+        whitespace,
+        uppercase,
+        lowercase,
+        limit,
+        remaining,
+        ratio,
+        readTime,
+        speakTime
+      };
+    }
+
+    function getFrequencyBreakdown(text) {
+      const counts = new Map();
+      for (const char of Array.from(text)) {
+        if (char === '\r') continue;
+        counts.set(char, (counts.get(char) || 0) + 1);
+      }
+      return Array.from(counts.entries())
+        .sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])))
+        .slice(0, 10)
+        .map(([char, count]) => {
+          const description = describeCharacter(char);
+          return {
+            label: description.label,
+            code: description.code,
+            count,
+            share: text.length ? ((count / Array.from(text).filter((item) => item !== '\r').length) * 100).toFixed(1) : '0.0'
+          };
+        });
+    }
+
+    function getDensityCells(text) {
+      const characters = Array.from(text.replace(/\r/g, ''));
+      if (!characters.length) return [];
+      const targetChunks = Math.min(24, Math.max(8, Math.ceil(characters.length / 18)));
+      const chunkSize = Math.max(1, Math.ceil(characters.length / targetChunks));
+      const cells = [];
+
+      for (let start = 0; start < characters.length; start += chunkSize) {
+        const slice = characters.slice(start, start + chunkSize);
+        const joined = slice.join('');
+        const nonSpace = Array.from(joined.replace(/\s/gu, '')).length;
+        const density = slice.length ? nonSpace / slice.length : 0;
+        cells.push({
+          label: 'Part ' + (cells.length + 1),
+          start: start + 1,
+          end: Math.min(start + slice.length, characters.length),
+          density,
+          nonSpace,
+          total: slice.length
+        });
+      }
+
+      return cells;
+    }
+
+    function updatePresetUi() {
+      const currentLimit = getCurrentLimit();
+      cc.presets.forEach((button) => {
+        const isActive = button.dataset.preset === activePreset && Number(button.dataset.limit) === currentLimit;
+        button.classList.toggle('is-active', isActive);
+      });
+    }
+
+    function getPresetFromLimit(limit) {
+      const match = Object.entries(presets).find((entry) => entry[1].limit === limit);
+      return match ? match[0] : null;
+    }
+
+    function updateLimitCopy(limit) {
+      if (activePreset && presets[activePreset]) {
+        cc.limitMode.textContent = presets[activePreset].label + ' preset with ' + formatNumber(limit) + ' characters';
+        cc.limitNote.textContent = presets[activePreset].note;
+      } else {
+        cc.limitMode.textContent = 'Custom limit with ' + formatNumber(limit) + ' characters';
+        cc.limitNote.textContent = 'Use a custom value when you are writing for a field, product, or workflow that does not match the built-in platform presets.';
+      }
+    }
+
+    function renderProgress(metrics) {
+      const ratio = metrics.ratio;
+      const safeRatio = Math.max(0, Math.min(ratio, 1));
+      cc.progressFill.style.inlineSize = (safeRatio * 100).toFixed(1) + '%';
+      cc.progressFill.classList.remove('is-warn', 'is-danger');
+
+      if (ratio >= 0.85 && ratio < 1) {
+        cc.progressFill.classList.add('is-warn');
+      } else if (ratio >= 1) {
+        cc.progressFill.classList.add('is-danger');
+      }
+
+      if (cc.countdown.checked) {
+        cc.progressTitle.textContent = 'Characters remaining';
+        cc.progressNumber.textContent = formatNumber(metrics.remaining);
+        if (metrics.remaining >= 0) {
+          cc.progressCopy.textContent = formatNumber(metrics.remaining) + ' characters remaining before you hit the current limit.';
+        } else {
+          cc.progressCopy.textContent = formatNumber(Math.abs(metrics.remaining)) + ' characters over the current limit. Trim the densest parts first.';
+        }
+      } else {
+        cc.progressTitle.textContent = 'Character limit usage';
+        cc.progressNumber.textContent = formatNumber(metrics.characters) + ' / ' + formatNumber(metrics.limit);
+        if (!metrics.characters) {
+          cc.progressCopy.textContent = formatNumber(metrics.limit) + ' characters remaining before you hit the current limit.';
+        } else if (metrics.remaining >= 0) {
+          cc.progressCopy.textContent = formatNumber(metrics.remaining) + ' characters left. The bar shifts from green to yellow to red as you approach the cap.';
+        } else {
+          cc.progressCopy.textContent = formatNumber(Math.abs(metrics.remaining)) + ' characters over the limit. Shorten the highest-density areas to get back under it quickly.';
+        }
+      }
+    }
+
+    function renderStats(metrics) {
+      cc.statCharacters.textContent = formatNumber(metrics.characters);
+      cc.statNoSpaces.textContent = formatNumber(metrics.charactersNoSpaces);
+      cc.statWords.textContent = formatNumber(metrics.words);
+      cc.statSentences.textContent = formatNumber(metrics.sentences);
+      cc.statParagraphs.textContent = formatNumber(metrics.paragraphs);
+      cc.statLines.textContent = formatNumber(metrics.lines);
+      cc.statReadTime.textContent = metrics.readTime;
+      cc.statSpeakTime.textContent = metrics.speakTime;
+
+      if (cc.countdown.checked) {
+        cc.statLimit.textContent = formatNumber(metrics.remaining);
+        cc.statLimitLabel.textContent = 'Characters remaining';
+      } else {
+        cc.statLimit.textContent = formatNumber(metrics.limit);
+        cc.statLimitLabel.textContent = 'Active character limit';
+      }
+
+      cc.digits.textContent = formatNumber(metrics.digits);
+      cc.punctuation.textContent = formatNumber(metrics.punctuation);
+      cc.special.textContent = formatNumber(metrics.special);
+      cc.spaces.textContent = formatNumber(metrics.whitespace);
+
+      cc.uppercase.textContent = formatNumber(metrics.uppercase);
+      cc.lowercase.textContent = formatNumber(metrics.lowercase);
+
+      const casedLetters = metrics.uppercase + metrics.lowercase;
+      const upperShare = casedLetters ? ((metrics.uppercase / casedLetters) * 100).toFixed(0) : 0;
+      const lowerShare = casedLetters ? ((metrics.lowercase / casedLetters) * 100).toFixed(0) : 0;
+      cc.ratioCopy.textContent = upperShare + '% / ' + lowerShare + '%';
+      cc.ratioBar.style.setProperty('--upper', Math.max(metrics.uppercase, 0.001) + 'fr');
+      cc.ratioBar.style.setProperty('--lower', Math.max(metrics.lowercase, 0.001) + 'fr');
+    }
+
+    function renderFrequency(metrics) {
+      const topCharacters = getFrequencyBreakdown(metrics.text);
+      if (!topCharacters.length) {
+        cc.frequencyTitle.textContent = 'Top repeated characters in the current text';
+        cc.frequencyList.innerHTML = '<div class="cc-frequency-item">The breakdown appears here after you enter text.</div>';
+        return;
+      }
+
+      cc.frequencyTitle.textContent = 'Repeated characters that are shaping the draft right now';
+      cc.frequencyList.innerHTML = topCharacters.map((item) => (
+        '<div class="cc-frequency-item">' +
+          '<div class="cc-frequency-row">' +
+            '<div class="cc-frequency-token"><code>' + item.code + '</code><span>' + escapeHtml(item.label) + '</span></div>' +
+            '<div class="cc-frequency-count">' + formatNumber(item.count) + '</div>' +
+          '</div>' +
+          '<div class="cc-frequency-meta">' + item.share + '% of the current text</div>' +
+        '</div>'
+      )).join('');
+    }
+
+    function renderHeatmap(metrics) {
+      const cells = getDensityCells(metrics.text);
+      if (!cells.length) {
+        cc.heatmap.innerHTML = '<div class="cc-heatmap-cell is-empty">Start typing to see how dense each chunk of your text is.</div>';
+        cc.heatmapSummary.textContent = 'Light blocks are airy. Darker blocks are denser.';
+        return;
+      }
+
+      cc.heatmap.innerHTML = cells.map((cell) => (
+        '<div class="cc-heatmap-cell" role="listitem" data-label="' + escapeHtml(cell.label) + '" style="--level:' + cell.density.toFixed(2) + '" title="Characters ' + cell.start + '-' + cell.end + ' | ' + cell.nonSpace + ' non-space characters out of ' + cell.total + ' total"></div>'
+      )).join('');
+
+      const densest = cells.reduce((best, current) => current.density > best.density ? current : best, cells[0]);
+      cc.heatmapSummary.textContent = densest.label + ' is the densest chunk right now with ' + Math.round(densest.density * 100) + '% non-space characters.';
+    }
+
+    function buildSnapshot(metrics) {
+      return {
+        text: metrics.text,
+        limit: metrics.limit,
+        countdown: cc.countdown.checked,
+        preset: activePreset,
+        timestamp: Date.now(),
+        metrics: {
+          characters: metrics.characters,
+          words: metrics.words,
+          sentences: metrics.sentences,
+          paragraphs: metrics.paragraphs
+        }
+      };
+    }
+
+    function loadHistory() {
+      try {
+        const raw = localStorage.getItem(historyKey);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed.slice(0, 10) : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function saveHistory(snapshot) {
+      if (!snapshot.text.trim()) {
+        renderHistory(loadHistory());
+        return;
+      }
+
+      const signature = snapshot.text + '|' + snapshot.limit + '|' + snapshot.countdown;
+      if (signature === lastSavedSignature) {
+        return;
+      }
+
+      const existing = loadHistory().filter((entry) => (
+        entry && (entry.text + '|' + entry.limit + '|' + entry.countdown) !== signature
+      ));
+
+      existing.unshift(snapshot);
+      const trimmed = existing.slice(0, 10);
+      localStorage.setItem(historyKey, JSON.stringify(trimmed));
+      lastSavedSignature = signature;
+      renderHistory(trimmed);
+    }
+
+    function formatTimestamp(timestamp) {
+      try {
+        return new Intl.DateTimeFormat('en-US', {
+          month: 'short',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit'
+        }).format(new Date(timestamp));
+      } catch (error) {
+        return '';
+      }
+    }
+
+    function renderHistory(history) {
+      if (!history.length) {
+        cc.historyList.innerHTML = '<div class="cc-history-item"><h4>No saved analyses yet</h4><p>When you pause after typing, this page stores a local snapshot so you can reopen recent text states quickly without uploading anything.</p></div>';
+        return;
+      }
+
+      cc.historyList.innerHTML = history.map((entry, index) => {
+        const preview = escapeHtml(entry.text.replace(/\s+/g, ' ').trim().slice(0, 110) || '(Empty)');
+        const presetLabel = entry.preset && presets[entry.preset] ? presets[entry.preset].label : 'Custom';
+        return (
+          '<div class="cc-history-item">' +
+            '<h4>' + preview + (entry.text.length > 110 ? '...' : '') + '</h4>' +
+            '<div class="cc-history-meta">' +
+              '<span>' + formatTimestamp(entry.timestamp) + '</span>' +
+              '<span>' + presetLabel + '</span>' +
+              '<span>' + formatNumber(entry.metrics.characters) + ' chars</span>' +
+              '<span>' + formatNumber(entry.metrics.words) + ' words</span>' +
+            '</div>' +
+            '<p>' + formatNumber(entry.metrics.sentences) + ' sentences and ' + formatNumber(entry.metrics.paragraphs) + ' paragraphs at the time of analysis.</p>' +
+            '<button class="cc-history-restore" type="button" data-index="' + index + '">Restore this analysis</button>' +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    function buildStatsCopy(metrics) {
+      const presetLabel = activePreset && presets[activePreset] ? presets[activePreset].label : 'Custom';
+      return [
+        'ToolsMatic Character Counter',
+        'Preset: ' + presetLabel,
+        'Limit: ' + formatNumber(metrics.limit),
+        'Countdown mode: ' + (cc.countdown.checked ? 'On' : 'Off'),
+        'Characters: ' + formatNumber(metrics.characters),
+        'Characters without spaces: ' + formatNumber(metrics.charactersNoSpaces),
+        'Words: ' + formatNumber(metrics.words),
+        'Sentences: ' + formatNumber(metrics.sentences),
+        'Paragraphs: ' + formatNumber(metrics.paragraphs),
+        'Lines: ' + formatNumber(metrics.lines),
+        'Remaining: ' + formatNumber(metrics.remaining),
+        'Read time: ' + metrics.readTime,
+        'Speak time: ' + metrics.speakTime,
+        'Uppercase letters: ' + formatNumber(metrics.uppercase),
+        'Lowercase letters: ' + formatNumber(metrics.lowercase),
+        'Digits: ' + formatNumber(metrics.digits),
+        'Punctuation: ' + formatNumber(metrics.punctuation),
+        'Special characters: ' + formatNumber(metrics.special)
+      ].join('\n');
+    }
+
+    function updateStatus(metrics) {
+      if (!metrics.text.trim()) {
+        cc.status.textContent = 'Start typing or paste text to see live counts, remaining characters, density changes, and the top character breakdown.';
+        return;
+      }
+
+      if (metrics.remaining < 0) {
+        cc.status.textContent = 'You are ' + formatNumber(Math.abs(metrics.remaining)) + ' characters over the current limit. The densest heatmap chunk is a good place to start trimming.';
+        return;
+      }
+
+      if (metrics.remaining <= Math.max(10, Math.round(metrics.limit * 0.1))) {
+        cc.status.textContent = 'You are close to the current limit with ' + formatNumber(metrics.remaining) + ' characters left. Countdown mode can make final trimming faster.';
+        return;
+      }
+
+      cc.status.textContent = 'Live analysis updated. You have ' + formatNumber(metrics.remaining) + ' characters left on the current limit, and the dashboard is already tracking the pacing and density changes.';
+    }
+
+    function analyzeAndRender() {
+      const limit = getCurrentLimit();
+      const matchedPreset = getPresetFromLimit(limit);
+      if (!activePreset || (matchedPreset && presets[matchedPreset].limit === limit)) {
+        activePreset = matchedPreset;
+      }
+      updatePresetUi();
+      updateLimitCopy(limit);
+
+      const metrics = calculateMetrics(cc.input.value);
+      renderProgress(metrics);
+      renderStats(metrics);
+      renderFrequency(metrics);
+      renderHeatmap(metrics);
+      updateStatus(metrics);
+
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => saveHistory(buildSnapshot(metrics)), 700);
+      return metrics;
+    }
+
+    cc.presets.forEach((button) => {
+      button.addEventListener('click', () => {
+        activePreset = button.dataset.preset;
+        cc.limit.value = button.dataset.limit;
+        analyzeAndRender();
+        cc.input.focus();
+      });
+    });
+
+    cc.limit.addEventListener('input', () => {
+      const value = getCurrentLimit();
+      activePreset = getPresetFromLimit(value);
+      analyzeAndRender();
+    });
+
+    cc.limit.addEventListener('blur', () => {
+      cc.limit.value = String(getCurrentLimit());
+      activePreset = getPresetFromLimit(getCurrentLimit());
+      analyzeAndRender();
+    });
+
+    cc.countdown.addEventListener('change', analyzeAndRender);
+    cc.input.addEventListener('input', analyzeAndRender);
+
+    cc.copyStats.addEventListener('click', async () => {
+      const metrics = analyzeAndRender();
+      try {
+        await navigator.clipboard.writeText(buildStatsCopy(metrics));
+        cc.status.textContent = 'Stats copied to clipboard.';
+        showToast('Copied stats', 'success');
+      } catch (error) {
+        cc.status.textContent = 'Copy failed. Your browser blocked clipboard access.';
+        showToast('Copy failed', 'error');
+      }
+    });
+
+    cc.copyText.addEventListener('click', async () => {
+      const value = cc.input.value;
+      if (!value.trim()) {
+        cc.status.textContent = 'There is no text to copy yet.';
+        showToast('Nothing to copy', 'error');
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(value);
+        cc.status.textContent = 'Text copied to clipboard.';
+        showToast('Copied text', 'success');
+      } catch (error) {
+        cc.status.textContent = 'Copy failed. Your browser blocked clipboard access.';
+        showToast('Copy failed', 'error');
+      }
+    });
+
+    cc.loadSample.addEventListener('click', () => {
+      cc.input.value = sampleText;
+      analyzeAndRender();
+      cc.status.textContent = 'Sample text loaded. The dashboard now reflects a realistic short-form writing mix.';
+      showToast('Sample loaded', 'success');
+    });
+
+    cc.clear.addEventListener('click', () => {
+      cc.input.value = '';
+      analyzeAndRender();
+      showToast('Cleared', 'info');
+    });
+
+    cc.historyList.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-index]');
+      if (!button) return;
+      const history = loadHistory();
+      const entry = history[Number(button.dataset.index)];
+      if (!entry) return;
+
+      cc.input.value = entry.text || '';
+      cc.limit.value = entry.limit || 280;
+      cc.countdown.checked = Boolean(entry.countdown);
+      activePreset = entry.preset && presets[entry.preset] ? entry.preset : getPresetFromLimit(getCurrentLimit());
+      analyzeAndRender();
+      cc.status.textContent = 'Restored a recent analysis from local history.';
+      showToast('Analysis restored', 'success');
+    });
+
+    renderHistory(loadHistory());
+    analyzeAndRender();
+  </script>
+</body>
+</html>

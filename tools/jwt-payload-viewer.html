@@ -14,6 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>JWT Payload Viewer | Read Claims Instantly - ToolsMatic</title>
+  <link rel="canonical" href="https://toolsmatic.me/tools/jwt-payload-viewer.html">
   <meta name="description" content="View JWT payloads and claims instantly and securely." />
           <label class="label" for="jwt-aud">Expected audience (aud)</label>
           <input id="jwt-aud" type="text" placeholder="api://client-id" />
@@ -220,7 +221,17 @@
       <details><summary>Can I use this offline?</summary><p>Yes. Once the page loads, you can disconnect and continue decoding and verifying tokens locally.</p></details>
       <details><summary>What is the token health summary?</summary><p>The health summary highlights expired tokens, not-before violations, missing claims, and issuer/audience mismatches.</p></details>
     </section>
-  </main>
+      <section class="section programmatic-intent-section" aria-labelledby="intent-jwt-payload-viewer">
+      <h2 id="intent-jwt-payload-viewer">Why this JWT Payload Viewer page is separate</h2>
+      <p><strong>JWT Payload Viewer</strong> is built for task-specific searches where the exact phrase matters and the page should explain how this variation differs from the broader tool family. It uses the same privacy-first ToolsMatic approach, but this page is written around the exact search intent, vocabulary, and user expectation behind "jwt-payload-viewer" instead of relying only on the broader ToolsMatic page.</p>
+      <p>This matters for search and for real users. Someone landing here has usually searched for a narrower job than the general tool name. The page gives that user a direct path to the matching workflow, explains when this variation is the right choice, and connects back into the broader tool family only when that helps the task.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px;">
+        <div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);"><strong>Best for</strong><p style="margin:8px 0 0;color:var(--muted);">Searchers who need JWT Payload Viewer specifically, not a generic utility page with loosely related options.</p></div>
+        <div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);"><strong>Page focus</strong><p style="margin:8px 0 0;color:var(--muted);">Clearer wording, self-canonical indexing signals, and task-specific context for this exact URL.</p></div>
+        <div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);"><strong>Related workflow</strong><p style="margin:8px 0 0;color:var(--muted);">Use the main ToolsMatic tool family when you need a wider set of controls or a more general workflow.</p></div>
+      </div>
+    </section>
+</main>
 <footer>ToolsMatic  Fast, privacy-first utilities for the web.</footer>
 
   <script>

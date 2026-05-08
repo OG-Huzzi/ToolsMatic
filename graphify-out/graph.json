@@ -9,7 +9,7 @@
       "source_file": "D:\\ToolsMatic\\extract.js",
       "source_location": "L1",
       "id": "d_toolsmatic_extract_js",
-      "community": 14,
+      "community": 15,
       "norm_label": "extract.js"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "D:\\ToolsMatic\\sw.js",
       "source_location": "L1",
       "id": "d_toolsmatic_sw_js",
-      "community": 15,
+      "community": 16,
       "norm_label": "sw.js"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L96",
       "id": "json_to_csv_escapehtml",
-      "community": 6,
+      "community": 14,
       "norm_label": "escapehtml()"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L103",
       "id": "json_to_csv_formatbytes",
-      "community": 4,
+      "community": 5,
       "norm_label": "formatbytes()"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L110",
       "id": "json_to_csv_showtoast",
-      "community": 12,
+      "community": 11,
       "norm_label": "showtoast()"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L116",
       "id": "json_to_csv_setstatus",
-      "community": 12,
+      "community": 11,
       "norm_label": "setstatus()"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L120",
       "id": "json_to_csv_getdelimitervalue",
-      "community": 6,
+      "community": 8,
       "norm_label": "getdelimitervalue()"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L121",
       "id": "json_to_csv_getdelimiterlabel",
-      "community": 6,
+      "community": 8,
       "norm_label": "getdelimiterlabel()"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L155",
       "id": "json_to_csv_detectdelimiter",
-      "community": 6,
+      "community": 8,
       "norm_label": "detectdelimiter()"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L178",
       "id": "json_to_csv_parsecsv",
-      "community": 6,
+      "community": 8,
       "norm_label": "parsecsv()"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L375",
       "id": "json_to_csv_serializecsv",
-      "community": 6,
+      "community": 8,
       "norm_label": "serializecsv()"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L384",
       "id": "json_to_csv_mergecolumnmeta",
-      "community": 6,
+      "community": 8,
       "norm_label": "mergecolumnmeta()"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L396",
       "id": "json_to_csv_buildcsvfromjson",
-      "community": 6,
+      "community": 8,
       "norm_label": "buildcsvfromjson()"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L441",
       "id": "json_to_csv_buildjsonfromcsv",
-      "community": 6,
+      "community": 8,
       "norm_label": "buildjsonfromcsv()"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L536",
       "id": "json_to_csv_renderissues",
-      "community": 4,
+      "community": 5,
       "norm_label": "renderissues()"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L548",
       "id": "json_to_csv_rendernotes",
-      "community": 4,
+      "community": 5,
       "norm_label": "rendernotes()"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L559",
       "id": "json_to_csv_renderpreview",
-      "community": 4,
+      "community": 5,
       "norm_label": "renderpreview()"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L571",
       "id": "json_to_csv_setstatcard",
-      "community": 4,
+      "community": 5,
       "norm_label": "setstatcard()"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L578",
       "id": "json_to_csv_rendercolumnpicker",
-      "community": 4,
+      "community": 5,
       "norm_label": "rendercolumnpicker()"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L623",
       "id": "json_to_csv_updatemodeui",
-      "community": 4,
+      "community": 5,
       "norm_label": "updatemodeui()"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L656",
       "id": "json_to_csv_buildhelpernotes",
-      "community": 6,
+      "community": 14,
       "norm_label": "buildhelpernotes()"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L668",
       "id": "json_to_csv_runconversion",
-      "community": 4,
+      "community": 5,
       "norm_label": "runconversion()"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L770",
       "id": "json_to_csv_copytext",
-      "community": 12,
+      "community": 11,
       "norm_label": "copytext()"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L790",
       "id": "json_to_csv_downloadoutput",
-      "community": 12,
+      "community": 11,
       "norm_label": "downloadoutput()"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L804",
       "id": "json_to_csv_handlefile",
-      "community": 4,
+      "community": 11,
       "norm_label": "handlefile()"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L818",
       "id": "json_to_csv_fetchjsonurl",
-      "community": 12,
+      "community": 11,
       "norm_label": "fetchjsonurl()"
     },
     {
@@ -369,7 +369,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L836",
       "id": "json_to_csv_setmode",
-      "community": 4,
+      "community": 5,
       "norm_label": "setmode()"
     },
     {
@@ -378,7 +378,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L842",
       "id": "json_to_csv_setcolumnsenabled",
-      "community": 4,
+      "community": 5,
       "norm_label": "setcolumnsenabled()"
     },
     {
@@ -387,7 +387,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L849",
       "id": "json_to_csv_resetcolumnlabels",
-      "community": 4,
+      "community": 5,
       "norm_label": "resetcolumnlabels()"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\popunder-manager.js",
       "source_location": "L1",
       "id": "d_toolsmatic_assets_popunder_manager_js",
-      "community": 16,
+      "community": 17,
       "norm_label": "popunder-manager.js"
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L315",
       "id": "site_istoolpage",
-      "community": 11,
+      "community": 12,
       "norm_label": "istoolpage()"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L316",
       "id": "site_ishomepage",
-      "community": 11,
+      "community": 12,
       "norm_label": "ishomepage()"
     },
     {
@@ -567,7 +567,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L336",
       "id": "site_decoratesiteshell",
-      "community": 11,
+      "community": 12,
       "norm_label": "decoratesiteshell()"
     },
     {
@@ -621,7 +621,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L569",
       "id": "site_gethomecategory",
-      "community": 8,
+      "community": 7,
       "norm_label": "gethomecategory()"
     },
     {
@@ -630,7 +630,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L619",
       "id": "site_inithomeexperience",
-      "community": 11,
+      "community": 12,
       "norm_label": "inithomeexperience()"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L844",
       "id": "site_inittoolpageexperience",
-      "community": 11,
+      "community": 12,
       "norm_label": "inittoolpageexperience()"
     },
     {
@@ -693,7 +693,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L849",
       "id": "site_initstandardpageexperience",
-      "community": 11,
+      "community": 12,
       "norm_label": "initstandardpageexperience()"
     },
     {
@@ -702,7 +702,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L889",
       "id": "site_hasschematype",
-      "community": 8,
+      "community": 7,
       "norm_label": "hasschematype()"
     },
     {
@@ -711,7 +711,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L895",
       "id": "site_injectjsonld",
-      "community": 8,
+      "community": 7,
       "norm_label": "injectjsonld()"
     },
     {
@@ -720,7 +720,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L904",
       "id": "site_normalizetoolname",
-      "community": 8,
+      "community": 7,
       "norm_label": "normalizetoolname()"
     },
     {
@@ -729,7 +729,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L911",
       "id": "site_ensurebreadcrumbnav",
-      "community": 8,
+      "community": 7,
       "norm_label": "ensurebreadcrumbnav()"
     },
     {
@@ -738,7 +738,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L942",
       "id": "site_collectfaqentities",
-      "community": 8,
+      "community": 7,
       "norm_label": "collectfaqentities()"
     },
     {
@@ -747,7 +747,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L994",
       "id": "site_initglobaltoolseo",
-      "community": 8,
+      "community": 7,
       "norm_label": "initglobaltoolseo()"
     },
     {
@@ -828,7 +828,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L1230",
       "id": "site_escapehtml",
-      "community": 8,
+      "community": 7,
       "norm_label": "escapehtml()"
     },
     {
@@ -846,7 +846,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L1477",
       "id": "site_initrelatedtools",
-      "community": 8,
+      "community": 7,
       "norm_label": "initrelatedtools()"
     },
     {
@@ -864,7 +864,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L1",
       "id": "d_toolsmatic_assets_pdf_global_js",
-      "community": 5,
+      "community": 4,
       "norm_label": "global.js"
     },
     {
@@ -873,7 +873,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L5",
       "id": "global_initheader",
-      "community": 5,
+      "community": 4,
       "norm_label": "initheader()"
     },
     {
@@ -882,7 +882,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L20",
       "id": "global_initmobilemenu",
-      "community": 5,
+      "community": 4,
       "norm_label": "initmobilemenu()"
     },
     {
@@ -891,7 +891,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L73",
       "id": "global_normalizepath",
-      "community": 5,
+      "community": 4,
       "norm_label": "normalizepath()"
     },
     {
@@ -900,7 +900,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L82",
       "id": "global_setactivenavlink",
-      "community": 5,
+      "community": 4,
       "norm_label": "setactivenavlink()"
     },
     {
@@ -909,7 +909,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L115",
       "id": "global_smoothscrollanchors",
-      "community": 5,
+      "community": 4,
       "norm_label": "smoothscrollanchors()"
     },
     {
@@ -918,7 +918,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L136",
       "id": "global_gettoastcontainer",
-      "community": 5,
+      "community": 4,
       "norm_label": "gettoastcontainer()"
     },
     {
@@ -927,7 +927,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L151",
       "id": "global_dismisstoast",
-      "community": 5,
+      "community": 4,
       "norm_label": "dismisstoast()"
     },
     {
@@ -936,7 +936,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L164",
       "id": "global_showtoast",
-      "community": 5,
+      "community": 4,
       "norm_label": "showtoast()"
     },
     {
@@ -945,7 +945,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L199",
       "id": "global_initscrollreveal",
-      "community": 5,
+      "community": 4,
       "norm_label": "initscrollreveal()"
     },
     {
@@ -954,7 +954,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L231",
       "id": "global_initfaq",
-      "community": 5,
+      "community": 4,
       "norm_label": "initfaq()"
     },
     {
@@ -972,7 +972,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\tool-base.js",
       "source_location": "L9",
       "id": "tool_base_notify",
-      "community": 5,
+      "community": 4,
       "norm_label": "notify()"
     },
     {
@@ -1260,7 +1260,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\generate-seo-variants.js",
       "source_location": "L1",
       "id": "d_toolsmatic_scripts_generate_seo_variants_js",
-      "community": 17,
+      "community": 18,
       "norm_label": "generate-seo-variants.js"
     },
     {
@@ -1269,7 +1269,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L1",
       "id": "d_toolsmatic_scripts_import_pdf_tools_from_zip_ps1",
-      "community": 7,
+      "community": 6,
       "norm_label": "import-pdf-tools-from-zip.ps1"
     },
     {
@@ -1278,7 +1278,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L13",
       "id": "import_pdf_tools_from_zip_ensure_dir",
-      "community": 7,
+      "community": 6,
       "norm_label": "ensure-dir()"
     },
     {
@@ -1287,7 +1287,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L19",
       "id": "import_pdf_tools_from_zip_read_ziptext",
-      "community": 7,
+      "community": 6,
       "norm_label": "read-ziptext()"
     },
     {
@@ -1296,7 +1296,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L26",
       "id": "import_pdf_tools_from_zip_write_zipbinary",
-      "community": 7,
+      "community": 6,
       "norm_label": "write-zipbinary()"
     },
     {
@@ -1305,7 +1305,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L35",
       "id": "import_pdf_tools_from_zip_set_or_insert_headtag",
-      "community": 7,
+      "community": 6,
       "norm_label": "set-or-insert-headtag()"
     },
     {
@@ -1314,7 +1314,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L42",
       "id": "import_pdf_tools_from_zip_remove_fakeratingschema",
-      "community": 7,
+      "community": 6,
       "norm_label": "remove-fakeratingschema()"
     },
     {
@@ -1323,7 +1323,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L51",
       "id": "import_pdf_tools_from_zip_add_htmlextensions",
-      "community": 7,
+      "community": 6,
       "norm_label": "add-htmlextensions()"
     },
     {
@@ -1332,7 +1332,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L60",
       "id": "import_pdf_tools_from_zip_add_adafterfirsth1",
-      "community": 7,
+      "community": 6,
       "norm_label": "add-adafterfirsth1()"
     },
     {
@@ -1341,7 +1341,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L79",
       "id": "import_pdf_tools_from_zip_transform_html",
-      "community": 7,
+      "community": 6,
       "norm_label": "transform-html()"
     },
     {
@@ -1350,7 +1350,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L114",
       "id": "import_pdf_tools_from_zip_add_sitemapurls",
-      "community": 7,
+      "community": 6,
       "norm_label": "add-sitemapurls()"
     }
   ],
@@ -3702,8 +3702,8 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\tool-base.js",
       "source_location": "L11",
       "weight": 1.0,
-      "_src": "tool_base_notify",
-      "_tgt": "global_showtoast",
+      "_src": "global_showtoast",
+      "_tgt": "tool_base_notify",
       "source": "global_showtoast",
       "target": "tool_base_notify"
     },

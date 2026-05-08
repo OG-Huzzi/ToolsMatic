@@ -568,6 +568,10 @@
 
   const getHomeCategory = (title) => {
     const key = (title || '').trim().toLowerCase();
+    if (key.includes('pdf') || key.includes('jpg to pdf') || key.includes('txt to pdf')) {
+      return 'PDF';
+    }
+
     const categoryMap = {
       'word counter': 'Writing',
       'character counter': 'Writing',

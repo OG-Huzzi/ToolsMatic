@@ -1,12 +1,12 @@
-# Graph Report - D:\ToolsMatic  (2026-05-07)
+# Graph Report - D:\ToolsMatic  (2026-05-08)
 
 ## Corpus Check
-- 7 files · ~2,919,652 words
+- 10 files · ~5,318,673 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 111 nodes · 203 edges · 15 communities detected
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
+- 150 nodes · 254 edges · 18 communities detected
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -25,6 +25,9 @@
 - [[_COMMUNITY_Community 12|Community 12]]
 - [[_COMMUNITY_Community 13|Community 13]]
 - [[_COMMUNITY_Community 14|Community 14]]
+- [[_COMMUNITY_Community 15|Community 15]]
+- [[_COMMUNITY_Community 16|Community 16]]
+- [[_COMMUNITY_Community 17|Community 17]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `runConversion()` - 18 edges
@@ -39,97 +42,97 @@
 10. `initRelatedTools()` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `runConversion()` --calls--> `setStatus()`  [EXTRACTED]
-  D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 8 → community 4_
-- `buildHelperNotes()` --calls--> `getDelimiterLabel()`  [EXTRACTED]
-  D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 6 → community 10_
-- `runConversion()` --calls--> `updateDownloadBlob()`  [EXTRACTED]
-  D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 1 → community 4_
-- `runConversion()` --calls--> `buildCsvFromJson()`  [EXTRACTED]
-  D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 6 → community 4_
-- `runConversion()` --calls--> `buildHelperNotes()`  [EXTRACTED]
-  D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\assets\json-to-csv.js  _Bridges community 10 → community 4_
+- `notify()` --calls--> `showToast()`  [INFERRED]
+  D:\ToolsMatic\assets\pdf\tool-base.js → D:\ToolsMatic\assets\pdf\global.js
 
 ## Communities
 
 ### Community 0 - "Community 0"
+Cohesion: 0.16
+Nodes (7): collectValidFiles(), ensureProgressStructure(), hideProgress(), readFileAsArrayBuffer(), showProgress(), updateProgress(), validatePDFHeader()
+
+### Community 1 - "Community 1"
 Cohesion: 0.17
 Nodes (9): ensureNodeId(), getSectionSummary(), handoffAndGo(), logTracking(), makeSectionCollapsible(), setHandoff(), slugify(), trackEvent() (+1 more)
 
-### Community 1 - "Community 1"
+### Community 2 - "Community 2"
 Cohesion: 0.19
 Nodes (8): extractJsonRows(), findBestArray(), flattenRecord(), flattenValue(), isPlainObject(), normalizeJsonInput(), revokeBlobUrl(), updateDownloadBlob()
 
-### Community 2 - "Community 2"
+### Community 3 - "Community 3"
 Cohesion: 0.19
 Nodes (8): decodeHtml(), escapeHtml(), extractCards(), makeSeoBlock(), metaDescription(), replaceOrInsertHead(), updateFirstH1(), updateUrlFields()
 
-### Community 3 - "Community 3"
-Cohesion: 0.19
-Nodes (14): bindKeyboard(), boot(), decorateAdSlots(), decorateSiteShell(), enhanceFooter(), initAnalyticsTracking(), initHomeExperience(), initResponsiveAds() (+6 more)
-
 ### Community 4 - "Community 4"
 Cohesion: 0.2
-Nodes (11): formatBytes(), renderColumnPicker(), renderIssues(), renderNotes(), renderPreview(), resetColumnLabels(), runConversion(), setColumnsEnabled() (+3 more)
+Nodes (12): formatBytes(), handleFile(), renderColumnPicker(), renderIssues(), renderNotes(), renderPreview(), resetColumnLabels(), runConversion() (+4 more)
 
 ### Community 5 - "Community 5"
+Cohesion: 0.2
+Nodes (5): getToastContainer(), normalizePath(), setActiveNavLink(), showToast(), notify()
+
+### Community 6 - "Community 6"
+Cohesion: 0.24
+Nodes (10): buildCsvFromJson(), buildHelperNotes(), buildJsonFromCsv(), detectDelimiter(), escapeHtml(), getDelimiterLabel(), getDelimiterValue(), mergeColumnMeta() (+2 more)
+
+### Community 7 - "Community 7"
+Cohesion: 0.31
+Nodes (7): Add-AdAfterFirstH1(), Add-HtmlExtensions(), Ensure-Dir(), Remove-FakeRatingSchema(), Set-Or-Insert-HeadTag(), Transform-Html(), Write-ZipBinary()
+
+### Community 8 - "Community 8"
 Cohesion: 0.22
 Nodes (9): collectFaqEntities(), ensureBreadcrumbNav(), escapeHtml(), getHomeCategory(), hasSchemaType(), initGlobalToolSeo(), initRelatedTools(), injectJsonLd() (+1 more)
 
-### Community 6 - "Community 6"
-Cohesion: 0.32
-Nodes (8): buildCsvFromJson(), buildJsonFromCsv(), detectDelimiter(), getDelimiterLabel(), getDelimiterValue(), mergeColumnMeta(), parseCsv(), serializeCsv()
+### Community 9 - "Community 9"
+Cohesion: 0.25
+Nodes (8): bindKeyboard(), boot(), decorateAdSlots(), enhanceFooter(), initAnalyticsTracking(), initResponsiveAds(), initResponsiveNav(), initThemeToggle()
 
-### Community 7 - "Community 7"
+### Community 10 - "Community 10"
 Cohesion: 0.33
 Nodes (7): ensureToastHost(), getUserId(), initSuggestions(), likeSuggestion(), loadSuggestions(), showToast(), submitSuggestion()
 
-### Community 8 - "Community 8"
-Cohesion: 0.4
-Nodes (6): copyText(), downloadOutput(), fetchJsonUrl(), handleFile(), setStatus(), showToast()
-
-### Community 9 - "Community 9"
-Cohesion: 0.67
-Nodes (4): hasCoarsePointer(), initInteractiveMotion(), initScrollReveal(), prefersReducedMotion()
-
-### Community 10 - "Community 10"
-Cohesion: 1.0
-Nodes (2): buildHelperNotes(), escapeHtml()
-
 ### Community 11 - "Community 11"
-Cohesion: 1.0
-Nodes (0): 
+Cohesion: 0.4
+Nodes (6): decorateSiteShell(), initHomeExperience(), initStandardPageExperience(), initToolPageExperience(), isHomePage(), isToolPage()
 
 ### Community 12 - "Community 12"
-Cohesion: 1.0
-Nodes (0): 
+Cohesion: 0.5
+Nodes (5): copyText(), downloadOutput(), fetchJsonUrl(), setStatus(), showToast()
 
 ### Community 13 - "Community 13"
-Cohesion: 1.0
-Nodes (0): 
+Cohesion: 0.67
+Nodes (4): hasCoarsePointer(), initInteractiveMotion(), initScrollReveal(), prefersReducedMotion()
 
 ### Community 14 - "Community 14"
 Cohesion: 1.0
 Nodes (0): 
 
+### Community 15 - "Community 15"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 16 - "Community 16"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 17 - "Community 17"
+Cohesion: 1.0
+Nodes (0): 
+
 ## Knowledge Gaps
-- **Thin community `Community 10`** (2 nodes): `buildHelperNotes()`, `escapeHtml()`
+- **Thin community `Community 14`** (1 nodes): `extract.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 11`** (1 nodes): `extract.js`
+- **Thin community `Community 15`** (1 nodes): `sw.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 12`** (1 nodes): `sw.js`
+- **Thin community `Community 16`** (1 nodes): `popunder-manager.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 13`** (1 nodes): `popunder-manager.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 14`** (1 nodes): `generate-seo-variants.js`
+- **Thin community `Community 17`** (1 nodes): `generate-seo-variants.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `runConversion()` connect `Community 4` to `Community 8`, `Community 1`, `Community 10`, `Community 6`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `boot()` connect `Community 3` to `Community 0`, `Community 9`, `Community 5`, `Community 7`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
-- **Why does `initGlobalToolSeo()` connect `Community 5` to `Community 0`, `Community 3`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+- **Why does `notify()` connect `Community 5` to `Community 0`?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **Why does `runConversion()` connect `Community 4` to `Community 2`, `Community 12`, `Community 6`?**
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._

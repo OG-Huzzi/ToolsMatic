@@ -1,0 +1,1231 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+
+  <title>Protect Pdf for Legal Files - Secure &amp; Free | ToolsMatic</title>
+  <meta name="description" content="Easily protect pdf specifically for legal files. Apply unbreakable passwords instantly. 100% private and runs entirely in your browser.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/protect-pdf-legal.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/protect-pdf-legal.html">
+  <meta property="og:title" content="Protect Pdf for Legal Files - Secure &amp; Free | ToolsMatic">
+  <meta property="og:description" content="Easily protect pdf specifically for legal files. Apply unbreakable passwords instantly. 100% private and runs entirely in your browser.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Protect Pdf for Legal Files - Secure &amp; Free | ToolsMatic">
+  <meta name="twitter:description" content="Easily protect pdf specifically for legal files. Apply unbreakable passwords instantly. 100% private and runs entirely in your browser.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Protect Pdf for Legal Files - Secure & Free | ToolsMatic",
+  "url": "https://ToolsMatic.com/tools/protect-pdf-legal",
+  "description": "Easily protect pdf specifically for legal files. Apply unbreakable passwords instantly. 100% private and runs entirely in your browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ToolsMatic.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://ToolsMatic.com/#tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Protect Pdf for Legal Files",
+      "item": "https://ToolsMatic.com/tools/protect-pdf-legal"
+    }
+  ]
+}</script>
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Password Protect a PDF Online",
+    "description": "Secure your PDF with a password and restrict permissions using ToolsMatic — free, private, and 100% offline-capable.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload your PDF",
+        "text": "Drag and drop the PDF file you want to protect into the upload zone."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Set Password and Permissions",
+        "text": "Enter a strong password. You can optionally set advanced permissions to prevent printing, copying, or modifying the document."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Encrypt and Download",
+        "text": "Click 'Protect PDF'. The file will be encrypted locally in your browser, and you can instantly download the secure PDF."
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it safe to process legal files here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our zero-upload architecture ensures your data never leaves your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this require Adobe Acrobat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, ToolsMatic provides professional tools completely free within your browser."
+      }
+    }
+  ]
+}</script>
+
+  <!-- Tool-specific styles -->
+  <style>
+    /* ── Layout ─────────────────────────────────────────────── */
+    .protect-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    /* ── Upload zone ────────────────────────────────────────── */
+    .upload-zone {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .upload-zone.dragover {
+      background: rgba(245,158,11,0.06);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-glow),
+        inset 0 0 24px rgba(245,158,11,0.04);
+    }
+
+    /* ── File info bar ──────────────────────────────────────── */
+    .file-info-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 14px 20px;
+    }
+
+    .file-info-left {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .file-stat {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .file-stat strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .btn-clear-file {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-clear-file:hover {
+      border-color: var(--error);
+      color: var(--error);
+      background: rgba(239,68,68,0.06);
+    }
+
+    /* ── Settings Panel ─────────────────────────────────────── */
+    .settings-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .settings-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .form-group .hint {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .password-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .password-input {
+      width: 100%;
+      padding: 14px 16px;
+      padding-right: 48px;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    .password-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(245,158,11,0.1);
+    }
+
+    .btn-toggle-visibility {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .btn-toggle-visibility:hover {
+      color: var(--text-primary);
+    }
+
+    .password-strength {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-top: 8px;
+      overflow: hidden;
+      display: none;
+    }
+
+    .password-strength-bar {
+      height: 100%;
+      width: 0%;
+      transition: all 0.3s ease;
+    }
+
+    .strength-text {
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      margin-top: 4px;
+      display: none;
+    }
+
+    /* Advanced Options */
+    .advanced-toggle {
+      background: none;
+      border: none;
+      color: var(--accent);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0;
+      margin-top: 24px;
+      transition: var(--transition);
+    }
+
+    .advanced-toggle:hover {
+      color: var(--accent-hover);
+    }
+
+    .advanced-toggle svg {
+      transition: transform 0.3s ease;
+    }
+
+    .advanced-toggle.open svg {
+      transform: rotate(180deg);
+    }
+
+    .advanced-options {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border);
+      display: none;
+    }
+
+    .advanced-options.open {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .permissions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .perm-toggle {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .perm-toggle:hover {
+      border-color: var(--text-muted);
+    }
+
+    .perm-toggle input {
+      margin-top: 4px;
+      accent-color: var(--accent);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .perm-info strong {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .perm-info span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ── Actions ────────────────────────────────────────────── */
+    .btn-convert {
+      width: 100%;
+      padding: 18px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(245,158,11,0.25);
+    }
+
+    .btn-convert:hover:not(:disabled) {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245,158,11,0.3);
+    }
+
+    .btn-convert:disabled {
+      background: var(--border);
+      color: var(--text-muted);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(0,0,0,0.2);
+      border-top-color: #000;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .btn-convert.loading .spinner { display: block; }
+
+    /* ── Result ─────────────────────────────────────────────── */
+    .result-section {
+      margin-top: 24px;
+      display: none;
+    }
+
+    .result-section.visible {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .result-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(34,197,94,0.25);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .result-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(34,197,94,0.1);
+      color: var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .result-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .result-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .result-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-download {
+      padding: 14px 28px;
+      background: var(--success);
+      color: #000;
+      border: none;
+      border-radius: var(--radius-btn);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-download:hover {
+      background: #16A34A;
+      transform: translateY(-2px);
+    }
+
+    .btn-reset {
+      padding: 14px 24px;
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-reset:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── SEO content ────────────────────────────────────────── */
+    .seo-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    .seo-section h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 32px;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+    }
+
+    .seo-section h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 24px 0 10px;
+    }
+
+    .seo-section p,
+    .seo-section ul li {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .seo-section ul { padding-left: 20px; }
+
+    /* Related tools */
+    .related-tools {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .related-tool-card {
+      display: block;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .related-tool-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .related-tool-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .related-tool-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* FAQ */
+    .faq-wrap { margin-top: 16px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: left;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      color: var(--text-muted);
+    }
+
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer p {
+      padding-bottom: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .protect-wrapper { padding: 0 20px 60px; }
+      .seo-section { padding: 0 20px 60px; }
+      .permissions-grid { grid-template-columns: 1fr; }
+      .related-tools { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/protect-pdf-legal.html">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+      <span class="header-logo-text">ToolsMatic</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="/#tools" class="header-cta btn">All Tools</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="/#tools">Tools</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</header>
+
+<main>
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb" style="max-width:960px;margin:0 auto;padding:80px 40px 0;">
+    <a href="/" class="breadcrumb-link">Home</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="/#tools" class="breadcrumb-link">Tools</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="breadcrumb-current" aria-current="page">Protect Pdf for Legal Files</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="tool-hero" style="max-width:960px;margin:0 auto;padding:32px 40px 40px;">
+    <div class="tool-hero-badge">🔒 Files never leave your browser</div>
+    <h1>Protect Pdf for Legal Files</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>
+        atOptions = {
+          'key' : 'e61a3745429623f25315f86052a3ab7b',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      </script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+    <p class="tool-hero-sub">
+      Add a password to your PDF document instantly. Encrypt your sensitive files with AES-256 military-grade protection and restrict copying, printing, or modifying.
+    </p>
+  </section>
+
+  <!-- TOOL SECTION -->
+  <section class="protect-wrapper">
+    <input type="file" id="file-input" accept=".pdf" aria-hidden="true" style="display:none;">
+
+    <!-- Upload zone -->
+    <div class="upload-zone" id="upload-zone" tabindex="0">
+      <div class="upload-zone-icon" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+      <div class="upload-zone-text">Drag &amp; drop a PDF here</div>
+      <div class="upload-zone-sub">or click to browse</div>
+      <div class="upload-zone-sub">Max file size: 50MB</div>
+    </div>
+
+    <!-- Tool area -->
+    <div id="tool-area" style="display:none;">
+      
+      <!-- File info bar -->
+      <div class="file-info-bar">
+        <div class="file-info-left">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent);">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          <div class="file-stat">File: <strong id="stat-name">—</strong></div>
+          <div class="file-stat">Size: <strong id="stat-size">—</strong></div>
+        </div>
+        <button class="btn-clear-file" id="btn-clear-file">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+            <path d="M10 11v6M14 11v6"></path>
+          </svg>
+          Clear File
+        </button>
+      </div>
+
+      <!-- Settings Panel -->
+      <div class="settings-panel">
+        <div class="settings-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          Set Password
+        </div>
+        
+        <div class="form-group">
+          <label for="input-password">Document Password (Required to Open)</label>
+          <div class="password-input-wrap">
+            <input type="password" id="input-password" class="password-input" placeholder="Type a strong password..." autocomplete="new-password">
+            <button class="btn-toggle-visibility" tabindex="-1" id="btn-toggle-pw" aria-label="Toggle password visibility">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+          <div class="password-strength" id="pw-strength-bar">
+            <div class="password-strength-bar" id="pw-strength-fill"></div>
+          </div>
+          <div class="strength-text" id="pw-strength-text">Strength: Weak</div>
+        </div>
+
+        <button class="advanced-toggle" id="advanced-toggle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+          Advanced Settings (Permissions &amp; Owner Password)
+        </button>
+
+        <div class="advanced-options" id="advanced-options">
+          <div class="form-group">
+            <label for="input-owner">Owner Password (Optional)</label>
+            <span class="hint">Required to change these permissions later. If left blank while permissions are restricted, a secure random one will be generated.</span>
+            <div class="password-input-wrap" style="margin-top:8px;">
+              <input type="password" id="input-owner" class="password-input" placeholder="Owner password..." autocomplete="new-password">
+              <button class="btn-toggle-visibility" tabindex="-1" id="btn-toggle-owner" aria-label="Toggle password visibility">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <label style="display:block;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:var(--text-primary);margin:24px 0 12px;">Restrict Permissions</label>
+          <div class="permissions-grid">
+            <label class="perm-toggle">
+              <input type="checkbox" id="perm-print" checked="">
+              <div class="perm-info">
+                <strong>Allow Printing</strong>
+                <span>Enable high-resolution printing of the document.</span>
+              </div>
+            </label>
+            <label class="perm-toggle">
+              <input type="checkbox" id="perm-copy" checked="">
+              <div class="perm-info">
+                <strong>Allow Copying</strong>
+                <span>Allow text and images to be copied to clipboard.</span>
+              </div>
+            </label>
+            <label class="perm-toggle">
+              <input type="checkbox" id="perm-modify" checked="">
+              <div class="perm-info">
+                <strong>Allow Modifying</strong>
+                <span>Allow changes to the document content.</span>
+              </div>
+            </label>
+            <label class="perm-toggle">
+              <input type="checkbox" id="perm-annotate" checked="">
+              <div class="perm-info">
+                <strong>Allow Annotating</strong>
+                <span>Allow adding text annotations and comments.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-convert" id="btn-convert" disabled="">
+        <div class="spinner"></div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="convert-icon">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span id="convert-text">Protect PDF</span>
+      </button>
+
+      <!-- Result Section -->
+      <div class="result-section" id="result-section">
+        <div class="result-card">
+          <div class="result-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="result-title">PDF Protected Successfully!</div>
+          <div class="result-desc">Your file has been encrypted with AES-256. Keep your password safe.</div>
+          <div class="result-actions">
+            <button class="btn-download" id="btn-download">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download Protected PDF
+            </button>
+            <button class="btn-reset" id="btn-reset-bottom">Protect Another</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEO Content -->
+  <article class="seo-section">
+        <h2>Why You Need This for Legal Files</h2>
+        <p>Lawyers must secure documents during discovery.</p>
+        <h2>How ToolsMatic Solves It</h2>
+        <p>Apply unbreakable passwords instantly. Because ToolsMatic operates purely on the client-side using advanced WebAssembly, your documents are never uploaded to our servers, guaranteeing absolute privacy for your legal files.</p>
+      
+        <div class="related-tools-seo" style="margin-top: 40px; padding: 20px; background: var(--bg-tertiary); border-radius: 8px; border: 1px solid var(--border-color);">
+          <h3 style="margin-top: 0; font-size: 1.25rem;">Explore Popular PDF Solutions</h3>
+          <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+      <li><a href="/tools/form-filler-mobile.html" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">Form Filler for Mobile Phones</a></li><li><a href="/tools/fill-pdf-form-tax.html" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">Fill Pdf Form for IRS Tax Forms</a></li><li><a href="/tools/annotate-pdf-students.html" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">Annotate Pdf for Students</a></li><li><a href="/tools/split-pdf-size.html" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">Split Pdf for File Size Limits</a></li></ul></div></article>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--text-primary);margin-bottom:12px;">
+        ToolsMatic
+      </div>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.7;max-width:220px;">
+        Privacy-first PDF tools. Your files never leave your browser.
+      </p>
+      <p style="font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);margin-top:16px;">
+        © 2025 ToolsMatic. All rights reserved.
+      </p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">PDF Tools</div>
+      <a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a>
+      <a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a>
+      <a href="/tools/split-pdf.html" class="footer-link">Split PDF</a>
+      <a href="/tools/protect-pdf.html" class="footer-link">Protect PDF</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="/about.html" class="footer-link">About</a>
+      <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/pdf/global.js"></script>
+<script src="/assets/pdf/tool-base.js"></script>
+
+<!-- Load pdf-lib with encryption support -->
+<script src="https://unpkg.com/pdf-lib-plus-encrypt/dist/pdf-lib-plus-encrypt.min.js"></script>
+
+<script>
+'use strict';
+
+// ── STATE ─────────────────────────────────────────────────────
+var state = {
+  file: null,
+  arrayBuffer: null,
+  encryptedBlob: null
+};
+
+// ── ELEMENTS ──────────────────────────────────────────────────
+var uploadZone    = document.getElementById('upload-zone');
+var fileInput     = document.getElementById('file-input');
+var toolArea      = document.getElementById('tool-area');
+var btnClearFile  = document.getElementById('btn-clear-file');
+var statName      = document.getElementById('stat-name');
+var statSize      = document.getElementById('stat-size');
+
+var inputPassword = document.getElementById('input-password');
+var inputOwner    = document.getElementById('input-owner');
+var btnTogglePw   = document.getElementById('btn-toggle-pw');
+var btnToggleOwn  = document.getElementById('btn-toggle-owner');
+
+var advancedToggle = document.getElementById('advanced-toggle');
+var advancedOpts   = document.getElementById('advanced-options');
+
+var permPrint     = document.getElementById('perm-print');
+var permCopy      = document.getElementById('perm-copy');
+var permModify    = document.getElementById('perm-modify');
+var permAnnotate  = document.getElementById('perm-annotate');
+
+var btnConvert    = document.getElementById('btn-convert');
+var resultSec     = document.getElementById('result-section');
+var btnDownload   = document.getElementById('btn-download');
+var btnResetBottom= document.getElementById('btn-reset-bottom');
+
+var pwStrengthBar = document.getElementById('pw-strength-bar');
+var pwStrengthFill= document.getElementById('pw-strength-fill');
+var pwStrengthText= document.getElementById('pw-strength-text');
+
+// ── HELPERS ───────────────────────────────────────────────────
+function formatSize(bytes) {
+  if (bytes === 0) return '0 B';
+  var k = 1024;
+  var sizes = ['B', 'KB', 'MB', 'GB'];
+  var i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+}
+
+function generateRandomPassword() {
+  var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+  var pw = '';
+  for(var i=0; i<16; i++) {
+    pw += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return pw;
+}
+
+// Check password strength
+inputPassword.addEventListener('input', function() {
+  var val = this.value;
+  if (!val) {
+    pwStrengthBar.style.display = 'none';
+    pwStrengthText.style.display = 'none';
+    btnConvert.disabled = true;
+    return;
+  }
+  
+  btnConvert.disabled = false;
+  pwStrengthBar.style.display = 'block';
+  pwStrengthText.style.display = 'block';
+  
+  var strength = 0;
+  if (val.length >= 6) strength += 25;
+  if (val.length >= 10) strength += 25;
+  if (/[A-Z]/.test(val)) strength += 15;
+  if (/[0-9]/.test(val)) strength += 15;
+  if (/[^A-Za-z0-9]/.test(val)) strength += 20;
+
+  var color = '#EF4444'; // Weak
+  var text = 'Weak';
+  
+  if (strength >= 80) {
+    color = '#10B981'; // Strong
+    text = 'Strong';
+  } else if (strength >= 50) {
+    color = '#F59E0B'; // Medium
+    text = 'Medium';
+  }
+  
+  pwStrengthFill.style.width = Math.min(strength, 100) + '%';
+  pwStrengthFill.style.backgroundColor = color;
+  pwStrengthText.textContent = 'Strength: ' + text;
+  pwStrengthText.style.color = color;
+});
+
+// Toggle password visibility
+function toggleVisibility(input, btn) {
+  var type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+  input.setAttribute('type', type);
+  if (type === 'text') {
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+  } else {
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+  }
+}
+
+btnTogglePw.addEventListener('click', function() { toggleVisibility(inputPassword, btnTogglePw); });
+btnToggleOwn.addEventListener('click', function() { toggleVisibility(inputOwner, btnToggleOwn); });
+
+// Advanced Toggle
+advancedToggle.addEventListener('click', function() {
+  var isOpen = advancedOpts.classList.contains('open');
+  if (isOpen) {
+    advancedOpts.classList.remove('open');
+    advancedToggle.classList.remove('open');
+  } else {
+    advancedOpts.classList.add('open');
+    advancedToggle.classList.add('open');
+  }
+});
+
+// ── FILE HANDLING ─────────────────────────────────────────────
+uploadZone.addEventListener('click', function() { fileInput.click(); });
+uploadZone.addEventListener('dragover', function(e) { e.preventDefault(); uploadZone.classList.add('dragover'); });
+uploadZone.addEventListener('dragleave', function() { uploadZone.classList.remove('dragover'); });
+uploadZone.addEventListener('drop', function(e) {
+  e.preventDefault();
+  uploadZone.classList.remove('dragover');
+  if (e.dataTransfer.files.length) loadFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', function() {
+  if (fileInput.files.length) { loadFile(fileInput.files[0]); fileInput.value = ''; }
+});
+
+function loadFile(file) {
+  if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+    if(window.showToast) showToast('Please upload a PDF file.', 'error');
+    return;
+  }
+  if (file.size > 52428800) {
+    if(window.showToast) showToast('File too large (max 50MB).', 'error');
+    return;
+  }
+
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    state.file = file;
+    state.arrayBuffer = e.target.result;
+    
+    statName.textContent = file.name.length > 30 ? file.name.substring(0,27) + '...' : file.name;
+    statSize.textContent = formatSize(file.size);
+    
+    uploadZone.style.display = 'none';
+    toolArea.style.display = 'block';
+    inputPassword.focus();
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+// ── CONVERT ───────────────────────────────────────────────────
+btnConvert.addEventListener('click', async function() {
+  var userPw = inputPassword.value.trim();
+  var ownerPw = inputOwner.value.trim();
+  
+  if (!userPw && !ownerPw && permPrint.checked && permCopy.checked && permModify.checked && permAnnotate.checked) {
+    if(window.showToast) showToast('Please enter a password or restrict permissions.', 'warning');
+    return;
+  }
+
+  // If permissions are restricted but no owner password is set, generate one to prevent bypass
+  var permissionsRestricted = !permPrint.checked || !permCopy.checked || !permModify.checked || !permAnnotate.checked;
+  if (permissionsRestricted && !ownerPw) {
+    ownerPw = generateRandomPassword();
+  }
+  
+  if(!ownerPw) ownerPw = userPw; // fallback to user password for owner
+
+  btnConvert.disabled = true;
+  btnConvert.classList.add('loading');
+  document.getElementById('convert-text').textContent = 'Encrypting...';
+  document.getElementById('convert-icon').style.display = 'none';
+
+  try {
+    // We are using PDFLib from pdf-lib-plus-encrypt
+    const pdfDoc = await PDFLib.PDFDocument.load(state.arrayBuffer, { ignoreEncryption: false });
+    
+    pdfDoc.encrypt({
+      userPassword: userPw,
+      ownerPassword: ownerPw,
+      permissions: {
+        printing: permPrint.checked ? 'highResolution' : false,
+        modifying: permModify.checked,
+        copying: permCopy.checked,
+        annotating: permAnnotate.checked,
+        fillingForms: permAnnotate.checked,
+        documentAssembly: permModify.checked
+      }
+    });
+
+    const pdfBytes = await pdfDoc.save();
+    state.encryptedBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+    
+    resultSec.classList.add('visible');
+    
+    // Auto scroll to result
+    setTimeout(function() {
+      resultSec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+    
+    if(window.showToast) showToast('PDF encrypted successfully!', 'success');
+
+  } catch (err) {
+    console.error(err);
+    var msg = 'Failed to encrypt PDF.';
+    if (err.name === 'EncryptedPDFError') {
+      msg = 'This PDF is already encrypted. Please Unlock it first.';
+    }
+    if(window.showToast) showToast(msg, 'error');
+  } finally {
+    btnConvert.classList.remove('loading');
+    btnConvert.disabled = false;
+    document.getElementById('convert-text').textContent = 'Protect PDF';
+    document.getElementById('convert-icon').style.display = 'block';
+  }
+});
+
+// ── DOWNLOAD ──────────────────────────────────────────────────
+btnDownload.addEventListener('click', function() {
+  if (!state.encryptedBlob) return;
+  var url = URL.createObjectURL(state.encryptedBlob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = state.file.name.replace('.pdf', '-protected.pdf');
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(url); }, 100);
+});
+
+// ── CLEAR / RESET ─────────────────────────────────────────────
+function resetTool() {
+  state.file = null;
+  state.arrayBuffer = null;
+  state.encryptedBlob = null;
+  
+  inputPassword.value = '';
+  inputOwner.value = '';
+  pwStrengthBar.style.display = 'none';
+  pwStrengthText.style.display = 'none';
+  
+  permPrint.checked = true;
+  permCopy.checked = true;
+  permModify.checked = true;
+  permAnnotate.checked = true;
+  
+  advancedOpts.classList.remove('open');
+  advancedToggle.classList.remove('open');
+  
+  toolArea.style.display = 'none';
+  uploadZone.style.display = 'flex';
+  resultSec.classList.remove('visible');
+  
+  btnConvert.disabled = true;
+}
+
+btnClearFile.addEventListener('click', resetTool);
+btnResetBottom.addEventListener('click', resetTool);
+
+// ── FAQ ───────────────────────────────────────────────────────
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = this.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight = '0';
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      var answer = item.querySelector('.faq-answer');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+</script>
+
+
+</body></html>

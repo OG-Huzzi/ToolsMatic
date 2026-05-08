@@ -14,20 +14,409 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>JWT Decoder Online | Inspect & Decode JSON Web Tokens - ToolsMatic</title>
+  <meta name="description" content="Decode JWTs safely in your browser, inspect token payloads, check expiration, validate claims, and verify signatures.">
+<meta name="keywords" content="professional jwt inspector, jwt decoder 2026, jwt token decoder, jwt validator, jwt signature verification, jwt debug tool, decode jwt, jwt claims viewer, jwt payload inspector, jwt header decoder, bearer token inspector, access token decoder, refresh token decoder, jwt algorithm checker, jwt exp nbf iat, issuer audience validator, jwt clock skew, hs256 jwt verifier, rs256 jwt verifier, jwt security tool, jwt testing tool, jwt offline inspector, jwt privacy-first tool, json web token decoder">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://toolsmatic.me/tools/jwt-decoder-online.html">
-  <meta name="description" content="Decode JWTs safely in your browser. Inspect offline without sending tokens to a server." />
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/jwt-decoder-online.html">
+  <meta property="og:title" content="JWT Decoder Online \| Inspect & Decode JSON Web Tokens">
+  <meta property="og:description" content="Decode JWTs, validate claims, and verify signatures locally. Check issuer, audience, and clock skew with privacy-first processing.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/jwt-inspector-preview.png">
+  <meta property="og:site_name" content="ToolsMatic - Professional Developer Tools">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/jwt-decoder-online.html">
+  <meta name="twitter:title" content="JWT Decoder Online \| Inspect & Decode JSON Web Tokens">
+  <meta name="twitter:description" content="Decode JWTs, validate claims, verify signatures, and inspect issuer/audience. 100% client-side.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/jwt-inspector-preview.png">
+  <meta name="twitter:creator" content="@ToolsMatic">
+  
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "JWT Decoder Online",
+    "alternateName": ["JWT Token Analyzer", "JWT Decoder Pro", "JWT Verifier"],
+    "description": "Decode JWTs, validate claims, and verify signatures with HS256/RS256 while keeping tokens local.",
+    "url": "https://toolsmatic.me/tools/jwt-decoder-online.html",
+    "applicationCategory": "Utility",
+    "applicationSubCategory": "Developer Tool",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+    "creator": {"@type": "Organization", "name": "ToolsMatic", "url": "https://toolsmatic.me", "sameAs": ["https://twitter.com/ToolsMatic"]},
+    "featureList": [
+      "Decode JWT header and payload",
+      "Validate exp, nbf, iat with clock skew",
+      "Verify HS256/HS384/HS512 signatures",
+      "Verify RS256/RS384/RS512 signatures",
+      "Issuer and audience validation",
+      "Token health summary",
+      "Copy JSON outputs",
+      "Client-side processing",
+      "Offline-ready, privacy-first"
+    ],
+    "inLanguage": "en-US",
+    "isAccessibleForFree": true,
+    "permissions": ["LOCAL_STORAGE_READ_WRITE"],
+    "release": {"@type": "Thing", "version": "3.0.0", "datePublished": "2026-02-23", "dateModified": "2026-02-23"}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolsmatic.me/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://toolsmatic.me/tools"},
+      {"@type": "ListItem", "position": 3, "name": "JWT Decoder Online", "item": "https://toolsmatic.me/tools/jwt-decoder-online.html"}
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    {"@type": "Question", "name": "What is a JWT token?", "acceptedAnswer": {"@type": "Answer", "text": "A JWT (JSON Web Token) is a compact token with three parts: header, payload, and signature. It is used for stateless authentication and authorization."}},
+    {"@type": "Question", "name": "Can this tool verify JWT signatures?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It verifies HS256/HS384/HS512 with a shared secret and RS256/RS384/RS512 with a public key. Verification runs locally in your browser."}},
+    {"@type": "Question", "name": "Does the JWT inspector upload tokens?", "acceptedAnswer": {"@type": "Answer", "text": "No. All decoding and verification happen client-side. Tokens never leave your device or are sent to a server."}},
+    {"@type": "Question", "name": "What claims are validated?", "acceptedAnswer": {"@type": "Answer", "text": "The inspector checks exp, nbf, and iat timestamps and supports issuer (iss) and audience (aud) validation with optional clock skew."}},
+    {"@type": "Question", "name": "How do I handle clock skew?", "acceptedAnswer": {"@type": "Answer", "text": "Use the clock skew setting to allow a small time window when validating exp/nbf/iat across systems with slightly different clocks."}},
+    {"@type": "Question", "name": "Is it safe to decode JWTs?", "acceptedAnswer": {"@type": "Answer", "text": "Decoding is safe because it reveals only encoded data. Signature verification is what confirms authenticity. This tool does not store or share tokens."}}
+  ]}
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Complete Guide to JWT Decoding, Claim Validation, and Signature Verification",
+    "description": "Learn how to inspect JWT headers and payloads, verify signatures, validate exp, nbf, iat, iss, and aud claims, and debug bearer tokens for APIs, SSO, and microservices without sending tokens to remote servers.",
+    "author": {
+      "@type": "Organization",
+      "name": "ToolsMatic"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ToolsMatic",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://toolsmatic.me/assets/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://toolsmatic.me/tools/jwt-decoder-online.html"
+    },
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "about": [
+      "JWT decoder",
+      "JWT inspector",
+      "JWT signature verification",
+      "Bearer token debugging",
+      "Claim validation",
+      "HS256 verification",
+      "RS256 verification"
+    ]
+  }
+  </script>
+  
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+
+  <style>
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      font-size: 0.8em;
+      color: var(--text-secondary);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+    .feature-card {
+      padding: 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background: var(--bg-primary);
+    }
+    .feature-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #06b6d4;
+    }
+    .feature-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      font-size: 0.9em;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .related-card {
+      display: block;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      text-decoration: none;
+      color: inherit;
+    }
+    .related-card p {
+      margin: 6px 0 0;
+      color: var(--text-secondary);
+      font-size: 0.9em;
+    }
+    .faq details {
+      margin-bottom: 12px;
+      padding: 14px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #06b6d4;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    .faq p {
+      margin-top: 10px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    table td, table th {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-color);
+      word-break: break-word;
+    }
+    .jwt-breadcrumbs {
+      margin: 12px auto 0;
+      max-width: 1120px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+    .jwt-breadcrumbs a {
+      color: #67e8f9;
+      text-decoration: none;
+    }
+    .jwt-hero {
+      margin: 20px 0 14px;
+      padding: 28px 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(6, 182, 212, 0.14), transparent 34%),
+        radial-gradient(circle at 86% 22%, rgba(59, 130, 246, 0.14), transparent 30%),
+        linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(9, 15, 28, 0.94));
+      box-shadow: 0 24px 60px rgba(2, 6, 23, 0.22);
+    }
+    .jwt-shell {
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      box-shadow: 0 24px 60px rgba(2, 6, 23, 0.18);
+    }
+    .jwt-shell .muted-bg {
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(15, 23, 42, 0.62);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .jwt-shell textarea,
+    .jwt-shell input,
+    .jwt-shell select {
+      border-radius: 14px;
+    }
+    .jwt-shell pre {
+      max-width: 100%;
+      overflow: auto;
+    }
+    .jwt-seo-card,
+    .jwt-compare-card {
+      margin: 40px 0;
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      background: rgba(255, 255, 255, 0.025);
+      box-shadow: 0 18px 42px rgba(2, 6, 23, 0.16);
+    }
+    .jwt-seo-card p,
+    .jwt-seo-card li,
+    .jwt-compare-note {
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .jwt-seo-card code,
+    .jwt-compare-card code {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 1px 6px;
+      color: var(--text-primary);
+    }
+    .jwt-compare-card table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 880px;
+      table-layout: fixed;
+      background: rgba(2, 6, 23, 0.22);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .jwt-compare-card thead {
+      background: rgba(103, 232, 249, 0.08);
+    }
+    .jwt-compare-card th {
+      text-align: left;
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+    .jwt-compare-card td,
+    .jwt-compare-card th {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      vertical-align: top;
+    }
+    .jwt-compare-card a {
+      color: #67e8f9;
+      text-decoration: none;
+    }
+    .jwt-check {
+      color: #34d399;
+      font-weight: 700;
+    }
+    .jwt-muted-cell {
+      color: var(--text-secondary);
+    }
+    @media (max-width: 768px) {
+      .jwt-hero,
+      .jwt-seo-card,
+      .jwt-compare-card {
+        padding: 20px 16px;
+        border-radius: 18px;
+      }
+    }
+  </style>
+
+    <style>
+      .ad-container {
+        text-align: center;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      @media (max-width: 768px) {
+        .ad-container {
+          margin: 15px 0;
+        }
+        .ad-container iframe {
+          max-width: 100% !important;
+          width: auto !important;
+          height: auto !important;
+        }
+      }
+    </style>
+      <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "WebApplication",
+    "name":  "JWT Decoder Online \| Inspect & Decode JSON Web Tokens - ToolsMatic",
+    "url": "https://toolsmatic.me/tools/jwt-decoder-online.html",
+    "description":  "Professional JWT inspector for decoding headers and payloads, validating claims, and verifying signatures (HS256/RS256). Check issuer, audience, clock skew, and token health. 100% client-side, offline-ready, privacy-first.",
+    "applicationCategory":  "UtilityApplication",
+    "operatingSystem":  "Any",
+    "browserRequirements":  "Requires JavaScript and a modern web browser",
+    "isAccessibleForFree":  true,
+    "publisher":  {
+                      "@type":  "Organization",
+                      "name":  "ToolsMatic",
+                      "url":  "https://toolsmatic.me/"
+                  },
+    "offers":  {
+                   "@type":  "Offer",
+                   "price":  "0",
+                   "priceCurrency":  "USD"
+               }
+}
+  </script>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode"></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <nav aria-label="Breadcrumb" class="jwt-breadcrumbs">
+      <a href="/">Home</a> /
+      <a href="/#tools">Tools</a> /
+      <span aria-current="page">JWT Decoder Online</span>
+    </nav>
+
+    <section class="jwt-hero" style="text-align:center;">
+      <h1 style="font-size: 2.4em; margin: 0 0 8px;">JWT Decoder Online</h1>
     <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
-      <script>
-        atOptions = {
-          'key' : 'e61a3745429623f25315f86052a3ab7b',
-          'format' : 'iframe',
-          'height' : 90,
-          'width' : 728,
-          'params' : {}
-        };
-      </script>
-      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+      <iframe class="ad-sandbox-frame" title="Advertisement" width="728" height="90" loading="lazy" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;style&gt;html,body{margin:0;padding:0;overflow:hidden;background:transparent;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;script&gt;atOptions={&quot;key&quot;:&quot;e61a3745429623f25315f86052a3ab7b&quot;,&quot;format&quot;:&quot;iframe&quot;,&quot;height&quot;:90,&quot;width&quot;:728,&quot;params&quot;:{}};&lt;/script&gt;&lt;script src=&quot;https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js&quot;&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </section>
+<p style="max-width: 840px; margin: 0 auto; line-height: 1.7; color: var(--text-secondary);">
+        Decode JWTs, validate claims, and verify signatures with HS256/RS256 locally. Inspect issuer, audience, clock skew, and token health in one place. Everything runs client-side with zero uploads.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top: 12px;">
+        <span class="tag">Signature Verification</span>
+        <span class="tag">Claim Validation</span>
+        <span class="tag">Issuer & Audience</span>
+        <span class="tag">Clock Skew</span>
+        <span class="tag">Offline Ready</span>
+      </div>
+    </section>
+
+    <section class="tool-shell jwt-shell">
+      <h2>JWT Inspector Pro</h2>
+      <label class="label" for="jwt-input">Paste a JWT</label>
+      <textarea id="jwt-input" rows="6" placeholder="eyJhbGciOi..." spellcheck="false"></textarea>
+      <div class="inline-controls" style="margin-top:12px;flex-wrap:wrap;gap:8px;">
+        <button id="jwt-decode" data-primary>Decode</button>
+        <button id="jwt-copy-payload">Copy payload JSON</button>
+        <button id="jwt-copy-header">Copy header JSON</button>
+        <button id="jwt-copy-signature">Copy signature</button>
+        <button id="jwt-clear" data-clear>Clear</button>
+      </div>
+
+      <div class="two-col" style="margin-top: 12px; gap: 10px;">
+        <div class="muted-bg">
+          <div class="pill" style="margin-bottom:6px;">Validation Settings</div>
+          <label class="label" for="jwt-iss">Expected issuer (iss)</label>
+          <input id="jwt-iss" type="text" placeholder="https://issuer.example.com" />
           <label class="label" for="jwt-aud">Expected audience (aud)</label>
           <input id="jwt-aud" type="text" placeholder="api://client-id" />
           <div class="inline-controls" style="margin-top: 8px; gap: 10px; flex-wrap: wrap;">
@@ -233,17 +622,7 @@
       <details><summary>Can I use this offline?</summary><p>Yes. Once the page loads, you can disconnect and continue decoding and verifying tokens locally.</p></details>
       <details><summary>What is the token health summary?</summary><p>The health summary highlights expired tokens, not-before violations, missing claims, and issuer/audience mismatches.</p></details>
     </section>
-      <section class="section programmatic-intent-section" aria-labelledby="intent-jwt-decoder-online">
-      <h2 id="intent-jwt-decoder-online">Why this JWT Decoder Online page is separate</h2>
-      <p><strong>JWT Decoder Online</strong> is built for fast browser access, no-install use, and searchers who want the exact task completed without opening heavier software. It uses the same privacy-first ToolsMatic approach, but this page is written around the exact search intent, vocabulary, and user expectation behind "jwt-decoder-online" instead of relying only on the broader ToolsMatic page.</p>
-      <p>This matters for search and for real users. Someone landing here has usually searched for a narrower job than the general tool name. The page gives that user a direct path to the matching workflow, explains when this variation is the right choice, and connects back into the broader tool family only when that helps the task.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px;">
-        <div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);"><strong>Best for</strong><p style="margin:8px 0 0;color:var(--muted);">Searchers who need JWT Decoder Online specifically, not a generic utility page with loosely related options.</p></div>
-        <div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);"><strong>Page focus</strong><p style="margin:8px 0 0;color:var(--muted);">Clearer wording, self-canonical indexing signals, and task-specific context for this exact URL.</p></div>
-        <div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);"><strong>Related workflow</strong><p style="margin:8px 0 0;color:var(--muted);">Use the main ToolsMatic tool family when you need a wider set of controls or a more general workflow.</p></div>
-      </div>
-    </section>
-</main>
+  </main>
 <footer>ToolsMatic  Fast, privacy-first utilities for the web.</footer>
 
   <script>

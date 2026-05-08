@@ -1,11 +1,11 @@
 # Graph Report - D:\ToolsMatic  (2026-05-08)
 
 ## Corpus Check
-- 11 files · ~5,325,499 words
+- 11 files · ~5,323,364 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 151 nodes · 254 edges · 19 communities detected
+- 151 nodes · 254 edges · 18 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -28,7 +28,6 @@
 - [[_COMMUNITY_Community 15|Community 15]]
 - [[_COMMUNITY_Community 16|Community 16]]
 - [[_COMMUNITY_Community 17|Community 17]]
-- [[_COMMUNITY_Community 18|Community 18]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `runConversion()` - 18 edges
@@ -70,31 +69,31 @@ Nodes (14): bindKeyboard(), boot(), decorateAdSlots(), decorateSiteShell(), enha
 
 ### Community 5 - "Community 5"
 Cohesion: 0.2
-Nodes (12): formatBytes(), handleFile(), renderColumnPicker(), renderIssues(), renderNotes(), renderPreview(), resetColumnLabels(), runConversion() (+4 more)
+Nodes (5): getToastContainer(), normalizePath(), setActiveNavLink(), showToast(), notify()
 
 ### Community 6 - "Community 6"
 Cohesion: 0.2
-Nodes (5): getToastContainer(), normalizePath(), setActiveNavLink(), showToast(), notify()
+Nodes (11): formatBytes(), renderColumnPicker(), renderIssues(), renderNotes(), renderPreview(), resetColumnLabels(), runConversion(), setColumnsEnabled() (+3 more)
 
 ### Community 7 - "Community 7"
+Cohesion: 0.24
+Nodes (10): buildCsvFromJson(), buildHelperNotes(), buildJsonFromCsv(), detectDelimiter(), escapeHtml(), getDelimiterLabel(), getDelimiterValue(), mergeColumnMeta() (+2 more)
+
+### Community 8 - "Community 8"
 Cohesion: 0.31
 Nodes (7): Add-AdAfterFirstH1(), Add-HtmlExtensions(), Ensure-Dir(), Remove-FakeRatingSchema(), Set-Or-Insert-HeadTag(), Transform-Html(), Write-ZipBinary()
 
-### Community 8 - "Community 8"
+### Community 9 - "Community 9"
 Cohesion: 0.22
 Nodes (9): collectFaqEntities(), ensureBreadcrumbNav(), escapeHtml(), getHomeCategory(), hasSchemaType(), initGlobalToolSeo(), initRelatedTools(), injectJsonLd() (+1 more)
-
-### Community 9 - "Community 9"
-Cohesion: 0.32
-Nodes (8): buildCsvFromJson(), buildJsonFromCsv(), detectDelimiter(), getDelimiterLabel(), getDelimiterValue(), mergeColumnMeta(), parseCsv(), serializeCsv()
 
 ### Community 10 - "Community 10"
 Cohesion: 0.33
 Nodes (7): ensureToastHost(), getUserId(), initSuggestions(), likeSuggestion(), loadSuggestions(), showToast(), submitSuggestion()
 
 ### Community 11 - "Community 11"
-Cohesion: 0.5
-Nodes (5): copyText(), downloadOutput(), fetchJsonUrl(), setStatus(), showToast()
+Cohesion: 0.4
+Nodes (6): copyText(), downloadOutput(), fetchJsonUrl(), handleFile(), setStatus(), showToast()
 
 ### Community 12 - "Community 12"
 Cohesion: 0.67
@@ -102,7 +101,7 @@ Nodes (4): hasCoarsePointer(), initInteractiveMotion(), initScrollReveal(), pref
 
 ### Community 13 - "Community 13"
 Cohesion: 1.0
-Nodes (2): buildHelperNotes(), escapeHtml()
+Nodes (0): 
 
 ### Community 14 - "Community 14"
 Cohesion: 1.0
@@ -120,28 +119,22 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 18 - "Community 18"
-Cohesion: 1.0
-Nodes (0): 
-
 ## Knowledge Gaps
-- **Thin community `Community 13`** (2 nodes): `buildHelperNotes()`, `escapeHtml()`
+- **Thin community `Community 13`** (1 nodes): `extract.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 14`** (1 nodes): `extract.js`
+- **Thin community `Community 14`** (1 nodes): `sw.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 15`** (1 nodes): `sw.js`
+- **Thin community `Community 15`** (1 nodes): `popunder-manager.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 16`** (1 nodes): `popunder-manager.js`
+- **Thin community `Community 16`** (1 nodes): `generate-seo-variants.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 17`** (1 nodes): `generate-seo-variants.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 18`** (1 nodes): `normalize-banner-ads.ps1`
+- **Thin community `Community 17`** (1 nodes): `normalize-banner-ads.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `notify()` connect `Community 6` to `Community 0`?**
+- **Why does `notify()` connect `Community 5` to `Community 0`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `runConversion()` connect `Community 5` to `Community 9`, `Community 2`, `Community 11`, `Community 13`?**
+- **Why does `runConversion()` connect `Community 6` to `Community 2`, `Community 11`, `Community 7`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._

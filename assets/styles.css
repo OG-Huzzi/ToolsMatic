@@ -1869,6 +1869,21 @@ select:focus-visible {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
 }
 
+.home-tool-count {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: 1px solid rgba(94, 234, 212, 0.22);
+  border-radius: 999px;
+  background: rgba(94, 234, 212, 0.12);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
 body.home-filtering .home-hero .ad-slot {
   display: none;
 }

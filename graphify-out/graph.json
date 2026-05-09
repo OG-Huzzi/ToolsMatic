@@ -9,7 +9,7 @@
       "source_file": "D:\\ToolsMatic\\extract.js",
       "source_location": "L1",
       "id": "d_toolsmatic_extract_js",
-      "community": 13,
+      "community": 14,
       "norm_label": "extract.js"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "D:\\ToolsMatic\\sw.js",
       "source_location": "L1",
       "id": "d_toolsmatic_sw_js",
-      "community": 14,
+      "community": 15,
       "norm_label": "sw.js"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L96",
       "id": "json_to_csv_escapehtml",
-      "community": 7,
+      "community": 6,
       "norm_label": "escapehtml()"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L103",
       "id": "json_to_csv_formatbytes",
-      "community": 6,
+      "community": 5,
       "norm_label": "formatbytes()"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L120",
       "id": "json_to_csv_getdelimitervalue",
-      "community": 7,
+      "community": 6,
       "norm_label": "getdelimitervalue()"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L121",
       "id": "json_to_csv_getdelimiterlabel",
-      "community": 7,
+      "community": 6,
       "norm_label": "getdelimiterlabel()"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L155",
       "id": "json_to_csv_detectdelimiter",
-      "community": 7,
+      "community": 6,
       "norm_label": "detectdelimiter()"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L178",
       "id": "json_to_csv_parsecsv",
-      "community": 7,
+      "community": 6,
       "norm_label": "parsecsv()"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L375",
       "id": "json_to_csv_serializecsv",
-      "community": 7,
+      "community": 6,
       "norm_label": "serializecsv()"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L384",
       "id": "json_to_csv_mergecolumnmeta",
-      "community": 7,
+      "community": 6,
       "norm_label": "mergecolumnmeta()"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L396",
       "id": "json_to_csv_buildcsvfromjson",
-      "community": 7,
+      "community": 6,
       "norm_label": "buildcsvfromjson()"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L441",
       "id": "json_to_csv_buildjsonfromcsv",
-      "community": 7,
+      "community": 6,
       "norm_label": "buildjsonfromcsv()"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L536",
       "id": "json_to_csv_renderissues",
-      "community": 6,
+      "community": 5,
       "norm_label": "renderissues()"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L548",
       "id": "json_to_csv_rendernotes",
-      "community": 6,
+      "community": 5,
       "norm_label": "rendernotes()"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L559",
       "id": "json_to_csv_renderpreview",
-      "community": 6,
+      "community": 5,
       "norm_label": "renderpreview()"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L571",
       "id": "json_to_csv_setstatcard",
-      "community": 6,
+      "community": 5,
       "norm_label": "setstatcard()"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L578",
       "id": "json_to_csv_rendercolumnpicker",
-      "community": 6,
+      "community": 5,
       "norm_label": "rendercolumnpicker()"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L623",
       "id": "json_to_csv_updatemodeui",
-      "community": 6,
+      "community": 5,
       "norm_label": "updatemodeui()"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L656",
       "id": "json_to_csv_buildhelpernotes",
-      "community": 7,
+      "community": 6,
       "norm_label": "buildhelpernotes()"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L668",
       "id": "json_to_csv_runconversion",
-      "community": 6,
+      "community": 5,
       "norm_label": "runconversion()"
     },
     {
@@ -369,7 +369,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L836",
       "id": "json_to_csv_setmode",
-      "community": 6,
+      "community": 5,
       "norm_label": "setmode()"
     },
     {
@@ -378,7 +378,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L842",
       "id": "json_to_csv_setcolumnsenabled",
-      "community": 6,
+      "community": 5,
       "norm_label": "setcolumnsenabled()"
     },
     {
@@ -387,7 +387,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\json-to-csv.js",
       "source_location": "L849",
       "id": "json_to_csv_resetcolumnlabels",
-      "community": 6,
+      "community": 5,
       "norm_label": "resetcolumnlabels()"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\popunder-manager.js",
       "source_location": "L1",
       "id": "d_toolsmatic_assets_popunder_manager_js",
-      "community": 15,
+      "community": 16,
       "norm_label": "popunder-manager.js"
     },
     {
@@ -441,7 +441,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L29",
       "id": "site_bindkeyboard",
-      "community": 4,
+      "community": 9,
       "norm_label": "bindkeyboard()"
     },
     {
@@ -450,7 +450,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L42",
       "id": "site_initthemetoggle",
-      "community": 4,
+      "community": 9,
       "norm_label": "initthemetoggle()"
     },
     {
@@ -459,7 +459,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L62",
       "id": "site_initresponsivenav",
-      "community": 4,
+      "community": 9,
       "norm_label": "initresponsivenav()"
     },
     {
@@ -504,7 +504,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L170",
       "id": "site_initanalyticstracking",
-      "community": 4,
+      "community": 9,
       "norm_label": "initanalyticstracking()"
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L315",
       "id": "site_istoolpage",
-      "community": 4,
+      "community": 12,
       "norm_label": "istoolpage()"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L316",
       "id": "site_ishomepage",
-      "community": 4,
+      "community": 12,
       "norm_label": "ishomepage()"
     },
     {
@@ -531,7 +531,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L320",
       "id": "site_prefersreducedmotion",
-      "community": 12,
+      "community": 13,
       "norm_label": "prefersreducedmotion()"
     },
     {
@@ -540,7 +540,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L321",
       "id": "site_hascoarsepointer",
-      "community": 12,
+      "community": 13,
       "norm_label": "hascoarsepointer()"
     },
     {
@@ -567,7 +567,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L336",
       "id": "site_decoratesiteshell",
-      "community": 4,
+      "community": 12,
       "norm_label": "decoratesiteshell()"
     },
     {
@@ -576,7 +576,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L366",
       "id": "site_decorateadslots",
-      "community": 4,
+      "community": 9,
       "norm_label": "decorateadslots()"
     },
     {
@@ -585,7 +585,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L397",
       "id": "site_initresponsiveads",
-      "community": 4,
+      "community": 9,
       "norm_label": "initresponsiveads()"
     },
     {
@@ -594,7 +594,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L452",
       "id": "site_initscrollreveal",
-      "community": 12,
+      "community": 13,
       "norm_label": "initscrollreveal()"
     },
     {
@@ -612,32 +612,32 @@
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
       "source_location": "L519",
       "id": "site_initinteractivemotion",
-      "community": 12,
+      "community": 13,
       "norm_label": "initinteractivemotion()"
     },
     {
       "label": "getHomeCategory()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L569",
+      "source_location": "L607",
       "id": "site_gethomecategory",
-      "community": 9,
+      "community": 8,
       "norm_label": "gethomecategory()"
     },
     {
       "label": "initHomeExperience()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L619",
+      "source_location": "L657",
       "id": "site_inithomeexperience",
-      "community": 4,
+      "community": 12,
       "norm_label": "inithomeexperience()"
     },
     {
       "label": "getSectionSummary()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L732",
+      "source_location": "L774",
       "id": "site_getsectionsummary",
       "community": 1,
       "norm_label": "getsectionsummary()"
@@ -646,7 +646,7 @@
       "label": "expandCollapsibleSection()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L742",
+      "source_location": "L784",
       "id": "site_expandcollapsiblesection",
       "community": 1,
       "norm_label": "expandcollapsiblesection()"
@@ -655,7 +655,7 @@
       "label": "collapseCollapsibleSection()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L749",
+      "source_location": "L791",
       "id": "site_collapsecollapsiblesection",
       "community": 1,
       "norm_label": "collapsecollapsiblesection()"
@@ -664,7 +664,7 @@
       "label": "makeSectionCollapsible()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L756",
+      "source_location": "L798",
       "id": "site_makesectioncollapsible",
       "community": 1,
       "norm_label": "makesectioncollapsible()"
@@ -673,7 +673,7 @@
       "label": "createRailCard()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L829",
+      "source_location": "L871",
       "id": "site_createrailcard",
       "community": 1,
       "norm_label": "createrailcard()"
@@ -682,79 +682,79 @@
       "label": "initToolPageExperience()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L844",
+      "source_location": "L886",
       "id": "site_inittoolpageexperience",
-      "community": 4,
+      "community": 12,
       "norm_label": "inittoolpageexperience()"
     },
     {
       "label": "initStandardPageExperience()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L849",
+      "source_location": "L891",
       "id": "site_initstandardpageexperience",
-      "community": 4,
+      "community": 12,
       "norm_label": "initstandardpageexperience()"
     },
     {
       "label": "hasSchemaType()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L889",
+      "source_location": "L931",
       "id": "site_hasschematype",
-      "community": 9,
+      "community": 8,
       "norm_label": "hasschematype()"
     },
     {
       "label": "injectJsonLd()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L895",
+      "source_location": "L937",
       "id": "site_injectjsonld",
-      "community": 9,
+      "community": 8,
       "norm_label": "injectjsonld()"
     },
     {
       "label": "normalizeToolName()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L904",
+      "source_location": "L946",
       "id": "site_normalizetoolname",
-      "community": 9,
+      "community": 8,
       "norm_label": "normalizetoolname()"
     },
     {
       "label": "ensureBreadcrumbNav()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L911",
+      "source_location": "L953",
       "id": "site_ensurebreadcrumbnav",
-      "community": 9,
+      "community": 8,
       "norm_label": "ensurebreadcrumbnav()"
     },
     {
       "label": "collectFaqEntities()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L942",
+      "source_location": "L984",
       "id": "site_collectfaqentities",
-      "community": 9,
+      "community": 8,
       "norm_label": "collectfaqentities()"
     },
     {
       "label": "initGlobalToolSeo()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L994",
+      "source_location": "L1036",
       "id": "site_initglobaltoolseo",
-      "community": 9,
+      "community": 8,
       "norm_label": "initglobaltoolseo()"
     },
     {
       "label": "setHandoff()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1056",
+      "source_location": "L1098",
       "id": "site_sethandoff",
       "community": 1,
       "norm_label": "sethandoff()"
@@ -763,7 +763,7 @@
       "label": "consumeHandoff()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1064",
+      "source_location": "L1106",
       "id": "site_consumehandoff",
       "community": 1,
       "norm_label": "consumehandoff()"
@@ -772,7 +772,7 @@
       "label": "handoffAndGo()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1077",
+      "source_location": "L1119",
       "id": "site_handoffandgo",
       "community": 1,
       "norm_label": "handoffandgo()"
@@ -781,7 +781,7 @@
       "label": "initSuggestions()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1084",
+      "source_location": "L1126",
       "id": "site_initsuggestions",
       "community": 10,
       "norm_label": "initsuggestions()"
@@ -790,7 +790,7 @@
       "label": "loadSuggestions()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1126",
+      "source_location": "L1168",
       "id": "site_loadsuggestions",
       "community": 10,
       "norm_label": "loadsuggestions()"
@@ -799,7 +799,7 @@
       "label": "submitSuggestion()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1156",
+      "source_location": "L1198",
       "id": "site_submitsuggestion",
       "community": 10,
       "norm_label": "submitsuggestion()"
@@ -808,7 +808,7 @@
       "label": "likeSuggestion()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1194",
+      "source_location": "L1236",
       "id": "site_likesuggestion",
       "community": 10,
       "norm_label": "likesuggestion()"
@@ -817,7 +817,7 @@
       "label": "getUserId()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1221",
+      "source_location": "L1263",
       "id": "site_getuserid",
       "community": 10,
       "norm_label": "getuserid()"
@@ -826,36 +826,36 @@
       "label": "escapeHtml()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1230",
+      "source_location": "L1272",
       "id": "site_escapehtml",
-      "community": 9,
+      "community": 8,
       "norm_label": "escapehtml()"
     },
     {
       "label": "enhanceFooter()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1431",
+      "source_location": "L1473",
       "id": "site_enhancefooter",
-      "community": 4,
+      "community": 9,
       "norm_label": "enhancefooter()"
     },
     {
       "label": "initRelatedTools()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1477",
+      "source_location": "L1519",
       "id": "site_initrelatedtools",
-      "community": 9,
+      "community": 8,
       "norm_label": "initrelatedtools()"
     },
     {
       "label": "boot()",
       "file_type": "code",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1556",
+      "source_location": "L1598",
       "id": "site_boot",
-      "community": 4,
+      "community": 9,
       "norm_label": "boot()"
     },
     {
@@ -864,7 +864,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L1",
       "id": "d_toolsmatic_assets_pdf_global_js",
-      "community": 5,
+      "community": 4,
       "norm_label": "global.js"
     },
     {
@@ -873,7 +873,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L5",
       "id": "global_initheader",
-      "community": 5,
+      "community": 4,
       "norm_label": "initheader()"
     },
     {
@@ -882,7 +882,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L20",
       "id": "global_initmobilemenu",
-      "community": 5,
+      "community": 4,
       "norm_label": "initmobilemenu()"
     },
     {
@@ -891,7 +891,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L73",
       "id": "global_normalizepath",
-      "community": 5,
+      "community": 4,
       "norm_label": "normalizepath()"
     },
     {
@@ -900,7 +900,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L82",
       "id": "global_setactivenavlink",
-      "community": 5,
+      "community": 4,
       "norm_label": "setactivenavlink()"
     },
     {
@@ -909,7 +909,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L115",
       "id": "global_smoothscrollanchors",
-      "community": 5,
+      "community": 4,
       "norm_label": "smoothscrollanchors()"
     },
     {
@@ -918,7 +918,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L136",
       "id": "global_gettoastcontainer",
-      "community": 5,
+      "community": 4,
       "norm_label": "gettoastcontainer()"
     },
     {
@@ -927,7 +927,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L151",
       "id": "global_dismisstoast",
-      "community": 5,
+      "community": 4,
       "norm_label": "dismisstoast()"
     },
     {
@@ -936,7 +936,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L164",
       "id": "global_showtoast",
-      "community": 5,
+      "community": 4,
       "norm_label": "showtoast()"
     },
     {
@@ -945,7 +945,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L199",
       "id": "global_initscrollreveal",
-      "community": 5,
+      "community": 4,
       "norm_label": "initscrollreveal()"
     },
     {
@@ -954,7 +954,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\global.js",
       "source_location": "L231",
       "id": "global_initfaq",
-      "community": 5,
+      "community": 4,
       "norm_label": "initfaq()"
     },
     {
@@ -972,7 +972,7 @@
       "source_file": "D:\\ToolsMatic\\assets\\pdf\\tool-base.js",
       "source_location": "L9",
       "id": "tool_base_notify",
-      "community": 5,
+      "community": 4,
       "norm_label": "notify()"
     },
     {
@@ -1260,7 +1260,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\generate-seo-variants.js",
       "source_location": "L1",
       "id": "d_toolsmatic_scripts_generate_seo_variants_js",
-      "community": 16,
+      "community": 17,
       "norm_label": "generate-seo-variants.js"
     },
     {
@@ -1269,7 +1269,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L1",
       "id": "d_toolsmatic_scripts_import_pdf_tools_from_zip_ps1",
-      "community": 8,
+      "community": 7,
       "norm_label": "import-pdf-tools-from-zip.ps1"
     },
     {
@@ -1278,7 +1278,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L13",
       "id": "import_pdf_tools_from_zip_ensure_dir",
-      "community": 8,
+      "community": 7,
       "norm_label": "ensure-dir()"
     },
     {
@@ -1287,7 +1287,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L19",
       "id": "import_pdf_tools_from_zip_read_ziptext",
-      "community": 8,
+      "community": 7,
       "norm_label": "read-ziptext()"
     },
     {
@@ -1296,7 +1296,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L26",
       "id": "import_pdf_tools_from_zip_write_zipbinary",
-      "community": 8,
+      "community": 7,
       "norm_label": "write-zipbinary()"
     },
     {
@@ -1305,7 +1305,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L35",
       "id": "import_pdf_tools_from_zip_set_or_insert_headtag",
-      "community": 8,
+      "community": 7,
       "norm_label": "set-or-insert-headtag()"
     },
     {
@@ -1314,7 +1314,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L42",
       "id": "import_pdf_tools_from_zip_remove_fakeratingschema",
-      "community": 8,
+      "community": 7,
       "norm_label": "remove-fakeratingschema()"
     },
     {
@@ -1323,7 +1323,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L51",
       "id": "import_pdf_tools_from_zip_add_htmlextensions",
-      "community": 8,
+      "community": 7,
       "norm_label": "add-htmlextensions()"
     },
     {
@@ -1332,7 +1332,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L60",
       "id": "import_pdf_tools_from_zip_add_adafterfirsth1",
-      "community": 8,
+      "community": 7,
       "norm_label": "add-adafterfirsth1()"
     },
     {
@@ -1341,7 +1341,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L79",
       "id": "import_pdf_tools_from_zip_transform_html",
-      "community": 8,
+      "community": 7,
       "norm_label": "transform-html()"
     },
     {
@@ -1350,7 +1350,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\import-pdf-tools-from-zip.ps1",
       "source_location": "L114",
       "id": "import_pdf_tools_from_zip_add_sitemapurls",
-      "community": 8,
+      "community": 7,
       "norm_label": "add-sitemapurls()"
     },
     {
@@ -1359,7 +1359,7 @@
       "source_file": "D:\\ToolsMatic\\scripts\\normalize-banner-ads.ps1",
       "source_location": "L1",
       "id": "d_toolsmatic_scripts_normalize_banner_ads_ps1",
-      "community": 17,
+      "community": 18,
       "norm_label": "normalize-banner-ads.ps1"
     }
   ],
@@ -2640,7 +2640,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L569",
+      "source_location": "L607",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_gethomecategory",
@@ -2652,7 +2652,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L619",
+      "source_location": "L657",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_inithomeexperience",
@@ -2664,7 +2664,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L732",
+      "source_location": "L774",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_getsectionsummary",
@@ -2676,7 +2676,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L742",
+      "source_location": "L784",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_expandcollapsiblesection",
@@ -2688,7 +2688,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L749",
+      "source_location": "L791",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_collapsecollapsiblesection",
@@ -2700,7 +2700,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L756",
+      "source_location": "L798",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_makesectioncollapsible",
@@ -2712,7 +2712,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L829",
+      "source_location": "L871",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_createrailcard",
@@ -2724,7 +2724,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L844",
+      "source_location": "L886",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_inittoolpageexperience",
@@ -2736,7 +2736,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L849",
+      "source_location": "L891",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_initstandardpageexperience",
@@ -2748,7 +2748,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L889",
+      "source_location": "L931",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_hasschematype",
@@ -2760,7 +2760,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L895",
+      "source_location": "L937",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_injectjsonld",
@@ -2772,7 +2772,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L904",
+      "source_location": "L946",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_normalizetoolname",
@@ -2784,7 +2784,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L911",
+      "source_location": "L953",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_ensurebreadcrumbnav",
@@ -2796,7 +2796,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L942",
+      "source_location": "L984",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_collectfaqentities",
@@ -2808,7 +2808,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L994",
+      "source_location": "L1036",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_initglobaltoolseo",
@@ -2820,7 +2820,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1056",
+      "source_location": "L1098",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_sethandoff",
@@ -2832,7 +2832,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1064",
+      "source_location": "L1106",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_consumehandoff",
@@ -2844,7 +2844,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1272",
+      "source_location": "L1314",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_handoffandgo",
@@ -2856,7 +2856,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1279",
+      "source_location": "L1321",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_initsuggestions",
@@ -2868,7 +2868,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1321",
+      "source_location": "L1363",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_loadsuggestions",
@@ -2880,7 +2880,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1351",
+      "source_location": "L1393",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_submitsuggestion",
@@ -2892,7 +2892,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1389",
+      "source_location": "L1431",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_likesuggestion",
@@ -2904,7 +2904,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1416",
+      "source_location": "L1458",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_getuserid",
@@ -2916,7 +2916,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1425",
+      "source_location": "L1467",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_escapehtml",
@@ -2928,7 +2928,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1431",
+      "source_location": "L1473",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_enhancefooter",
@@ -2940,7 +2940,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1477",
+      "source_location": "L1519",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_initrelatedtools",
@@ -2952,7 +2952,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1556",
+      "source_location": "L1598",
       "weight": 1.0,
       "_src": "d_toolsmatic_assets_site_js",
       "_tgt": "site_boot",
@@ -2976,7 +2976,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1161",
+      "source_location": "L1203",
       "weight": 1.0,
       "_src": "site_submitsuggestion",
       "_tgt": "site_showtoast",
@@ -2988,7 +2988,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1209",
+      "source_location": "L1251",
       "weight": 1.0,
       "_src": "site_likesuggestion",
       "_tgt": "site_showtoast",
@@ -3000,7 +3000,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1563",
+      "source_location": "L1605",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_bindkeyboard",
@@ -3012,7 +3012,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1564",
+      "source_location": "L1606",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_initthemetoggle",
@@ -3024,7 +3024,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1562",
+      "source_location": "L1604",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_initresponsivenav",
@@ -3060,7 +3060,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1565",
+      "source_location": "L1607",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_initanalyticstracking",
@@ -3084,7 +3084,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L845",
+      "source_location": "L887",
       "weight": 1.0,
       "_src": "site_inittoolpageexperience",
       "_tgt": "site_istoolpage",
@@ -3096,7 +3096,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L850",
+      "source_location": "L892",
       "weight": 1.0,
       "_src": "site_initstandardpageexperience",
       "_tgt": "site_istoolpage",
@@ -3108,7 +3108,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L995",
+      "source_location": "L1037",
       "weight": 1.0,
       "_src": "site_initglobaltoolseo",
       "_tgt": "site_istoolpage",
@@ -3120,7 +3120,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1085",
+      "source_location": "L1127",
       "weight": 1.0,
       "_src": "site_initsuggestions",
       "_tgt": "site_istoolpage",
@@ -3132,7 +3132,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1478",
+      "source_location": "L1520",
       "weight": 1.0,
       "_src": "site_initrelatedtools",
       "_tgt": "site_istoolpage",
@@ -3156,7 +3156,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L620",
+      "source_location": "L658",
       "weight": 1.0,
       "_src": "site_inithomeexperience",
       "_tgt": "site_ishomepage",
@@ -3168,7 +3168,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L850",
+      "source_location": "L892",
       "weight": 1.0,
       "_src": "site_initstandardpageexperience",
       "_tgt": "site_ishomepage",
@@ -3252,7 +3252,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1561",
+      "source_location": "L1603",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_decoratesiteshell",
@@ -3264,7 +3264,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1572",
+      "source_location": "L1614",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_decorateadslots",
@@ -3276,7 +3276,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1573",
+      "source_location": "L1615",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_initresponsiveads",
@@ -3288,7 +3288,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1574",
+      "source_location": "L1616",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_initscrollreveal",
@@ -3300,7 +3300,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1575",
+      "source_location": "L1617",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_initinteractivemotion",
@@ -3312,7 +3312,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1481",
+      "source_location": "L1523",
       "weight": 1.0,
       "_src": "site_initrelatedtools",
       "_tgt": "site_gethomecategory",
@@ -3324,7 +3324,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1570",
+      "source_location": "L1612",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_inithomeexperience",
@@ -3336,7 +3336,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L766",
+      "source_location": "L808",
       "weight": 1.0,
       "_src": "site_makesectioncollapsible",
       "_tgt": "site_getsectionsummary",
@@ -3348,7 +3348,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1571",
+      "source_location": "L1613",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_inittoolpageexperience",
@@ -3360,7 +3360,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1569",
+      "source_location": "L1611",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_initstandardpageexperience",
@@ -3372,7 +3372,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1003",
+      "source_location": "L1045",
       "weight": 1.0,
       "_src": "site_initglobaltoolseo",
       "_tgt": "site_hasschematype",
@@ -3384,7 +3384,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1004",
+      "source_location": "L1046",
       "weight": 1.0,
       "_src": "site_initglobaltoolseo",
       "_tgt": "site_injectjsonld",
@@ -3396,7 +3396,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L997",
+      "source_location": "L1039",
       "weight": 1.0,
       "_src": "site_initglobaltoolseo",
       "_tgt": "site_normalizetoolname",
@@ -3408,7 +3408,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1480",
+      "source_location": "L1522",
       "weight": 1.0,
       "_src": "site_initrelatedtools",
       "_tgt": "site_normalizetoolname",
@@ -3420,7 +3420,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L938",
+      "source_location": "L980",
       "weight": 1.0,
       "_src": "site_ensurebreadcrumbnav",
       "_tgt": "site_escapehtml",
@@ -3432,7 +3432,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1001",
+      "source_location": "L1043",
       "weight": 1.0,
       "_src": "site_initglobaltoolseo",
       "_tgt": "site_ensurebreadcrumbnav",
@@ -3444,7 +3444,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1016",
+      "source_location": "L1058",
       "weight": 1.0,
       "_src": "site_initglobaltoolseo",
       "_tgt": "site_collectfaqentities",
@@ -3456,7 +3456,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1566",
+      "source_location": "L1608",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_initglobaltoolseo",
@@ -3468,7 +3468,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1079",
+      "source_location": "L1121",
       "weight": 1.0,
       "_src": "site_handoffandgo",
       "_tgt": "site_sethandoff",
@@ -3480,7 +3480,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1113",
+      "source_location": "L1155",
       "weight": 1.0,
       "_src": "site_initsuggestions",
       "_tgt": "site_loadsuggestions",
@@ -3492,7 +3492,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1568",
+      "source_location": "L1610",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_initsuggestions",
@@ -3504,7 +3504,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1191",
+      "source_location": "L1233",
       "weight": 1.0,
       "_src": "site_submitsuggestion",
       "_tgt": "site_loadsuggestions",
@@ -3516,7 +3516,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1218",
+      "source_location": "L1260",
       "weight": 1.0,
       "_src": "site_likesuggestion",
       "_tgt": "site_loadsuggestions",
@@ -3528,7 +3528,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1201",
+      "source_location": "L1243",
       "weight": 1.0,
       "_src": "site_likesuggestion",
       "_tgt": "site_getuserid",
@@ -3540,7 +3540,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1576",
+      "source_location": "L1618",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_enhancefooter",
@@ -3552,7 +3552,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "D:\\ToolsMatic\\assets\\site.js",
-      "source_location": "L1567",
+      "source_location": "L1609",
       "weight": 1.0,
       "_src": "site_boot",
       "_tgt": "site_initrelatedtools",

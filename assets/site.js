@@ -563,8 +563,46 @@
     { url: '/tools/sitemap-generator.html', title: 'Sitemap Generator', description: 'Generate XML and HTML sitemaps with audits and robots.txt helper output.', category: 'Developer' },
     { url: '/tools/open-graph-generator.html', title: 'Open Graph Generator', description: 'Build share-ready Open Graph tags for social previews.', category: 'Developer' },
     { url: '/tools/twitter-card-generator.html', title: 'Twitter Card Generator', description: 'Create X and Twitter card tags with clean preview metadata.', category: 'Developer' },
-    { url: '/tools/wifi-qr-code-generator.html', title: 'WiFi QR Code Generator', description: 'Generate scannable WiFi QR codes for easy network sharing.', category: 'Design' }
+    { url: '/tools/wifi-qr-code-generator.html', title: 'WiFi QR Code Generator', description: 'Generate scannable WiFi QR codes for easy network sharing.', category: 'Design' },
+    { url: '/tools/merge-pdf.html', title: 'Merge PDF', description: 'Combine multiple PDFs into one private browser file.', category: 'PDF' },
+    { url: '/tools/split-pdf.html', title: 'Split PDF', description: 'Divide a PDF into separate files or page ranges.', category: 'PDF' },
+    { url: '/tools/remove-pages.html', title: 'Remove PDF Pages', description: 'Delete unwanted pages from a PDF locally.', category: 'PDF' },
+    { url: '/tools/extract-pages.html', title: 'Extract PDF Pages', description: 'Pull selected pages into a new PDF document.', category: 'PDF' },
+    { url: '/tools/reorder-pages.html', title: 'Reorder PDF Pages', description: 'Rearrange PDF pages with a visual workflow.', category: 'PDF' },
+    { url: '/tools/rotate-pdf.html', title: 'Rotate PDF', description: 'Fix sideways or upside-down PDF pages quickly.', category: 'PDF' },
+    { url: '/tools/crop-pdf.html', title: 'Crop PDF', description: 'Trim margins and clean scanned PDF pages.', category: 'PDF' },
+    { url: '/tools/watermark-pdf.html', title: 'Watermark PDF', description: 'Add text or image watermarks to PDF files.', category: 'PDF' },
+    { url: '/tools/page-numbers-pdf.html', title: 'Add PDF Page Numbers', description: 'Insert page numbers with flexible placement.', category: 'PDF' },
+    { url: '/tools/flatten-pdf.html', title: 'Flatten PDF', description: 'Make form fields and annotations permanent.', category: 'PDF' },
+    { url: '/tools/sign-pdf.html', title: 'Sign PDF', description: 'Draw, type, and place signatures in your browser.', category: 'PDF' },
+    { url: '/tools/fill-pdf-form.html', title: 'PDF Form Filler', description: 'Fill PDF forms without uploading documents.', category: 'PDF' },
+    { url: '/tools/redact-pdf.html', title: 'Redact PDF', description: 'Hide sensitive text and areas in PDF files.', category: 'PDF' },
+    { url: '/tools/annotate-pdf.html', title: 'Annotate PDF', description: 'Highlight, underline, draw, and comment on PDFs.', category: 'PDF' },
+    { url: '/tools/compare-pdf.html', title: 'Compare PDF', description: 'Compare two PDF versions side by side.', category: 'PDF' },
+    { url: '/tools/jpg-to-pdf.html', title: 'JPG to PDF', description: 'Convert images into a clean PDF document.', category: 'PDF' },
+    { url: '/tools/pdf-to-jpg.html', title: 'PDF to JPG', description: 'Export PDF pages as image files.', category: 'PDF' },
+    { url: '/tools/pdf-webp-converter.html', title: 'PDF WebP Converter', description: 'Convert between PDF pages and WebP images.', category: 'PDF' },
+    { url: '/tools/txt-to-pdf.html', title: 'TXT to PDF', description: 'Turn plain text files into formatted PDFs.', category: 'PDF' },
+    { url: '/tools/pdf-to-base64.html', title: 'PDF to Base64', description: 'Encode PDFs as Base64 strings for web use.', category: 'PDF' },
+    { url: '/tools/protect-pdf.html', title: 'Protect PDF', description: 'Add password protection to PDF documents.', category: 'PDF' },
+    { url: '/tools/unlock-pdf.html', title: 'Unlock PDF', description: 'Remove PDF passwords when you have access.', category: 'PDF' },
+    { url: '/tools/compress-pdf.html', title: 'Compress PDF', description: 'Reduce PDF file size with local processing.', category: 'PDF' },
+    { url: '/tools/pdf-reader.html', title: 'PDF Reader', description: 'View PDFs with search, zoom, and thumbnails.', category: 'PDF' },
+    { url: '/tools/add-pdf-headers.html', title: 'Add PDF Headers', description: 'Add headers, labels, dates, or exhibit text.', category: 'PDF' },
+    { url: '/tools/add-pdf-margins.html', title: 'Add PDF Margins', description: 'Create printable margins for binding or notes.', category: 'PDF' },
+    { url: '/tools/edit-pdf-metadata.html', title: 'Edit PDF Metadata', description: 'Update PDF title, author, subject, and keywords.', category: 'PDF' },
+    { url: '/tools/extract-pdf-images.html', title: 'Extract PDF Images', description: 'Pull embedded images and assets from PDFs.', category: 'PDF' },
+    { url: '/tools/grayscale-pdf.html', title: 'Grayscale PDF', description: 'Convert PDF pages to black-and-white output.', category: 'PDF' },
+    { url: '/tools/html-to-pdf.html', title: 'HTML to PDF', description: 'Convert HTML snippets into PDF documents.', category: 'PDF' },
+    { url: '/tools/pdf-text-converter.html', title: 'PDF Text Converter', description: 'Extract readable text from PDF documents.', category: 'PDF' },
+    { url: '/tools/remove-pdf-metadata.html', title: 'Remove PDF Metadata', description: 'Sanitize hidden PDF metadata for privacy.', category: 'PDF' },
+    { url: '/tools/repair-pdf.html', title: 'Repair PDF', description: 'Try to recover damaged or corrupted PDF files.', category: 'PDF' },
+    { url: '/tools/resize-pdf-pages.html', title: 'Resize PDF Pages', description: 'Scale PDF pages to A4, Letter, or custom size.', category: 'PDF' },
+    { url: '/tools/merge-pdf-free.html', title: 'Merge PDF Free', description: 'A focused free PDF merging workflow.', category: 'PDF' },
+    { url: '/tools/compress-pdf-free.html', title: 'Compress PDF Free', description: 'A focused free PDF compression workflow.', category: 'PDF' }
   ];
+
+  const HOME_TOOL_COUNT = TOOL_CATALOG.length;
 
   const getHomeCategory = (title) => {
     const key = (title || '').trim().toLowerCase();
@@ -628,6 +666,10 @@
     main.querySelector('.home-toolbar')?.remove();
 
     const cards = Array.from(hero.querySelectorAll('.card'));
+    const displayedToolCount = cards.length || HOME_TOOL_COUNT;
+    document.querySelectorAll('[data-tool-count]').forEach((node) => {
+      node.textContent = `${displayedToolCount} tools ready`;
+    });
     let grids = Array.from(hero.querySelectorAll('.grid'));
 
     cards.forEach((card, index) => {

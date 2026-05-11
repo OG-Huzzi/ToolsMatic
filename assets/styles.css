@@ -42,6 +42,133 @@ body {
   min-height: 100vh;
 }
 
+html.light-mode {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --accent: #0891b2;
+  --primary: #0891b2;
+  --accent-2: #9333ea;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --surface: #f1f5f9;
+  --input-bg: #ffffff;
+  --elevated: rgba(0, 0, 0, 0.04);
+  --text-secondary: #475569;
+  --accent-color: #0891b2;
+  --border-color: #e2e8f0;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+  --text-primary: #0f172a;
+}
+
+html.light-mode body {
+  background: radial-gradient(circle at 20% 20%, rgba(8, 145, 178, 0.06), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(147, 51, 234, 0.06), transparent 28%),
+    var(--bg);
+}
+
+html.light-mode header {
+  background: rgba(248, 250, 252, 0.85);
+  border-bottom-color: var(--border);
+}
+
+html.light-mode .card {
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+html.light-mode .card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(8, 145, 178, 0.1);
+}
+
+html.light-mode .tool-shell,
+html.light-mode .section {
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+html.light-mode textarea,
+html.light-mode input[type="text"],
+html.light-mode input[type="number"],
+html.light-mode input[type="url"],
+html.light-mode input[type="search"],
+html.light-mode input[type="email"],
+html.light-mode select {
+  background: var(--input-bg);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html.light-mode button {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html.light-mode button:hover {
+  border-color: var(--accent);
+  background: rgba(8, 145, 178, 0.08);
+}
+
+html.light-mode button[data-primary] {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+html.light-mode button[data-primary]:hover {
+  background: #0e7490;
+}
+
+html.light-mode footer {
+  background: var(--surface);
+  border-top-color: var(--border);
+  color: var(--muted);
+}
+
+html.light-mode .site-orb {
+  opacity: 0.3;
+}
+
+html.light-mode .pill {
+  background: rgba(8, 145, 178, 0.08);
+  border-color: rgba(8, 145, 178, 0.2);
+  color: var(--accent);
+}
+
+html.light-mode .toast {
+  background: var(--card);
+  color: var(--text);
+  border-color: var(--border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+html.light-mode details {
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+html.light-mode code {
+  background: rgba(8, 145, 178, 0.08);
+  color: #0e7490;
+}
+
+html.light-mode .nav-search input {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html.light-mode .home-empty-state {
+  color: var(--muted);
+}
+
+
+
 img,
 svg,
 video,

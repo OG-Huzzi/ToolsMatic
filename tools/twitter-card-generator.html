@@ -16,6 +16,8 @@
   <meta name="keywords" content="meta tag generator, open graph generator, twitter card generator, meta description generator, canonical tag generator, robots meta generator, json-ld generator">
   <meta name="author" content="ToolsMatic">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://toolsmatic.me/tools/twitter-card-generator.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toolsmatic.me/tools/twitter-card-generator.html">
@@ -605,7 +607,9 @@
           `<title>${escapeHtml(state.title)}</title>`,
           `<meta name="description" content="Use Twitter Card Generator on ToolsMatic with private browser-based controls, live results, no sign-up, and focused guidance for this exact workflow.">`,
           `<link rel="canonical" href="https://toolsmatic.me/tools/twitter-card-generator.html">`,
-          `<meta name="robots" content="${escapeHtml(state.robots)}">`,
+          `<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">`,
           state.includeKeywords && state.keywords ? `<meta name="keywords" content="${escapeHtml(state.keywords)}">` : '',
           state.includeThemeColor ? `<meta name="theme-color" content="#0b1624">` : '',
           ogBlock,

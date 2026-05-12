@@ -163,6 +163,28 @@ html.light-mode .nav-search input {
   color: var(--text);
 }
 
+html.light-mode .nav-search-dropdown,
+html.light-mode .tool-finder-panel {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: var(--border);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
+}
+
+html.light-mode .tool-search-result,
+html.light-mode .tool-finder-input {
+  background: var(--input-bg);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html.light-mode .nav-search-shortcut,
+html.light-mode .tool-search-chip,
+html.light-mode .tool-search-empty {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--muted);
+}
+
 html.light-mode .home-empty-state {
   color: var(--muted);
 }
@@ -950,6 +972,23 @@ code {
     min-height: 0;
   }
 
+  .nav-search input {
+    min-height: 46px;
+    padding-right: 64px;
+  }
+
+  .nav-search-dropdown {
+    left: 0;
+    right: auto;
+    width: min(100%, calc(100vw - 32px));
+    min-width: 0;
+  }
+
+  .tool-search-result {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
   textarea,
   input,
   select,
@@ -1466,12 +1505,13 @@ header::after {
   display: block;
   flex: 1 1 320px;
   min-width: clamp(220px, 28vw, 380px);
+  position: relative;
 }
 
 .nav-search input {
   width: 100%;
   min-height: 48px;
-  padding: 12px 18px;
+  padding: 12px 72px 12px 18px;
   border-radius: 999px;
   border: 1px solid rgba(146, 167, 192, 0.18);
   background: rgba(3, 17, 29, 0.72);
@@ -1481,6 +1521,229 @@ header::after {
 
 .nav-search input::placeholder {
   color: var(--text-secondary);
+}
+
+.nav-search-shortcut {
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 26px;
+  padding: 0 9px;
+  border: 1px solid rgba(146, 167, 192, 0.18);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+.nav-search-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  z-index: 80;
+  display: none;
+  min-width: min(560px, calc(100vw - 32px));
+  padding: 12px;
+  border: 1px solid rgba(146, 167, 192, 0.18);
+  border-radius: 24px;
+  background: rgba(8, 17, 31, 0.96);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(22px);
+}
+
+.nav-search-dropdown.is-open {
+  display: grid;
+  gap: 10px;
+}
+
+.nav-search-chips,
+.tool-finder-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tool-search-chip {
+  width: auto;
+  min-height: 34px;
+  padding: 8px 11px;
+  border: 1px solid rgba(146, 167, 192, 0.18);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tool-search-chip.is-active,
+.tool-search-chip:hover {
+  border-color: transparent;
+  color: #03111d;
+  background: linear-gradient(135deg, var(--accent), #60a5fa);
+}
+
+.tool-search-result {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 0;
+  padding: 13px 14px;
+  border: 1px solid rgba(146, 167, 192, 0.14);
+  border-radius: 18px;
+  color: var(--text);
+  background: rgba(3, 17, 29, 0.62);
+  text-align: left;
+  cursor: pointer;
+}
+
+.tool-search-result:hover,
+.tool-search-result.is-active {
+  border-color: rgba(34, 211, 238, 0.44);
+  background: rgba(34, 211, 238, 0.09);
+}
+
+.tool-search-result-main {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.tool-search-result strong {
+  color: var(--text);
+  font-size: 0.94rem;
+}
+
+.tool-search-result span span {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.tool-search-result em {
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(34, 211, 238, 0.1);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.tool-search-empty {
+  padding: 14px;
+  border: 1px dashed rgba(146, 167, 192, 0.2);
+  border-radius: 18px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.tool-finder {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  padding: clamp(16px, 7vh, 70px) 16px 24px;
+  background: rgba(3, 10, 18, 0.72);
+  backdrop-filter: blur(12px);
+}
+
+.tool-finder.is-open {
+  display: block;
+}
+
+.tool-finder-panel {
+  width: min(820px, 100%);
+  max-height: min(760px, calc(100vh - 32px));
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid rgba(146, 167, 192, 0.18);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.16), transparent 260px),
+    radial-gradient(circle at 90% 10%, rgba(96, 165, 250, 0.16), transparent 240px),
+    rgba(8, 17, 31, 0.98);
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.55);
+}
+
+.tool-finder-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.tool-finder-kicker {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.tool-finder h2 {
+  margin: 4px 0 0;
+  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  letter-spacing: -0.05em;
+}
+
+.tool-finder-close {
+  width: 42px;
+  min-height: 42px;
+  border-radius: 999px;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.tool-finder-input-wrap {
+  display: block;
+}
+
+.tool-finder-input {
+  width: 100%;
+  min-height: 64px;
+  padding: 16px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(146, 167, 192, 0.22);
+  color: var(--text);
+  background: rgba(3, 17, 29, 0.78);
+  font-size: 1.02rem;
+  outline: none;
+}
+
+.tool-finder-input:focus,
+.nav-search input:focus {
+  border-color: rgba(34, 211, 238, 0.55);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.1);
+}
+
+.tool-finder-results {
+  display: grid;
+  gap: 10px;
+}
+
+.tool-finder-help {
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+}
+
+.tool-finder-open {
+  overflow: hidden;
 }
 
 .nav-links a:hover,

@@ -33,6 +33,7 @@
         if (primary) { e.preventDefault(); primary.click(); }
       }
       if (e.key === 'Escape') {
+        if (document.body.classList.contains('tool-finder-open')) return;
         const clearBtn = document.querySelector('[data-clear]');
         if (clearBtn) { e.preventDefault(); clearBtn.click(); }
       }
@@ -604,6 +605,417 @@
 
   const HOME_TOOL_COUNT = TOOL_CATALOG.length;
 
+  const SEARCH_CATEGORY_KEYWORDS = {
+    PDF: 'pdf document file page pages merge split compress shrink reduce sign signature watermark protect unlock password metadata image jpg webp text repair rotate crop annotate redact form reader headers margins',
+    Writing: 'text words characters count writing markdown quote ascii case lorem ipsum diff typing paragraph sentence copy social caption essay',
+    Developer: 'developer code json regex jwt token base64 url uuid hash checksum html css minify format validate encode decode seo robots sitemap metadata open graph twitter card slug password',
+    Design: 'design color colours palette picker gradient contrast wcag qr code image compress visual foreground background accessibility',
+    Everyday: 'everyday timer stopwatch pomodoro focus timezone time zone unit converter measurement productivity reaction reflex',
+    Data: 'data csv json table spreadsheet rows columns delimiter inspect convert flatten export'
+  };
+
+  const TOOL_SEARCH_ALIASES = {
+    'Word Counter': 'count words word count essay length paragraph sentence reading time writing stats',
+    'Character Counter': 'character count char limit remaining twitter x instagram linkedin sms meta description density',
+    'Password Generator': 'random password memorable passphrase secure strong login credentials',
+    'Typing Speed Test': 'wpm keyboard accuracy typing test words per minute',
+    'ASCII Art Generator': 'text art banner ascii font terminal',
+    'Case Converter': 'uppercase lowercase title case sentence case capitalize text cleanup',
+    'Gradient Generator': 'css gradient background linear radial conic color stops',
+    'Contrast Checker': 'wcag accessibility color contrast ratio readable text',
+    'JSON Formatter': 'format json beautify minify validate repair tree schema compare',
+    'Hash Generator': 'sha md5 checksum digest hmac verify file hash',
+    'Base64 Encoder': 'encode decode base64 string data uri',
+    'Image Compressor': 'compress image reduce image size jpg png webp optimize',
+    'QR Code Maker': 'qr generator qr code url link scan',
+    'JWT Inspector': 'jwt decoder token claims bearer auth inspect validate',
+    'Markdown Previewer': 'markdown preview md html render editor',
+    'Regex Tester': 'regular expression test pattern match pcre javascript regex',
+    'UUID Maker': 'uuid guid random id identifier v4 v7',
+    'URL Encoder': 'url encode decode percent encoding uri component',
+    'Color Picker': 'hex rgb hsl color picker palette',
+    'Unit Converter': 'convert units length weight temperature volume speed',
+    'Timezone Converter': 'time zone converter city world clock utc meeting',
+    'Pomodoro Timer': 'focus timer productivity sessions break task',
+    'Stopwatch & Timer': 'stopwatch countdown timer lap multi timer',
+    'Text Diff Checker': 'compare text diff changes difference revisions',
+    'CSV to JSON': 'csv json convert rows columns spreadsheet',
+    'JSON to CSV': 'json csv convert flatten table spreadsheet',
+    'HTML Minifier': 'minify html compress markup',
+    'CSS Minifier': 'minify css beautify format validate prefixes',
+    'Slug Generator': 'seo slug url permalink clean url',
+    'Meta Tag Generator': 'seo title description meta tags social preview',
+    'Robots.txt Generator': 'robots txt crawl rules search engine',
+    'Sitemap Generator': 'xml sitemap urls indexing search console',
+    'Compress PDF': 'reduce pdf size shrink pdf file smaller email upload',
+    'Merge PDF': 'combine pdf join pdf multiple files',
+    'Split PDF': 'separate pdf extract pages divide pdf',
+    'Remove PDF Pages': 'delete pdf pages remove page',
+    'Extract PDF Pages': 'save selected pdf pages extract range',
+    'Reorder PDF Pages': 'organize pdf pages rearrange order',
+    'Rotate PDF': 'rotate pdf page sideways fix orientation',
+    'Crop PDF': 'trim pdf margins crop scanned pages',
+    'Watermark PDF': 'add watermark draft confidential brand',
+    'Sign PDF': 'signature sign document draw type sign',
+    'Protect PDF': 'password protect pdf encrypt secure',
+    'Unlock PDF': 'remove pdf password unlock',
+    'PDF Reader': 'view pdf search zoom thumbnails open pdf',
+    'PDF Text Converter': 'extract text from pdf convert pdf text',
+    'JPG to PDF': 'image to pdf photo to pdf',
+    'PDF to JPG': 'pdf to image export pages',
+    'PDF WebP Converter': 'webp pdf convert image pages'
+  };
+
+  const normalizeSearchText = (value) => (value || '')
+    .toString()
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const editDistance = (a, b) => {
+    if (!a || !b) return Math.max(a.length, b.length);
+    if (Math.abs(a.length - b.length) > 2) return 99;
+    const dp = Array.from({ length: a.length + 1 }, (_, i) => [i]);
+    for (let j = 1; j <= b.length; j += 1) dp[0][j] = j;
+    for (let i = 1; i <= a.length; i += 1) {
+      for (let j = 1; j <= b.length; j += 1) {
+        dp[i][j] = Math.min(
+          dp[i - 1][j] + 1,
+          dp[i][j - 1] + 1,
+          dp[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+        );
+      }
+    }
+    return dp[a.length][b.length];
+  };
+
+  const isCloseSearchToken = (token, haystack) => {
+    if (!token || token.length < 4) return false;
+    return haystack.split(' ').some((word) => word.length >= 4 && editDistance(token, word) <= (token.length > 6 ? 2 : 1));
+  };
+
+  const getToolSearchText = (tool) => normalizeSearchText([
+    tool.title,
+    tool.description,
+    tool.category,
+    tool.url,
+    TOOL_SEARCH_ALIASES[tool.title],
+    SEARCH_CATEGORY_KEYWORDS[tool.category]
+  ].filter(Boolean).join(' '));
+
+  const scoreToolMatch = (tool, rawQuery, activeCategory = 'All') => {
+    const query = normalizeSearchText(rawQuery);
+    const title = normalizeSearchText(tool.title);
+    const category = normalizeSearchText(tool.category);
+    const searchText = getToolSearchText(tool);
+    let score = 0;
+
+    if (activeCategory !== 'All' && tool.category !== activeCategory) return -1;
+    if (!query) return activeCategory === 'All' ? 1 : 12;
+
+    const tokens = query.split(' ').filter(Boolean);
+    if (title === query) score += 120;
+    if (title.startsWith(query)) score += 90;
+    if (title.includes(query)) score += 65;
+    if (category === query) score += 45;
+    if (searchText.includes(query)) score += 35;
+
+    tokens.forEach((token) => {
+      if (title.includes(token)) score += 26;
+      else if (category.includes(token)) score += 18;
+      else if (searchText.includes(token)) score += 12;
+      else if (isCloseSearchToken(token, searchText)) score += 6;
+      else score -= 18;
+    });
+
+    return score;
+  };
+
+  const getToolSearchResults = (query, activeCategory = 'All', limit = 10) => {
+    const normalizedQuery = normalizeSearchText(query);
+    if (!normalizedQuery) {
+      return TOOL_CATALOG
+        .filter((tool) => activeCategory === 'All' || tool.category === activeCategory)
+        .slice(0, limit);
+    }
+    return TOOL_CATALOG
+      .map((tool) => ({ tool, score: scoreToolMatch(tool, normalizedQuery, activeCategory) }))
+      .filter((item) => item.score > 0)
+      .sort((a, b) => b.score - a.score || a.tool.title.localeCompare(b.tool.title))
+      .slice(0, limit)
+      .map((item) => item.tool);
+  };
+
+  const getToolCategories = () => ['All', ...Array.from(new Set(TOOL_CATALOG.map((tool) => tool.category))).sort()];
+
+  const initGlobalToolFinder = () => {
+    const navLinks = document.querySelector('header .nav-links');
+    if (!navLinks || document.body.dataset.toolFinderReady === 'true') return;
+    document.body.dataset.toolFinderReady = 'true';
+
+    const allToolsLink = navLinks.querySelector('.nav-btn');
+    let headerSearch = navLinks.querySelector('.nav-search');
+    if (!headerSearch) {
+      headerSearch = document.createElement('label');
+      headerSearch.className = 'nav-search smart-tool-search';
+
+      const searchLabel = document.createElement('span');
+      searchLabel.className = 'sr-only';
+      searchLabel.textContent = 'Search tools';
+
+      const searchInput = document.createElement('input');
+      searchInput.type = 'search';
+      searchInput.placeholder = `Search ${HOME_TOOL_COUNT} tools...`;
+      searchInput.setAttribute('aria-label', 'Search tools');
+      searchInput.autocomplete = 'off';
+
+      const shortcut = document.createElement('span');
+      shortcut.className = 'nav-search-shortcut';
+      shortcut.textContent = 'Ctrl K';
+
+      headerSearch.append(searchLabel, searchInput, shortcut);
+      navLinks.insertBefore(headerSearch, allToolsLink || navLinks.firstChild);
+    } else {
+      headerSearch.classList.add('smart-tool-search');
+      if (!headerSearch.querySelector('.nav-search-shortcut')) {
+        const shortcut = document.createElement('span');
+        shortcut.className = 'nav-search-shortcut';
+        shortcut.textContent = 'Ctrl K';
+        headerSearch.appendChild(shortcut);
+      }
+    }
+
+    const searchInput = headerSearch.querySelector('input[type="search"]');
+    if (!searchInput) return;
+    searchInput.placeholder = `Search ${HOME_TOOL_COUNT} tools...`;
+
+    const finder = document.createElement('div');
+    finder.className = 'tool-finder';
+    finder.innerHTML = `
+      <div class="tool-finder-panel" role="dialog" aria-modal="true" aria-label="Search ToolsMatic tools">
+        <div class="tool-finder-top">
+          <div>
+            <span class="tool-finder-kicker">Tool Finder</span>
+            <h2>Find any tool instantly</h2>
+          </div>
+          <button class="tool-finder-close" type="button" aria-label="Close tool finder">&times;</button>
+        </div>
+        <label class="tool-finder-input-wrap">
+          <span class="sr-only">Search all tools</span>
+          <input class="tool-finder-input" type="search" placeholder="Try: make PDF smaller, format JSON, color contrast..." autocomplete="off">
+        </label>
+        <div class="tool-finder-chips" aria-label="Filter tools by category"></div>
+        <div class="tool-finder-results" role="listbox" aria-label="Tool search results"></div>
+        <div class="tool-finder-help">Use Up / Down to move, Enter to open, Esc to close.</div>
+      </div>
+    `;
+    document.body.appendChild(finder);
+
+    const dropdown = document.createElement('div');
+    dropdown.className = 'nav-search-dropdown';
+    dropdown.setAttribute('role', 'listbox');
+    dropdown.setAttribute('aria-label', 'Tool search suggestions');
+    headerSearch.appendChild(dropdown);
+
+    const paletteInput = finder.querySelector('.tool-finder-input');
+    const paletteResults = finder.querySelector('.tool-finder-results');
+    const paletteChips = finder.querySelector('.tool-finder-chips');
+    const closeButton = finder.querySelector('.tool-finder-close');
+    let activeCategory = 'All';
+    let activeIndex = 0;
+
+    const setRecentTool = (tool) => {
+      try {
+        const recent = JSON.parse(localStorage.getItem('toolsmatic-recent-tools') || '[]');
+        const next = [tool.url, ...recent.filter((url) => url !== tool.url)].slice(0, 8);
+        localStorage.setItem('toolsmatic-recent-tools', JSON.stringify(next));
+      } catch (e) {}
+    };
+
+    const openTool = (tool) => {
+      if (!tool) return;
+      setRecentTool(tool);
+      window.location.href = tool.url;
+    };
+
+    const buildResultButton = (tool, index, source) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = `tool-search-result${index === activeIndex ? ' is-active' : ''}`;
+      button.setAttribute('role', 'option');
+      button.innerHTML = `
+        <span class="tool-search-result-main">
+          <strong>${tool.title}</strong>
+          <span>${tool.description}</span>
+        </span>
+        <em>${tool.category}</em>
+      `;
+      button.addEventListener('mouseenter', () => {
+        activeIndex = index;
+        const scope = source === 'dropdown' ? dropdown : paletteResults;
+        scope.querySelectorAll('.tool-search-result').forEach((node, nodeIndex) => {
+          node.classList.toggle('is-active', nodeIndex === activeIndex);
+        });
+      });
+      button.addEventListener('click', () => openTool(tool));
+      return button;
+    };
+
+    const renderDropdown = () => {
+      const query = searchInput.value.trim();
+      const results = getToolSearchResults(query, activeCategory, 6);
+      dropdown.innerHTML = '';
+      const chips = document.createElement('div');
+      chips.className = 'nav-search-chips';
+      getToolCategories().forEach((category) => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = `tool-search-chip${category === activeCategory ? ' is-active' : ''}`;
+        chip.textContent = category;
+        chip.addEventListener('mousedown', (e) => e.preventDefault());
+        chip.addEventListener('click', () => {
+          activeCategory = category;
+          renderDropdown();
+          renderPalette();
+        });
+        chips.appendChild(chip);
+      });
+      dropdown.appendChild(chips);
+      if (!results.length) {
+        const empty = document.createElement('div');
+        empty.className = 'tool-search-empty';
+        empty.textContent = 'No exact match. Try a task like "compress PDF" or "format code".';
+        dropdown.appendChild(empty);
+      } else {
+        results.forEach((tool, index) => dropdown.appendChild(buildResultButton(tool, index, 'dropdown')));
+      }
+      dropdown.classList.add('is-open');
+    };
+
+    const renderChips = () => {
+      paletteChips.innerHTML = '';
+      getToolCategories().forEach((category) => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = `tool-search-chip${category === activeCategory ? ' is-active' : ''}`;
+        chip.textContent = category;
+        chip.addEventListener('click', () => {
+          activeCategory = category;
+          activeIndex = 0;
+          renderPalette();
+          renderDropdown();
+        });
+        paletteChips.appendChild(chip);
+      });
+    };
+
+    const renderResults = (source = 'palette') => {
+      const query = (source === 'dropdown' ? searchInput.value : paletteInput.value).trim();
+      const results = getToolSearchResults(query, activeCategory, 12);
+      paletteResults.innerHTML = '';
+      activeIndex = Math.min(activeIndex, Math.max(results.length - 1, 0));
+      if (!results.length) {
+        const empty = document.createElement('div');
+        empty.className = 'tool-search-empty';
+        empty.textContent = 'No matching tools yet. Try "pdf", "json", "color", "timer", or "seo".';
+        paletteResults.appendChild(empty);
+        return;
+      }
+      results.forEach((tool, index) => paletteResults.appendChild(buildResultButton(tool, index, 'palette')));
+    };
+
+    const renderPalette = () => {
+      renderChips();
+      renderResults('palette');
+    };
+
+    const openPalette = (query = '') => {
+      finder.classList.add('is-open');
+      document.body.classList.add('tool-finder-open');
+      paletteInput.value = query || searchInput.value || '';
+      activeIndex = 0;
+      renderPalette();
+      setTimeout(() => paletteInput.focus(), 0);
+    };
+
+    const closePalette = () => {
+      finder.classList.remove('is-open');
+      document.body.classList.remove('tool-finder-open');
+    };
+
+    const moveActive = (direction, source) => {
+      const query = (source === 'dropdown' ? searchInput.value : paletteInput.value).trim();
+      const results = getToolSearchResults(query, activeCategory, source === 'dropdown' ? 6 : 12);
+      if (!results.length) return;
+      activeIndex = (activeIndex + direction + results.length) % results.length;
+      if (source === 'dropdown') renderDropdown();
+      else renderResults('palette');
+    };
+
+    const submitActive = (source) => {
+      const query = (source === 'dropdown' ? searchInput.value : paletteInput.value).trim();
+      const results = getToolSearchResults(query, activeCategory, source === 'dropdown' ? 6 : 12);
+      openTool(results[activeIndex] || results[0]);
+    };
+
+    searchInput.addEventListener('input', () => {
+      activeIndex = 0;
+      renderDropdown();
+      if (finder.classList.contains('is-open')) {
+        paletteInput.value = searchInput.value;
+        renderPalette();
+      }
+    });
+    searchInput.addEventListener('focus', renderDropdown);
+    searchInput.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') return;
+      if (e.key === 'ArrowDown') { e.preventDefault(); moveActive(1, 'dropdown'); }
+      if (e.key === 'ArrowUp') { e.preventDefault(); moveActive(-1, 'dropdown'); }
+      if (e.key === 'Enter') { e.preventDefault(); submitActive('dropdown'); }
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.remove('is-open');
+      }
+    });
+
+    paletteInput.addEventListener('input', () => {
+      activeIndex = 0;
+      renderPalette();
+    });
+    paletteInput.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); moveActive(1, 'palette'); }
+      if (e.key === 'ArrowUp') { e.preventDefault(); moveActive(-1, 'palette'); }
+      if (e.key === 'Enter') { e.preventDefault(); submitActive('palette'); }
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        e.stopPropagation();
+        closePalette();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        openPalette();
+      } else if (e.key === 'Escape' && (finder.classList.contains('is-open') || dropdown.classList.contains('is-open'))) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        dropdown.classList.remove('is-open');
+        closePalette();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!headerSearch.contains(e.target)) dropdown.classList.remove('is-open');
+      if (e.target === finder) closePalette();
+    });
+    closeButton.addEventListener('click', closePalette);
+    renderChips();
+  };
+
   const getHomeCategory = (title) => {
     const key = (title || '').trim().toLowerCase();
     if (key.includes('pdf') || key.includes('jpg to pdf') || key.includes('txt to pdf')) {
@@ -676,8 +1088,9 @@
       const title = card.querySelector('h3')?.textContent?.trim() || `Tool ${index + 1}`;
       const description = card.querySelector('p')?.textContent?.trim() || '';
       const category = getHomeCategory(title);
+      const catalogTool = TOOL_CATALOG.find((tool) => normalizeSearchText(tool.title) === normalizeSearchText(title));
       card.dataset.category = category;
-      card.dataset.search = `${title} ${description} ${category}`.toLowerCase();
+      card.dataset.search = catalogTool ? getToolSearchText(catalogTool) : normalizeSearchText(`${title} ${description} ${category}`);
 
       if (!card.querySelector('.card-meta')) {
         const meta = document.createElement('div');
@@ -763,8 +1176,8 @@
       emptyState.classList.toggle('is-active', visibleCount === 0);
     };
 
-    if (searchInput && !searchInput.dataset.bound) {
-      searchInput.dataset.bound = 'true';
+    if (searchInput && !searchInput.dataset.homeFilterBound) {
+      searchInput.dataset.homeFilterBound = 'true';
       searchInput.addEventListener('input', applyFilters);
     }
 
@@ -1406,6 +1819,7 @@
     if (typeof ensureLegacyAdScript === 'function') ensureLegacyAdScript();
     decorateSiteShell();
     initResponsiveNav();
+    initGlobalToolFinder();
     bindKeyboard();
     initThemeToggle();
     initAnalyticsTracking();

@@ -34,6 +34,38 @@ function Download-IfMissing([string]$Url, [string]$Path) {
   Invoke-WebRequest -UseBasicParsing -Uri $Url -OutFile $Path
 }
 
+function New-ExtensionIcon([int]$Size, [string]$Path) {
+  Add-Type -AssemblyName System.Drawing
+  $bitmap = New-Object System.Drawing.Bitmap $Size, $Size
+  $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
+  $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
+  $graphics.Clear([System.Drawing.Color]::Transparent)
+
+  $rect = New-Object System.Drawing.RectangleF 0, 0, $Size, $Size
+  $background = New-Object System.Drawing.Drawing2D.LinearGradientBrush $rect, ([System.Drawing.Color]::FromArgb(255, 8, 17, 32)), ([System.Drawing.Color]::FromArgb(255, 25, 36, 64)), 45
+  $graphics.FillEllipse($background, 1, 1, $Size - 2, $Size - 2)
+
+  $accent = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255, 97, 220, 242))
+  $barHeight = [Math]::Max(3, [int]($Size * 0.16))
+  $stemWidth = [Math]::Max(4, [int]($Size * 0.20))
+  $barY = [int]($Size * 0.31)
+  $barX = [int]($Size * 0.22)
+  $stemX = [int](($Size - $stemWidth) / 2)
+  $stemY = $barY
+  $stemHeight = [int]($Size * 0.44)
+  $graphics.FillRectangle($accent, $barX, $barY, $Size - ($barX * 2), $barHeight)
+
+  $stemBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255, 229, 237, 248))
+  $graphics.FillRectangle($stemBrush, $stemX, $stemY, $stemWidth, $stemHeight)
+
+  $baseBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255, 126, 136, 235))
+  $graphics.FillRectangle($baseBrush, $stemX, $stemY + $stemHeight - [int]($Size * 0.13), $stemWidth, [int]($Size * 0.13))
+
+  $graphics.Dispose()
+  $bitmap.Save($Path, [System.Drawing.Imaging.ImageFormat]::Png)
+  $bitmap.Dispose()
+}
+
 $tools = @(
   @{ slug="merge-pdf"; title="Merge PDF"; category="Organize"; description="Combine PDFs in the browser without uploading files." },
   @{ slug="split-pdf"; title="Split PDF"; category="Organize"; description="Extract ranges or split large documents into smaller PDFs." },
@@ -80,6 +112,9 @@ Ensure-Dir $distDir
 
 Copy-Item -LiteralPath (Join-Path $repoRoot "assets\pdf\*") -Destination $assetsPdfDir -Recurse -Force
 Copy-Item -LiteralPath (Join-Path $repoRoot "favicon.svg") -Destination (Join-Path $iconsDir "icon.svg") -Force
+New-ExtensionIcon 16 (Join-Path $iconsDir "icon16.png")
+New-ExtensionIcon 48 (Join-Path $iconsDir "icon48.png")
+New-ExtensionIcon 128 (Join-Path $iconsDir "icon128.png")
 
 Download-IfMissing "https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" (Join-Path $vendorDir "pdf-lib.min.js")
 Download-IfMissing "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" (Join-Path $vendorDir "pdf.min.js")
@@ -108,6 +143,7 @@ foreach ($tool in $tools) {
   $html = [regex]::Replace($html, '(?im)^\s*<link[^>]+fonts\.googleapis\.com[^>]*>\s*$', '')
   $html = [regex]::Replace($html, '(?im)^\s*<link[^>]+fonts\.gstatic\.com[^>]*>\s*$', '')
   $html = [regex]::Replace($html, '(?im)^\s*<link[^>]+rel=["'']manifest["''][^>]*>\s*$', '')
+  $html = [regex]::Replace($html, '(?is)\s*<section[^>]*class=["''][^"'']*ad-slot[^"'']*["''][^>]*>.*?</section>\s*', '')
   $html = [regex]::Replace($html, '(?is)\s*<section[^>]*>\s*<iframe[^>]+fixesconsessionconsession\.com/e61a3745429623f25315f86052a3ab7b/invoke\.js[^>]*></iframe>\s*</section>\s*', '')
   $html = [regex]::Replace($html, '(?is)\s*<iframe[^>]+fixesconsessionconsession\.com/e61a3745429623f25315f86052a3ab7b/invoke\.js[^>]*></iframe>\s*', '')
   $html = $html.Replace("https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js", "/vendor/pdf-lib.min.js")
@@ -140,15 +176,15 @@ $manifest = [ordered]@{
     default_title = "ToolsMatic PDF Toolkit"
     default_popup = "popup.html"
     default_icon = [ordered]@{
-      "16" = "icons/icon.svg"
-      "48" = "icons/icon.svg"
-      "128" = "icons/icon.svg"
+      "16" = "icons/icon16.png"
+      "48" = "icons/icon48.png"
+      "128" = "icons/icon128.png"
     }
   }
   icons = [ordered]@{
-    "16" = "icons/icon.svg"
-    "48" = "icons/icon.svg"
-    "128" = "icons/icon.svg"
+    "16" = "icons/icon16.png"
+    "48" = "icons/icon48.png"
+    "128" = "icons/icon128.png"
   }
   options_page = "app.html"
   sandbox = [ordered]@{
@@ -203,7 +239,7 @@ $appHtml = @"
     <div class="header-actions">
       <button class="ghost-btn" id="openCurrent" type="button">Open tool tab</button>
       <button class="ghost-btn" id="reloadTool" type="button">Reload</button>
-      <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle theme">☾</button>
+      <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
     </div>
   </header>
 
@@ -234,7 +270,7 @@ $appHtml = @"
         </div>
         <button class="primary-btn" id="favoriteTool" type="button">Save favorite</button>
       </div>
-      <iframe id="toolFrame" title="PDF tool workspace" sandbox="allow-scripts allow-forms allow-downloads allow-popups"></iframe>
+      <iframe id="toolFrame" title="PDF tool workspace"></iframe>
     </section>
   </main>
 
@@ -479,10 +515,15 @@ h1 { margin: 0; font-size: clamp(28px, 4vw, 46px); letter-spacing: -.04em; }
   .ghost-btn, .primary-btn { flex: 1; }
   .brand { letter-spacing: .12em; }
 }
+.privacy-page {
+  width: min(900px, calc(100vw - 28px));
+  margin: 24px auto;
+  padding: 28px;
+}
 "@
 Write-Utf8NoBom (Join-Path $outRoot "app.css") $appCss
 
-$appJs = @"
+$appJs = @'
 (function () {
   const tools = window.TOOLSMATIC_PDF_TOOLS || [];
   const els = {
@@ -559,7 +600,7 @@ $appJs = @"
       const button = document.createElement('button');
       button.className = `tool-link${activeTool && tool.slug === activeTool.slug ? ' active' : ''}`;
       button.type = 'button';
-      button.innerHTML = `<strong>${tool.title}</strong><span>${tool.category} • ${tool.description}</span>`;
+      button.innerHTML = `<strong>${tool.title}</strong><span>${tool.category} - ${tool.description}</span>`;
       button.addEventListener('click', () => loadTool(tool.slug));
       els.list.append(button);
     });
@@ -603,7 +644,7 @@ $appJs = @"
 
   function setTheme(theme) {
     document.documentElement.dataset.theme = theme;
-    els.theme.textContent = theme === 'light' ? '☀' : '☾';
+    els.theme.textContent = theme === 'light' ? 'Light' : 'Dark';
     storage.set('theme', theme);
   }
 
@@ -628,7 +669,7 @@ $appJs = @"
     loadTool(slugFromHash() || 'compress-pdf');
   })();
 })();
-"@
+'@
 Write-Utf8NoBom (Join-Path $outRoot "app.js") $appJs
 
 $popupHtml = @"
@@ -701,7 +742,7 @@ input {
 "@
 Write-Utf8NoBom (Join-Path $outRoot "popup.css") $popupCss
 
-$popupJs = @"
+$popupJs = @'
 (function () {
   const tools = window.TOOLSMATIC_PDF_TOOLS || [];
   const list = document.getElementById('tools');
@@ -733,7 +774,7 @@ $popupJs = @"
   openApp.addEventListener('click', () => chrome.tabs.create({ url: chrome.runtime.getURL('app.html') }));
   render();
 })();
-"@
+'@
 Write-Utf8NoBom (Join-Path $outRoot "popup.js") $popupJs
 
 $privacyHtml = @"
@@ -746,7 +787,7 @@ $privacyHtml = @"
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
-  <main class="workspace" style="width:min(900px,calc(100vw - 28px));margin:24px auto;padding:28px;">
+  <main class="workspace privacy-page">
     <p class="eyebrow">Privacy</p>
     <h1>ToolsMatic PDF Toolkit Privacy Policy</h1>
     <p>The extension processes PDF files locally in your browser. Files are not uploaded to ToolsMatic servers by the extension.</p>

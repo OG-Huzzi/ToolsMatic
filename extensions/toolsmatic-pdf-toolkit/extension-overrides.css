@@ -1,0 +1,20 @@
+:root { color-scheme: dark; }
+html { background: #08131f; }
+body { min-width: 0 !important; overflow-x: hidden !important; }
+.site-header,
+.topbar,
+.footer,
+.site-footer,
+.tool-related,
+.related-tools,
+.seo-related,
+.page-footer,
+footer { display: none !important; }
+main, .page-shell, .tool-page, .tool-wrap, .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.tool-hero, .hero, .pdf-hero { margin-top: 0 !important; }
+a[href^="/"], a[href^="https://toolsmatic.me"] { cursor: pointer; }

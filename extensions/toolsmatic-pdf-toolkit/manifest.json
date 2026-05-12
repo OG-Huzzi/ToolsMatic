@@ -1,0 +1,73 @@
+{
+    "manifest_version":  3,
+    "name":  "ToolsMatic PDF Toolkit",
+    "short_name":  "ToolsMatic PDF",
+    "version":  "1.0.0",
+    "description":  "Private browser PDF tools for merging, splitting, compressing, signing, converting, editing, securing, and optimizing PDF files locally.",
+    "minimum_chrome_version":  "114",
+    "offline_enabled":  true,
+    "homepage_url":  "https://toolsmatic.me/tools/compress-pdf.html",
+    "permissions":  [
+                        "storage"
+                    ],
+    "host_permissions":  [
+
+                         ],
+    "action":  {
+                   "default_title":  "ToolsMatic PDF Toolkit",
+                   "default_popup":  "popup.html",
+                   "default_icon":  {
+                                        "16":  "icons/icon16.png",
+                                        "48":  "icons/icon48.png",
+                                        "128":  "icons/icon128.png"
+                                    }
+               },
+    "icons":  {
+                  "16":  "icons/icon16.png",
+                  "48":  "icons/icon48.png",
+                  "128":  "icons/icon128.png"
+              },
+    "options_page":  "app.html",
+    "sandbox":  {
+                    "pages":  [
+                                  "sandbox/tools/merge-pdf.html",
+                                  "sandbox/tools/split-pdf.html",
+                                  "sandbox/tools/remove-pages.html",
+                                  "sandbox/tools/extract-pages.html",
+                                  "sandbox/tools/reorder-pages.html",
+                                  "sandbox/tools/rotate-pdf.html",
+                                  "sandbox/tools/crop-pdf.html",
+                                  "sandbox/tools/watermark-pdf.html",
+                                  "sandbox/tools/page-numbers-pdf.html",
+                                  "sandbox/tools/flatten-pdf.html",
+                                  "sandbox/tools/sign-pdf.html",
+                                  "sandbox/tools/fill-pdf-form.html",
+                                  "sandbox/tools/redact-pdf.html",
+                                  "sandbox/tools/annotate-pdf.html",
+                                  "sandbox/tools/compare-pdf.html",
+                                  "sandbox/tools/compress-pdf.html",
+                                  "sandbox/tools/repair-pdf.html",
+                                  "sandbox/tools/add-pdf-margins.html",
+                                  "sandbox/tools/resize-pdf-pages.html",
+                                  "sandbox/tools/grayscale-pdf.html",
+                                  "sandbox/tools/remove-pdf-metadata.html",
+                                  "sandbox/tools/edit-pdf-metadata.html",
+                                  "sandbox/tools/protect-pdf.html",
+                                  "sandbox/tools/unlock-pdf.html",
+                                  "sandbox/tools/jpg-to-pdf.html",
+                                  "sandbox/tools/pdf-to-jpg.html",
+                                  "sandbox/tools/pdf-webp-converter.html",
+                                  "sandbox/tools/txt-to-pdf.html",
+                                  "sandbox/tools/html-to-pdf.html",
+                                  "sandbox/tools/pdf-to-base64.html",
+                                  "sandbox/tools/pdf-text-converter.html",
+                                  "sandbox/tools/pdf-reader.html",
+                                  "sandbox/tools/add-pdf-headers.html",
+                                  "sandbox/tools/extract-pdf-images.html"
+                              ]
+                },
+    "content_security_policy":  {
+                                    "extension_pages":  "script-src \u0027self\u0027; object-src \u0027self\u0027; img-src \u0027self\u0027 data:; style-src \u0027self\u0027;",
+                                    "sandbox":  "sandbox allow-scripts allow-forms allow-downloads allow-popups; script-src \u0027self\u0027 \u0027unsafe-inline\u0027 blob:; worker-src \u0027self\u0027 blob:; child-src \u0027self\u0027 blob:; connect-src \u0027self\u0027 blob:; img-src \u0027self\u0027 blob: data:; style-src \u0027self\u0027 \u0027unsafe-inline\u0027; font-src \u0027self\u0027 data:; media-src \u0027self\u0027 blob: data:;"
+                                }
+}

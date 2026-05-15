@@ -1,7 +1,7 @@
 # Graph Report - D:\ToolsMatic  (2026-05-15)
 
 ## Corpus Check
-- 33 files · ~6,127,442 words
+- 33 files · ~6,127,430 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -207,11 +207,11 @@ Nodes (0):
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `set()` connect `Community 3` to `Community 0`, `Community 2`, `Community 4`, `Community 5`, `Community 6`, `Community 7`, `Community 10`, `Community 12`, `Community 13`, `Community 14`?**
-  _High betweenness centrality (0.100) - this node is a cross-community bridge._
-- **Why does `c()` connect `Community 1` to `Community 0`, `Community 2`, `Community 10`?**
-  _High betweenness centrality (0.040) - this node is a cross-community bridge._
-- **Why does `at()` connect `Community 0` to `Community 1`, `Community 2`, `Community 3`, `Community 4`, `Community 6`, `Community 10`, `Community 13`?**
-  _High betweenness centrality (0.039) - this node is a cross-community bridge._
+  _High betweenness centrality (0.083) - this node is a cross-community bridge._
+- **Why does `TemplateNamespace` connect `Community 7` to `Community 0`, `Community 3`, `Community 4`, `Community 5`?**
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+- **Why does `ConfigNamespace` connect `Community 8` to `Community 0`, `Community 1`, `Community 2`, `Community 3`, `Community 5`, `Community 11`, `Community 12`?**
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **Are the 31 inferred relationships involving `set()` (e.g. with `Pe()` and `l()`) actually correct?**
   _`set()` has 31 INFERRED edges - model-reasoned connections that need verification._
 - **Should `Community 0` be split into smaller, more focused modules?**

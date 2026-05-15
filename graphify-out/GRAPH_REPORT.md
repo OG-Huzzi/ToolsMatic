@@ -1,12 +1,12 @@
-# Graph Report - D:\ToolsMatic  (2026-05-12)
+# Graph Report - D:\ToolsMatic  (2026-05-15)
 
 ## Corpus Check
-- 30 files · ~5,629,172 words
+- 33 files · ~6,127,442 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5370 nodes · 14782 edges · 33 communities detected
-- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 985 edges (avg confidence: 0.8)
+- 5424 nodes · 14933 edges · 30 communities detected
+- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 1014 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -40,9 +40,6 @@
 - [[_COMMUNITY_Community 27|Community 27]]
 - [[_COMMUNITY_Community 28|Community 28]]
 - [[_COMMUNITY_Community 29|Community 29]]
-- [[_COMMUNITY_Community 30|Community 30]]
-- [[_COMMUNITY_Community 31|Community 31]]
-- [[_COMMUNITY_Community 32|Community 32]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `set()` - 148 edges
@@ -51,7 +48,7 @@
 4. `dn()` - 112 edges
 5. `CanvasGraphics` - 96 edges
 6. `create()` - 94 edges
-7. `m()` - 89 edges
+7. `m()` - 90 edges
 8. `AnnotationEditorUIManager` - 81 edges
 9. `AnnotationEditor` - 78 edges
 10. `has()` - 77 edges
@@ -59,119 +56,119 @@
 ## Surprising Connections (you probably didn't know these)
 - `dismissToast()` --calls--> `add()`  [INFERRED]
   D:\ToolsMatic\assets\pdf\global.js → D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\vendor\pdf.worker.min.js
-- `openTool()` --calls--> `create()`  [INFERRED]
-  D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\popup.js → D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\vendor\pdf.worker.min.js
-- `setTheme()` --calls--> `set()`  [INFERRED]
-  D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\app.js → D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\vendor\pdf.worker.min.js
-- `runConversion()` --calls--> `add()`  [INFERRED]
+- `create()` --calls--> `openTool()`  [INFERRED]
+  D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\vendor\pdf.worker.min.js → D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\popup.js
+- `set()` --calls--> `setTheme()`  [INFERRED]
+  D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\vendor\pdf.worker.min.js → D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\app.js
+- `detectDelimiter()` --calls--> `forEach()`  [INFERRED]
   D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\vendor\pdf.worker.min.js
-- `fetchJsonUrl()` --calls--> `fetch()`  [INFERRED]
+- `flattenValue()` --calls--> `forEach()`  [INFERRED]
   D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\vendor\pdf.worker.min.js
 
 ## Communities
 
 ### Community 0 - "Community 0"
 Cohesion: 0.0
-Nodes (614): at(), abort(), accept(), Acrobat, Acrobat7, ADBE_JSConsole, ADBE_JSDebugger, addHex() (+606 more)
+Nodes (633): at(), abort(), accept(), Acrobat, Acrobat7, ADBE_JSConsole, ADBE_JSDebugger, addHex() (+625 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.01
-Nodes (245): _(), a(), aa(), ac(), ae(), al, an(), ao (+237 more)
+Nodes (244): _(), a(), aa(), ac(), ae(), al, an(), ao (+236 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.01
-Nodes (284): getToastContainer(), showToast(), Ds(), Vs(), addFontStyle(), addNativeFontFace(), AnnotationElement, AnnotationElementFactory (+276 more)
+Nodes (269): Ds(), Vs(), zo, addFontStyle(), addNativeFontFace(), AnnotationElementFactory, appendText(), applyBoundingBox() (+261 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.01
-Nodes (164): setStatCard(), _onReceiveData(), PDFDataTransportStreamRangeReader, PDFDataTransportStreamReader, _queueLoadingCallback(), #a(), add(), addChildren() (+156 more)
+Nodes (152): setStatCard(), PDFDataTransportStreamReader, #a(), add(), addChildren(), _addNamespacePrefix(), addNode(), addPdfFont() (+144 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.01
-Nodes (11): AnnotationEditor, AnnotationEditorLayer, AnnotationEditorUIManager, CommandManager, FreeTextEditor, InkEditor, PDFDocumentLoadingTask, Cmd (+3 more)
+Nodes (102): dismissToast(), getToastContainer(), initFAQ(), initHeader(), initMobileMenu(), initScrollReveal(), normalizePath(), setActiveNavLink() (+94 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.01
-Nodes (131): categories(), filteredTools(), loadTool(), render(), renderCategories(), renderList(), setTheme(), slugFromHash() (+123 more)
+Nodes (127): categories(), filteredTools(), loadTool(), render(), renderCategories(), renderList(), setTheme(), slugFromHash() (+119 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.04
-Nodes (160): _(), a(), b(), Be(), C(), Ct(), d(), De() (+152 more)
+Nodes (159): _(), a(), b(), Be(), C(), Ct(), d(), De() (+151 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.01
-Nodes (3): ConfigNamespace, fingerprints(), Stream
+Cohesion: 0.02
+Nodes (8): decodeAndClamp(), htmlForXfa(), ImageResizer, numPages(), PDFImage, resizeImageMask(), TemplateNamespace, xfaFactory()
 
 ### Community 8 - "Community 8"
-Cohesion: 0.03
-Nodes (96): A(), Ae(), an(), B(), bB(), Be(), Bs(), CA() (+88 more)
+Cohesion: 0.01
+Nodes (1): ConfigNamespace
 
 ### Community 9 - "Community 9"
-Cohesion: 0.02
-Nodes (14): TemplateNamespace, cleanupArrayBuffers(), collectValidFiles(), ensureProgressStructure(), getReorderPayload(), hideProgress(), initDropZone(), initFileInput() (+6 more)
+Cohesion: 0.04
+Nodes (94): A(), Ae(), an(), B(), bB(), Be(), Bs(), CA() (+86 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.04
-Nodes (26): BaseStream, checkAndRepair(), checkHeader(), CompositeGlyph, DecodeStream, FlateStream, getFontFileType(), getUint16() (+18 more)
+Nodes (15): o(), AlternateCS, ARCFourCipher, calculateSHA384(), CalGrayCS, CalRGBCS, CipherTransform, CipherTransformFactory (+7 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.04
-Nodes (15): o(), AlternateCS, ARCFourCipher, calculateSHA384(), CalGrayCS, CalRGBCS, CipherTransform, CipherTransformFactory (+7 more)
+Nodes (6): ai, bi, li, oo, ui, vi
 
 ### Community 12 - "Community 12"
 Cohesion: 0.04
-Nodes (6): ai, bi, li, oo, ui, vi
+Nodes (18): Ascii85Stream, BaseStream, checkHeader(), DecodeStream, fingerprints(), FlateStream, getUint16(), Jbig2Stream (+10 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.05
-Nodes (22): BitModel, ContextCache, copyCoefficients(), decodeBitmap(), decodeIAID(), decodeInteger(), decodeMMRBitmap(), decodeRefinement() (+14 more)
+Cohesion: 0.06
+Nodes (21): BitModel, byteIn(), ContextCache, copyCoefficients(), decodeBitmap(), decodeIAID(), decodeInteger(), decodeMMRBitmap() (+13 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.06
-Nodes (6): BaseFullReader, BaseRangeReader, getArrayBuffer(), NetworkManager, PDFNetworkStreamFullRequestReader, PDFNetworkStreamRangeRequestReader
+Cohesion: 0.08
+Nodes (28): A(), c(), d(), f(), G(), h(), i(), j() (+20 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.16
 Nodes (5): d(), Fs, ks, ps, warn()
 
 ### Community 16 - "Community 16"
-Cohesion: 0.12
-Nodes (3): CFFCompiler, CFFOffsetTracker, CFFStrings
+Cohesion: 0.09
+Nodes (5): CFFCompiler, CFFDict, CFFOffsetTracker, CFFPrivateDict, CFFStrings
 
 ### Community 17 - "Community 17"
-Cohesion: 0.22
-Nodes (25): A(), c(), d(), f(), G(), h(), i(), j() (+17 more)
-
-### Community 18 - "Community 18"
-Cohesion: 0.08
-Nodes (2): so, XmlObject
-
-### Community 19 - "Community 19"
 Cohesion: 0.08
 Nodes (1): LocaleSetNamespace
 
-### Community 20 - "Community 20"
-Cohesion: 0.16
-Nodes (4): decodeAndClamp(), ImageResizer, PDFImage, resizeImageMask()
-
-### Community 21 - "Community 21"
+### Community 18 - "Community 18"
 Cohesion: 0.14
 Nodes (1): ConnectionSetNamespace
 
-### Community 22 - "Community 22"
+### Community 19 - "Community 19"
 Cohesion: 0.2
 Nodes (2): NullOptimizer, QueueOptimizer
 
-### Community 23 - "Community 23"
+### Community 20 - "Community 20"
 Cohesion: 0.31
 Nodes (7): Add-AdAfterFirstH1(), Add-HtmlExtensions(), Ensure-Dir(), Remove-FakeRatingSchema(), Set-Or-Insert-HeadTag(), Transform-Html(), Write-ZipBinary()
 
+### Community 21 - "Community 21"
+Cohesion: 0.25
+Nodes (1): XFAAttribute
+
+### Community 22 - "Community 22"
+Cohesion: 0.4
+Nodes (0): 
+
+### Community 23 - "Community 23"
+Cohesion: 1.0
+Nodes (0): 
+
 ### Community 24 - "Community 24"
-Cohesion: 0.33
-Nodes (1): Ref
+Cohesion: 1.0
+Nodes (0): 
 
 ### Community 25 - "Community 25"
-Cohesion: 0.4
+Cohesion: 1.0
 Nodes (0): 
 
 ### Community 26 - "Community 26"
@@ -190,41 +187,31 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 30 - "Community 30"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 31 - "Community 31"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 32 - "Community 32"
-Cohesion: 1.0
-Nodes (0): 
-
 ## Knowledge Gaps
-- **Thin community `Community 26`** (1 nodes): `extract.js`
+- **Thin community `Community 23`** (1 nodes): `extract.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 27`** (1 nodes): `sw.js`
+- **Thin community `Community 24`** (1 nodes): `sw.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 28`** (1 nodes): `popunder-manager.js`
+- **Thin community `Community 25`** (1 nodes): `popunder-manager.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 29`** (1 nodes): `tools-data.js`
+- **Thin community `Community 26`** (1 nodes): `tools-data.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (1 nodes): `find-canonical-mismatches.ps1`
+- **Thin community `Community 27`** (1 nodes): `find-canonical-mismatches.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 31`** (1 nodes): `generate-seo-variants.js`
+- **Thin community `Community 28`** (1 nodes): `generate-seo-variants.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 32`** (1 nodes): `normalize-banner-ads.ps1`
+- **Thin community `Community 29`** (1 nodes): `normalize-banner-ads.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `set()` connect `Community 3` to `Community 0`, `Community 2`, `Community 4`, `Community 5`, `Community 6`, `Community 10`, `Community 11`, `Community 13`, `Community 17`, `Community 18`, `Community 20`?**
-  _High betweenness centrality (0.090) - this node is a cross-community bridge._
-- **Why does `ConfigNamespace` connect `Community 7` to `Community 0`, `Community 1`, `Community 2`, `Community 3`, `Community 5`, `Community 12`?**
-  _High betweenness centrality (0.064) - this node is a cross-community bridge._
+- **Why does `set()` connect `Community 3` to `Community 0`, `Community 2`, `Community 4`, `Community 5`, `Community 6`, `Community 7`, `Community 10`, `Community 12`, `Community 13`, `Community 14`?**
+  _High betweenness centrality (0.100) - this node is a cross-community bridge._
+- **Why does `c()` connect `Community 1` to `Community 0`, `Community 2`, `Community 10`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
+- **Why does `at()` connect `Community 0` to `Community 1`, `Community 2`, `Community 3`, `Community 4`, `Community 6`, `Community 10`, `Community 13`?**
+  _High betweenness centrality (0.039) - this node is a cross-community bridge._
 - **Are the 31 inferred relationships involving `set()` (e.g. with `Pe()` and `l()`) actually correct?**
   _`set()` has 31 INFERRED edges - model-reasoned connections that need verification._
 - **Should `Community 0` be split into smaller, more focused modules?**
@@ -232,6 +219,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.01 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.01 - nodes in this community are weakly interconnected._
-- **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.01 - nodes in this community are weakly interconnected._

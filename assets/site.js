@@ -599,17 +599,94 @@
     { url: '/tools/remove-pdf-metadata.html', title: 'Remove PDF Metadata', description: 'Sanitize hidden PDF metadata for privacy.', category: 'PDF' },
     { url: '/tools/repair-pdf.html', title: 'Repair PDF', description: 'Try to recover damaged or corrupted PDF files.', category: 'PDF' },
     { url: '/tools/resize-pdf-pages.html', title: 'Resize PDF Pages', description: 'Scale PDF pages to A4, Letter, or custom size.', category: 'PDF' },
+    { url: '/tools/word-pdf-converter.html', title: 'Word PDF Converter', description: 'Convert Word to PDF or PDF to Word privately in your browser.', category: 'PDF' },
+    { url: '/tools/excel-pdf-converter.html', title: 'Excel PDF Converter', description: 'Convert spreadsheets to PDF or extract PDF tables into Excel locally.', category: 'PDF' },
+    { url: '/tools/pptx-pdf-converter.html', title: 'PowerPoint PDF Converter', description: 'Convert presentation slides to PDF or PDF pages back into PPTX.', category: 'PDF' },
+    { url: '/tools/pdf-pdfa-converter.html', title: 'PDF PDF/A Converter', description: 'Prepare archival PDF/A metadata or convert PDF/A back to standard PDF.', category: 'PDF' },
+    { url: '/tools/organize-pdf.html', title: 'Organize PDF', description: 'Reorder, rotate, duplicate, delete, and merge PDF pages visually.', category: 'PDF' },
     { url: '/tools/merge-pdf-free.html', title: 'Merge PDF Free', description: 'A focused free PDF merging workflow.', category: 'PDF' },
-    { url: '/tools/compress-pdf-free.html', title: 'Compress PDF Free', description: 'A focused free PDF compression workflow.', category: 'PDF' }
+    { url: '/tools/compress-pdf-free.html', title: 'Compress PDF Free', description: 'A focused free PDF compression workflow.', category: 'PDF' },
+
+    { url: '/tools/change-csv-separator.html', title: 'Change CSV Separator', description: 'Convert CSV delimiters between comma, semicolon, tab, and pipe.', category: 'Data' },
+    { url: '/tools/csv-rows-to-columns.html', title: 'CSV Rows to Columns', description: 'Transpose CSV rows into columns instantly.', category: 'Data' },
+    { url: '/tools/csv-to-tsv.html', title: 'CSV to TSV', description: 'Convert comma-separated CSV into tab-separated TSV.', category: 'Data' },
+    { url: '/tools/csv-to-xml.html', title: 'CSV to XML', description: 'Convert CSV rows into clean XML records.', category: 'Data' },
+    { url: '/tools/csv-to-yaml.html', title: 'CSV to YAML', description: 'Convert CSV tables into readable YAML arrays.', category: 'Data' },
+    { url: '/tools/find-incomplete-csv-records.html', title: 'Find Incomplete CSV Records', description: 'Detect CSV rows with missing or extra columns.', category: 'Data' },
+    { url: '/tools/insert-csv-columns.html', title: 'Insert CSV Columns', description: 'Add a new column to every CSV row with a default value.', category: 'Data' },
+    { url: '/tools/swap-csv-columns.html', title: 'Swap CSV Columns', description: 'Swap two CSV columns by index.', category: 'Data' },
+    { url: '/tools/tsv-to-json.html', title: 'TSV to JSON', description: 'Convert TSV data into JSON objects.', category: 'Data' },
+    { url: '/tools/escape-json.html', title: 'Escape JSON', description: 'Escape text safely for JSON strings.', category: 'Developer' },
+    { url: '/tools/json-comparison.html', title: 'JSON Comparison', description: 'Compare two JSON documents and highlight differences.', category: 'Developer' },
+    { url: '/tools/json-to-xml.html', title: 'JSON to XML', description: 'Convert JSON objects and arrays into XML.', category: 'Developer' },
+    { url: '/tools/stringify-json.html', title: 'Stringify JSON', description: 'Turn JSON into an escaped JavaScript string.', category: 'Developer' },
+    { url: '/tools/duplicate-list-items.html', title: 'Duplicate List Items', description: 'Repeat every line in a list a chosen number of times.', category: 'Writing' },
+    { url: '/tools/find-most-popular-list-items.html', title: 'Find Most Popular List Items', description: 'Count repeated list items and sort by frequency.', category: 'Writing' },
+    { url: '/tools/find-unique-list-items.html', title: 'Find Unique List Items', description: 'Remove duplicate lines while preserving order.', category: 'Writing' },
+    { url: '/tools/group-list-items.html', title: 'Group List Items', description: 'Group list lines into fixed-size chunks.', category: 'Writing' },
+    { url: '/tools/reverse-list-items.html', title: 'Reverse List Items', description: 'Reverse the order of list lines.', category: 'Writing' },
+    { url: '/tools/rotate-list-items.html', title: 'Rotate List Items', description: 'Move list items forward or backward by a custom offset.', category: 'Writing' },
+    { url: '/tools/shuffle-list-items.html', title: 'Shuffle List Items', description: 'Randomly shuffle list lines locally.', category: 'Writing' },
+    { url: '/tools/sort-list-items.html', title: 'Sort List Items', description: 'Sort list lines alphabetically or numerically.', category: 'Writing' },
+    { url: '/tools/truncate-list-items.html', title: 'Truncate List Items', description: 'Limit every line to a maximum length.', category: 'Writing' },
+    { url: '/tools/unwrap-list-items.html', title: 'Unwrap List Items', description: 'Join wrapped lines into one clean paragraph.', category: 'Writing' },
+    { url: '/tools/wrap-list-items.html', title: 'Wrap List Items', description: 'Wrap long text into readable line lengths.', category: 'Writing' },
+    { url: '/tools/arithmetic-sequence-generator.html', title: 'Arithmetic Sequence Generator', description: 'Generate arithmetic sequences with start, step, and count.', category: 'Everyday' },
+    { url: '/tools/byte-converter.html', title: 'Byte Converter', description: 'Convert bytes, KB, MB, GB, and TB.', category: 'Everyday' },
+    { url: '/tools/random-number-generator.html', title: 'Random Number Generator', description: 'Generate random numbers in a custom range.', category: 'Everyday' },
+    { url: '/tools/random-port-generator.html', title: 'Random Port Generator', description: 'Generate safe random port numbers for development.', category: 'Developer' },
+    { url: '/tools/sum-calculator.html', title: 'Sum Calculator', description: 'Add numbers from lines, CSV, or pasted text.', category: 'Everyday' },
+    { url: '/tools/censor-text.html', title: 'Censor Text', description: 'Mask sensitive words or phrases in pasted text.', category: 'Writing' },
+    { url: '/tools/palindrome-generator.html', title: 'Palindrome Generator', description: 'Create palindrome-style mirrored text.', category: 'Writing' },
+    { url: '/tools/extract-substring.html', title: 'Extract Substring', description: 'Extract text between positions or markers.', category: 'Writing' },
+    { url: '/tools/hidden-character-detector.html', title: 'Hidden Character Detector', description: 'Reveal invisible Unicode and whitespace characters.', category: 'Developer' },
+    { url: '/tools/join-text-lines.html', title: 'Join Text Lines', description: 'Join lines with a custom separator.', category: 'Writing' },
+    { url: '/tools/palindrome-checker.html', title: 'Palindrome Checker', description: 'Check if text reads the same backward and forward.', category: 'Writing' },
+    { url: '/tools/randomize-case.html', title: 'Randomize Case', description: 'Randomly mix uppercase and lowercase letters.', category: 'Writing' },
+    { url: '/tools/remove-duplicate-lines.html', title: 'Remove Duplicate Lines', description: 'Deduplicate text lines with optional case-insensitive mode.', category: 'Writing' },
+    { url: '/tools/repeat-text.html', title: 'Repeat Text', description: 'Repeat text a custom number of times.', category: 'Writing' },
+    { url: '/tools/reverse-text.html', title: 'Reverse Text', description: 'Reverse characters, words, or lines.', category: 'Writing' },
+    { url: '/tools/rot13-converter.html', title: 'ROT13 Converter', description: 'Encode or decode ROT13 text instantly.', category: 'Developer' },
+    { url: '/tools/rotate-text.html', title: 'Rotate Text', description: 'Rotate characters by a custom offset.', category: 'Writing' },
+    { url: '/tools/split-text.html', title: 'Split Text', description: 'Split text by a delimiter into clean lines.', category: 'Writing' },
+    { url: '/tools/text-replacer.html', title: 'Text Replacer', description: 'Find and replace text with plain or regex mode.', category: 'Writing' },
+    { url: '/tools/text-to-morse.html', title: 'Text to Morse Code', description: 'Convert text into Morse code and back.', category: 'Writing' },
+    { url: '/tools/truncate-text.html', title: 'Truncate Text', description: 'Trim text to a length with suffix control.', category: 'Writing' },
+    { url: '/tools/unicode-inspector.html', title: 'Unicode Inspector', description: 'Inspect Unicode code points for every character.', category: 'Developer' },
+    { url: '/tools/leap-year-checker.html', title: 'Leap Year Checker', description: 'Check whether years are leap years.', category: 'Everyday' },
+    { url: '/tools/days-to-hours-converter.html', title: 'Days to Hours Converter', description: 'Convert days into hours, minutes, and seconds.', category: 'Everyday' },
+    { url: '/tools/hours-to-days-converter.html', title: 'Hours to Days Converter', description: 'Convert hours into days and remaining hours.', category: 'Everyday' },
+    { url: '/tools/seconds-to-time-converter.html', title: 'Seconds to Time Converter', description: 'Convert seconds into HH:MM:SS time.', category: 'Everyday' },
+    { url: '/tools/time-to-decimal-converter.html', title: 'Time to Decimal Converter', description: 'Convert HH:MM time into decimal hours.', category: 'Everyday' },
+    { url: '/tools/time-to-seconds-converter.html', title: 'Time to Seconds Converter', description: 'Convert HH:MM:SS into total seconds.', category: 'Everyday' },
+    { url: '/tools/unix-timestamp-converter.html', title: 'Unix Timestamp Converter', description: 'Convert Unix timestamps to readable dates and back.', category: 'Developer' },
+    { url: '/tools/crontab-guru.html', title: 'Crontab Guru', description: 'Explain common cron expressions in plain English.', category: 'Developer' },
+    { url: '/tools/discord-timestamp-generator.html', title: 'Discord Timestamp Generator', description: 'Generate Discord timestamp tags from a date and time.', category: 'Developer' },
+    { url: '/tools/time-between-dates.html', title: 'Time Between Dates', description: 'Calculate the exact gap between two dates.', category: 'Everyday' },
+    { url: '/tools/truncate-clock-time.html', title: 'Truncate Clock Time', description: 'Round clock time down to the nearest interval.', category: 'Everyday' },
+    { url: '/tools/xml-beautifier.html', title: 'XML Beautifier', description: 'Format messy XML into readable indentation.', category: 'Developer' },
+    { url: '/tools/xml-validator.html', title: 'XML Validator', description: 'Validate XML syntax and show parsing errors clearly.', category: 'Developer' },
+
+    { url: '/tools/image-resizer.html', title: 'Image Resizer', description: 'Resize JPG, PNG, and WebP images by exact pixels or percentage with live preview and local export.', category: 'Design' },
+    { url: '/tools/image-cropper.html', title: 'Image Cropper', description: 'Crop images precisely with x/y coordinates, width, height, aspect presets, and instant browser preview.', category: 'Design' },
+    { url: '/tools/image-rotator.html', title: 'Image Rotator', description: 'Rotate and flip images locally, then export clean PNG, JPG, or WebP output.', category: 'Design' },
+    { url: '/tools/image-color-editor.html', title: 'Image Color Editor', description: 'Adjust brightness, contrast, saturation, grayscale, invert, sepia, and hue in your browser.', category: 'Design' },
+    { url: '/tools/image-opacity-editor.html', title: 'Image Opacity Editor', description: 'Change image opacity and export transparent PNG files without uploading the image.', category: 'Design' },
+    { url: '/tools/transparent-image-maker.html', title: 'Transparent Image Maker', description: 'Turn a selected color range transparent with tolerance controls and instant PNG export.', category: 'Design' },
+    { url: '/tools/image-background-remover.html', title: 'Image Background Remover', description: 'Remove solid or near-solid image backgrounds locally using color sampling and tolerance controls.', category: 'Design' },
+    { url: '/tools/image-splitter.html', title: 'Image Splitter', description: 'Split one image into rows and columns, preview every tile, and download the result as a ZIP.', category: 'Design' },
+    { url: '/tools/jpg-to-png-converter.html', title: 'JPG to PNG Converter', description: 'Convert JPG images to PNG locally with preview, transparency-safe export, and file size feedback.', category: 'Design' },
+    { url: '/tools/image-ocr-to-text.html', title: 'Image OCR to Text', description: 'Extract readable text from images in the browser using OCR with copy and download output.', category: 'Design' },
+    { url: '/tools/browser-image-editor.html', title: 'Browser Image Editor', description: 'A local image editor for crop, resize, rotate, filters, opacity, and quick format export.', category: 'Design' },
   ];
 
-  const HOME_TOOL_COUNT = TOOL_CATALOG.length;
+  const HOME_TOOL_COUNT = 149;
 
   const SEARCH_CATEGORY_KEYWORDS = {
-    PDF: 'pdf document file page pages merge split compress shrink reduce sign signature watermark protect unlock password metadata image jpg webp text repair rotate crop annotate redact form reader headers margins',
+    PDF: 'pdf document file page pages merge split compress shrink reduce sign signature watermark protect unlock password metadata image jpg webp text repair rotate crop annotate redact form reader headers margins word docx excel xlsx xls spreadsheet powerpoint pptx slides pdfa archival organize reorder',
     Writing: 'text words characters count writing markdown quote ascii case lorem ipsum diff typing paragraph sentence copy social caption essay',
     Developer: 'developer code json regex jwt token base64 url uuid hash checksum html css minify format validate encode decode seo robots sitemap metadata open graph twitter card slug password',
-    Design: 'design color colours palette picker gradient contrast wcag qr code image compress visual foreground background accessibility',
+    Design: 'design color colours palette picker gradient contrast wcag qr code image compress visual foreground background accessibility image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor',
     Everyday: 'everyday timer stopwatch pomodoro focus timezone time zone unit converter measurement productivity reaction reflex',
     Data: 'data csv json table spreadsheet rows columns delimiter inspect convert flatten export'
   };
@@ -663,7 +740,12 @@
     'PDF Text Converter': 'extract text from pdf convert pdf text',
     'JPG to PDF': 'image to pdf photo to pdf',
     'PDF to JPG': 'pdf to image export pages',
-    'PDF WebP Converter': 'webp pdf convert image pages'
+    'PDF WebP Converter': 'webp pdf convert image pages',
+    'Word PDF Converter': 'word docx pdf converter pdf to word docx no upload',
+    'Excel ↔ PDF Converter': 'excel xlsx xls pdf spreadsheet table pdf to excel sheetjs',
+    'PowerPoint ↔ PDF Converter': 'powerpoint pptx pdf slides presentation pdf to pptx',
+    'PDF ↔ PDF/A Converter': 'pdfa archival compliance metadata pdf to pdfa archive',
+    'Organize PDF': 'organize reorder rearrange delete rotate duplicate pdf pages merge',
   };
 
   const normalizeSearchText = (value) => (value || '')
@@ -1087,8 +1169,8 @@
     cards.forEach((card, index) => {
       const title = card.querySelector('h3')?.textContent?.trim() || `Tool ${index + 1}`;
       const description = card.querySelector('p')?.textContent?.trim() || '';
-      const category = getHomeCategory(title);
       const catalogTool = TOOL_CATALOG.find((tool) => normalizeSearchText(tool.title) === normalizeSearchText(title));
+      const category = catalogTool?.category || getHomeCategory(title);
       card.dataset.category = category;
       card.dataset.search = catalogTool ? getToolSearchText(catalogTool) : normalizeSearchText(`${title} ${description} ${category}`);
 
@@ -1120,6 +1202,50 @@
       grids = [grid];
     }
 
+    const readRecentTools = () => {
+      try {
+        return JSON.parse(localStorage.getItem('toolsmatic-recent-tools') || '[]');
+      } catch (_) {
+        return [];
+      }
+    };
+
+    const writeRecentTool = (url) => {
+      if (!url) return;
+      const normalizedUrl = new URL(url, window.location.origin).pathname;
+      const recent = readRecentTools();
+      localStorage.setItem('toolsmatic-recent-tools', JSON.stringify([
+        normalizedUrl,
+        ...recent.filter((item) => item !== normalizedUrl)
+      ].slice(0, 8)));
+    };
+
+    const recentTools = readRecentTools()
+      .map((url) => TOOL_CATALOG.find((tool) => tool.url === url))
+      .filter(Boolean)
+      .slice(0, 6);
+
+    if (recentTools.length && !main.querySelector('.recent-tools-section')) {
+      const recentSection = document.createElement('section');
+      recentSection.className = 'section recent-tools-section';
+      recentSection.innerHTML = '<h2>Recently used tools</h2><p>Quickly reopen the tools you used on this device.</p><div class="grid recent-tools-grid"></div>';
+      const recentGrid = recentSection.querySelector('.recent-tools-grid');
+      recentTools.forEach((tool) => {
+        const link = document.createElement('a');
+        link.className = 'card';
+        link.href = tool.url;
+        link.innerHTML = `<h3>${tool.title}</h3><p>${tool.description}</p>`;
+        recentGrid.appendChild(link);
+      });
+      hero.insertAdjacentElement('afterend', recentSection);
+    }
+
+    cards.forEach((card) => {
+      if (card.dataset.recentBound) return;
+      card.dataset.recentBound = 'true';
+      card.addEventListener('click', () => writeRecentTool(card.getAttribute('href')));
+    });
+
     const navLinks = document.querySelector('header .nav-links');
     const allToolsLink = navLinks?.querySelector('.nav-btn');
     let headerSearch = navLinks?.querySelector('.nav-search');
@@ -1143,6 +1269,39 @@
     }
 
     const searchInput = headerSearch?.querySelector('input[type="search"]');
+    let activeHomeCategory = 'All';
+
+    let categoryStrip = main.querySelector('.home-category-strip');
+    if (!categoryStrip) {
+      categoryStrip = document.createElement('section');
+      categoryStrip.className = 'home-category-strip';
+      categoryStrip.setAttribute('aria-label', 'Filter tools by category');
+      categoryStrip.innerHTML = '<span class="home-category-strip-label">Browse by category</span><div class="home-category-buttons"></div>';
+      const breadcrumbs = main.querySelector('.home-breadcrumbs');
+      if (breadcrumbs) breadcrumbs.insertAdjacentElement('afterend', categoryStrip);
+      else main.insertBefore(categoryStrip, hero);
+    }
+
+    const categoryButtons = categoryStrip.querySelector('.home-category-buttons');
+    const homeCategories = ['All', ...Array.from(new Set(cards.map((card) => card.dataset.category).filter(Boolean))).sort()];
+
+    const renderHomeCategoryButtons = () => {
+      if (!categoryButtons) return;
+      categoryButtons.innerHTML = '';
+      homeCategories.forEach((category) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = `home-category-button${category === activeHomeCategory ? ' is-active' : ''}`;
+        button.textContent = category;
+        button.setAttribute('aria-pressed', String(category === activeHomeCategory));
+        button.addEventListener('click', () => {
+          activeHomeCategory = category;
+          renderHomeCategoryButtons();
+          applyFilters();
+        });
+        categoryButtons.appendChild(button);
+      });
+    };
 
     let emptyState = hero.querySelector('.home-empty-state');
     if (!emptyState) {
@@ -1153,11 +1312,13 @@
     }
 
     const applyFilters = () => {
-      const query = (searchInput?.value || '').trim().toLowerCase();
+      const query = normalizeSearchText((searchInput?.value || '').trim());
       let visibleCount = 0;
 
       cards.forEach((card) => {
-        const isVisible = !query || (card.dataset.search || '').includes(query);
+        const matchesQuery = !query || (card.dataset.search || '').includes(query);
+        const matchesCategory = activeHomeCategory === 'All' || card.dataset.category === activeHomeCategory;
+        const isVisible = matchesQuery && matchesCategory;
         card.classList.toggle('is-hidden', !isVisible);
         if (isVisible) visibleCount += 1;
       });
@@ -1171,7 +1332,7 @@
         }
       });
 
-      const isFiltering = Boolean(query);
+      const isFiltering = Boolean(query) || activeHomeCategory !== 'All';
       document.body.classList.toggle('home-filtering', isFiltering);
       emptyState.classList.toggle('is-active', visibleCount === 0);
     };
@@ -1181,6 +1342,7 @@
       searchInput.addEventListener('input', applyFilters);
     }
 
+    renderHomeCategoryButtons();
     applyFilters();
   };
 

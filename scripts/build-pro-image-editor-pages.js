@@ -434,10 +434,12 @@ function updateSiteJs() {
     );
   }
   js = js.replace('const HOME_TOOL_COUNT = 149;', 'const HOME_TOOL_COUNT = 150;');
-  js = js.replace(
-    /Design: '([^']*)'/,
-    "Design: '$1 pro image editor photo editor online no upload browser image editor crop resize rotate draw text shapes filters private export'"
-  );
+  if (!js.includes('pro image editor photo editor online no upload browser image editor crop resize rotate draw text shapes filters private export')) {
+    js = js.replace(
+      /Design: '([^']*)'/,
+      "Design: '$1 pro image editor photo editor online no upload browser image editor crop resize rotate draw text shapes filters private export'"
+    );
+  }
   if (!js.includes("'Pro Image Editor':")) {
     js = js.replace(
       "    'Image Compressor': 'compress image reduce image size jpg png webp optimize',",

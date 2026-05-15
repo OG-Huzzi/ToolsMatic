@@ -678,15 +678,16 @@
     { url: '/tools/jpg-to-png-converter.html', title: 'JPG to PNG Converter', description: 'Convert JPG images to PNG locally with preview, transparency-safe export, and file size feedback.', category: 'Design' },
     { url: '/tools/image-ocr-to-text.html', title: 'Image OCR to Text', description: 'Extract readable text from images in the browser using OCR with copy and download output.', category: 'Design' },
     { url: '/tools/browser-image-editor.html', title: 'Browser Image Editor', description: 'A local image editor for crop, resize, rotate, filters, opacity, and quick format export.', category: 'Design' },
+    { url: '/tools/pro-image-editor.html', title: 'Pro Image Editor', description: 'Edit images with crop, resize, rotate, draw, text, filters, undo, redo, and private export.', category: 'Design' },
   ];
 
-  const HOME_TOOL_COUNT = 149;
+  const HOME_TOOL_COUNT = 150;
 
   const SEARCH_CATEGORY_KEYWORDS = {
     PDF: 'pdf document file page pages merge split compress shrink reduce sign signature watermark protect unlock password metadata image jpg webp text repair rotate crop annotate redact form reader headers margins word docx excel xlsx xls spreadsheet powerpoint pptx slides pdfa archival organize reorder',
     Writing: 'text words characters count writing markdown quote ascii case lorem ipsum diff typing paragraph sentence copy social caption essay',
     Developer: 'developer code json regex jwt token base64 url uuid hash checksum html css minify format validate encode decode seo robots sitemap metadata open graph twitter card slug password',
-    Design: 'design color colours palette picker gradient contrast wcag qr code image compress visual foreground background accessibility image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor',
+    Design: 'design color colours palette picker gradient contrast wcag qr code image compress visual foreground background accessibility image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor pro image editor photo editor online no upload browser image editor crop resize rotate draw text shapes filters private export',
     Everyday: 'everyday timer stopwatch pomodoro focus timezone time zone unit converter measurement productivity reaction reflex',
     Data: 'data csv json table spreadsheet rows columns delimiter inspect convert flatten export'
   };
@@ -704,6 +705,7 @@
     'Hash Generator': 'sha md5 checksum digest hmac verify file hash',
     'Base64 Encoder': 'encode decode base64 string data uri',
     'Image Compressor': 'compress image reduce image size jpg png webp optimize',
+    'Pro Image Editor': 'photo editor image editor crop resize rotate flip draw text shapes icons filters annotate screenshot product photo social media no upload private browser editor',
     'QR Code Maker': 'qr generator qr code url link scan',
     'JWT Inspector': 'jwt decoder token claims bearer auth inspect validate',
     'Markdown Previewer': 'markdown preview md html render editor',

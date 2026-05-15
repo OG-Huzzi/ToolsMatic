@@ -6,3 +6,4 @@ Sitemap: https://toolsmatic.me/sitemap-document-converters.xml
 Sitemap: https://toolsmatic.me/sitemap-omni-browser-tools.xml
 Sitemap: https://toolsmatic.me/sitemap-image-tools.xml
 Sitemap: https://toolsmatic.me/sitemap-omni-pseo.xml
+Sitemap: https://toolsmatic.me/sitemap-pro-image-editor.xml

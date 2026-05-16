@@ -1,12 +1,12 @@
-# Graph Report - D:\ToolsMatic  (2026-05-15)
+# Graph Report - D:\ToolsMatic  (2026-05-16)
 
 ## Corpus Check
-- 37 files · ~6,157,496 words
+- 39 files · ~6,178,122 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5561 nodes · 15415 edges · 32 communities detected
-- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 1147 edges (avg confidence: 0.8)
+- 5592 nodes · 15501 edges · 31 communities detected
+- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 1178 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -41,7 +41,6 @@
 - [[_COMMUNITY_Community 28|Community 28]]
 - [[_COMMUNITY_Community 29|Community 29]]
 - [[_COMMUNITY_Community 30|Community 30]]
-- [[_COMMUNITY_Community 31|Community 31]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `set()` - 154 edges
@@ -64,42 +63,42 @@
   D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\vendor\pdf.worker.min.js → D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\popup.js
 - `set()` --calls--> `setTheme()`  [INFERRED]
   D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\vendor\pdf.worker.min.js → D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\app.js
-- `detectDelimiter()` --calls--> `forEach()`  [INFERRED]
+- `runConversion()` --calls--> `add()`  [INFERRED]
   D:\ToolsMatic\assets\json-to-csv.js → D:\ToolsMatic\extensions\toolsmatic-pdf-toolkit\vendor\pdf.worker.min.js
 
 ## Communities
 
 ### Community 0 - "Community 0"
 Cohesion: 0.0
-Nodes (638): at(), abort(), accept(), Acrobat, Acrobat7, ADBE_JSConsole, ADBE_JSDebugger, addHex() (+630 more)
+Nodes (626): at(), abort(), accept(), Acrobat, Acrobat7, ADBE_JSConsole, ADBE_JSDebugger, addHex() (+618 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.01
-Nodes (244): _(), a(), aa(), ac(), ae(), al, an(), ao (+236 more)
+Nodes (245): _(), a(), aa(), ac(), ae(), al, an(), ao (+237 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.01
-Nodes (297): getToastContainer(), showToast(), addFontStyle(), addNativeFontFace(), AnnotationElement, AnnotationElementFactory, AnnotationStorage, appendText() (+289 more)
+Nodes (287): getToastContainer(), showToast(), addFontStyle(), addNativeFontFace(), AnnotationElement, AnnotationElementFactory, AnnotationStorage, appendText() (+279 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.01
-Nodes (141): setStatCard(), #a(), add(), addChildren(), _addNamespacePrefix(), addNode(), addPdfFont(), addString() (+133 more)
+Nodes (161): setStatCard(), _onReceiveData(), PDFDataTransportStreamRangeReader, PDFDataTransportStreamReader, _queueLoadingCallback(), #a(), add(), addChildren() (+153 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.01
-Nodes (84): dismissToast(), initFAQ(), initHeader(), initMobileMenu(), initScrollReveal(), normalizePath(), setActiveNavLink(), smoothScrollAnchors() (+76 more)
+Nodes (229): categories(), filteredTools(), loadTool(), render(), renderCategories(), renderList(), setTheme(), slugFromHash() (+221 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.01
-Nodes (143): categories(), filteredTools(), loadTool(), render(), renderCategories(), renderList(), setTheme(), slugFromHash() (+135 more)
+Nodes (14): AnnotationEditor, AnnotationEditorLayer, AnnotationEditorUIManager, BaseFullReader, BaseRangeReader, CommandManager, FreeTextEditor, getEditableAnnotations() (+6 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.04
-Nodes (161): _(), a(), b(), Be(), C(), Ct(), d(), De() (+153 more)
+Cohesion: 0.03
+Nodes (160): _(), a(), b(), Be(), C(), Ct(), d(), De() (+152 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.01
-Nodes (20): decodeAndClamp(), htmlForXfa(), ImageResizer, numPages(), PDFImage, resizeImageMask(), TemplateNamespace, xfaFactory() (+12 more)
+Cohesion: 0.02
+Nodes (9): decodeAndClamp(), htmlForXfa(), ImageResizer, numPages(), PDFImage, resizeImageMask(), TemplateNamespace, xfaFactory() (+1 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.01
@@ -107,31 +106,31 @@ Nodes (3): ConfigNamespace, fingerprints(), Stream
 
 ### Community 9 - "Community 9"
 Cohesion: 0.03
-Nodes (99): A(), Ae(), an(), B(), bB(), Be(), Bs(), CA() (+91 more)
+Nodes (98): A(), Ae(), an(), B(), bB(), Be(), Bs(), CA() (+90 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.03
-Nodes (27): Ascii85Stream, BaseStream, checkHeader(), DecodeStream, EvaluatorPreprocessor, FlateStream, getB(), getNumber() (+19 more)
+Nodes (8): ai, bi, li, oo, ui, vi, LZWStream, PostScriptStack
 
 ### Community 11 - "Community 11"
-Cohesion: 0.04
-Nodes (6): ai, bi, li, on(), ui, vi
+Cohesion: 0.07
+Nodes (82): In, $(), _(), a(), An(), as(), b(), ba() (+74 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.07
-Nodes (78): In, _(), a(), An(), as(), b(), ba(), bs() (+70 more)
-
-### Community 13 - "Community 13"
 Cohesion: 0.04
 Nodes (15): o(), AlternateCS, ARCFourCipher, calculateSHA384(), CalGrayCS, CalRGBCS, CipherTransform, CipherTransformFactory (+7 more)
+
+### Community 13 - "Community 13"
+Cohesion: 0.06
+Nodes (21): BitModel, byteIn(), ContextCache, copyCoefficients(), decodeBitmap(), decodeIAID(), decodeInteger(), decodeMMRBitmap() (+13 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.08
 Nodes (38): A(), c(), d(), f(), G(), h(), i(), j() (+30 more)
 
 ### Community 15 - "Community 15"
-Cohesion: 0.12
-Nodes (6): d(), Fs, ks, oo, ps, warn()
+Cohesion: 0.1
+Nodes (11): d(), Fs, ks, ps, CFFFDSelect, compileCharString(), CompiledFont, getSubroutineBias() (+3 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.08
@@ -142,16 +141,16 @@ Cohesion: 0.08
 Nodes (1): LocaleSetNamespace
 
 ### Community 18 - "Community 18"
+Cohesion: 0.31
+Nodes (18): ad(), esc(), footer(), head(), header(), imagePage(), imageRuntime(), imageSeo() (+10 more)
+
+### Community 19 - "Community 19"
 Cohesion: 0.14
 Nodes (1): ConnectionSetNamespace
 
-### Community 19 - "Community 19"
-Cohesion: 0.2
-Nodes (2): NullOptimizer, QueueOptimizer
-
 ### Community 20 - "Community 20"
 Cohesion: 0.2
-Nodes (1): ExclGroup
+Nodes (2): NullOptimizer, QueueOptimizer
 
 ### Community 21 - "Community 21"
 Cohesion: 0.31
@@ -159,14 +158,14 @@ Nodes (7): Add-AdAfterFirstH1(), Add-HtmlExtensions(), Ensure-Dir(), Remove-Fake
 
 ### Community 22 - "Community 22"
 Cohesion: 0.25
-Nodes (1): PostScriptToken
-
-### Community 23 - "Community 23"
-Cohesion: 0.25
 Nodes (1): XFAAttribute
 
-### Community 24 - "Community 24"
+### Community 23 - "Community 23"
 Cohesion: 0.4
+Nodes (0): 
+
+### Community 24 - "Community 24"
+Cohesion: 1.0
 Nodes (0): 
 
 ### Community 25 - "Community 25"
@@ -193,35 +192,31 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 31 - "Community 31"
-Cohesion: 1.0
-Nodes (0): 
-
 ## Knowledge Gaps
-- **Thin community `Community 25`** (1 nodes): `extract.js`
+- **Thin community `Community 24`** (1 nodes): `extract.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 26`** (1 nodes): `sw.js`
+- **Thin community `Community 25`** (1 nodes): `sw.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 27`** (1 nodes): `popunder-manager.js`
+- **Thin community `Community 26`** (1 nodes): `popunder-manager.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 28`** (1 nodes): `tools-data.js`
+- **Thin community `Community 27`** (1 nodes): `tools-data.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 29`** (1 nodes): `find-canonical-mismatches.ps1`
+- **Thin community `Community 28`** (1 nodes): `find-canonical-mismatches.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (1 nodes): `generate-seo-variants.js`
+- **Thin community `Community 29`** (1 nodes): `generate-seo-variants.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 31`** (1 nodes): `normalize-banner-ads.ps1`
+- **Thin community `Community 30`** (1 nodes): `normalize-banner-ads.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `set()` connect `Community 3` to `Community 0`, `Community 2`, `Community 4`, `Community 5`, `Community 6`, `Community 7`, `Community 10`, `Community 12`, `Community 13`, `Community 14`?**
-  _High betweenness centrality (0.096) - this node is a cross-community bridge._
-- **Why does `TemplateNamespace` connect `Community 7` to `Community 0`, `Community 3`, `Community 5`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
-- **Why does `at()` connect `Community 0` to `Community 1`, `Community 2`, `Community 3`, `Community 4`, `Community 6`, `Community 10`, `Community 13`?**
-  _High betweenness centrality (0.032) - this node is a cross-community bridge._
+- **Why does `set()` connect `Community 3` to `Community 0`, `Community 1`, `Community 2`, `Community 4`, `Community 5`, `Community 6`, `Community 7`, `Community 11`, `Community 12`, `Community 13`, `Community 14`?**
+  _High betweenness centrality (0.089) - this node is a cross-community bridge._
+- **Why does `ConfigNamespace` connect `Community 8` to `Community 0`, `Community 1`, `Community 3`, `Community 4`, `Community 9`, `Community 10`, `Community 12`?**
+  _High betweenness centrality (0.068) - this node is a cross-community bridge._
+- **Why does `forEach()` connect `Community 4` to `Community 0`, `Community 1`, `Community 3`, `Community 6`, `Community 9`, `Community 11`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **Are the 37 inferred relationships involving `set()` (e.g. with `_()` and `m()`) actually correct?**
   _`set()` has 37 INFERRED edges - model-reasoned connections that need verification._
 - **Should `Community 0` be split into smaller, more focused modules?**

@@ -550,6 +550,7 @@
     { url: '/tools/timezone-converter.html', title: 'Timezone Converter', description: 'Compare times across cities with zero setup.', category: 'Everyday' },
     { url: '/tools/pomodoro-timer.html', title: 'Pomodoro Timer', description: 'Focus with a calm timer, tasks, stats, and ambient audio.', category: 'Everyday' },
     { url: '/tools/stopwatch-timer.html', title: 'Stopwatch & Timer', description: 'Track laps, countdowns, and up to four named timers in one place.', category: 'Everyday' },
+    { url: '/tools/team-balancer.html', title: 'Team Balancer', description: 'Split players into fair teams by skill with snake draft balancing, drag-and-drop edits, and export options.', category: 'Everyday' },
     { url: '/tools/text-diff-checker.html', title: 'Text Diff Checker', description: 'Spot differences between two text blocks.', category: 'Writing' },
     { url: '/tools/lorem-ipsum-generator.html', title: 'Lorem Ipsum Generator', description: 'Create filler copy for mockups.', category: 'Writing' },
     { url: '/tools/reaction-time-test.html', title: 'Reaction Time Test', description: 'Benchmark reflexes with 5 rounds, false-start detection, and shareable results.', category: 'Everyday' },
@@ -681,14 +682,14 @@
     { url: '/tools/pro-image-editor.html', title: 'Pro Image Editor', description: 'Edit images with crop, resize, rotate, draw, text, filters, undo, redo, and private export.', category: 'Design' },
   ];
 
-  const HOME_TOOL_COUNT = 150;
+  const HOME_TOOL_COUNT = 151;
 
   const SEARCH_CATEGORY_KEYWORDS = {
     PDF: 'pdf document file page pages merge split compress shrink reduce sign signature watermark protect unlock password metadata image jpg webp text repair rotate crop annotate redact form reader headers margins word docx excel xlsx xls spreadsheet powerpoint pptx slides pdfa archival organize reorder',
     Writing: 'text words characters count writing markdown quote ascii case lorem ipsum diff typing paragraph sentence copy social caption essay',
     Developer: 'developer code json regex jwt token base64 url uuid hash checksum html css minify format validate encode decode seo robots sitemap metadata open graph twitter card slug password',
     Design: 'design color colours palette picker gradient contrast wcag qr code image compress visual foreground background accessibility image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor image resize crop rotate opacity transparent background remover ocr split converter editor pro image editor photo editor online no upload browser image editor crop resize rotate draw text shapes filters private export',
-    Everyday: 'everyday timer stopwatch pomodoro focus timezone time zone unit converter measurement productivity reaction reflex',
+    Everyday: 'everyday timer stopwatch pomodoro focus timezone time zone unit converter measurement productivity reaction reflex team balancer generator group splitter sports classroom esports hackathon corporate basketball soccer snake draft skill fair teams',
     Data: 'data csv json table spreadsheet rows columns delimiter inspect convert flatten export'
   };
 
@@ -717,6 +718,7 @@
     'Timezone Converter': 'time zone converter city world clock utc meeting',
     'Pomodoro Timer': 'focus timer productivity sessions break task',
     'Stopwatch & Timer': 'stopwatch countdown timer lap multi timer',
+    'Team Balancer': 'team generator team maker random teams skill levels snake draft groups sports classroom esports hackathon corporate basketball soccer fair teams',
     'Text Diff Checker': 'compare text diff changes difference revisions',
     'CSV to JSON': 'csv json convert rows columns spreadsheet',
     'JSON to CSV': 'json csv convert flatten table spreadsheet',
@@ -890,7 +892,6 @@
           <span class="sr-only">Search all tools</span>
           <input class="tool-finder-input" type="search" placeholder="Try: make PDF smaller, format JSON, color contrast..." autocomplete="off">
         </label>
-        <div class="tool-finder-chips" aria-label="Filter tools by category"></div>
         <div class="tool-finder-results" role="listbox" aria-label="Tool search results"></div>
         <div class="tool-finder-help">Use Up / Down to move, Enter to open, Esc to close.</div>
       </div>
@@ -905,9 +906,8 @@
 
     const paletteInput = finder.querySelector('.tool-finder-input');
     const paletteResults = finder.querySelector('.tool-finder-results');
-    const paletteChips = finder.querySelector('.tool-finder-chips');
     const closeButton = finder.querySelector('.tool-finder-close');
-    let activeCategory = 'All';
+    const activeCategory = 'All';
     let activeIndex = 0;
 
     const setRecentTool = (tool) => {
@@ -951,22 +951,6 @@
       const query = searchInput.value.trim();
       const results = getToolSearchResults(query, activeCategory, 6);
       dropdown.innerHTML = '';
-      const chips = document.createElement('div');
-      chips.className = 'nav-search-chips';
-      getToolCategories().forEach((category) => {
-        const chip = document.createElement('button');
-        chip.type = 'button';
-        chip.className = `tool-search-chip${category === activeCategory ? ' is-active' : ''}`;
-        chip.textContent = category;
-        chip.addEventListener('mousedown', (e) => e.preventDefault());
-        chip.addEventListener('click', () => {
-          activeCategory = category;
-          renderDropdown();
-          renderPalette();
-        });
-        chips.appendChild(chip);
-      });
-      dropdown.appendChild(chips);
       if (!results.length) {
         const empty = document.createElement('div');
         empty.className = 'tool-search-empty';
@@ -976,23 +960,6 @@
         results.forEach((tool, index) => dropdown.appendChild(buildResultButton(tool, index, 'dropdown')));
       }
       dropdown.classList.add('is-open');
-    };
-
-    const renderChips = () => {
-      paletteChips.innerHTML = '';
-      getToolCategories().forEach((category) => {
-        const chip = document.createElement('button');
-        chip.type = 'button';
-        chip.className = `tool-search-chip${category === activeCategory ? ' is-active' : ''}`;
-        chip.textContent = category;
-        chip.addEventListener('click', () => {
-          activeCategory = category;
-          activeIndex = 0;
-          renderPalette();
-          renderDropdown();
-        });
-        paletteChips.appendChild(chip);
-      });
     };
 
     const renderResults = (source = 'palette') => {
@@ -1011,7 +978,6 @@
     };
 
     const renderPalette = () => {
-      renderChips();
       renderResults('palette');
     };
 
@@ -1097,7 +1063,6 @@
       if (e.target === finder) closePalette();
     });
     closeButton.addEventListener('click', closePalette);
-    renderChips();
   };
 
   const getHomeCategory = (title) => {

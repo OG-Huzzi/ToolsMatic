@@ -264,7 +264,7 @@
       <span class="suite-eyebrow">WPM Training</span>
       <h1>Typing Accuracy Test</h1>
     <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
-      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
       <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
     </section>
       <p>Measure real typing performance without visual clutter. You get live WPM, raw speed, accuracy, consistency, local history, and a weak-key heatmap while still keeping the first screen obvious enough that anyone can start testing right away.</p>
@@ -505,7 +505,7 @@
         ],
         code: [
           `const buildSnippet = (title, description) => {\n  const trimmedTitle = title.trim();\n  const trimmedDescription = description.trim();\n  return {\n    title: trimmedTitle,\n    description: trimmedDescription,\n    ready: Boolean(trimmedTitle && trimmedDescription)\n  };\n};`,
-          `function formatDuration(totalSeconds) {\n  const minutes = Math.floor(totalSeconds / 60);\n  const seconds = totalSeconds % 60;\n  return \`${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}\`;\n}`,
+          `function formatDuration(totalSeconds) {\n  const minutes = Math.floor(totalSeconds / 60);\n  const seconds = totalSeconds % 60;\n  return \`\${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}\`;\n}`,
           `async function saveDraft(data) {\n  const response = await fetch('/api/drafts', {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify(data)\n  });\n  return response.json();\n}`,
           `const applyTheme = (mode) => {\n  document.documentElement.dataset.theme = mode;\n  localStorage.setItem('preferred-theme', mode);\n  return mode;\n};`,
           `const fields = ['title', 'description', 'canonical'];\nconst emptyFields = fields.filter((key) => !formState[key]);\nif (emptyFields.length) {\n  console.warn('Missing fields:', emptyFields.join(', '));\n}`

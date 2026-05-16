@@ -207,6 +207,135 @@
       font-weight: 700;
     }
 
+    .typing-test-shell {
+      display: grid;
+      gap: 22px;
+    }
+
+    .typing-test-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .typing-mode-bar,
+    .typing-source-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .typing-reader {
+      min-height: 230px;
+      padding: clamp(18px, 3vw, 30px);
+      border-radius: 26px;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+      background:
+        radial-gradient(circle at top right, rgba(94, 234, 212, 0.08), transparent 18rem),
+        rgba(3, 12, 24, 0.96);
+      font-size: clamp(1.25rem, 2.5vw, 2rem);
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+      color: rgba(229, 236, 244, 0.5);
+      cursor: text;
+      user-select: none;
+    }
+
+    .typing-reader:focus {
+      outline: 3px solid rgba(94, 234, 212, 0.22);
+      outline-offset: 4px;
+    }
+
+    .typing-word {
+      display: inline-block;
+      margin: 0 0.28em 0.18em 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .typing-word.current {
+      color: #eef6fb;
+      border-color: rgba(94, 234, 212, 0.75);
+    }
+
+    .typing-word.correct {
+      color: #d9fff1;
+    }
+
+    .typing-word.incorrect {
+      color: #fecaca;
+      background: rgba(248, 113, 113, 0.12);
+      border-radius: 8px;
+    }
+
+    .typing-hidden-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .typing-live-line {
+      min-height: 56px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(2, 10, 20, 0.78);
+      color: rgba(229, 236, 244, 0.78);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .typing-live-line strong {
+      color: #eef6fb;
+    }
+
+    .typing-score-card {
+      display: grid;
+      gap: 14px;
+      padding: 20px;
+      border-radius: 24px;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+      background: rgba(4, 14, 27, 0.78);
+    }
+
+    .typing-big-score {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .typing-big-score div {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(2, 10, 20, 0.72);
+      border: 1px solid rgba(124, 217, 255, 0.12);
+    }
+
+    .typing-big-score span {
+      display: block;
+      color: rgba(229, 236, 244, 0.62);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .typing-big-score strong {
+      display: block;
+      margin-top: 8px;
+      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      line-height: 1;
+    }
+
+    @media (max-width: 900px) {
+      .typing-test-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .typing-history-table td:first-child {
       white-space: nowrap;
     }
@@ -493,7 +622,7 @@
         ],
         code: [
           `const buildSnippet = (title, description) => {\n  const trimmedTitle = title.trim();\n  const trimmedDescription = description.trim();\n  return {\n    title: trimmedTitle,\n    description: trimmedDescription,\n    ready: Boolean(trimmedTitle && trimmedDescription)\n  };\n};`,
-          `function formatDuration(totalSeconds) {\n  const minutes = Math.floor(totalSeconds / 60);\n  const seconds = totalSeconds % 60;\n  return \`${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}\`;\n}`,
+          `function formatDuration(totalSeconds) {\n  const minutes = Math.floor(totalSeconds / 60);\n  const seconds = totalSeconds % 60;\n  return \`\${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}\`;\n}`,
           `async function saveDraft(data) {\n  const response = await fetch('/api/drafts', {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify(data)\n  });\n  return response.json();\n}`,
           `const applyTheme = (mode) => {\n  document.documentElement.dataset.theme = mode;\n  localStorage.setItem('preferred-theme', mode);\n  return mode;\n};`,
           `const fields = ['title', 'description', 'canonical'];\nconst emptyFields = fields.filter((key) => !formState[key]);\nif (emptyFields.length) {\n  console.warn('Missing fields:', emptyFields.join(', '));\n}`
@@ -788,6 +917,315 @@
 
       renderHistory();
       resetSession(true);
+    })();
+  </script>
+  <script>
+    (() => {
+      const layout = document.querySelector('.typing-layout');
+      if (!layout) return;
+
+      const HISTORY_KEY = 'toolsmatic-typing-history';
+      const banks = {
+        common: [
+          'Every great typing session starts with calm hands, steady eyes, and a clear passage that is easy to follow from the first word.',
+          'Practice works best when the screen removes confusion. Focus on the next word, keep a smooth rhythm, and let accuracy build speed naturally.',
+          'Fast typing is useful only when the words are correct. A clean test should reward control, rhythm, and useful speed instead of random bursts.',
+          'Small improvements become obvious when you track words per minute, accuracy, errors, and consistency across short focused sessions.'
+        ],
+        advanced: [
+          'Professional typing is not about hitting one lucky score. It is about sustaining accurate output while reading ahead, correcting calmly, and keeping pace under pressure.',
+          'A reliable words per minute test should make the target text readable, the controls obvious, and the result easy to understand without forcing an account or a complicated lesson dashboard.',
+          'The best typists do not rush every sentence. They stay relaxed, maintain rhythm through punctuation, and recover from mistakes without letting one wrong key ruin the whole test.'
+        ],
+        code: [
+          "const formatScore = (wpm, accuracy) => `${wpm} WPM at ${accuracy}% accuracy`;\nconst result = formatScore(72, 98);\nconsole.log(result);",
+          "function calculateWpm(characters, seconds) {\n  const words = characters / 5;\n  return Math.round(words / (seconds / 60));\n}",
+          "const user = { name: 'ToolsMatic', fast: true };\nif (user.fast) {\n  document.body.classList.add('typing-ready');\n}"
+        ],
+        custom: ['Paste your own text in custom mode, then press New passage to practice with a real paragraph from your work.']
+      };
+
+      layout.innerHTML = `
+        <section class="suite-panel typing-test-shell">
+          <div class="typing-test-top">
+            <div class="typing-card-stack">
+              <div class="typing-mode-bar" aria-label="Choose duration">
+                <button class="suite-toggle is-active" type="button" data-tm-duration="15">15s</button>
+                <button class="suite-toggle" type="button" data-tm-duration="30">30s</button>
+                <button class="suite-toggle" type="button" data-tm-duration="60">60s</button>
+                <button class="suite-toggle" type="button" data-tm-duration="120">120s</button>
+                <input id="tm-custom-duration" class="suite-input" type="number" min="10" max="300" placeholder="Custom seconds">
+              </div>
+              <div class="typing-source-bar" aria-label="Choose passage type">
+                <button class="suite-toggle is-active" type="button" data-tm-source="common">Common words</button>
+                <button class="suite-toggle" type="button" data-tm-source="advanced">Advanced</button>
+                <button class="suite-toggle" type="button" data-tm-source="code">Code terms</button>
+                <button class="suite-toggle" type="button" data-tm-source="custom">Custom text</button>
+              </div>
+              <div id="tm-custom-wrap" class="suite-field" style="display:none;">
+                <label for="tm-custom-text" class="suite-label">Custom text</label>
+                <textarea id="tm-custom-text" class="suite-textarea" style="min-height:110px;">Practice with your own text so the typing test matches your real writing work.</textarea>
+              </div>
+              <div id="tm-reader" class="typing-reader" tabindex="0" role="textbox" aria-label="Typing passage"></div>
+              <textarea id="tm-input" class="suite-textarea typing-input" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="Start typing here. The timer begins on your first character."></textarea>
+              <div class="typing-live-line" id="tm-live-line"><strong>Ready.</strong> Pick a duration and start typing when you are ready.</div>
+              <div class="suite-progress"><span id="tm-progress-bar" style="width:0%;"></span></div>
+              <div class="suite-action-row">
+                <button id="tm-restart" class="suite-button primary" type="button">Restart test</button>
+                <button id="tm-new-passage" class="suite-button secondary" type="button">New passage</button>
+                <button id="tm-copy" class="suite-button ghost" type="button">Copy result</button>
+              </div>
+            </div>
+            <aside class="typing-score-card">
+              <h2>Live stats</h2>
+              <div class="typing-big-score">
+                <div><span>Time</span><strong id="tm-time">15</strong></div>
+                <div><span>Progress</span><strong id="tm-progress">0%</strong></div>
+                <div><span>WPM</span><strong id="tm-wpm">0</strong></div>
+                <div><span>Raw</span><strong id="tm-raw">0</strong></div>
+                <div><span>Accuracy</span><strong id="tm-accuracy">100%</strong></div>
+                <div><span>Errors</span><strong id="tm-errors">0</strong></div>
+              </div>
+              <p class="suite-note" id="tm-source-label">Common words</p>
+            </aside>
+          </div>
+        </section>
+        <section class="typing-secondary-grid">
+          <section class="suite-card">
+            <h2>Recent sessions</h2>
+            <div class="suite-table-wrap">
+              <table class="suite-table typing-history-table">
+                <thead><tr><th>Time</th><th>WPM</th><th>Accuracy</th><th>Mode</th></tr></thead>
+                <tbody id="tm-history"></tbody>
+              </table>
+            </div>
+          </section>
+          <section class="suite-card">
+            <h2>Weak-key heatmap</h2>
+            <div id="tm-keyboard" class="typing-keyboard"></div>
+          </section>
+        </section>
+      `;
+
+      const $ = (id) => document.getElementById(id);
+      const durationButtons = Array.from(document.querySelectorAll('[data-tm-duration]'));
+      const sourceButtons = Array.from(document.querySelectorAll('[data-tm-source]'));
+      const reader = $('tm-reader');
+      const input = $('tm-input');
+      const customWrap = $('tm-custom-wrap');
+      const customText = $('tm-custom-text');
+      const customDuration = $('tm-custom-duration');
+      const keyRows = [['q','w','e','r','t','y','u','i','o','p'], ['a','s','d','f','g','h','j','k','l',';'], ['z','x','c','v','b','n','m',',','.','/']];
+      const state = {
+        duration: 15,
+        source: 'common',
+        words: [],
+        currentIndex: 0,
+        typedWords: [],
+        start: 0,
+        timer: null,
+        ended: false,
+        weak: {},
+        lastSummary: null,
+        history: JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]')
+      };
+
+      const sourceName = () => ({ common: 'Common words', advanced: 'Advanced passage', code: 'Code terms', custom: 'Custom text' }[state.source] || 'Common words');
+      const escapeHtml = (value) => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+      const pickPrompt = () => {
+        const text = state.source === 'custom'
+          ? (customText.value.trim() || banks.custom[0])
+          : banks[state.source][Math.floor(Math.random() * banks[state.source].length)];
+        const baseWords = text.replace(/\s+/g, ' ').trim().split(' ');
+        const target = Math.max(28, Math.ceil(state.duration * 2.4));
+        const words = [];
+        while (words.length < target) words.push(...baseWords);
+        return state.source === 'code' ? text.split(/\s+/) : words.slice(0, target);
+      };
+
+      const renderPrompt = () => {
+        reader.innerHTML = state.words.map((word, index) => {
+          let className = 'typing-word';
+          const typed = state.typedWords[index];
+          if (index < state.currentIndex) className += typed === word ? ' correct' : ' incorrect';
+          if (index === state.currentIndex && !state.ended) className += ' current';
+          return `<span class="${className}">${escapeHtml(word)}</span>`;
+        }).join(' ');
+      };
+
+      const compute = () => {
+        const elapsed = state.start ? Math.max(0.5, (performance.now() - state.start) / 1000) : 0.5;
+        let correctWords = 0;
+        let correctChars = 0;
+        let totalTypedChars = 0;
+        let errors = 0;
+        state.weak = {};
+
+        state.typedWords.forEach((word, index) => {
+          const expected = state.words[index] || '';
+          totalTypedChars += word.length + 1;
+          if (word === expected) correctWords += 1;
+          const max = Math.max(word.length, expected.length);
+          for (let i = 0; i < max; i += 1) {
+            if (word[i] === expected[i]) correctChars += 1;
+            else {
+              errors += 1;
+              const key = (expected[i] || word[i] || '').toLowerCase();
+              if (key) state.weak[key] = (state.weak[key] || 0) + 1;
+            }
+          }
+        });
+
+        const liveWord = input.value.trim();
+        const liveChars = totalTypedChars + liveWord.length;
+        const raw = Math.max(0, Math.round((liveChars / 5) / (elapsed / 60)));
+        const wpm = Math.max(0, Math.round((correctChars / 5) / (elapsed / 60)));
+        const accuracy = liveChars ? Math.max(0, Math.round((correctChars / liveChars) * 100)) : 100;
+        return { wpm, raw, accuracy, errors, correctWords };
+      };
+
+      const renderKeyboard = () => {
+        $('tm-keyboard').innerHTML = keyRows.map((row) => `<div class="typing-key-row">${row.map((key) => {
+          const heat = clamp((state.weak[key] || 0) * 20, 0, 85) / 100;
+          return `<span class="typing-key" style="background:linear-gradient(180deg, rgba(8,18,31,.72), rgba(248,113,113,${heat}));">${escapeHtml(key)}</span>`;
+        }).join('')}</div>`).join('');
+      };
+
+      const renderHistory = () => {
+        $('tm-history').innerHTML = state.history.length
+          ? state.history.map((item) => `<tr><td>${new Date(item.at).toLocaleString()}</td><td>${item.wpm}</td><td>${item.accuracy}%</td><td>${escapeHtml(item.mode)}</td></tr>`).join('')
+          : '<tr><td colspan="4" class="suite-empty">No completed tests yet.</td></tr>';
+      };
+
+      const updateStats = () => {
+        const summary = compute();
+        const elapsed = state.start ? (performance.now() - state.start) / 1000 : 0;
+        const remaining = Math.max(0, state.duration - elapsed);
+        const progress = clamp(Math.round((elapsed / state.duration) * 100), 0, 100);
+        $('tm-time').textContent = String(Math.ceil(remaining));
+        $('tm-progress').textContent = `${progress}%`;
+        $('tm-progress-bar').style.width = `${progress}%`;
+        $('tm-wpm').textContent = String(summary.wpm);
+        $('tm-raw').textContent = String(summary.raw);
+        $('tm-accuracy').textContent = `${summary.accuracy}%`;
+        $('tm-errors').textContent = String(summary.errors);
+        renderKeyboard();
+        if (remaining <= 0) finishTest();
+      };
+
+      const startTest = () => {
+        if (state.start || state.ended) return;
+        state.start = performance.now();
+        $('tm-live-line').innerHTML = '<strong>Typing live.</strong> Keep your eyes on the highlighted word.';
+        state.timer = setInterval(updateStats, 100);
+      };
+
+      const finishTest = () => {
+        if (state.ended) return;
+        clearInterval(state.timer);
+        state.timer = null;
+        state.ended = true;
+        input.disabled = true;
+        const summary = compute();
+        state.lastSummary = summary;
+        state.history.unshift({ at: Date.now(), wpm: summary.wpm, raw: summary.raw, accuracy: summary.accuracy, mode: `${state.duration}s ${sourceName()}` });
+        state.history = state.history.slice(0, 10);
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(state.history));
+        $('tm-live-line').innerHTML = `<strong>Complete.</strong> ${summary.wpm} WPM, ${summary.accuracy}% accuracy, ${summary.errors} errors.`;
+        renderPrompt();
+        renderHistory();
+        updateStats();
+      };
+
+      const reset = (newPassage = false) => {
+        clearInterval(state.timer);
+        state.timer = null;
+        state.start = 0;
+        state.ended = false;
+        state.currentIndex = 0;
+        state.typedWords = [];
+        state.weak = {};
+        if (newPassage || !state.words.length) state.words = pickPrompt();
+        input.value = '';
+        input.disabled = false;
+        $('tm-time').textContent = String(state.duration);
+        $('tm-progress').textContent = '0%';
+        $('tm-progress-bar').style.width = '0%';
+        $('tm-wpm').textContent = '0';
+        $('tm-raw').textContent = '0';
+        $('tm-accuracy').textContent = '100%';
+        $('tm-errors').textContent = '0';
+        $('tm-source-label').textContent = sourceName();
+        $('tm-live-line').innerHTML = '<strong>Ready.</strong> Start typing the highlighted word. Space moves to the next word.';
+        renderPrompt();
+        renderKeyboard();
+      };
+
+      input.addEventListener('input', () => {
+        if (!state.start && input.value.length) startTest();
+        if (/\s$/.test(input.value)) {
+          const word = input.value.trim();
+          if (word || state.currentIndex < state.words.length) {
+            state.typedWords[state.currentIndex] = word;
+            state.currentIndex += 1;
+            input.value = '';
+          }
+        }
+        renderPrompt();
+        updateStats();
+        if (state.currentIndex >= state.words.length) finishTest();
+      });
+
+      reader.addEventListener('click', () => input.focus());
+      durationButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          durationButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+          customDuration.value = '';
+          state.duration = Number(button.dataset.tmDuration);
+          reset(true);
+          input.focus();
+        });
+      });
+      sourceButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          sourceButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+          state.source = button.dataset.tmSource;
+          customWrap.style.display = state.source === 'custom' ? 'grid' : 'none';
+          reset(true);
+          input.focus();
+        });
+      });
+      customDuration.addEventListener('change', () => {
+        state.duration = clamp(Number(customDuration.value) || 60, 10, 300);
+        durationButtons.forEach((button) => button.classList.remove('is-active'));
+        reset(true);
+      });
+      customText.addEventListener('input', () => {
+        if (state.source === 'custom') reset(true);
+      });
+      $('tm-restart').addEventListener('click', () => {
+        reset(false);
+        input.focus();
+      });
+      $('tm-new-passage').addEventListener('click', () => {
+        reset(true);
+        input.focus();
+      });
+      $('tm-copy').addEventListener('click', async () => {
+        const summary = state.lastSummary || compute();
+        const text = `Typing Speed Test: ${summary.wpm} WPM, raw ${summary.raw}, ${summary.accuracy}% accuracy, ${summary.errors} errors.`;
+        try {
+          await navigator.clipboard.writeText(text);
+          $('tm-live-line').innerHTML = '<strong>Copied.</strong> Result summary copied to clipboard.';
+        } catch (_) {
+          $('tm-live-line').innerHTML = '<strong>Copy failed.</strong> Browser clipboard permission was blocked.';
+        }
+      });
+
+      renderHistory();
+      reset(true);
     })();
   </script>
 </body>

@@ -228,7 +228,9 @@
     }
 
     .typing-reader {
-      min-height: 230px;
+      min-height: 260px;
+      max-height: 360px;
+      overflow-y: auto;
       padding: clamp(18px, 3vw, 30px);
       border-radius: 26px;
       border: 1px solid rgba(124, 217, 255, 0.16);
@@ -267,6 +269,37 @@
       color: #fecaca;
       background: rgba(248, 113, 113, 0.12);
       border-radius: 8px;
+    }
+
+    .typing-char-unit {
+      color: rgba(229, 236, 244, 0.42);
+      border-radius: 5px;
+      transition: color 0.08s ease, background 0.08s ease, box-shadow 0.08s ease;
+    }
+
+    .typing-char-unit.correct {
+      color: #f8fbff;
+    }
+
+    .typing-char-unit.wrong {
+      color: #fecaca;
+      background: rgba(248, 113, 113, 0.22);
+      box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.1);
+    }
+
+    .typing-char-unit.current {
+      color: rgba(229, 236, 244, 0.68);
+      box-shadow: inset 0 -3px 0 rgba(94, 234, 212, 0.9);
+    }
+
+    .typing-char-unit.wrong.current {
+      color: #fecaca;
+      background: rgba(248, 113, 113, 0.22);
+    }
+
+    .typing-char-unit.pending-space {
+      display: inline-block;
+      min-width: 0.35em;
     }
 
     .typing-hidden-input {
@@ -966,9 +999,9 @@
                 <label for="tm-custom-text" class="suite-label">Custom text</label>
                 <textarea id="tm-custom-text" class="suite-textarea" style="min-height:110px;">Practice with your own text so the typing test matches your real writing work.</textarea>
               </div>
-              <div id="tm-reader" class="typing-reader" tabindex="0" role="textbox" aria-label="Typing passage"></div>
-              <textarea id="tm-input" class="suite-textarea typing-input" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="Start typing here. The timer begins on your first character."></textarea>
-              <div class="typing-live-line" id="tm-live-line"><strong>Ready.</strong> Pick a duration and start typing when you are ready.</div>
+              <div id="tm-reader" class="typing-reader" tabindex="0" role="textbox" aria-label="Typing passage. Type directly to begin."></div>
+              <textarea id="tm-input" class="typing-hidden-input" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Hidden typing input"></textarea>
+              <div class="typing-live-line" id="tm-live-line"><strong>Ready.</strong> Click the passage and start typing. There is no separate typing box.</div>
               <div class="suite-progress"><span id="tm-progress-bar" style="width:0%;"></span></div>
               <div class="suite-action-row">
                 <button id="tm-restart" class="suite-button primary" type="button">Restart test</button>
@@ -1011,7 +1044,7 @@
       const durationButtons = Array.from(document.querySelectorAll('[data-tm-duration]'));
       const sourceButtons = Array.from(document.querySelectorAll('[data-tm-source]'));
       const reader = $('tm-reader');
-      const input = $('tm-input');
+      const hiddenInput = $('tm-input');
       const customWrap = $('tm-custom-wrap');
       const customText = $('tm-custom-text');
       const customDuration = $('tm-custom-duration');
@@ -1019,12 +1052,15 @@
       const state = {
         duration: 15,
         source: 'common',
-        words: [],
-        currentIndex: 0,
-        typedWords: [],
+        prompt: '',
+        index: 0,
+        statuses: [],
         start: 0,
         timer: null,
         ended: false,
+        attempts: 0,
+        correct: 0,
+        errors: 0,
         weak: {},
         lastSummary: null,
         history: JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]')
@@ -1038,52 +1074,38 @@
         const text = state.source === 'custom'
           ? (customText.value.trim() || banks.custom[0])
           : banks[state.source][Math.floor(Math.random() * banks[state.source].length)];
-        const baseWords = text.replace(/\s+/g, ' ').trim().split(' ');
-        const target = Math.max(28, Math.ceil(state.duration * 2.4));
-        const words = [];
-        while (words.length < target) words.push(...baseWords);
-        return state.source === 'code' ? text.split(/\s+/) : words.slice(0, target);
+        const normalized = text.replace(/\s+/g, ' ').trim();
+        if (state.source === 'code') return text.trim();
+        const words = normalized.split(' ');
+        const target = Math.max(34, Math.ceil(state.duration * 2.6));
+        const out = [];
+        while (out.length < target) out.push(...words);
+        return out.slice(0, target).join(' ');
       };
 
       const renderPrompt = () => {
-        reader.innerHTML = state.words.map((word, index) => {
-          let className = 'typing-word';
-          const typed = state.typedWords[index];
-          if (index < state.currentIndex) className += typed === word ? ' correct' : ' incorrect';
-          if (index === state.currentIndex && !state.ended) className += ' current';
-          return `<span class="${className}">${escapeHtml(word)}</span>`;
-        }).join(' ');
+        reader.innerHTML = Array.from(state.prompt).map((char, index) => {
+          const status = state.statuses[index] || '';
+          const classes = ['typing-char-unit'];
+          if (char === ' ') classes.push('pending-space');
+          if (status === 'correct') classes.push('correct');
+          if (status === 'wrong') classes.push('wrong');
+          if (index === state.index && !state.ended) classes.push('current');
+          const display = char === ' ' ? '&nbsp;' : char === '\n' ? '<br>' : escapeHtml(char);
+          return `<span class="${classes.join(' ')}" data-char-index="${index}">${display}</span>`;
+        }).join('');
+        const current = reader.querySelector('.typing-char-unit.current');
+        if (current) {
+          reader.scrollTop = Math.max(0, current.offsetTop - (reader.clientHeight / 2));
+        }
       };
 
       const compute = () => {
         const elapsed = state.start ? Math.max(0.5, (performance.now() - state.start) / 1000) : 0.5;
-        let correctWords = 0;
-        let correctChars = 0;
-        let totalTypedChars = 0;
-        let errors = 0;
-        state.weak = {};
-
-        state.typedWords.forEach((word, index) => {
-          const expected = state.words[index] || '';
-          totalTypedChars += word.length + 1;
-          if (word === expected) correctWords += 1;
-          const max = Math.max(word.length, expected.length);
-          for (let i = 0; i < max; i += 1) {
-            if (word[i] === expected[i]) correctChars += 1;
-            else {
-              errors += 1;
-              const key = (expected[i] || word[i] || '').toLowerCase();
-              if (key) state.weak[key] = (state.weak[key] || 0) + 1;
-            }
-          }
-        });
-
-        const liveWord = input.value.trim();
-        const liveChars = totalTypedChars + liveWord.length;
-        const raw = Math.max(0, Math.round((liveChars / 5) / (elapsed / 60)));
-        const wpm = Math.max(0, Math.round((correctChars / 5) / (elapsed / 60)));
-        const accuracy = liveChars ? Math.max(0, Math.round((correctChars / liveChars) * 100)) : 100;
-        return { wpm, raw, accuracy, errors, correctWords };
+        const raw = Math.round((state.attempts / 5) / (elapsed / 60));
+        const wpm = Math.round((state.correct / 5) / (elapsed / 60));
+        const accuracy = state.attempts ? Math.max(0, Math.round((state.correct / state.attempts) * 100)) : 100;
+        return { wpm, raw, accuracy, errors: state.errors };
       };
 
       const renderKeyboard = () => {
@@ -1103,7 +1125,7 @@
         const summary = compute();
         const elapsed = state.start ? (performance.now() - state.start) / 1000 : 0;
         const remaining = Math.max(0, state.duration - elapsed);
-        const progress = clamp(Math.round((elapsed / state.duration) * 100), 0, 100);
+        const progress = clamp(Math.round((state.index / state.prompt.length) * 100), 0, 100);
         $('tm-time').textContent = String(Math.ceil(remaining));
         $('tm-progress').textContent = `${progress}%`;
         $('tm-progress-bar').style.width = `${progress}%`;
@@ -1112,13 +1134,13 @@
         $('tm-accuracy').textContent = `${summary.accuracy}%`;
         $('tm-errors').textContent = String(summary.errors);
         renderKeyboard();
-        if (remaining <= 0) finishTest();
+        if (state.start && remaining <= 0) finishTest();
       };
 
       const startTest = () => {
         if (state.start || state.ended) return;
         state.start = performance.now();
-        $('tm-live-line').innerHTML = '<strong>Typing live.</strong> Keep your eyes on the highlighted word.';
+        $('tm-live-line').innerHTML = '<strong>Typing live.</strong> Type the visible characters. Wrong keys turn red and do not advance.';
         state.timer = setInterval(updateStats, 100);
       };
 
@@ -1127,7 +1149,6 @@
         clearInterval(state.timer);
         state.timer = null;
         state.ended = true;
-        input.disabled = true;
         const summary = compute();
         state.lastSummary = summary;
         state.history.unshift({ at: Date.now(), wpm: summary.wpm, raw: summary.raw, accuracy: summary.accuracy, mode: `${state.duration}s ${sourceName()}` });
@@ -1144,12 +1165,14 @@
         state.timer = null;
         state.start = 0;
         state.ended = false;
-        state.currentIndex = 0;
-        state.typedWords = [];
+        state.index = 0;
+        state.attempts = 0;
+        state.correct = 0;
+        state.errors = 0;
         state.weak = {};
-        if (newPassage || !state.words.length) state.words = pickPrompt();
-        input.value = '';
-        input.disabled = false;
+        if (newPassage || !state.prompt) state.prompt = pickPrompt();
+        state.statuses = Array.from({ length: state.prompt.length }, () => '');
+        hiddenInput.value = '';
         $('tm-time').textContent = String(state.duration);
         $('tm-progress').textContent = '0%';
         $('tm-progress-bar').style.width = '0%';
@@ -1158,34 +1181,72 @@
         $('tm-accuracy').textContent = '100%';
         $('tm-errors').textContent = '0';
         $('tm-source-label').textContent = sourceName();
-        $('tm-live-line').innerHTML = '<strong>Ready.</strong> Start typing the highlighted word. Space moves to the next word.';
+        $('tm-live-line').innerHTML = '<strong>Ready.</strong> Click the passage and type directly. No separate box needed.';
         renderPrompt();
         renderKeyboard();
       };
 
-      input.addEventListener('input', () => {
-        if (!state.start && input.value.length) startTest();
-        if (/\s$/.test(input.value)) {
-          const word = input.value.trim();
-          if (word || state.currentIndex < state.words.length) {
-            state.typedWords[state.currentIndex] = word;
-            state.currentIndex += 1;
-            input.value = '';
-          }
+      const shouldIgnoreKey = (event) => {
+        const target = event.target;
+        if (!target) return false;
+        if (target === hiddenInput || target === reader || target === document.body) return false;
+        return ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(target.tagName) || target.isContentEditable;
+      };
+
+      const handleCharacter = (char) => {
+        if (state.ended || state.index >= state.prompt.length) return;
+        startTest();
+        const expected = state.prompt[state.index];
+        state.attempts += 1;
+        if (char === expected) {
+          state.statuses[state.index] = 'correct';
+          state.index += 1;
+          state.correct += 1;
+        } else {
+          state.statuses[state.index] = 'wrong';
+          state.errors += 1;
+          const key = expected.toLowerCase();
+          if (key.trim()) state.weak[key] = (state.weak[key] || 0) + 1;
         }
         renderPrompt();
         updateStats();
-        if (state.currentIndex >= state.words.length) finishTest();
-      });
+        if (state.index >= state.prompt.length) finishTest();
+      };
 
-      reader.addEventListener('click', () => input.focus());
+      const handleKeydown = (event) => {
+        if (shouldIgnoreKey(event)) return;
+        if (event.ctrlKey || event.metaKey || event.altKey) return;
+        if (event.key === 'Tab') return;
+        if (event.key === 'Backspace') {
+          event.preventDefault();
+          if (state.statuses[state.index] === 'wrong') {
+            state.statuses[state.index] = '';
+            renderPrompt();
+          }
+          return;
+        }
+        if (event.key.length !== 1) return;
+        event.preventDefault();
+        handleCharacter(event.key);
+      };
+
+      reader.addEventListener('click', () => {
+        reader.focus();
+        hiddenInput.focus();
+      });
+      hiddenInput.addEventListener('keydown', (event) => {
+        event.stopPropagation();
+        handleKeydown(event);
+      });
+      document.addEventListener('keydown', handleKeydown);
+
       durationButtons.forEach((button) => {
         button.addEventListener('click', () => {
           durationButtons.forEach((item) => item.classList.toggle('is-active', item === button));
           customDuration.value = '';
           state.duration = Number(button.dataset.tmDuration);
           reset(true);
-          input.focus();
+          reader.focus();
         });
       });
       sourceButtons.forEach((button) => {
@@ -1194,7 +1255,7 @@
           state.source = button.dataset.tmSource;
           customWrap.style.display = state.source === 'custom' ? 'grid' : 'none';
           reset(true);
-          input.focus();
+          reader.focus();
         });
       });
       customDuration.addEventListener('change', () => {
@@ -1207,11 +1268,11 @@
       });
       $('tm-restart').addEventListener('click', () => {
         reset(false);
-        input.focus();
+        reader.focus();
       });
       $('tm-new-passage').addEventListener('click', () => {
         reset(true);
-        input.focus();
+        reader.focus();
       });
       $('tm-copy').addEventListener('click', async () => {
         const summary = state.lastSummary || compute();
@@ -1226,6 +1287,7 @@
 
       renderHistory();
       reset(true);
+      reader.focus();
     })();
   </script>
 </body>

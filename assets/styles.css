@@ -312,7 +312,7 @@ header {
   font-weight: 700;
 }
 
-html.dark-mode {
+html.light-mode {
   --bg: #e2e8f0;
   --card: #f1f5f9;
   --accent: #0891b2;
@@ -333,7 +333,7 @@ html.dark-mode {
   --bg-tertiary: #f8fafc;
 }
 
-html.dark-mode body {
+html.light-mode body {
   background: radial-gradient(circle at 20% 20%, rgba(8, 145, 178, 0.12), transparent 30%),
     radial-gradient(circle at 80% 10%, rgba(124, 58, 237, 0.12), transparent 28%),
     var(--bg);
@@ -1294,7 +1294,7 @@ code {
   --text-code: #dce8f8;
 }
 
-html.dark-mode {
+html.light-mode {
   --bg: #eef3f8;
   --bg-primary: #ffffff;
   --bg-secondary: rgba(255, 255, 255, 0.84);
@@ -1335,7 +1335,7 @@ body {
   color: var(--text);
 }
 
-html.dark-mode body {
+html.light-mode body {
   background:
     radial-gradient(circle at 12% 18%, rgba(15, 118, 110, 0.1), transparent 24%),
     radial-gradient(circle at 88% 10%, rgba(37, 99, 235, 0.08), transparent 22%),
@@ -1433,7 +1433,7 @@ header {
   box-shadow: 0 14px 40px rgba(1, 8, 18, 0.12);
 }
 
-html.dark-mode header {
+html.light-mode header {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.74));
 }
 
@@ -2864,3 +2864,261 @@ body > header .nav-search-dropdown {
 .tool-finder {
   z-index: 10050;
 }
+
+/* ==========================================================================
+   ToolsMatic Premium Google-Quality UI/UX Overhaul
+   ========================================================================== */
+
+/* 1. Global Focus & Form Elements Makeover */
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input:not([type]),
+select {
+  width: 100%;
+  padding: 13px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+textarea:hover,
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="url"]:hover,
+input[type="search"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input:not([type]):hover,
+select:hover {
+  border-color: rgba(94, 234, 212, 0.45);
+  background: var(--bg-tertiary);
+}
+
+textarea:focus-visible,
+input[type="text"]:focus-visible,
+input[type="number"]:focus-visible,
+input[type="url"]:focus-visible,
+input[type="search"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="password"]:focus-visible,
+input:not([type]):focus-visible,
+select:focus-visible {
+  outline: none !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 4px rgba(94, 234, 212, 0.22), inset 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+  background: var(--input-bg) !important;
+}
+
+/* Light mode specific hover and focus refinements */
+html.light-mode textarea:hover,
+html.light-mode input[type="text"]:hover,
+html.light-mode input[type="number"]:hover,
+html.light-mode input[type="url"]:hover,
+html.light-mode input[type="search"]:hover,
+html.light-mode input[type="email"]:hover,
+html.light-mode input[type="password"]:hover,
+html.light-mode input:not([type]):hover,
+html.light-mode select:hover {
+  border-color: rgba(15, 118, 110, 0.45);
+  background: #f8fafc;
+}
+
+html.light-mode textarea:focus-visible,
+html.light-mode input[type="text"]:focus-visible,
+html.light-mode input[type="number"]:focus-visible,
+html.light-mode input[type="url"]:focus-visible,
+html.light-mode input[type="search"]:focus-visible,
+html.light-mode input[type="email"]:focus-visible,
+html.light-mode input[type="password"]:focus-visible,
+html.light-mode input:not([type]):focus-visible,
+html.light-mode select:focus-visible {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.16), inset 0 2px 4px rgba(0, 0, 0, 0.01) !important;
+}
+
+/* 2. Premium Custom Dropdowns (Selects) */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%235eead4' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 46px !important;
+  cursor: pointer;
+}
+
+html.light-mode select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%230f766e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+}
+
+/* 3. Tactile and Dynamic Buttons */
+button:not(.ghost):not(.suggestion-like-btn):not(.nav-toggle):not(.theme-toggle) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 13px 26px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #04111d;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(94, 234, 212, 0.14);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:not(.ghost):not(.suggestion-like-btn):not(.nav-toggle):not(.theme-toggle):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(94, 234, 212, 0.26);
+  filter: brightness(1.08);
+}
+
+button:not(.ghost):not(.suggestion-like-btn):not(.nav-toggle):not(.theme-toggle):active {
+  transform: translateY(0px) scale(0.98);
+  box-shadow: 0 6px 14px rgba(94, 234, 212, 0.12);
+}
+
+html.light-mode button:not(.ghost):not(.suggestion-like-btn):not(.nav-toggle):not(.theme-toggle) {
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.15);
+}
+
+html.light-mode button:not(.ghost):not(.suggestion-like-btn):not(.nav-toggle):not(.theme-toggle):hover {
+  box-shadow: 0 14px 28px rgba(15, 118, 110, 0.26);
+}
+
+/* 4. Premium Monospaced Result Boxes */
+.result-box,
+.uuid-output,
+#match-preview,
+#replace-preview,
+#split-preview,
+#compatibility-output,
+#token-output {
+  margin-top: 14px;
+  padding: 18px 22px;
+  background: var(--bg-code) !important;
+  border: 1px solid var(--border) !important;
+  border-left: 4px solid var(--accent) !important;
+  border-radius: 14px;
+  min-height: 52px;
+  font-family: "Fira Code", "JetBrains Mono", Consolas, "Courier New", monospace !important;
+  font-size: 0.92rem !important;
+  color: var(--text-code) !important;
+  word-break: break-all;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.result-box:hover {
+  border-color: rgba(94, 234, 212, 0.35) !important;
+  box-shadow: var(--shadow-strong);
+}
+
+html.light-mode .result-box,
+html.light-mode .uuid-output,
+html.light-mode #match-preview,
+html.light-mode #replace-preview,
+html.light-mode #split-preview,
+html.light-mode #compatibility-output,
+html.light-mode #token-output {
+  border-left-color: var(--accent) !important;
+}
+
+/* 5. Tool Shell & Page Grid Layout Centering Alignment */
+body.page-tool main {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 40px 24px 80px !important;
+  box-sizing: border-box;
+}
+
+body.page-tool main > nav,
+body.page-tool main > h1,
+body.page-tool main > p,
+body.page-tool main > .ad-slot,
+body.page-tool main > .tool-shell,
+body.page-tool main > section,
+body.page-tool main > div {
+  max-width: 1000px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+body.page-tool main > h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.75rem) !important;
+  text-align: center !important;
+  margin-bottom: 8px !important;
+  color: var(--text-primary) !important;
+}
+
+body.page-tool main > p {
+  text-align: center !important;
+  max-width: 720px !important;
+  margin: 0 auto 30px !important;
+  color: var(--text-secondary) !important;
+  font-size: 1.05rem !important;
+}
+
+/* Make sure programmatic intents, compare tables, and about sections look premium */
+.programmatic-intent-section,
+.about-section,
+.suggestions-section {
+  background: var(--surface) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 28px !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-soft) !important;
+  margin-top: 36px !important;
+  box-sizing: border-box;
+}
+
+/* Details and FAQ visual upgrades */
+details {
+  border-radius: 12px !important;
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border) !important;
+  padding: 16px 20px !important;
+  transition: all 0.25s ease;
+  margin-bottom: 12px !important;
+}
+
+details:hover {
+  border-color: rgba(94, 234, 212, 0.3);
+  box-shadow: var(--shadow-soft);
+}
+
+details summary {
+  color: var(--text-primary) !important;
+  font-weight: 700 !important;
+}
+
+details p {
+  color: var(--text-secondary) !important;
+  line-height: 1.7 !important;
+}
+

@@ -8,3 +8,4 @@ Sitemap: https://toolsmatic.me/sitemap-image-tools.xml
 Sitemap: https://toolsmatic.me/sitemap-omni-pseo.xml
 Sitemap: https://toolsmatic.me/sitemap-pro-image-editor.xml
 Sitemap: https://toolsmatic.me/sitemap-team-balancer.xml
+Sitemap: https://toolsmatic.me/sitemap-pseo-variants.xml

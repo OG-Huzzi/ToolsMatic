@@ -1,0 +1,3410 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Add PDF Page Numbers Generator Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Add PDF Page Numbers Generator online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/page-numbers-pdf-generator.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/page-numbers-pdf-generator.html">
+  <meta property="og:title" content="Add PDF Page Numbers Generator Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Add PDF Page Numbers Generator online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Add PDF Page Numbers Generator Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Add PDF Page Numbers Generator online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  
+
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Add Page Numbers to a PDF Online",
+    "description": "Number PDF pages with custom format and position using ToolsMatic - free, private, no upload required.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload your PDF",
+        "text": "Drag and drop your PDF onto the upload zone or click to browse and select it."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Choose number format and style",
+        "text": "Select the page number format, position, font, size, color, margin, and optional prefix or suffix while the live preview updates."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Set starting number and page range",
+        "text": "Choose a starting number, optionally skip cover pages, and apply numbering to all pages, odd pages, even pages, or a custom range."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Apply and download",
+        "text": "Click Add Page Numbers to create the numbered PDF and download it instantly."
+      }
+    ]
+  }
+  </script>
+
+  
+
+  <style>
+    .pn-shell {
+      padding-bottom: 5rem;
+    }
+
+    .pn-tool-container {
+      width: min(100% - 2rem, 1040px);
+      margin: 0 auto;
+    }
+
+    .pn-upload-zone {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .pn-upload-zone.dragover {
+      animation: pn-drop-pulse 1s ease-in-out infinite;
+      background: rgba(245, 158, 11, 0.06);
+      box-shadow:
+        0 0 0 6px var(--accent-glow),
+        inset 0 0 26px rgba(245, 158, 11, 0.08);
+    }
+
+    @keyframes pn-drop-pulse {
+      0%,
+      100% {
+        border-color: var(--accent);
+      }
+
+      50% {
+        border-color: #fbbf24;
+      }
+    }
+
+    .pn-panel {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .pn-file-bar,
+    .pn-layout-card,
+    .pn-result-box {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .pn-file-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .pn-file-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.1rem;
+      min-width: 0;
+    }
+
+    .pn-stat {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+
+    .pn-stat strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .pn-stat strong.pn-accent {
+      color: var(--accent);
+    }
+
+    .pn-clear-btn.btn {
+      width: auto;
+      min-height: 40px;
+      padding: 0.7rem 0.95rem;
+      white-space: nowrap;
+    }
+
+    .pn-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .pn-layout-card {
+      padding: 1.1rem;
+    }
+
+    .pn-preview-card,
+    .pn-controls-card {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pn-preview-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .pn-preview-title {
+      color: var(--text-primary);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .pn-preview-meta {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .pn-preview-side {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pn-preview-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.08);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pn-page-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pn-page-btn.btn {
+      width: 38px;
+      min-width: 38px;
+      min-height: 38px;
+      padding: 0;
+      border-radius: 12px;
+    }
+
+    .pn-page-label {
+      min-width: 88px;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .pn-preview-stage {
+      position: relative;
+      min-height: 0;
+      max-height: 58vh;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background:
+        radial-gradient(circle at top, rgba(245, 158, 11, 0.06), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 32%),
+        #0d0d0d;
+      overflow: auto;
+    }
+
+    .pn-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+      gap: 0.9rem;
+      align-content: start;
+    }
+
+    .pn-thumb-card {
+      position: relative;
+      display: grid;
+      overflow: hidden;
+      min-height: 220px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      transition: var(--transition);
+      cursor: pointer;
+      padding: 0;
+      text-align: left;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .pn-thumb-card:hover:not(:disabled) {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .pn-thumb-card:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    .pn-thumb-card.is-active {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.16);
+    }
+
+    .pn-thumb-preview {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 178px;
+      aspect-ratio: 0.707;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .pn-thumb-preview canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .pn-thumb-skeleton {
+      width: 100%;
+      height: 100%;
+      min-height: 178px;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.16) 50%,
+        rgba(255, 255, 255, 0.08) 100%
+      );
+      background-size: 200% 100%;
+      animation: pnSkeleton 1.35s ease-in-out infinite;
+    }
+
+    .pn-thumb-number-overlay {
+      position: absolute;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      max-width: calc(100% - 0.8rem);
+      text-align: center;
+      line-height: 1;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .pn-thumb-number-overlay.is-hidden {
+      display: none;
+    }
+
+    .pn-thumb-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.55rem;
+      padding: 0.75rem 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(8, 8, 10, 0.9);
+    }
+
+    .pn-thumb-number {
+      color: var(--text-primary);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .pn-thumb-status {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .pn-thumb-card.is-active .pn-thumb-status {
+      color: #fcd34d;
+    }
+
+    .pn-preview-overlay {
+      position: absolute;
+      inset: 0;
+      display: none;
+      place-items: center;
+      background: rgba(4, 4, 5, 0.38);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      z-index: 5;
+    }
+
+    .pn-preview-overlay.is-visible {
+      display: grid;
+    }
+
+    .pn-preview-help {
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      line-height: 1.6;
+    }
+
+    @keyframes pnSkeleton {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    .pn-section {
+      display: grid;
+      gap: 0.95rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    .pn-section-title {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .pn-controls-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .pn-action-wide {
+      grid-column: 1 / -1;
+    }
+
+    .pn-format-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
+
+    .pn-format-btn {
+      display: grid;
+      gap: 0.3rem;
+      min-height: 82px;
+      padding: 0.8rem 0.7rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: rgba(255, 255, 255, 0.02);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .pn-format-btn:hover {
+      border-color: rgba(245, 158, 11, 0.36);
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .pn-format-btn.active {
+      border-color: rgba(245, 158, 11, 0.46);
+      background: rgba(245, 158, 11, 0.12);
+      box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.18);
+    }
+
+    .pn-format-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .pn-format-sample {
+      color: var(--text-primary);
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .pn-format-label {
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .pn-two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .pn-field {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .pn-label {
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .pn-input,
+    .pn-select {
+      width: 100%;
+      min-height: 46px;
+      padding: 0.8rem 0.95rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: #0d0d0d;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .pn-input:focus,
+    .pn-select:focus {
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 0 0 4px var(--accent-glow);
+      outline: none;
+    }
+
+    .pn-input:focus-visible,
+    .pn-select:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .pn-input.is-invalid {
+      border-color: rgba(239, 68, 68, 0.45);
+      box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+    }
+
+    .pn-position-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.55rem;
+    }
+
+    .pn-position-btn {
+      display: grid;
+      place-items: center;
+      min-height: 68px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: rgba(255, 255, 255, 0.02);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .pn-position-btn:hover {
+      border-color: rgba(245, 158, 11, 0.36);
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .pn-position-btn.active {
+      border-color: rgba(245, 158, 11, 0.46);
+      background: rgba(245, 158, 11, 0.12);
+      box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.18);
+    }
+
+    .pn-position-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .pn-position-dot {
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 999px;
+      background: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .pn-position-btn.active .pn-position-dot {
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.14);
+    }
+
+    .pn-slider-group {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .pn-slider-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .pn-slider-label {
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+      font-weight: 500;
+    }
+
+    .pn-slider-value {
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .pn-slider {
+      width: 100%;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .pn-slider:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .pn-color-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+    }
+
+    .pn-color-btn {
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid var(--border-hover);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+    }
+
+    .pn-color-btn:hover,
+    .pn-color-btn.active {
+      transform: scale(1.06);
+      box-shadow: 0 0 0 4px var(--accent-glow);
+    }
+
+    .pn-color-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .pn-hex-input {
+      flex: 1 1 120px;
+      min-width: 120px;
+    }
+
+    .pn-style-row {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .pn-style-btn {
+      min-width: 54px;
+      min-height: 40px;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .pn-style-btn.active {
+      border-color: rgba(245, 158, 11, 0.46);
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--accent);
+    }
+
+    .pn-style-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .pn-toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .pn-toggle-label {
+      color: var(--text-secondary);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .pn-toggle-wrap {
+      position: relative;
+      width: 52px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .pn-toggle-wrap input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .pn-toggle-slider {
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: #27272a;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .pn-toggle-slider::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #ffffff;
+      transition: var(--transition);
+    }
+
+    .pn-toggle-wrap input:checked + .pn-toggle-slider {
+      background: var(--accent);
+    }
+
+    .pn-toggle-wrap input:checked + .pn-toggle-slider::after {
+      transform: translateX(22px);
+    }
+
+    .pn-toggle-wrap input:focus-visible + .pn-toggle-slider {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .pn-skip-wrap,
+    .pn-range-wrap {
+      display: none;
+      gap: 0.45rem;
+    }
+
+    .pn-skip-wrap.is-visible,
+    .pn-range-wrap.is-visible {
+      display: grid;
+    }
+
+    .pn-help {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      line-height: 1.55;
+    }
+
+    .pn-scope-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .pn-scope-btn.btn {
+      width: auto;
+      min-height: 40px;
+      padding: 0.62rem 0.82rem;
+      border-radius: 999px;
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+    }
+
+    .pn-scope-btn.active {
+      color: #050505;
+      background: linear-gradient(180deg, #fbbf24 0%, var(--accent) 100%);
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+
+    .pn-action-btn.btn {
+      width: 100%;
+    }
+
+    .pn-result-box {
+      display: grid;
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+
+    .pn-result-title {
+      color: #86efac;
+      font-size: 1.12rem;
+      font-weight: 700;
+    }
+
+    .pn-result-text {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .pn-filename-preview {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 1rem;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: var(--radius-card);
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .pn-filename-label {
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+    }
+
+    .pn-filename-name {
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .pn-result-actions {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .pn-result-actions .btn {
+      width: auto;
+      flex: 1 1 220px;
+    }
+
+    .pn-toast-link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .pn-toast-link:hover {
+      text-decoration: underline;
+    }
+
+    .pn-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      margin: 1rem 0 1.5rem;
+    }
+
+    @media (max-width: 960px) {
+      .pn-preview-stage {
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pn-shell {
+        padding-bottom: 3.75rem;
+      }
+
+      .pn-tool-container {
+        width: min(100% - 1.5rem, 1040px);
+      }
+
+      .pn-file-bar,
+      .pn-layout-card,
+      .pn-result-box {
+        padding: 1rem;
+      }
+
+      .pn-file-bar {
+        align-items: flex-start;
+      }
+
+      .pn-preview-head {
+        flex-direction: column;
+      }
+
+      .pn-preview-side {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .pn-controls-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pn-preview-grid {
+        grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+        gap: 0.7rem;
+      }
+
+      .pn-thumb-card {
+        min-height: 190px;
+      }
+
+      .pn-action-wide {
+        grid-column: auto;
+      }
+
+      .pn-result-actions {
+        flex-direction: column;
+      }
+
+      .pn-result-actions .btn {
+        width: 100%;
+        flex-basis: auto;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pn-two-col,
+      .pn-format-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pn-file-stats {
+        display: grid;
+        gap: 0.5rem;
+      }
+
+      .pn-preview-stage {
+        padding: 0.8rem;
+      }
+
+      .pn-preview-grid {
+        grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+      }
+
+      .pn-thumb-card {
+        min-height: 168px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pn-upload-zone.dragover {
+        animation: none;
+      }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/page-numbers-pdf-generator.html">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+        <span class="header-logo-text">ToolsMatic</span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/#tools">Tools</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a href="/#tools" class="header-cta btn">All Tools</a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-menu" aria-hidden="true">
+      <a href="/#tools">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb content-wrap" aria-label="Breadcrumb">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <a href="/#tools" class="breadcrumb-link">Tools</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current" aria-current="page">Add Page Numbers</span>
+    </nav>
+
+    <section class="tool-hero content-wrap" aria-label="Add Page Numbers tool">
+      <div class="tool-hero-badge">Private by design</div>
+      <h1>Add PDF Page Numbers Generator</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+      <p class="tool-hero-sub">
+        Insert page numbers with custom format, position, font, margin, and starting number.
+        Preview every change instantly, skip cover pages, and number all pages or only a selected range.
+      </p>
+    </section>
+
+    <section class="tool-section pn-shell" aria-label="Page numbering workspace">
+      <div class="pn-tool-container">
+        <input id="file-input" type="file" accept=".pdf,application/pdf" hidden="">
+
+        <div id="upload-zone" class="upload-zone pn-upload-zone" tabindex="0" role="button" aria-label="Upload PDF file">
+          <div class="upload-zone-icon" aria-hidden="true">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="16 16 12 12 8 16"></polyline>
+              <line x1="12" y1="12" x2="12" y2="21"></line>
+              <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+            </svg>
+          </div>
+          <div class="upload-zone-text">Drag and drop your PDF here</div>
+          <div class="upload-zone-sub">or click to browse</div>
+        </div>
+
+        <div id="tool-area" class="pn-panel" hidden="">
+          <div class="pn-file-bar">
+            <div class="pn-file-stats" aria-live="polite" aria-atomic="true">
+              <span class="pn-stat">File: <strong id="stat-name">-</strong></span>
+              <span class="pn-stat">Pages: <strong id="stat-pages">-</strong></span>
+              <span class="pn-stat">Preview: <strong id="stat-preview" class="pn-accent">1</strong></span>
+              <span class="pn-stat">Size: <strong id="stat-size">-</strong></span>
+            </div>
+            <button id="clear-file-button" class="btn btn-ghost pn-clear-btn" type="button" data-pn-control="">
+              Clear File
+            </button>
+          </div>
+
+          <div class="pn-layout">
+            <div class="pn-layout-card pn-preview-card">
+              <div class="pn-preview-head">
+                <div>
+                  <div class="pn-preview-title">Live Preview</div>
+                  <div id="preview-meta" class="pn-preview-meta">Adjust format, style, and placement. Click any page to inspect it; the grid preview reflects numbering placement across the document.</div>
+                </div>
+                <div class="pn-preview-side">
+                  <div id="preview-badge" class="pn-preview-badge">1</div>
+                  <div class="pn-page-nav" aria-label="Preview page navigation">
+                    <button id="prev-page-button" class="btn btn-ghost pn-page-btn" type="button" aria-label="Previous page" data-pn-control="" disabled="">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                    </button>
+                    <span id="page-label" class="pn-page-label">Page 1 of 1</span>
+                    <button id="next-page-button" class="btn btn-ghost pn-page-btn" type="button" aria-label="Next page" data-pn-control="" disabled="">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="preview-stage" class="pn-preview-stage">
+                <div id="preview-grid" class="pn-preview-grid" role="list" aria-label="PDF page thumbnails"></div>
+                <div id="preview-overlay" class="pn-preview-overlay">Updating preview...</div>
+              </div>
+
+              <div class="pn-preview-help">
+                The preview reflects the selected page, the current numbering format, skipped pages, and the active page targeting mode.
+              </div>
+            </div>
+
+            <div class="pn-layout-card pn-controls-card">
+              <div class="pn-controls-grid">
+              <div class="pn-section">
+                <div class="pn-section-title">Number Format</div>
+                <div class="pn-format-grid" role="radiogroup" aria-label="Page number format">
+                  <button class="pn-format-btn active" type="button" role="radio" aria-checked="true" data-format="plain" data-pn-control="">
+                    <span class="pn-format-sample">1, 2, 3</span>
+                    <span class="pn-format-label">Plain number</span>
+                  </button>
+                  <button class="pn-format-btn" type="button" role="radio" aria-checked="false" data-format="prefix" data-pn-control="">
+                    <span class="pn-format-sample">Page 1</span>
+                    <span class="pn-format-label">With prefix</span>
+                  </button>
+                  <button class="pn-format-btn" type="button" role="radio" aria-checked="false" data-format="total" data-pn-control="">
+                    <span class="pn-format-sample">1 of 10</span>
+                    <span class="pn-format-label">With total</span>
+                  </button>
+                  <button class="pn-format-btn" type="button" role="radio" aria-checked="false" data-format="decorated" data-pn-control="">
+                    <span class="pn-format-sample">- 1 -</span>
+                    <span class="pn-format-label">Decorated</span>
+                  </button>
+                </div>
+
+                <div class="pn-two-col">
+                  <label class="pn-field">
+                    <span class="pn-label">Custom Prefix</span>
+                    <input id="prefix-input" class="pn-input" type="text" maxlength="20" placeholder="Page" autocomplete="off" spellcheck="false" data-pn-control="">
+                  </label>
+                  <label class="pn-field">
+                    <span class="pn-label">Custom Suffix</span>
+                    <input id="suffix-input" class="pn-input" type="text" maxlength="20" placeholder="Appendix" autocomplete="off" spellcheck="false" data-pn-control="">
+                  </label>
+                </div>
+              </div>
+
+              <div class="pn-section">
+                <div class="pn-section-title">Position</div>
+                <div id="position-grid" class="pn-position-grid" role="radiogroup" aria-label="Page number position">
+                  <button class="pn-position-btn" type="button" role="radio" aria-checked="false" data-position="tl" aria-label="Top left" data-pn-control=""><span class="pn-position-dot"></span></button>
+                  <button class="pn-position-btn" type="button" role="radio" aria-checked="false" data-position="tc" aria-label="Top center" data-pn-control=""><span class="pn-position-dot"></span></button>
+                  <button class="pn-position-btn" type="button" role="radio" aria-checked="false" data-position="tr" aria-label="Top right" data-pn-control=""><span class="pn-position-dot"></span></button>
+                  <button class="pn-position-btn" type="button" role="radio" aria-checked="false" data-position="ml" aria-label="Middle left" data-pn-control=""><span class="pn-position-dot"></span></button>
+                  <button class="pn-position-btn" type="button" role="radio" aria-checked="false" data-position="mc" aria-label="Center" data-pn-control=""><span class="pn-position-dot"></span></button>
+                  <button class="pn-position-btn" type="button" role="radio" aria-checked="false" data-position="mr" aria-label="Middle right" data-pn-control=""><span class="pn-position-dot"></span></button>
+                  <button class="pn-position-btn" type="button" role="radio" aria-checked="false" data-position="bl" aria-label="Bottom left" data-pn-control=""><span class="pn-position-dot"></span></button>
+                  <button class="pn-position-btn active" type="button" role="radio" aria-checked="true" data-position="bc" aria-label="Bottom center" data-pn-control=""><span class="pn-position-dot"></span></button>
+                  <button class="pn-position-btn" type="button" role="radio" aria-checked="false" data-position="br" aria-label="Bottom right" data-pn-control=""><span class="pn-position-dot"></span></button>
+                </div>
+              </div>
+
+              <div class="pn-section">
+                <div class="pn-section-title">Style</div>
+
+                <label class="pn-field">
+                  <span class="pn-label">Font Family</span>
+                  <select id="font-select" class="pn-select" data-pn-control="">
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Times-Roman">Times Roman</option>
+                    <option value="Courier">Courier</option>
+                  </select>
+                </label>
+
+                <div class="pn-slider-group">
+                  <div class="pn-slider-head">
+                    <span class="pn-slider-label">Font Size</span>
+                    <span id="font-size-value" class="pn-slider-value">12px</span>
+                  </div>
+                  <input id="font-size-input" class="pn-slider" type="range" min="8" max="36" step="1" value="12" aria-label="Font size" data-pn-control="">
+                </div>
+
+                <div class="pn-field">
+                  <span class="pn-label">Color</span>
+                  <div class="pn-color-row">
+                    <button class="pn-color-btn active" type="button" style="background:#000000;" data-color="#000000" aria-label="Black" data-pn-control=""></button>
+                    <button class="pn-color-btn" type="button" style="background:#6B7280;" data-color="#6B7280" aria-label="Gray" data-pn-control=""></button>
+                    <button class="pn-color-btn" type="button" style="background:#EF4444;" data-color="#EF4444" aria-label="Red" data-pn-control=""></button>
+                    <button class="pn-color-btn" type="button" style="background:#3B82F6;" data-color="#3B82F6" aria-label="Blue" data-pn-control=""></button>
+                    <button class="pn-color-btn" type="button" style="background:#F59E0B;" data-color="#F59E0B" aria-label="Gold" data-pn-control=""></button>
+                    <input id="color-hex-input" class="pn-input pn-hex-input" type="text" value="#000000" maxlength="7" aria-label="Custom hex color" autocomplete="off" spellcheck="false" data-pn-control="">
+                  </div>
+                </div>
+
+                <div class="pn-field">
+                  <span class="pn-label">Font Style</span>
+                  <div class="pn-style-row">
+                    <button id="bold-button" class="pn-style-btn" type="button" aria-pressed="false" data-pn-control=""><strong>B</strong></button>
+                    <button id="italic-button" class="pn-style-btn" type="button" aria-pressed="false" data-pn-control=""><em>I</em></button>
+                  </div>
+                </div>
+
+                <div class="pn-slider-group">
+                  <div class="pn-slider-head">
+                    <span class="pn-slider-label">Margin from edge</span>
+                    <span id="margin-value" class="pn-slider-value">10mm</span>
+                  </div>
+                  <input id="margin-input" class="pn-slider" type="range" min="5" max="40" step="1" value="10" aria-label="Margin from page edge in millimeters" data-pn-control="">
+                </div>
+              </div>
+
+              <div class="pn-section">
+                <div class="pn-section-title">Starting Number</div>
+
+                <label class="pn-field">
+                  <span class="pn-label">Start numbering from</span>
+                  <input id="start-number-input" class="pn-input" type="number" min="1" max="9999" value="1" aria-label="Start numbering from" data-pn-control="">
+                </label>
+
+                <div class="pn-toggle-row">
+                  <div class="pn-toggle-label">Skip first N pages</div>
+                  <label class="pn-toggle-wrap" aria-label="Skip first pages">
+                    <input id="skip-toggle" type="checkbox" data-pn-control="">
+                    <span class="pn-toggle-slider"></span>
+                  </label>
+                </div>
+
+                <div id="skip-wrap" class="pn-skip-wrap">
+                  <input id="skip-count-input" class="pn-input" type="number" min="1" max="9999" value="1" aria-label="Pages to skip" data-pn-control="">
+                  <div class="pn-help">Skipped pages remain unnumbered. Numbering begins on the next eligible page.</div>
+                </div>
+              </div>
+
+              <div class="pn-section">
+                <div class="pn-section-title">Apply To</div>
+                <div class="pn-scope-tabs" role="radiogroup" aria-label="Pages to number">
+                  <button class="btn pn-scope-btn active" type="button" role="radio" aria-checked="true" data-scope="all" data-pn-control="">All Pages</button>
+                  <button class="btn pn-scope-btn" type="button" role="radio" aria-checked="false" data-scope="odd" data-pn-control="">Odd Pages</button>
+                  <button class="btn pn-scope-btn" type="button" role="radio" aria-checked="false" data-scope="even" data-pn-control="">Even Pages</button>
+                  <button class="btn pn-scope-btn" type="button" role="radio" aria-checked="false" data-scope="range" data-pn-control="">Range</button>
+                </div>
+                <div id="range-wrap" class="pn-range-wrap">
+                  <input id="range-input" class="pn-input" type="text" placeholder="Example: 3-10 or 2,5,8" autocomplete="off" spellcheck="false" aria-label="Page range" data-pn-control="">
+                  <div class="pn-help">Enter page numbers or ranges to number only part of the document.</div>
+                </div>
+              </div>
+
+              <button id="apply-button" class="btn btn-primary pn-action-btn pn-action-wide" type="button" data-pn-control="">
+                <span id="apply-button-text">Add Page Numbers</span>
+              </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="progress-wrap" class="progress-wrap" aria-label="Page numbering progress"></div>
+
+          <div id="result-box" class="tool-result pn-result-box" hidden="" aria-live="polite">
+            <div class="pn-result-title">Page numbers added successfully.</div>
+            <p id="result-stats" class="pn-result-text"></p>
+            <div class="pn-filename-preview">
+              <div aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="pn-filename-label">Your file will be saved as:</div>
+                <div id="filename-preview" class="pn-filename-name">-</div>
+              </div>
+            </div>
+            <div class="pn-result-actions">
+              <button id="download-button" class="btn btn-success" type="button" data-pn-control="">
+                Download Numbered PDF
+              </button>
+              <button id="reset-button" class="btn btn-ghost" type="button" data-pn-control="">
+                Number Another PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <article class="seo-content" aria-label="About adding page numbers to PDF">
+      <h2>Why Page Numbers Still Matter</h2>
+      <p>
+        Page numbers are one of the simplest ways to make a PDF easier to read,
+        cite, print, and discuss. A document with clean numbering feels finished.
+        Readers can jump to the right section quickly. Reviewers can reference a
+        precise page in comments, emails, and meetings. Printed packets stay in
+        order when pages are separated. Legal teams, students, designers, and
+        operations teams all rely on page numbers for exactly that reason.
+      </p>
+      <p>
+        ToolsMatic lets you add page numbers in your browser instead of uploading
+        the document to a server. You can choose the format, placement, font,
+        color, starting value, and which pages should be numbered. The live
+        preview updates while you work, so you do not need to guess whether the
+        final output will look correct.
+      </p>
+
+      <h2>How to Add Page Numbers with ToolsMatic</h2>
+      <ul>
+        <li><strong>Step 1 - Upload your PDF:</strong> Drag the file into the upload zone or click to browse. ToolsMatic checks the PDF header and opens the first page in the preview panel.</li>
+        <li><strong>Step 2 - Choose a number format:</strong> Pick plain numbers, Page X, X of Y, or a decorated style. Add custom prefix or suffix text if needed.</li>
+        <li><strong>Step 3 - Set placement and styling:</strong> Choose one of nine positions, then adjust font family, size, color, bold, italic, and page margin.</li>
+        <li><strong>Step 4 - Control the numbering sequence:</strong> Start at any number, skip opening pages such as covers or title sheets, and target all pages, odd pages, even pages, or a custom range.</li>
+        <li><strong>Step 5 - Download the result:</strong> Click Add Page Numbers and save the finished file with a timestamped numbered filename.</li>
+      </ul>
+
+      <h2>Four Number Formats, Four Different Uses</h2>
+      <h3>Plain numbers</h3>
+      <p>
+        The plain format is ideal when you want minimal visual noise. It works
+        well for internal reports, scanned records, lecture notes, appendices,
+        and any PDF where a simple page reference is enough. If your document
+        already has strong headers or footers, plain numbering keeps the page
+        edge clean without adding extra words.
+      </p>
+
+      <h3>Page X</h3>
+      <p>
+        Prefix-based numbering is the familiar formal style used in manuals,
+        proposals, policies, project plans, and academic writing. It reads more
+        naturally in professional documents because people often reference pages
+        verbally as Page 12 or Page 27. ToolsMatic lets you replace the default
+        word Page with your own prefix if your workflow calls for a different
+        label, such as Sheet, Appendix, or Section.
+      </p>
+
+      <h3>X of Y</h3>
+      <p>
+        Numbering with a total count is useful when the reader should always know
+        how much of the document remains. Training packs, contracts, inspections,
+        board decks, and installation guides often benefit from this style. It
+        gives the PDF a stronger sense of structure and makes it easier to verify
+        whether a printed or exported copy is complete.
+      </p>
+
+      <h3>Decorated numbering</h3>
+      <p>
+        The decorated format adds a typographic frame around the number, which is
+        popular in publications, book interiors, event programs, magazines, and
+        design-forward material. It keeps the functional purpose of numbering
+        while feeling slightly more polished than a bare digit. When combined
+        with custom prefix or suffix text, it can also create branded or themed
+        numbering styles.
+      </p>
+
+      <h2>Position, Margin, and Readability</h2>
+      <p>
+        Placement matters as much as the format itself. Bottom center is the
+        default because it is neutral, familiar, and rarely conflicts with page
+        content. But other documents need different placement. Drawings may need
+        the bottom right. Academic layouts may prefer the top outer corner. A
+        brochure proof might need centered numbering away from trim marks.
+      </p>
+      <p>
+        The 9-position grid makes placement visual instead of guesswork. Margin
+        control helps keep the number away from the page edge, existing footer
+        text, or binding space. This matters especially when the PDF will be
+        printed, stitched, or placed into a folder where the outer and inner
+        margins are not equally visible.
+      </p>
+
+      <h2>Starting from Any Number</h2>
+      <p>
+        Starting from a custom value is more useful than it first appears. You
+        may have merged a preface with a main report and want the first numbered
+        body page to begin at 5. You may be continuing a long manual across
+        separate PDF files. You may also need to match an existing printed page
+        sequence that already starts later in the document. ToolsMatic handles
+        these scenarios without forcing you to renumber pages manually.
+      </p>
+      <p>
+        The Skip First N Pages setting works alongside the custom starting value.
+        That means you can leave cover pages, title sheets, signature pages, or
+        front matter unnumbered while still starting the visible sequence exactly
+        where you want it.
+      </p>
+
+      <h2>Odd, Even, and Range Targeting</h2>
+      <p>
+        Not every page in a PDF needs the same treatment. Some documents already
+        contain partial numbering. Others only need numbers on printed right-hand
+        pages. Some need numbering on an appendix while the cover section remains
+        untouched. ToolsMatic supports all pages, odd pages, even pages, and custom
+        range input so you can number only the pages that should change.
+      </p>
+      <p>
+        Range targeting is especially practical for complex packets. If a review
+        PDF has introductory pages followed by a numbered exhibit section, you
+        can apply page numbers just to that section. Likewise, if the numbering
+        should begin halfway through a merged file, range control avoids the need
+        to split and rebuild the document first.
+      </p>
+
+      <h2>Why Live Preview Saves Time</h2>
+      <p>
+        Many online tools force you to process the file before you see whether
+        the number will collide with content, sit too close to the edge, or use
+        the wrong size. The live preview in ToolsMatic solves that. As you switch
+        between formats, move the number to a new position, change the font, or
+        alter the margin, the preview updates on the selected page immediately.
+      </p>
+      <p>
+        This is especially useful when the first page is not representative of
+        the rest of the document. The preview page navigator lets you inspect a
+        different page before exporting, so you can check whether the number is
+        still readable on dense pages, image-heavy layouts, or pages with wide
+        existing footers.
+      </p>
+
+      <h2>ToolsMatic vs Other PDF Page Numbering Tools</h2>
+      <div class="pn-table-wrap">
+        <table class="comparison-table" aria-label="PDF page numbering tool comparison">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="col-ToolsMatic">ToolsMatic</th>
+              <th>ilovepdf</th>
+              <th>Smallpdf</th>
+              <th>Adobe Acrobat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Free to use</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Yes</td>
+              <td>Limited</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>No file upload</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>No</td>
+              <td>No</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Live preview</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Basic</td>
+              <td>Basic</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Custom prefix and suffix</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Limited</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Custom start number</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Limited</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Skip cover pages</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Limited</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Odd and even page targeting</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Limited</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Privacy first workflow</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>No</td>
+              <td>No</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>When to Add Page Numbers Before Sharing</h2>
+      <p>
+        A PDF should usually be numbered before the final round of external
+        sharing, printing, or approval. That is true for audit packs, contracts,
+        research appendices, board materials, investor updates, and design proof
+        sets. Once the numbering is baked into the file, everyone sees the same
+        references, whether they open the PDF in a desktop viewer, browser tab,
+        tablet app, or printed copy.
+      </p>
+      <p>
+        If you also need watermarks, signatures, form flattening, or compression,
+        you can use ToolsMatic for those steps too. Many people merge pages first,
+        add page numbers second, then compress or watermark the final result for
+        distribution.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-wrap" id="faq">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I choose exactly where the page numbers appear?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Use the 9-position selector to place numbers at any corner, center edge, or middle position. Bottom center is the default because it works well for most reports and manuals.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I skip the cover page?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Turn on Skip First N Pages and enter how many opening pages should remain unnumbered. This is useful for title pages, cover sheets, and contents pages.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I begin numbering from a value other than 1?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Set Start numbering from to any number. ToolsMatic will use that value on the first eligible numbered page and continue the sequence from there.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Which page number styles are supported?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Choose from plain numbers, Page X format, X of Y format, or a decorated dash style. You can also add your own prefix and suffix text for custom numbering labels.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I number only odd, even, or selected pages?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Apply numbering to all pages, odd pages, even pages, or a custom range such as 3-10 or 2,5,8. This is useful when the file already contains partial numbering or when only one section needs page references.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Are my PDFs uploaded anywhere?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. ToolsMatic processes the file locally inside your browser. The PDF does not leave your device, which makes the workflow suitable for private and sensitive documents.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Will adding page numbers reduce document quality?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. Page numbers are added as new text content on the PDF page. Existing text, images, and layout remain unchanged.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What if my PDF is password protected?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Password-protected PDFs need to be unlocked first. Use the <a href="/tools/unlock-pdf.html" style="color:var(--accent);">Unlock PDF</a> tool and then come back to add numbering.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>More Free PDF Tools You Might Need</h2>
+      <div class="related-tools" role="list">
+        <a href="/tools/watermark-pdf.html" class="related-tool-card" role="listitem">
+          <div class="related-tool-name">Add Watermark <span style="color:var(--accent);">-&gt;</span></div>
+          <div class="related-tool-desc">Combine page numbers with text or image watermarks for branded reports and handouts.</div>
+        </a>
+        <a href="/tools/merge-pdf.html" class="related-tool-card" role="listitem">
+          <div class="related-tool-name">Merge PDF <span style="color:var(--accent);">-&gt;</span></div>
+          <div class="related-tool-desc">Merge multiple PDF files first, then add one continuous numbering sequence across the final document.</div>
+        </a>
+        <a href="/tools/compress-pdf.html" class="related-tool-card" role="listitem">
+          <div class="related-tool-name">Compress PDF <span style="color:var(--accent);">-&gt;</span></div>
+          <div class="related-tool-desc">Reduce file size after adding numbering so the finished PDF is easier to email and share.</div>
+        </a>
+      </div>
+    </article>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="page-numbers-pdf-generator-pseo" aria-labelledby="page-numbers-pdf-generator-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Add PDF Page Numbers Generator</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="page-numbers-pdf-generator-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Add PDF Page Numbers Generator Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Add PDF Page Numbers Generator</strong>, an instant, browser-based asset and template generation utility. This dedicated workspace is built specifically for developers, designers, and writers who require rapid, customized mock data and outputs. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>unrestricted layout selections, rapid randomizing parameters, and clean clipboard copy buttons</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Insert page numbers with flexible placement. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Instant Custom Templates</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Create mock records, passwords, keys, or paragraphs on demand in seconds.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Dynamic Input Variables</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Fine-tune length, options, and characters to generate your perfect asset.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Rapid Clipboard Exports</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Generate and copy the assets immediately without downloading files.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Add PDF Page Numbers Generator</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Generator layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Add PDF Page Numbers Generator</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">How does the generator work?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">It utilizes secure, local browser calculation scripts to create random or structured outputs instantly.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Are the generated outputs private?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes. They are calculated in your browser sandbox, meaning only you can see the results.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is there a generation limit?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">None. You can generate unlimited files, text blocks, or keys without limits.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/page-numbers-pdf.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Add PDF Page Numbers</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Add PDF Page Numbers Generator","url":"https://toolsmatic.me/tools/page-numbers-pdf-generator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Add PDF Page Numbers Generator online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Add PDF Page Numbers Generator","item":"https://toolsmatic.me/tools/page-numbers-pdf-generator.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the generator work?","acceptedAnswer":{"@type":"Answer","text":"It utilizes secure, local browser calculation scripts to create random or structured outputs instantly."}},{"@type":"Question","name":"Are the generated outputs private?","acceptedAnswer":{"@type":"Answer","text":"Yes. They are calculated in your browser sandbox, meaning only you can see the results."}},{"@type":"Question","name":"Is there a generation limit?","acceptedAnswer":{"@type":"Answer","text":"None. You can generate unlimited files, text blocks, or keys without limits."}}]}]}</script>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--text-primary);margin-bottom:12px;">
+          ToolsMatic
+        </div>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.7;max-width:220px;">
+          Privacy-first PDF tools. Your files never leave your browser.
+        </p>
+        <p style="font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);margin-top:16px;">
+          Copyright 2025 ToolsMatic. All rights reserved.
+        </p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">PDF Tools</div>
+        <a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a>
+        <a href="/tools/split-pdf.html" class="footer-link">Split PDF</a>
+        <a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a>
+        <a href="/tools/rotate-pdf.html" class="footer-link">Rotate PDF</a>
+        <a href="/tools/crop-pdf.html" class="footer-link">Crop PDF</a>
+        <a href="/tools/watermark-pdf.html" class="footer-link">Add Watermark</a>
+        <a href="/tools/sign-pdf.html" class="footer-link">Sign PDF</a>
+        <a href="/#tools" class="footer-link" style="color:var(--accent);">All Tools -&gt;</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">More Tools</div>
+        <a href="/tools/remove-pages.html" class="footer-link">Remove Pages</a>
+        <a href="/tools/pdf-to-jpg.html" class="footer-link">PDF to JPG</a>
+        <a href="/tools/jpg-to-pdf.html" class="footer-link">JPG to PDF</a>
+        <a href="/tools/protect-pdf.html" class="footer-link">Protect PDF</a>
+        <a href="/tools/unlock-pdf.html" class="footer-link">Unlock PDF</a>
+        <a href="/tools/pdf-reader.html" class="footer-link">PDF Reader</a>
+        <a href="/tools/annotate-pdf.html" class="footer-link">PDF Annotator</a>
+        <a href="/tools/compare-pdf.html" class="footer-link">PDF Comparison</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="/about.html" class="footer-link">About</a>
+        <a href="/contact.html" class="footer-link">Contact</a>
+        <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="/terms.html" class="footer-link">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Built for people who value privacy</span>
+      <span>No tracking. No uploads. No nonsense.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="/assets/pdf/tool-base.js"></script>
+  <script src="/assets/pdf/global.js"></script>
+
+  <script>
+    "use strict";
+
+    (function () {
+      const DEFAULT_STATE = {
+        format: "plain",
+        prefix: "",
+        suffix: "",
+        position: "bc",
+        font: "Helvetica",
+        fontSize: 12,
+        color: "#000000",
+        bold: false,
+        italic: false,
+        marginMm: 10,
+        startNumber: 1,
+        skipEnabled: false,
+        skipCount: 1,
+        applyMode: "all",
+        rangeValue: "",
+      };
+
+      const MM_TO_PT = 2.8346456693;
+      const PREVIEW_DEBOUNCE_MS = 300;
+      const PREVIEW_THUMB_SCALE = 0.32;
+      const PDF_FONT_KEYS = {
+        Helvetica: {
+          regular: "Helvetica",
+          bold: "HelveticaBold",
+          italic: "HelveticaOblique",
+          boldItalic: "HelveticaBoldOblique",
+        },
+        "Times-Roman": {
+          regular: "TimesRoman",
+          bold: "TimesRomanBold",
+          italic: "TimesRomanItalic",
+          boldItalic: "TimesRomanBoldItalic",
+        },
+        Courier: {
+          regular: "Courier",
+          bold: "CourierBold",
+          italic: "CourierOblique",
+          boldItalic: "CourierBoldOblique",
+        },
+      };
+
+      const state = {
+        file: null,
+        arrayBuffer: null,
+        pageCount: 0,
+        pdfJsDoc: null,
+        currentPage: 1,
+        previewTimer: null,
+        previewToken: 0,
+        processing: false,
+        resultBytes: null,
+        resultFilename: "",
+        format: DEFAULT_STATE.format,
+        prefix: DEFAULT_STATE.prefix,
+        suffix: DEFAULT_STATE.suffix,
+        position: DEFAULT_STATE.position,
+        font: DEFAULT_STATE.font,
+        fontSize: DEFAULT_STATE.fontSize,
+        color: DEFAULT_STATE.color,
+        bold: DEFAULT_STATE.bold,
+        italic: DEFAULT_STATE.italic,
+        marginMm: DEFAULT_STATE.marginMm,
+        startNumber: DEFAULT_STATE.startNumber,
+        skipEnabled: DEFAULT_STATE.skipEnabled,
+        skipCount: DEFAULT_STATE.skipCount,
+        applyMode: DEFAULT_STATE.applyMode,
+        rangeValue: DEFAULT_STATE.rangeValue,
+      };
+
+      const uploadZone = document.getElementById("upload-zone");
+      const fileInput = document.getElementById("file-input");
+      const toolArea = document.getElementById("tool-area");
+      const clearFileButton = document.getElementById("clear-file-button");
+      const statName = document.getElementById("stat-name");
+      const statPages = document.getElementById("stat-pages");
+      const statPreview = document.getElementById("stat-preview");
+      const statSize = document.getElementById("stat-size");
+      const previewStage = document.getElementById("preview-stage");
+      const previewGrid = document.getElementById("preview-grid");
+      const previewOverlay = document.getElementById("preview-overlay");
+      const previewMeta = document.getElementById("preview-meta");
+      const previewBadge = document.getElementById("preview-badge");
+      const pageLabel = document.getElementById("page-label");
+      const prevPageButton = document.getElementById("prev-page-button");
+      const nextPageButton = document.getElementById("next-page-button");
+      const formatButtons = Array.from(document.querySelectorAll(".pn-format-btn"));
+      const prefixInput = document.getElementById("prefix-input");
+      const suffixInput = document.getElementById("suffix-input");
+      const positionButtons = Array.from(document.querySelectorAll(".pn-position-btn"));
+      const fontSelect = document.getElementById("font-select");
+      const fontSizeInput = document.getElementById("font-size-input");
+      const fontSizeValue = document.getElementById("font-size-value");
+      const colorButtons = Array.from(document.querySelectorAll(".pn-color-btn"));
+      const colorHexInput = document.getElementById("color-hex-input");
+      const boldButton = document.getElementById("bold-button");
+      const italicButton = document.getElementById("italic-button");
+      const marginInput = document.getElementById("margin-input");
+      const marginValue = document.getElementById("margin-value");
+      const startNumberInput = document.getElementById("start-number-input");
+      const skipToggle = document.getElementById("skip-toggle");
+      const skipWrap = document.getElementById("skip-wrap");
+      const skipCountInput = document.getElementById("skip-count-input");
+      const scopeButtons = Array.from(document.querySelectorAll(".pn-scope-btn"));
+      const rangeWrap = document.getElementById("range-wrap");
+      const rangeInput = document.getElementById("range-input");
+      const applyButton = document.getElementById("apply-button");
+      const applyButtonText = document.getElementById("apply-button-text");
+      const progressWrap = document.getElementById("progress-wrap");
+      const resultBox = document.getElementById("result-box");
+      const resultStats = document.getElementById("result-stats");
+      const filenamePreview = document.getElementById("filename-preview");
+      const downloadButton = document.getElementById("download-button");
+      const resetButton = document.getElementById("reset-button");
+
+      function toast(message, type) {
+        if (typeof window.showToast === "function") {
+          window.showToast(message, type || "info");
+        }
+      }
+
+      function ensureToastContainer() {
+        let container = document.querySelector(".toast-container");
+
+        if (container) {
+          return container;
+        }
+
+        container = document.createElement("div");
+        container.className = "toast-container";
+        container.setAttribute("aria-live", "polite");
+        container.setAttribute("aria-atomic", "true");
+        document.body.appendChild(container);
+        return container;
+      }
+
+      function showUnlockToast() {
+        const container = ensureToastContainer();
+        const existing = container.querySelector(".pn-unlock-toast");
+        const toastEl = document.createElement("div");
+        const messageEl = document.createElement("div");
+        const closeButton = document.createElement("button");
+        const link = document.createElement("a");
+
+        if (existing) {
+          existing.remove();
+        }
+
+        toastEl.className = "toast toast-warning pn-unlock-toast";
+        toastEl.setAttribute("role", "status");
+        messageEl.className = "toast-message";
+        messageEl.append("This PDF is password protected. ");
+
+        link.href = "/tools/unlock-pdf.html";
+        link.className = "pn-toast-link";
+        link.textContent = "Unlock it first";
+        messageEl.appendChild(link);
+        messageEl.append(".");
+
+        closeButton.className = "toast-close";
+        closeButton.type = "button";
+        closeButton.setAttribute("aria-label", "Dismiss notification");
+        closeButton.textContent = "x";
+        closeButton.addEventListener("click", function () {
+          toastEl.remove();
+        });
+
+        toastEl.append(messageEl, closeButton);
+        container.appendChild(toastEl);
+
+        window.setTimeout(function () {
+          toastEl.remove();
+        }, 7000);
+      }
+
+      function isPasswordError(error) {
+        const message = error && typeof error.message === "string" ? error.message.toLowerCase() : "";
+        return message.indexOf("encrypt") !== -1 || message.indexOf("password") !== -1;
+      }
+
+      function formatSize(bytes) {
+        return typeof window.formatFileSize === "function"
+          ? window.formatFileSize(bytes)
+          : "0 B";
+      }
+
+      function readBlobAsArrayBuffer(blob) {
+        if (typeof window.readFileAsArrayBuffer !== "function") {
+          throw new Error("Shared file reader unavailable.");
+        }
+
+        return window.readFileAsArrayBuffer(blob);
+      }
+
+      function validatePdfHeader(buffer) {
+        return typeof window.validatePDFHeader === "function"
+          ? window.validatePDFHeader(buffer)
+          : false;
+      }
+
+      function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+      }
+
+      function sanitizeHexColor(value) {
+        const normalized = String(value || "").trim().toUpperCase();
+        return /^#[0-9A-F]{6}$/.test(normalized) ? normalized : "";
+      }
+
+      function formatNumberLabel(value) {
+        return String(value).trim();
+      }
+
+      function joinTextParts(parts) {
+        return parts
+          .map(function (part) {
+            return String(part || "").trim();
+          })
+          .filter(Boolean)
+          .join(" ");
+      }
+
+      function buildPageText(displayNumber, totalPages) {
+        const prefix = String(state.prefix || "").trim();
+        const suffix = String(state.suffix || "").trim();
+        const display = formatNumberLabel(displayNumber);
+        const total = formatNumberLabel(totalPages);
+
+        if (state.format === "prefix") {
+          return joinTextParts([prefix || "Page", display, suffix]);
+        }
+
+        if (state.format === "total") {
+          return joinTextParts([prefix, display, "of", total, suffix]);
+        }
+
+        if (state.format === "decorated") {
+          const inner = joinTextParts([prefix, display, suffix]) || display;
+          return "- " + inner + " -";
+        }
+
+        return joinTextParts([prefix, display, suffix]) || display;
+      }
+
+      function hexToRgb(hex) {
+        const match = /^#?([A-F\d]{2})([A-F\d]{2})([A-F\d]{2})$/i.exec(hex);
+
+        if (!match) {
+          return { r: 0, g: 0, b: 0 };
+        }
+
+        return {
+          r: parseInt(match[1], 16) / 255,
+          g: parseInt(match[2], 16) / 255,
+          b: parseInt(match[3], 16) / 255,
+        };
+      }
+
+      function generateFilename() {
+        const now = new Date();
+        const pad = function (value) {
+          return value < 10 ? "0" + value : String(value);
+        };
+
+        return "numbered-" +
+          now.getFullYear() + "-" +
+          pad(now.getMonth() + 1) + "-" +
+          pad(now.getDate()) + "-" +
+          pad(now.getHours()) + "-" +
+          pad(now.getMinutes()) + ".pdf";
+      }
+
+      function clearResult() {
+        state.resultBytes = null;
+        state.resultFilename = "";
+
+        if (resultBox) {
+          resultBox.hidden = true;
+        }
+
+        if (resultStats) {
+          resultStats.textContent = "";
+        }
+
+        if (filenamePreview) {
+          filenamePreview.textContent = "-";
+        }
+      }
+
+      function updateProgressBar(percent, label) {
+        if (progressWrap && typeof window.updateProgress === "function") {
+          window.updateProgress(progressWrap, percent, label);
+        }
+      }
+
+      function hideProgressBar() {
+        if (progressWrap && typeof window.hideProgress === "function") {
+          window.hideProgress(progressWrap);
+        }
+      }
+
+      function setPreviewBusy(isBusy) {
+        if (!previewOverlay) {
+          return;
+        }
+
+        previewOverlay.classList.toggle("is-visible", Boolean(isBusy));
+      }
+
+      function setBusy(isBusy) {
+        const controls = Array.from(document.querySelectorAll("[data-pn-control]"));
+
+        state.processing = Boolean(isBusy);
+
+        controls.forEach(function (control) {
+          if ("disabled" in control) {
+            control.disabled = Boolean(isBusy);
+          }
+          control.setAttribute("aria-disabled", String(Boolean(isBusy)));
+        });
+
+        if (applyButton) {
+          applyButton.classList.toggle("loading", Boolean(isBusy));
+        }
+
+        if (applyButtonText) {
+          applyButtonText.textContent = isBusy ? "Adding Page Numbers..." : "Add Page Numbers";
+        }
+      }
+
+      function resetSettingsToDefaults() {
+        state.format = DEFAULT_STATE.format;
+        state.prefix = DEFAULT_STATE.prefix;
+        state.suffix = DEFAULT_STATE.suffix;
+        state.position = DEFAULT_STATE.position;
+        state.font = DEFAULT_STATE.font;
+        state.fontSize = DEFAULT_STATE.fontSize;
+        state.color = DEFAULT_STATE.color;
+        state.bold = DEFAULT_STATE.bold;
+        state.italic = DEFAULT_STATE.italic;
+        state.marginMm = DEFAULT_STATE.marginMm;
+        state.startNumber = DEFAULT_STATE.startNumber;
+        state.skipEnabled = DEFAULT_STATE.skipEnabled;
+        state.skipCount = DEFAULT_STATE.skipCount;
+        state.applyMode = DEFAULT_STATE.applyMode;
+        state.rangeValue = DEFAULT_STATE.rangeValue;
+      }
+
+      function setActiveFormat() {
+        formatButtons.forEach(function (button) {
+          const isActive = button.getAttribute("data-format") === state.format;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-checked", String(isActive));
+        });
+      }
+
+      function setActivePosition() {
+        positionButtons.forEach(function (button) {
+          const isActive = button.getAttribute("data-position") === state.position;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-checked", String(isActive));
+        });
+      }
+
+      function setActiveColor() {
+        const normalized = sanitizeHexColor(state.color);
+
+        colorButtons.forEach(function (button) {
+          const isActive = sanitizeHexColor(button.getAttribute("data-color")) === normalized;
+          button.classList.toggle("active", isActive);
+        });
+      }
+
+      function setActiveScope() {
+        scopeButtons.forEach(function (button) {
+          const isActive = button.getAttribute("data-scope") === state.applyMode;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-checked", String(isActive));
+        });
+
+        if (rangeWrap) {
+          rangeWrap.classList.toggle("is-visible", state.applyMode === "range");
+        }
+      }
+
+      function updateSliderLabels() {
+        if (fontSizeValue) {
+          fontSizeValue.textContent = state.fontSize + "px";
+        }
+
+        if (marginValue) {
+          marginValue.textContent = state.marginMm + "mm";
+        }
+      }
+
+      function syncInputsFromState() {
+        setActiveFormat();
+        setActivePosition();
+        setActiveColor();
+        setActiveScope();
+        updateSliderLabels();
+
+        if (prefixInput) {
+          prefixInput.value = state.prefix;
+        }
+
+        if (suffixInput) {
+          suffixInput.value = state.suffix;
+        }
+
+        if (fontSelect) {
+          fontSelect.value = state.font;
+        }
+
+        if (fontSizeInput) {
+          fontSizeInput.value = String(state.fontSize);
+        }
+
+        if (colorHexInput) {
+          colorHexInput.value = state.color;
+        }
+
+        if (boldButton) {
+          boldButton.classList.toggle("active", state.bold);
+          boldButton.setAttribute("aria-pressed", String(state.bold));
+        }
+
+        if (italicButton) {
+          italicButton.classList.toggle("active", state.italic);
+          italicButton.setAttribute("aria-pressed", String(state.italic));
+        }
+
+        if (marginInput) {
+          marginInput.value = String(state.marginMm);
+        }
+
+        if (startNumberInput) {
+          startNumberInput.value = String(state.startNumber);
+        }
+
+        if (skipToggle) {
+          skipToggle.checked = state.skipEnabled;
+        }
+
+        if (skipWrap) {
+          skipWrap.classList.toggle("is-visible", state.skipEnabled);
+        }
+
+        if (skipCountInput) {
+          skipCountInput.value = String(state.skipCount);
+        }
+
+        if (rangeInput) {
+          rangeInput.value = state.rangeValue;
+          rangeInput.classList.remove("is-invalid");
+        }
+
+        updateSummary();
+      }
+
+      function parsePageRange(value, maxPage) {
+        const input = String(value || "").trim();
+        const result = new Set();
+
+        if (!input) {
+          return null;
+        }
+
+        const parts = input.split(",");
+
+        for (let index = 0; index < parts.length; index += 1) {
+          const part = parts[index].trim();
+          const match = part.match(/^(\d+)(?:-(\d+))?$/);
+
+          if (!match) {
+            return null;
+          }
+
+          const start = Number(match[1]);
+          const end = match[2] ? Number(match[2]) : start;
+
+          if (
+            !Number.isInteger(start) ||
+            !Number.isInteger(end) ||
+            start < 1 ||
+            end < 1 ||
+            start > end ||
+            start > maxPage ||
+            end > maxPage
+          ) {
+            return null;
+          }
+
+          for (let pageNumber = start; pageNumber <= end; pageNumber += 1) {
+            result.add(pageNumber);
+          }
+        }
+
+        return result.size ? Array.from(result) : null;
+      }
+
+      function getTargetPages(showErrors) {
+        if (state.applyMode === "all") {
+          return Array.from({ length: state.pageCount }, function (_, index) {
+            return index + 1;
+          });
+        }
+
+        if (state.applyMode === "odd") {
+          return Array.from({ length: state.pageCount }, function (_, index) {
+            return index + 1;
+          }).filter(function (pageNumber) {
+            return pageNumber % 2 === 1;
+          });
+        }
+
+        if (state.applyMode === "even") {
+          return Array.from({ length: state.pageCount }, function (_, index) {
+            return index + 1;
+          }).filter(function (pageNumber) {
+            return pageNumber % 2 === 0;
+          });
+        }
+
+        const parsed = parsePageRange(state.rangeValue, state.pageCount);
+
+        if (!parsed) {
+          if (showErrors) {
+            toast("Enter a valid page range like 3-10 or 2,5,8.", "error");
+          }
+
+          if (rangeInput) {
+            rangeInput.classList.add("is-invalid");
+          }
+
+          return null;
+        }
+
+        if (rangeInput) {
+          rangeInput.classList.remove("is-invalid");
+        }
+
+        return parsed;
+      }
+
+      function getNumberingPlan(showErrors) {
+        const targetPages = getTargetPages(showErrors);
+
+        if (!targetPages) {
+          return null;
+        }
+
+        const selectedSet = new Set(targetPages);
+        const pageMap = {};
+        const numberedPages = [];
+        let nextNumber = Math.max(1, Number(state.startNumber) || 1);
+        const skippedPages = state.skipEnabled ? Math.max(0, Number(state.skipCount) || 0) : 0;
+
+        for (let pageNumber = 1; pageNumber <= state.pageCount; pageNumber += 1) {
+          const shouldSkip = pageNumber <= skippedPages;
+          const isSelected = selectedSet.has(pageNumber);
+
+          if (isSelected && !shouldSkip) {
+            pageMap[pageNumber] = nextNumber;
+            numberedPages.push(pageNumber);
+            nextNumber += 1;
+          } else {
+            pageMap[pageNumber] = null;
+          }
+        }
+
+        return {
+          targetPages: targetPages,
+          numberedPages: numberedPages,
+          pageMap: pageMap,
+        };
+      }
+
+      function getPreviewSampleText() {
+        if (!state.pageCount) {
+          return buildPageText(Math.max(1, Number(state.startNumber) || 1), 10);
+        }
+
+        const plan = getNumberingPlan(false);
+
+        if (!plan) {
+          return state.applyMode === "range"
+            ? "Range pending"
+            : buildPageText(Math.max(1, Number(state.startNumber) || 1), state.pageCount);
+        }
+
+        const displayNumber = plan.pageMap[state.currentPage];
+
+        if (displayNumber === null) {
+          return "Skipped on page " + state.currentPage;
+        }
+
+        return buildPageText(displayNumber, state.pageCount);
+      }
+
+      function getScopeLabel() {
+        if (state.applyMode === "all") {
+          return "All Pages";
+        }
+
+        if (state.applyMode === "odd") {
+          return "Odd Pages";
+        }
+
+        if (state.applyMode === "even") {
+          return "Even Pages";
+        }
+
+        return state.rangeValue ? "Range " + state.rangeValue : "Range";
+      }
+
+      function updateSummary() {
+        const sample = getPreviewSampleText();
+
+        if (statPreview) {
+          statPreview.textContent = sample;
+        }
+
+        if (previewBadge) {
+          previewBadge.textContent = sample;
+        }
+
+        if (previewMeta) {
+          previewMeta.textContent =
+            "Format: " + state.format +
+            ". Position: " + state.position +
+            ". Scope: " + getScopeLabel() +
+            ". Current page sample: " + sample + ".";
+        }
+      }
+
+      function updatePageNav() {
+        const totalPages = Math.max(1, state.pageCount || 0);
+        const currentPage = state.pageCount ? clamp(state.currentPage, 1, state.pageCount) : 1;
+
+        if (pageLabel) {
+          pageLabel.textContent = "Page " + currentPage + " of " + totalPages;
+        }
+
+        if (prevPageButton) {
+          prevPageButton.disabled = state.processing || state.pageCount <= 1 || currentPage <= 1;
+        }
+
+        if (nextPageButton) {
+          nextPageButton.disabled = state.processing || state.pageCount <= 1 || currentPage >= state.pageCount;
+        }
+      }
+
+      function setPdfLoadedUi() {
+        if (statName && state.file) {
+          statName.textContent = state.file.name.length > 38 ? state.file.name.slice(0, 35) + "..." : state.file.name;
+        }
+
+        if (statPages) {
+          statPages.textContent = String(state.pageCount);
+        }
+
+        if (statSize && state.file) {
+          statSize.textContent = formatSize(state.file.size);
+        }
+
+        if (toolArea) {
+          toolArea.hidden = false;
+        }
+
+        if (uploadZone) {
+          uploadZone.style.display = "none";
+          uploadZone.classList.remove("dragover", "has-files");
+          uploadZone.style.transform = "";
+        }
+
+        hideProgressBar();
+        clearResult();
+        updatePageNav();
+        updateSummary();
+      }
+
+      function getPreviewFontFamily() {
+        if (state.font === "Times-Roman") {
+          return '"Times New Roman", Georgia, serif';
+        }
+
+        if (state.font === "Courier") {
+          return '"Courier New", Courier, monospace';
+        }
+
+        return "Arial, Helvetica, sans-serif";
+      }
+
+      function getPdfFontKey() {
+        const family = PDF_FONT_KEYS[state.font] || PDF_FONT_KEYS.Helvetica;
+
+        if (state.bold && state.italic) {
+          return family.boldItalic;
+        }
+
+        if (state.bold) {
+          return family.bold;
+        }
+
+        if (state.italic) {
+          return family.italic;
+        }
+
+        return family.regular;
+      }
+
+      function getPdfPlacement(position, pageWidth, pageHeight, textWidth, textHeight, marginPt) {
+        let x = 0;
+        let y = 0;
+
+        if (position === "tl" || position === "ml" || position === "bl") {
+          x = marginPt;
+        } else if (position === "tc" || position === "mc" || position === "bc") {
+          x = (pageWidth - textWidth) / 2;
+        } else {
+          x = pageWidth - textWidth - marginPt;
+        }
+
+        if (position === "tl" || position === "tc" || position === "tr") {
+          y = pageHeight - marginPt - textHeight;
+        } else if (position === "ml" || position === "mc" || position === "mr") {
+          y = (pageHeight - textHeight) / 2;
+        } else {
+          y = marginPt;
+        }
+
+        return {
+          x: clamp(x, 0, Math.max(0, pageWidth - textWidth)),
+          y: clamp(y, 0, Math.max(0, pageHeight - textHeight)),
+        };
+      }
+
+      function createPreviewCard(pageNumber) {
+        const button = document.createElement("button");
+        const preview = document.createElement("span");
+        const skeleton = document.createElement("span");
+        const numberOverlay = document.createElement("span");
+        const footer = document.createElement("span");
+        const number = document.createElement("span");
+        const status = document.createElement("span");
+
+        button.type = "button";
+        button.className = "pn-thumb-card";
+        button.dataset.page = String(pageNumber);
+        button.dataset.pnControl = "";
+        button.setAttribute("aria-pressed", "false");
+        button.setAttribute("aria-label", "Page " + pageNumber + ". Activate to inspect this page.");
+
+        preview.className = "pn-thumb-preview";
+        preview.dataset.previewPage = String(pageNumber);
+        skeleton.className = "pn-thumb-skeleton";
+        numberOverlay.className = "pn-thumb-number-overlay is-hidden";
+        footer.className = "pn-thumb-footer";
+        number.className = "pn-thumb-number";
+        status.className = "pn-thumb-status";
+
+        number.textContent = "Page " + pageNumber;
+        status.textContent = "Preview";
+        preview.append(skeleton, numberOverlay);
+        footer.append(number, status);
+        button.append(preview, footer);
+        button.addEventListener("click", function () {
+          setCurrentPreviewPage(pageNumber, true);
+        });
+
+        return button;
+      }
+
+      function applyPreviewLabelPlacement(label, marginPx) {
+        if (!label) {
+          return;
+        }
+
+        label.style.left = "";
+        label.style.right = "";
+        label.style.top = "";
+        label.style.bottom = "";
+
+        let translateX = "";
+        let translateY = "";
+
+        if (state.position === "tl" || state.position === "ml" || state.position === "bl") {
+          label.style.left = marginPx + "px";
+        } else if (state.position === "tc" || state.position === "mc" || state.position === "bc") {
+          label.style.left = "50%";
+          translateX = "-50%";
+        } else {
+          label.style.right = marginPx + "px";
+        }
+
+        if (state.position === "tl" || state.position === "tc" || state.position === "tr") {
+          label.style.top = marginPx + "px";
+        } else if (state.position === "ml" || state.position === "mc" || state.position === "mr") {
+          label.style.top = "50%";
+          translateY = "-50%";
+        } else {
+          label.style.bottom = marginPx + "px";
+        }
+
+        if (translateX && translateY) {
+          label.style.transform = "translate(" + translateX + ", " + translateY + ")";
+        } else if (translateX) {
+          label.style.transform = "translateX(" + translateX + ")";
+        } else if (translateY) {
+          label.style.transform = "translateY(" + translateY + ")";
+        } else {
+          label.style.transform = "none";
+        }
+      }
+
+      function updatePreviewThumbnails(scrollIntoView) {
+        if (!previewGrid) {
+          return;
+        }
+
+        const plan = getNumberingPlan(false);
+        const activeCard = previewGrid.querySelector('.pn-thumb-card[data-page="' + state.currentPage + '"]');
+
+        Array.from(previewGrid.querySelectorAll(".pn-thumb-card")).forEach(function (card) {
+          const pageNumber = Number(card.getAttribute("data-page"));
+          const preview = card.querySelector(".pn-thumb-preview");
+          const label = card.querySelector(".pn-thumb-number-overlay");
+          const status = card.querySelector(".pn-thumb-status");
+          const baseWidth = preview ? Number(preview.getAttribute("data-base-width")) || 0 : 0;
+          const currentWidth = preview ? preview.clientWidth || 0 : 0;
+          const scale = baseWidth > 0 && currentWidth > 0 ? currentWidth / baseWidth : PREVIEW_THUMB_SCALE;
+          const displayNumber = plan ? plan.pageMap[pageNumber] : null;
+          const isActive = pageNumber === state.currentPage;
+
+          card.classList.toggle("is-active", isActive);
+          card.setAttribute("aria-pressed", String(isActive));
+
+          if (!plan && state.applyMode === "range") {
+            card.setAttribute("aria-label", "Page " + pageNumber + ". Waiting for a valid range.");
+          } else if (displayNumber === null) {
+            card.setAttribute("aria-label", "Page " + pageNumber + ". Skipped by the current settings.");
+          } else {
+            card.setAttribute("aria-label", "Page " + pageNumber + ". Numbered as " + buildPageText(displayNumber, state.pageCount) + ".");
+          }
+
+          if (label) {
+            if (displayNumber === null) {
+              label.textContent = "";
+              label.classList.add("is-hidden");
+            } else {
+              label.textContent = buildPageText(displayNumber, state.pageCount);
+              label.classList.remove("is-hidden");
+              label.style.color = state.color;
+              label.style.fontFamily = getPreviewFontFamily();
+              label.style.fontWeight = state.bold ? "700" : "400";
+              label.style.fontStyle = state.italic ? "italic" : "normal";
+              label.style.fontSize = clamp(state.fontSize * scale, 8, 64) + "px";
+              applyPreviewLabelPlacement(label, state.marginMm * MM_TO_PT * scale);
+            }
+          }
+
+          if (status) {
+            if (!plan && state.applyMode === "range") {
+              status.textContent = "Pending";
+            } else if (displayNumber === null) {
+              status.textContent = "Skipped";
+            } else {
+              status.textContent = "Numbered";
+            }
+          }
+        });
+
+        if (scrollIntoView && activeCard && typeof activeCard.scrollIntoView === "function") {
+          activeCard.scrollIntoView({
+            block: "nearest",
+            inline: "nearest",
+            behavior: "smooth",
+          });
+        }
+      }
+
+      function refreshPreviewGrid(scrollIntoView) {
+        updatePageNav();
+        updateSummary();
+        updatePreviewThumbnails(Boolean(scrollIntoView));
+      }
+
+      function setCurrentPreviewPage(pageNumber, scrollIntoView) {
+        if (!state.pageCount) {
+          return;
+        }
+
+        state.currentPage = clamp(Number(pageNumber) || 1, 1, state.pageCount);
+        refreshPreviewGrid(scrollIntoView);
+      }
+
+      async function renderPreviewThumbnail(pageNumber, preview, token) {
+        try {
+          if (!state.pdfJsDoc || !preview) {
+            return;
+          }
+
+          const page = await state.pdfJsDoc.getPage(pageNumber);
+          const baseViewport = page.getViewport({ scale: 1 });
+          const viewport = page.getViewport({ scale: PREVIEW_THUMB_SCALE });
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+
+          if (!context) {
+            return;
+          }
+
+          canvas.width = Math.max(1, Math.floor(viewport.width));
+          canvas.height = Math.max(1, Math.floor(viewport.height));
+
+          await page.render({
+            canvasContext: context,
+            viewport: viewport,
+          }).promise;
+
+          if (token !== state.previewToken) {
+            return;
+          }
+
+          const skeleton = preview.querySelector(".pn-thumb-skeleton");
+          const existingCanvas = preview.querySelector("canvas");
+
+          if (existingCanvas) {
+            existingCanvas.remove();
+          }
+
+          if (skeleton) {
+            skeleton.remove();
+          }
+
+          preview.setAttribute("data-base-width", String(baseViewport.width));
+          preview.setAttribute("data-base-height", String(baseViewport.height));
+          preview.insertBefore(canvas, preview.firstChild);
+
+          if (typeof page.cleanup === "function") {
+            page.cleanup();
+          }
+        } catch (error) {
+          if (preview) {
+            preview.textContent = "Preview unavailable";
+          }
+        }
+      }
+
+      async function buildPreviewGrid() {
+        const token = state.previewToken + 1;
+        state.previewToken = token;
+
+        try {
+          if (!previewGrid || !state.pdfJsDoc) {
+            return;
+          }
+
+          setPreviewBusy(true);
+          previewGrid.textContent = "";
+
+          for (let pageNumber = 1; pageNumber <= state.pageCount; pageNumber += 1) {
+            previewGrid.appendChild(createPreviewCard(pageNumber));
+          }
+
+          const previews = Array.from(previewGrid.querySelectorAll("[data-preview-page]"));
+
+          for (let index = 0; index < previews.length; index += 1) {
+            if (token !== state.previewToken) {
+              return;
+            }
+
+            const preview = previews[index];
+            const pageNumber = Number(preview.getAttribute("data-preview-page"));
+            await renderPreviewThumbnail(pageNumber, preview, token);
+          }
+
+          if (token === state.previewToken) {
+            refreshPreviewGrid(false);
+          }
+        } catch (error) {
+          toast("Page previews could not be rendered, but you can still add numbers.", "warning");
+        } finally {
+          if (token === state.previewToken) {
+            setPreviewBusy(false);
+          }
+        }
+      }
+
+      function schedulePreview(delay) {
+        if (!state.pdfJsDoc || !previewGrid) {
+          updateSummary();
+          return;
+        }
+
+        window.clearTimeout(state.previewTimer);
+        state.previewTimer = window.setTimeout(function () {
+          refreshPreviewGrid(false);
+        }, typeof delay === "number" ? delay : PREVIEW_DEBOUNCE_MS);
+      }
+
+      async function destroyPreviewDocument() {
+        try {
+          if (state.pdfJsDoc && typeof state.pdfJsDoc.destroy === "function") {
+            await state.pdfJsDoc.destroy();
+          }
+        } catch (error) {
+          /* Best effort cleanup only. */
+        } finally {
+          state.pdfJsDoc = null;
+        }
+      }
+
+      async function loadPreviewDocument() {
+        try {
+          await destroyPreviewDocument();
+
+          if (typeof window.pdfjsLib === "undefined" || !state.arrayBuffer) {
+            toast("PDF preview failed to load. Please refresh the page.", "error");
+            return;
+          }
+
+          state.pdfJsDoc = await window.pdfjsLib.getDocument({
+            data: state.arrayBuffer.slice(0),
+          }).promise;
+
+          state.pageCount = state.pdfJsDoc.numPages;
+          await buildPreviewGrid();
+          refreshPreviewGrid(false);
+        } catch (error) {
+          if (isPasswordError(error)) {
+            showUnlockToast();
+            return;
+          }
+
+          toast("This file appears damaged", "error");
+        }
+      }
+
+      async function loadPdfFile(file) {
+        try {
+          if (!file) {
+            return;
+          }
+
+          clearResult();
+          hideProgressBar();
+
+          const fileType = typeof file.type === "string" ? file.type : "";
+          const hasPdfType = fileType === "application/pdf" || fileType === "";
+          const hasPdfExtension = typeof file.name === "string" && /\.pdf$/i.test(file.name);
+
+          if (!hasPdfType || !hasPdfExtension) {
+            toast("Please upload a PDF file only", "error");
+            return;
+          }
+
+          if (file.size === 0) {
+            toast("This file appears to be empty", "error");
+            return;
+          }
+
+          if (typeof window.PDFLib === "undefined" || typeof window.pdfjsLib === "undefined") {
+            toast("PDF tools failed to load. Please refresh the page.", "error");
+            return;
+          }
+
+          const buffer = await readBlobAsArrayBuffer(file);
+
+          if (!validatePdfHeader(buffer)) {
+            toast("This file appears damaged", "error");
+            return;
+          }
+
+          let pdfDoc = null;
+
+          try {
+            pdfDoc = await window.PDFLib.PDFDocument.load(buffer.slice(0));
+          } catch (error) {
+            if (isPasswordError(error)) {
+              showUnlockToast();
+              return;
+            }
+
+            toast("This file appears damaged", "error");
+            return;
+          }
+
+          state.file = file;
+          state.arrayBuffer = buffer;
+          state.pageCount = pdfDoc.getPageCount();
+          state.currentPage = 1;
+          state.previewToken = 0;
+          resetSettingsToDefaults();
+          syncInputsFromState();
+          setPdfLoadedUi();
+          await loadPreviewDocument();
+          toast("PDF loaded. Adjust the numbering settings.", "success");
+        } catch (error) {
+          if (isPasswordError(error)) {
+            showUnlockToast();
+            return;
+          }
+
+          toast("This file appears damaged", "error");
+        }
+      }
+
+      function updateResultSummary(numberedPages, bytesLength) {
+        if (!resultStats) {
+          return;
+        }
+
+        const sample = buildPageText(state.startNumber, state.pageCount);
+        resultStats.textContent =
+          "Numbered " + numberedPages.length + " page" + (numberedPages.length === 1 ? "" : "s") +
+          ". Sample format: " + sample +
+          ". Scope: " + getScopeLabel() +
+          ". Output size: " + formatSize(bytesLength) + ".";
+      }
+
+      async function saveNumberedPdf() {
+        try {
+          if (!state.arrayBuffer) {
+            toast("Please upload a PDF first.", "warning");
+            return;
+          }
+
+          const plan = getNumberingPlan(true);
+
+          if (!plan) {
+            return;
+          }
+
+          if (!plan.numberedPages.length) {
+            toast("No pages match the current numbering settings.", "warning");
+            return;
+          }
+
+          if (typeof window.PDFLib === "undefined") {
+            toast("PDF tools failed to load. Please refresh the page.", "error");
+            return;
+          }
+
+          setBusy(true);
+          clearResult();
+          updateProgressBar(5, "Reading PDF...");
+
+          const doc = await window.PDFLib.PDFDocument.load(state.arrayBuffer.slice(0));
+          const fontKey = getPdfFontKey();
+          const embeddedFont = await doc.embedFont(window.PDFLib.StandardFonts[fontKey]);
+          const rgb = hexToRgb(state.color);
+          const color = window.PDFLib.rgb(rgb.r, rgb.g, rgb.b);
+          const marginPt = state.marginMm * MM_TO_PT;
+          const pages = doc.getPages();
+
+          updateProgressBar(18, "Adding page numbers...");
+
+          for (let index = 0; index < plan.numberedPages.length; index += 1) {
+            const pageNumber = plan.numberedPages[index];
+            const page = pages[pageNumber - 1];
+            const displayNumber = plan.pageMap[pageNumber];
+
+            if (!page || displayNumber === null) {
+              continue;
+            }
+
+            const sample = buildPageText(displayNumber, state.pageCount);
+            const pageWidth = page.getWidth();
+            const pageHeight = page.getHeight();
+            const textWidth = embeddedFont.widthOfTextAtSize(sample, state.fontSize);
+            const textHeight = embeddedFont.heightAtSize(state.fontSize);
+            const placement = getPdfPlacement(state.position, pageWidth, pageHeight, textWidth, textHeight, marginPt);
+            const percent = 18 + Math.round(((index + 1) / plan.numberedPages.length) * 64);
+
+            updateProgressBar(percent, "Numbering page " + pageNumber + " of " + state.pageCount + "...");
+
+            page.drawText(sample, {
+              x: placement.x,
+              y: placement.y,
+              size: state.fontSize,
+              font: embeddedFont,
+              color: color,
+            });
+          }
+
+          updateProgressBar(88, "Saving numbered PDF...");
+          const bytes = await doc.save({ useObjectStreams: true });
+
+          state.resultBytes = bytes;
+          state.resultFilename = generateFilename();
+
+          if (filenamePreview) {
+            filenamePreview.textContent = state.resultFilename;
+          }
+
+          updateResultSummary(plan.numberedPages, bytes.byteLength);
+
+          if (resultBox) {
+            resultBox.hidden = false;
+          }
+
+          updateProgressBar(100, "Complete");
+          window.setTimeout(hideProgressBar, 450);
+          toast("Page numbers added successfully.", "success");
+        } catch (error) {
+          if (isPasswordError(error)) {
+            showUnlockToast();
+          } else {
+            toast("This file appears damaged", "error");
+          }
+
+          hideProgressBar();
+        } finally {
+          setBusy(false);
+          updatePageNav();
+        }
+      }
+
+      function downloadResult() {
+        if (!state.resultBytes || !state.resultFilename) {
+          toast("Add page numbers before downloading.", "info");
+          return;
+        }
+
+        let objectUrl = "";
+
+        try {
+          const blob = new Blob([state.resultBytes], { type: "application/pdf" });
+          const link = document.createElement("a");
+
+          objectUrl = URL.createObjectURL(blob);
+          link.href = objectUrl;
+          link.download = state.resultFilename;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+
+          window.setTimeout(function () {
+            URL.revokeObjectURL(objectUrl);
+          }, 1000);
+
+          toast("Download started.", "success");
+        } catch (error) {
+          if (objectUrl) {
+            URL.revokeObjectURL(objectUrl);
+          }
+
+          toast("The download could not start. Please try again.", "error");
+        }
+      }
+
+      async function resetTool() {
+        try {
+          window.clearTimeout(state.previewTimer);
+          state.previewTimer = null;
+          state.previewToken += 1;
+          await destroyPreviewDocument();
+
+          state.file = null;
+          state.arrayBuffer = null;
+          state.pageCount = 0;
+          state.currentPage = 1;
+          state.resultBytes = null;
+          state.resultFilename = "";
+
+          resetSettingsToDefaults();
+
+          if (previewGrid) {
+            previewGrid.textContent = "";
+          }
+
+          if (previewStage) {
+            previewStage.scrollTop = 0;
+          }
+
+          if (uploadZone) {
+            uploadZone.style.display = "";
+            uploadZone.classList.remove("dragover", "has-files");
+            uploadZone.style.transform = "";
+          }
+
+          if (toolArea) {
+            toolArea.hidden = true;
+          }
+
+          if (statName) {
+            statName.textContent = "-";
+          }
+
+          if (statPages) {
+            statPages.textContent = "-";
+          }
+
+          if (statSize) {
+            statSize.textContent = "-";
+          }
+
+          if (statPreview) {
+            statPreview.textContent = "1";
+          }
+
+          if (previewBadge) {
+            previewBadge.textContent = "1";
+          }
+
+          if (pageLabel) {
+            pageLabel.textContent = "Page 1 of 1";
+          }
+
+          if (previewMeta) {
+            previewMeta.textContent = "Adjust format, style, and placement. Click any page to inspect it; the grid preview reflects numbering placement across the document.";
+          }
+
+          if (fileInput) {
+            fileInput.value = "";
+          }
+
+          syncInputsFromState();
+          setPreviewBusy(false);
+          hideProgressBar();
+          clearResult();
+          setBusy(false);
+          updatePageNav();
+          updateSummary();
+        } catch (error) {
+          toast("The tool could not reset. Please refresh the page.", "error");
+        }
+      }
+
+      function bindUploadZone() {
+        if (!uploadZone || !fileInput) {
+          return;
+        }
+
+        if (typeof window.initDropZone === "function") {
+          window.initDropZone(uploadZone, function (files) {
+            void loadPdfFile(files && files[0] ? files[0] : null);
+          }, {
+            inputEl: fileInput,
+            maxFiles: 1,
+            validator: function () {
+              return true;
+            },
+          });
+        }
+
+        if (typeof window.initFileInput === "function") {
+          window.initFileInput(fileInput, function (files) {
+            void loadPdfFile(files && files[0] ? files[0] : null);
+          }, {
+            maxFiles: 1,
+            validator: function () {
+              return true;
+            },
+          });
+        }
+
+        uploadZone.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            fileInput.click();
+          }
+        });
+
+        uploadZone.addEventListener("mousemove", function (event) {
+          const rect = uploadZone.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const rotateX = ((y / rect.height) - 0.5) * -5;
+          const rotateY = ((x / rect.width) - 0.5) * 5;
+          uploadZone.style.transform =
+            "perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+        });
+
+        uploadZone.addEventListener("mouseleave", function () {
+          uploadZone.style.transform = "";
+        });
+      }
+
+      function bindFormatButtons() {
+        formatButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            const nextFormat = button.getAttribute("data-format");
+
+            if (!nextFormat) {
+              return;
+            }
+
+            state.format = nextFormat;
+            setActiveFormat();
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        });
+      }
+
+      function bindPositionButtons() {
+        positionButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            const nextPosition = button.getAttribute("data-position");
+
+            if (!nextPosition) {
+              return;
+            }
+
+            state.position = nextPosition;
+            setActivePosition();
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        });
+      }
+
+      function bindTextControls() {
+        if (prefixInput) {
+          prefixInput.addEventListener("input", function () {
+            state.prefix = prefixInput.value;
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+
+        if (suffixInput) {
+          suffixInput.addEventListener("input", function () {
+            state.suffix = suffixInput.value;
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+
+        if (fontSelect) {
+          fontSelect.addEventListener("change", function () {
+            state.font = fontSelect.value;
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+
+        if (fontSizeInput) {
+          fontSizeInput.addEventListener("input", function () {
+            state.fontSize = clamp(Number(fontSizeInput.value) || DEFAULT_STATE.fontSize, 8, 36);
+            updateSliderLabels();
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+
+        colorButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            const normalized = sanitizeHexColor(button.getAttribute("data-color"));
+
+            if (!normalized) {
+              return;
+            }
+
+            state.color = normalized;
+
+            if (colorHexInput) {
+              colorHexInput.value = normalized;
+            }
+
+            setActiveColor();
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        });
+
+        if (colorHexInput) {
+          colorHexInput.addEventListener("input", function () {
+            const normalized = sanitizeHexColor(colorHexInput.value);
+
+            if (!normalized) {
+              return;
+            }
+
+            state.color = normalized;
+            colorHexInput.value = normalized;
+            setActiveColor();
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+
+          colorHexInput.addEventListener("blur", function () {
+            const normalized = sanitizeHexColor(colorHexInput.value);
+            colorHexInput.value = normalized || state.color;
+          });
+        }
+
+        if (boldButton) {
+          boldButton.addEventListener("click", function () {
+            state.bold = !state.bold;
+            boldButton.classList.toggle("active", state.bold);
+            boldButton.setAttribute("aria-pressed", String(state.bold));
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+
+        if (italicButton) {
+          italicButton.addEventListener("click", function () {
+            state.italic = !state.italic;
+            italicButton.classList.toggle("active", state.italic);
+            italicButton.setAttribute("aria-pressed", String(state.italic));
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+
+        if (marginInput) {
+          marginInput.addEventListener("input", function () {
+            state.marginMm = clamp(Number(marginInput.value) || DEFAULT_STATE.marginMm, 5, 40);
+            updateSliderLabels();
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+
+        if (startNumberInput) {
+          startNumberInput.addEventListener("input", function () {
+            state.startNumber = Math.max(1, Number(startNumberInput.value) || DEFAULT_STATE.startNumber);
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+
+        if (skipToggle) {
+          skipToggle.addEventListener("change", function () {
+            state.skipEnabled = skipToggle.checked;
+
+            if (skipWrap) {
+              skipWrap.classList.toggle("is-visible", state.skipEnabled);
+            }
+
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+
+        if (skipCountInput) {
+          skipCountInput.addEventListener("input", function () {
+            state.skipCount = Math.max(1, Number(skipCountInput.value) || DEFAULT_STATE.skipCount);
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+      }
+
+      function bindScopeButtons() {
+        scopeButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            const nextScope = button.getAttribute("data-scope");
+
+            if (!nextScope) {
+              return;
+            }
+
+            state.applyMode = nextScope;
+            setActiveScope();
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        });
+
+        if (rangeInput) {
+          rangeInput.addEventListener("input", function () {
+            state.rangeValue = rangeInput.value.trim();
+            rangeInput.classList.remove("is-invalid");
+            updateSummary();
+            clearResult();
+            schedulePreview();
+          });
+        }
+      }
+
+      function bindPageNav() {
+        if (prevPageButton) {
+          prevPageButton.addEventListener("click", function () {
+            if (state.currentPage <= 1 || state.processing) {
+              return;
+            }
+
+            state.currentPage -= 1;
+            updatePageNav();
+            updateSummary();
+            schedulePreview(0);
+          });
+        }
+
+        if (nextPageButton) {
+          nextPageButton.addEventListener("click", function () {
+            if (state.currentPage >= state.pageCount || state.processing) {
+              return;
+            }
+
+            state.currentPage += 1;
+            updatePageNav();
+            updateSummary();
+            schedulePreview(0);
+          });
+        }
+      }
+
+      function bindActions() {
+        if (clearFileButton) {
+          clearFileButton.addEventListener("click", function () {
+            void resetTool();
+          });
+        }
+
+        if (applyButton) {
+          applyButton.addEventListener("click", function () {
+            void saveNumberedPdf();
+          });
+        }
+
+        if (downloadButton) {
+          downloadButton.addEventListener("click", downloadResult);
+        }
+
+        if (resetButton) {
+          resetButton.addEventListener("click", function () {
+            void resetTool();
+          });
+        }
+
+        window.addEventListener("resize", function () {
+          if (state.arrayBuffer && state.pdfJsDoc) {
+            schedulePreview(0);
+          }
+        });
+
+        window.addEventListener("beforeunload", function () {
+          void destroyPreviewDocument();
+        });
+      }
+
+      function init() {
+        resetSettingsToDefaults();
+        syncInputsFromState();
+        bindUploadZone();
+        bindFormatButtons();
+        bindPositionButtons();
+        bindTextControls();
+        bindScopeButtons();
+        bindPageNav();
+        bindActions();
+        updatePageNav();
+        updateSummary();
+      }
+
+      init();
+    })();
+  </script>
+
+
+</body></html>

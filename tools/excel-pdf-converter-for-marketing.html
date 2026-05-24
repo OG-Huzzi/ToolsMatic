@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel ↔ PDF Converter for Marketers Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Excel ↔ PDF Converter for Marketers online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/excel-pdf-converter-for-marketing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/excel-pdf-converter-for-marketing.html">
+  <meta property="og:title" content="Excel ↔ PDF Converter for Marketers Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Excel ↔ PDF Converter for Marketers online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/pdf/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Excel ↔ PDF Converter for Marketers Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Excel ↔ PDF Converter for Marketers online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/pdf/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+  
+  <style>
+    .doc-breadcrumb{max-width:1040px;margin:0 auto;padding:80px 40px 0}
+    .doc-hero{max-width:1040px;margin:0 auto;padding:32px 40px 40px}
+    .doc-tool{width:min(100% - 2rem,1040px);margin:0 auto;padding:0 0 80px}
+    .doc-shell{display:grid;gap:18px;padding:20px;border:1px solid var(--border);border-radius:var(--radius-card);background:linear-gradient(180deg,rgba(255,255,255,.03),transparent 34%),var(--bg-card);box-shadow:0 24px 70px rgba(0,0,0,.28)}
+    .doc-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:6px;border:1px solid var(--border);border-radius:999px;background:#070707}
+    .doc-tab{min-height:48px;border-radius:999px;color:var(--text-secondary);font-weight:800;cursor:pointer;transition:var(--transition)}
+    .doc-tab.active{background:linear-gradient(135deg,var(--accent),#fbbf24);color:#080808;box-shadow:0 10px 26px rgba(245,158,11,.22)}
+    .doc-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;align-items:start}
+    .doc-card{border:1px solid var(--border);border-radius:var(--radius-card);background:#090909;padding:18px}
+    .upload-zone{min-height:240px;cursor:pointer;text-align:center}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+    .doc-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 16px;border:1px solid var(--border-hover);border-radius:var(--radius-btn);color:var(--text-primary);font-weight:800;cursor:pointer;transition:var(--transition)}
+    .doc-btn.primary{border-color:transparent;background:linear-gradient(135deg,var(--accent),#fbbf24);color:#080808}
+    .doc-btn:hover{transform:translateY(-2px);border-color:rgba(245,158,11,.42)}
+    .doc-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+    .doc-select,.doc-input{width:100%;min-height:46px;margin-top:10px;padding:0 12px;border:1px solid var(--border);border-radius:var(--radius-btn);background:#050505;color:var(--text-primary)}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .metric{padding:14px;border:1px solid var(--border);border-radius:var(--radius-btn);background:#090909}
+    .metric span{display:block;color:var(--text-muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.metric strong{display:block;margin-top:6px;font-size:20px;color:var(--text-primary)}
+    .progress{height:12px;border:1px solid var(--border);border-radius:999px;background:#050505;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),#fbbf24);transition:width .25s ease}
+    .notice{min-height:46px;display:flex;align-items:center;padding:12px 14px;border:1px solid rgba(245,158,11,.22);border-radius:var(--radius-btn);background:rgba(245,158,11,.08);color:var(--text-secondary)}.notice.error{border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:#fecaca}
+    .preview{min-height:440px;max-height:720px;overflow:auto}.preview table{width:100%;border-collapse:collapse;font-size:13px}.preview th,.preview td{padding:8px 10px;border:1px solid rgba(255,255,255,.1);color:var(--text-secondary);vertical-align:top}.preview th{position:sticky;top:0;background:#121212;color:var(--text-primary)}.preview tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+    .thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:14px}.thumb{position:relative;border:1px solid var(--border);border-radius:12px;background:#050505;padding:10px;transition:var(--transition)}.thumb.selected{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-glow)}.thumb img,.thumb canvas{width:100%;border-radius:8px;background:#fff}.thumb .badge{position:absolute;top:8px;left:8px;padding:4px 8px;border-radius:999px;background:#050505;color:var(--accent);font-size:12px;font-weight:800}.thumb-actions{display:flex;gap:6px;margin-top:8px}.thumb-actions button{flex:1;min-height:30px;border:1px solid var(--border);border-radius:8px;color:var(--text-secondary);cursor:pointer}
+    .meta-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.meta-box{padding:14px;border:1px solid var(--border);border-radius:12px;background:#050505}.meta-box h3{font-family:Inter,sans-serif;font-size:14px;font-weight:800;margin-bottom:8px}.meta-box pre{white-space:pre-wrap;color:var(--text-secondary);font-size:12px}
+    .seo-section{width:min(100% - 2rem,1040px);margin:0 auto;padding:0 0 80px}.seo-card{padding:32px;border:1px solid var(--border);border-radius:var(--radius-card);background:var(--bg-card)}.seo-card h2,.seo-card h3{font-family:Inter,sans-serif;font-weight:800;line-height:1.2;margin:28px 0 12px}.seo-card h2:first-child{margin-top:0}.seo-card p,.seo-card li{margin-top:12px;color:var(--text-secondary)}.seo-card a{color:var(--accent);font-weight:800}.faq-list{display:grid;gap:12px;margin-top:16px}.faq-list details{padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius-btn);background:#090909}.faq-list summary{font-weight:800;color:var(--text-primary);cursor:pointer}
+    @media(max-width:860px){.doc-breadcrumb,.doc-hero{padding-left:20px;padding-right:20px}.doc-grid,.metrics,.meta-grid{grid-template-columns:1fr}.doc-shell,.seo-card{padding:16px}.doc-tabs{border-radius:18px}.doc-tab{border-radius:14px}}
+  </style>
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/excel-pdf-converter-for-marketing.html">
+</head>
+<body>
+<header class="header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="ToolsMatic Home"><span class="header-logo-text">ToolsMatic</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="/#tools" class="header-cta btn">All Tools</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="/#tools" class="active">Tools</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</header>
+<main>
+  <nav class="breadcrumb doc-breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep" aria-hidden="true">/</span><a href="/#tools" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page">Excel ↔ PDF Converter</span></nav>
+  <section class="tool-hero doc-hero" aria-label="Excel ↔ PDF Converter">
+    <div class="tool-hero-badge">Private spreadsheet conversion</div>
+    <h1>Excel ↔ PDF Converter for Marketers</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+    <p class="tool-hero-sub">Convert XLSX or XLS files into clean PDFs, or extract PDF tables back into Excel workbooks without uploading files.</p>
+  </section>
+  <section class="doc-tool" aria-label="Excel ↔ PDF Converter workspace">
+    <div class="doc-shell" data-doc-tool="excel">
+    <div class="doc-tabs" role="tablist" aria-label="Conversion mode"><button class="doc-tab active" data-mode="forward">Excel to PDF</button><button class="doc-tab" data-mode="reverse">PDF to Excel</button></div>
+    <input id="file-input" type="file" hidden>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="upload-zone" id="upload-zone" role="button" tabindex="0"><div class="upload-zone-icon" aria-hidden="true">↥</div><div class="upload-zone-text" id="upload-title">Drop file here</div><div class="upload-zone-sub">or click to browse</div><div class="upload-zone-sub">Files stay in your browser.</div></div>
+        <select class="doc-select" id="sheet-select" hidden aria-label="Sheet selector"></select>
+        
+        <div class="toolbar"><button class="doc-btn primary" id="convert-btn" data-primary disabled>Convert</button><button class="doc-btn" id="download-btn" disabled>Download</button><button class="doc-btn" id="clear-btn" data-clear disabled>Clear</button></div>
+      </div>
+      <div class="doc-card preview" id="preview"><div class="notice">Preview appears here after you add a file.</div></div>
+    </div>
+    <div class="metrics"><div class="metric"><span>Rows</span><strong id="rows">0</strong></div><div class="metric"><span>Columns / Slides</span><strong id="cols">0</strong></div><div class="metric"><span>Input size</span><strong id="input-size">0 B</strong></div><div class="metric"><span>Output size</span><strong id="output-size">0 B</strong></div></div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="notice" id="notice">Choose a file to begin.</div>
+  </div>
+  </section>
+  <section class="seo-section" aria-label="Excel ↔ PDF Converter guide">
+    <article class="seo-card">
+      <h2>Excel ↔ PDF Converter built for private browser work</h2>
+      <p>Excel ↔ PDF Converter — Free &amp; Browser-Based is a focused document utility for accountants, students, data analysts, finance teams, operations managers, freelancers, and anyone who needs spreadsheet data in a stable document format. It handles Excel to PDF and PDF to Excel conversion without forcing the user into an upload queue, account wall, or heavyweight desktop app. The tool is designed for quick conversion, clear previews, visible file-size feedback, and practical error messages when a file is encrypted, damaged, scanned, or not structured in a way the browser can reconstruct perfectly.</p>
+      <p>The biggest reason to use a browser-based converter is control. Documents often contain financial data, personal information, application details, contracts, lesson material, client names, or internal notes. Uploading those files to a random server creates unnecessary exposure. ToolsMatic keeps the workflow local wherever the browser libraries allow it: the file is selected, parsed in the browser, previewed on screen, converted, and downloaded back to your device. That privacy-first model is especially useful for repeated office tasks where the document is not public.</p>
+      <h2>Both conversion directions explained</h2>
+      <p>In the first mode, the tool reads the source file, builds a structured preview, and exports the result into the requested document format. In the reverse mode, it extracts usable page, table, metadata, or slide data from the PDF and rebuilds it into the editable target format. Some document formats are not symmetrical. A spreadsheet has cells and sheets; a PDF has positioned text. A presentation has slides and layers; a PDF has pages. That means the tool uses practical reconstruction: it keeps the output useful, readable, and easy to edit, while showing a preview so you can inspect the result before download.</p>
+      <h2>Who uses this tool?</h2>
+      <p>accountants, students, data analysts, finance teams, operations managers, freelancers, and anyone who needs spreadsheet data in a stable document format use this workflow because document conversion is rarely a one-time novelty. A student may need a submission-ready file. An accountant may need a report version that is stable for email. A teacher may need a printable packet. A lawyer may need an archival copy. A finance team may need tables extracted from a PDF. A designer may need slides converted for review. The shared need is simple: get the document into the right format without losing time or handing the file to an unknown service.</p>
+      <h2>Step-by-step guide</h2>
+      <ol>
+        <li>Choose the conversion direction using the tabs at the top of the tool.</li>
+        <li>Drag the file into the upload zone or click the upload area to browse.</li>
+        <li>Review the preview, sheet selector, thumbnail grid, metadata summary, or table output depending on the tool.</li>
+        <li>Check the row count, column count, slide count, page count, and file-size indicators.</li>
+        <li>Click the conversion button, wait for the progress bar, then download the finished file.</li>
+      </ol>
+      <h2>Related ToolsMatic PDF tools</h2>
+      <p>After using this converter, you may also need <a href="/tools/compress-pdf.html">Compress Pdf</a>, <a href="/tools/merge-pdf.html">Merge Pdf</a>, <a href="/tools/edit-pdf-metadata.html">Edit Pdf Metadata</a>, <a href="/tools/pdf-text-converter.html">Pdf Text Converter</a>. These related tools keep the workflow inside the same privacy-first PDF toolkit instead of forcing you to jump between unrelated sites.</p>
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list"><details><summary>Is Excel ↔ PDF Converter free?</summary><p>Yes. ToolsMatic provides this converter as a free browser-based tool with no sign-up requirement for normal use.</p></details><details><summary>Does Excel ↔ PDF Converter upload my files?</summary><p>The tool is designed for local browser processing. Your files are selected and processed in the browser rather than sent to a ToolsMatic upload server.</p></details><details><summary>Can I use this tool on mobile?</summary><p>Yes. The interface is responsive, with a large upload zone, readable previews, and buttons that remain usable on smaller screens.</p></details><details><summary>What happens if my file is password protected?</summary><p>Encrypted or password-protected files may not be readable by the browser libraries. The tool shows a clear error instead of silently failing.</p></details><details><summary>How accurate is the conversion?</summary><p>Accuracy depends on the structure of the source file. Clean digital files convert better than scanned, flattened, damaged, or heavily custom-designed documents.</p></details><details><summary>Can students use this tool for free?</summary><p>Yes. It is suitable for students who need quick document conversion for assignments, applications, reports, and class material.</p></details><details><summary>Can I preview before downloading?</summary><p>Yes. The tool shows a preview panel so you can check the output structure before exporting the final file.</p></details><details><summary>Which related PDF tools should I use next?</summary><p>Use Compress PDF to reduce size, Merge PDF to combine files, and metadata or protection tools when the finished document needs cleanup or security.</p></details></div>
+    </article>
+  </section>
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="excel-pdf-converter-for-marketing-pseo" aria-labelledby="excel-pdf-converter-for-marketing-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Excel ↔ PDF Converter for Marketers</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="excel-pdf-converter-for-marketing-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Excel ↔ PDF Converter for Marketers Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Excel ↔ PDF Converter for Marketers</strong>, an engaging workspace tailored for social copy, campaign assets, and quick calculations. This dedicated workspace is built specifically for digital marketers, social media specialists, campaign builders, and copywriters. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>ad copywriting formats, character countdown alerts, link generators, and responsive output styles</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Convert spreadsheets to PDF or extract PDF tables into Excel locally. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Ad Casing Adjustments</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Ensure your headline titles use proper casing to boost click-through rates.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Social Capping checks</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Verify that your marketing posts fit Twitter, LinkedIn, or Instagram text constraints.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Campaign Link setups</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Configure percent-encoded URLs or generate matching QR codes instantly.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Excel ↔ PDF Converter for Marketers</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Marketers layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Excel ↔ PDF Converter for Marketers</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I check Google Ad limits?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, the character counters have indicators to help you match Google Ad guidelines.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is it safe for proprietary copy?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes. Your campaign copy is processed client-side, ensuring competitor protection.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I batch-process links?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, using standard bulk tools or batch options.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/excel-pdf-converter.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Excel ↔ PDF Converter</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Excel ↔ PDF Converter for Marketers","url":"https://toolsmatic.me/tools/excel-pdf-converter-for-marketing.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Excel ↔ PDF Converter for Marketers online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Excel ↔ PDF Converter for Marketers","item":"https://toolsmatic.me/tools/excel-pdf-converter-for-marketing.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I check Google Ad limits?","acceptedAnswer":{"@type":"Answer","text":"Yes, the character counters have indicators to help you match Google Ad guidelines."}},{"@type":"Question","name":"Is it safe for proprietary copy?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your campaign copy is processed client-side, ensuring competitor protection."}},{"@type":"Question","name":"Can I batch-process links?","acceptedAnswer":{"@type":"Answer","text":"Yes, using standard bulk tools or batch options."}}]}]}</script>
+  </main>
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col"><div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--text-primary);margin-bottom:12px;">ToolsMatic</div><p style="font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.7;max-width:220px;">Privacy-first PDF tools. Your files never leave your browser.</p><p style="font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);margin-top:16px;">© 2026 ToolsMatic. All rights reserved.</p></div>
+    <div class="footer-col"><div class="footer-col-title">PDF Tools</div><a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a><a href="/tools/split-pdf.html" class="footer-link">Split PDF</a><a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a><a href="/tools/word-pdf-converter.html" class="footer-link">Word PDF Converter</a><a href="/tools/excel-pdf-converter.html" class="footer-link">Excel ↔ PDF Converter</a></div>
+    <div class="footer-col"><div class="footer-col-title">Document Tools</div><a href="/tools/excel-pdf-converter.html" class="footer-link">Excel PDF Converter</a><a href="/tools/pptx-pdf-converter.html" class="footer-link">PowerPoint PDF Converter</a><a href="/tools/pdf-pdfa-converter.html" class="footer-link">PDF/A Converter</a><a href="/tools/organize-pdf.html" class="footer-link">Organize PDF</a></div>
+    <div class="footer-col"><div class="footer-col-title">Company</div><a href="/about.html" class="footer-link">About</a><a href="/contact.html" class="footer-link">Contact</a><a href="/privacy.html" class="footer-link">Privacy Policy</a><a href="/terms.html" class="footer-link">Terms of Service</a></div>
+  </div>
+  <div class="footer-bottom"><span>Built for people who value privacy</span><span>No tracking. No uploads. No nonsense.</span></div>
+</footer>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script><script src="/assets/pdf/global.js"></script><script src="/assets/pdf/tool-base.js"></script>
+<script>'use strict';(()=>{const $=s=>document.querySelector(s);const fmt=b=>!b?'0 B':(b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(2)+' MB');const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));const setNotice=(m,e=false)=>{const n=$('#notice');n.textContent=m;n.classList.toggle('error',e)};const setBar=v=>{$('#bar').style.width=Math.max(0,Math.min(100,v))+'%'};const download=(blob,name)=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};let mode='forward',file=null,workbook=null,rows=[],outBlob=null,outName='converted.pdf';const input=$('#file-input'),preview=$('#preview'),sheet=$('#sheet-select');function reset(){file=null;workbook=null;rows=[];outBlob=null;input.value='';sheet.hidden=true;preview.innerHTML='<div class="notice">Preview appears here after you add a file.</div>';$('#rows').textContent='0';$('#cols').textContent='0';$('#input-size').textContent='0 B';$('#output-size').textContent='0 B';$('#convert-btn').disabled=true;$('#download-btn').disabled=true;$('#clear-btn').disabled=true;setBar(0)}function switchMode(m){mode=m;reset();document.querySelectorAll('.doc-tab').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));input.accept=m==='forward'?'.xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel':'.pdf,application/pdf';$('#upload-title').textContent=m==='forward'?'Drop Excel file here':'Drop PDF file here';setNotice(m==='forward'?'Add an XLSX or XLS file to preview sheets.':'Add a PDF to extract tables into Excel.')}function renderTable(data){const head=data[0]||[];const body=data.slice(1,80);preview.innerHTML='<table><thead><tr>'+head.map(h=>'<th>'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+body.map(r=>'<tr>'+head.map((_,i)=>'<td>'+esc(r[i]??'')+'</td>').join('')+'</tr>').join('')+'</tbody></table>';$('#rows').textContent=Math.max(data.length-1,0);$('#cols').textContent=head.length}async function loadFile(f){file=f;outBlob=null;$('#input-size').textContent=fmt(f.size);$('#clear-btn').disabled=false;$('#convert-btn').disabled=false;setBar(10);try{if(mode==='forward'){if(!window.XLSX)throw Error('SheetJS did not load. Refresh and try again.');workbook=XLSX.read(await f.arrayBuffer(),{type:'array'});sheet.innerHTML=workbook.SheetNames.map(n=>'<option>'+esc(n)+'</option>').join('');sheet.hidden=workbook.SheetNames.length<2;loadSheet(sheet.value||workbook.SheetNames[0]);setNotice('Spreadsheet loaded. Choose a sheet if needed, then convert.')}else{await pdfToRows(f);setNotice('PDF text extracted into a table preview. Convert to download XLSX.')}setBar(35)}catch(e){setNotice(e.message||'Could not read this file. It may be corrupted or password protected.',true)}}function loadSheet(name){const ws=workbook.Sheets[name];rows=XLSX.utils.sheet_to_json(ws,{header:1,blankrows:false,defval:''});if(!rows.length)rows=[['Empty sheet']];renderTable(rows)}async function pdfToRows(f){if(!window.pdfjsLib)throw Error('PDF.js did not load.');pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';const pdf=await pdfjsLib.getDocument({data:new Uint8Array(await f.arrayBuffer())}).promise;rows=[['Page','Column 1','Column 2','Column 3','Column 4']];for(let p=1;p<=pdf.numPages;p++){const page=await pdf.getPage(p),tc=await page.getTextContent(),lineMap={};tc.items.forEach(it=>{const y=Math.round(it.transform[5]);(lineMap[y]||(lineMap[y]=[])).push({x:it.transform[4],t:it.str})});Object.keys(lineMap).map(Number).sort((a,b)=>b-a).forEach(y=>{const parts=lineMap[y].sort((a,b)=>a.x-b.x).map(x=>x.t.trim()).filter(Boolean);if(parts.length)rows.push([p,...parts.slice(0,4)])});setBar(20+p/pdf.numPages*45)}renderTable(rows)}async function convert(){try{if(!file)return;setBar(55);if(mode==='forward'){const {jsPDF}=window.jspdf;const doc=new jsPDF({orientation:'landscape',unit:'pt',format:'a4'});doc.setFontSize(14);doc.text(file.name.replace(/\.[^.]+$/,''),40,32);doc.autoTable({head:[rows[0]||[]],body:rows.slice(1),startY:48,theme:'grid',styles:{fontSize:8,cellPadding:4,overflow:'linebreak'},headStyles:{fillColor:[245,158,11],textColor:[10,10,10]},alternateRowStyles:{fillColor:[245,245,245]}});outBlob=doc.output('blob');outName=file.name.replace(/\.[^.]+$/,'')+'.pdf'}else{const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(rows),'PDF Extract');const arr=XLSX.write(wb,{bookType:'xlsx',type:'array'});outBlob=new Blob([arr],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});outName=file.name.replace(/\.[^.]+$/,'')+'.xlsx'}$('#output-size').textContent=fmt(outBlob.size);$('#download-btn').disabled=false;setBar(100);setNotice('Conversion ready. Download when you are satisfied with the preview.')}catch(e){setNotice(e.message||'Conversion failed.',true)}}$('#upload-zone').onclick=()=>input.click();$('#upload-zone').ondragover=e=>{e.preventDefault();$('#upload-zone').classList.add('dragover')};$('#upload-zone').ondragleave=()=>$('#upload-zone').classList.remove('dragover');$('#upload-zone').ondrop=e=>{e.preventDefault();$('#upload-zone').classList.remove('dragover');loadFile(e.dataTransfer.files[0])};input.onchange=()=>loadFile(input.files[0]);sheet.onchange=()=>loadSheet(sheet.value);document.querySelectorAll('.doc-tab').forEach(b=>b.onclick=()=>switchMode(b.dataset.mode));$('#convert-btn').onclick=convert;$('#download-btn').onclick=()=>download(outBlob,outName);$('#clear-btn').onclick=reset;switchMode('forward')})();</script>
+</body>
+</html>

@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Stopwatch &amp; Timer Desktop Alternative | ToolsMatic</title>
+  <meta name="description" content="Use Stopwatch &amp; Timer Desktop Alternative online. Client-side, free, and private browser-based utility.">
+  <meta name="keywords" content="online stopwatch, online timer, stopwatch with laps, countdown timer, multiple timers, stopwatch timer online, lap timer, export laps csv, fullscreen stopwatch, offline stopwatch">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://toolsmatic.me/tools/stopwatch-timer-desktop-alternative.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/stopwatch-timer-desktop-alternative.html">
+  <meta property="og:title" content="Stopwatch &amp; Timer Desktop Alternative | ToolsMatic">
+  <meta property="og:description" content="Use Stopwatch &amp; Timer Desktop Alternative online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stopwatch &amp; Timer Desktop Alternative | ToolsMatic">
+  <meta name="twitter:description" content="Use Stopwatch &amp; Timer Desktop Alternative online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  
+  
+  
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"How to use a stopwatch and timer tool that is fast, readable, and advanced enough for real work","description":"A practical guide to stopwatch timing, lap analysis, countdown presets, multiple simultaneous timers, and fullscreen timing in the browser.","author":{"@type":"Organization","name":"ToolsMatic"},"publisher":{"@type":"Organization","name":"ToolsMatic"},"mainEntityOfPage": "https://toolsmatic.me/tools/stopwatch-timer-desktop-alternative.html"}
+  </script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+  <style>
+    .st-page {
+      width: min(1240px, calc(100% - 32px));
+      margin: 0 auto 56px;
+      --accent-1: #ffb15c;
+      --accent-2: #ff6f61;
+      --accent-soft: rgba(255, 177, 92, 0.16);
+      --accent-soft-2: rgba(255, 111, 97, 0.12);
+      --accent-glow: rgba(255, 177, 92, 0.24);
+    }
+
+    .st-page.st-tab-stopwatch {
+      --accent-1: #ffb15c;
+      --accent-2: #ff6f61;
+      --accent-soft: rgba(255, 177, 92, 0.16);
+      --accent-soft-2: rgba(255, 111, 97, 0.12);
+      --accent-glow: rgba(255, 177, 92, 0.24);
+    }
+
+    .st-page.st-tab-timer {
+      --accent-1: #73e0ff;
+      --accent-2: #5b92ff;
+      --accent-soft: rgba(115, 224, 255, 0.16);
+      --accent-soft-2: rgba(91, 146, 255, 0.12);
+      --accent-glow: rgba(91, 146, 255, 0.22);
+    }
+
+    .st-page.st-tab-multi {
+      --accent-1: #77f1c2;
+      --accent-2: #3fc9b4;
+      --accent-soft: rgba(119, 241, 194, 0.16);
+      --accent-soft-2: rgba(63, 201, 180, 0.12);
+      --accent-glow: rgba(119, 241, 194, 0.22);
+    }
+
+    .st-breadcrumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 22px 0 18px;
+      padding: 14px 18px;
+      border: 1px solid rgba(94, 234, 212, 0.16);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(12, 24, 38, 0.92), rgba(11, 18, 29, 0.86));
+      color: rgba(227, 235, 244, 0.78);
+      font-size: 0.95rem;
+    }
+
+    .st-breadcrumbs a {
+      color: #8fe8ff;
+      text-decoration: none;
+    }
+
+    .st-breadcrumbs span {
+      opacity: 0.62;
+    }
+
+    .st-hero,
+    .st-tool-shell,
+    .st-card,
+    .st-compare-card,
+    .st-faq-card,
+    .st-seo-card,
+    .st-overlay-shell {
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, var(--accent-soft), transparent 20rem),
+        radial-gradient(circle at bottom left, var(--accent-soft-2), transparent 22rem),
+        linear-gradient(180deg, rgba(16, 28, 44, 0.95), rgba(9, 16, 28, 0.92));
+      box-shadow: 0 26px 60px rgba(2, 8, 18, 0.28);
+    }
+
+    .st-hero {
+      padding: 30px;
+      margin-bottom: 22px;
+    }
+
+    .st-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      color: #71e9df;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .st-eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      box-shadow: 0 0 18px var(--accent-glow);
+    }
+
+    .st-hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.4rem, 4vw, 3.9rem);
+      line-height: 1.02;
+    }
+
+    .st-hero p,
+    .st-card > p,
+    .st-compare-card > p,
+    .st-faq-card > p,
+    .st-seo-card > p {
+      margin: 0;
+      color: rgba(227, 235, 244, 0.8);
+      line-height: 1.72;
+      max-width: 78ch;
+    }
+
+    .st-pills,
+    .st-tab-list,
+    .st-controls,
+    .st-inline-actions,
+    .st-presets,
+    .st-shortcuts,
+    .st-lap-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .st-pills {
+      margin-top: 22px;
+    }
+
+    .st-pill,
+    .st-badge,
+    .st-summary-pill,
+    .st-lap-summary-item,
+    .st-shortcut,
+    .st-faq details,
+    .st-multi-card {
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .st-pill,
+    .st-badge,
+    .st-summary-pill {
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: rgba(238, 244, 248, 0.88);
+      font-size: 0.92rem;
+    }
+
+    .st-tool-shell {
+      padding: 22px;
+      margin-bottom: 22px;
+    }
+
+    .st-tab-list {
+      margin-bottom: 18px;
+    }
+
+    .st-tab {
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+      background: rgba(8, 18, 31, 0.76);
+      color: rgba(236, 243, 248, 0.9);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .st-tab:hover,
+    .st-tab:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(124, 217, 255, 0.32);
+      outline: none;
+    }
+
+    .st-tab.is-active {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: #04121f;
+      box-shadow: 0 18px 34px var(--accent-glow);
+    }
+
+    .st-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .st-main-stack,
+    .st-side-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .st-card {
+      padding: 22px;
+    }
+
+    .st-card h2,
+    .st-card h3,
+    .st-compare-card h2,
+    .st-faq-card h2,
+    .st-seo-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+    }
+
+    .st-card h3 {
+      font-size: 1.06rem;
+    }
+
+    .st-display-shell {
+      display: grid;
+      gap: 18px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .st-display-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .st-display-stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 360px;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 58%),
+        linear-gradient(180deg, rgba(6, 12, 20, 0.86), rgba(6, 10, 18, 0.92));
+      border: 1px solid rgba(124, 217, 255, 0.1);
+    }
+
+    .st-ring {
+      width: min(100%, 420px);
+      aspect-ratio: 1;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      filter: drop-shadow(0 18px 38px var(--accent-glow));
+    }
+
+    .st-page.st-show-ring .st-ring {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .st-ring-track {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.08);
+      stroke-width: 16;
+    }
+
+    .st-ring-progress {
+      fill: none;
+      stroke: url(#st-ring-gradient);
+      stroke-width: 16;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: 160px 160px;
+      transition: stroke-dashoffset 0.1s linear;
+    }
+
+    .st-display-center {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 34px;
+      text-align: center;
+    }
+
+    .st-mode-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(243, 248, 252, 0.86);
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .st-time {
+      margin: 0 0 12px;
+      font-size: clamp(2.7rem, 8vw, 5.6rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      font-weight: 800;
+    }
+
+    .st-subcopy {
+      margin: 0;
+      color: rgba(220, 230, 239, 0.76);
+      line-height: 1.65;
+      max-width: 34ch;
+    }
+
+    .st-controls {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .st-primary,
+    .st-secondary,
+    .st-ghost {
+      min-height: 50px;
+      border-radius: 18px;
+      padding: 0 18px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .st-primary:hover,
+    .st-secondary:hover,
+    .st-ghost:hover {
+      transform: translateY(-1px);
+    }
+
+    .st-primary {
+      border: 0;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: #04121f;
+      box-shadow: 0 18px 34px var(--accent-glow);
+    }
+
+    .st-secondary,
+    .st-ghost {
+      background: rgba(8, 18, 31, 0.76);
+      color: #ecf3f8;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+    }
+
+    .st-primary:disabled,
+    .st-secondary:disabled,
+    .st-ghost:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .st-setup-grid,
+    .st-timer-inputs,
+    .st-side-info,
+    .st-lap-summary {
+      display: grid;
+      gap: 12px;
+    }
+
+    .st-setup-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 16px;
+    }
+
+    .st-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: rgba(240, 245, 250, 0.92);
+    }
+
+    .st-page input[type="text"],
+    .st-page input[type="number"] {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(5, 14, 24, 0.92);
+      color: #eff5fb;
+      padding: 14px 16px;
+      font: inherit;
+    }
+
+    .st-page input[type="text"]:focus,
+    .st-page input[type="number"]:focus {
+      outline: none;
+      border-color: rgba(124, 217, 255, 0.4);
+      box-shadow: 0 0 0 3px rgba(88, 168, 255, 0.18);
+    }
+
+    .st-timer-inputs {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 16px;
+    }
+
+    .st-status {
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      color: rgba(237, 244, 248, 0.9);
+      line-height: 1.6;
+    }
+
+    .st-presets {
+      margin: 16px 0 0;
+    }
+
+    .st-preset {
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+      background: rgba(8, 18, 31, 0.76);
+      color: rgba(236, 243, 248, 0.9);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .st-preset:hover,
+    .st-preset:focus-visible {
+      border-color: rgba(124, 217, 255, 0.32);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .st-summary-pill,
+    .st-lap-summary-item,
+    .st-shortcut {
+      border-radius: 18px;
+      padding: 14px 16px;
+    }
+
+    .st-summary-pill strong,
+    .st-lap-summary-item strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .st-summary-pill span,
+    .st-lap-summary-item span {
+      color: rgba(220, 230, 239, 0.72);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .st-lap-summary {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 16px;
+    }
+
+    .st-lap-table-wrap,
+    .st-compare-wrap {
+      overflow: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.12);
+      margin-top: 16px;
+    }
+
+    .st-lap-table,
+    .st-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+    }
+
+    .st-lap-table th,
+    .st-lap-table td,
+    .st-compare-table th,
+    .st-compare-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(124, 217, 255, 0.12);
+    }
+
+    .st-lap-table th,
+    .st-compare-table th {
+      background: rgba(7, 16, 28, 0.9);
+      color: #f4fbff;
+      text-align: left;
+    }
+
+    .st-lap-table tbody tr:nth-child(even),
+    .st-compare-table tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .st-lap-fastest {
+      background: rgba(89, 214, 168, 0.1);
+    }
+
+    .st-lap-slowest {
+      background: rgba(255, 125, 125, 0.1);
+    }
+
+    .st-lap-average {
+      outline: 1px solid rgba(110, 186, 255, 0.22);
+      outline-offset: -1px;
+    }
+
+    .st-multi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .st-multi-card {
+      padding: 16px;
+      border-radius: 22px;
+      cursor: pointer;
+    }
+
+    .st-multi-card.is-selected {
+      border-color: rgba(124, 217, 255, 0.36);
+      box-shadow: 0 18px 34px rgba(88, 168, 255, 0.12);
+    }
+
+    .st-multi-top,
+    .st-multi-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .st-multi-display {
+      margin: 14px 0;
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      font-weight: 800;
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    .st-multi-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: rgba(220, 230, 239, 0.72);
+      font-size: 0.92rem;
+    }
+
+    .st-multi-inputs {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .st-multi-duration {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .st-multi-actions button {
+      min-height: 40px;
+      padding: 0 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+      background: rgba(255, 255, 255, 0.03);
+      color: #eff5fb;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .st-shortcuts {
+      margin-top: 16px;
+    }
+
+    .st-shortcut strong {
+      display: inline-block;
+      min-width: 22px;
+      margin-right: 8px;
+      color: #ffffff;
+    }
+
+    .st-check {
+      color: #79f1c2;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .st-cross {
+      color: #ff8e9e;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .st-compare-card,
+    .st-faq-card,
+    .st-seo-card {
+      padding: 24px;
+      margin-top: 22px;
+    }
+
+    .st-compare-table td:not(:first-child),
+    .st-compare-table th:not(:first-child) {
+      text-align: center;
+    }
+
+    .st-faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    .st-faq details {
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .st-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    .st-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .st-faq p {
+      margin: 10px 0 0;
+      color: rgba(217, 227, 237, 0.76);
+      line-height: 1.68;
+    }
+
+    .st-seo-card h3 {
+      margin: 24px 0 10px;
+      font-size: 1.12rem;
+    }
+
+    .st-seo-card p {
+      color: rgba(219, 229, 240, 0.8);
+      line-height: 1.78;
+      margin: 0 0 14px;
+    }
+
+    .st-hidden {
+      display: none !important;
+    }
+
+    .st-overlay {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(2, 8, 18, 0.86);
+      backdrop-filter: blur(10px);
+      z-index: 1200;
+    }
+
+    .st-overlay.is-open {
+      display: flex;
+    }
+
+    .st-overlay-shell {
+      width: min(100%, 980px);
+      padding: 28px;
+    }
+
+    .st-overlay-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .st-overlay-time {
+      font-size: clamp(3rem, 12vw, 8rem);
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      line-height: 0.9;
+      margin: 0;
+      text-align: center;
+    }
+
+    .st-overlay-copy {
+      text-align: center;
+      color: rgba(223, 232, 240, 0.78);
+      line-height: 1.65;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 1120px) {
+      .st-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .st-page {
+        width: min(100% - 20px, 100%);
+      }
+
+      .st-hero,
+      .st-tool-shell,
+      .st-card,
+      .st-compare-card,
+      .st-faq-card,
+      .st-seo-card,
+      .st-overlay-shell {
+        border-radius: 22px;
+      }
+
+      .st-setup-grid,
+      .st-timer-inputs,
+      .st-lap-summary,
+      .st-multi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .st-display-stage {
+        min-height: 310px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .st-controls button,
+      .st-presets button,
+      .st-inline-actions button {
+        width: 100%;
+      }
+
+      .st-controls,
+      .st-presets,
+      .st-inline-actions {
+        width: 100%;
+      }
+
+      .st-multi-duration {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/stopwatch-timer-desktop-alternative.html">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">&#127769;</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="st-app" class="st-page st-tab-stopwatch">
+    <nav class="st-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/">Everyday Tools</a>
+      <span>/</span>
+      <strong>Stopwatch &amp; Timer</strong>
+    </nav>
+
+    <section class="st-hero">
+      <div class="st-eyebrow">Precision timing</div>
+      <h1>Stopwatch &amp; Timer Desktop Alternative</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+<p>This page combines a millisecond stopwatch, a clear countdown timer, and a multi-timer system that can run up to four named timers at once. You get lap tracking, CSV export, countdown presets, a fullscreen-ready large display, keyboard shortcuts, live tab-title updates, and an offline-friendly workflow that stays fast in the browser.</p>
+      <div class="st-pills">
+        <div class="st-pill">Millisecond stopwatch with lap analysis and CSV export</div>
+        <div class="st-pill">Countdown timer with presets, sound alert, and circular progress ring</div>
+        <div class="st-pill">Up to four named simultaneous timers in one calm workspace</div>
+      </div>
+    </section>
+
+    <section class="st-tool-shell">
+      <div class="st-tab-list" role="tablist" aria-label="Timing modes">
+        <button class="st-tab is-active" type="button" data-tab="stopwatch">Stopwatch</button>
+        <button class="st-tab" type="button" data-tab="timer">Timer</button>
+        <button class="st-tab" type="button" data-tab="multi">Multi-Timer</button>
+      </div>
+
+      <div class="st-grid">
+        <div class="st-main-stack">
+          <section class="st-card">
+            <div class="st-display-shell">
+              <div class="st-display-meta">
+                <div id="st-mode-badge" class="st-badge">Stopwatch</div>
+                <div id="st-detail-badge" class="st-badge">Ready</div>
+              </div>
+
+              <div class="st-display-stage">
+                <svg class="st-ring" viewBox="0 0 320 320" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="st-ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop id="st-gradient-stop-1" offset="0%" stop-color="#ffb15c"></stop>
+                      <stop id="st-gradient-stop-2" offset="100%" stop-color="#ff6f61"></stop>
+                    </linearGradient>
+                  </defs>
+                  <circle class="st-ring-track" cx="160" cy="160" r="120"></circle>
+                  <circle id="st-ring-progress" class="st-ring-progress" cx="160" cy="160" r="120"></circle>
+                </svg>
+                <div class="st-display-center">
+                  <div>
+                    <div id="st-mode-label" class="st-mode-label">Stopwatch</div>
+                    <h2 id="st-time" class="st-time">00:00:00.000</h2>
+                    <p id="st-subcopy" class="st-subcopy">Press Start to begin, Space to toggle, L to lap, and R to reset.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="st-controls">
+                <button id="st-start-pause" class="st-primary" type="button">Start</button>
+                <button id="st-lap" class="st-secondary" type="button">Lap</button>
+                <button id="st-reset" class="st-secondary" type="button">Reset</button>
+                <button id="st-large-display" class="st-ghost" type="button">Large display</button>
+              </div>
+            </div>
+
+            <div id="st-stopwatch-setup">
+              <div class="st-lap-summary" id="st-lap-summary">
+                <div class="st-lap-summary-item"><strong id="st-fastest-lap">-</strong><span>Fastest lap</span></div>
+                <div class="st-lap-summary-item"><strong id="st-slowest-lap">-</strong><span>Slowest lap</span></div>
+                <div class="st-lap-summary-item"><strong id="st-average-lap">-</strong><span>Average lap</span></div>
+              </div>
+              <div class="st-inline-actions" style="margin-top:16px;">
+                <button id="st-export-laps" class="st-ghost" type="button">Export laps CSV</button>
+              </div>
+            </div>
+
+            <div id="st-timer-setup" class="st-hidden">
+              <div class="st-timer-inputs">
+                <div>
+                  <label class="st-label" for="st-hours">Hours</label>
+                  <input id="st-hours" type="number" min="0" max="99" value="0">
+                </div>
+                <div>
+                  <label class="st-label" for="st-minutes">Minutes</label>
+                  <input id="st-minutes" type="number" min="0" max="59" value="5">
+                </div>
+                <div>
+                  <label class="st-label" for="st-seconds">Seconds</label>
+                  <input id="st-seconds" type="number" min="0" max="59" value="0">
+                </div>
+              </div>
+              <div class="st-presets">
+                <button class="st-preset" type="button" data-duration="60">1 min</button>
+                <button class="st-preset" type="button" data-duration="120">2 min</button>
+                <button class="st-preset" type="button" data-duration="300">5 min</button>
+                <button class="st-preset" type="button" data-duration="600">10 min</button>
+                <button class="st-preset" type="button" data-duration="1500">25 min</button>
+                <button class="st-preset" type="button" data-duration="2700">45 min</button>
+                <button class="st-preset" type="button" data-duration="3600">1 hour</button>
+              </div>
+            </div>
+
+            <div id="st-multi-setup" class="st-hidden">
+              <div class="st-inline-actions">
+                <button id="st-add-multi" class="st-primary" type="button">Add timer</button>
+                <div id="st-multi-summary" class="st-summary-pill"><strong>0 running</strong><span>Selected timer appears in the main display.</span></div>
+              </div>
+            </div>
+
+            <div id="st-status" class="st-status" aria-live="polite">Ready for precise timing. The tab title will update while timers run.</div>
+          </section>
+
+          <section id="st-laps-card" class="st-card">
+            <h3>Laps</h3>
+            <p>Lap analysis automatically highlights the fastest, slowest, and most average lap so the table is useful for more than just raw totals.</p>
+            <div class="st-lap-table-wrap">
+              <table class="st-lap-table">
+                <thead>
+                  <tr>
+                    <th>Lap</th>
+                    <th>Lap time</th>
+                    <th>Total time</th>
+                  </tr>
+                </thead>
+                <tbody id="st-lap-body">
+                  <tr><td colspan="3">No laps yet. Start the stopwatch and press Lap to build the table.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="st-multi-card" class="st-card st-hidden">
+            <h3>Multi-Timer grid</h3>
+            <p>Run up to four named timers at once. Select one to mirror it into the giant display above while the others keep counting down in the grid.</p>
+            <div id="st-multi-grid" class="st-multi-grid">
+              <div class="st-summary-pill"><strong>No timers yet</strong><span>Add your first named timer to begin.</span></div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="st-side-stack">
+          <section class="st-card">
+            <h3>Quick facts</h3>
+            <p>Everything runs locally in the browser. The live title updates help when the tab is in the background, and the large display mode makes the timer readable across the room.</p>
+            <div class="st-side-info">
+              <div class="st-summary-pill"><strong id="st-active-info">Stopwatch ready</strong><span>Current focus surface</span></div>
+              <div class="st-summary-pill"><strong id="st-running-info">0 running</strong><span>Running timers right now</span></div>
+            </div>
+          </section>
+
+          <section class="st-card">
+            <h3>Keyboard shortcuts</h3>
+            <p>Shortcuts apply to the current mode. In Multi-Timer mode they target the selected timer card.</p>
+            <div class="st-shortcuts">
+              <div class="st-shortcut"><strong>Space</strong> start or pause</div>
+              <div class="st-shortcut"><strong>L</strong> lap in stopwatch mode</div>
+              <div class="st-shortcut"><strong>R</strong> reset current timer</div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="st-compare-card">
+      <h2>Comparison table</h2>
+      <p>Ticks mean the feature is clearly highlighted on the reviewed public page. Crosses mean it was not clearly highlighted there at the time of review on April 7, 2026.</p>
+      <div class="st-compare-wrap">
+        <table class="st-compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ToolsMatic</th>
+              <th>timeanddate</th>
+              <th>TimerWeb</th>
+              <th>iLoveTimers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Stopwatch with lap tracking</td><td class="st-check">&#10003;</td><td class="st-check">&#10003;</td><td class="st-check">&#10003;</td><td class="st-check">&#10003;</td></tr>
+            <tr><td>Countdown presets</td><td class="st-check">&#10003;</td><td class="st-cross">&#10005;</td><td class="st-check">&#10003;</td><td class="st-check">&#10003;</td></tr>
+            <tr><td>Large display or fullscreen timer</td><td class="st-check">&#10003;</td><td class="st-cross">&#10005;</td><td class="st-check">&#10003;</td><td class="st-check">&#10003;</td></tr>
+            <tr><td>Keyboard shortcuts highlighted</td><td class="st-check">&#10003;</td><td class="st-check">&#10003;</td><td class="st-check">&#10003;</td><td class="st-check">&#10003;</td></tr>
+            <tr><td>Multiple timers on one page</td><td class="st-check">&#10003;</td><td class="st-cross">&#10005;</td><td class="st-check">&#10003;</td><td class="st-cross">&#10005;</td></tr>
+            <tr><td>Named timers</td><td class="st-check">&#10003;</td><td class="st-cross">&#10005;</td><td class="st-cross">&#10005;</td><td class="st-cross">&#10005;</td></tr>
+            <tr><td>CSV lap export</td><td class="st-check">&#10003;</td><td class="st-cross">&#10005;</td><td class="st-cross">&#10005;</td><td class="st-cross">&#10005;</td></tr>
+            <tr><td>Offline-friendly highlighted</td><td class="st-check">&#10003;</td><td class="st-cross">&#10005;</td><td class="st-check">&#10003;</td><td class="st-cross">&#10005;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="st-faq-card">
+      <h2>FAQs</h2>
+      <p>These answers focus on the practical side of using stopwatches and countdown timers in real work instead of treating them like toy widgets.</p>
+      <div class="st-faq">
+        <details>
+          <summary>When should I use the stopwatch instead of the countdown timer?</summary>
+          <p>Use the stopwatch when you want to measure how long something actually takes. Use the countdown timer when you need a defined limit, deadline, drill length, speaking slot, or cooking interval.</p>
+        </details>
+        <details>
+          <summary>Why does the lap table include both lap time and total time?</summary>
+          <p>Lap time shows how long the current segment took, while total time shows the cumulative point at which the lap happened. Together they make the table much easier to analyze.</p>
+        </details>
+        <details>
+          <summary>What makes the multi-timer mode useful?</summary>
+          <p>Multi-Timer mode helps when you need to run several countdowns at once without losing clarity. It is useful for kitchens, rehearsals, classrooms, workshops, logistics, workouts, and live events.</p>
+        </details>
+        <details>
+          <summary>Why update the tab title with the live time?</summary>
+          <p>It lets you keep an eye on the timer while working in other tabs. That small feature makes the tool much more useful in real browser workflows.</p>
+        </details>
+        <details>
+          <summary>Does the countdown timer need external audio files?</summary>
+          <p>No. The alert sound is generated locally with the Web Audio API, so the timing flow stays self-contained and offline-friendly.</p>
+        </details>
+        <details>
+          <summary>What does large display mode do?</summary>
+          <p>Large display mode opens a presentation-style view of the current timer so the numbers remain readable from farther away. It is useful for classrooms, workouts, demos, rehearsals, and shared workspaces.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="st-seo-card">
+      <h2>Why a serious stopwatch and timer tool should feel like equipment, not a toy</h2>
+      <p>Most online stopwatch and timer pages still feel like tiny utilities that were only built to answer the bare minimum question: can this page count time? In the strictest sense, that is enough. A clock starts, a clock stops, a timer reaches zero, and the job is technically done. But that standard is too low for how people actually use timing tools in real work. People do not only need a counting mechanism. They need readability, precision, flexibility, and the confidence that the tool can handle a real workflow without turning into friction. That is why the difference between a thin stopwatch widget and a strong browser-based timing tool is larger than it first appears. A useful stopwatch should make lap tracking readable. A useful countdown timer should make setup fast. A useful multi-timer should make overlapping countdowns understandable instead of chaotic. A useful large-display mode should let the tool work across a room, not just inside one small browser corner. When those pieces come together in a calm interface, the tool becomes something people actually return to instead of a disposable tab they forget five minutes later.</p>
+
+      <h3>Timing tools stay popular because almost everyone needs them in different contexts</h3>
+      <p>Timing is one of the most universal browser tasks because it cuts across so many kinds of work. Students time study blocks, presentations, speaking drills, and practice exams. Coaches and athletes use stopwatches for intervals, rest windows, and sets. Teachers and trainers need visible countdowns for activities, workshops, and exercises. Home cooks need multiple overlapping timers for dishes that finish at different moments. Presenters and moderators need large readable clocks for rehearsals and live sessions. Product teams and researchers use stopwatches for usability testing, short experiments, and observation work. Editors, creators, and support teams use timers to keep tasks bounded and focused. That range of use cases explains why stopwatch and timer searches remain strong. The need is simple, but it repeats constantly. A good timing page earns repeat traffic not because the concept is complicated, but because the utility is broad and the friction needs to be low every single time.</p>
+
+      <h3>Bold readability matters more than clever design when time is the point</h3>
+      <p>There are tools where subtlety matters. Stopwatch and timer interfaces are not really among them. Time needs to be readable instantly. If the numbers feel cramped, overstyled, or lost inside a busy layout, the page is failing at its most basic responsibility. That is why bold display design is not cosmetic here. It is functional. The user should be able to recognize the state of the timer in a glance, see whether it is running or paused, understand which mode is active, and know what the primary control will do next. That becomes even more important when the timer is used from across a desk, across a kitchen, across a classroom, or across a room in presentation mode. Good timing tools reduce eye strain and decision time by making the clock itself impossible to miss.</p>
+
+      <h3>Stopwatch mode becomes more useful when laps become analyzable</h3>
+      <p>Many stopwatch tools include lap recording, but they stop short of making the laps useful. They list raw times in a table and leave the user to do the interpretation mentally. That is only half the job. A stronger stopwatch should help people see which lap was the fastest, which was the slowest, and what an average lap looks like in context. That matters for athletics, drills, sprints, speaking practice, rehearsal loops, QA timing, and any repeated process where consistency matters as much as the total time. Exporting laps as CSV makes the workflow even better because it moves the data from a one-time browser interaction into something you can review later, drop into a sheet, or share with a coach, teammate, or client. When lap timing becomes analyzable and exportable, the stopwatch becomes far more than a basic clock.</p>
+
+      <h3>Countdown timers need speed at setup, not just accuracy at the end</h3>
+      <p>A countdown timer is only as good as its setup flow. If a user has to do too much work just to get a short timer running, the page is wasting the very time it is supposed to help manage. That is why presets matter. One minute, two minutes, five minutes, ten minutes, twenty-five minutes, forty-five minutes, and one hour cover a large share of the timing intervals people reach for repeatedly. Presets let the user go from intention to action with one click instead of typing the same values over and over. At the same time, manual hour, minute, and second inputs still matter because unusual timing jobs exist. The better approach is to make the common case fast and the custom case easy. That is what turns a timer from a generic utility into a page worth bookmarking.</p>
+
+      <h3>A circular progress ring adds useful visual timing pressure</h3>
+      <p>Numbers are precise, but progress visuals change behavior. A circular ring makes the remaining portion of a countdown feel tangible in a way that raw digits alone often do not. That is especially helpful during presentations, speeches, workouts, drills, and short task blocks where the feeling of time passing matters. A ring should not replace the digits. It should reinforce them. The user reads the number for exact timing and reads the ring for pace. That dual readout is part of what makes a timer feel more polished and more usable under pressure. It is also why the ring should animate smoothly and stay visually clean. Timing tools work best when they are readable both analytically and peripherally.</p>
+
+      <h3>Multiple simultaneous timers are one of the few real differentiators left</h3>
+      <p>Basic stopwatch and timer functionality is widely available. What is much less common is a multi-timer system that stays understandable while running several countdowns at once. That is where the real differentiator lives. Many people do not need one timer. They need several. A kitchen might have multiple dishes finishing at different times. A rehearsal might require staggered segments. A workshop might involve timed activities running in parallel. An operations workflow might track overlapping wait periods. A workout might need several independent clocks for sets, transitions, and rest. Opening several tabs or windows is a weak substitute because it makes context harder to track. A better tool keeps multiple timers together, lets the user name them, shows them clearly, and allows one selected timer to be mirrored into the giant display while the rest continue counting down in the grid. That is a real upgrade in usability, not just another bullet point.</p>
+
+      <h3>Named timers make multi-timer mode actually manageable</h3>
+      <p>Once you have more than one active countdown, naming becomes essential. A timer called “Task 1” can be fine for testing, but in real life the names become what make the timer readable at a glance: boiling eggs, presentation intro, guest Q&amp;A, break bell, station rotation, warmup, cooldown, oven check. The same logic applies in rehearsals, sports, classrooms, and operations work. Named timers reduce mental translation. You should not have to remember which of three identical clocks corresponds to which task. Clear naming is one of those features that looks small until you try to use several timers without it. Then it becomes obvious that the clock itself is only half of the system. The label is the rest of the utility.</p>
+
+      <h3>Large display mode matters because timers are often used at a distance</h3>
+      <p>Many online timing tools assume the user is sitting inches from a laptop. That is only one use case. In reality, timers are often used in situations where the screen is not right in front of the person who needs to read it. Presenters need a countdown visible from a stage or podium. Teachers need a timer the room can understand quickly. Coaches and athletes need timing that is visible between movements. Kitchen workflows often need glanceable time across the room. Even solo users sometimes want a timer that remains clear while they step away from the screen. A proper large-display mode solves this by simplifying the view, maximizing the number size, and keeping the context readable without clutter. That is a much more meaningful upgrade than a decorative animation that does not help readability.</p>
+
+      <h3>Keyboard shortcuts and live tab-title updates make browser timing more practical</h3>
+      <p>One reason browser-based timers sometimes fall out of regular use is that they can feel trapped inside the current tab. Small workflow improvements solve that. Keyboard shortcuts make timing controls faster when the user is already in motion: Space for start or pause, L for lap, R for reset. Those keys reduce pointer travel and make the page feel more like a tool than a webpage. Live tab-title updates solve a different problem. They let the user see the current timer state while working somewhere else in the browser. That is a quiet but important upgrade. It means the timing signal can remain useful even when the page is not front and center. Features like this are valuable because they respect how browsers are actually used: in parallel, under pressure, with many things open at once.</p>
+
+      <h3>Offline-friendly timing is still a real advantage</h3>
+      <p>Stopwatches and timers are some of the worst candidates for heavy dependency chains. If a timing tool needs a framework download, an account, external media files, or network access just to start counting, it is solving the wrong problem. Browser-based timing should be direct. The user opens the page, chooses a mode, and starts. Built-in Web Audio alerts, local timing logic, downloadable CSV, and self-contained display behavior all support that goal. Working offline is not only about travel or bad Wi-Fi. It is also about resilience, simplicity, and trust. People return to pages that feel dependable. A timing page that still works when the network is weak or unavailable earns a different level of confidence than one that feels brittle.</p>
+
+      <h3>Why a serious stopwatch and timer earns repeat use</h3>
+      <p>The best timing tool is not the one with the most decorative effects or the longest settings menu. It is the one that lets different kinds of users solve different timing problems without friction. Stopwatch users need precision, laps, and export. Countdown users need fast setup, clear progress, and a reliable alert. Multi-timer users need names, clarity, and the ability to manage overlap without chaos. Presentation users need distance readability. Browser users need shortcuts and title updates. Anyone who returns regularly needs the tool to load quickly and work without fuss. When those needs are handled in one place, the stopwatch and timer stops being a throwaway utility and starts becoming real working equipment. That is the standard this page is designed around, and it is why a browser tool like this can become a repeat bookmark instead of a disposable search result.</p>
+    </section>
+
+    <div id="st-overlay" class="st-overlay" aria-hidden="true">
+      <div class="st-overlay-shell">
+        <div class="st-overlay-top">
+          <div id="st-overlay-badge" class="st-badge">Large display</div>
+          <button id="st-overlay-close" class="st-secondary" type="button">Close</button>
+        </div>
+        <p id="st-overlay-time" class="st-overlay-time">00:00:00.000</p>
+        <p id="st-overlay-copy" class="st-overlay-copy">Press Escape or Close to return.</p>
+      </div>
+    </div>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="stopwatch-timer-desktop-alternative-pseo" aria-labelledby="stopwatch-timer-desktop-alternative-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Stopwatch &amp; Timer Desktop Alternative</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="stopwatch-timer-desktop-alternative-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Stopwatch &amp; Timer Desktop Alternative Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Stopwatch &amp; Timer Desktop Alternative</strong>, a rapid in-browser alternative saving systems from heavy desktop utilities and registry changes. This dedicated workspace is built specifically for system administrators, security teams, and users who cannot install separate native apps on corporate machines. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>zero install footprints, sandbox local computations, and instant web access from any device</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Track laps, countdowns, and up to four named timers in one place. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Corporate System Safety</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Solve conversion tasks without requesting system administrator installer permissions.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">No Disk Usage footprint</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Keep system storage clear; our browser-cached logic uses zero hard-drive bytes.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Instant Platform portability</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Use the same workspace on a computer, phone, or Chromebook with identical reliability.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Stopwatch &amp; Timer Desktop Alternative</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Desktop Alternative layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Stopwatch &amp; Timer Desktop Alternative</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Do I need system administrator privileges?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">No! It is a standard web page running client-side, requiring no software installers or credentials.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it write to the registry?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Never. The web page isolates fully inside browser cookies and volatile cache memory.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is it safer than native apps?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, since browser sandboxes prevent pages from modifying local system directories.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/stopwatch-timer.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Stopwatch &amp; Timer</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Stopwatch & Timer Desktop Alternative","url":"https://toolsmatic.me/tools/stopwatch-timer-desktop-alternative.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Stopwatch & Timer Desktop Alternative online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Stopwatch & Timer Desktop Alternative","item":"https://toolsmatic.me/tools/stopwatch-timer-desktop-alternative.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need system administrator privileges?","acceptedAnswer":{"@type":"Answer","text":"No! It is a standard web page running client-side, requiring no software installers or credentials."}},{"@type":"Question","name":"Does it write to the registry?","acceptedAnswer":{"@type":"Answer","text":"Never. The web page isolates fully inside browser cookies and volatile cache memory."}},{"@type":"Question","name":"Is it safer than native apps?","acceptedAnswer":{"@type":"Answer","text":"Yes, since browser sandboxes prevent pages from modifying local system directories."}}]}]}</script>
+  </main>
+<footer>ToolsMatic - Fast, privacy-first utilities for the web.</footer>
+  <script>
+    const st = {
+      app: document.getElementById('st-app'),
+      modeBadge: document.getElementById('st-mode-badge'),
+      detailBadge: document.getElementById('st-detail-badge'),
+      modeLabel: document.getElementById('st-mode-label'),
+      time: document.getElementById('st-time'),
+      subcopy: document.getElementById('st-subcopy'),
+      ring: document.getElementById('st-ring-progress'),
+      gradientStop1: document.getElementById('st-gradient-stop-1'),
+      gradientStop2: document.getElementById('st-gradient-stop-2'),
+      tabs: Array.from(document.querySelectorAll('.st-tab')),
+      startPause: document.getElementById('st-start-pause'),
+      lap: document.getElementById('st-lap'),
+      reset: document.getElementById('st-reset'),
+      largeDisplay: document.getElementById('st-large-display'),
+      status: document.getElementById('st-status'),
+      stopwatchSetup: document.getElementById('st-stopwatch-setup'),
+      timerSetup: document.getElementById('st-timer-setup'),
+      multiSetup: document.getElementById('st-multi-setup'),
+      lapsCard: document.getElementById('st-laps-card'),
+      multiCard: document.getElementById('st-multi-card'),
+      fastestLap: document.getElementById('st-fastest-lap'),
+      slowestLap: document.getElementById('st-slowest-lap'),
+      averageLap: document.getElementById('st-average-lap'),
+      exportLaps: document.getElementById('st-export-laps'),
+      lapBody: document.getElementById('st-lap-body'),
+      hours: document.getElementById('st-hours'),
+      minutes: document.getElementById('st-minutes'),
+      seconds: document.getElementById('st-seconds'),
+      presets: Array.from(document.querySelectorAll('.st-preset')),
+      addMulti: document.getElementById('st-add-multi'),
+      multiGrid: document.getElementById('st-multi-grid'),
+      multiSummary: document.getElementById('st-multi-summary'),
+      activeInfo: document.getElementById('st-active-info'),
+      runningInfo: document.getElementById('st-running-info'),
+      overlay: document.getElementById('st-overlay'),
+      overlayBadge: document.getElementById('st-overlay-badge'),
+      overlayTime: document.getElementById('st-overlay-time'),
+      overlayCopy: document.getElementById('st-overlay-copy'),
+      overlayClose: document.getElementById('st-overlay-close')
+    };
+
+    const storageKey = 'toolsmatic-stopwatch-timer-v1';
+    const defaultTitle = document.title;
+    const circleRadius = 120;
+    const circleLength = Math.PI * 2 * circleRadius;
+    st.ring.style.strokeDasharray = String(circleLength);
+    st.ring.style.strokeDashoffset = String(circleLength);
+
+    const tabTheme = {
+      stopwatch: {
+        className: 'st-tab-stopwatch',
+        label: 'Stopwatch',
+        detail: 'Millisecond lap timing',
+        stop1: '#ffb15c',
+        stop2: '#ff6f61'
+      },
+      timer: {
+        className: 'st-tab-timer',
+        label: 'Timer',
+        detail: 'Countdown with presets',
+        stop1: '#73e0ff',
+        stop2: '#5b92ff'
+      },
+      multi: {
+        className: 'st-tab-multi',
+        label: 'Multi-Timer',
+        detail: 'Up to 4 named countdowns',
+        stop1: '#77f1c2',
+        stop2: '#3fc9b4'
+      }
+    };
+
+    const defaults = {
+      activeTab: 'stopwatch',
+      stopwatch: {
+        elapsedMs: 0,
+        laps: []
+      },
+      timer: {
+        hours: 0,
+        minutes: 5,
+        seconds: 0,
+        durationMs: 5 * 60 * 1000,
+        remainingMs: 5 * 60 * 1000
+      },
+      multiTimers: [],
+      selectedMultiId: ''
+    };
+
+    const state = {
+      activeTab: defaults.activeTab,
+      stopwatch: {
+        elapsedMs: defaults.stopwatch.elapsedMs,
+        laps: [],
+        running: false,
+        startedAt: 0
+      },
+      timer: {
+        hours: defaults.timer.hours,
+        minutes: defaults.timer.minutes,
+        seconds: defaults.timer.seconds,
+        durationMs: defaults.timer.durationMs,
+        remainingMs: defaults.timer.remainingMs,
+        running: false,
+        endAt: 0
+      },
+      multiTimers: [],
+      selectedMultiId: '',
+      overlayTarget: { type: 'main', id: '' },
+      rafId: 0
+    };
+
+    let audioContext = null;
+
+    function showToast(message, type) {
+      if (window.toolsMatic && typeof window.toolsMatic.showToast === 'function') {
+        window.toolsMatic.showToast(message, type || 'info');
+      }
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, value));
+    }
+
+    function formatNumber(value) {
+      return new Intl.NumberFormat('en-US').format(value);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function makeId() {
+      return 'st-' + Math.random().toString(36).slice(2, 10);
+    }
+
+    function ensureAudioContext() {
+      if (!audioContext) {
+        const AudioCtor = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtor) return null;
+        audioContext = new AudioCtor();
+      }
+      if (audioContext.state === 'suspended') {
+        audioContext.resume().catch(() => {});
+      }
+      return audioContext;
+    }
+
+    function playAlert() {
+      const context = ensureAudioContext();
+      if (!context) return;
+      const now = context.currentTime;
+      [
+        { freq: 659.25, start: 0, end: 0.14 },
+        { freq: 783.99, start: 0.12, end: 0.26 },
+        { freq: 987.77, start: 0.24, end: 0.42 }
+      ].forEach((note) => {
+        const osc = context.createOscillator();
+        const gain = context.createGain();
+        osc.type = 'triangle';
+        osc.frequency.value = note.freq;
+        gain.gain.setValueAtTime(0.0001, now + note.start);
+        gain.gain.exponentialRampToValueAtTime(0.05, now + note.start + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + note.end);
+        osc.connect(gain);
+        gain.connect(context.destination);
+        osc.start(now + note.start);
+        osc.stop(now + note.end + 0.02);
+      });
+    }
+
+    function formatTime(ms) {
+      const totalMs = Math.max(0, Math.floor(ms));
+      const hours = Math.floor(totalMs / 3600000);
+      const minutes = Math.floor((totalMs % 3600000) / 60000);
+      const seconds = Math.floor((totalMs % 60000) / 1000);
+      const milliseconds = totalMs % 1000;
+      return String(hours).padStart(2, '0') + ':' +
+        String(minutes).padStart(2, '0') + ':' +
+        String(seconds).padStart(2, '0') + '.' +
+        String(milliseconds).padStart(3, '0');
+    }
+
+    function totalSecondsFromInputs(hours, minutes, seconds) {
+      return (hours * 3600) + (minutes * 60) + seconds;
+    }
+
+    function readTimerInputs() {
+      const hours = clamp(parseInt(st.hours.value, 10) || 0, 0, 99);
+      const minutes = clamp(parseInt(st.minutes.value, 10) || 0, 0, 59);
+      const seconds = clamp(parseInt(st.seconds.value, 10) || 0, 0, 59);
+      return { hours, minutes, seconds };
+    }
+
+    function buildDurationMs(hours, minutes, seconds) {
+      const totalSeconds = totalSecondsFromInputs(hours, minutes, seconds);
+      return totalSeconds * 1000;
+    }
+
+    function getSelectedMultiTimer() {
+      return state.multiTimers.find((timer) => timer.id === state.selectedMultiId) || null;
+    }
+
+    function countRunningTimers() {
+      let count = 0;
+      if (state.stopwatch.running) count += 1;
+      if (state.timer.running) count += 1;
+      count += state.multiTimers.filter((timer) => timer.running).length;
+      return count;
+    }
+
+    function anyTimerRunning() {
+      return countRunningTimers() > 0;
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(storageKey);
+        if (!raw) return;
+        const saved = JSON.parse(raw);
+        state.activeTab = ['stopwatch', 'timer', 'multi'].includes(saved.activeTab) ? saved.activeTab : defaults.activeTab;
+        state.stopwatch.elapsedMs = Math.max(0, Number(saved?.stopwatch?.elapsedMs) || 0);
+        state.stopwatch.laps = Array.isArray(saved?.stopwatch?.laps) ? saved.stopwatch.laps : [];
+        state.timer.hours = clamp(Number(saved?.timer?.hours) || defaults.timer.hours, 0, 99);
+        state.timer.minutes = clamp(Number(saved?.timer?.minutes) || defaults.timer.minutes, 0, 59);
+        state.timer.seconds = clamp(Number(saved?.timer?.seconds) || defaults.timer.seconds, 0, 59);
+        state.timer.durationMs = Math.max(0, Number(saved?.timer?.durationMs) || defaults.timer.durationMs);
+        state.timer.remainingMs = Math.max(0, Number(saved?.timer?.remainingMs) || state.timer.durationMs);
+        state.multiTimers = Array.isArray(saved?.multiTimers) ? saved.multiTimers.slice(0, 4).map((timer) => ({
+          id: timer.id || makeId(),
+          name: timer.name || 'Timer',
+          hours: clamp(Number(timer.hours) || 0, 0, 99),
+          minutes: clamp(Number(timer.minutes) || 0, 0, 59),
+          seconds: clamp(Number(timer.seconds) || 0, 0, 59),
+          durationMs: Math.max(0, Number(timer.durationMs) || 60000),
+          remainingMs: Math.max(0, Number(timer.remainingMs) || Math.max(0, Number(timer.durationMs) || 60000)),
+          running: false,
+          endAt: 0
+        })) : [];
+        state.selectedMultiId = typeof saved?.selectedMultiId === 'string' ? saved.selectedMultiId : '';
+      } catch (error) {
+        // ignore bad local data
+      }
+      if (!state.selectedMultiId && state.multiTimers[0]) {
+        state.selectedMultiId = state.multiTimers[0].id;
+      }
+    }
+
+    function saveState() {
+      const data = {
+        activeTab: state.activeTab,
+        stopwatch: {
+          elapsedMs: state.stopwatch.elapsedMs,
+          laps: state.stopwatch.laps
+        },
+        timer: {
+          hours: state.timer.hours,
+          minutes: state.timer.minutes,
+          seconds: state.timer.seconds,
+          durationMs: state.timer.durationMs,
+          remainingMs: state.timer.remainingMs
+        },
+        multiTimers: state.multiTimers.map((timer) => ({
+          id: timer.id,
+          name: timer.name,
+          hours: timer.hours,
+          minutes: timer.minutes,
+          seconds: timer.seconds,
+          durationMs: timer.durationMs,
+          remainingMs: timer.remainingMs
+        })),
+        selectedMultiId: state.selectedMultiId
+      };
+      localStorage.setItem(storageKey, JSON.stringify(data));
+    }
+
+    function setStatus(message) {
+      st.status.textContent = message;
+    }
+
+    function updateTitle() {
+      let label = '';
+      if (state.activeTab === 'stopwatch') {
+        label = formatTime(state.stopwatch.elapsedMs) + ' • Stopwatch';
+      } else if (state.activeTab === 'timer') {
+        label = formatTime(state.timer.remainingMs) + ' • Timer';
+      } else {
+        const selected = getSelectedMultiTimer();
+        if (selected) {
+          label = formatTime(selected.remainingMs) + ' • ' + selected.name;
+        } else {
+          label = 'Multi-Timer';
+        }
+      }
+      document.title = anyTimerRunning() ? label + ' | ToolsMatic' : defaultTitle;
+    }
+
+    function updateRing(progress) {
+      const safe = clamp(progress, 0, 1);
+      st.ring.style.strokeDashoffset = String(circleLength * (1 - safe));
+    }
+
+    function activeTabTheme() {
+      return tabTheme[state.activeTab];
+    }
+
+    function applyTabTheme() {
+      const theme = activeTabTheme();
+      st.app.classList.remove('st-tab-stopwatch', 'st-tab-timer', 'st-tab-multi');
+      st.app.classList.add(theme.className);
+      st.gradientStop1.setAttribute('stop-color', theme.stop1);
+      st.gradientStop2.setAttribute('stop-color', theme.stop2);
+      st.modeBadge.textContent = theme.label;
+      st.detailBadge.textContent = theme.detail;
+      st.tabs.forEach((button) => {
+        button.classList.toggle('is-active', button.dataset.tab === state.activeTab);
+      });
+    }
+
+    function renderStopwatchLaps() {
+      const laps = state.stopwatch.laps;
+      if (!laps.length) {
+        st.lapBody.innerHTML = '<tr><td colspan="3">No laps yet. Start the stopwatch and press Lap to build the table.</td></tr>';
+        st.fastestLap.textContent = '-';
+        st.slowestLap.textContent = '-';
+        st.averageLap.textContent = '-';
+        return;
+      }
+
+      const lapDurations = laps.map((lap) => lap.lapMs);
+      const fastest = Math.min(...lapDurations);
+      const slowest = Math.max(...lapDurations);
+      const average = lapDurations.reduce((sum, value) => sum + value, 0) / lapDurations.length;
+      let averageIndex = 0;
+      let averageDiff = Infinity;
+      lapDurations.forEach((value, index) => {
+        const diff = Math.abs(value - average);
+        if (diff < averageDiff) {
+          averageDiff = diff;
+          averageIndex = index;
+        }
+      });
+
+      st.fastestLap.textContent = formatTime(fastest);
+      st.slowestLap.textContent = formatTime(slowest);
+      st.averageLap.textContent = formatTime(average);
+
+      st.lapBody.innerHTML = laps.map((lap, index) => {
+        const classes = [];
+        if (lap.lapMs === fastest) classes.push('st-lap-fastest');
+        if (lap.lapMs === slowest) classes.push('st-lap-slowest');
+        if (index === averageIndex) classes.push('st-lap-average');
+        return (
+          '<tr class="' + classes.join(' ') + '">' +
+            '<td>' + formatNumber(lap.number) + '</td>' +
+            '<td>' + formatTime(lap.lapMs) + '</td>' +
+            '<td>' + formatTime(lap.totalMs) + '</td>' +
+          '</tr>'
+        );
+      }).join('');
+    }
+
+    function renderMultiGrid() {
+      if (!state.multiTimers.length) {
+        st.multiGrid.innerHTML = '<div class="st-summary-pill"><strong>No timers yet</strong><span>Add your first named timer to begin.</span></div>';
+        return;
+      }
+
+      st.multiGrid.innerHTML = state.multiTimers.map((timer) => (
+        '<article class="st-multi-card' + (timer.id === state.selectedMultiId ? ' is-selected' : '') + '" data-select="' + timer.id + '">' +
+          '<div class="st-multi-top">' +
+            '<div class="st-badge">' + escapeHtml(timer.name) + '</div>' +
+            '<div class="st-badge">' + (timer.running ? 'Running' : 'Paused') + '</div>' +
+          '</div>' +
+          '<div class="st-multi-display">' + formatTime(timer.remainingMs) + '</div>' +
+          '<div class="st-multi-meta"><span>' + timer.hours + 'h</span><span>' + timer.minutes + 'm</span><span>' + timer.seconds + 's</span></div>' +
+          '<div class="st-multi-inputs">' +
+            '<input type="text" data-name="' + timer.id + '" value="' + escapeHtml(timer.name) + '" placeholder="Timer name">' +
+            '<div class="st-multi-duration">' +
+              '<input type="number" data-hours="' + timer.id + '" min="0" max="99" value="' + timer.hours + '">' +
+              '<input type="number" data-minutes="' + timer.id + '" min="0" max="59" value="' + timer.minutes + '">' +
+              '<input type="number" data-seconds="' + timer.id + '" min="0" max="59" value="' + timer.seconds + '">' +
+            '</div>' +
+          '</div>' +
+          '<div class="st-multi-actions" style="margin-top:14px;">' +
+            '<button type="button" data-action="toggle-multi" data-id="' + timer.id + '">' + (timer.running ? 'Pause' : 'Start') + '</button>' +
+            '<button type="button" data-action="reset-multi" data-id="' + timer.id + '">Reset</button>' +
+            '<button type="button" data-action="present-multi" data-id="' + timer.id + '">Present</button>' +
+            '<button type="button" data-action="delete-multi" data-id="' + timer.id + '">Delete</button>' +
+          '</div>' +
+        '</article>'
+      )).join('');
+    }
+
+    function renderOverlay() {
+      if (!st.overlay.classList.contains('is-open')) return;
+      let label = 'Large display';
+      let time = '00:00:00.000';
+      if (state.overlayTarget.type === 'multi') {
+        const timer = state.multiTimers.find((entry) => entry.id === state.overlayTarget.id);
+        if (timer) {
+          label = timer.name;
+          time = formatTime(timer.remainingMs);
+        }
+      } else if (state.activeTab === 'stopwatch') {
+        label = 'Stopwatch';
+        time = formatTime(state.stopwatch.elapsedMs);
+      } else if (state.activeTab === 'timer') {
+        label = 'Timer';
+        time = formatTime(state.timer.remainingMs);
+      } else {
+        const selected = getSelectedMultiTimer();
+        label = selected ? selected.name : 'Multi-Timer';
+        time = selected ? formatTime(selected.remainingMs) : '00:00:00.000';
+      }
+      st.overlayBadge.textContent = label;
+      st.overlayTime.textContent = time;
+      st.overlayCopy.textContent = 'Press Escape or Close to return.';
+    }
+
+    function renderDisplay() {
+      applyTabTheme();
+
+      const showRing = state.activeTab === 'timer' || (state.activeTab === 'multi' && Boolean(getSelectedMultiTimer()));
+      st.app.classList.toggle('st-show-ring', showRing);
+
+      if (state.activeTab === 'stopwatch') {
+        st.modeLabel.textContent = 'Stopwatch';
+        st.time.textContent = formatTime(state.stopwatch.elapsedMs);
+        st.subcopy.textContent = state.stopwatch.running
+          ? 'Stopwatch is running. Press L to capture the next lap.'
+          : 'Press Start to begin, Space to toggle, L to lap, and R to reset.';
+        st.startPause.textContent = state.stopwatch.running ? 'Pause' : 'Start';
+        st.lap.disabled = !state.stopwatch.running && state.stopwatch.elapsedMs === 0;
+        st.detailBadge.textContent = state.stopwatch.laps.length ? formatNumber(state.stopwatch.laps.length) + ' laps saved' : 'Millisecond lap timing';
+        updateRing(0);
+      } else if (state.activeTab === 'timer') {
+        st.modeLabel.textContent = 'Timer';
+        st.time.textContent = formatTime(state.timer.remainingMs);
+        st.subcopy.textContent = state.timer.running
+          ? 'Countdown is live. The ring closes as time reaches zero.'
+          : 'Set a duration, use a preset, then start the countdown.';
+        st.startPause.textContent = state.timer.running ? 'Pause' : 'Start';
+        st.lap.disabled = true;
+        st.detailBadge.textContent = formatTime(state.timer.durationMs) + ' target';
+        updateRing(1 - (state.timer.remainingMs / Math.max(state.timer.durationMs, 1)));
+      } else {
+        const selected = getSelectedMultiTimer();
+        st.modeLabel.textContent = selected ? selected.name : 'Multi-Timer';
+        st.time.textContent = selected ? formatTime(selected.remainingMs) : '00:00:00.000';
+        st.subcopy.textContent = selected
+          ? 'Selected timer mirrored from the grid. Space controls this timer in Multi-Timer mode.'
+          : 'Add up to four named timers and select one to mirror here.';
+        st.startPause.textContent = selected && selected.running ? 'Pause' : 'Start';
+        st.lap.disabled = true;
+        st.detailBadge.textContent = selected ? 'Selected timer' : 'Up to 4 named countdowns';
+        updateRing(selected ? 1 - (selected.remainingMs / Math.max(selected.durationMs, 1)) : 0);
+      }
+
+      renderOverlay();
+      updateTitle();
+    }
+
+    function renderSideInfo() {
+      const running = countRunningTimers();
+      if (state.activeTab === 'stopwatch') {
+        st.activeInfo.textContent = state.stopwatch.running ? 'Stopwatch running' : 'Stopwatch ready';
+      } else if (state.activeTab === 'timer') {
+        st.activeInfo.textContent = state.timer.running ? 'Countdown running' : 'Countdown ready';
+      } else {
+        const selected = getSelectedMultiTimer();
+        st.activeInfo.textContent = selected ? selected.name : 'No selected timer';
+      }
+      st.runningInfo.textContent = running + ' running';
+      st.multiSummary.innerHTML = '<strong>' + running + ' running</strong><span>' + (state.selectedMultiId ? 'Selected timer appears in the main display.' : 'Select a timer to mirror it above.') + '</span>';
+    }
+
+    function renderModePanels() {
+      st.stopwatchSetup.classList.toggle('st-hidden', state.activeTab !== 'stopwatch');
+      st.timerSetup.classList.toggle('st-hidden', state.activeTab !== 'timer');
+      st.multiSetup.classList.toggle('st-hidden', state.activeTab !== 'multi');
+      st.lapsCard.classList.toggle('st-hidden', state.activeTab !== 'stopwatch');
+      st.multiCard.classList.toggle('st-hidden', state.activeTab !== 'multi');
+    }
+
+    function syncTimerInputs() {
+      st.hours.value = String(state.timer.hours);
+      st.minutes.value = String(state.timer.minutes);
+      st.seconds.value = String(state.timer.seconds);
+    }
+
+    function renderAll() {
+      renderModePanels();
+      syncTimerInputs();
+      renderStopwatchLaps();
+      renderMultiGrid();
+      renderSideInfo();
+      renderDisplay();
+      st.addMulti.disabled = state.multiTimers.length >= 4;
+      saveState();
+    }
+
+    function scheduleLoop() {
+      if (!state.rafId && anyTimerRunning()) {
+        state.rafId = requestAnimationFrame(tick);
+      }
+    }
+
+    function stopLoopIfIdle() {
+      if (!anyTimerRunning() && state.rafId) {
+        cancelAnimationFrame(state.rafId);
+        state.rafId = 0;
+      }
+    }
+
+    function notifyCountdownDone(label) {
+      playAlert();
+      setStatus(label + ' finished.');
+      showToast(label + ' finished', 'success');
+    }
+
+    function tick() {
+      const now = Date.now();
+      state.rafId = 0;
+
+      if (state.stopwatch.running) {
+        state.stopwatch.elapsedMs = now - state.stopwatch.startedAt;
+      }
+
+      if (state.timer.running) {
+        state.timer.remainingMs = Math.max(0, state.timer.endAt - now);
+        if (state.timer.remainingMs <= 0) {
+          state.timer.running = false;
+          state.timer.endAt = 0;
+          state.timer.remainingMs = 0;
+          notifyCountdownDone('Countdown');
+        }
+      }
+
+      state.multiTimers.forEach((timer) => {
+        if (!timer.running) return;
+        timer.remainingMs = Math.max(0, timer.endAt - now);
+        if (timer.remainingMs <= 0) {
+          timer.running = false;
+          timer.endAt = 0;
+          timer.remainingMs = 0;
+          notifyCountdownDone(timer.name);
+        }
+      });
+
+      renderDisplay();
+      renderSideInfo();
+      if (state.activeTab === 'multi') {
+        renderMultiGrid();
+      }
+      stopLoopIfIdle();
+      if (anyTimerRunning()) {
+        scheduleLoop();
+      }
+    }
+
+    function setTab(tab) {
+      state.activeTab = tab;
+      renderAll();
+      if (tab === 'stopwatch') {
+        setStatus('Stopwatch mode ready.');
+      } else if (tab === 'timer') {
+        setStatus('Timer mode ready. Set a duration or use a preset.');
+      } else {
+        setStatus('Multi-Timer mode ready. Add up to four named countdowns.');
+      }
+    }
+
+    function updateTimerDurationFromInputs() {
+      const values = readTimerInputs();
+      state.timer.hours = values.hours;
+      state.timer.minutes = values.minutes;
+      state.timer.seconds = values.seconds;
+      state.timer.durationMs = buildDurationMs(values.hours, values.minutes, values.seconds);
+      if (!state.timer.running) {
+        state.timer.remainingMs = state.timer.durationMs;
+      }
+      renderAll();
+    }
+
+    function startOrPauseStopwatch() {
+      if (state.stopwatch.running) {
+        state.stopwatch.elapsedMs = Date.now() - state.stopwatch.startedAt;
+        state.stopwatch.running = false;
+        setStatus('Stopwatch paused.');
+        renderAll();
+        stopLoopIfIdle();
+        return;
+      }
+      state.stopwatch.startedAt = Date.now() - state.stopwatch.elapsedMs;
+      state.stopwatch.running = true;
+      setStatus('Stopwatch started.');
+      scheduleLoop();
+      renderAll();
+    }
+
+    function resetStopwatch() {
+      state.stopwatch.running = false;
+      state.stopwatch.startedAt = 0;
+      state.stopwatch.elapsedMs = 0;
+      state.stopwatch.laps = [];
+      renderAll();
+      stopLoopIfIdle();
+      setStatus('Stopwatch reset.');
+    }
+
+    function recordLap() {
+      const totalMs = state.stopwatch.elapsedMs;
+      if (!totalMs) {
+        setStatus('Start the stopwatch before recording laps.');
+        return;
+      }
+      const previousTotal = state.stopwatch.laps.length ? state.stopwatch.laps[state.stopwatch.laps.length - 1].totalMs : 0;
+      const lapMs = totalMs - previousTotal;
+      state.stopwatch.laps.push({
+        number: state.stopwatch.laps.length + 1,
+        lapMs,
+        totalMs
+      });
+      renderAll();
+      setStatus('Lap ' + state.stopwatch.laps.length + ' recorded.');
+    }
+
+    function startOrPauseTimer() {
+      if (state.timer.running) {
+        state.timer.remainingMs = Math.max(0, state.timer.endAt - Date.now());
+        state.timer.running = false;
+        state.timer.endAt = 0;
+        renderAll();
+        stopLoopIfIdle();
+        setStatus('Countdown paused.');
+        return;
+      }
+      if (state.timer.remainingMs <= 0) {
+        updateTimerDurationFromInputs();
+      }
+      state.timer.running = true;
+      state.timer.endAt = Date.now() + state.timer.remainingMs;
+      scheduleLoop();
+      renderAll();
+      setStatus('Countdown started.');
+    }
+
+    function resetTimer() {
+      state.timer.running = false;
+      state.timer.endAt = 0;
+      state.timer.remainingMs = state.timer.durationMs;
+      renderAll();
+      stopLoopIfIdle();
+      setStatus('Countdown reset.');
+    }
+
+    function getSelectedTimerOrNull() {
+      return getSelectedMultiTimer();
+    }
+
+    function addMultiTimer() {
+      if (state.multiTimers.length >= 4) {
+        setStatus('You can run up to four timers at once.');
+        showToast('Maximum is 4 timers', 'error');
+        return;
+      }
+      const index = state.multiTimers.length + 1;
+      const timer = {
+        id: makeId(),
+        name: 'Timer ' + index,
+        hours: 0,
+        minutes: 1,
+        seconds: 0,
+        durationMs: 60000,
+        remainingMs: 60000,
+        running: false,
+        endAt: 0
+      };
+      state.multiTimers.push(timer);
+      state.selectedMultiId = timer.id;
+      renderAll();
+      setStatus('Added ' + timer.name + '.');
+    }
+
+    function startOrPauseMultiTimer(timer) {
+      if (timer.running) {
+        timer.remainingMs = Math.max(0, timer.endAt - Date.now());
+        timer.running = false;
+        timer.endAt = 0;
+        renderAll();
+        stopLoopIfIdle();
+        setStatus(timer.name + ' paused.');
+        return;
+      }
+      if (timer.remainingMs <= 0) {
+        timer.remainingMs = timer.durationMs;
+      }
+      timer.running = true;
+      timer.endAt = Date.now() + timer.remainingMs;
+      scheduleLoop();
+      renderAll();
+      setStatus(timer.name + ' started.');
+    }
+
+    function resetMultiTimer(timer) {
+      timer.running = false;
+      timer.endAt = 0;
+      timer.remainingMs = timer.durationMs;
+      renderAll();
+      stopLoopIfIdle();
+      setStatus(timer.name + ' reset.');
+    }
+
+    function openLargeDisplay(type, id = '') {
+      state.overlayTarget = { type, id };
+      st.overlay.classList.add('is-open');
+      st.overlay.setAttribute('aria-hidden', 'false');
+      renderOverlay();
+      const shell = st.overlay.querySelector('.st-overlay-shell');
+      if (shell && shell.requestFullscreen) {
+        shell.requestFullscreen().catch(() => {});
+      }
+    }
+
+    function closeLargeDisplay() {
+      st.overlay.classList.remove('is-open');
+      st.overlay.setAttribute('aria-hidden', 'true');
+      if (document.fullscreenElement && document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    function exportLapsCsv() {
+      if (!state.stopwatch.laps.length) {
+        setStatus('There are no laps to export yet.');
+        showToast('No laps to export', 'error');
+        return;
+      }
+      const rows = [
+        ['Lap', 'Lap Time', 'Total Time'],
+        ...state.stopwatch.laps.map((lap) => [lap.number, formatTime(lap.lapMs), formatTime(lap.totalMs)])
+      ];
+      const csv = rows.map((row) => row.join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'toolsmatic-laps.csv';
+      link.click();
+      URL.revokeObjectURL(url);
+      setStatus('Lap CSV exported.');
+      showToast('CSV downloaded', 'success');
+    }
+
+    function updateTitle() {
+      let label = '';
+      if (state.stopwatch.running) {
+        label = formatTime(state.stopwatch.elapsedMs) + ' - Stopwatch';
+      } else if (state.timer.running) {
+        label = formatTime(state.timer.remainingMs) + ' - Timer';
+      } else {
+        const selected = getSelectedMultiTimer();
+        const runningMulti = state.multiTimers.find((timer) => timer.running) || selected;
+        if (runningMulti) {
+          label = formatTime(runningMulti.remainingMs) + ' - ' + runningMulti.name;
+        } else if (state.activeTab === 'stopwatch') {
+          label = formatTime(state.stopwatch.elapsedMs) + ' - Stopwatch';
+        } else if (state.activeTab === 'timer') {
+          label = formatTime(state.timer.remainingMs) + ' - Timer';
+        } else if (selected) {
+          label = formatTime(selected.remainingMs) + ' - ' + selected.name;
+        } else {
+          label = 'Multi-Timer';
+        }
+      }
+      document.title = anyTimerRunning() ? label + ' | ToolsMatic' : defaultTitle;
+    }
+
+    function recordLap() {
+      const totalMs = state.stopwatch.running ? (Date.now() - state.stopwatch.startedAt) : state.stopwatch.elapsedMs;
+      if (!totalMs) {
+        setStatus('Start the stopwatch before recording laps.');
+        return;
+      }
+      const previousTotal = state.stopwatch.laps.length ? state.stopwatch.laps[state.stopwatch.laps.length - 1].totalMs : 0;
+      const lapMs = totalMs - previousTotal;
+      state.stopwatch.laps.push({
+        number: state.stopwatch.laps.length + 1,
+        lapMs,
+        totalMs
+      });
+      state.stopwatch.elapsedMs = totalMs;
+      renderAll();
+      setStatus('Lap ' + state.stopwatch.laps.length + ' recorded.');
+    }
+
+    function startOrPauseTimer() {
+      if (state.timer.running) {
+        state.timer.remainingMs = Math.max(0, state.timer.endAt - Date.now());
+        state.timer.running = false;
+        state.timer.endAt = 0;
+        renderAll();
+        stopLoopIfIdle();
+        setStatus('Countdown paused.');
+        return;
+      }
+      if (state.timer.remainingMs <= 0) {
+        updateTimerDurationFromInputs();
+      }
+      if (state.timer.durationMs <= 0 || state.timer.remainingMs <= 0) {
+        setStatus('Set a timer duration before starting the countdown.');
+        showToast('Set a duration first', 'error');
+        renderAll();
+        return;
+      }
+      state.timer.running = true;
+      state.timer.endAt = Date.now() + state.timer.remainingMs;
+      scheduleLoop();
+      renderAll();
+      setStatus('Countdown started.');
+    }
+
+    function startOrPauseMultiTimer(timer) {
+      if (timer.running) {
+        timer.remainingMs = Math.max(0, timer.endAt - Date.now());
+        timer.running = false;
+        timer.endAt = 0;
+        renderAll();
+        stopLoopIfIdle();
+        setStatus(timer.name + ' paused.');
+        return;
+      }
+      if (timer.remainingMs <= 0) {
+        timer.remainingMs = timer.durationMs;
+      }
+      if (timer.durationMs <= 0 || timer.remainingMs <= 0) {
+        setStatus('Set a duration for ' + timer.name + ' before starting it.');
+        showToast('Set a duration first', 'error');
+        renderAll();
+        return;
+      }
+      timer.running = true;
+      timer.endAt = Date.now() + timer.remainingMs;
+      scheduleLoop();
+      renderAll();
+      setStatus(timer.name + ' started.');
+    }
+
+    function handlePrimaryToggle() {
+      if (state.activeTab === 'stopwatch') {
+        startOrPauseStopwatch();
+        return;
+      }
+      if (state.activeTab === 'timer') {
+        startOrPauseTimer();
+        return;
+      }
+      const selected = getSelectedMultiTimer();
+      if (!selected) {
+        setStatus('Add and select a timer first.');
+        showToast('Add a timer first', 'error');
+        return;
+      }
+      startOrPauseMultiTimer(selected);
+    }
+
+    function handlePrimaryReset() {
+      if (state.activeTab === 'stopwatch') {
+        resetStopwatch();
+        return;
+      }
+      if (state.activeTab === 'timer') {
+        resetTimer();
+        return;
+      }
+      const selected = getSelectedMultiTimer();
+      if (!selected) {
+        setStatus('Select a timer to reset it.');
+        return;
+      }
+      resetMultiTimer(selected);
+    }
+
+    function handleLapShortcut() {
+      if (state.activeTab === 'stopwatch') {
+        recordLap();
+      }
+    }
+
+    function handleMultiGridClick(event) {
+      const action = event.target.closest('button[data-action]');
+      if (action) {
+        const timer = state.multiTimers.find((entry) => entry.id === action.dataset.id);
+        if (!timer) return;
+        if (action.dataset.action === 'toggle-multi') {
+          state.selectedMultiId = timer.id;
+          startOrPauseMultiTimer(timer);
+          return;
+        }
+        if (action.dataset.action === 'reset-multi') {
+          state.selectedMultiId = timer.id;
+          resetMultiTimer(timer);
+          return;
+        }
+        if (action.dataset.action === 'present-multi') {
+          state.selectedMultiId = timer.id;
+          renderAll();
+          openLargeDisplay('multi', timer.id);
+          return;
+        }
+        if (action.dataset.action === 'delete-multi') {
+          const index = state.multiTimers.findIndex((entry) => entry.id === timer.id);
+          if (index === -1) return;
+          state.multiTimers.splice(index, 1);
+          if (state.selectedMultiId === timer.id) {
+            state.selectedMultiId = state.multiTimers[0] ? state.multiTimers[0].id : '';
+          }
+          renderAll();
+          stopLoopIfIdle();
+          setStatus(timer.name + ' removed.');
+          return;
+        }
+      }
+
+      const card = event.target.closest('article[data-select]');
+      if (!card) return;
+      state.selectedMultiId = card.dataset.select;
+      renderAll();
+      const selected = getSelectedMultiTimer();
+      if (selected) {
+        setStatus(selected.name + ' selected.');
+      }
+    }
+
+    function handleMultiGridChange(event) {
+      const card = event.target.closest('article[data-select]');
+      if (!card) return;
+      const timer = state.multiTimers.find((entry) => entry.id === card.dataset.select);
+      if (!timer) return;
+
+      if (event.target.matches('input[data-name]')) {
+        timer.name = (event.target.value || '').trim().slice(0, 40) || 'Timer';
+        renderAll();
+        setStatus(timer.name + ' renamed.');
+        return;
+      }
+
+      if (
+        event.target.matches('input[data-hours]') ||
+        event.target.matches('input[data-minutes]') ||
+        event.target.matches('input[data-seconds]')
+      ) {
+        if (timer.running) {
+          setStatus('Pause ' + timer.name + ' before changing its duration.');
+          renderAll();
+          return;
+        }
+        const hoursInput = card.querySelector('input[data-hours]');
+        const minutesInput = card.querySelector('input[data-minutes]');
+        const secondsInput = card.querySelector('input[data-seconds]');
+        timer.hours = clamp(parseInt(hoursInput.value, 10) || 0, 0, 99);
+        timer.minutes = clamp(parseInt(minutesInput.value, 10) || 0, 0, 59);
+        timer.seconds = clamp(parseInt(secondsInput.value, 10) || 0, 0, 59);
+        timer.durationMs = buildDurationMs(timer.hours, timer.minutes, timer.seconds);
+        timer.remainingMs = timer.durationMs;
+        renderAll();
+        setStatus(timer.name + ' updated.');
+      }
+    }
+
+    st.tabs.forEach((button) => {
+      button.addEventListener('click', () => setTab(button.dataset.tab));
+    });
+
+    st.startPause.addEventListener('click', handlePrimaryToggle);
+    st.lap.addEventListener('click', recordLap);
+    st.reset.addEventListener('click', handlePrimaryReset);
+    st.largeDisplay.addEventListener('click', () => openLargeDisplay(state.activeTab === 'multi' ? 'multi' : 'main', state.selectedMultiId));
+    st.exportLaps.addEventListener('click', exportLapsCsv);
+    st.addMulti.addEventListener('click', addMultiTimer);
+    st.overlayClose.addEventListener('click', closeLargeDisplay);
+    st.overlay.addEventListener('click', (event) => {
+      if (event.target === st.overlay) {
+        closeLargeDisplay();
+      }
+    });
+    st.multiGrid.addEventListener('click', handleMultiGridClick);
+    st.multiGrid.addEventListener('change', handleMultiGridChange);
+    [st.hours, st.minutes, st.seconds].forEach((input) => {
+      input.addEventListener('input', updateTimerDurationFromInputs);
+      input.addEventListener('change', updateTimerDurationFromInputs);
+    });
+
+    st.presets.forEach((button) => {
+      button.addEventListener('click', () => {
+        const duration = clamp(parseInt(button.dataset.duration, 10) || 0, 0, 359999);
+        const hours = Math.floor(duration / 3600);
+        const minutes = Math.floor((duration % 3600) / 60);
+        const seconds = duration % 60;
+        state.timer.hours = hours;
+        state.timer.minutes = minutes;
+        state.timer.seconds = seconds;
+        state.timer.durationMs = duration * 1000;
+        if (!state.timer.running) {
+          state.timer.remainingMs = state.timer.durationMs;
+        }
+        renderAll();
+        setStatus('Preset applied: ' + button.textContent + '.');
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      const isEditing = event.target && event.target.closest('input, textarea, select');
+      if (event.key === 'Escape' && st.overlay.classList.contains('is-open')) {
+        event.preventDefault();
+        closeLargeDisplay();
+        return;
+      }
+      if (isEditing) return;
+      if (event.code === 'Space') {
+        event.preventDefault();
+        handlePrimaryToggle();
+        return;
+      }
+      if (event.key === 'l' || event.key === 'L') {
+        event.preventDefault();
+        handleLapShortcut();
+        return;
+      }
+      if (event.key === 'r' || event.key === 'R') {
+        event.preventDefault();
+        handlePrimaryReset();
+      }
+    });
+
+    window.addEventListener('beforeunload', () => {
+      if (state.stopwatch.running) {
+        state.stopwatch.elapsedMs = Date.now() - state.stopwatch.startedAt;
+        state.stopwatch.running = false;
+      }
+      if (state.timer.running) {
+        state.timer.remainingMs = Math.max(0, state.timer.endAt - Date.now());
+        state.timer.running = false;
+        state.timer.endAt = 0;
+      }
+      state.multiTimers.forEach((timer) => {
+        if (!timer.running) return;
+        timer.remainingMs = Math.max(0, timer.endAt - Date.now());
+        timer.running = false;
+        timer.endAt = 0;
+      });
+      saveState();
+    });
+
+    loadState();
+    renderAll();
+    setStatus('Ready for precise timing. The tab title will update while timers run.');
+  </script>
+</body>
+</html>

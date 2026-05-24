@@ -1,0 +1,3599 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+
+  <title>PDF WebP Converter for Bloggers Online | Free ToolsMatic</title>
+  <meta name="description" content="Use PDF WebP Converter for Bloggers online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/pdf-webp-converter-for-bloggers.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/pdf-webp-converter-for-bloggers.html">
+  <meta property="og:title" content="PDF WebP Converter for Bloggers Online | Free ToolsMatic">
+  <meta property="og:description" content="Use PDF WebP Converter for Bloggers online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PDF WebP Converter for Bloggers Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use PDF WebP Converter for Bloggers online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <!-- JSON-LD: WebApplication -->
+  
+
+  <!-- JSON-LD: BreadcrumbList -->
+  
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Convert PDF to WebP or WebP to PDF Online",
+    "description": "Convert between PDF and WebP formats using ToolsMatic — free, private, no upload.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Choose conversion direction",
+        "text": "Select PDF to WebP to convert PDF pages to images, or WebP to PDF to combine WebP images into a PDF document."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Upload your files",
+        "text": "Drag and drop your PDF or WebP files onto the upload zone or click to browse. Files render as thumbnails."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Select and configure",
+        "text": "Click items to select them for export. Choose format, quality, resolution (PDF→WebP) or page size, orientation, margins (WebP→PDF)."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Export and download",
+        "text": "Click Convert. Single items download directly. Multiple items package into a ZIP (PDF→WebP) or combined PDF (WebP→PDF)."
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  
+
+  <!-- Tool-specific styles ONLY -->
+  <style>
+    /* ── Layout ─────────────────────────────────────────────── */
+    .pwc-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    /* ── Mode toggle ────────────────────────────────────────── */
+    .mode-toggle {
+      display: flex;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 4px;
+      margin-bottom: 24px;
+      max-width: 400px;
+    }
+
+    .mode-btn {
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .mode-btn.active {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .mode-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .mode-badge {
+      font-size: 10px;
+      background: rgba(245,158,11,0.2);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    /* ── Upload zone ────────────────────────────────────────── */
+    .upload-zone {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .upload-zone.dragover {
+      background: rgba(245,158,11,0.06);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-glow),
+        inset 0 0 24px rgba(245,158,11,0.04);
+    }
+
+    .upload-zone-sub {
+      margin-top: 4px;
+      font-size: 13px;
+    }
+
+    .upload-hint-webp {
+      display: none;
+    }
+
+    .mode-webp-to-pdf .upload-hint-pdf { display: none; }
+    .mode-webp-to-pdf .upload-hint-webp { display: block; }
+
+    /* ── File info bar ──────────────────────────────────────── */
+    .file-info-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 14px 20px;
+    }
+
+    .file-info-left {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .file-stat {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .file-stat strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .file-stat strong.success-col { color: var(--success); }
+
+    /* ── Clear button ───────────────────────────────────────── */
+    .btn-clear-file {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .btn-clear-file:hover {
+      border-color: var(--error);
+      color: var(--error);
+      background: rgba(239,68,68,0.06);
+    }
+
+    .btn-clear-file:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ── Export settings panel ──────────────────────────────── */
+    .export-settings {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .settings-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+
+    .settings-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .settings-row.single-col {
+      grid-template-columns: 1fr;
+    }
+
+    /* Format tabs */
+    .format-tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .format-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .format-tab-group {
+      display: flex;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+      gap: 2px;
+    }
+
+    .format-tab {
+      flex: 1;
+      padding: 7px 8px;
+      border-radius: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .format-tab.active {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .format-tab.webp-recommended::after {
+      content: "★";
+      margin-left: 4px;
+      font-size: 10px;
+    }
+
+    .format-tab:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Resolution selector */
+    .resolution-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .res-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .res-btn {
+      padding: 7px 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .res-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .res-btn.active {
+      background: rgba(245,158,11,0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .res-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Custom scale input */
+    .custom-scale-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .custom-scale-input {
+      width: 70px;
+      padding: 7px 8px;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      outline: none;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .custom-scale-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-glow);
+    }
+
+    .custom-scale-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Quality slider */
+    .quality-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .slider-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .slider-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .slider-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--border);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: 2px solid #000;
+      box-shadow: 0 0 4px rgba(245,158,11,0.4);
+    }
+
+    .slider::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+
+    .slider:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    /* Page size selector (WebP→PDF) */
+    .page-size-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .page-size-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .page-size-btn {
+      padding: 7px 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .page-size-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .page-size-btn.active {
+      background: rgba(245,158,11,0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .custom-dimensions-wrap {
+      display: none;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .custom-dimensions-wrap.visible {
+      display: flex;
+    }
+
+    .dim-input {
+      width: 60px;
+      padding: 6px 8px;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .dim-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-glow);
+    }
+
+    .dim-unit {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .dim-unit input {
+      width: 14px;
+      height: 14px;
+      margin: 0;
+    }
+
+    /* Orientation toggle */
+    .orientation-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .orientation-btns {
+      display: flex;
+      gap: 4px;
+    }
+
+    .orientation-btn {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .orientation-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .orientation-btn.active {
+      background: rgba(245,158,11,0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Margins selector */
+    .margins-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .margins-btns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+    }
+
+    .margins-btn {
+      padding: 6px 4px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .margins-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .margins-btn.active {
+      background: rgba(245,158,11,0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Image fit selector */
+    .image-fit-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .fit-btns {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .fit-btn {
+      flex: 1;
+      min-width: 70px;
+      padding: 6px 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .fit-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .fit-btn.active {
+      background: rgba(245,158,11,0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Estimated size badge */
+    .est-size-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.2);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--accent);
+      margin-top: 10px;
+    }
+
+    .est-size-badge.webp-savings::after {
+      content: "WebP saves ~30%";
+      margin-left: 8px;
+      padding-left: 8px;
+      border-left: 1px solid rgba(245,158,11,0.3);
+      font-size: 10px;
+      opacity: 0.9;
+    }
+
+    /* ── Selection controls ─────────────────────────────────── */
+    .selection-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .selection-summary {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .selection-badge {
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.25);
+      color: var(--success);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .selection-btns {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-sel {
+      padding: 7px 12px;
+      border-radius: var(--radius-btn);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+    }
+
+    .btn-sel:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-sel:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ── Pages/Images grid ──────────────────────────────────── */
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fill, minmax(120px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    /* Item card */
+    .item-card {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .item-card:hover {
+      border-color: var(--success);
+      transform: translateY(-2px);
+    }
+
+    .item-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Selected state — green */
+    .item-card.selected {
+      border-color: var(--success);
+      box-shadow: 0 0 0 2px rgba(34,197,94,0.2);
+    }
+
+    /* Green checkmark overlay */
+    .item-check-overlay {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 22px;
+      height: 22px;
+      background: var(--success);
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .item-card.selected .item-check-overlay {
+      display: flex;
+    }
+
+    /* Reorder handle (WebP→PDF mode) */
+    .reorder-handle {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 20px;
+      height: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 4px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      cursor: grab;
+    }
+
+    .mode-webp-to-pdf .reorder-handle {
+      display: flex;
+    }
+
+    .reorder-handle:active {
+      cursor: grabbing;
+    }
+
+    .reorder-handle svg {
+      width: 12px;
+      height: 12px;
+      stroke: #fff;
+      stroke-width: 2;
+    }
+
+    /* Dim unselected when some selected */
+    .item-card.dimmed { opacity: 0.45; }
+    .item-card.dimmed:hover { opacity: 1; }
+
+    /* Canvas/image wrap */
+    .item-media-wrap {
+      width: 100%;
+      aspect-ratio: 0.707;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .item-media-wrap canvas,
+    .item-media-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .thumb-skeleton {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        var(--border) 0%,
+        var(--bg-card) 50%,
+        var(--border) 100%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Item footer */
+    .item-footer {
+      padding: 8px;
+      border-top: 1px solid var(--border);
+      background: var(--bg-card);
+      text-align: center;
+    }
+
+    .item-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .item-card.selected .item-num {
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    /* Dragging state */
+    .item-card.dragging {
+      opacity: 0.6;
+      transform: scale(0.98);
+    }
+
+    .item-card.drag-over {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-glow);
+    }
+
+    /* ── Export button ──────────────────────────────────────── */
+    .btn-export {
+      width: 100%;
+      padding: 16px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-export:hover:not(:disabled) {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-export:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-export:disabled {
+      background: var(--border);
+      color: var(--text-muted);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-export:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ── Spinner ────────────────────────────────────────────── */
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(0,0,0,0.2);
+      border-top-color: #000;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .btn-export.loading .spinner { display: block; }
+
+    /* ── Progress ───────────────────────────────────────────── */
+    .progress-section {
+      margin-top: 20px;
+      display: none;
+    }
+
+    .progress-section.visible { display: block; }
+
+    .progress-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 999px;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* ── Result ─────────────────────────────────────────────── */
+    .result-section {
+      margin-top: 24px;
+      display: none;
+    }
+
+    .result-section.visible {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(34,197,94,0.25);
+      border-radius: var(--radius-card);
+      padding: 28px;
+    }
+
+    .result-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--success);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .result-stats {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    /* Filename preview */
+    .filename-preview {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(245,158,11,0.06);
+      border: 1px solid rgba(245,158,11,0.2);
+      border-radius: var(--radius-btn);
+      padding: 10px 14px;
+      margin-bottom: 16px;
+    }
+
+    .filename-preview-icon { color: var(--accent); }
+
+    .filename-preview-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .filename-preview-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      word-break: break-all;
+    }
+
+    /* Result actions */
+    .result-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-download {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 24px;
+      background: var(--success);
+      color: #000;
+      border: none;
+      border-radius: var(--radius-btn);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-download:hover {
+      background: #16A34A;
+      transform: translateY(-2px);
+    }
+
+    .btn-download:focus-visible {
+      outline: 2px solid var(--success);
+      outline-offset: 2px;
+    }
+
+    .btn-reset {
+      padding: 14px 24px;
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-reset:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-reset:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ── SEO content ────────────────────────────────────────── */
+    .seo-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    .seo-section h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 32px;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+    }
+
+    .seo-section h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 24px 0 10px;
+    }
+
+    .seo-section p,
+    .seo-section ul li {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .seo-section ul { padding-left: 20px; }
+
+    /* Comparison table */
+    .comparison-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      margin: 16px 0;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+    }
+
+    .comparison-table th {
+      background: #1A1A1A;
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 14px 16px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .comparison-table th.col-ToolsMatic {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .comparison-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:nth-child(even) td {
+      background: #0D0D0D;
+    }
+
+    .comparison-table td.col-ToolsMatic {
+      border-left: 2px solid var(--accent);
+    }
+
+    .check   { color: var(--success); font-size: 16px; }
+    .cross   { color: var(--error);   font-size: 16px; }
+    .partial { color: var(--warning); font-size: 13px; }
+
+    /* Related tools */
+    .related-tools {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .related-tool-card {
+      display: block;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .related-tool-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .related-tool-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .related-tool-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* FAQ */
+    .faq-wrap { margin-top: 16px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: left;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-question:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      color: var(--text-muted);
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer p {
+      padding-bottom: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .pwc-wrapper    { padding: 0 20px 60px; }
+      .seo-section    { padding: 0 20px 60px; }
+      .settings-row   { grid-template-columns: 1fr; }
+      .items-grid {
+        grid-template-columns:
+          repeat(auto-fill, minmax(90px, 1fr));
+        gap: 10px;
+      }
+      .related-tools  { grid-template-columns: 1fr; }
+      .result-actions { flex-direction: column; }
+      .btn-download   { min-width: unset; }
+      .mode-toggle    { max-width: 100%; }
+      .res-btns,
+      .page-size-btns,
+      .margins-btns {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .file-info-left  { flex-direction: column; gap: 4px; }
+      .selection-controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .res-btns { grid-template-columns: 1fr 1fr 1fr 1fr; }
+      .margins-btns { grid-template-columns: repeat(2, 1fr); }
+      .fit-btns { flex-direction: column; }
+      .fit-btn { min-width: unset; }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/pdf-webp-converter-for-bloggers.html">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+      <span class="header-logo-text">ToolsMatic</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="/#tools" class="header-cta btn">All Tools</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="/#tools">Tools</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb" style="max-width:960px;margin:0 auto;
+      padding:80px 40px 0;">
+    <a href="/" class="breadcrumb-link">Home</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="/#tools" class="breadcrumb-link">Tools</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="breadcrumb-current" aria-current="page">
+      PDF ↔ WebP Converter</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="tool-hero" style="max-width:960px;
+    margin:0 auto;padding:32px 40px 40px;" aria-label="PDF WebP bidirectional converter tool">
+    <div class="tool-hero-badge">
+      🔒 Files never leave your browser
+    </div>
+    <h1>PDF WebP Converter for Bloggers</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+    <p class="tool-hero-sub">
+      Convert PDF pages to WebP images or combine WebP images into a PDF. 
+      Select specific items, choose resolution, quality, and page settings. 
+      WebP delivers 25-35% smaller files than JPG. No upload required.
+    </p>
+  </section>
+
+  <!-- TOOL SECTION -->
+  <section class="pwc-wrapper" aria-label="PDF WebP conversion tool">
+
+    <!-- Mode toggle -->
+    <div class="mode-toggle" role="tablist" aria-label="Conversion direction">
+      <button class="mode-btn active" data-mode="pdf-to-webp" role="tab" aria-selected="true" aria-controls="pdf-to-webp-panel">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        PDF to WebP
+      </button>
+      <button class="mode-btn" data-mode="webp-to-pdf" role="tab" aria-selected="false" aria-controls="webp-to-pdf-panel">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+          <path d="M21 15l-5-5L5 21"></path>
+        </svg>
+        WebP to PDF
+      </button>
+    </div>
+
+    <!-- Hidden file inputs -->
+    <input type="file" id="file-input-pdf" accept=".pdf" aria-hidden="true" style="display:none;">
+    <input type="file" id="file-input-webp" accept=".webp,image/webp" multiple="" aria-hidden="true" style="display:none;">
+
+    <!-- Upload zone -->
+    <div class="upload-zone" id="upload-zone" role="region" aria-label="File upload area" aria-describedby="upload-hint" tabindex="0">
+      <div class="upload-zone-icon" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polyline points="16 16 12 12 8 16"></polyline>
+          <line x1="12" y1="12" x2="12" y2="21"></line>
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26
+            A8 8 0 1 0 3 16.3"></path>
+        </svg>
+      </div>
+      <div class="upload-zone-text">
+        Drag &amp; drop your files here
+      </div>
+      <div class="upload-zone-sub" id="upload-hint">
+        <span class="upload-hint-pdf">or click to browse a PDF file</span>
+        <span class="upload-hint-webp">or click to browse WebP images</span>
+      </div>
+      <div class="upload-zone-sub">
+        <span class="upload-hint-pdf">Single PDF file</span>
+        <span class="upload-hint-webp">Multiple WebP images supported</span>
+      </div>
+    </div>
+
+    <!-- Tool area -->
+    <div id="tool-area" style="display:none;">
+
+      <!-- File info bar -->
+      <div class="file-info-bar">
+        <div class="file-info-left">
+          <div class="file-stat">
+            File: <strong id="stat-name">—</strong>
+          </div>
+          <div class="file-stat">
+            Total: <strong id="stat-total">—</strong> 
+            <span id="stat-total-label">pages</span>
+          </div>
+          <div class="file-stat">
+            Selected:
+            <strong class="success-col" id="stat-selected">0</strong> 
+            <span id="stat-selected-label">pages</span>
+          </div>
+          <div class="file-stat">
+            Size: <strong id="stat-size">—</strong>
+          </div>
+        </div>
+        <button class="btn-clear-file" id="btn-clear-file" aria-label="Clear files and reset tool">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8
+              a2 2 0 0 1-2-2L5 6"></path>
+            <path d="M10 11v6M14 11v6"></path>
+          </svg>
+          Clear Files
+        </button>
+      </div>
+
+      <!-- Export settings: PDF to WebP -->
+      <div class="export-settings" id="settings-pdf-to-webp">
+        <div class="settings-title">Export Settings</div>
+        <div class="settings-row">
+
+          <!-- Format -->
+          <div class="format-tabs">
+            <div class="format-label">Format</div>
+            <div class="format-tab-group" role="tablist" aria-label="Output image format">
+              <button class="format-tab webp-recommended active" data-fmt="webp" role="tab" aria-selected="true">WEBP</button>
+              <button class="format-tab" data-fmt="jpeg" role="tab" aria-selected="false">JPG</button>
+              <button class="format-tab" data-fmt="png" role="tab" aria-selected="false">PNG</button>
+            </div>
+            <!-- Estimated size badge -->
+            <div class="est-size-badge webp-savings" id="est-size-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0
+                  2 2h12a2 2 0 0 0 2-2V9z"></path>
+                <polyline points="13 2 13 9 20 9"></polyline>
+              </svg>
+              <span id="est-size-text">~140 KB per page</span>
+            </div>
+          </div>
+
+          <!-- Resolution -->
+          <div class="resolution-group">
+            <div class="format-label">Resolution</div>
+            <div class="res-btns" role="radiogroup" aria-label="Export resolution scale">
+              <button class="res-btn active" data-scale="1" role="radio" aria-checked="true">
+                1x<br>
+                <span style="font-size:10px;
+                  font-weight:400;">96 DPI</span>
+              </button>
+              <button class="res-btn" data-scale="2" role="radio" aria-checked="false">
+                2x<br>
+                <span style="font-size:10px;
+                  font-weight:400;">192 DPI</span>
+              </button>
+              <button class="res-btn" data-scale="3" role="radio" aria-checked="false">
+                3x<br>
+                <span style="font-size:10px;
+                  font-weight:400;">288 DPI</span>
+              </button>
+              <button class="res-btn" data-scale="custom" role="radio" aria-checked="false">
+                Custom
+              </button>
+            </div>
+            <div class="custom-scale-wrap" id="custom-scale-wrap" style="display:none;">
+              <input type="number" id="custom-scale-input" class="custom-scale-input" value="2" min="0.5" max="5" step="0.5" aria-label="Custom scale multiplier">
+              <span class="custom-scale-label">× scale</span>
+            </div>
+          </div>
+
+          <!-- Quality -->
+          <div class="quality-group" id="quality-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Quality</span>
+              <span class="slider-value" id="quality-val">85%</span>
+            </div>
+            <input type="range" class="slider" id="quality-slider" min="50" max="100" value="85" step="5" aria-label="Export image quality">
+            <div style="margin-top:6px;font-family:'Inter',
+              sans-serif;font-size:11px;
+              color:var(--text-muted);">
+              Higher = better quality, larger files
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Export settings: WebP to PDF -->
+      <div class="export-settings" id="settings-webp-to-pdf" style="display:none;">
+        <div class="settings-title">PDF Output Settings</div>
+        <div class="settings-row single-col">
+
+          <!-- Page size -->
+          <div class="page-size-group">
+            <div class="format-label">Page Size</div>
+            <div class="page-size-btns" role="radiogroup" aria-label="PDF page size">
+              <button class="page-size-btn active" data-size="a4" role="radio" aria-checked="true">A4</button>
+              <button class="page-size-btn" data-size="letter" role="radio" aria-checked="false">Letter</button>
+              <button class="page-size-btn" data-size="custom" role="radio" aria-checked="false">Custom</button>
+            </div>
+            <div class="custom-dimensions-wrap" id="custom-dimensions-wrap">
+              <input type="number" id="custom-width" class="dim-input" value="210" min="50" max="500" aria-label="Page width">
+              <span style="font-size:12px;color:var(--text-muted);">
+                ×
+              </span>
+              <input type="number" id="custom-height" class="dim-input" value="297" min="50" max="500" aria-label="Page height">
+              <span class="dim-unit">
+                <input type="radio" name="dim-unit" id="unit-mm" value="mm" checked="">
+                <label for="unit-mm">mm</label>
+                <input type="radio" name="dim-unit" id="unit-in" value="in" style="margin-left:8px;">
+                <label for="unit-in">in</label>
+              </span>
+            </div>
+          </div>
+
+          <!-- Orientation -->
+          <div class="orientation-group">
+            <div class="format-label">Orientation</div>
+            <div class="orientation-btns" role="radiogroup" aria-label="Page orientation">
+              <button class="orientation-btn active" data-orient="portrait" role="radio" aria-checked="true">Portrait</button>
+              <button class="orientation-btn" data-orient="landscape" role="radio" aria-checked="false">Landscape</button>
+            </div>
+          </div>
+
+          <!-- Margins -->
+          <div class="margins-group">
+            <div class="format-label">Margins</div>
+            <div class="margins-btns" role="radiogroup" aria-label="Page margins">
+              <button class="margins-btn" data-margin="0" role="radio">None</button>
+              <button class="margins-btn active" data-margin="10" role="radio">Small</button>
+              <button class="margins-btn" data-margin="20" role="radio">Medium</button>
+              <button class="margins-btn" data-margin="30" role="radio">Large</button>
+            </div>
+          </div>
+
+          <!-- Image fit -->
+          <div class="image-fit-group">
+            <div class="format-label">Image Fit</div>
+            <div class="fit-btns" role="radiogroup" aria-label="How images fit on page">
+              <button class="fit-btn active" data-fit="fit" role="radio">Fit to Page</button>
+              <button class="fit-btn" data-fit="original" role="radio">Original Size</button>
+              <button class="fit-btn" data-fit="stretch" role="radio">Stretch to Fill</button>
+            </div>
+          </div>
+
+          <!-- Estimated size badge -->
+          <div class="est-size-badge" id="est-size-badge-pdf">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            <span id="est-size-text-pdf">~450 KB total</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Selection controls -->
+      <div class="selection-controls">
+        <div class="selection-summary" aria-live="polite" aria-atomic="true">
+          <span id="sel-summary-text">
+            Click items to select them for export
+          </span>
+          <span class="selection-badge" id="sel-badge">0 selected</span>
+        </div>
+        <div class="selection-btns">
+          <button class="btn-sel" id="btn-select-all" aria-label="Select all items">
+            Select All
+          </button>
+          <button class="btn-sel" id="btn-deselect-all" aria-label="Deselect all items">
+            Deselect All
+          </button>
+        </div>
+      </div>
+
+      <!-- Pages/Images grid -->
+      <div class="items-grid" id="items-grid" role="grid" aria-label="Items — click to select for export">
+      </div>
+
+      <!-- Export button -->
+      <button class="btn-export" id="btn-export" aria-label="Convert selected items">
+        <div class="spinner" aria-hidden="true"></div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="export-icon" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+          <polyline points="21 15 16 10 5 21"></polyline>
+        </svg>
+        <span id="export-btn-text">Convert</span>
+      </button>
+
+      <!-- Progress -->
+      <div class="progress-section" id="progress-section" role="region" aria-label="Conversion progress">
+        <div class="progress-label-row">
+          <span id="progress-label">Processing...</span>
+          <span id="progress-pct">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill" role="progressbar" aria-valuenow="0" aria-valuemax="100" aria-label="Conversion progress"></div>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="result-section" id="result-section" role="region" aria-label="Conversion result" aria-live="polite">
+        <div class="result-card">
+          <div class="result-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span id="result-title-text">Conversion Successful!</span>
+          </div>
+          <div class="result-stats" id="result-stats"></div>
+          <div class="filename-preview">
+            <svg class="filename-preview-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <div>
+              <div class="filename-preview-text">
+                Your file will be saved as:
+              </div>
+              <div class="filename-preview-name" id="filename-preview-name">—</div>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button class="btn-download" id="btn-download" aria-label="Download converted file">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5
+                  a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download File
+            </button>
+            <button class="btn-reset" id="btn-reset" aria-label="Convert more files">
+              Convert More Files
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end tool-area -->
+  </section>
+
+  <!-- SEO CONTENT -->
+  <article class="seo-section" aria-label="About PDF WebP conversion">
+
+    <h2>Why Convert Between PDF and WebP?</h2>
+    <p>
+      Converting between PDF and WebP formats serves different needs. 
+      Extract PDF pages as WebP images to use in web projects, social 
+      media, or presentations where image formats are required. Combine 
+      WebP images into a PDF to create shareable documents, reports, 
+      or portfolios. WebP offers 25-35% smaller file sizes than JPG 
+      at equivalent quality, making it ideal for web delivery.
+    </p>
+    <p>
+      ToolsMatic performs all conversions entirely inside your browser 
+      using PDF.js, Canvas API, and jsPDF. No file is ever uploaded 
+      to any server, making it ideal for confidential documents, 
+      private photos, or sensitive business content.
+    </p>
+
+    <h2>How to Use the PDF ↔ WebP Converter</h2>
+    <ul>
+      <li>
+        <strong>Step 1 — Choose direction:</strong> Toggle between 
+        "PDF to WebP" to extract pages as images, or "WebP to PDF" 
+        to combine images into a document.
+      </li>
+      <li>
+        <strong>Step 2 — Upload files:</strong> Drag and drop your 
+        PDF or WebP files onto the upload area. Pages or images 
+        render as thumbnail cards immediately.
+      </li>
+      <li>
+        <strong>Step 3 — Select and configure:</strong> Click 
+        thumbnails to select items for export. Adjust format, 
+        quality, resolution (PDF→WebP) or page size, orientation, 
+        margins (WebP→PDF).
+      </li>
+      <li>
+        <strong>Step 4 — Convert and download:</strong> Click 
+        Convert. Single items download directly. Multiple items 
+        package into a ZIP (PDF→WebP) or combined PDF (WebP→PDF).
+      </li>
+    </ul>
+
+    <h2>PDF to WebP: Format &amp; Quality Options</h2>
+
+    <h3>WEBP (Recommended)</h3>
+    <p>
+      Best for web use. WEBP typically produces files 25-35% smaller 
+      than JPG at equivalent visual quality, with support for both 
+      lossy and lossless compression. Ideal when you need images 
+      for websites, apps, or digital sharing where file size matters.
+    </p>
+
+    <h3>JPG (JPEG)</h3>
+    <p>
+      Best for pages with photographs, complex graphics or colorful 
+      content. JPG is universally supported but introduces compression 
+      artifacts at lower quality settings. Choose JPG when maximum 
+      compatibility is required.
+    </p>
+
+    <h3>PNG</h3>
+    <p>
+      Best for pages with text, diagrams, charts or sharp geometric 
+      content. PNG is lossless — no quality degradation at any 
+      setting — but produces larger files. Ideal when you need 
+      pixel-perfect reproduction or transparency support.
+    </p>
+
+    <h2>Resolution Guide (PDF→WebP)</h2>
+    <p>
+      Resolution determines how many pixels the output image contains. 
+      Higher resolution means sharper images that look good when 
+      zoomed in or printed, but larger file sizes.
+    </p>
+    <ul>
+      <li>
+        <strong>1x (96 DPI):</strong> Screen quality. Good for web 
+        display or quick sharing. Smallest file size.
+      </li>
+      <li>
+        <strong>2x (192 DPI):</strong> Standard print quality. Good 
+        for home printing and most professional uses. Recommended 
+        for most users.
+      </li>
+      <li>
+        <strong>3x (288 DPI):</strong> High quality print. For large 
+        format printing or when you need maximum detail. Largest 
+        file size.
+      </li>
+    </ul>
+
+    <h2>WebP to PDF: Page Layout Options</h2>
+
+    <h3>Page Size</h3>
+    <p>
+      Choose A4 (210×297mm) for international documents, Letter 
+      (8.5×11in) for US standard, or enter custom dimensions in 
+      millimeters or inches for precise control.
+    </p>
+
+    <h3>Orientation</h3>
+    <p>
+      Toggle between Portrait (taller than wide) and Landscape 
+      (wider than tall) to match your image aspect ratio or 
+      document requirements.
+    </p>
+
+    <h3>Margins</h3>
+    <p>
+      Select None (0mm), Small (10mm), Medium (20mm), or Large (30mm) 
+      margins to control whitespace around images. Larger margins 
+      improve readability for printed documents.
+    </p>
+
+    <h3>Image Fit</h3>
+    <p>
+      Choose "Fit to Page" to scale images proportionally within 
+      margins, "Original Size" to place images at native resolution, 
+      or "Stretch to Fill" to fill the entire page (may distort 
+      aspect ratio).
+    </p>
+
+    <h2>ToolsMatic vs Other Conversion Tools</h2>
+    <div class="comparison-wrap">
+      <table class="comparison-table" aria-label="PDF WebP converter comparison">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-ToolsMatic">ToolsMatic</th>
+            <th>ilovepdf</th>
+            <th>Smallpdf</th>
+            <th>Adobe Acrobat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bidirectional conversion</td>
+            <td class="col-ToolsMatic">
+              <span class="check">✅</span></td>
+            <td><span class="partial">⚠ Separate tools</span></td>
+            <td><span class="partial">⚠ Separate tools</span></td>
+            <td><span class="check">✅</span></td>
+          </tr>
+          <tr>
+            <td>WebP output support</td>
+            <td class="col-ToolsMatic">
+              <span class="check">✅</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="partial">⚠ Limited</span></td>
+          </tr>
+          <tr>
+            <td>No file upload</td>
+            <td class="col-ToolsMatic">
+              <span class="check">✅</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="cross">❌</span></td>
+          </tr>
+          <tr>
+            <td>Select specific items</td>
+            <td class="col-ToolsMatic">
+              <span class="check">✅</span></td>
+            <td><span class="partial">⚠ Limited</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="check">✅</span></td>
+          </tr>
+          <tr>
+            <td>Reorder images (WebP→PDF)</td>
+            <td class="col-ToolsMatic">
+              <span class="check">✅</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="check">✅</span></td>
+          </tr>
+          <tr>
+            <td>Custom page settings</td>
+            <td class="col-ToolsMatic">
+              <span class="check">✅</span></td>
+            <td><span class="partial">⚠ Limited</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="check">✅</span></td>
+          </tr>
+          <tr>
+            <td>Estimated file size</td>
+            <td class="col-ToolsMatic">
+              <span class="check">✅</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="cross">❌</span></td>
+          </tr>
+          <tr>
+            <td>Free with no limits</td>
+            <td class="col-ToolsMatic">
+              <span class="check">✅</span></td>
+            <td><span class="partial">⚠ Daily limits</span></td>
+            <td><span class="partial">⚠ 2 tasks/day</span></td>
+            <td><span class="cross">❌ Paid</span></td>
+          </tr>
+          <tr>
+            <td>Privacy first</td>
+            <td class="col-ToolsMatic">
+              <span class="check">✅</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="cross">❌</span></td>
+            <td><span class="cross">❌</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>PDF ↔ WebP: Frequently Asked Questions</h2>
+    <div class="faq-wrap" id="faq">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What conversions does this tool support?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>This tool supports bidirectional conversion: PDF pages 
+          to WebP/JPG/PNG images, and WebP images to PDF documents. 
+          Toggle between modes at the top of the tool interface.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I convert specific pages or images only?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Click any thumbnail to select it for export — 
+          selected items show a green border and checkmark. Only 
+          selected items will be converted. Use Select All to 
+          include everything, or click individually to choose.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Why choose WebP format over JPG or PNG?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>WebP typically produces files 25-35% smaller than JPG 
+          at equivalent visual quality, with support for both lossy 
+          and lossless compression. It is ideal for web use where 
+          file size impacts loading speed and bandwidth costs.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I reorder images when creating a PDF?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. In WebP→PDF mode, drag image thumbnails using the 
+          handle in the top-left corner to rearrange their order. 
+          The order you see in the grid is the order images will 
+          appear in the final PDF document.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Are my files uploaded to a server?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Never. All PDF rendering, image conversion, and PDF 
+          generation happens entirely inside your browser using 
+          PDF.js, Canvas API, and jsPDF. Your files never leave 
+          your device and are never transmitted to any server.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What page sizes are available for WebP→PDF?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Choose from A4 (210×297mm), Letter (8.5×11in), or 
+          enter custom dimensions in millimeters or inches. Toggle 
+          between Portrait and Landscape orientation, and select 
+          margin size from None to Large.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I convert a password-protected PDF?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Password-protected PDFs must be unlocked first. Use 
+          our free <a href="/tools/unlock-pdf.html" style="color:var(--accent);">Unlock PDF</a> tool to 
+          remove the password, then return here to convert the 
+          pages to WebP images.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do I control output quality and file size?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>In PDF→WebP mode, use the quality slider (50-100%) 
+          and resolution selector (1x-3x or custom). Lower quality 
+          and resolution produce smaller files. The estimated size 
+          badge updates in real-time to help you balance quality 
+          and file size.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>More Free PDF Tools You Might Need</h2>
+    <div class="related-tools" role="list">
+      <a href="/tools/compress-pdf.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">
+          Compress PDF
+          <span style="color:var(--accent);">→</span>
+        </div>
+        <div class="related-tool-desc">
+          Reduce PDF file size before converting pages
+          to WebP for faster processing.
+        </div>
+      </a>
+      <a href="/tools/merge-pdf.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">
+          Merge PDF
+          <span style="color:var(--accent);">→</span>
+        </div>
+        <div class="related-tool-desc">
+          Combine multiple PDFs into one document
+          after converting WebP images to PDF.
+        </div>
+      </a>
+      <a href="/tools/extract-pages.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">
+          Extract Pages
+          <span style="color:var(--accent);">→</span>
+        </div>
+        <div class="related-tool-desc">
+          Save specific pages as a new PDF instead of
+          converting them to images.
+        </div>
+      </a>
+    </div>
+
+  </article>
+
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="pdf-webp-converter-for-bloggers-pseo" aria-labelledby="pdf-webp-converter-for-bloggers-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>PDF WebP Converter for Bloggers</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="pdf-webp-converter-for-bloggers-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">PDF WebP Converter for Bloggers Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>PDF WebP Converter for Bloggers</strong>, a blogging assistant optimized for content structure and draft editing. This dedicated workspace is built specifically for content writers, blog editors, and marketers preparing digital articles. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>streamlined word-count targets, clean formatting, and instant readability previews</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Convert between PDF pages and WebP images. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Readability draft checks</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Verify length guidelines and structure to optimize search index crawler ranking.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Frictionless copy transfer</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Copy your completed drafts cleanly without carrying over stray styling characters.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Social caption previews</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Double check character density limits before pushing content live.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use PDF WebP Converter for Bloggers</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Bloggers layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: PDF WebP Converter for Bloggers</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this helpful for SEO blogging?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Extremely! It tracks length constraints and paragraph structures crucial for search engine crawling.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it save my drafts?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">No, all writing is kept locally in your browser memory to respect content privacy.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is it mobile friendly?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, you can edit and copy blog drafts directly from your mobile phone on-the-go.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/pdf-webp-converter.html" style="color:var(--primary);text-decoration:none;font-weight:600;">PDF WebP Converter</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"PDF WebP Converter for Bloggers","url":"https://toolsmatic.me/tools/pdf-webp-converter-for-bloggers.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use PDF WebP Converter for Bloggers online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"PDF WebP Converter for Bloggers","item":"https://toolsmatic.me/tools/pdf-webp-converter-for-bloggers.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this helpful for SEO blogging?","acceptedAnswer":{"@type":"Answer","text":"Extremely! It tracks length constraints and paragraph structures crucial for search engine crawling."}},{"@type":"Question","name":"Does it save my drafts?","acceptedAnswer":{"@type":"Answer","text":"No, all writing is kept locally in your browser memory to respect content privacy."}},{"@type":"Question","name":"Is it mobile friendly?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can edit and copy blog drafts directly from your mobile phone on-the-go."}}]}]}</script>
+  </main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div style="font-family:'Instrument Serif',serif;
+        font-size:20px;color:var(--text-primary);
+        margin-bottom:12px;">
+        ToolsMatic
+      </div>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;
+        color:var(--text-muted);line-height:1.7;
+        max-width:220px;">
+        Privacy-first PDF tools. Your files never leave
+        your browser.
+      </p>
+      <p style="font-family:'Inter',sans-serif;font-size:13px;
+        color:var(--text-muted);margin-top:16px;">
+        © 2025 ToolsMatic. All rights reserved.
+      </p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">PDF Tools</div>
+      <a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a>
+      <a href="/tools/split-pdf.html" class="footer-link">Split PDF</a>
+      <a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a>
+      <a href="/tools/rotate-pdf.html" class="footer-link">Rotate PDF</a>
+      <a href="/tools/crop-pdf.html" class="footer-link">Crop PDF</a>
+      <a href="/tools/watermark-pdf.html" class="footer-link">Add Watermark</a>
+      <a href="/tools/sign-pdf.html" class="footer-link">Sign PDF</a>
+      <a href="/#tools" class="footer-link" style="color:var(--accent);">All Tools →</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">More Tools</div>
+      <a href="/tools/remove-pages.html" class="footer-link">Remove Pages</a>
+      <a href="/tools/pdf-to-jpg.html" class="footer-link">PDF to JPG</a>
+      <a href="/tools/pdf-webp-converter.html" class="footer-link">PDF ↔ WebP</a>
+      <a href="/tools/protect-pdf.html" class="footer-link">Protect PDF</a>
+      <a href="/tools/unlock-pdf.html" class="footer-link">Unlock PDF</a>
+      <a href="/tools/pdf-reader.html" class="footer-link">PDF Reader</a>
+      <a href="/tools/annotate-pdf.html" class="footer-link">PDF Annotator</a>
+      <a href="/tools/compare-pdf.html" class="footer-link">PDF Comparison</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="/about.html" class="footer-link">About</a>
+      <a href="/contact.html" class="footer-link">Contact</a>
+      <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+      <a href="/terms.html" class="footer-link">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Built with ♥ for people who value privacy</span>
+    <span>No tracking. No uploads. No nonsense.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="/assets/pdf/global.js"></script>
+<script src="/assets/pdf/tool-base.js"></script>
+
+<script>
+'use strict';
+
+// ── PDF.JS WORKER ─────────────────────────────────────────────
+if (typeof pdfjsLib !== 'undefined') {
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/' +
+    '3.11.174/pdf.worker.min.js';
+}
+
+// ── jsPDF SETUP ───────────────────────────────────────────────
+const { jsPDF } = window.jspdf;
+
+// ── HELPERS ───────────────────────────────────────────────────
+function formatSize(bytes) {
+  if (!bytes || bytes === 0) return '0 B';
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / 1048576).toFixed(1) + ' MB';
+}
+
+function generateTimestamp() {
+  var now = new Date();
+  var pad = function(n) {
+    return n < 10 ? '0' + n : String(n);
+  };
+  return now.getFullYear() + '-' +
+    pad(now.getMonth() + 1) + '-' +
+    pad(now.getDate()) + '-' +
+    pad(now.getHours()) + '-' +
+    pad(now.getMinutes());
+}
+
+function showToastLocal(msg, type) {
+  if (typeof showToast === 'function') {
+    showToast(msg, type || 'info');
+    return;
+  }
+  var t = document.createElement('div');
+  t.style.cssText =
+    'position:fixed;bottom:24px;right:24px;' +
+    'background:#111;border:1px solid #333;' +
+    'border-radius:10px;padding:14px 18px;color:#fff;' +
+    'font-family:Inter,sans-serif;font-size:14px;' +
+    'z-index:9999;max-width:340px;' +
+    'box-shadow:0 8px 32px rgba(0,0,0,0.4);';
+  t.setAttribute('role', 'alert');
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(function() {
+    if (t.parentNode) t.parentNode.removeChild(t);
+  }, 4000);
+}
+
+function getMimeType(fmt) {
+  switch (fmt) {
+    case 'png':  return 'image/png';
+    case 'webp': return 'image/webp';
+    default:     return 'image/jpeg';
+  }
+}
+
+function getExtension(fmt) {
+  switch (fmt) {
+    case 'png':  return 'png';
+    case 'webp': return 'webp';
+    default:     return 'jpg';
+  }
+}
+
+// Estimate output size from canvas dimensions + quality
+function estimateSize(widthPx, heightPx, fmt, quality) {
+  var pixels = widthPx * heightPx;
+  var bytesPerPixel;
+  if (fmt === 'png') {
+    bytesPerPixel = 2.0;
+  } else if (fmt === 'webp') {
+    bytesPerPixel = 0.25 * (quality / 100);
+  } else {
+    bytesPerPixel = 0.5 * (quality / 100);
+  }
+  return Math.round(pixels * bytesPerPixel);
+}
+
+// Validate WebP file by checking RIFF header
+function isValidWebP(arrayBuffer) {
+  var arr = new Uint8Array(arrayBuffer, 0, 12);
+  // RIFF....WEBP signature
+  return arr[0] === 0x52 && arr[1] === 0x49 && 
+         arr[2] === 0x46 && arr[3] === 0x46 &&
+         arr[8] === 0x57 && arr[9] === 0x45 &&
+         arr[10] === 0x42 && arr[11] === 0x50;
+}
+
+// ── STATE ─────────────────────────────────────────────────────
+var state = {
+  mode: 'pdf-to-webp', // 'pdf-to-webp' | 'webp-to-pdf'
+  
+  // PDF to WebP state
+  pdfFile: null,
+  pdfArrayBuffer: null,
+  pageCount: 0,
+  pdfJsDoc: null,
+  selectedPages: [],
+  
+  // WebP to PDF state
+  webpFiles: [],
+  webpBlobs: [],
+  selectedImages: [],
+  
+  // Shared settings
+  settings: {
+    // PDF→WebP
+    format: 'webp',
+    scale: 1.0,
+    quality: 0.85,
+    // WebP→PDF
+    pageSize: 'a4',
+    customWidth: 210,
+    customHeight: 297,
+    dimUnit: 'mm',
+    orientation: 'portrait',
+    margin: 10,
+    imageFit: 'fit'
+  },
+  resultBlobURL: null
+};
+
+// ── ELEMENT REFS ──────────────────────────────────────────────
+var modeBtns        = document.querySelectorAll('.mode-btn');
+var uploadZone      = document.getElementById('upload-zone');
+var fileInputPdf    = document.getElementById('file-input-pdf');
+var fileInputWebp   = document.getElementById('file-input-webp');
+var toolArea        = document.getElementById('tool-area');
+var btnClearFile    = document.getElementById('btn-clear-file');
+var statName        = document.getElementById('stat-name');
+var statTotal       = document.getElementById('stat-total');
+var statTotalLabel  = document.getElementById('stat-total-label');
+var statSelected    = document.getElementById('stat-selected');
+var statSelectedLabel= document.getElementById('stat-selected-label');
+var statSize        = document.getElementById('stat-size');
+var selSummaryTxt   = document.getElementById('sel-summary-text');
+var selBadge        = document.getElementById('sel-badge');
+var btnSelectAll    = document.getElementById('btn-select-all');
+var btnDeselectAll  = document.getElementById('btn-deselect-all');
+var itemsGrid       = document.getElementById('items-grid');
+var settingsPdfToWebp = document.getElementById('settings-pdf-to-webp');
+var settingsWebpToPdf = document.getElementById('settings-webp-to-pdf');
+var qualitySlider   = document.getElementById('quality-slider');
+var qualityVal      = document.getElementById('quality-val');
+var qualityGroup    = document.getElementById('quality-group');
+var estSizeText     = document.getElementById('est-size-text');
+var estSizeTextPdf  = document.getElementById('est-size-text-pdf');
+var customScaleWrap = document.getElementById('custom-scale-wrap');
+var customScaleInput= document.getElementById('custom-scale-input');
+var customDimWrap   = document.getElementById('custom-dimensions-wrap');
+var customWidthInput= document.getElementById('custom-width');
+var customHeightInput= document.getElementById('custom-height');
+var btnExport       = document.getElementById('btn-export');
+var exportBtnText   = document.getElementById('export-btn-text');
+var exportIcon      = document.getElementById('export-icon');
+var progressSec     = document.getElementById('progress-section');
+var progressFill    = document.getElementById('progress-fill');
+var progressLabel   = document.getElementById('progress-label');
+var progressPct     = document.getElementById('progress-pct');
+var resultSec       = document.getElementById('result-section');
+var resultTitleText = document.getElementById('result-title-text');
+var resultStats     = document.getElementById('result-stats');
+var filenamePrev    = document.getElementById('filename-preview-name');
+var btnDownload     = document.getElementById('btn-download');
+var btnReset        = document.getElementById('btn-reset');
+
+// ── MODE TOGGLE ───────────────────────────────────────────────
+modeBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    modeBtns.forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    
+    state.mode = btn.getAttribute('data-mode');
+    updateModeUI();
+    resetTool();
+  });
+});
+
+function updateModeUI() {
+  // Update upload hints
+  uploadZone.classList.toggle('mode-webp-to-pdf', 
+    state.mode === 'webp-to-pdf');
+  
+  // Update settings panels
+  if (settingsPdfToWebp) {
+    settingsPdfToWebp.style.display = 
+      state.mode === 'pdf-to-webp' ? 'block' : 'none';
+  }
+  if (settingsWebpToPdf) {
+    settingsWebpToPdf.style.display = 
+      state.mode === 'webp-to-pdf' ? 'block' : 'none';
+  }
+  
+  // Update stat labels
+  if (statTotalLabel) {
+    statTotalLabel.textContent = 
+      state.mode === 'pdf-to-webp' ? 'pages' : 'images';
+  }
+  if (statSelectedLabel) {
+    statSelectedLabel.textContent = 
+      state.mode === 'pdf-to-webp' ? 'pages' : 'images';
+  }
+  
+  // Update export button text
+  if (exportBtnText) {
+    exportBtnText.textContent = 
+      state.mode === 'pdf-to-webp' ? 'Convert to WebP' : 'Convert to PDF';
+  }
+  
+  // Update result title
+  if (resultTitleText) {
+    resultTitleText.textContent = 
+      state.mode === 'pdf-to-webp' ? 
+        'Images Exported Successfully!' : 
+        'PDF Created Successfully!';
+  }
+}
+
+// ── UPLOAD ZONE ───────────────────────────────────────────────
+uploadZone.addEventListener('click', function() {
+  if (state.mode === 'pdf-to-webp') {
+    fileInputPdf.click();
+  } else {
+    fileInputWebp.click();
+  }
+});
+
+uploadZone.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    if (state.mode === 'pdf-to-webp') {
+      fileInputPdf.click();
+    } else {
+      fileInputWebp.click();
+    }
+  }
+});
+
+uploadZone.addEventListener('dragover', function(e) {
+  e.preventDefault();
+  uploadZone.classList.add('dragover');
+});
+
+uploadZone.addEventListener('dragleave', function() {
+  uploadZone.classList.remove('dragover');
+});
+
+uploadZone.addEventListener('drop', function(e) {
+  e.preventDefault();
+  uploadZone.classList.remove('dragover');
+  var files = e.dataTransfer ? e.dataTransfer.files : null;
+  if (files && files.length > 0) {
+    if (state.mode === 'pdf-to-webp') {
+      loadPdfFile(files[0]);
+    } else {
+      loadWebpFiles(Array.from(files));
+    }
+  }
+});
+
+fileInputPdf.addEventListener('change', function() {
+  if (fileInputPdf.files && fileInputPdf.files.length > 0) {
+    loadPdfFile(fileInputPdf.files[0]);
+    fileInputPdf.value = '';
+  }
+});
+
+fileInputWebp.addEventListener('change', function() {
+  if (fileInputWebp.files && fileInputWebp.files.length > 0) {
+    loadWebpFiles(Array.from(fileInputWebp.files));
+    fileInputWebp.value = '';
+  }
+});
+
+// 3D tilt effect
+uploadZone.addEventListener('mousemove', function(e) {
+  var rect = uploadZone.getBoundingClientRect();
+  var x = e.clientX - rect.left;
+  var y = e.clientY - rect.top;
+  var cx = rect.width / 2;
+  var cy = rect.height / 2;
+  uploadZone.style.transform =
+    'perspective(800px) rotateX(' +
+    (((y - cy) / cy) * -7) + 'deg) rotateY(' +
+    (((x - cx) / cx) * 7) + 'deg)';
+});
+
+uploadZone.addEventListener('mouseleave', function() {
+  uploadZone.style.transform = '';
+});
+
+// ── LOAD PDF FILE ─────────────────────────────────────────────
+function loadPdfFile(file) {
+  if (file.type !== 'application/pdf' &&
+      !file.name.toLowerCase().endsWith('.pdf')) {
+    showToastLocal('Please upload a PDF file only.', 'error');
+    return;
+  }
+  if (file.size === 0) {
+    showToastLocal('This file appears to be empty.', 'error');
+    return;
+  }
+  if (file.size > 524288000) {
+    showToastLocal('File exceeds 500MB limit.', 'warning');
+    return;
+  }
+
+  state.pdfFile = file;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var buffer = e.target.result;
+    var arr = new Uint8Array(buffer, 0, 5);
+    if (arr[0] !== 0x25 || arr[1] !== 0x50 ||
+        arr[2] !== 0x44 || arr[3] !== 0x46) {
+      showToastLocal(
+        'This does not appear to be a valid PDF.', 'error');
+      return;
+    }
+    state.pdfArrayBuffer = buffer;
+
+    var copy = buffer.slice(0);
+    pdfjsLib.getDocument({ data: copy }).promise
+      .then(function(doc) {
+        state.pdfJsDoc = doc;
+        state.pageCount = doc.numPages;
+        state.selectedPages = [];
+        onPdfLoaded();
+      }).catch(function(err) {
+        if (err && err.message &&
+            err.message.toLowerCase()
+              .indexOf('password') !== -1) {
+          showToastLocal(
+            'This PDF is password protected. ' +
+            'Unlock it first at /tools/unlock-pdf.html',
+            'warning');
+        } else {
+          showToastLocal(
+            'Could not read this PDF. It may be damaged.',
+            'error');
+        }
+      });
+  };
+  reader.onerror = function() {
+    showToastLocal('Failed to read the file.', 'error');
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+// ── LOAD WEBP FILES ───────────────────────────────────────────
+function loadWebpFiles(files) {
+  var validFiles = [];
+  var readerPromises = [];
+  
+  files.forEach(function(file) {
+    if (file.size === 0) {
+      showToastLocal('This file appears to be empty.', 'error');
+      return;
+    }
+    if (file.type !== 'image/webp' && 
+        !file.name.toLowerCase().endsWith('.webp')) {
+      showToastLocal('Please upload WebP files only.', 'error');
+      return;
+    }
+    validFiles.push(file);
+    
+    var reader = new FileReader();
+    var promise = new Promise(function(resolve, reject) {
+      reader.onload = function(e) {
+        if (isValidWebP(e.target.result)) {
+          resolve({ file: file, buffer: e.target.result });
+        } else {
+          reject(new Error('Invalid WebP'));
+        }
+      };
+      reader.onerror = reject;
+      reader.readAsArrayBuffer(file);
+    });
+    readerPromises.push(promise);
+  });
+  
+  if (validFiles.length === 0) return;
+  
+  Promise.all(readerPromises)
+    .then(function(results) {
+      state.webpFiles = validFiles;
+      state.webpBlobs = results.map(function(r) {
+        return new Blob([r.buffer], { type: 'image/webp' });
+      });
+      state.selectedImages = [];
+      onWebpLoaded();
+    })
+    .catch(function(err) {
+      showToastLocal(
+        'Could not read one or more WebP files.', 'error');
+    });
+}
+
+// ── ON PDF LOADED ─────────────────────────────────────────────
+function onPdfLoaded() {
+  if (statName) statName.textContent =
+    state.pdfFile.name.length > 35
+      ? state.pdfFile.name.substring(0, 32) + '...'
+      : state.pdfFile.name;
+  if (statTotal) statTotal.textContent = state.pageCount;
+  if (statSize) statSize.textContent =
+    formatSize(state.pdfFile.size);
+
+  uploadZone.style.display = 'none';
+  toolArea.style.display = 'block';
+  resultSec.classList.remove('visible');
+  progressSec.classList.remove('visible');
+
+  updateSelectionUI();
+  buildPdfPageGrid();
+  updateEstimatedSize();
+}
+
+// ── ON WEBP LOADED ────────────────────────────────────────────
+function onWebpLoaded() {
+  if (statName) {
+    var name = state.webpFiles.length === 1 
+      ? state.webpFiles[0].name 
+      : state.webpFiles.length + ' images';
+    statName.textContent = name.length > 35 
+      ? name.substring(0, 32) + '...' : name;
+  }
+  if (statTotal) statTotal.textContent = state.webpFiles.length;
+  if (statSize) {
+    var totalSize = state.webpBlobs.reduce(
+      function(sum, blob) { return sum + blob.size; }, 0);
+    statSize.textContent = formatSize(totalSize);
+  }
+
+  uploadZone.style.display = 'none';
+  toolArea.style.display = 'block';
+  resultSec.classList.remove('visible');
+  progressSec.classList.remove('visible');
+
+  updateSelectionUI();
+  buildWebpImageGrid();
+  updateEstimatedSizePdf();
+}
+
+// ── UPDATE SELECTION UI ───────────────────────────────────────
+function updateSelectionUI() {
+  var n = state.mode === 'pdf-to-webp' 
+    ? state.selectedPages.length 
+    : state.selectedImages.length;
+    
+  if (statSelected) statSelected.textContent = n;
+  if (selBadge) selBadge.textContent = n + ' selected';
+  if (selSummaryTxt) {
+    selSummaryTxt.textContent = n === 0
+      ? 'Click items to select them for export'
+      : n + ' item' + (n !== 1 ? 's' : '') +
+        ' will be exported';
+  }
+
+  // Dim unselected
+  if (itemsGrid) {
+    var cards = itemsGrid.querySelectorAll('.item-card');
+    cards.forEach(function(card) {
+      var idx = parseInt(card.getAttribute('data-idx'), 10);
+      var isSelected = state.mode === 'pdf-to-webp'
+        ? state.selectedPages.indexOf(idx + 1) !== -1
+        : state.selectedImages.indexOf(idx) !== -1;
+        
+      if (n > 0 && !isSelected) {
+        card.classList.add('dimmed');
+      } else {
+        card.classList.remove('dimmed');
+      }
+    });
+  }
+}
+
+// ── BUILD PDF PAGE GRID ───────────────────────────────────────
+function buildPdfPageGrid() {
+  if (!itemsGrid) return;
+  itemsGrid.innerHTML = '';
+
+  for (var i = 1; i <= state.pageCount; i++) {
+    (function(pageNum) {
+      var card = document.createElement('div');
+      card.className = 'item-card';
+      card.setAttribute('data-idx', pageNum - 1);
+      card.setAttribute('role', 'gridcell');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label',
+        'Page ' + pageNum + ' — click to select');
+      card.setAttribute('aria-pressed', 'false');
+
+      // Green check overlay
+      var checkOverlay = document.createElement('div');
+      checkOverlay.className = 'item-check-overlay';
+      checkOverlay.setAttribute('aria-hidden', 'true');
+      checkOverlay.innerHTML =
+        '<svg width="12" height="12" viewBox="0 0 24 24"' +
+        ' fill="none" stroke="#000" stroke-width="3">' +
+        '<polyline points="20 6 9 17 4 12"/></svg>';
+
+      // Reorder handle (hidden in PDF mode)
+      var reorderHandle = document.createElement('div');
+      reorderHandle.className = 'reorder-handle';
+      reorderHandle.setAttribute('aria-hidden', 'true');
+      reorderHandle.innerHTML =
+        '<svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/>' +
+        '<line x1="3" y1="12" x2="21" y2="12"/>' +
+        '<line x1="3" y1="18" x2="21" y2="18"/></svg>';
+
+      // Canvas wrap
+      var canvasWrap = document.createElement('div');
+      canvasWrap.className = 'item-media-wrap';
+      var skel = document.createElement('div');
+      skel.className = 'thumb-skeleton';
+      canvasWrap.appendChild(skel);
+
+      // Footer
+      var footer = document.createElement('div');
+      footer.className = 'item-footer';
+      var numLabel = document.createElement('div');
+      numLabel.className = 'item-num';
+      numLabel.textContent = 'Page ' + pageNum;
+      footer.appendChild(numLabel);
+
+      card.appendChild(checkOverlay);
+      card.appendChild(reorderHandle);
+      card.appendChild(canvasWrap);
+      card.appendChild(footer);
+      itemsGrid.appendChild(card);
+
+      // Render thumbnail
+      if (state.pdfJsDoc) {
+        state.pdfJsDoc.getPage(pageNum).then(function(page) {
+          var vp = page.getViewport({ scale: 0.25 });
+          var canvas = document.createElement('canvas');
+          canvas.width = vp.width;
+          canvas.height = vp.height;
+          var ctx = canvas.getContext('2d');
+          return page.render({
+            canvasContext: ctx,
+            viewport: vp
+          }).promise.then(function() {
+            var sk = canvasWrap.querySelector(
+              '.thumb-skeleton');
+            if (sk) canvasWrap.removeChild(sk);
+            canvasWrap.appendChild(canvas);
+            updateEstimatedSize(vp.width, vp.height);
+          });
+        }).catch(function() {});
+      }
+
+      // Toggle selection
+      function toggleSelect() {
+        var idx = state.selectedPages.indexOf(pageNum);
+        if (idx === -1) {
+          state.selectedPages.push(pageNum);
+          card.classList.add('selected');
+          card.setAttribute('aria-pressed', 'true');
+        } else {
+          state.selectedPages.splice(idx, 1);
+          card.classList.remove('selected');
+          card.setAttribute('aria-pressed', 'false');
+        }
+        updateSelectionUI();
+      }
+
+      card.addEventListener('click', toggleSelect);
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleSelect();
+        }
+      });
+    })(i);
+  }
+}
+
+// ── BUILD WEBP IMAGE GRID ─────────────────────────────────────
+function buildWebpImageGrid() {
+  if (!itemsGrid) return;
+  itemsGrid.innerHTML = '';
+
+  state.webpBlobs.forEach(function(blob, idx) {
+    (function(imageIdx, imageBlob) {
+      var card = document.createElement('div');
+      card.className = 'item-card';
+      card.setAttribute('data-idx', imageIdx);
+      card.setAttribute('role', 'gridcell');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label',
+        'Image ' + (imageIdx + 1) + ' — click to select');
+      card.setAttribute('aria-pressed', 'false');
+      card.setAttribute('draggable', 'true');
+
+      // Green check overlay
+      var checkOverlay = document.createElement('div');
+      checkOverlay.className = 'item-check-overlay';
+      checkOverlay.setAttribute('aria-hidden', 'true');
+      checkOverlay.innerHTML =
+        '<svg width="12" height="12" viewBox="0 0 24 24"' +
+        ' fill="none" stroke="#000" stroke-width="3">' +
+        '<polyline points="20 6 9 17 4 12"/></svg>';
+
+      // Reorder handle
+      var reorderHandle = document.createElement('div');
+      reorderHandle.className = 'reorder-handle';
+      reorderHandle.setAttribute('aria-hidden', 'true');
+      reorderHandle.innerHTML =
+        '<svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/>' +
+        '<line x1="3" y1="12" x2="21" y2="12"/>' +
+        '<line x1="3" y1="18" x2="21" y2="18"/></svg>';
+
+      // Image wrap
+      var imgWrap = document.createElement('div');
+      imgWrap.className = 'item-media-wrap';
+      var skel = document.createElement('div');
+      skel.className = 'thumb-skeleton';
+      imgWrap.appendChild(skel);
+      
+      var img = document.createElement('img');
+      img.alt = 'Preview of image ' + (imageIdx + 1);
+      img.src = URL.createObjectURL(imageBlob);
+      img.onload = function() {
+        var sk = imgWrap.querySelector('.thumb-skeleton');
+        if (sk) imgWrap.removeChild(sk);
+        URL.revokeObjectURL(img.src);
+        imgWrap.appendChild(img);
+        updateEstimatedSizePdf();
+      };
+
+      // Footer
+      var footer = document.createElement('div');
+      footer.className = 'item-footer';
+      var numLabel = document.createElement('div');
+      numLabel.className = 'item-num';
+      numLabel.textContent = 'Image ' + (imageIdx + 1);
+      footer.appendChild(numLabel);
+
+      card.appendChild(checkOverlay);
+      card.appendChild(reorderHandle);
+      card.appendChild(imgWrap);
+      card.appendChild(footer);
+      itemsGrid.appendChild(card);
+
+      // Toggle selection
+      function toggleSelect() {
+        var idx = state.selectedImages.indexOf(imageIdx);
+        if (idx === -1) {
+          state.selectedImages.push(imageIdx);
+          card.classList.add('selected');
+          card.setAttribute('aria-pressed', 'true');
+        } else {
+          state.selectedImages.splice(idx, 1);
+          card.classList.remove('selected');
+          card.setAttribute('aria-pressed', 'false');
+        }
+        updateSelectionUI();
+      }
+
+      card.addEventListener('click', toggleSelect);
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleSelect();
+        }
+      });
+
+      // Drag and drop reordering
+      card.addEventListener('dragstart', function(e) {
+        card.classList.add('dragging');
+        e.dataTransfer.setData('text/plain', imageIdx);
+      });
+
+      card.addEventListener('dragend', function() {
+        card.classList.remove('dragging');
+      });
+
+      card.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        card.classList.add('drag-over');
+      });
+
+      card.addEventListener('dragleave', function() {
+        card.classList.remove('drag-over');
+      });
+
+      card.addEventListener('drop', function(e) {
+        e.preventDefault();
+        card.classList.remove('drag-over');
+        var fromIdx = parseInt(
+          e.dataTransfer.getData('text/plain'), 10);
+        var toIdx = imageIdx;
+        if (fromIdx !== toIdx) {
+          // Reorder in state arrays
+          var file = state.webpFiles.splice(fromIdx, 1)[0];
+          state.webpFiles.splice(toIdx, 0, file);
+          var blob = state.webpBlobs.splice(fromIdx, 1)[0];
+          state.webpBlobs.splice(toIdx, 0, blob);
+          // Rebuild grid to reflect new order
+          buildWebpImageGrid();
+          updateSelectionUI();
+        }
+      });
+    })(idx, blob);
+  });
+}
+
+// ── ESTIMATED SIZE UPDATE (PDF→WebP) ──────────────────────────
+function updateEstimatedSize(thumbW, thumbH) {
+  if (!estSizeText) return;
+  var scale = state.settings.scale;
+  var fmt = state.settings.format;
+  var quality = state.settings.quality;
+
+  var wPx = thumbW
+    ? Math.round(thumbW * scale / 0.25)
+    : Math.round(800 * scale);
+  var hPx = thumbH
+    ? Math.round(thumbH * scale / 0.25)
+    : Math.round(1100 * scale);
+
+  var estimated = estimateSize(wPx, hPx, fmt, quality * 100);
+  estSizeText.textContent = '~' + formatSize(estimated) +
+    ' per page';
+}
+
+// ── ESTIMATED SIZE UPDATE (WebP→PDF) ──────────────────────────
+function updateEstimatedSizePdf() {
+  if (!estSizeTextPdf || state.webpBlobs.length === 0) return;
+  
+  // Rough estimate: sum of WebP sizes + PDF overhead
+  var totalWebpSize = state.webpBlobs.reduce(
+    function(sum, blob) { return sum + blob.size; }, 0);
+  // PDF adds ~10-20% overhead
+  var estimated = Math.round(totalWebpSize * 1.15);
+  estSizeTextPdf.textContent = '~' + formatSize(estimated) + ' total';
+}
+
+// ── FORMAT TABS (PDF→WebP) ────────────────────────────────────
+var formatTabs = document.querySelectorAll('.format-tab');
+formatTabs.forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    formatTabs.forEach(function(t) {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    state.settings.format = tab.getAttribute('data-fmt');
+
+    // Hide quality for PNG (lossless)
+    if (qualityGroup) {
+      qualityGroup.style.opacity =
+        state.settings.format === 'png' ? '0.3' : '1';
+      qualityGroup.style.pointerEvents =
+        state.settings.format === 'png' ? 'none' : '';
+    }
+    updateEstimatedSize();
+  });
+});
+
+// ── RESOLUTION BUTTONS (PDF→WebP) ─────────────────────────────
+var resBtns = document.querySelectorAll('.res-btn');
+resBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    resBtns.forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-checked', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-checked', 'true');
+
+    var scaleVal = btn.getAttribute('data-scale');
+    if (scaleVal === 'custom') {
+      if (customScaleWrap) {
+        customScaleWrap.style.display = 'flex';
+      }
+      var csi = parseFloat(
+        customScaleInput ? customScaleInput.value : '2');
+      state.settings.scale = isNaN(csi) ? 2 : csi;
+    } else {
+      if (customScaleWrap) {
+        customScaleWrap.style.display = 'none';
+      }
+      state.settings.scale = parseFloat(scaleVal) || 1;
+    }
+    updateEstimatedSize();
+  });
+});
+
+if (customScaleInput) {
+  customScaleInput.addEventListener('input', function() {
+    var val = parseFloat(customScaleInput.value);
+    if (!isNaN(val) && val >= 0.5 && val <= 5) {
+      state.settings.scale = val;
+      updateEstimatedSize();
+    }
+  });
+}
+
+// ── QUALITY SLIDER (PDF→WebP) ─────────────────────────────────
+if (qualitySlider) {
+  qualitySlider.addEventListener('input', function() {
+    var val = parseInt(qualitySlider.value, 10);
+    state.settings.quality = val / 100;
+    if (qualityVal) qualityVal.textContent = val + '%';
+    updateEstimatedSize();
+  });
+}
+
+// ── PAGE SIZE BUTTONS (WebP→PDF) ──────────────────────────────
+var pageSizeBtns = document.querySelectorAll('.page-size-btn');
+pageSizeBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    pageSizeBtns.forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-checked', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-checked', 'true');
+
+    var sizeVal = btn.getAttribute('data-size');
+    state.settings.pageSize = sizeVal;
+    
+    if (customDimWrap) {
+      customDimWrap.classList.toggle('visible', 
+        sizeVal === 'custom');
+    }
+    updateEstimatedSizePdf();
+  });
+});
+
+// Custom dimensions inputs
+if (customWidthInput) {
+  customWidthInput.addEventListener('input', function() {
+    var val = parseFloat(customWidthInput.value);
+    if (!isNaN(val) && val >= 50 && val <= 500) {
+      state.settings.customWidth = val;
+      updateEstimatedSizePdf();
+    }
+  });
+}
+if (customHeightInput) {
+  customHeightInput.addEventListener('input', function() {
+    var val = parseFloat(customHeightInput.value);
+    if (!isNaN(val) && val >= 50 && val <= 500) {
+      state.settings.customHeight = val;
+      updateEstimatedSizePdf();
+    }
+  });
+}
+// Unit toggle
+document.querySelectorAll('input[name="dim-unit"]').forEach(
+  function(radio) {
+    radio.addEventListener('change', function() {
+      state.settings.dimUnit = this.value;
+      updateEstimatedSizePdf();
+    });
+  });
+
+// ── ORIENTATION BUTTONS (WebP→PDF) ────────────────────────────
+var orientBtns = document.querySelectorAll('.orientation-btn');
+orientBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    orientBtns.forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-checked', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-checked', 'true');
+    state.settings.orientation = btn.getAttribute('data-orient');
+    updateEstimatedSizePdf();
+  });
+});
+
+// ── MARGINS BUTTONS (WebP→PDF) ────────────────────────────────
+var marginsBtns = document.querySelectorAll('.margins-btn');
+marginsBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    marginsBtns.forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-checked', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-checked', 'true');
+    state.settings.margin = parseInt(
+      btn.getAttribute('data-margin'), 10);
+    updateEstimatedSizePdf();
+  });
+});
+
+// ── IMAGE FIT BUTTONS (WebP→PDF) ──────────────────────────────
+var fitBtns = document.querySelectorAll('.fit-btn');
+fitBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    fitBtns.forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-checked', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-checked', 'true');
+    state.settings.imageFit = btn.getAttribute('data-fit');
+    updateEstimatedSizePdf();
+  });
+});
+
+// ── SELECT ALL / DESELECT ALL ─────────────────────────────────
+if (btnSelectAll) {
+  btnSelectAll.addEventListener('click', function() {
+    if (state.mode === 'pdf-to-webp') {
+      state.selectedPages = [];
+      for (var i = 1; i <= state.pageCount; i++) {
+        state.selectedPages.push(i);
+      }
+    } else {
+      state.selectedImages = [];
+      for (var j = 0; j < state.webpFiles.length; j++) {
+        state.selectedImages.push(j);
+      }
+    }
+    var cards = itemsGrid.querySelectorAll('.item-card');
+    cards.forEach(function(card) {
+      card.classList.add('selected');
+      card.setAttribute('aria-pressed', 'true');
+    });
+    updateSelectionUI();
+  });
+}
+
+if (btnDeselectAll) {
+  btnDeselectAll.addEventListener('click', function() {
+    state.selectedPages = [];
+    state.selectedImages = [];
+    var cards = itemsGrid.querySelectorAll('.item-card');
+    cards.forEach(function(card) {
+      card.classList.remove('selected');
+      card.setAttribute('aria-pressed', 'false');
+    });
+    updateSelectionUI();
+  });
+}
+
+// ── CLEAR FILES ───────────────────────────────────────────────
+if (btnClearFile) {
+  btnClearFile.addEventListener('click', resetTool);
+}
+
+function resetTool() {
+  if (state.resultBlobURL) {
+    URL.revokeObjectURL(state.resultBlobURL);
+    state.resultBlobURL = null;
+  }
+  
+  // Reset PDF state
+  state.pdfFile = null;
+  state.pdfArrayBuffer = null;
+  state.pageCount = 0;
+  state.pdfJsDoc = null;
+  state.selectedPages = [];
+  
+  // Reset WebP state
+  state.webpFiles = [];
+  state.webpBlobs = [];
+  state.selectedImages = [];
+
+  if (itemsGrid) itemsGrid.innerHTML = '';
+  toolArea.style.display = 'none';
+  uploadZone.style.display = 'flex';
+  resultSec.classList.remove('visible');
+  progressSec.classList.remove('visible');
+  setExportLoading(false);
+  fileInputPdf.value = '';
+  fileInputWebp.value = '';
+}
+
+// ── PROGRESS ──────────────────────────────────────────────────
+function setProgress(pct, label) {
+  if (!progressFill) return;
+  progressFill.style.width = pct + '%';
+  progressFill.setAttribute('aria-valuenow', pct);
+  if (progressLabel) progressLabel.textContent = label;
+  if (progressPct) progressPct.textContent = pct + '%';
+}
+
+function setExportLoading(on) {
+  if (!btnExport) return;
+  btnExport.disabled = on;
+  btnExport.setAttribute('aria-disabled', String(on));
+  if (on) {
+    btnExport.classList.add('loading');
+    if (exportBtnText) exportBtnText.textContent =
+      state.mode === 'pdf-to-webp' ? 'Converting...' : 'Creating PDF...';
+    if (exportIcon) exportIcon.style.display = 'none';
+  } else {
+    btnExport.classList.remove('loading');
+    if (exportBtnText) exportBtnText.textContent =
+      state.mode === 'pdf-to-webp' ? 'Convert to WebP' : 'Convert to PDF';
+    if (exportIcon) exportIcon.style.display = '';
+  }
+}
+
+// ── EXPORT ────────────────────────────────────────────────────
+if (btnExport) {
+  btnExport.addEventListener('click', function() {
+    if (state.mode === 'pdf-to-webp') {
+      if (!state.pdfJsDoc) {
+        showToastLocal('Please upload a PDF first.', 'warning');
+        return;
+      }
+      if (state.selectedPages.length === 0) {
+        showToastLocal('Please select at least one page to export.', 'warning');
+        return;
+      }
+      doPdfToWebpExport();
+    } else {
+      if (state.webpBlobs.length === 0) {
+        showToastLocal('Please upload WebP images first.', 'warning');
+        return;
+      }
+      if (state.selectedImages.length === 0) {
+        showToastLocal('Please select at least one image to export.', 'warning');
+        return;
+      }
+      doWebpToPdfExport();
+    }
+  });
+}
+
+// ── PDF TO WEBP EXPORT ────────────────────────────────────────
+function doPdfToWebpExport() {
+  setExportLoading(true);
+  progressSec.classList.add('visible');
+  resultSec.classList.remove('visible');
+  setProgress(0, 'Preparing export...');
+
+  var sortedPages = state.selectedPages.slice().sort(
+    function(a, b) { return a - b; });
+
+  var fmt = state.settings.format;
+  var scale = state.settings.scale;
+  var quality = state.settings.quality;
+  var mimeType = getMimeType(fmt);
+  var ext = getExtension(fmt);
+  var ts = generateTimestamp();
+
+  var total = sortedPages.length;
+  var renderedImages = [];
+
+  var renderNext = function(i) {
+    if (i >= total) return Promise.resolve();
+    var pageNum = sortedPages[i];
+    var pct = Math.round((i / total) * 90);
+    setProgress(pct,
+      'Converting page ' + pageNum +
+      ' of ' + state.pageCount + '...');
+
+    return state.pdfJsDoc.getPage(pageNum)
+      .then(function(page) {
+        var vp = page.getViewport({ scale: scale });
+        var canvas = document.createElement('canvas');
+        canvas.width = Math.round(vp.width);
+        canvas.height = Math.round(vp.height);
+        var ctx = canvas.getContext('2d');
+
+        return page.render({
+          canvasContext: ctx,
+          viewport: vp
+        }).promise.then(function() {
+          return new Promise(function(resolve, reject) {
+            var q = fmt === 'png' ? undefined : quality;
+            canvas.toBlob(function(blob) {
+              if (!blob) {
+                reject(new Error('toBlob failed'));
+                return;
+              }
+              var fname = total === 1
+                ? 'pdf-page-' + pageNum + '-' + ts + '.' + ext
+                : 'page-' + String(pageNum).padStart(3, '0') + '.' + ext;
+              renderedImages.push({ name: fname, blob: blob });
+              resolve();
+            }, mimeType, q);
+          });
+        });
+      })
+      .then(function() { return renderNext(i + 1); });
+  };
+
+  setTimeout(function() {
+    renderNext(0).then(function() {
+      setProgress(95, 'Packaging output...');
+
+      if (renderedImages.length === 0) {
+        throw new Error('No images rendered');
+      }
+
+      if (renderedImages.length === 1) {
+        var single = renderedImages[0];
+        if (state.resultBlobURL) {
+          URL.revokeObjectURL(state.resultBlobURL);
+        }
+        state.resultBlobURL = URL.createObjectURL(single.blob);
+        var fname = 'pdf-page-' + sortedPages[0] + '-' + ts + '.' + ext;
+        finishExport(state.resultBlobURL, fname, 1, single.blob.size, false, 'webp');
+      } else {
+        var zip = new JSZip();
+        renderedImages.forEach(function(img) {
+          zip.file(img.name, img.blob);
+        });
+        zip.generateAsync({ type: 'blob' }).then(function(zipBlob) {
+          if (state.resultBlobURL) {
+            URL.revokeObjectURL(state.resultBlobURL);
+          }
+          state.resultBlobURL = URL.createObjectURL(zipBlob);
+          var zipName = 'pdf-webp-images-' + ts + '.zip';
+          finishExport(state.resultBlobURL, zipName, renderedImages.length, zipBlob.size, true, 'webp');
+        });
+      }
+    }).catch(function(err) {
+      console.error('Export error:', err);
+      showToastLocal('An error occurred during export.', 'error');
+      setExportLoading(false);
+      progressSec.classList.remove('visible');
+    });
+  }, 50);
+}
+
+// ── WEBP TO PDF EXPORT ────────────────────────────────────────
+function doWebpToPdfExport() {
+  setExportLoading(true);
+  progressSec.classList.add('visible');
+  resultSec.classList.remove('visible');
+  setProgress(0, 'Preparing PDF...');
+
+  var sortedImages = state.selectedImages.slice().sort(
+    function(a, b) { return a - b; });
+
+  var total = sortedImages.length;
+  var ts = generateTimestamp();
+  
+  // Get page dimensions in points (1pt = 1/72 inch)
+  var pageSize = state.settings.pageSize;
+  var unit = state.settings.dimUnit;
+  var width, height;
+  
+  if (pageSize === 'custom') {
+    var w = state.settings.customWidth;
+    var h = state.settings.customHeight;
+    if (unit === 'mm') {
+      width = w * 2.83465; // mm to points
+      height = h * 2.83465;
+    } else {
+      width = w * 72; // inches to points
+      height = h * 72;
+    }
+  } else if (pageSize === 'letter') {
+    width = 612;   // 8.5in * 72
+    height = 792;  // 11in * 72
+  } else {
+    width = 595;   // A4 width in points
+    height = 842;  // A4 height in points
+  }
+  
+  // Swap for landscape
+  if (state.settings.orientation === 'landscape') {
+    var temp = width;
+    width = height;
+    height = temp;
+  }
+  
+  var margin = state.settings.margin * 2.83465; // mm to points
+  var fitMode = state.settings.imageFit;
+
+  var pdf = new jsPDF({
+    orientation: state.settings.orientation,
+    unit: 'pt',
+    format: [width, height]
+  });
+
+  var addNextImage = function(i) {
+    if (i >= total) return Promise.resolve();
+    
+    var imgIdx = sortedImages[i];
+    var pct = Math.round((i / total) * 90);
+    setProgress(pct, 'Adding image ' + (i + 1) + ' of ' + total + '...');
+    
+    return new Promise(function(resolve, reject) {
+      var blob = state.webpBlobs[imgIdx];
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var img = new Image();
+        img.onload = function() {
+          if (i > 0) pdf.addPage([width, height]);
+          
+          // Calculate image placement
+          var imgW = img.width;
+          var imgH = img.height;
+          var availableW = width - (margin * 2);
+          var availableH = height - (margin * 2);
+          
+          var x, y, finalW, finalH;
+          
+          if (fitMode === 'stretch') {
+            finalW = availableW;
+            finalH = availableH;
+            x = margin;
+            y = margin;
+          } else if (fitMode === 'original') {
+            finalW = Math.min(imgW, availableW);
+            finalH = Math.min(imgH, availableH);
+            x = margin + (availableW - finalW) / 2;
+            y = margin + (availableH - finalH) / 2;
+          } else { // fit
+            var ratio = Math.min(availableW / imgW, availableH / imgH);
+            finalW = imgW * ratio;
+            finalH = imgH * ratio;
+            x = margin + (availableW - finalW) / 2;
+            y = margin + (availableH - finalH) / 2;
+          }
+          
+          pdf.addImage(e.target.result, 'WEBP', x, y, finalW, finalH);
+          resolve();
+        };
+        img.onerror = reject;
+        img.src = e.target.result;
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    }).then(function() {
+      return addNextImage(i + 1);
+    });
+  };
+
+  setTimeout(function() {
+    addNextImage(0).then(function() {
+      setProgress(95, 'Finalizing PDF...');
+      
+      pdf.output('blob').then(function(pdfBlob) {
+        if (state.resultBlobURL) {
+          URL.revokeObjectURL(state.resultBlobURL);
+        }
+        state.resultBlobURL = URL.createObjectURL(pdfBlob);
+        var fname = 'images-to-pdf-' + ts + '.pdf';
+        finishExport(state.resultBlobURL, fname, total, pdfBlob.size, false, 'pdf');
+      }).catch(function(err) {
+        throw err;
+      });
+    }).catch(function(err) {
+      console.error('PDF export error:', err);
+      showToastLocal('An error occurred during PDF creation.', 'error');
+      setExportLoading(false);
+      progressSec.classList.remove('visible');
+    });
+  }, 50);
+}
+
+// ── FINISH EXPORT ─────────────────────────────────────────────
+function finishExport(url, fname, count, size, isZip, format) {
+  setProgress(100, 'Complete!');
+
+  if (resultStats) {
+    var formatLabel = format === 'webp' ? 'WebP' : 'PDF';
+    resultStats.textContent =
+      count + ' item' + (count !== 1 ? 's' : '') +
+      ' exported as ' + formatLabel +
+      (isZip ? ' (ZIP)' : '') +
+      ' · ' + formatSize(size);
+  }
+
+  if (filenamePrev) filenamePrev.textContent = fname;
+  btnDownload._url = url;
+  btnDownload._fname = fname;
+
+  setExportLoading(false);
+  progressSec.classList.remove('visible');
+  resultSec.classList.add('visible');
+  showToastLocal(
+    count + ' item' + (count !== 1 ? 's' : '') +
+    ' exported successfully!', 'success');
+}
+
+// ── DOWNLOAD ─────────────────────────────────────────────────
+if (btnDownload) {
+  btnDownload.addEventListener('click', function() {
+    if (!btnDownload._url) return;
+    var a = document.createElement('a');
+    a.href = btnDownload._url;
+    a.download = btnDownload._fname || 'export.webp';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    showToastLocal('Download started!', 'success');
+  });
+}
+
+// ── RESET ────────────────────────────────────────────────────
+if (btnReset) {
+  btnReset.addEventListener('click', resetTool);
+}
+
+// ── FAQ ACCORDION ─────────────────────────────────────────────
+(function() {
+  var items = document.querySelectorAll('#faq .faq-item');
+  items.forEach(function(item) {
+    var btn = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+    if (!btn || !answer) return;
+    btn.addEventListener('click', function() {
+      var isOpen = item.classList.contains('open');
+      items.forEach(function(i) {
+        i.classList.remove('open');
+        var a = i.querySelector('.faq-answer');
+        var b = i.querySelector('.faq-question');
+        if (a) a.style.maxHeight = '0';
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
+</script>
+
+<!-- SEO Word Count: ~1600 words -->
+
+
+</body></html>

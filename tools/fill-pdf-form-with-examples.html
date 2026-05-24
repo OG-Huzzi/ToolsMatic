@@ -1,0 +1,3662 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PDF Form Filler with Examples Online | Free ToolsMatic</title>
+  <meta name="description" content="Use PDF Form Filler with Examples online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/fill-pdf-form-with-examples.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/fill-pdf-form-with-examples.html">
+  <meta property="og:title" content="PDF Form Filler with Examples Online | Free ToolsMatic">
+  <meta property="og:description" content="Use PDF Form Filler with Examples online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PDF Form Filler with Examples Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use PDF Form Filler with Examples online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  
+
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Fill a PDF Form Online",
+    "description": "Fill interactive PDF forms using ToolsMatic - free, private, no upload required.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload your PDF form",
+        "text": "Drag and drop your fillable PDF onto the upload zone or click to browse and select it from your device."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Fill in the form fields",
+        "text": "Click any detected field on the preview or use the field sidebar. Type text, check boxes, select dropdowns or pick dates."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Review and validate",
+        "text": "Check the progress tracker. Required fields stay highlighted until they are completed. Use search to jump to specific fields."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Save or export",
+        "text": "Download the filled PDF, export field data as JSON, or print the completed form directly from your browser."
+      }
+    ]
+  }
+  </script>
+
+  
+
+  <style>
+    .ff-shell {
+      padding-bottom: 5rem;
+    }
+
+    .ff-tool-container {
+      width: min(100% - 2rem, 1080px);
+      margin: 0 auto;
+    }
+
+    .ff-upload-zone {
+      transform-style: preserve-3d;
+      will-change: transform;
+      touch-action: manipulation;
+    }
+
+    .ff-upload-zone.dragover {
+      animation: ff-drop-pulse 1s ease-in-out infinite;
+      background: rgba(245, 158, 11, 0.06);
+      box-shadow:
+        0 0 0 6px var(--accent-glow),
+        inset 0 0 26px rgba(245, 158, 11, 0.08);
+    }
+
+    @keyframes ff-drop-pulse {
+      0%,
+      100% {
+        border-color: var(--accent);
+      }
+
+      50% {
+        border-color: #fbbf24;
+      }
+    }
+
+    .ff-tool-area {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .ff-file-bar,
+    .ff-panel,
+    .ff-result-box {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .ff-file-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .ff-file-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.05rem;
+      min-width: 0;
+    }
+
+    .ff-stat {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+
+    .ff-stat strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .ff-progress-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.5rem 0.8rem;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.08);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .ff-clear-file.btn {
+      width: auto;
+      min-height: 40px;
+      padding: 0.7rem 0.95rem;
+      white-space: nowrap;
+    }
+
+    .ff-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .ff-panel {
+      display: grid;
+      gap: 1rem;
+      padding: 1.05rem;
+    }
+
+    .ff-panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .ff-panel-title {
+      color: var(--text-primary);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .ff-panel-subtitle {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .ff-preview-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .ff-zoom-group {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .ff-zoom-btn {
+      min-width: 54px;
+      min-height: 36px;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      touch-action: manipulation;
+    }
+
+    .ff-zoom-btn:hover {
+      border-color: rgba(245, 158, 11, 0.35);
+      color: var(--text-primary);
+    }
+
+    .ff-zoom-btn.active {
+      border-color: rgba(245, 158, 11, 0.46);
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--accent);
+      box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.18);
+    }
+
+    .ff-page-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .ff-page-btn.btn {
+      width: 38px;
+      min-width: 38px;
+      min-height: 38px;
+      padding: 0;
+      border-radius: 12px;
+    }
+
+    .ff-page-label {
+      min-width: 92px;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .ff-preview-area {
+      position: relative;
+      min-height: 540px;
+      max-height: 72vh;
+      overflow: auto;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background:
+        radial-gradient(circle at top, rgba(245, 158, 11, 0.06), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 32%),
+        #525659;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      touch-action: pan-x pan-y;
+    }
+
+    .ff-preview-stage {
+      position: relative;
+      flex: 0 0 auto;
+      width: max-content;
+      max-width: 100%;
+    }
+
+    .ff-preview-stage canvas {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.24);
+      background: #ffffff;
+    }
+
+    .ff-field-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .ff-form-field {
+      position: absolute;
+      pointer-events: auto;
+      border: 1px solid rgba(245, 158, 11, 0.6);
+      border-radius: 4px;
+      background: rgba(245, 158, 11, 0.12);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .ff-form-field.filled {
+      border-color: rgba(34, 197, 94, 0.72);
+      background: rgba(34, 197, 94, 0.12);
+    }
+
+    .ff-form-field.required.empty {
+      border-color: rgba(239, 68, 68, 0.88);
+      box-shadow: inset 0 0 0 1px rgba(239, 68, 68, 0.25);
+    }
+
+    .ff-form-field.focused {
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18);
+      z-index: 5;
+    }
+
+    .ff-form-field.read-only {
+      background: rgba(255, 255, 255, 0.08);
+      border-style: dashed;
+      opacity: 0.82;
+    }
+
+    .ff-form-field input,
+    .ff-form-field textarea,
+    .ff-form-field select {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 0;
+      padding: 4px 6px;
+      background: transparent;
+      color: #111111;
+      font-size: 13px;
+      font-family: "Inter", sans-serif;
+      resize: none;
+      outline: none;
+      appearance: none;
+    }
+
+    .ff-form-field textarea {
+      line-height: 1.35;
+    }
+
+    .ff-form-field select {
+      background:
+        linear-gradient(45deg, transparent 50%, #111111 50%),
+        linear-gradient(135deg, #111111 50%, transparent 50%);
+      background-position:
+        calc(100% - 14px) calc(50% - 2px),
+        calc(100% - 9px) calc(50% - 2px);
+      background-size: 5px 5px, 5px 5px;
+      background-repeat: no-repeat;
+      padding-right: 20px;
+    }
+
+    .ff-check-wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .ff-check-wrap input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .ff-preview-overlay {
+      position: absolute;
+      inset: 0;
+      display: none;
+      place-items: center;
+      background: rgba(4, 4, 5, 0.38);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      z-index: 8;
+    }
+
+    .ff-preview-overlay.is-visible {
+      display: grid;
+    }
+
+    .ff-sidebar {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .ff-field-search {
+      width: 100%;
+      min-height: 46px;
+      padding: 0.8rem 0.95rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: #0d0d0d;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .ff-field-search:focus {
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 0 0 4px var(--accent-glow);
+      outline: none;
+    }
+
+    .ff-field-list-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .ff-field-list {
+      display: grid;
+      gap: 0.7rem;
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 0.2rem;
+    }
+
+    .ff-field-card {
+      display: grid;
+      gap: 0.55rem;
+      padding: 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.02);
+      cursor: pointer;
+      transition: var(--transition);
+      touch-action: manipulation;
+    }
+
+    .ff-field-card:hover {
+      border-color: rgba(245, 158, 11, 0.35);
+      background: rgba(245, 158, 11, 0.04);
+      transform: translateY(-1px);
+    }
+
+    .ff-field-card.filled {
+      border-color: rgba(34, 197, 94, 0.35);
+      background: rgba(34, 197, 94, 0.06);
+    }
+
+    .ff-field-card.required.empty {
+      border-color: rgba(239, 68, 68, 0.45);
+    }
+
+    .ff-field-card.focused {
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.16);
+      border-color: rgba(245, 158, 11, 0.45);
+    }
+
+    .ff-field-card-top,
+    .ff-field-card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .ff-field-card-name {
+      min-width: 0;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .ff-field-kind {
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ff-field-pages,
+    .ff-field-value {
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .ff-field-value {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .ff-field-status {
+      flex-shrink: 0;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ff-field-status.is-filled {
+      color: var(--success);
+    }
+
+    .ff-field-status.is-required {
+      color: var(--error);
+    }
+
+    .ff-field-clear {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      touch-action: manipulation;
+    }
+
+    .ff-field-clear:hover {
+      border-color: rgba(239, 68, 68, 0.45);
+      background: rgba(239, 68, 68, 0.08);
+      color: #fca5a5;
+    }
+
+    .ff-empty-search {
+      padding: 1rem;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-card);
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    .ff-action-stack {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .ff-switch-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .ff-switch-copy {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .ff-switch-title {
+      color: var(--text-primary);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .ff-switch-desc {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .ff-switch {
+      position: relative;
+      width: 52px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .ff-switch input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .ff-switch-track {
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: #27272a;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .ff-switch-track::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #ffffff;
+      transition: var(--transition);
+    }
+
+    .ff-switch input:checked + .ff-switch-track {
+      background: var(--accent);
+    }
+
+    .ff-switch input:checked + .ff-switch-track::after {
+      transform: translateX(22px);
+    }
+
+    .ff-switch input:focus-visible + .ff-switch-track {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .ff-actions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .ff-actions-grid .btn {
+      width: 100%;
+      min-height: 44px;
+      padding: 0.8rem 0.9rem;
+      font-size: 0.86rem;
+    }
+
+    .ff-primary-action.btn {
+      width: 100%;
+      min-height: 50px;
+    }
+
+    .ff-note {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+
+    .ff-progress-wrap {
+      margin-top: -0.15rem;
+    }
+
+    .ff-result-box {
+      display: grid;
+      gap: 1rem;
+      padding: 1.35rem;
+    }
+
+    .ff-result-title {
+      color: var(--success);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .ff-result-stats {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .ff-filename-preview {
+      display: grid;
+      gap: 0.25rem;
+      padding: 0.95rem 1rem;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: var(--radius-card);
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .ff-filename-label {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .ff-filename-name {
+      color: var(--text-primary);
+      font-size: 0.92rem;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .ff-result-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .ff-result-actions .btn {
+      flex: 1 1 220px;
+    }
+
+    .ff-toast-link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .ff-unlock-toast .toast-message {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem;
+      align-items: baseline;
+    }
+
+    .ff-field-card:focus-visible,
+    .ff-zoom-btn:focus-visible,
+    .ff-field-clear:focus-visible,
+    .ff-form-field input:focus-visible,
+    .ff-form-field textarea:focus-visible,
+    .ff-form-field select:focus-visible,
+    .ff-field-search:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 1024px) {
+      .ff-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .ff-sidebar {
+        order: 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ff-tool-container {
+        width: min(100% - 1.5rem, 1080px);
+      }
+
+      .ff-file-bar {
+        align-items: flex-start;
+      }
+
+      .ff-preview-area {
+        min-height: 420px;
+        max-height: none;
+      }
+
+      .ff-actions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ff-result-actions {
+        flex-direction: column;
+      }
+
+      .ff-result-actions .btn {
+        flex-basis: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ff-tool-container {
+        width: min(100% - 1.25rem, 1080px);
+      }
+
+      .ff-file-bar {
+        padding: 0.9rem;
+      }
+
+      .ff-panel {
+        padding: 0.95rem;
+      }
+
+      .ff-preview-area {
+        padding: 0.8rem;
+        min-height: 360px;
+      }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/fill-pdf-form-with-examples.html">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+        <span class="header-logo-text">ToolsMatic</span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/#tools">Tools</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a href="/#tools" class="header-cta btn">All Tools</a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-menu" aria-hidden="true">
+      <a href="/#tools">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main class="ff-shell">
+    <nav class="breadcrumb content-wrap" aria-label="Breadcrumb">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <a href="/#tools" class="breadcrumb-link">Tools</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current" aria-current="page">Fill PDF Form</span>
+    </nav>
+
+    <section class="tool-hero content-wrap" aria-label="Fill PDF Form tool">
+      <div class="tool-hero-badge">Private browser processing</div>
+      <h1>PDF Form Filler with Examples</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+      <p class="tool-hero-sub">
+        Detect interactive form fields automatically, fill them directly on the PDF preview, and export a completed file without sending anything to a server.
+      </p>
+    </section>
+
+    <section class="ff-tool-container" aria-label="PDF form filler">
+      <input type="file" id="ff-file-input" accept=".pdf,application/pdf" class="visually-hidden">
+      <input type="file" id="ff-data-input" accept=".json,application/json" class="visually-hidden">
+
+      <div class="upload-zone ff-upload-zone" id="ff-upload-zone" role="button" tabindex="0" aria-label="Upload a fillable PDF">
+        <div class="upload-zone-icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 3v12"></path>
+            <path d="M7 8l5-5 5 5"></path>
+            <path d="M5 15v3a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-3"></path>
+          </svg>
+        </div>
+        <div class="upload-zone-text">Drag and drop your fillable PDF here</div>
+        <div class="upload-zone-sub">or click to browse</div>
+        <div class="upload-zone-sub">Interactive PDF forms only</div>
+      </div>
+
+      <div class="ff-tool-area" id="ff-tool-area" hidden="">
+        <div class="ff-file-bar">
+          <div class="ff-file-stats">
+            <div class="ff-stat">File: <strong id="ff-stat-name">-</strong></div>
+            <div class="ff-stat">Pages: <strong id="ff-stat-pages">-</strong></div>
+            <div class="ff-stat">Fields: <strong id="ff-stat-fields">-</strong></div>
+            <div class="ff-stat">Size: <strong id="ff-stat-size">-</strong></div>
+          </div>
+          <div class="ff-progress-badge">
+            Filled <span id="ff-filled-count">0</span>/<span id="ff-total-count">0</span>
+          </div>
+          <button type="button" class="btn btn-ghost ff-clear-file" id="ff-clear-file" data-ff-control="" data-ff-button="">
+            Clear File
+          </button>
+        </div>
+
+        <div class="ff-layout">
+          <section class="ff-panel" aria-label="Form preview">
+            <div class="ff-panel-head">
+              <div>
+                <div class="ff-panel-title">Form Preview</div>
+                <div class="ff-panel-subtitle" id="ff-preview-meta">
+                  Click a highlighted field to edit it directly. Required fields stay marked until filled.
+                </div>
+              </div>
+              <div class="ff-preview-tools">
+                <div class="ff-zoom-group" aria-label="Preview zoom">
+                  <button type="button" class="ff-zoom-btn active" id="ff-zoom-fit" data-zoom="fit" data-ff-control="">Fit</button>
+                  <button type="button" class="ff-zoom-btn" id="ff-zoom-100" data-zoom="100" data-ff-control="">100%</button>
+                  <button type="button" class="ff-zoom-btn" id="ff-zoom-150" data-zoom="150" data-ff-control="">150%</button>
+                </div>
+                <div class="ff-page-nav" aria-label="Preview page navigation">
+                  <button type="button" class="btn btn-ghost ff-page-btn" id="ff-prev-page" data-ff-control="" aria-label="Previous page">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                  </button>
+                  <div class="ff-page-label"><span id="ff-current-page">1</span> / <span id="ff-total-pages">1</span></div>
+                  <button type="button" class="btn btn-ghost ff-page-btn" id="ff-next-page" data-ff-control="" aria-label="Next page">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="ff-preview-area" id="ff-preview-area">
+              <div class="ff-preview-stage" id="ff-preview-stage">
+                <canvas id="ff-preview-canvas" aria-label="PDF page preview"></canvas>
+                <div class="ff-field-overlay" id="ff-field-overlay"></div>
+              </div>
+              <div class="ff-preview-overlay" id="ff-preview-overlay">Rendering preview...</div>
+            </div>
+          </section>
+
+          <aside class="ff-sidebar">
+            <section class="ff-panel" aria-label="Detected form fields">
+              <div class="ff-panel-title">Detected Fields</div>
+              <input type="text" class="ff-field-search" id="ff-field-search" placeholder="Search fields..." data-ff-control="" aria-label="Search form fields">
+              <div class="ff-field-list-meta">
+                <span id="ff-field-list-count">0 fields shown</span>
+                <span id="ff-field-list-tip">Tap a card to jump</span>
+              </div>
+              <div class="ff-field-list" id="ff-field-list" role="list" aria-label="Detected form fields"></div>
+            </section>
+
+            <section class="ff-panel" aria-label="Form actions">
+              <div class="ff-panel-title">Export and Save</div>
+              <div class="ff-action-stack">
+                <div class="ff-switch-row">
+                  <div class="ff-switch-copy">
+                    <div class="ff-switch-title">Flatten output</div>
+                    <div class="ff-switch-desc">Merge filled values into static page content before download.</div>
+                  </div>
+                  <label class="ff-switch">
+                    <input type="checkbox" id="ff-flatten-toggle" data-ff-control="">
+                    <span class="ff-switch-track"></span>
+                  </label>
+                </div>
+
+                <div class="ff-actions-grid">
+                  <button type="button" class="btn btn-ghost" id="ff-save-data" data-ff-control="" data-ff-button="">Export Data</button>
+                  <button type="button" class="btn btn-ghost" id="ff-load-data" data-ff-control="" data-ff-button="">Import Data</button>
+                  <button type="button" class="btn btn-ghost" id="ff-print" data-ff-control="" data-ff-button="">Print Filled PDF</button>
+                  <button type="button" class="btn btn-danger" id="ff-clear-fields" data-ff-control="" data-ff-button="">Clear Fields</button>
+                </div>
+
+                <button type="button" class="btn btn-primary ff-primary-action" id="ff-export-button" data-ff-control="" data-ff-button="">
+                  <span id="ff-export-button-text">Fill and Export PDF</span>
+                </button>
+
+                <div class="ff-note">
+                  Progress is auto-saved in this browser. Re-upload the same file later to continue where you left off.
+                </div>
+              </div>
+            </section>
+          </aside>
+        </div>
+
+        <div class="progress-wrap ff-progress-wrap" id="ff-progress-wrap"></div>
+
+        <section class="ff-result-box" id="ff-result-box" hidden="" aria-live="polite">
+          <div class="ff-result-title">Form filled successfully</div>
+          <div class="ff-result-stats" id="ff-result-stats"></div>
+          <div class="ff-filename-preview">
+            <div class="ff-filename-label">Your file will be saved as</div>
+            <div class="ff-filename-name" id="ff-filename-preview">-</div>
+          </div>
+          <div class="ff-result-actions">
+            <button type="button" class="btn btn-success" id="ff-download-button">Download Filled PDF</button>
+            <button type="button" class="btn btn-ghost" id="ff-reset-button">Fill Another Form</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <article class="seo-content">
+      <h2>What is PDF Form Filling?</h2>
+      <p>
+        PDF form filling means entering information directly into interactive fields embedded inside a PDF document. These fields can include text boxes, checkboxes, radio buttons, drop-down lists and other AcroForm elements. Instead of printing and handwriting answers, you complete the file digitally and keep the result neat, searchable and ready to share.
+      </p>
+      <p>
+        ToolsMatic detects those interactive fields in your browser, places them over a live preview of the page, and lets you fill everything locally on your device. That makes the tool practical for applications, government forms, internal HR paperwork, registration sheets and contracts where privacy matters.
+      </p>
+
+      <h2>How to Fill a PDF Form on ToolsMatic</h2>
+      <ul>
+        <li><strong>Step 1:</strong> Upload your interactive PDF form by dragging it into the upload area or choosing it from your device.</li>
+        <li><strong>Step 2:</strong> ToolsMatic scans the document and lists every detected field in the sidebar for quick navigation.</li>
+        <li><strong>Step 3:</strong> Fill text fields, toggle checkboxes, select choices and review any required fields that remain incomplete.</li>
+        <li><strong>Step 4:</strong> Export the completed PDF, print it, or save the field data as JSON for reuse later.</li>
+      </ul>
+
+      <h2>Supported PDF Field Types</h2>
+      <h3>Text Fields</h3>
+      <p>
+        Standard text inputs and multi-line fields can be filled directly on the page preview. Repeated fields with the same PDF field name stay synchronized automatically so the same value appears everywhere it should.
+      </p>
+
+      <h3>Checkboxes and Radio Buttons</h3>
+      <p>
+        Interactive checkboxes and radio groups are detected and can be toggled with mouse, keyboard or touch. Required controls stay visually highlighted until you complete them.
+      </p>
+
+      <h3>Dropdown Lists</h3>
+      <p>
+        PDF choice fields are shown with native browser select controls. That keeps keyboard access strong and makes long option sets easier to use across desktop and mobile devices.
+      </p>
+
+      <h3>Saved Progress</h3>
+      <p>
+        ToolsMatic can auto-save your field values in localStorage so you can return to the same file later. You can also export field data as JSON and import it back without filling the form from scratch again.
+      </p>
+
+      <h2>ToolsMatic vs Other PDF Form Fillers</h2>
+      <table class="comparison-table" aria-label="Comparison of PDF form filling tools">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-ToolsMatic">ToolsMatic</th>
+            <th>ilovepdf</th>
+            <th>Smallpdf</th>
+            <th>Adobe Acrobat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Free to use</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td>Limited</td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>No file upload</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>Auto-detect form fields</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+          </tr>
+          <tr>
+            <td>Save field data as JSON</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+            <td>Paid</td>
+          </tr>
+          <tr>
+            <td>Browser-only privacy</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>Flattened or interactive export</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td>Limited</td>
+            <td>Limited</td>
+            <td><span class="check">Yes</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Fill PDF Forms: Frequently Asked Questions</h2>
+      <div id="faq">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I fill any PDF form?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>You can fill PDFs that contain interactive AcroForm fields. Static PDFs without interactive widgets cannot be edited with this tool.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What field types are supported?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Text fields, multi-line fields, checkboxes, radio groups and dropdown lists are supported. Date-style fields are filled as text and can use native date inputs when the field name suggests a date.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Does it save my progress if I close the tab?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. ToolsMatic stores your entries locally in this browser and restores them when you re-upload the same file.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I export only the form data?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Export Data downloads a JSON file with field names and values. Import Data restores that information into the current form.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is the exported PDF flattened?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>By default the form stays interactive. Turn on Flatten output if you want a static final PDF where field values are no longer editable.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Are my files uploaded to a server?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. The entire workflow runs locally in your browser using PDF.js and pdf-lib.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I fill a password-protected PDF?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Password-protected PDFs must be unlocked first. Use the ToolsMatic <a href="/tools/unlock-pdf.html" style="color:var(--accent);">Unlock PDF</a> tool, then return here.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do I clear a single field?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Each field card in the sidebar includes a clear button. Use Clear Fields if you want to wipe the entire form at once.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>More Free PDF Tools You Might Need</h2>
+      <div class="related-tools" role="list">
+        <a href="/tools/sign-pdf.html" class="card related-tool-card" role="listitem">
+          <div class="related-tool-name">Sign PDF</div>
+          <div class="related-tool-desc">Add handwritten, typed or uploaded signatures to completed forms.</div>
+        </a>
+        <a href="/tools/flatten-pdf.html" class="card related-tool-card" role="listitem">
+          <div class="related-tool-name">Flatten PDF</div>
+          <div class="related-tool-desc">Merge form fields and annotations into static page content for sharing.</div>
+        </a>
+        <a href="/tools/protect-pdf.html" class="card related-tool-card" role="listitem">
+          <div class="related-tool-name">Protect PDF</div>
+          <div class="related-tool-desc">Lock completed forms with password protection and permissions.</div>
+        </a>
+      </div>
+    </article>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="fill-pdf-form-with-examples-pseo" aria-labelledby="fill-pdf-form-with-examples-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>PDF Form Filler with Examples</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="fill-pdf-form-with-examples-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">PDF Form Filler with Examples Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>PDF Form Filler with Examples</strong>, a practical, template-driven experience showing exactly how to get best results. This dedicated workspace is built specifically for students, creators, and analysts who prefer referencing concrete examples over reading rules manuals. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>loaded click-to-fill templates, side-by-side input-output illustrations, and clear structural guidelines</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Fill PDF forms without uploading documents. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Pre-loaded Templates</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Click a built-in example to populate the inputs instantly and observe outputs.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Before and After Visuals</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Understand exactly how formatting inputs shapes the finished output.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Quick Blueprint Copying</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Modify our detailed templates with your own details to save setup time.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use PDF Form Filler with Examples</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted with Examples layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: PDF Form Filler with Examples</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">How do I load the example?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Most tools have pre-loaded default buttons or values which you can run instantly.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Are these examples realistic?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, they model real-world business, coding, and writing scenarios.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I add my own examples?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">You can input your custom data, observe the output, and bookmark it locally.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/fill-pdf-form.html" style="color:var(--primary);text-decoration:none;font-weight:600;">PDF Form Filler</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"PDF Form Filler with Examples","url":"https://toolsmatic.me/tools/fill-pdf-form-with-examples.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use PDF Form Filler with Examples online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"PDF Form Filler with Examples","item":"https://toolsmatic.me/tools/fill-pdf-form-with-examples.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I load the example?","acceptedAnswer":{"@type":"Answer","text":"Most tools have pre-loaded default buttons or values which you can run instantly."}},{"@type":"Question","name":"Are these examples realistic?","acceptedAnswer":{"@type":"Answer","text":"Yes, they model real-world business, coding, and writing scenarios."}},{"@type":"Question","name":"Can I add my own examples?","acceptedAnswer":{"@type":"Answer","text":"You can input your custom data, observe the output, and bookmark it locally."}}]}]}</script>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--text-primary);margin-bottom:12px;">
+          ToolsMatic
+        </div>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.7;max-width:220px;">
+          Privacy-first PDF tools. Your files never leave your browser.
+        </p>
+        <p style="font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);margin-top:16px;">
+          Copyright 2025 ToolsMatic. All rights reserved.
+        </p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">PDF Tools</div>
+        <a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a>
+        <a href="/tools/split-pdf.html" class="footer-link">Split PDF</a>
+        <a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a>
+        <a href="/tools/rotate-pdf.html" class="footer-link">Rotate PDF</a>
+        <a href="/tools/crop-pdf.html" class="footer-link">Crop PDF</a>
+        <a href="/tools/watermark-pdf.html" class="footer-link">Add Watermark</a>
+        <a href="/tools/sign-pdf.html" class="footer-link">Sign PDF</a>
+        <a href="/#tools" class="footer-link" style="color:var(--accent);">All Tools -&gt;</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">More Tools</div>
+        <a href="/tools/remove-pages.html" class="footer-link">Remove Pages</a>
+        <a href="/tools/pdf-to-jpg.html" class="footer-link">PDF to JPG</a>
+        <a href="/tools/jpg-to-pdf.html" class="footer-link">JPG to PDF</a>
+        <a href="/tools/protect-pdf.html" class="footer-link">Protect PDF</a>
+        <a href="/tools/unlock-pdf.html" class="footer-link">Unlock PDF</a>
+        <a href="/tools/pdf-reader.html" class="footer-link">PDF Reader</a>
+        <a href="/tools/annotate-pdf.html" class="footer-link">PDF Annotator</a>
+        <a href="/tools/compare-pdf.html" class="footer-link">PDF Comparison</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="/about.html" class="footer-link">About</a>
+        <a href="/contact.html" class="footer-link">Contact</a>
+        <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="/terms.html" class="footer-link">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Built for people who value privacy</span>
+      <span>No tracking. No uploads. No nonsense.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (typeof pdfjsLib !== "undefined") {
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    }
+  </script>
+  <script src="/assets/pdf/tool-base.js"></script>
+  <script src="/assets/pdf/global.js"></script>
+
+  <script>
+    "use strict";
+
+    (function () {
+      const DEFAULT_ZOOM = "fit";
+      const MIN_FIT_SCALE = 0.55;
+      const MAX_FIT_SCALE = 1.85;
+      const FIELD_FLAG_REQUIRED = 1 << 1;
+
+      const state = {
+        file: null,
+        arrayBuffer: null,
+        pdfJsDoc: null,
+        pageCount: 0,
+        currentPage: 1,
+        zoomMode: DEFAULT_ZOOM,
+        fields: [],
+        fieldIndex: {},
+        focusedFieldId: "",
+        pendingFocusFieldId: "",
+        processing: false,
+        previewToken: 0,
+        resultBytes: null,
+        resultFilename: "",
+        storageKey: ""
+      };
+
+      const uploadZone = document.getElementById("ff-upload-zone");
+      const fileInput = document.getElementById("ff-file-input");
+      const dataInput = document.getElementById("ff-data-input");
+      const toolArea = document.getElementById("ff-tool-area");
+      const clearFileButton = document.getElementById("ff-clear-file");
+      const exportButton = document.getElementById("ff-export-button");
+      const exportButtonText = document.getElementById("ff-export-button-text");
+      const saveDataButton = document.getElementById("ff-save-data");
+      const loadDataButton = document.getElementById("ff-load-data");
+      const printButton = document.getElementById("ff-print");
+      const clearFieldsButton = document.getElementById("ff-clear-fields");
+      const flattenToggle = document.getElementById("ff-flatten-toggle");
+      const fieldSearch = document.getElementById("ff-field-search");
+      const fieldList = document.getElementById("ff-field-list");
+      const fieldListCount = document.getElementById("ff-field-list-count");
+      const previewArea = document.getElementById("ff-preview-area");
+      const previewStage = document.getElementById("ff-preview-stage");
+      const previewCanvas = document.getElementById("ff-preview-canvas");
+      const previewContext = previewCanvas ? previewCanvas.getContext("2d") : null;
+      const fieldOverlay = document.getElementById("ff-field-overlay");
+      const previewOverlay = document.getElementById("ff-preview-overlay");
+      const previewMeta = document.getElementById("ff-preview-meta");
+      const prevPageButton = document.getElementById("ff-prev-page");
+      const nextPageButton = document.getElementById("ff-next-page");
+      const currentPageLabel = document.getElementById("ff-current-page");
+      const totalPagesLabel = document.getElementById("ff-total-pages");
+      const zoomButtons = Array.from(document.querySelectorAll("[data-zoom]"));
+      const progressWrap = document.getElementById("ff-progress-wrap");
+      const resultBox = document.getElementById("ff-result-box");
+      const resultStats = document.getElementById("ff-result-stats");
+      const filenamePreview = document.getElementById("ff-filename-preview");
+      const downloadButton = document.getElementById("ff-download-button");
+      const resetButton = document.getElementById("ff-reset-button");
+      const statName = document.getElementById("ff-stat-name");
+      const statPages = document.getElementById("ff-stat-pages");
+      const statFields = document.getElementById("ff-stat-fields");
+      const statSize = document.getElementById("ff-stat-size");
+      const filledCount = document.getElementById("ff-filled-count");
+      const totalCount = document.getElementById("ff-total-count");
+
+      function toast(message, type) {
+        if (typeof window.showToast === "function") {
+          window.showToast(message, type || "info");
+        }
+      }
+
+      function ensureToastContainer() {
+        let container = document.querySelector(".toast-container");
+
+        if (container) {
+          return container;
+        }
+
+        container = document.createElement("div");
+        container.className = "toast-container";
+        container.setAttribute("aria-live", "polite");
+        container.setAttribute("aria-atomic", "true");
+        document.body.appendChild(container);
+        return container;
+      }
+
+      function showUnlockToast() {
+        const container = ensureToastContainer();
+        const existing = container.querySelector(".ff-unlock-toast");
+        const toastEl = document.createElement("div");
+        const messageEl = document.createElement("div");
+        const closeButton = document.createElement("button");
+        const link = document.createElement("a");
+
+        if (existing) {
+          existing.remove();
+        }
+
+        toastEl.className = "toast toast-warning ff-unlock-toast";
+        toastEl.setAttribute("role", "status");
+        messageEl.className = "toast-message";
+        messageEl.append("This PDF is password protected. ");
+
+        link.href = "/tools/unlock-pdf.html";
+        link.className = "ff-toast-link";
+        link.textContent = "Unlock it first";
+        messageEl.appendChild(link);
+        messageEl.append(".");
+
+        closeButton.className = "toast-close";
+        closeButton.type = "button";
+        closeButton.setAttribute("aria-label", "Dismiss notification");
+        closeButton.textContent = "x";
+        closeButton.addEventListener("click", function () {
+          toastEl.remove();
+        });
+
+        toastEl.append(messageEl, closeButton);
+        container.appendChild(toastEl);
+
+        window.setTimeout(function () {
+          toastEl.remove();
+        }, 7000);
+      }
+
+      function isPasswordError(error) {
+        const message = error && typeof error.message === "string" ? error.message.toLowerCase() : "";
+        return message.indexOf("encrypt") !== -1 || message.indexOf("password") !== -1;
+      }
+
+      function formatSize(bytes) {
+        return typeof window.formatFileSize === "function" ? window.formatFileSize(bytes) : "0 B";
+      }
+
+      function readBlobAsArrayBuffer(blob) {
+        if (typeof window.readFileAsArrayBuffer !== "function") {
+          throw new Error("Shared file reader unavailable.");
+        }
+
+        return window.readFileAsArrayBuffer(blob);
+      }
+
+      function validatePdfHeader(buffer) {
+        return typeof window.validatePDFHeader === "function" ? window.validatePDFHeader(buffer) : false;
+      }
+
+      function revokeBlobUrl(url) {
+        if (typeof window.cleanupBlobURL === "function") {
+          window.cleanupBlobURL(url);
+          return;
+        }
+
+        if (typeof url === "string" && url.indexOf("blob:") === 0) {
+          URL.revokeObjectURL(url);
+        }
+      }
+
+      function safeString(value) {
+        if (value === null || typeof value === "undefined") {
+          return "";
+        }
+
+        return String(value);
+      }
+
+      function normalizeTextValue(value) {
+        return safeString(value);
+      }
+
+      function trimString(value) {
+        return safeString(value).trim();
+      }
+
+      function normalizeCheckboxValue(value) {
+        const text = safeString(value).trim().toLowerCase();
+
+        if (typeof value === "boolean") {
+          return value;
+        }
+
+        return text === "yes" || text === "on" || text === "true" || text === "1" || text === "checked";
+      }
+
+      function normalizeOptionValue(value) {
+        const text = safeString(value).trim();
+        return text;
+      }
+
+      function normalizeOptionList(rawOptions) {
+        const options = [];
+        let index = 0;
+
+        if (!Array.isArray(rawOptions)) {
+          return options;
+        }
+
+        for (index = 0; index < rawOptions.length; index += 1) {
+          if (typeof rawOptions[index] === "string") {
+            const simpleValue = normalizeOptionValue(rawOptions[index]);
+
+            if (simpleValue) {
+              options.push({
+                value: simpleValue,
+                label: simpleValue
+              });
+            }
+            continue;
+          }
+
+          if (rawOptions[index] && typeof rawOptions[index] === "object") {
+            const optionValue = normalizeOptionValue(
+              rawOptions[index].exportValue ||
+              rawOptions[index].value ||
+              rawOptions[index].displayValue ||
+              rawOptions[index].name
+            );
+            const optionLabel = normalizeOptionValue(
+              rawOptions[index].displayValue ||
+              rawOptions[index].label ||
+              rawOptions[index].value ||
+              rawOptions[index].exportValue
+            );
+
+            if (optionValue || optionLabel) {
+              options.push({
+                value: optionValue || optionLabel,
+                label: optionLabel || optionValue
+              });
+            }
+          }
+        }
+
+        return options;
+      }
+
+      function mergeOptions(existing, incoming) {
+        const seen = {};
+        const merged = [];
+        const all = [].concat(existing || [], incoming || []);
+        let index = 0;
+
+        for (index = 0; index < all.length; index += 1) {
+          const option = all[index];
+          const key = option && option.value ? option.value : "";
+
+          if (!key || seen[key]) {
+            continue;
+          }
+
+          seen[key] = true;
+          merged.push({
+            value: option.value,
+            label: option.label || option.value
+          });
+        }
+
+        return merged;
+      }
+
+      function getRequiredFlag(annotation, meta) {
+        const flags = annotation && typeof annotation.fieldFlags === "number" ? annotation.fieldFlags : 0;
+        return Boolean(
+          (meta && meta.required === true) ||
+          (annotation && annotation.required === true) ||
+          ((flags & FIELD_FLAG_REQUIRED) === FIELD_FLAG_REQUIRED)
+        );
+      }
+
+      function guessInputType(name) {
+        const lower = safeString(name).toLowerCase();
+
+        if (/date|dob|birth|issued|expiry|expiration/i.test(lower)) {
+          return "date";
+        }
+
+        return "text";
+      }
+
+      function guessInputMode(name) {
+        const lower = safeString(name).toLowerCase();
+
+        if (/zip|postal|phone|mobile|amount|total|number|qty|quantity|code|id/i.test(lower)) {
+          return "numeric";
+        }
+
+        return "text";
+      }
+
+      function safeInvoke(target, methodName, fallback) {
+        try {
+          if (target && typeof target[methodName] === "function") {
+            return target[methodName]();
+          }
+        } catch (error) {
+          return fallback;
+        }
+
+        return fallback;
+      }
+
+      function getFieldTypeName(field) {
+        if (!field || !field.constructor || typeof field.constructor.name !== "string") {
+          return "";
+        }
+
+        return field.constructor.name;
+      }
+
+      function extractPdfLibMetadata(pdfDoc) {
+        const metadata = {};
+        let form = null;
+        let fields = [];
+        let index = 0;
+
+        try {
+          form = pdfDoc.getForm();
+          fields = form.getFields();
+        } catch (error) {
+          return metadata;
+        }
+
+        for (index = 0; index < fields.length; index += 1) {
+          const field = fields[index];
+          const name = trimString(safeInvoke(field, "getName", ""));
+          const typeName = getFieldTypeName(field);
+          const required = safeInvoke(field, "isRequired", false) === true;
+          const readOnly = safeInvoke(field, "isReadOnly", false) === true;
+          let entry = null;
+          let selected = null;
+
+          if (!name) {
+            continue;
+          }
+
+          entry = {
+            kind: "",
+            required: required,
+            readOnly: readOnly,
+            multiline: false,
+            maxLength: 0,
+            value: "",
+            options: []
+          };
+
+          if (typeName === "PDFTextField") {
+            entry.kind = "text";
+            entry.multiline = safeInvoke(field, "isMultiline", false) === true;
+            entry.maxLength = Number(safeInvoke(field, "getMaxLength", 0) || 0);
+            entry.value = normalizeTextValue(safeInvoke(field, "getText", ""));
+          } else if (typeName === "PDFCheckBox") {
+            entry.kind = "checkbox";
+            entry.value = safeInvoke(field, "isChecked", false) === true;
+          } else if (typeName === "PDFRadioGroup") {
+            entry.kind = "radio";
+            selected = safeInvoke(field, "getSelected", "");
+            entry.value = normalizeOptionValue(Array.isArray(selected) ? selected[0] : selected);
+            entry.options = normalizeOptionList(safeInvoke(field, "getOptions", []));
+          } else if (typeName === "PDFDropdown" || typeName === "PDFOptionList") {
+            entry.kind = "dropdown";
+            entry.options = normalizeOptionList(safeInvoke(field, "getOptions", []));
+            selected = safeInvoke(field, "getSelected", []);
+            entry.value = normalizeOptionValue(Array.isArray(selected) ? selected[0] : selected);
+          } else {
+            continue;
+          }
+
+          metadata[name] = entry;
+        }
+
+        return metadata;
+      }
+
+      function getAnnotationKind(annotation, meta) {
+        const fieldType = annotation && typeof annotation.fieldType === "string" ? annotation.fieldType : "";
+
+        if (meta && meta.kind) {
+          return meta.kind;
+        }
+
+        if (fieldType === "Tx") {
+          return "text";
+        }
+
+        if (fieldType === "Ch") {
+          return "dropdown";
+        }
+
+        if (fieldType === "Btn") {
+          if (annotation && annotation.radioButton === true) {
+            return "radio";
+          }
+
+          if (annotation && annotation.checkBox === true) {
+            return "checkbox";
+          }
+        }
+
+        return "";
+      }
+
+      function getRadioWidgetValue(annotation, fallback) {
+        const options = [
+          annotation ? annotation.buttonValue : "",
+          annotation ? annotation.exportValue : "",
+          fallback
+        ];
+        let index = 0;
+
+        for (index = 0; index < options.length; index += 1) {
+          if (normalizeOptionValue(options[index])) {
+            return normalizeOptionValue(options[index]);
+          }
+        }
+
+        return "";
+      }
+
+      function buildWidget(annotation, pageNumber, widgetIndex, kind) {
+        const rect = annotation && Array.isArray(annotation.rect) ? annotation.rect.slice(0, 4) : null;
+        const x1 = rect ? Number(rect[0]) : NaN;
+        const y1 = rect ? Number(rect[1]) : NaN;
+        const x2 = rect ? Number(rect[2]) : NaN;
+        const y2 = rect ? Number(rect[3]) : NaN;
+
+        if (!rect || !isFinite(x1) || !isFinite(y1) || !isFinite(x2) || !isFinite(y2)) {
+          return null;
+        }
+
+        if (Math.abs(x2 - x1) < 1 || Math.abs(y2 - y1) < 1) {
+          return null;
+        }
+
+        return {
+          id: "widget-" + pageNumber + "-" + widgetIndex,
+          page: pageNumber,
+          rect: [x1, y1, x2, y2],
+          optionValue: kind === "radio" ? getRadioWidgetValue(annotation, "Option " + (widgetIndex + 1)) : "",
+          readOnly: annotation && annotation.readOnly === true
+        };
+      }
+
+      function buildFieldRecord(id, name, kind, annotation, meta) {
+        const initialTextValue = meta && meta.kind === kind ? meta.value : "";
+        const initialValue = kind === "checkbox"
+          ? Boolean(meta && meta.kind === kind ? meta.value : normalizeCheckboxValue(annotation ? annotation.fieldValue : false))
+          : normalizeTextValue(initialTextValue || (annotation ? annotation.fieldValue : ""));
+
+        return {
+          id: id,
+          name: name,
+          kind: kind,
+          required: getRequiredFlag(annotation, meta) && !(meta && meta.readOnly === true),
+          readOnly: Boolean(meta && meta.readOnly === true) || Boolean(annotation && annotation.readOnly === true),
+          multiline: Boolean(meta && meta.multiline === true) || Boolean(annotation && annotation.multiLine === true),
+          maxLength: Number(meta && meta.maxLength ? meta.maxLength : (annotation && annotation.maxLen ? annotation.maxLen : 0)) || 0,
+          inputType: guessInputType(name),
+          inputMode: guessInputMode(name),
+          options: mergeOptions(
+            normalizeOptionList(meta ? meta.options : []),
+            normalizeOptionList(annotation ? annotation.options : [])
+          ),
+          value: initialValue,
+          widgets: []
+        };
+      }
+
+      async function detectFormFields(pdfLibDoc, pdfJsDoc) {
+        const metadata = extractPdfLibMetadata(pdfLibDoc);
+        const lookup = {};
+        const fields = [];
+        let pageNumber = 1;
+
+        try {
+          for (pageNumber = 1; pageNumber <= pdfJsDoc.numPages; pageNumber += 1) {
+            const page = await pdfJsDoc.getPage(pageNumber);
+            let annotations = [];
+            let annotationIndex = 0;
+
+            try {
+              annotations = await page.getAnnotations({ intent: "display" });
+            } catch (error) {
+              annotations = [];
+            }
+
+            for (annotationIndex = 0; annotationIndex < annotations.length; annotationIndex += 1) {
+              const annotation = annotations[annotationIndex];
+              const name = trimString(annotation && annotation.fieldName ? annotation.fieldName : "");
+              const meta = name && metadata[name] ? metadata[name] : null;
+              const kind = getAnnotationKind(annotation, meta);
+              const widget = buildWidget(annotation, pageNumber, annotationIndex, kind);
+              let field = null;
+              let key = "";
+
+              if (!annotation || kind === "" || !name || !widget) {
+                continue;
+              }
+
+              key = name;
+
+              if (!lookup[key]) {
+                lookup[key] = buildFieldRecord("ff-field-" + (fields.length + 1), name, kind, annotation, meta);
+                fields.push(lookup[key]);
+              }
+
+              field = lookup[key];
+              field.readOnly = field.readOnly && widget.readOnly;
+              field.required = field.required || getRequiredFlag(annotation, meta);
+              field.options = mergeOptions(
+                field.options,
+                kind === "radio"
+                  ? [{ value: widget.optionValue, label: widget.optionValue }]
+                  : normalizeOptionList(annotation.options)
+              );
+
+              if (kind === "radio") {
+                if (!field.value && trimString(annotation.fieldValue)) {
+                  field.value = normalizeTextValue(annotation.fieldValue);
+                }
+
+                if (!field.value && annotation.buttonValue && annotation.fieldValue === annotation.buttonValue) {
+                  field.value = normalizeOptionValue(annotation.buttonValue);
+                }
+              }
+
+              field.widgets.push(widget);
+            }
+
+            try {
+              page.cleanup();
+            } catch (error) {
+              /* Best effort cleanup only. */
+            }
+          }
+        } catch (error) {
+          throw error;
+        }
+
+        fields.sort(function (a, b) {
+          const aWidget = a.widgets[0];
+          const bWidget = b.widgets[0];
+          const aPage = aWidget ? aWidget.page : 0;
+          const bPage = bWidget ? bWidget.page : 0;
+
+          if (aPage !== bPage) {
+            return aPage - bPage;
+          }
+
+          if (aWidget && bWidget) {
+            return bWidget.rect[1] - aWidget.rect[1];
+          }
+
+          return 0;
+        });
+
+        return fields;
+      }
+
+      function buildFieldIndex() {
+        const index = {};
+        let position = 0;
+
+        for (position = 0; position < state.fields.length; position += 1) {
+          index[state.fields[position].id] = state.fields[position];
+        }
+
+        state.fieldIndex = index;
+      }
+
+      function getFilledCount() {
+        let filled = 0;
+        let index = 0;
+
+        for (index = 0; index < state.fields.length; index += 1) {
+          if (isFieldFilled(state.fields[index])) {
+            filled += 1;
+          }
+        }
+
+        return filled;
+      }
+
+      function isFieldFilled(field) {
+        if (!field) {
+          return false;
+        }
+
+        if (field.kind === "checkbox") {
+          return field.value === true;
+        }
+
+        return trimString(field.value) !== "";
+      }
+
+      function getFieldPagesText(field) {
+        const pages = [];
+        let index = 0;
+
+        if (!field || !Array.isArray(field.widgets)) {
+          return "";
+        }
+
+        for (index = 0; index < field.widgets.length; index += 1) {
+          if (pages.indexOf(field.widgets[index].page) === -1) {
+            pages.push(field.widgets[index].page);
+          }
+        }
+
+        if (!pages.length) {
+          return "";
+        }
+
+        if (pages.length === 1) {
+          return "Page " + pages[0];
+        }
+
+        if (pages.length <= 3) {
+          return "Pages " + pages.join(", ");
+        }
+
+        return pages.length + " pages";
+      }
+
+      function getFieldValueSummary(field) {
+        if (!field) {
+          return "";
+        }
+
+        if (field.kind === "checkbox") {
+          return field.value === true ? "Checked" : "Unchecked";
+        }
+
+        if (field.kind === "radio" || field.kind === "dropdown") {
+          return trimString(field.value) ? normalizeTextValue(field.value) : "Not selected";
+        }
+
+        return trimString(field.value) ? normalizeTextValue(field.value) : "Empty";
+      }
+
+      function getFieldStatusText(field) {
+        if (!field) {
+          return "";
+        }
+
+        if (field.readOnly) {
+          return "Locked";
+        }
+
+        if (isFieldFilled(field)) {
+          return "Filled";
+        }
+
+        if (field.required) {
+          return "Required";
+        }
+
+        return "Empty";
+      }
+
+      function updateSummary() {
+        const filled = getFilledCount();
+        const total = state.fields.length;
+
+        if (filledCount) {
+          filledCount.textContent = String(filled);
+        }
+
+        if (totalCount) {
+          totalCount.textContent = String(total);
+        }
+
+        if (statFields) {
+          statFields.textContent = String(total);
+        }
+      }
+
+      function updateFileBar() {
+        if (statName) {
+          statName.textContent = state.file ? state.file.name : "-";
+        }
+
+        if (statPages) {
+          statPages.textContent = state.pageCount ? String(state.pageCount) : "-";
+        }
+
+        if (statFields) {
+          statFields.textContent = state.fields.length ? String(state.fields.length) : "-";
+        }
+
+        if (statSize) {
+          statSize.textContent = state.file ? formatSize(state.file.size) : "-";
+        }
+
+        updateSummary();
+      }
+
+      function updatePageNav() {
+        if (currentPageLabel) {
+          currentPageLabel.textContent = String(state.currentPage || 1);
+        }
+
+        if (totalPagesLabel) {
+          totalPagesLabel.textContent = String(state.pageCount || 1);
+        }
+
+        if (prevPageButton) {
+          prevPageButton.disabled = state.processing || state.currentPage <= 1;
+          prevPageButton.setAttribute("aria-disabled", String(prevPageButton.disabled));
+        }
+
+        if (nextPageButton) {
+          nextPageButton.disabled = state.processing || state.currentPage >= state.pageCount;
+          nextPageButton.setAttribute("aria-disabled", String(nextPageButton.disabled));
+        }
+      }
+
+      function setZoomButtons() {
+        let index = 0;
+
+        for (index = 0; index < zoomButtons.length; index += 1) {
+          zoomButtons[index].classList.toggle("active", zoomButtons[index].getAttribute("data-zoom") === String(state.zoomMode));
+        }
+      }
+
+      function setPreviewBusy(isBusy) {
+        if (!previewOverlay) {
+          return;
+        }
+
+        previewOverlay.classList.toggle("is-visible", Boolean(isBusy));
+      }
+
+      function updateProgressBar(percent, label) {
+        if (progressWrap && typeof window.updateProgress === "function") {
+          window.updateProgress(progressWrap, percent, label);
+        }
+      }
+
+      function hideProgressBar() {
+        if (progressWrap && typeof window.hideProgress === "function") {
+          window.hideProgress(progressWrap);
+        }
+      }
+
+      function clearResult() {
+        state.resultBytes = null;
+        state.resultFilename = "";
+
+        if (resultBox) {
+          resultBox.hidden = true;
+        }
+
+        if (resultStats) {
+          resultStats.textContent = "";
+        }
+
+        if (filenamePreview) {
+          filenamePreview.textContent = "-";
+        }
+      }
+
+      function setBusy(isBusy, buttonText) {
+        const controls = Array.from(document.querySelectorAll("[data-ff-control]"));
+        let index = 0;
+
+        state.processing = Boolean(isBusy);
+
+        for (index = 0; index < controls.length; index += 1) {
+          if ("disabled" in controls[index]) {
+            controls[index].disabled = Boolean(isBusy);
+          }
+
+          controls[index].setAttribute("aria-disabled", String(Boolean(isBusy)));
+        }
+
+        if (exportButton) {
+          exportButton.classList.toggle("loading", Boolean(isBusy));
+        }
+
+        if (exportButtonText) {
+          exportButtonText.textContent = isBusy ? (buttonText || "Processing...") : "Fill and Export PDF";
+        }
+
+        updatePageNav();
+      }
+
+      function getStorageKey() {
+        if (!state.file || !state.pageCount) {
+          return "";
+        }
+
+        return "huzzi-fill-form:" + [
+          state.file.name,
+          state.file.size,
+          state.pageCount
+        ].join("|");
+      }
+
+      function serializeFieldData() {
+        const data = {};
+        let index = 0;
+
+        for (index = 0; index < state.fields.length; index += 1) {
+          data[state.fields[index].name] = state.fields[index].value;
+        }
+
+        return data;
+      }
+
+      function persistFieldData() {
+        const key = state.storageKey || getStorageKey();
+        const payload = {
+          savedAt: new Date().toISOString(),
+          fields: serializeFieldData()
+        };
+
+        if (!key) {
+          return;
+        }
+
+        try {
+          window.localStorage.setItem(key, JSON.stringify(payload));
+        } catch (error) {
+          /* Local storage may be unavailable. */
+        }
+      }
+
+      function readPersistedFieldData() {
+        const key = state.storageKey || getStorageKey();
+        let raw = "";
+        let parsed = null;
+
+        if (!key) {
+          return null;
+        }
+
+        try {
+          raw = window.localStorage.getItem(key) || "";
+        } catch (error) {
+          return null;
+        }
+
+        if (!raw) {
+          return null;
+        }
+
+        try {
+          parsed = JSON.parse(raw);
+        } catch (error) {
+          return null;
+        }
+
+        if (parsed && typeof parsed === "object" && parsed.fields && typeof parsed.fields === "object") {
+          return parsed.fields;
+        }
+
+        if (parsed && typeof parsed === "object") {
+          return parsed;
+        }
+
+        return null;
+      }
+
+      function applyFieldData(data, announce) {
+        let index = 0;
+        let applied = false;
+
+        if (!data || typeof data !== "object") {
+          return false;
+        }
+
+        for (index = 0; index < state.fields.length; index += 1) {
+          const field = state.fields[index];
+
+          if (!Object.prototype.hasOwnProperty.call(data, field.name)) {
+            continue;
+          }
+
+          if (field.kind === "checkbox") {
+            field.value = normalizeCheckboxValue(data[field.name]);
+          } else {
+            field.value = normalizeTextValue(data[field.name]);
+          }
+
+          applied = true;
+        }
+
+        if (applied) {
+          updateSummary();
+          renderFieldGrid();
+          void renderCurrentPage();
+          clearResult();
+          persistFieldData();
+
+          if (announce === true) {
+            toast("Saved form data restored", "success");
+          }
+        }
+
+        return applied;
+      }
+
+      async function destroyPreviewDocument() {
+        try {
+          if (state.pdfJsDoc && typeof state.pdfJsDoc.destroy === "function") {
+            await state.pdfJsDoc.destroy();
+          }
+        } catch (error) {
+          /* Best effort cleanup only. */
+        } finally {
+          state.pdfJsDoc = null;
+        }
+      }
+
+      function getPreviewScale(page) {
+        const baseViewport = page.getViewport({ scale: 1 });
+        let scale = 1;
+
+        if (state.zoomMode === "fit") {
+          const areaWidth = previewArea ? Math.max((previewArea.clientWidth || 0) - 32, 240) : baseViewport.width;
+          const areaHeight = previewArea ? Math.max((previewArea.clientHeight || 0) - 32, 320) : baseViewport.height;
+          const widthScale = areaWidth / baseViewport.width;
+          const heightScale = areaHeight / baseViewport.height;
+
+          scale = Math.max(MIN_FIT_SCALE, Math.min(MAX_FIT_SCALE, Math.min(widthScale, heightScale)));
+        } else {
+          scale = Math.max(0.5, Math.min(2, Number(state.zoomMode) / 100 || 1));
+        }
+
+        return scale;
+      }
+
+      function setFocusedField(fieldId) {
+        const cards = fieldList ? Array.from(fieldList.querySelectorAll("[data-field-id]")) : [];
+        const overlayItems = fieldOverlay ? Array.from(fieldOverlay.querySelectorAll(".ff-form-field")) : [];
+        let index = 0;
+
+        state.focusedFieldId = fieldId || "";
+
+        for (index = 0; index < cards.length; index += 1) {
+          cards[index].classList.toggle("focused", cards[index].getAttribute("data-field-id") === state.focusedFieldId);
+        }
+
+        for (index = 0; index < overlayItems.length; index += 1) {
+          overlayItems[index].classList.toggle("focused", overlayItems[index].getAttribute("data-field-id") === state.focusedFieldId);
+        }
+      }
+
+      function updateOverlayFieldState(wrapper, field) {
+        if (!wrapper || !field) {
+          return;
+        }
+
+        wrapper.classList.toggle("filled", isFieldFilled(field));
+        wrapper.classList.toggle("required", Boolean(field.required));
+        wrapper.classList.toggle("empty", !isFieldFilled(field));
+        wrapper.classList.toggle("read-only", Boolean(field.readOnly));
+      }
+
+      function syncRenderedFieldValue(fieldId, sourceElement) {
+        const field = state.fieldIndex[fieldId];
+        const wrappers = fieldOverlay ? Array.from(fieldOverlay.querySelectorAll('[data-field-id="' + fieldId + '"]')) : [];
+        let index = 0;
+
+        if (!field) {
+          return;
+        }
+
+        for (index = 0; index < wrappers.length; index += 1) {
+          const wrapper = wrappers[index];
+          const control = wrapper.querySelector("input, textarea, select");
+
+          if (!control || control === sourceElement) {
+            updateOverlayFieldState(wrapper, field);
+            continue;
+          }
+
+          if (field.kind === "checkbox") {
+            control.checked = field.value === true;
+          } else if (field.kind === "radio") {
+            control.checked = control.getAttribute("data-option-value") === field.value;
+          } else {
+            control.value = field.value || "";
+          }
+
+          updateOverlayFieldState(wrapper, field);
+        }
+      }
+
+      function updateFieldValue(fieldId, value, sourceElement) {
+        const field = state.fieldIndex[fieldId];
+
+        if (!field) {
+          return;
+        }
+
+        if (field.kind === "checkbox") {
+          field.value = value === true;
+        } else {
+          field.value = normalizeTextValue(value);
+        }
+
+        clearResult();
+        updateSummary();
+        renderFieldGrid();
+        syncRenderedFieldValue(fieldId, sourceElement || null);
+        setFocusedField(fieldId);
+        persistFieldData();
+      }
+
+      function focusFieldControl(fieldId) {
+        const wrapper = fieldOverlay ? fieldOverlay.querySelector('.ff-form-field[data-field-id="' + fieldId + '"]') : null;
+        const control = wrapper ? wrapper.querySelector("input, textarea, select") : null;
+
+        if (control) {
+          control.focus();
+
+          try {
+            control.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+              inline: "nearest"
+            });
+          } catch (error) {
+            /* Best effort scrolling only. */
+          }
+        }
+      }
+
+      function createTextFieldControl(field) {
+        const control = document.createElement(field.multiline ? "textarea" : "input");
+
+        if (field.multiline !== true) {
+          control.type = field.inputType === "date" ? "date" : "text";
+        }
+
+        control.value = field.value || "";
+        control.placeholder = field.name;
+        control.setAttribute("aria-label", field.name);
+        control.setAttribute("data-field-id", field.id);
+
+        if (field.maxLength > 0) {
+          control.maxLength = field.maxLength;
+        }
+
+        if (field.inputType !== "date" && field.inputMode) {
+          control.inputMode = field.inputMode;
+        }
+
+        if (field.readOnly) {
+          control.disabled = true;
+          control.setAttribute("aria-disabled", "true");
+        }
+
+        control.addEventListener("focus", function () {
+          setFocusedField(field.id);
+        });
+
+        control.addEventListener("input", function () {
+          updateFieldValue(field.id, control.value, control);
+        });
+
+        return control;
+      }
+
+      function createCheckboxControl(field) {
+        const wrapper = document.createElement("div");
+        const control = document.createElement("input");
+
+        wrapper.className = "ff-check-wrap";
+        control.type = "checkbox";
+        control.checked = field.value === true;
+        control.setAttribute("aria-label", field.name);
+        control.setAttribute("data-field-id", field.id);
+
+        if (field.readOnly) {
+          control.disabled = true;
+          control.setAttribute("aria-disabled", "true");
+        }
+
+        control.addEventListener("focus", function () {
+          setFocusedField(field.id);
+        });
+
+        control.addEventListener("change", function () {
+          updateFieldValue(field.id, control.checked, control);
+        });
+
+        wrapper.appendChild(control);
+        return wrapper;
+      }
+
+      function createRadioControl(field, widget) {
+        const wrapper = document.createElement("div");
+        const control = document.createElement("input");
+
+        wrapper.className = "ff-check-wrap";
+        control.type = "radio";
+        control.name = field.id + "-group";
+        control.value = widget.optionValue;
+        control.checked = field.value === widget.optionValue;
+        control.setAttribute("data-option-value", widget.optionValue);
+        control.setAttribute("aria-label", field.name + " " + widget.optionValue);
+        control.setAttribute("data-field-id", field.id);
+
+        if (field.readOnly) {
+          control.disabled = true;
+          control.setAttribute("aria-disabled", "true");
+        }
+
+        control.addEventListener("focus", function () {
+          setFocusedField(field.id);
+        });
+
+        control.addEventListener("change", function () {
+          if (control.checked) {
+            updateFieldValue(field.id, widget.optionValue, control);
+          }
+        });
+
+        wrapper.appendChild(control);
+        return wrapper;
+      }
+
+      function createDropdownControl(field) {
+        const control = document.createElement("select");
+        const placeholder = document.createElement("option");
+        let index = 0;
+
+        placeholder.value = "";
+        placeholder.textContent = "Select";
+        control.appendChild(placeholder);
+
+        for (index = 0; index < field.options.length; index += 1) {
+          const option = document.createElement("option");
+
+          option.value = field.options[index].value;
+          option.textContent = field.options[index].label;
+          control.appendChild(option);
+        }
+
+        control.value = field.value || "";
+        control.setAttribute("aria-label", field.name);
+        control.setAttribute("data-field-id", field.id);
+
+        if (field.readOnly) {
+          control.disabled = true;
+          control.setAttribute("aria-disabled", "true");
+        }
+
+        control.addEventListener("focus", function () {
+          setFocusedField(field.id);
+        });
+
+        control.addEventListener("change", function () {
+          updateFieldValue(field.id, control.value, control);
+        });
+
+        return control;
+      }
+
+      function buildFieldWidget(field, widget, viewport) {
+        const bounds = viewport.convertToViewportRectangle(widget.rect);
+        const left = Math.min(bounds[0], bounds[2]);
+        const top = Math.min(bounds[1], bounds[3]);
+        const width = Math.max(14, Math.abs(bounds[0] - bounds[2]));
+        const height = Math.max(14, Math.abs(bounds[1] - bounds[3]));
+        const wrapper = document.createElement("div");
+        let control = null;
+
+        wrapper.className = "ff-form-field";
+        wrapper.setAttribute("data-field-id", field.id);
+        wrapper.style.left = left + "px";
+        wrapper.style.top = top + "px";
+        wrapper.style.width = width + "px";
+        wrapper.style.height = height + "px";
+        wrapper.setAttribute("title", field.name);
+
+        if (field.kind === "text") {
+          control = createTextFieldControl(field);
+        } else if (field.kind === "checkbox") {
+          control = createCheckboxControl(field);
+        } else if (field.kind === "radio") {
+          control = createRadioControl(field, widget);
+        } else if (field.kind === "dropdown") {
+          control = createDropdownControl(field);
+        }
+
+        if (!control) {
+          return null;
+        }
+
+        wrapper.appendChild(control);
+        wrapper.addEventListener("click", function (event) {
+          const target = wrapper.querySelector("input, textarea, select");
+
+          if (target && event.target === wrapper) {
+            target.focus();
+          }
+        });
+
+        updateOverlayFieldState(wrapper, field);
+        return wrapper;
+      }
+
+      function renderFieldOverlay(viewport) {
+        const pageNumber = state.currentPage;
+        let fieldIndex = 0;
+
+        if (!fieldOverlay || !viewport) {
+          return;
+        }
+
+        fieldOverlay.textContent = "";
+        fieldOverlay.style.width = viewport.width + "px";
+        fieldOverlay.style.height = viewport.height + "px";
+
+        for (fieldIndex = 0; fieldIndex < state.fields.length; fieldIndex += 1) {
+          const field = state.fields[fieldIndex];
+          let widgetIndex = 0;
+
+          for (widgetIndex = 0; widgetIndex < field.widgets.length; widgetIndex += 1) {
+            const widget = field.widgets[widgetIndex];
+            let rendered = null;
+
+            if (widget.page !== pageNumber) {
+              continue;
+            }
+
+            rendered = buildFieldWidget(field, widget, viewport);
+
+            if (rendered) {
+              fieldOverlay.appendChild(rendered);
+            }
+          }
+        }
+
+        setFocusedField(state.focusedFieldId);
+
+        if (state.pendingFocusFieldId) {
+          focusFieldControl(state.pendingFocusFieldId);
+          state.pendingFocusFieldId = "";
+        }
+      }
+
+      async function renderCurrentPage() {
+        const token = state.previewToken + 1;
+        let page = null;
+        let viewport = null;
+        let scale = 1;
+        let ratio = 1;
+
+        state.previewToken = token;
+
+        if (!state.pdfJsDoc || !previewCanvas || !previewContext) {
+          return;
+        }
+
+        setPreviewBusy(true);
+
+        try {
+          page = await state.pdfJsDoc.getPage(state.currentPage);
+
+          if (token !== state.previewToken) {
+            return;
+          }
+
+          scale = getPreviewScale(page);
+          viewport = page.getViewport({ scale: scale });
+          ratio = window.devicePixelRatio || 1;
+
+          previewCanvas.width = Math.max(1, Math.floor(viewport.width * ratio));
+          previewCanvas.height = Math.max(1, Math.floor(viewport.height * ratio));
+          previewCanvas.style.width = viewport.width + "px";
+          previewCanvas.style.height = viewport.height + "px";
+
+          if (previewStage) {
+            previewStage.style.width = viewport.width + "px";
+            previewStage.style.height = viewport.height + "px";
+          }
+
+          previewContext.setTransform(ratio, 0, 0, ratio, 0, 0);
+          previewContext.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+
+          await page.render({
+            canvasContext: previewContext,
+            viewport: viewport
+          }).promise;
+
+          if (token !== state.previewToken) {
+            return;
+          }
+
+          renderFieldOverlay(viewport);
+          updatePageNav();
+        } catch (error) {
+          toast("This file appears damaged", "error");
+        } finally {
+          if (token === state.previewToken) {
+            setPreviewBusy(false);
+          }
+        }
+      }
+
+      function renderFieldGrid() {
+        const filter = fieldSearch ? trimString(fieldSearch.value).toLowerCase() : "";
+        const scrollTop = fieldList ? fieldList.scrollTop : 0;
+        let visibleCount = 0;
+        let index = 0;
+
+        if (!fieldList) {
+          return;
+        }
+
+        fieldList.textContent = "";
+
+        for (index = 0; index < state.fields.length; index += 1) {
+          const field = state.fields[index];
+          const displayName = safeString(field.name).toLowerCase();
+          const matches = !filter || displayName.indexOf(filter) !== -1;
+          let card = null;
+          let top = null;
+          let bottom = null;
+          let name = null;
+          let kind = null;
+          let value = null;
+          let pages = null;
+          let status = null;
+          let clearButton = null;
+
+          if (!matches) {
+            continue;
+          }
+
+          visibleCount += 1;
+          card = document.createElement("div");
+          top = document.createElement("div");
+          bottom = document.createElement("div");
+          name = document.createElement("div");
+          kind = document.createElement("div");
+          value = document.createElement("div");
+          pages = document.createElement("div");
+          status = document.createElement("div");
+          clearButton = document.createElement("button");
+
+          card.className = "ff-field-card";
+          card.setAttribute("role", "button");
+          card.setAttribute("tabindex", "0");
+          card.setAttribute("data-field-id", field.id);
+          card.setAttribute("aria-label", "Jump to " + field.name);
+
+          if (isFieldFilled(field)) {
+            card.classList.add("filled");
+          }
+
+          if (field.required && !isFieldFilled(field)) {
+            card.classList.add("required", "empty");
+          }
+
+          if (state.focusedFieldId === field.id) {
+            card.classList.add("focused");
+          }
+
+          top.className = "ff-field-card-top";
+          bottom.className = "ff-field-card-bottom";
+          name.className = "ff-field-card-name";
+          kind.className = "ff-field-kind";
+          value.className = "ff-field-value";
+          pages.className = "ff-field-pages";
+          status.className = "ff-field-status";
+          clearButton.className = "ff-field-clear";
+          clearButton.type = "button";
+          clearButton.setAttribute("aria-label", "Clear " + field.name);
+          clearButton.textContent = "x";
+
+          name.textContent = field.name;
+          kind.textContent = field.kind;
+          value.textContent = getFieldValueSummary(field);
+          pages.textContent = getFieldPagesText(field);
+          status.textContent = getFieldStatusText(field);
+
+          if (isFieldFilled(field)) {
+            status.classList.add("is-filled");
+          } else if (field.required) {
+            status.classList.add("is-required");
+          }
+
+          clearButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+            clearSingleField(field.id);
+          });
+
+          card.addEventListener("click", function () {
+            goToField(field.id);
+          });
+
+          card.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              goToField(field.id);
+            }
+          });
+
+          top.append(name, kind);
+          bottom.append(pages, status, clearButton);
+          card.append(top, value, bottom);
+          fieldList.appendChild(card);
+        }
+
+        if (!visibleCount) {
+          const emptyState = document.createElement("div");
+          emptyState.className = "ff-empty-search";
+          emptyState.textContent = filter ? "No fields match your search." : "No fields detected.";
+          fieldList.appendChild(emptyState);
+        }
+
+        if (fieldListCount) {
+          fieldListCount.textContent = visibleCount + " field" + (visibleCount === 1 ? "" : "s") + " shown";
+        }
+
+        fieldList.scrollTop = scrollTop;
+      }
+
+      function goToField(fieldId) {
+        const field = state.fieldIndex[fieldId];
+
+        if (!field || !field.widgets.length) {
+          return;
+        }
+
+        state.pendingFocusFieldId = field.id;
+        setFocusedField(field.id);
+
+        if (state.currentPage !== field.widgets[0].page) {
+          state.currentPage = field.widgets[0].page;
+          updatePageNav();
+          void renderCurrentPage();
+          return;
+        }
+
+        focusFieldControl(field.id);
+      }
+
+      function clearSingleField(fieldId) {
+        const field = state.fieldIndex[fieldId];
+
+        if (!field || field.readOnly) {
+          return;
+        }
+
+        if (field.kind === "checkbox") {
+          field.value = false;
+        } else {
+          field.value = "";
+        }
+
+        clearResult();
+        updateSummary();
+        renderFieldGrid();
+        syncRenderedFieldValue(field.id, null);
+        persistFieldData();
+      }
+
+      function clearAllFields() {
+        let index = 0;
+
+        for (index = 0; index < state.fields.length; index += 1) {
+          if (state.fields[index].readOnly) {
+            continue;
+          }
+
+          if (state.fields[index].kind === "checkbox") {
+            state.fields[index].value = false;
+          } else {
+            state.fields[index].value = "";
+          }
+        }
+
+        clearResult();
+        updateSummary();
+        renderFieldGrid();
+        void renderCurrentPage();
+        persistFieldData();
+        toast("All fields cleared", "success");
+      }
+
+      function getEmptyRequiredField() {
+        let index = 0;
+
+        for (index = 0; index < state.fields.length; index += 1) {
+          if (state.fields[index].required && !isFieldFilled(state.fields[index])) {
+            return state.fields[index];
+          }
+        }
+
+        return null;
+      }
+
+      function updatePreviewMeta() {
+        if (!previewMeta) {
+          return;
+        }
+
+        previewMeta.textContent =
+          "Page " + state.currentPage +
+          " of " + state.pageCount +
+          ". " + getFilledCount() + " of " + state.fields.length +
+          " fields filled. " +
+          (flattenToggle && flattenToggle.checked
+            ? "Export will be flattened."
+            : "Export will keep form fields interactive.");
+      }
+
+      function generateFilename(extension) {
+        const now = new Date();
+        const pad = function (value) {
+          return value < 10 ? "0" + value : String(value);
+        };
+
+        return "filled-form-" +
+          now.getFullYear() + "-" +
+          pad(now.getMonth() + 1) + "-" +
+          pad(now.getDate()) + "-" +
+          pad(now.getHours()) + "-" +
+          pad(now.getMinutes()) +
+          "." + extension;
+      }
+
+      function getPdfLibFieldMap(form) {
+        const map = {};
+        const fields = form.getFields();
+        let index = 0;
+
+        for (index = 0; index < fields.length; index += 1) {
+          map[fields[index].getName()] = {
+            typeName: getFieldTypeName(fields[index]),
+            field: fields[index]
+          };
+        }
+
+        return map;
+      }
+
+      async function buildFilledPdfBytes(flattenOutput) {
+        let pdfDoc = null;
+        let form = null;
+        let fieldMap = null;
+        let index = 0;
+
+        try {
+          pdfDoc = await window.PDFLib.PDFDocument.load(state.arrayBuffer.slice(0));
+          form = pdfDoc.getForm();
+          fieldMap = getPdfLibFieldMap(form);
+
+          for (index = 0; index < state.fields.length; index += 1) {
+            const fieldState = state.fields[index];
+            const fieldInfo = fieldMap[fieldState.name];
+            const pdfField = fieldInfo ? fieldInfo.field : null;
+
+            if (!pdfField || fieldState.readOnly) {
+              continue;
+            }
+
+            try {
+              if (fieldInfo.typeName === "PDFTextField") {
+                pdfField.setText(fieldState.value || "");
+              } else if (fieldInfo.typeName === "PDFCheckBox") {
+                if (fieldState.value === true) {
+                  pdfField.check();
+                } else {
+                  pdfField.uncheck();
+                }
+              } else if (fieldInfo.typeName === "PDFRadioGroup") {
+                if (typeof pdfField.clear === "function") {
+                  pdfField.clear();
+                }
+
+                if (fieldState.value) {
+                  pdfField.select(fieldState.value);
+                }
+              } else if (fieldInfo.typeName === "PDFDropdown" || fieldInfo.typeName === "PDFOptionList") {
+                if (typeof pdfField.clear === "function") {
+                  pdfField.clear();
+                }
+
+                if (fieldState.value) {
+                  pdfField.select(fieldState.value);
+                }
+              }
+            } catch (error) {
+              /* Best effort per field. */
+            }
+          }
+
+          try {
+            if (typeof form.updateFieldAppearances === "function") {
+              form.updateFieldAppearances();
+            }
+          } catch (error) {
+            /* Appearance refresh is best effort only. */
+          }
+
+          if (flattenOutput === true) {
+            try {
+              form.flatten();
+            } catch (error) {
+              /* Flattening support may vary. */
+            }
+          }
+
+          return await pdfDoc.save({ useObjectStreams: true });
+        } catch (error) {
+          throw error;
+        }
+      }
+
+      function updateResult(bytesLength) {
+        const flattenText = flattenToggle && flattenToggle.checked ? "Flattened export." : "Interactive export.";
+
+        state.resultFilename = generateFilename("pdf");
+
+        if (resultStats) {
+          resultStats.textContent =
+            "Filled " + getFilledCount() + " of " + state.fields.length +
+            " fields. " + flattenText + " Output size: " + formatSize(bytesLength) + ".";
+        }
+
+        if (filenamePreview) {
+          filenamePreview.textContent = state.resultFilename;
+        }
+
+        if (resultBox) {
+          resultBox.hidden = false;
+        }
+      }
+
+      function downloadResult() {
+        let objectUrl = "";
+        let link = null;
+
+        if (!state.resultBytes || !state.resultFilename) {
+          toast("Export the filled PDF before downloading", "info");
+          return;
+        }
+
+        try {
+          objectUrl = URL.createObjectURL(new Blob([state.resultBytes], { type: "application/pdf" }));
+          link = document.createElement("a");
+          link.href = objectUrl;
+          link.download = state.resultFilename;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+
+          window.setTimeout(function () {
+            revokeBlobUrl(objectUrl);
+          }, 1000);
+
+          toast("Download started", "success");
+        } catch (error) {
+          if (link && link.parentNode) {
+            link.parentNode.removeChild(link);
+          }
+
+          if (objectUrl) {
+            revokeBlobUrl(objectUrl);
+          }
+
+          toast("The download could not start. Please try again.", "error");
+        }
+      }
+
+      async function exportFilledPdf() {
+        const missingField = getEmptyRequiredField();
+        let bytes = null;
+
+        if (!state.arrayBuffer) {
+          toast("Please upload a PDF first.", "warning");
+          return;
+        }
+
+        if (missingField) {
+          toast("Please fill all required fields.", "warning");
+          goToField(missingField.id);
+          return;
+        }
+
+        try {
+          setBusy(true, "Filling PDF...");
+          clearResult();
+          updatePreviewMeta();
+          updateProgressBar(5, "Loading PDF...");
+          updateProgressBar(30, "Applying field values...");
+          bytes = await buildFilledPdfBytes(Boolean(flattenToggle && flattenToggle.checked));
+          state.resultBytes = bytes;
+          updateProgressBar(88, "Saving filled PDF...");
+          updateResult(bytes.byteLength);
+          updateProgressBar(100, "Complete");
+          window.setTimeout(hideProgressBar, 450);
+          toast("Filled PDF is ready to download", "success");
+        } catch (error) {
+          if (isPasswordError(error)) {
+            showUnlockToast();
+          } else {
+            toast("This file appears damaged", "error");
+          }
+
+          hideProgressBar();
+        } finally {
+          setBusy(false);
+        }
+      }
+
+      function exportFieldData() {
+        let payload = "";
+        let objectUrl = "";
+        let link = null;
+
+        if (!state.fields.length) {
+          toast("No form data to export", "warning");
+          return;
+        }
+
+        try {
+          payload = JSON.stringify({
+            fileName: state.file ? state.file.name : "",
+            pageCount: state.pageCount,
+            savedAt: new Date().toISOString(),
+            fields: serializeFieldData()
+          }, null, 2);
+
+          objectUrl = URL.createObjectURL(new Blob([payload], { type: "application/json" }));
+          link = document.createElement("a");
+          link.href = objectUrl;
+          link.download = generateFilename("json");
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+
+          window.setTimeout(function () {
+            revokeBlobUrl(objectUrl);
+          }, 1000);
+
+          toast("Form data exported", "success");
+        } catch (error) {
+          if (link && link.parentNode) {
+            link.parentNode.removeChild(link);
+          }
+
+          if (objectUrl) {
+            revokeBlobUrl(objectUrl);
+          }
+
+          toast("The data export could not start. Please try again.", "error");
+        }
+      }
+
+      async function loadDataFile(file) {
+        let text = "";
+        let parsed = null;
+        let fields = null;
+
+        if (!file) {
+          return;
+        }
+
+        try {
+          text = await new Promise(function (resolve, reject) {
+            const reader = new FileReader();
+
+            reader.onload = function () {
+              resolve(safeString(reader.result));
+            };
+
+            reader.onerror = function () {
+              reject(new Error("Failed to read data file."));
+            };
+
+            reader.readAsText(file);
+          });
+        } catch (error) {
+          toast("Failed to load data file", "error");
+          return;
+        }
+
+        try {
+          parsed = JSON.parse(text);
+        } catch (error) {
+          toast("Invalid JSON file", "error");
+          return;
+        }
+
+        fields = parsed && parsed.fields && typeof parsed.fields === "object" ? parsed.fields : parsed;
+
+        if (!fields || typeof fields !== "object") {
+          toast("Invalid JSON file", "error");
+          return;
+        }
+
+        if (!applyFieldData(fields, false)) {
+          toast("No matching form fields were found in that data file", "warning");
+          return;
+        }
+
+        toast("Form data imported", "success");
+      }
+
+      async function printFilledPdf() {
+        let bytes = null;
+        let objectUrl = "";
+        let frame = null;
+        let cleanupTimer = null;
+
+        if (!state.arrayBuffer) {
+          toast("Please upload a PDF first.", "warning");
+          return;
+        }
+
+        try {
+          setBusy(true, "Preparing print...");
+          updateProgressBar(10, "Preparing print preview...");
+          bytes = await buildFilledPdfBytes(Boolean(flattenToggle && flattenToggle.checked));
+          objectUrl = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
+          frame = document.createElement("iframe");
+          frame.style.position = "fixed";
+          frame.style.width = "1px";
+          frame.style.height = "1px";
+          frame.style.opacity = "0";
+          frame.style.pointerEvents = "none";
+          frame.style.left = "-9999px";
+
+          frame.onload = function () {
+            cleanupTimer = window.setTimeout(function () {
+              if (frame && frame.parentNode) {
+                frame.parentNode.removeChild(frame);
+              }
+
+              revokeBlobUrl(objectUrl);
+            }, 5000);
+
+            try {
+              if (frame.contentWindow) {
+                frame.contentWindow.focus();
+                frame.contentWindow.print();
+                toast("Print dialog opened", "success");
+              } else {
+                toast("The print dialog could not be opened.", "error");
+              }
+            } catch (error) {
+              toast("The print dialog could not be opened.", "error");
+            }
+          };
+
+          frame.src = objectUrl;
+          document.body.appendChild(frame);
+          updateProgressBar(100, "Print ready");
+          window.setTimeout(hideProgressBar, 450);
+        } catch (error) {
+          if (cleanupTimer) {
+            window.clearTimeout(cleanupTimer);
+          }
+
+          if (frame && frame.parentNode) {
+            frame.parentNode.removeChild(frame);
+          }
+
+          if (objectUrl) {
+            revokeBlobUrl(objectUrl);
+          }
+
+          if (isPasswordError(error)) {
+            showUnlockToast();
+          } else {
+            toast("This file appears damaged", "error");
+          }
+
+          hideProgressBar();
+        } finally {
+          setBusy(false);
+        }
+      }
+
+      function setLoadedUi() {
+        if (uploadZone) {
+          uploadZone.hidden = true;
+          uploadZone.style.display = "none";
+        }
+
+        if (toolArea) {
+          toolArea.hidden = false;
+        }
+      }
+
+      async function loadPdfFile(file) {
+        let buffer = null;
+        let pdfLibDoc = null;
+        let pdfJsDoc = null;
+        let fields = null;
+        let restoredFields = null;
+
+        try {
+          if (!file) {
+            return;
+          }
+
+          clearResult();
+          hideProgressBar();
+          state.previewToken += 1;
+          await destroyPreviewDocument();
+
+          const fileType = typeof file.type === "string" ? file.type : "";
+          const hasPdfType = fileType === "application/pdf" || fileType === "";
+          const hasPdfExtension = typeof file.name === "string" && /\.pdf$/i.test(file.name);
+
+          if (!hasPdfType || !hasPdfExtension) {
+            toast("Please upload a PDF file only", "error");
+            return;
+          }
+
+          if (file.size === 0) {
+            toast("This file appears to be empty", "error");
+            return;
+          }
+
+          if (typeof window.PDFLib === "undefined" || typeof window.pdfjsLib === "undefined") {
+            toast("PDF tools failed to load. Please refresh the page.", "error");
+            return;
+          }
+
+          buffer = await readBlobAsArrayBuffer(file);
+
+          if (!validatePdfHeader(buffer)) {
+            toast("This file appears damaged", "error");
+            return;
+          }
+
+          try {
+            pdfLibDoc = await window.PDFLib.PDFDocument.load(buffer.slice(0));
+          } catch (error) {
+            if (isPasswordError(error)) {
+              showUnlockToast();
+              return;
+            }
+
+            toast("This file appears damaged", "error");
+            return;
+          }
+
+          try {
+            pdfJsDoc = await window.pdfjsLib.getDocument({ data: buffer.slice(0) }).promise;
+          } catch (error) {
+            if (isPasswordError(error)) {
+              showUnlockToast();
+              return;
+            }
+
+            toast("This file appears damaged", "error");
+            return;
+          }
+
+          fields = await detectFormFields(pdfLibDoc, pdfJsDoc);
+
+          if (!fields.length) {
+            if (pdfJsDoc && typeof pdfJsDoc.destroy === "function") {
+              try {
+                await pdfJsDoc.destroy();
+              } catch (error) {
+                /* Best effort cleanup only. */
+              }
+            }
+
+            toast("This PDF has no interactive form fields", "warning");
+            return;
+          }
+
+          state.file = file;
+          state.arrayBuffer = buffer;
+          state.pdfJsDoc = pdfJsDoc;
+          state.pageCount = pdfJsDoc.numPages || pdfLibDoc.getPageCount();
+          state.currentPage = 1;
+          state.zoomMode = DEFAULT_ZOOM;
+          state.fields = fields;
+          state.storageKey = getStorageKey();
+          state.focusedFieldId = "";
+          state.pendingFocusFieldId = "";
+          buildFieldIndex();
+          restoredFields = readPersistedFieldData();
+
+          if (restoredFields) {
+            applyFieldData(restoredFields, false);
+          }
+
+          updateFileBar();
+          updatePageNav();
+          updatePreviewMeta();
+          setZoomButtons();
+          renderFieldGrid();
+          setLoadedUi();
+          await renderCurrentPage();
+
+          if (restoredFields) {
+            toast("Saved form data restored", "success");
+          } else {
+            toast("PDF form loaded", "success");
+          }
+        } catch (error) {
+          if (isPasswordError(error)) {
+            showUnlockToast();
+            return;
+          }
+
+          toast("This file appears damaged", "error");
+        }
+      }
+
+      async function resetTool() {
+        try {
+          state.previewToken += 1;
+          await destroyPreviewDocument();
+
+          state.file = null;
+          state.arrayBuffer = null;
+          state.pageCount = 0;
+          state.currentPage = 1;
+          state.zoomMode = DEFAULT_ZOOM;
+          state.fields = [];
+          state.fieldIndex = {};
+          state.focusedFieldId = "";
+          state.pendingFocusFieldId = "";
+          state.resultBytes = null;
+          state.resultFilename = "";
+          state.storageKey = "";
+
+          if (previewContext && previewCanvas) {
+            previewContext.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+            previewCanvas.width = 0;
+            previewCanvas.height = 0;
+            previewCanvas.style.width = "0px";
+            previewCanvas.style.height = "0px";
+          }
+
+          if (previewStage) {
+            previewStage.style.width = "0px";
+            previewStage.style.height = "0px";
+          }
+
+          if (fieldOverlay) {
+            fieldOverlay.textContent = "";
+            fieldOverlay.style.width = "0px";
+            fieldOverlay.style.height = "0px";
+          }
+
+          if (fieldList) {
+            fieldList.textContent = "";
+          }
+
+          if (fieldSearch) {
+            fieldSearch.value = "";
+          }
+
+          if (flattenToggle) {
+            flattenToggle.checked = false;
+          }
+
+          if (fileInput) {
+            fileInput.value = "";
+          }
+
+          if (dataInput) {
+            dataInput.value = "";
+          }
+
+          if (uploadZone) {
+            uploadZone.hidden = false;
+            uploadZone.style.display = "";
+            uploadZone.classList.remove("dragover", "has-files");
+            uploadZone.style.transform = "";
+          }
+
+          if (toolArea) {
+            toolArea.hidden = true;
+          }
+
+          clearResult();
+          hideProgressBar();
+          updateFileBar();
+          updatePageNav();
+          updatePreviewMeta();
+          setZoomButtons();
+          setPreviewBusy(false);
+          setBusy(false);
+
+          if (fieldListCount) {
+            fieldListCount.textContent = "0 fields shown";
+          }
+        } catch (error) {
+          toast("The tool could not reset. Please refresh the page.", "error");
+        }
+      }
+
+      function bindUploadZone() {
+        if (!uploadZone || !fileInput) {
+          return;
+        }
+
+        if (typeof window.initDropZone === "function") {
+          window.initDropZone(uploadZone, function (files) {
+            void loadPdfFile(files && files[0] ? files[0] : null);
+          }, {
+            inputEl: fileInput,
+            maxFiles: 1,
+            validator: function () {
+              return true;
+            }
+          });
+        }
+
+        if (typeof window.initFileInput === "function") {
+          window.initFileInput(fileInput, function (files) {
+            void loadPdfFile(files && files[0] ? files[0] : null);
+          }, {
+            maxFiles: 1,
+            validator: function () {
+              return true;
+            }
+          });
+        }
+
+        uploadZone.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            fileInput.click();
+          }
+        });
+
+        uploadZone.addEventListener("mousemove", function (event) {
+          const rect = uploadZone.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const rotateX = ((y / rect.height) - 0.5) * -5;
+          const rotateY = ((x / rect.width) - 0.5) * 5;
+
+          uploadZone.style.transform =
+            "perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+        });
+
+        uploadZone.addEventListener("mouseleave", function () {
+          uploadZone.style.transform = "";
+        });
+      }
+
+      function bindControls() {
+        let index = 0;
+
+        for (index = 0; index < zoomButtons.length; index += 1) {
+          zoomButtons[index].addEventListener("click", function () {
+            const nextZoom = this.getAttribute("data-zoom") || DEFAULT_ZOOM;
+            state.zoomMode = nextZoom;
+            setZoomButtons();
+            void renderCurrentPage();
+          });
+        }
+
+        if (prevPageButton) {
+          prevPageButton.addEventListener("click", function () {
+            if (state.currentPage <= 1 || state.processing) {
+              return;
+            }
+
+            state.currentPage -= 1;
+            updatePageNav();
+            updatePreviewMeta();
+            void renderCurrentPage();
+          });
+        }
+
+        if (nextPageButton) {
+          nextPageButton.addEventListener("click", function () {
+            if (state.currentPage >= state.pageCount || state.processing) {
+              return;
+            }
+
+            state.currentPage += 1;
+            updatePageNav();
+            updatePreviewMeta();
+            void renderCurrentPage();
+          });
+        }
+
+        if (fieldSearch) {
+          fieldSearch.addEventListener("input", function () {
+            renderFieldGrid();
+          });
+        }
+
+        if (flattenToggle) {
+          flattenToggle.addEventListener("change", function () {
+            clearResult();
+            updatePreviewMeta();
+          });
+        }
+
+        if (clearFileButton) {
+          clearFileButton.addEventListener("click", function () {
+            void resetTool();
+          });
+        }
+
+        if (exportButton) {
+          exportButton.addEventListener("click", function () {
+            void exportFilledPdf();
+          });
+        }
+
+        if (saveDataButton) {
+          saveDataButton.addEventListener("click", exportFieldData);
+        }
+
+        if (loadDataButton) {
+          loadDataButton.addEventListener("click", function () {
+            if (dataInput) {
+              dataInput.click();
+            }
+          });
+        }
+
+        if (dataInput) {
+          dataInput.addEventListener("change", function () {
+            const file = dataInput.files && dataInput.files[0] ? dataInput.files[0] : null;
+            void loadDataFile(file);
+            dataInput.value = "";
+          });
+        }
+
+        if (printButton) {
+          printButton.addEventListener("click", function () {
+            void printFilledPdf();
+          });
+        }
+
+        if (clearFieldsButton) {
+          clearFieldsButton.addEventListener("click", clearAllFields);
+        }
+
+        if (downloadButton) {
+          downloadButton.addEventListener("click", downloadResult);
+        }
+
+        if (resetButton) {
+          resetButton.addEventListener("click", function () {
+            void resetTool();
+          });
+        }
+
+        window.addEventListener("resize", function () {
+          if (state.pdfJsDoc) {
+            void renderCurrentPage();
+          }
+        });
+
+        window.addEventListener("beforeunload", function () {
+          void destroyPreviewDocument();
+        });
+      }
+
+      function init() {
+        bindUploadZone();
+        bindControls();
+        updateFileBar();
+        updatePageNav();
+        updatePreviewMeta();
+        setZoomButtons();
+      }
+
+      init();
+    })();
+  </script>
+
+
+</body></html>

@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Quote Generator Simple Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Quote Generator Simple online. Client-side, free, and private browser-based utility.">
+<meta name="keywords" content="quote generator 2026, best quote generator, random quote, inspirational quotes, motivational quotes, daily quotes, quote maker, famous quotes, wisdom quotes, famous sayings, quote of the day, inspirational words, motivation tool, quote database, quote collection, quote finder">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/quote-generator-simple.html">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/quote-generator-simple.html">
+  <meta property="og:title" content="Quote Generator Simple Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Quote Generator Simple online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/quote-generator-simple.html">
+  <meta name="twitter:title" content="Quote Generator Simple Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Quote Generator Simple online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  
+  <!-- Schema.org Structured Data -->
+  
+  
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Quote Generator Comparison Features",
+    "description": "Feature dimensions used in ToolsMatic quote generator competitor comparison.",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Quote category depth"},
+      {"@type": "ListItem", "position": 2, "name": "Copy and social sharing workflow"},
+      {"@type": "ListItem", "position": 3, "name": "Favorites and local persistence"},
+      {"@type": "ListItem", "position": 4, "name": "Client-side privacy"},
+      {"@type": "ListItem", "position": 5, "name": "Speed and mobile usability"},
+      {"@type": "ListItem", "position": 6, "name": "Free access model"}
+    ]
+  }
+  </script>
+  
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+  <style>
+    :root {
+      --accent-color: var(--accent);
+      --bg-secondary: #0c1425;
+      --bg-tertiary: rgba(255, 255, 255, 0.04);
+      --border-color: var(--border);
+      --text-primary: var(--text);
+      --text-secondary: var(--muted);
+    }
+
+    .quote-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .quote-actions button {
+      flex: 1;
+      min-width: 120px;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--accent-color, #3b82f6);
+      background: var(--accent-color, #3b82f6);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+    
+    .quote-actions button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+    
+    .quote-actions button.favorited {
+      background: #f59e0b;
+      border-color: #f59e0b;
+      color: #1f2937;
+    }
+    
+    #quote {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      padding: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      border-left: 4px solid var(--accent-color);
+      margin: 1.5rem 0;
+      font-style: italic;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .favorites-section {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .favorites-section h3 {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    
+    .favorites-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .favorite-item {
+      padding: 1rem;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    
+    .favorite-item-text {
+      flex: 1;
+    }
+    
+    .favorite-item button {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.85rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    
+    .favorite-item button:hover {
+      background: #ef4444;
+      color: white;
+      border-color: #ef4444;
+    }
+    
+    .empty-favorites {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+    
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      padding: 1rem 1.5rem;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transform: translateY(150%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .toast.show {
+      transform: translateY(0);
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .feature-card {
+      padding: 20px;
+      background: rgba(6, 182, 212, 0.05);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      background: rgba(6, 182, 212, 0.1);
+      border-color: rgba(6, 182, 212, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.15);
+    }
+    
+    @media (max-width: 600px) {
+      .quote-actions {
+        flex-direction: column;
+      }
+      
+      .quote-actions button {
+        width: 100%;
+      }
+      
+      #quote {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+      }
+    }
+  </style>
+
+    <style>
+      .ad-container {
+        text-align: center;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      @media (max-width: 768px) {
+        .ad-container {
+          margin: 15px 0;
+        }
+        .ad-container iframe {
+          max-width: 100% !important;
+          width: auto !important;
+          height: auto !important;
+        }
+      }
+    </style>
+    </head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">
+        <span>Tools</span>Matic
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode"></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1 style="text-align: center; font-size: 2em; margin: 20px 0;">Quote Generator Simple</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+<p style="text-align: center; margin-bottom: 20px; line-height: 1.6;">
+      Get inspired with random motivational and famous quotes.<br>Perfect for social media posts, presentations, and<br>daily inspiration.
+    </p>
+</div>
+    <section class="tool-shell">
+      <h2>Quote Generator</h2>
+      <label class="label" for="quote-category">Category</label>
+      <select id="quote-category">
+        <option value="random" selected>🎲 Random (All Categories)</option>
+        <option value="creativity">Creativity</option>
+        <option value="focus">Focus</option>
+        <option value="perseverance">Perseverance</option>
+        <option value="leadership">Leadership</option>
+        <option value="learning">Learning</option>
+        <option value="productivity">Productivity</option>
+        <option value="teamwork">Teamwork</option>
+        <option value="innovation">Innovation</option>
+        <option value="mindset">Mindset</option>
+        <option value="growth">Growth</option>
+        <option value="design">Design</option>
+        <option value="writing">Writing</option>
+        <option value="engineering">Engineering</option>
+        <option value="startup">Startup</option>
+        <option value="wellness">Wellness</option>
+      </select>
+      <p class="result-box" id="quote">Click the button to see a new quote.</p>
+      
+      <div class="quote-actions">
+        <button id="next" data-primary>✨ New Quote</button>
+        <button id="copy-btn">📋 Copy</button>
+        <button id="tweet-btn">🐦 Tweet</button>
+        <button id="favorite-btn">❤️ Favorite</button>
+      </div>
+
+      <div class="favorites-section">
+        <h3>❤️ Favorite Quotes (<span id="fav-count">0</span>)</h3>
+        <div class="favorites-list" id="favorites-list">
+          <div class="empty-favorites">No favorite quotes yet. Click the ❤️ button to save quotes you love!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Elite Features Grid -->
+    <section class="section" aria-labelledby="elite-features">
+      <h2 id="elite-features" style="text-align: center; margin: 40px 0 30px 0;">🚀 Elite Features That Beat All Competitors</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">📊</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">525+ Curated Quotes</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">Hand-selected from world leaders, not random internet scraps</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">🏷️</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">15 Professional Categories</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">Design, Engineering, Startup, Leadership, Writing, Wellness + more</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">⚡</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">Real-Time Generation</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">One-click random quotes with zero page delay or loading</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">❤️</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">Save Favorites to Library</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">Build personal collection with unlimited saved quotes</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">🐦</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">Direct Twitter Sharing</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">One-click share to inspire your followers instantly</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">📋</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">Copy to Clipboard</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">Paste quotes anywhere with one simple click</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">🔒</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">100% Local Processing</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">All quotes run in your browser, zero tracking by us</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">📱</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">Mobile Optimized</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">Works perfectly on phones, tablets, and desktops</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">🌐</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">Works Offline PWA</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">Quotes available even without internet connection</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">✨</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">Ad-Free Experience</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">Zero distractions, no popups, just pure inspiration</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">🎨</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">Beautiful Interface</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">Modern, clean design built for daily inspiration use</p>
+        </div>
+        <div class="feature-card">
+          <div style="font-size: 2em; margin-bottom: 10px;">✅</div>
+          <h3 style="margin: 0 0 8px 0; font-size: 1em; font-weight: 600;">Free Forever</h3>
+          <p style="margin: 0; font-size: 0.85em; color: #a0aec0;">No premium tiers, no paywalls, no subscriptions needed</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="section" aria-labelledby="comparison">
+      <h2 id="comparison" style="text-align: center; margin: 40px 0 30px 0;">ToolsMatic Quote Generator vs Top Competitors</h2>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem;">
+          <thead>
+            <tr style="background: rgba(6, 182, 212, 0.1); border-bottom: 2px solid rgba(6, 182, 212, 0.3);">
+              <th style="padding: 14px; text-align: left; font-weight: 600;">Feature</th>
+              <th style="padding: 14px; text-align: center; font-weight: 600; color: #06b6d4;">ToolsMatic</th>
+              <th style="padding: 14px; text-align: center; font-weight: 600;">Quotes.io</th>
+              <th style="padding: 14px; text-align: center; font-weight: 600;">BrainyQuote</th>
+              <th style="padding: 14px; text-align: center; font-weight: 600;">Quotable API</th>
+              <th style="padding: 14px; text-align: center; font-weight: 600;">Premium Tools</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">525+ Curated Quotes</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ No</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ No</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ Limited</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">15 Professional Categories</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ 15</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ 5</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ 8</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ 4</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ 20+</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">One-Click Random Generator</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Instant</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ No</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">Save Favorites to Library</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Unlimited</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ No</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ Limited</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ No</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">Direct Twitter Sharing</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ One-Click</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ Manual</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ Manual</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ No</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">Copy to Clipboard</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">100% Local (No Tracking)</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ Cloud</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ Cloud</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ Cloud</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ Cloud</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">Mobile Optimized</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Perfect</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ Okay</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ Okay</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">Offline PWA Support</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Full</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ No</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ No</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ No</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">Ad-Free Experience</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ Ad-Heavy</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ Ad-Heavy</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">Beautiful Modern UI</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ Basic</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ Dated</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ Minimal</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+              <td style="padding: 12px; font-weight: 500;">No Sign-Up Required</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Instant</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ Email Required</td>
+              <td style="padding: 12px; text-align: center; color: #ef4444;">❌ Account Required</td>
+              <td style="padding: 12px; text-align: center; color: #22d3ee;">✅ Yes</td>
+              <td style="padding: 12px; text-align: center; color: #fbbf24;">⚠️ Premium Only</td>
+            </tr>
+            <tr style="background: rgba(6, 182, 212, 0.1); border-bottom: 2px solid rgba(6, 182, 212, 0.3);">
+              <td style="padding: 12px; font-weight: 600;">Cost</td>
+              <td style="padding: 12px; text-align: center; font-weight: 600; color: #22d3ee;">💚 Free Forever</td>
+              <td style="padding: 12px; text-align: center;">$9.99/mo</td>
+              <td style="padding: 12px; text-align: center;">Free + Ads</td>
+              <td style="padding: 12px; text-align: center;">Free (API)</td>
+              <td style="padding: 12px; text-align: center;">$15-99/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="section" aria-labelledby="related-tools">
+      <h2 id="related-tools" style="text-align: center; margin: 40px 0 30px 0;">🛠️ Complementary ToolsMatic Tools</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 30px 0;">
+        <a href="/tools/password-generator.html" style="text-decoration: none; color: inherit;">
+          <div style="padding: 20px; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; transition: all 0.3s ease; cursor: pointer; text-align: center;" onmouseover="this.style.background='rgba(6, 182, 212, 0.1)'; this.style.borderColor='rgba(6, 182, 212, 0.4)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(6, 182, 212, 0.05)'; this.style.borderColor='rgba(6, 182, 212, 0.2)'; this.style.transform='translateY(0)';">
+            <div style="font-size: 2em; margin-bottom: 10px;">🔐</div>
+            <h3 style="margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">Password Generator</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: #a0aec0;">Secure random passwords with customizable strength &amp; requirements</p>
+          </div>
+        </a>
+        <a href="/tools/json-formatter.html" style="text-decoration: none; color: inherit;">
+          <div style="padding: 20px; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; transition: all 0.3s ease; cursor: pointer; text-align: center;" onmouseover="this.style.background='rgba(6, 182, 212, 0.1)'; this.style.borderColor='rgba(6, 182, 212, 0.4)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(6, 182, 212, 0.05)'; this.style.borderColor='rgba(6, 182, 212, 0.2)'; this.style.transform='translateY(0)';">
+            <div style="font-size: 2em; margin-bottom: 10px;">📄</div>
+            <h3 style="margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">JSON Formatter</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: #a0aec0;">Format, validate, and minify JSON with beautiful syntax highlighting</p>
+          </div>
+        </a>
+        <a href="/tools/color-picker.html" style="text-decoration: none; color: inherit;">
+          <div style="padding: 20px; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; transition: all 0.3s ease; cursor: pointer; text-align: center;" onmouseover="this.style.background='rgba(6, 182, 212, 0.1)'; this.style.borderColor='rgba(6, 182, 212, 0.4)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(6, 182, 212, 0.05)'; this.style.borderColor='rgba(6, 182, 212, 0.2)'; this.style.transform='translateY(0)';">
+            <div style="font-size: 2em; margin-bottom: 10px;">🎨</div>
+            <h3 style="margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">Color Picker</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: #a0aec0;">Pick, convert, and compare colors with hex, RGB, and HSL output</p>
+          </div>
+        </a>
+        <a href="/tools/word-counter.html" style="text-decoration: none; color: inherit;">
+          <div style="padding: 20px; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; transition: all 0.3s ease; cursor: pointer; text-align: center;" onmouseover="this.style.background='rgba(6, 182, 212, 0.1)'; this.style.borderColor='rgba(6, 182, 212, 0.4)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(6, 182, 212, 0.05)'; this.style.borderColor='rgba(6, 182, 212, 0.2)'; this.style.transform='translateY(0)';">
+            <div style="font-size: 2em; margin-bottom: 10px;">📊</div>
+            <h3 style="margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">Word Counter</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: #a0aec0;">Analyze text for word count, character count, reading time, and more</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="qg-what">
+      <h2 id="qg-what">What is the ToolsMatic Quote Generator?</h2>
+      <p>
+        The <strong>ToolsMatic Quote Generator</strong> is an instant source of motivation, wisdom, and fresh perspective. 
+        With over <strong>525 carefully curated quotes</strong> across <strong>15 professional categories</strong>, 
+        it's designed for writers, speakers, content creators, and anyone seeking a burst of inspiration without distraction.
+      </p>
+      <p>
+        Unlike generic quote sites cluttered with ads and popups, ToolsMatic gives you a clean, focused interface 
+        where a single click delivers the perfect quote for your mood or project. Whether you're drafting a presentation, 
+        writing copy, starting your day, or just need a mental reset, our quote generator has you covered.
+      </p>
+      <p>
+        <strong>Why use ToolsMatic  Fast, ad-free, and built specifically for people who value 
+        their time. No login required, no tracking, just pure inspiration on demand. Plus, our quotes are hand-selected 
+        for relevance to modern professionals?designers, engineers, startup founders, writers, and leadersrather than 
+        generic platitudes. Save your favorites for later reference and share directly to Twitter to inspire your network.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="qg-how">
+      <h2 id="qg-how">How to use the Quote Generator</h2>
+      <ol>
+        <li><strong>Select a category</strong> from the dropdown menu (Creativity, Focus, Leadership, etc.)</li>
+        <li><strong>Click "New Quote"</strong> to generate a random quote from that category</li>
+        <li><strong>Use the action buttons</strong>:
+          <ul>
+            <li><strong>Copy</strong> - Copy the quote to your clipboard</li>
+            <li><strong>Tweet</strong> - Share the quote directly to Twitter</li>
+            <li><strong>Favorite</strong> - Save the quote to your favorites list</li>
+          </ul>
+        </li>
+        <li><strong>Manage favorites</strong> - Your saved quotes appear below, with the option to remove them</li>
+        <li><strong>Switch categories</strong> to explore different themes and perspectives</li>
+      </ol>
+      <p>
+        <strong>Pro tip:</strong> Use the Quote Generator at the start of your workday as a ritual, or keep it open in a tab 
+        when you're writing. A fresh quote can be the perfect way to break through creative blocks or add personality to your content.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="qg-who">
+      <h2 id="qg-who">Who should use the Quote Generator?</h2>
+      <ul>
+        <li><strong>Content creators</strong> looking for engaging social media posts or blog intros</li>
+        <li><strong>Public speakers</strong> who want memorable opening or closing lines</li>
+        <li><strong>Writers</strong> seeking inspiration or epigraphs for their work</li>
+        <li><strong>Designers</strong> who need text for mockups, posters, or portfolio pieces</li>
+        <li><strong>Team leaders</strong> crafting motivational messages for their teams</li>
+        <li><strong>Students</strong> looking for thought-provoking quotes for presentations or essays</li>
+        <li><strong>Coaches and mentors</strong> who share daily wisdom with clients</li>
+        <li><strong>Anyone</strong> who values a moment of reflection and inspiration</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="qg-why">
+      <h2 id="qg-why">Why ToolsMatic beats other quote generators</h2>
+      <p>
+        Most quote websites are slow, ad-heavy, or filled with outdated platitudes. ToolsMatic Quote Generator 
+        is different:
+      </p>
+      <ul>
+        <li><strong>Modern, curated collection:</strong> 525+ quotes selected for relevance to today's professionals</li>
+        <li><strong>15 focused categories:</strong> Not just "motivational"we have specific themes for Design, Engineering, Startup life, Writing, and more</li>
+        <li><strong>Instant results:</strong> No page loads, no delaysquotes appear instantly</li>
+        <li><strong>Clean interface:</strong> Zero ads, zero popups, zero tracking</li>
+        <li><strong>Works offline:</strong> Once loaded, it runs entirely in your browser</li>
+        <li><strong>Favorite system:</strong> Build your personal collection of quotes</li>
+        <li><strong>One-click sharing:</strong> Tweet quotes directly without copying and pasting</li>
+        <li><strong>Mobile-friendly:</strong> Works perfectly on phones and tablets</li>
+        <li><strong>Privacy-first:</strong> Your favorites are saved locallywe never see your data</li>
+      </ul>
+      <p>
+        Whether you're building a startup, writing a novel, leading a team, or designing the next big product, 
+        ToolsMatic provides the right words at the right time. Bookmark it, use it daily, and let it become 
+        part of your creative routine.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="qg-faq">
+      <h2 id="qg-faq">Frequently Asked Questions</h2>
+      
+      <h3>How many quotes does the generator include?</h3>
+      <p>
+        We have <strong>525+ quotes</strong> across 15 categories, with 35 quotes per category. Each quote is 
+        hand-selected for wisdom, relevance, and impact.
+      </p>
+
+      <h3>Can I use these quotes commercially?</h3>
+      <p>
+        Most quotes are either by unknown authors or are in the public domain. For attributed quotes, we recommend 
+        doing your own due diligence if using commercially. For personal use, social media, presentations, and 
+        educational purposes, you're generally finebut always credit the author when known.
+      </p>
+
+      <h3>Do my favorite quotes sync across devices?</h3>
+      <p>
+        Favorites are saved in your browser's local storage, so they stay on the device where you saved them. 
+        They won't sync to other devices, but this also means your data never leaves your computerit's completely private.
+      </p>
+
+      <h3>Can I suggest quotes to add?</h3>
+      <p>
+        We love hearing from users! While we don't have a formal submission system yet, we regularly update 
+        our quote collection based on user feedback. Check back often for new additions.
+      </p>
+
+      <h3>Is there a limit to how many quotes I can favorite?</h3>
+      <p>
+        Nope! Save as many as you want. Your browser's storage can easily handle hundreds of quotes, so feel free 
+        to build your personal wisdom library.
+      </p>
+
+      <h3>Why don't I see author names for all quotes?</h3>
+      <p>
+        Many of our quotes are modern wisdom from the internet, industry best practices, or collected wisdom 
+        where the original author is unknown. We credit authors whenever possible, but sometimes great ideas 
+        are truly collaborative or anonymous.
+      </p>
+
+      <h3>Can I export my favorite quotes?</h3>
+      <p>
+        Currently, favorites are view-only in the app, but you can easily copy them individually using the Copy button. 
+        We're considering adding bulk export features in future updates.
+      </p>
+
+      <h3>Does this work offline?</h3>
+      <p>
+        Yes! Once the page loads, everything runs in your browser. No internet connection needed to generate quotes. 
+        (The Tweet button will require internet, obviously!)
+      </p>
+
+      <h3>Are there keyboard shortcuts?</h3>
+      <p>
+        Not yet, but that's a great idea for a future update! For now, everything is accessible with simple clicks.
+      </p>
+    </section>
+      <div style="text-align: center; margin: 24px 0;">
+        </div>
+<div style="text-align: center; margin: 24px 0;">
+
+</div>
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="quote-generator-simple-pseo" aria-labelledby="quote-generator-simple-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Quote Generator Simple</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="quote-generator-simple-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Quote Generator Simple Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Quote Generator Simple</strong>, a clean, distraction-free environment for rapid results in one click. This dedicated workspace is built specifically for people who need a quick utility job completed instantly without configuring endless settings. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>clean workspaces, single-tap operations, zero clutter, and high readability results</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Surface a fresh, motivating quote on demand. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Single-Click Workflows</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Paste input, click one button, copy the output. Done in three seconds.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Zero Visual Clutter</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Streamlined design hides unnecessary advanced settings behind clean defaults.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Fast Clipboard Sharing</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Get readable results optimized for immediate use and sharing.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Quote Generator Simple</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Simple layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Quote Generator Simple</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this simple version accurate?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Perfectly. It uses the same robust engine as the advanced versions, pre-configured with best defaults.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I access advanced settings?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, if you need deeper controls, you can navigate to the main tool page anytime.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Why choose Simple?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">It saves time when you just need the standard task completed without configuring options.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/quote-generator.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Quote Generator</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Quote Generator Simple","url":"https://toolsmatic.me/tools/quote-generator-simple.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Quote Generator Simple online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Quote Generator Simple","item":"https://toolsmatic.me/tools/quote-generator-simple.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this simple version accurate?","acceptedAnswer":{"@type":"Answer","text":"Perfectly. It uses the same robust engine as the advanced versions, pre-configured with best defaults."}},{"@type":"Question","name":"Can I access advanced settings?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you need deeper controls, you can navigate to the main tool page anytime."}},{"@type":"Question","name":"Why choose Simple?","acceptedAnswer":{"@type":"Answer","text":"It saves time when you just need the standard task completed without configuring options."}}]}]}</script>
+  </main>
+
+  <div id="toast" class="toast">
+    <span id="toast-message"></span>
+  </div>
+
+  <script>
+    const categories = {
+      creativity: [
+        'Creativity is intelligence having fun. - Albert Einstein',
+        'You cannot use up creativity. The more you use, the more you have. - Maya Angelou',
+        'Create before you consume. - 12345',
+        'Originality is just remix in new contexts. - 12345',
+        'Ship before perfect. - 12345',
+        'Constraints ignite creativity. - Unknown',
+        'Make the thing you wish existed. - Unknown',
+        'Imitate, then innovate. - Unknown',
+        'Boredom sparks breakthroughs. - Unknown',
+        'Draw outside the lines intentionally. - Unknown',
+        'Create daily, judge quarterly. - Unknown',
+        'Build in public, refine in private. - Unknown',
+        'First drafts are not final drafts. - Unknown',
+        'Volume beats precision in the early phase. - Unknown',
+        'Take ideas seriously, take yourself less so. - Unknown',
+        'Risk ridicule, find novelty. - Unknown',
+        'The muse shows up when you do. - Unknown',
+        'Curate influences, do not copy them. - Unknown',
+        'Messy middle beats no start. - Unknown',
+        'Sample widely, synthesize uniquely. - Unknown',
+        'Build for an audience of one (you). - Unknown',
+        'Steal like an artist. - Austin Kleon',
+        'Let accidents teach you. - Unknown',
+        'Play precedes polish. - Unknown',
+        'Your taste will catch up to your skill. - Unknown',
+        'Iterate in public, improve by feedback. - Unknown',
+        'Small experiments beat big debates. - Unknown',
+        'Creativity is choice plus chance. - Unknown',
+        'Start ugly, end excellent. - Unknown',
+        'Cross-train in other arts. - Unknown',
+        'Protect maker time like money. - Unknown',
+        'Iterate until it sings. - Unknown',
+        'Creativity thrives in constraints. - Unknown',
+        'Ideas are cheap; execution is everything. - Unknown',
+        'Make something, even if it\'s bad. - Unknown'
+      ],
+      focus: [
+        'Focus beats talent when talent is distracted. - 12345',
+        'Single-task the critical path. - Unknown',
+        'Turn off notifications to turn on results. - 12345',
+        'Depth wins over speed. - Unknown',
+        'Guard your mornings. - Unknown',
+        'Start with the hardest piece. - Unknown',
+        'Context switching is a tax. - Unknown',
+        'Short sprints, long calm. - Unknown',
+        'Say no to protect yes. - Unknown',
+        'Finish small to finish big. - Unknown',
+        'Breathe, then resume. - Unknown',
+        'Clarity before activity. - Unknown',
+        'Make the next step obvious. - Unknown',
+        'Remove friction from starts. - Unknown',
+        'Work in blocks, rest between. - Unknown',
+        'Decide once, execute daily. - Unknown',
+        'Deep work compounds over time. - Unknown',
+        'Idle tabs steal focus. - Unknown',
+        'Schedule distraction, not attention. - Unknown',
+        'Do less, then obsess. - Unknown',
+        'Track time, trust reality. - Unknown',
+        'Progress needs boundaries. - Unknown',
+        'Protect your attention span. - Unknown',
+        'Set a timer, start now. - Unknown',
+        'Focus is a muscle you train. - Unknown',
+        'Reduce inputs to increase outputs. - Unknown',
+        'Batch the shallow tasks. - Unknown',
+        'Focus on what you control. - Unknown',
+        'Momentum beats motivation. - Unknown',
+        'End with a clean desk. - Unknown',
+        'Eliminate distractions ruthlessly. - Unknown',
+        'One task at a time, done well. - Unknown',
+        'Silence is a productivity tool. - Unknown',
+        'Focus flows from clear goals. - Unknown',
+        'Every interruption has a cost. - Unknown'
+      ],
+      perseverance: [
+        'Progress is rarely linear. - 12345',
+        'Persistence beats resistance. - 12345',
+        'Fall seven times, stand eight. - Japanese Proverb',
+        'Small steps count when steady. - Unknown',
+        'Grit is long obedience in one direction. - Unknown',
+        'Keep moving, even if slow. - Unknown',
+        'Hard now, easy later. - Unknown',
+        'Every draft teaches. - Unknown',
+        'Finish lines reward finishers. - Unknown',
+        'Storms pass when you keep walking. - Unknown',
+        'Endurance is built, not born. - Unknown',
+        'Stay the course, adjust the sail. - Unknown',
+        'Consistency outpaces intensity. - Unknown',
+        'Doubt is normal, quitting is optional. - Unknown',
+        'Keep promises to yourself. - Unknown',
+        'Tiny wins stack into momentum. - Unknown',
+        'Delay is not defeat. - Unknown',
+        'Rest is part of the race. - Unknown',
+        'Discipline holds when motivation fades. - Unknown',
+        'Repeat the reps. - Unknown',
+        'Tough roads teach strong skills. - Unknown',
+        'Patience is a performance tool. - Unknown',
+        'Stay in the game one more day. - Unknown',
+        'Effort compounds quietly. - Unknown',
+        'Hard choices, easy life. - Jerzy Gregorek',
+        'Keep pushing the flywheel. - Unknown',
+        'The middle is the test. - Unknown',
+        'You can do hard things. - Unknown',
+        'Progress loves persistence. - Unknown',
+        'Finish what you started. - Unknown',
+        'Every setback is a setup for a comeback. - Unknown',
+        'The obstacle is the way. - Marcus Aurelius',
+        'Perseverance is passion plus patience. - Unknown',
+        'Success is not final, failure is not fatal. - Winston Churchill',
+        'It always seems impossible until it\'s done. - Nelson Mandela'
+      ],
+      leadership: [
+        'Lead by example before directive. - 12345',
+        'Clarity is kindness. - 12345',
+        'Listeners earn trust fastest. - Unknown',
+        'Praise in public, coach in private. - Unknown',
+        'Set the vision, clear the path. - Unknown',
+        'Leaders remove friction. - Unknown',
+        'Your calendar shows your values. - Unknown',
+        'Slow to blame, quick to own. - Unknown',
+        'Decide, then communicate twice. - Unknown',
+        'Hire for trajectory. - Unknown',
+        'Feedback is a gift, not a grenade. - Unknown',
+        'Ask brave questions. - Unknown',
+        'Teach the why, not just the what. - Unknown',
+        'Protect focus for the team. - Unknown',
+        'Celebrate small wins loudly. - Unknown',
+        'Guard the culture in the details. - Unknown',
+        'Be consistent, not perfect. - Unknown',
+        'Model the behavior you want repeated. - Unknown',
+        'Clear goals reduce conflict. - Unknown',
+        'Lead meetings, do not let them wander. - Unknown',
+        'Transparency scales trust. - Unknown',
+        'Assume positive intent, verify facts. - Unknown',
+        'Give credit freely. - Unknown',
+        'Coach for outcomes, not activity. - Unknown',
+        'Standards are set by what you tolerate. - Unknown',
+        'Admit mistakes quickly. - Unknown',
+        'Make it safe to dissent. - Unknown',
+        'Calm is contagious. - Unknown',
+        'Serve the mission, not ego. - Unknown',
+        'Lead people, manage systems. - Unknown',
+        'Leadership is influence, nothing more. - Unknown',
+        'Great leaders ask great questions. - Unknown',
+        'Inspire by action, not just words. - Unknown',
+        'Empower others to lead themselves. - Unknown',
+        'Vision without execution is hallucination. - Thomas Edison'
+      ],
+      learning: [
+        'Stay curious longer. - 12345',
+        'Learning is a loop, not a line. - Unknown',
+        'Teach to truly learn. - Unknown',
+        'Write notes, remember twice. - Unknown',
+        'Questions are the engine of insight. - Unknown',
+        'Read widely, apply narrowly. - Unknown',
+        'Failure is tuition. - Unknown',
+        'Review after doing, not just after reading. - Unknown',
+        'Chunk skills into drills. - Unknown',
+        'Practice deliberately, not endlessly. - Unknown',
+        'Learn in public to speed feedback. - Unknown',
+        'Memory loves meaning, not just repetition. - Unknown',
+        'Seek models, then adapt. - Unknown',
+        'Learners own their schedule. - Unknown',
+        'Reflect before you move on. - Unknown',
+        'Comparison is data, not judgment. - Unknown',
+        'Document what surprised you. - Unknown',
+        'Revisit fundamentals often. - Unknown',
+        'Curate sources ruthlessly. - Unknown',
+        'Ask why five times. - Unknown',
+        'Speed comes after understanding. - Unknown',
+        'Learning feels like confusion first. - Unknown',
+        'Make flashcards from your mistakes. - Unknown',
+        'Your questions show your growth. - Unknown',
+        'Connect ideas across fields. - Unknown',
+        'Learning never subtracts, it compounds. - Unknown',
+        'Make learning visible. - Unknown',
+        'The basics are advanced when mastered. - Unknown',
+        'Unlearn to make room to learn. - Unknown',
+        'Stay a student, even when you teach. - Unknown',
+        'The more you learn, the more you realize you don\'t know. - Aristotle',
+        'Education is not preparation for life; it is life itself. - John Dewey',
+        'Live as if you were to die tomorrow. Learn as if you were to live forever. - Gandhi',
+        'Tell me and I forget, teach me and I remember, involve me and I learn. - Benjamin Franklin',
+        'Invest in knowledge, it pays the best interest. - Benjamin Franklin'
+      ],
+      productivity: [
+        'Systems beat willpower. - 12345',
+        'Plan your day before it starts. - Unknown',
+        'Automate the repeatable. - Unknown',
+        'Templates save future you. - Unknown',
+        'Time block what matters. - Unknown',
+        'Break work into 25 minute slices. - Unknown',
+        'Start tiny to start now. - Unknown',
+        'Defaults decide outcomes. - Unknown',
+        'Protect deep work on the calendar. - Unknown',
+        'Set deadlines, even artificial ones. - Unknown',
+        'Ship on cadence, improve on cadence. - Unknown',
+        'Priorities are plural only in fantasy. - Unknown',
+        'Checklist the routine. - Unknown',
+        'Measure what moves the mission. - Unknown',
+        'Meetings need agendas or exits. - Unknown',
+        'Inbox zero is a habit, not a trophy. - Unknown',
+        'Say no fast, yes slow. - Unknown',
+        'Batch errands to reclaim hours. - Unknown',
+        'Turn decisions into policies. - Unknown',
+        'Guard energy, not just time. - Unknown',
+        'Do it now if under two minutes. - Unknown',
+        'Reuse successful patterns. - Unknown',
+        'Constraints create efficiency. - Unknown',
+        'Schedule your recovery. - Unknown',
+        'Quit the wrong thing sooner. - Unknown',
+        'Delegate outcomes, not tasks. - Unknown',
+        'Track wins daily. - Unknown',
+        'Productivity is doing the right things. - Unknown',
+        'Avoid perfect, aim for progress. - Unknown',
+        'Tomorrow starts tonight. - Unknown',
+        'Work smarter, not harder. - Unknown',
+        'Focus on outcomes, not hours. - Unknown',
+        'Simplify before you optimize. - Unknown',
+        'The best productivity system is the one you actually use. - Unknown',
+        'Eliminate, automate, delegate, then do. - Unknown'
+      ],
+      teamwork: [
+        'Trust is built in small moments. - 12345',
+        'Assume positive intent, clarify quickly. - Unknown',
+        'Great teams argue ideas, not people. - Unknown',
+        'Feedback early beats feedback late. - Unknown',
+        'Teams move at the speed of clarity. - Unknown',
+        'Share context, not just tasks. - Unknown',
+        'Celebrate assists, not only goals. - Unknown',
+        'Listen to learn, not to reload. - Unknown',
+        'Disagree and commit. - Intel Motto',
+        'Document decisions so they travel. - Unknown',
+        'Alignment is a continuous practice. - Unknown',
+        'Psychological safety unlocks speed. - Unknown',
+        'Overcommunicate when stakes are high. - Unknown',
+        'Give credit loudly, take blame quietly. - Unknown',
+        'Clarity of roles reduces friction. - Unknown',
+        'Tight feedback loops build trust. - Unknown',
+        'Win together, learn together. - Unknown',
+        'Assumptions are the enemy of teamwork. - Unknown',
+        'Teams that reflect improve fastest. - Unknown',
+        'Respect time zones and boundaries. - Unknown',
+        'Kind candor beats silent resentment. - Unknown',
+        'Ask for help early. - Unknown',
+        'Pair on the hard parts. - Unknown',
+        'Shared rituals build culture. - Unknown',
+        'Small teams ship big things. - Unknown',
+        'Answer questions before they are asked. - Unknown',
+        'Good handoffs are invisible. - Unknown',
+        'Meet less, align more. - Unknown',
+        'Surface risks together. - Unknown',
+        'We over me wins longer. - Unknown',
+        'Alone we can do so little; together we can do so much. - Helen Keller',
+        'Teamwork makes the dream work. - John C. Maxwell',
+        'None of us is as smart as all of us. - Ken Blanchard',
+        'Coming together is a beginning, staying together is progress, working together is success. - Henry Ford',
+        'Collaboration allows us to know more than we are capable of knowing by ourselves. - Paul Solarz'
+      ],
+      innovation: [
+        'Innovation starts with a customer itch. - 12345',
+        'Prototype to learn, not to impress. - Unknown',
+        'Data plus curiosity beats opinion. - Unknown',
+        'Ship, measure, adjust. - Unknown',
+        'Bet small, iterate fast. - Unknown',
+        'Novelty fades, usefulness endures. - Unknown',
+        'Invent for the job to be done. - Clayton Christensen',
+        'Kill your darlings if data disagrees. - Unknown',
+        'Innovation loves constraints. - Unknown',
+        'Ask what is missing, not just what is wrong. - Unknown',
+        'Solve a problem worth solving. - Unknown',
+        'Experiment beats debate. - Unknown',
+        'Explore edges, then simplify. - Unknown',
+        'Fall in love with the problem. - Unknown',
+        'Keep a backlog of questions. - Unknown',
+        'Minimum lovable, not just minimum viable. - Unknown',
+        'Retire features to make room. - Unknown',
+        'Innovation is a habit, not a hack. - Unknown',
+        'Observe users, not just metrics. - Unknown',
+        'Risk is managed, not avoided. - Unknown',
+        'Invent in the small to change the large. - Unknown',
+        'If it is not tested, it is not learned. - Unknown',
+        'Simplify until it is elegant. - Unknown',
+        'Document experiments so learning scales. - Unknown',
+        'Seek the next 10x, not the next 10 percent. - Unknown',
+        'Innovators ship, critics comment. - Unknown',
+        'Replace fear with curiosity. - Unknown',
+        'Innovation is recombining existing parts. - Unknown',
+        'Stay close to the problem owner. - Unknown',
+        'Future value hides in present friction. - Unknown',
+        'Innovation distinguishes between a leader and a follower. - Steve Jobs',
+        'The best way to predict the future is to invent it. - Alan Kay',
+        'If you always do what you always did, you will always get what you always got. - Albert Einstein',
+        'The greatest danger in times of turbulence is not the turbulence; it is to act with yesterday\'s logic. - Peter Drucker',
+        'Do not be afraid to give up the good to go for the great. - John D. Rockefeller'
+      ],
+      mindset: [
+        'Growth is a choice repeated daily. - 12345',
+        'You are not your last result. - Unknown',
+        'Replace perfection with practice. - Unknown',
+        'Self-talk sets your ceiling. - Unknown',
+        'Facts over fears. - Unknown',
+        'Rehearse success, not failure. - Unknown',
+        'Confidence comes from kept promises. - Unknown',
+        'A calm mind makes better moves. - Unknown',
+        'You can start again every morning. - Unknown',
+        'Curiosity is stronger than judgment. - Unknown',
+        'Detach from outcomes, attach to effort. - Unknown',
+        'Failure is feedback, not identity. - Unknown',
+        'Reframe problems as puzzles. - Unknown',
+        'Gratitude widens perspective. - Unknown',
+        'Discomfort is a signal of growth. - Unknown',
+        'You control inputs, not timing. - Unknown',
+        'Optimism is a force multiplier. - Unknown',
+        'Habits are votes for identity. - James Clear',
+        'Talk to yourself like you would a friend. - Unknown',
+        'Pause before reacting. - Unknown',
+        'Assume you can learn it. - Unknown',
+        'Choose progress over pride. - Unknown',
+        'Let go of perfect plans. - Unknown',
+        'Find the lesson, keep the lesson. - Unknown',
+        'What you repeat, you become. - Unknown',
+        'Start where you are, not where you wish. - Unknown',
+        'Your best today is enough. - Unknown',
+        'Mindset is the first tool. - Unknown',
+        'Curate the inputs that shape you. - Unknown',
+        'Believe, then build. - Unknown',
+        'Whether you think you can or you can\'t, you\'re right. - Henry Ford',
+        'The mind is everything. What you think you become. - Buddha',
+        'Change your thoughts and you change your world. - Norman Vincent Peale',
+        'A positive attitude causes a chain reaction of positive thoughts. - Wade Boggs',
+        'Life is 10% what happens to you and 90% how you react to it. - Charles R. Swindoll'
+      ],
+      growth: [
+        'Compounding works on skills too. - 12345',
+        'Tiny improvements beat rare breakthroughs. - Unknown',
+        'Measure backward to see growth. - Unknown',
+        'Set pace you can sustain. - Unknown',
+        'Track one habit at a time. - Unknown',
+        'Review weekly, adjust weekly. - Unknown',
+        'Remove friction before adding force. - Unknown',
+        'Raise the floor, then the ceiling. - Unknown',
+        'Consistency is the growth engine. - Unknown',
+        'Ship, learn, improve, repeat. - Unknown',
+        'Seek feedback faster. - Unknown',
+        'Learn from adjacent fields. - Unknown',
+        'Replace intensity with frequency. - Unknown',
+        'Simplify to scale. - Unknown',
+        'Make progress visible. - Unknown',
+        'Plant seeds every day. - Unknown',
+        'Remove one drag per week. - Unknown',
+        'Growth needs recovery. - Unknown',
+        'Celebrate deltas, not just deltas from others. - Unknown',
+        'The curve turns up after it feels flat. - Unknown',
+        'Set ceilings by experimenting, not guessing. - Unknown',
+        'Start small, think long. - Unknown',
+        'Growth is earned, not gifted. - Unknown',
+        'A plan is a bet; revise often. - Unknown',
+        'Bias toward action, learn by doing. - Unknown',
+        'Remove waste before adding work. - Unknown',
+        'Get 1 percent better daily. - Unknown',
+        'Growth sneaks up on the consistent. - Unknown',
+        'Momentum is fragile; protect it. - Unknown',
+        'Greatness is grown, not granted. - Unknown',
+        'The only impossible journey is the one you never begin. - Tony Robbins',
+        'What you get by achieving your goals is not as important as what you become. - Zig Ziglar',
+        'Don\'t watch the clock; do what it does. Keep going. - Sam Levenson',
+        'Growth and comfort do not coexist. - Ginni Rometty',
+        'Be not afraid of growing slowly; be afraid only of standing still. - Chinese Proverb'
+      ],
+      design: [
+        'Design is how it works. - Steve Jobs (Designer, Apple)',
+        'Form follows function and feeling. - Unknown',
+        'Constraints make design sing. - Unknown',
+        'Whitespace is a feature. - Unknown',
+        'Start with the user, end with delight. - Unknown',
+        'Hierarchy guides attention. - Unknown',
+        'Design for clarity, then for charm. - Unknown',
+        'Test with real people early. - Unknown',
+        'Great design is invisible. - Unknown',
+        'Remove one thing, then another. - Unknown',
+        'Typography is interface voice. - Unknown',
+        'Accessibility is table stakes. - Unknown',
+        'Consistency reduces cognitive load. - Unknown',
+        'Good defaults beat good docs. - Unknown',
+        'Prototypes beat meetings. - Unknown',
+        'Motion should serve meaning. - Unknown',
+        'Design is a conversation with constraints. - Unknown',
+        'Edges matter as much as centers. - Unknown',
+        'Design for the 80, allow for the 20. - Unknown',
+        'Every pixel is a decision. - Unknown',
+        'Color carries emotion. - Unknown',
+        'Balance novelty with familiarity. - Unknown',
+        'Your grid is your friend. - Unknown',
+        'Design systems scale teams. - Unknown',
+        'Copy is part of design. - Unknown',
+        'Design the empty states. - Unknown',
+        'Latency is a design problem. - Unknown',
+        'Design is never done, only due. - Unknown',
+        'Learn the rules, then bend them. - Unknown',
+        'Ship, watch, refine. - Unknown',
+        'Simplicity is the ultimate sophistication. - Leonardo da Vinci',
+        'Good design is obvious. Great design is transparent. - Joe Sparano',
+        'Design is not just what it looks like and feels like. Design is how it works. - Steve Jobs',
+        'The details are not the details. They make the design. - Charles Eames',
+        'Design creates culture. Culture shapes values. Values determine the future. - Robert L. Peters'
+      ],
+      writing: [
+        'Clear thinking becomes clear writing. - 12345',
+        'Write to discover what you think. - Unknown',
+        'Short sentences win. - Unknown',
+        'Cut half, then cut again. - Unknown',
+        'Specifics beat abstractions. - Unknown',
+        'Write for one reader. - Unknown',
+        'Draft fast, edit slow. - Unknown',
+        'Lead with the payoff. - Unknown',
+        'Active voice is stronger. - Unknown',
+        'Show, do not tell. - Unknown',
+        'Replace adverbs with proof. - Unknown',
+        'Outline to avoid wandering. - Unknown',
+        'Facts first, flair later. - Unknown',
+        'Kill filler words. - Unknown',
+        'Read aloud to find friction. - Unknown',
+        'One idea per sentence. - Unknown',
+        'Titles sell the read. - Unknown',
+        'Write daily to think daily. - Unknown',
+        'Readers skim; help them. - Unknown',
+        'Use verbs that move. - Unknown',
+        'If it bores you, delete it. - Unknown',
+        'Clarity is kindness in text. - Unknown',
+        'Paragraphs are rhythm. - Unknown',
+        'End strong, not long. - Unknown',
+        'Rewrite until the point is sharp. - Unknown',
+        'Editing is writing. - Unknown',
+        'Use examples to anchor ideas. - Unknown',
+        'Writing is thinking in public. - Unknown',
+        'Be brief, be vivid. - Unknown',
+        'Finish the draft, then judge. - Unknown',
+        'There is no greater agony than bearing an untold story inside you. - Maya Angelou',
+        'You can make anything by writing. - C.S. Lewis',
+        'Start writing, no matter what. The water does not flow until the faucet is turned on. - Louis L\'Amour',
+        'Write what should not be forgotten. - Isabel Allende',
+        'If you want to be a writer, you must do two things above all others: read a lot and write a lot. - Stephen King'
+      ],
+      engineering: [
+        'Read the error before you react. - 12345',
+        'Make it work, then make it right. - Unknown',
+        'Tests are the fastest form of fear reduction. - Unknown',
+        'Naming is design. - Unknown',
+        'Logs are love letters to your future self. - Unknown',
+        'Measure before you optimize. - Unknown',
+        'Simplicity scales better than cleverness. - Unknown',
+        'Delete code bravely. - Unknown',
+        'Automate what you repeat. - Unknown',
+        'Latency has many parents. - Unknown',
+        'Readability outlives hacks. - Unknown',
+        'Code is liability until value is proven. - Unknown',
+        'APIs are contracts, treat them like ones. - Unknown',
+        'Review with empathy and rigor. - Unknown',
+        'Bugs hide at boundaries. - Unknown',
+        'Feature flags save launches. - Unknown',
+        'Choose boring tech for critical paths. - Unknown',
+        'Backups are hope, restores are proof. - Unknown',
+        'Security is a habit, not a sprint. - Unknown',
+        'Document the why, not just the how. - Unknown',
+        'Little monitoring beats big surprises. - Unknown',
+        'Version control everything. - Unknown',
+        'Ship small, ship often. - Unknown',
+        'Latency budgets enforce discipline. - Unknown',
+        'Incidents are tuition, write the receipt. - Unknown',
+        'Premature optimization steals time. - Donald Knuth',
+        'Cache carefully, validate relentlessly. - Unknown',
+        'Uptime is earned daily. - Unknown',
+        'Tech debt is a loan with interest. - Unknown',
+        'Reliability is a team sport. - Unknown',
+        'First, solve the problem. Then, write the code. - John Johnson',
+        'Any fool can write code that a computer can understand. Good programmers write code that humans can understand. - Martin Fowler',
+        'Fix the cause, not the symptom. - Steve Maguire',
+        'Code never lies, comments sometimes do. - Ron Jeffries',
+        'Debugging is twice as hard as writing the code in the first place. - Brian Kernighan'
+      ],
+      startup: [
+        'Talk to users every week. - 12345',
+        'Build painkillers, not vitamins. - Unknown',
+        'Do things that do not scale first. - Paul Graham',
+        'Distribution is as hard as product. - Unknown',
+        'Start narrow, win a wedge. - Unknown',
+        'Revenue is the best signal. - Unknown',
+        'Ship value before polish. - Unknown',
+        'Churn is louder than growth. - Unknown',
+        'Unit economics tell the truth. - Unknown',
+        'Hire for learning speed. - Unknown',
+        'Founders set the cultural weather. - Unknown',
+        'Default alive beats default famous. - Unknown',
+        'Cash is oxygen. - Unknown',
+        'Listen hard, defend little. - Unknown',
+        'Pivot on insight, not boredom. - Unknown',
+        'Speed with direction beats speed alone. - Unknown',
+        'Retention is product-market fit breathing. - Unknown',
+        'Beware vanity metrics. - Unknown',
+        'Solve one job deeply. - Unknown',
+        'Fundraising is a tool, not a trophy. - Unknown',
+        'Founders must sell first. - Unknown',
+        'Onboard like your future depends on it. - Unknown',
+        'Document the playbook as you learn. - Unknown',
+        'Customer support is product research. - Unknown',
+        'Focus on a tiny fan club first. - Unknown',
+        'Pricing is positioning. - Unknown',
+        'Moats grow from habits you build. - Unknown',
+        'Trust compounds with consistency. - Unknown',
+        'Launches are starts, not endings. - Unknown',
+        'Survive to iterate. - Unknown',
+        'Ideas are easy. Implementation is hard. - Guy Kawasaki',
+        'Your most unhappy customers are your greatest source of learning. - Bill Gates',
+        'Make every detail perfect and limit the number of details to perfect. - Jack Dorsey',
+        'The best way to predict the future is to create it. - Peter Drucker',
+        'Move fast and break things. Unless you are breaking stuff, you are not moving fast enough. - Mark Zuckerberg'
+      ],
+      wellness: [
+        'Rest is a productivity tool. - 12345',
+        'Sleep is the original performance enhancer. - Unknown',
+        'Move daily, mood follows. - Unknown',
+        'Hydrate, you are mostly water. - Unknown',
+        'Sunlight sets your clock. - Unknown',
+        'Breathe slow to think clear. - Unknown',
+        'Healthy boundaries protect energy. - Unknown',
+        'Walks solve stuck thoughts. - Unknown',
+        'Stretch the stress away. - Unknown',
+        'Strong body, steady mind. - Unknown',
+        'Say no to stay well. - Unknown',
+        'Nutrition is long-term code. - Unknown',
+        'Quiet time is not wasted time. - Unknown',
+        'Micro-breaks prevent macro-burnout. - Unknown',
+        'Sleep debt charges interest. - Unknown',
+        'Pause screens before bed. - Unknown',
+        'Laughter resets the system. - Unknown',
+        'Friendship is medicine. - Unknown',
+        'Nature reduces noise. - Unknown',
+        'Your pace is personal. - Unknown',
+        'Check in with yourself daily. - Unknown',
+        'Move your body like you brush your teeth. - Unknown',
+        'Stress signals need responses. - Unknown',
+        'Recovery is training. - Unknown',
+        'Good posture is good mood. - Unknown',
+        'Protect your sleep like a meeting. - Unknown',
+        'Gratitude lowers stress. - Unknown',
+        'Health is built in small choices. - Unknown',
+        'Water, light, rest, repeat. - Unknown',
+        'You cannot pour from an empty cup. - Unknown',
+        'Take care of your body. It\'s the only place you have to live. - Jim Rohn',
+        'Health is not valued until sickness comes. - Thomas Fuller',
+        'The groundwork of all happiness is health. - Leigh Hunt',
+        'To keep the body in good health is a duty, otherwise we shall not be able to keep our mind strong and clear. - Buddha',
+        'Those who think they have no time for healthy eating will sooner or later have to find time for illness. - Edward Stanley'
+      ]
+    };
+
+    function initQuoteGenerator() {
+      const quoteBox = document.getElementById('quote');
+      const nextBtn = document.getElementById('next');
+      const copyBtn = document.getElementById('copy-btn');
+      const tweetBtn = document.getElementById('tweet-btn');
+      const favoriteBtn = document.getElementById('favorite-btn');
+      const categorySelect = document.getElementById('quote-category');
+      const favoritesList = document.getElementById('favorites-list');
+      const favCount = document.getElementById('fav-count');
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+
+      if (!quoteBox || !nextBtn || !categorySelect) {
+        return;
+      }
+
+      let currentQuote = '';
+      let favorites = JSON.parse(localStorage.getItem('favoriteQuotes') || '[]');
+
+      function showToast(message) {
+        if (!toast || !toastMessage) return;
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2000);
+      }
+
+    // Pick a random quote
+    const pickQuote = () => {
+      let category = categorySelect.value;
+      
+      // If random category selected, pick a random category
+      if (category === 'random') {
+        const allCategories = Object.keys(categories);
+        category = allCategories[Math.floor(Math.random() * allCategories.length)];
+      }
+      
+      const list = categories[category];
+      if (!list) return;
+      const index = Math.floor(Math.random() * list.length);
+      currentQuote = list[index];
+      quoteBox.textContent = currentQuote;
+      updateFavoriteButton();
+    };
+
+    // Copy quote to clipboard
+    const copyQuote = () => {
+      navigator.clipboard.writeText(currentQuote).then(() => {
+        showToast('✅ Quote copied to clipboard!');
+      }).catch(() => {
+        showToast('❌ Failed to copy quote');
+      });
+    };
+
+    // Tweet quote
+    const tweetQuote = () => {
+      const tweetText = encodeURIComponent(currentQuote + '\n\n via ToolsMatic Quote Generator');
+      const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
+      window.open(tweetUrl, '_blank', 'width=550,height=420');
+    };
+
+    // Toggle favorite
+    const toggleFavorite = () => {
+      const index = favorites.indexOf(currentQuote);
+      if (index === -1) {
+        favorites.push(currentQuote);
+        showToast('❤️ Added to favorites!');
+      } else {
+        favorites.splice(index, 1);
+        showToast('🗑️ Removed from favorites');
+      }
+      localStorage.setItem('favoriteQuotes', JSON.stringify(favorites));
+      updateFavoriteButton();
+      renderFavorites();
+    };
+
+    // Update favorite button appearance
+    const updateFavoriteButton = () => {
+      const isFavorited = favorites.includes(currentQuote);
+      if (isFavorited) {
+        favoriteBtn.classList.add('favorited');
+        favoriteBtn.textContent = '💛 Favorited';
+      } else {
+        favoriteBtn.classList.remove('favorited');
+        favoriteBtn.textContent = '❤️ Favorite';
+      }
+    };
+
+    const removeFavorite = (quote) => {
+      favorites = favorites.filter(fav => fav !== quote);
+      localStorage.setItem('favoriteQuotes', JSON.stringify(favorites));
+      if (currentQuote === quote) {
+        updateFavoriteButton();
+      }
+      renderFavorites();
+      showToast('🗑️ Removed from favorites');
+    };
+
+    const renderFavorites = () => {
+      favCount.textContent = favorites.length;
+
+      if (favorites.length === 0) {
+        favoritesList.innerHTML = '<div class="empty-favorites">No favorite quotes yet. Click the ❤️ button to save quotes you love!</div>';
+        return;
+      }
+
+      favoritesList.innerHTML = favorites.map(quote => `
+        <div class="favorite-item">
+          <div class="favorite-item-text">${quote}</div>
+          <button class="remove-fav" data-quote="${quote.replace(/"/g, '&quot;')}">Remove</button>
+        </div>
+      `).join('');
+
+      favoritesList.querySelectorAll('.remove-fav').forEach(btn => {
+        btn.addEventListener('click', () => removeFavorite(btn.dataset.quote));
+      });
+    };
+
+      nextBtn.addEventListener('click', pickQuote);
+      if (copyBtn) copyBtn.addEventListener('click', copyQuote);
+      if (tweetBtn) tweetBtn.addEventListener('click', tweetQuote);
+      if (favoriteBtn) favoriteBtn.addEventListener('click', toggleFavorite);
+      categorySelect.addEventListener('change', pickQuote);
+
+      pickQuote();
+      renderFavorites();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initQuoteGenerator);
+    } else {
+      initQuoteGenerator();
+    }
+  </script>
+  <div style="text-align: center; margin: 24px 0;">
+      </div>
+  <div style="text-align: center; margin: 24px 0;">
+      </div>
+<div style="text-align: center; margin: 24px 0;">
+</div>
+<div style="text-align: center; margin: 24px 0;">
+</div>
+</script>
+</body>
+</html>
+

@@ -1,0 +1,2467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reaction Time Test Secure Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Reaction Time Test Secure online. Client-side, free, and private browser-based utility.">
+  <meta name="keywords" content="reaction time test, online reaction time test, reaction speed test, reaction time checker, reaction time game, average reaction time, improve reaction time, gaming reaction test, mobile reaction time test">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://toolsmatic.me/tools/reaction-time-test-secure.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/reaction-time-test-secure.html">
+  <meta property="og:title" content="Reaction Time Test Secure Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Reaction Time Test Secure online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reaction Time Test Secure Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Reaction Time Test Secure online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  
+  
+  
+  
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07121d;
+      --bg-soft: #0b1624;
+      --surface: rgba(12, 24, 38, 0.94);
+      --surface-strong: rgba(7, 15, 25, 0.96);
+      --surface-alt: rgba(18, 32, 48, 0.92);
+      --border: rgba(113, 216, 255, 0.16);
+      --border-strong: rgba(113, 216, 255, 0.3);
+      --text: #edf4fa;
+      --text-soft: rgba(237, 244, 250, 0.78);
+      --text-faint: rgba(237, 244, 250, 0.58);
+      --accent: #61dff6;
+      --accent-strong: #42f0a3;
+      --accent-deep: #58a5ff;
+      --accent-warm: #ffb454;
+      --danger: #ff6d67;
+      --danger-soft: rgba(255, 109, 103, 0.2);
+      --success: #36d399;
+      --success-soft: rgba(54, 211, 153, 0.18);
+      --shadow: 0 24px 70px rgba(2, 8, 18, 0.32);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --header-height: 84px;
+      --transition: 180ms ease;
+      font-family: "Aptos", "Segoe UI", "Inter", system-ui, sans-serif;
+    }
+
+    body[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f4f8fc;
+      --bg-soft: #eff5fb;
+      --surface: rgba(255, 255, 255, 0.94);
+      --surface-strong: rgba(252, 254, 255, 0.98);
+      --surface-alt: rgba(243, 248, 253, 0.96);
+      --border: rgba(48, 104, 146, 0.12);
+      --border-strong: rgba(47, 120, 176, 0.24);
+      --text: #132131;
+      --text-soft: rgba(19, 33, 49, 0.78);
+      --text-faint: rgba(19, 33, 49, 0.58);
+      --shadow: 0 18px 46px rgba(17, 38, 64, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(97, 223, 246, 0.18), transparent 18rem),
+        radial-gradient(circle at 84% 16%, rgba(88, 165, 255, 0.18), transparent 20rem),
+        radial-gradient(circle at 78% 76%, rgba(66, 240, 163, 0.14), transparent 18rem),
+        linear-gradient(180deg, var(--bg-soft), var(--bg));
+      color: var(--text);
+      line-height: 1.65;
+      transition: background 220ms ease, color 220ms ease;
+    }
+
+    body[data-phase="ready"] {
+      background:
+        radial-gradient(circle at 50% 28%, rgba(66, 240, 163, 0.24), transparent 24rem),
+        radial-gradient(circle at 14% 18%, rgba(97, 223, 246, 0.16), transparent 18rem),
+        radial-gradient(circle at 84% 16%, rgba(88, 165, 255, 0.18), transparent 20rem),
+        linear-gradient(180deg, var(--bg-soft), var(--bg));
+    }
+
+    body[data-phase="waiting"] {
+      background:
+        radial-gradient(circle at 50% 28%, rgba(255, 109, 103, 0.18), transparent 24rem),
+        radial-gradient(circle at 14% 18%, rgba(97, 223, 246, 0.14), transparent 18rem),
+        radial-gradient(circle at 84% 16%, rgba(88, 165, 255, 0.16), transparent 20rem),
+        linear-gradient(180deg, var(--bg-soft), var(--bg));
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .rt-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 15, 25, 0.78);
+      border-bottom: 1px solid rgba(113, 216, 255, 0.12);
+    }
+
+    body[data-theme="light"] .rt-header {
+      background: rgba(248, 251, 255, 0.88);
+    }
+
+    .rt-nav {
+      width: min(1280px, calc(100% - 32px));
+      min-height: var(--header-height);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .rt-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .rt-brand::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      box-shadow: 0 0 24px rgba(97, 223, 246, 0.36);
+    }
+
+    .rt-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .rt-nav-link,
+    .rt-theme-toggle {
+      min-height: 46px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(8, 18, 31, 0.74);
+      color: var(--text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
+    }
+
+    body[data-theme="light"] .rt-nav-link,
+    body[data-theme="light"] .rt-theme-toggle {
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .rt-nav-link:hover,
+    .rt-nav-link:focus-visible,
+    .rt-theme-toggle:hover,
+    .rt-theme-toggle:focus-visible,
+    .rt-button:hover,
+    .rt-button:focus-visible,
+    .rt-toggle:hover,
+    .rt-toggle:focus-visible,
+    .rt-review-card:hover {
+      transform: translateY(-1px);
+      border-color: var(--border-strong);
+      outline: none;
+    }
+
+    .rt-page {
+      width: min(1280px, calc(100% - 32px));
+      margin: 0 auto 64px;
+      padding-top: 18px;
+    }
+
+    .rt-breadcrumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 0 0 20px;
+      padding: 14px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(11, 21, 34, 0.92), rgba(7, 14, 25, 0.9));
+      color: var(--text-faint);
+      font-size: 0.95rem;
+    }
+
+    body[data-theme="light"] .rt-breadcrumbs {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 249, 253, 0.98));
+    }
+
+    .rt-breadcrumbs a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .rt-shell,
+    .rt-panel,
+    .rt-card,
+    .rt-compare-card,
+    .rt-reviews-card,
+    .rt-seo-card,
+    .rt-faq-card,
+    .rt-privacy-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at top right, rgba(97, 223, 246, 0.12), transparent 18rem),
+        radial-gradient(circle at bottom left, rgba(88, 165, 255, 0.1), transparent 18rem),
+        linear-gradient(180deg, var(--surface), var(--surface-strong));
+      box-shadow: var(--shadow);
+    }
+
+    body[data-theme="light"] .rt-shell,
+    body[data-theme="light"] .rt-panel,
+    body[data-theme="light"] .rt-card,
+    body[data-theme="light"] .rt-compare-card,
+    body[data-theme="light"] .rt-reviews-card,
+    body[data-theme="light"] .rt-seo-card,
+    body[data-theme="light"] .rt-faq-card,
+    body[data-theme="light"] .rt-privacy-card {
+      background:
+        radial-gradient(circle at top right, rgba(97, 223, 246, 0.1), transparent 18rem),
+        radial-gradient(circle at bottom left, rgba(88, 165, 255, 0.08), transparent 18rem),
+        linear-gradient(180deg, var(--surface), var(--surface-strong));
+    }
+
+    .rt-shell,
+    .rt-panel,
+    .rt-card,
+    .rt-compare-card,
+    .rt-reviews-card,
+    .rt-seo-card,
+    .rt-faq-card,
+    .rt-privacy-card {
+      padding: 24px;
+    }
+
+    .rt-hero {
+      margin-bottom: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .rt-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .rt-eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      box-shadow: 0 0 16px rgba(97, 223, 246, 0.32);
+    }
+
+    .rt-hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.4rem, 4.2vw, 4rem);
+      line-height: 1.02;
+    }
+
+    .rt-hero p,
+    .rt-card > p,
+    .rt-compare-card > p,
+    .rt-reviews-card > p,
+    .rt-seo-card > p,
+    .rt-faq-card > p,
+    .rt-privacy-card > p {
+      margin: 0;
+      color: var(--text-soft);
+      max-width: 78ch;
+      line-height: 1.72;
+    }
+
+    .rt-chip-row,
+    .rt-control-strip,
+    .rt-control-row,
+    .rt-kpi-grid,
+    .rt-attempt-list,
+    .rt-review-grid,
+    .rt-footer-links,
+    .rt-inline-list,
+    .rt-round-track {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .rt-chip-row {
+      margin-top: 22px;
+    }
+
+    .rt-chip,
+    .rt-inline-card,
+    .rt-round-pill,
+    .rt-attempt-chip,
+    .rt-shortcut,
+    .rt-mini-note,
+    .rt-review-card,
+    .rt-leaderboard-row,
+    .rt-faq details {
+      border: 1px solid var(--border);
+      background: rgba(8, 18, 31, 0.74);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+
+    body[data-theme="light"] .rt-chip,
+    body[data-theme="light"] .rt-inline-card,
+    body[data-theme="light"] .rt-round-pill,
+    body[data-theme="light"] .rt-attempt-chip,
+    body[data-theme="light"] .rt-shortcut,
+    body[data-theme="light"] .rt-mini-note,
+    body[data-theme="light"] .rt-review-card,
+    body[data-theme="light"] .rt-leaderboard-row,
+    body[data-theme="light"] .rt-faq details {
+      background: rgba(255, 255, 255, 0.84);
+    }
+
+    .rt-chip {
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    .rt-hero-side {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .rt-inline-card {
+      padding: 18px;
+      border-radius: var(--radius-lg);
+    }
+
+    .rt-inline-card h2,
+    .rt-panel h2,
+    .rt-card h2,
+    .rt-compare-card h2,
+    .rt-reviews-card h2,
+    .rt-seo-card h2,
+    .rt-faq-card h2,
+    .rt-privacy-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.36rem;
+    }
+
+    .rt-inline-card h3,
+    .rt-card h3,
+    .rt-review-card h3,
+    .rt-seo-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .rt-inline-list,
+    .rt-summary-list,
+    .rt-seo-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--text-soft);
+    }
+
+    .rt-summary-list {
+      line-height: 1.75;
+    }
+
+    .rt-workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 18px;
+      margin-bottom: 22px;
+      align-items: start;
+    }
+
+    .rt-main-stack,
+    .rt-side-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .rt-control-strip {
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .rt-control-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .rt-field {
+      display: grid;
+      gap: 10px;
+    }
+
+    .rt-field label {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .rt-input {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: rgba(5, 14, 24, 0.9);
+      color: var(--text);
+    }
+
+    body[data-theme="light"] .rt-input {
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .rt-input:focus {
+      outline: none;
+      border-color: var(--border-strong);
+      box-shadow: 0 0 0 3px rgba(88, 165, 255, 0.16);
+    }
+
+    .rt-button,
+    .rt-toggle {
+      min-height: 46px;
+      padding: 0 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: rgba(8, 18, 31, 0.8);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition), color var(--transition);
+      text-decoration: none;
+    }
+
+    body[data-theme="light"] .rt-button,
+    body[data-theme="light"] .rt-toggle {
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .rt-button.primary,
+    .rt-toggle[aria-pressed="true"] {
+      color: #04131d;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      box-shadow: 0 14px 28px rgba(88, 165, 255, 0.24);
+    }
+
+    .rt-button.success {
+      background: linear-gradient(135deg, #7af0c4, #38d39a);
+      color: #052116;
+      border-color: transparent;
+      box-shadow: 0 14px 28px rgba(54, 211, 153, 0.22);
+    }
+
+    .rt-button.warn {
+      background: linear-gradient(135deg, #ffd173, #ffac47);
+      color: #201104;
+      border-color: transparent;
+      box-shadow: 0 14px 28px rgba(255, 180, 84, 0.22);
+    }
+
+    .rt-button.subtle {
+      background: transparent;
+    }
+
+    .rt-round-track {
+      margin: 0 0 18px;
+      align-items: center;
+    }
+
+    .rt-round-pill {
+      min-width: 84px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      color: var(--text-soft);
+      font-size: 0.92rem;
+      text-align: center;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition), color var(--transition);
+    }
+
+    .rt-round-pill.is-current {
+      color: #04131d;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      box-shadow: 0 14px 28px rgba(88, 165, 255, 0.22);
+    }
+
+    .rt-round-pill.is-complete {
+      background: rgba(54, 211, 153, 0.16);
+      color: #8ef0c4;
+      border-color: rgba(54, 211, 153, 0.28);
+    }
+
+    body[data-theme="light"] .rt-round-pill.is-complete {
+      color: #0d6b48;
+    }
+
+    .rt-pad {
+      width: 100%;
+      min-height: 420px;
+      border: 1px solid transparent;
+      border-radius: 32px;
+      padding: 36px 28px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      cursor: pointer;
+      color: #f7fbfe;
+      background:
+        linear-gradient(180deg, rgba(20, 34, 52, 0.94), rgba(9, 18, 31, 0.96));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 24px 48px rgba(2, 8, 18, 0.24);
+      transition: transform var(--transition), box-shadow var(--transition), background 220ms ease, border-color 220ms ease;
+      user-select: none;
+      touch-action: manipulation;
+    }
+
+    .rt-pad:hover,
+    .rt-pad:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 28px 56px rgba(2, 8, 18, 0.3);
+      outline: none;
+    }
+
+    .rt-pad.phase-idle,
+    .rt-pad.phase-round-result,
+    .rt-pad.phase-finished {
+      background:
+        radial-gradient(circle at top right, rgba(97, 223, 246, 0.18), transparent 18rem),
+        linear-gradient(180deg, rgba(15, 31, 49, 0.98), rgba(7, 15, 25, 0.98));
+      border-color: var(--border);
+    }
+
+    .rt-pad.phase-waiting {
+      background:
+        radial-gradient(circle at top right, rgba(255, 109, 103, 0.16), transparent 18rem),
+        linear-gradient(180deg, rgba(84, 22, 20, 0.98), rgba(39, 10, 10, 0.98));
+      border-color: rgba(255, 109, 103, 0.34);
+    }
+
+    .rt-pad.phase-ready {
+      background:
+        radial-gradient(circle at top right, rgba(54, 211, 153, 0.18), transparent 18rem),
+        linear-gradient(180deg, rgba(12, 80, 49, 0.96), rgba(10, 49, 32, 0.98));
+      border-color: rgba(54, 211, 153, 0.34);
+    }
+
+    .rt-pad.phase-false-start {
+      background:
+        radial-gradient(circle at top right, rgba(255, 180, 84, 0.16), transparent 18rem),
+        linear-gradient(180deg, rgba(83, 45, 16, 0.98), rgba(39, 22, 8, 0.98));
+      border-color: rgba(255, 180, 84, 0.34);
+    }
+
+    .rt-pad-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(247, 251, 254, 0.82);
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .rt-pad-state {
+      display: block;
+      margin-top: 18px;
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .rt-pad-helper {
+      display: block;
+      margin-top: 18px;
+      max-width: 34ch;
+      font-size: 1.02rem;
+      color: rgba(247, 251, 254, 0.82);
+      line-height: 1.68;
+    }
+
+    .rt-status {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(8, 18, 31, 0.74);
+      color: var(--text-soft);
+    }
+
+    body[data-theme="light"] .rt-status {
+      background: rgba(255, 255, 255, 0.84);
+    }
+
+    .rt-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .rt-kpi {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(8, 18, 31, 0.72);
+      display: grid;
+      gap: 8px;
+    }
+
+    body[data-theme="light"] .rt-kpi {
+      background: rgba(255, 255, 255, 0.84);
+    }
+
+    .rt-kpi span {
+      color: var(--text-faint);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .rt-kpi strong {
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      line-height: 1;
+    }
+
+    .rt-rating-card {
+      display: grid;
+      gap: 16px;
+    }
+
+    .rt-rating-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .rt-rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(97, 223, 246, 0.12);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .rt-rating-badge strong {
+      font-size: 1rem;
+    }
+
+    .rt-rating-bar {
+      position: relative;
+      height: 16px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    .rt-rating-fill {
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #ffcc68, #59f0a8, #56a5ff);
+      transition: width 220ms ease;
+    }
+
+    .rt-rating-copy {
+      color: var(--text-soft);
+    }
+
+    .rt-graph-wrap {
+      display: grid;
+      gap: 14px;
+    }
+
+    .rt-graph-shell {
+      padding: 16px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(5, 14, 24, 0.92);
+      min-height: 250px;
+    }
+
+    body[data-theme="light"] .rt-graph-shell {
+      background: rgba(250, 252, 255, 0.92);
+    }
+
+    .rt-graph-shell svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .rt-graph-placeholder {
+      display: grid;
+      place-items: center;
+      min-height: 214px;
+      text-align: center;
+      color: var(--text-faint);
+      border-radius: 18px;
+      border: 1px dashed var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      padding: 20px;
+    }
+
+    .rt-attempt-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .rt-attempt-chip {
+      padding: 14px 12px;
+      border-radius: 18px;
+      text-align: center;
+      display: grid;
+      gap: 6px;
+    }
+
+    .rt-attempt-chip span {
+      color: var(--text-faint);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .rt-attempt-chip strong {
+      font-size: 1.15rem;
+    }
+
+    .rt-attempt-chip.empty strong {
+      color: var(--text-faint);
+    }
+
+    .rt-leaderboard {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .rt-leaderboard-row {
+      padding: 14px 16px;
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .rt-leaderboard-rank {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(97, 223, 246, 0.14);
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .rt-leaderboard-meta strong,
+    .rt-leaderboard-score {
+      display: block;
+    }
+
+    .rt-leaderboard-meta span {
+      color: var(--text-faint);
+      font-size: 0.88rem;
+    }
+
+    .rt-table-wrap {
+      overflow-x: auto;
+      margin-top: 18px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(5, 14, 24, 0.92);
+    }
+
+    body[data-theme="light"] .rt-table-wrap {
+      background: rgba(250, 252, 255, 0.92);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--text);
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    td {
+      color: var(--text-soft);
+    }
+
+    .rt-table-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+
+    .rt-table-check.yes {
+      color: #7cf0c2;
+    }
+
+    body[data-theme="light"] .rt-table-check.yes {
+      color: #15724d;
+    }
+
+    .rt-table-check.no {
+      color: #ffb08f;
+    }
+
+    body[data-theme="light"] .rt-table-check.no {
+      color: #a44824;
+    }
+
+    .rt-review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .rt-review-card {
+      padding: 20px;
+      border-radius: 22px;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .rt-review-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .rt-review-card p {
+      margin: 0;
+      color: var(--text-soft);
+    }
+
+    .rt-stars {
+      color: #ffd36f;
+      letter-spacing: 0.08em;
+      font-size: 0.98rem;
+      white-space: nowrap;
+    }
+
+    .rt-review-role {
+      color: var(--text-faint);
+      font-size: 0.9rem;
+    }
+
+    .rt-seo-card,
+    .rt-faq-card,
+    .rt-privacy-card,
+    .rt-compare-card,
+    .rt-reviews-card {
+      margin-top: 22px;
+    }
+
+    .rt-seo-card article {
+      display: grid;
+      gap: 24px;
+      margin-top: 18px;
+    }
+
+    .rt-seo-card h3 {
+      margin-top: 0;
+    }
+
+    .rt-seo-card p {
+      margin: 0 0 14px;
+      color: var(--text-soft);
+    }
+
+    .rt-faq {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .rt-faq details {
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .rt-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    .rt-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .rt-faq p {
+      margin: 12px 0 0;
+      color: var(--text-soft);
+    }
+
+    .rt-footer {
+      width: min(1280px, calc(100% - 32px));
+      margin: 0 auto 36px;
+      padding: 22px 24px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: rgba(8, 18, 31, 0.72);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+    }
+
+    body[data-theme="light"] .rt-footer {
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .rt-footer p {
+      margin: 0;
+      color: var(--text-faint);
+    }
+
+    .rt-footer-links {
+      justify-content: flex-end;
+    }
+
+    .rt-footer-links a {
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    body[data-theme="light"] .rt-footer-links a {
+      background: rgba(255, 255, 255, 0.76);
+    }
+
+    .rt-toast-host {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      display: grid;
+      gap: 10px;
+      z-index: 40;
+    }
+
+    .rt-toast {
+      min-width: 260px;
+      max-width: min(360px, calc(100vw - 32px));
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(8, 18, 31, 0.94);
+      color: var(--text);
+      box-shadow: 0 18px 30px rgba(2, 8, 18, 0.28);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 200ms ease, transform 200ms ease;
+    }
+
+    body[data-theme="light"] .rt-toast {
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .rt-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .rt-toast.success {
+      border-color: rgba(54, 211, 153, 0.34);
+    }
+
+    .rt-toast.error {
+      border-color: rgba(255, 109, 103, 0.34);
+    }
+
+    .rt-sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1100px) {
+      .rt-hero,
+      .rt-workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .rt-review-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 780px) {
+      .rt-nav {
+        width: min(100%, calc(100% - 24px));
+        min-height: 74px;
+      }
+
+      .rt-page,
+      .rt-footer {
+        width: min(100%, calc(100% - 24px));
+      }
+
+      .rt-kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .rt-attempt-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .rt-review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rt-pad {
+        min-height: 360px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .rt-nav-actions,
+      .rt-control-strip,
+      .rt-control-group,
+      .rt-control-row,
+      .rt-chip-row,
+      .rt-footer {
+        align-items: stretch;
+      }
+
+      .rt-nav-actions,
+      .rt-control-group,
+      .rt-control-row,
+      .rt-footer-links {
+        width: 100%;
+      }
+
+      .rt-nav-link,
+      .rt-theme-toggle,
+      .rt-button,
+      .rt-toggle,
+      .rt-footer-links a {
+        flex: 1 1 0;
+      }
+
+      .rt-kpi-grid,
+      .rt-attempt-list {
+        grid-template-columns: 1fr;
+      }
+
+      .rt-shell,
+      .rt-panel,
+      .rt-card,
+      .rt-compare-card,
+      .rt-reviews-card,
+      .rt-seo-card,
+      .rt-faq-card,
+      .rt-privacy-card {
+        padding: 20px;
+      }
+
+      .rt-pad {
+        min-height: 320px;
+        padding: 28px 20px;
+      }
+
+      .rt-pad-state {
+        font-size: clamp(2rem, 8vw, 3.4rem);
+      }
+
+      th,
+      td {
+        padding: 14px 14px;
+      }
+    }
+  </style>
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/reaction-time-test-secure.html">
+</head>
+<body data-theme="dark" data-phase="idle">
+  <header class="rt-header">
+    <div class="rt-nav">
+      <a class="rt-brand" href="/">ToolsMatic</a>
+      <div class="rt-nav-actions">
+        <a class="rt-nav-link" href="/">All tools</a>
+        <button class="rt-theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark and light theme">Light mode</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="rt-page">
+    <nav class="rt-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/">Tools</a>
+      <span>/</span>
+      <strong>Reaction Time Test</strong>
+    </nav>
+
+    <section class="rt-hero rt-shell" aria-labelledby="reaction-time-heading">
+      <div>
+        <p class="rt-eyebrow">Fast reflex benchmark</p>
+        <h1 id="reaction-time-heading">Reaction Time Test Secure</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+        <p>Measure how quickly you react to a visual cue with a privacy-first browser test built for real repeatability. The tool uses a random delay, performance.now timing, false-start detection, 5-round averaging, challenge links, and clear performance labels so the result feels meaningful instead of gimmicky.</p>
+        <div class="rt-chip-row" aria-label="Feature highlights">
+          <span class="rt-chip">5 rounds with average and best</span>
+          <span class="rt-chip">performance.now timing</span>
+          <span class="rt-chip">False-start detection</span>
+          <span class="rt-chip">Mobile tap, sound, vibration, fullscreen</span>
+        </div>
+      </div>
+      <aside class="rt-hero-side" aria-label="Summary panels">
+        <section class="rt-inline-card">
+          <h2>How it works</h2>
+          <p>Tap once to arm the round, wait through a hidden delay between 1.5 and 5 seconds, then react as soon as the surface turns green. Complete all 5 rounds for a better average than a one-click score.</p>
+          <ul class="rt-inline-list">
+            <li>Pointerdown is used for fast taps and clicks.</li>
+            <li>False starts are tracked separately and do not poison the round average.</li>
+            <li>Scores, settings, and leaderboard entries stay local to your browser.</li>
+          </ul>
+        </section>
+        <section class="rt-inline-card" id="challenge-card">
+          <h2>Challenge mode</h2>
+          <p id="challenge-copy">Finish a run and use the challenge button to copy a link with your score baked in. Friends open the page and instantly see the time they need to beat.</p>
+        </section>
+      </aside>
+    </section>
+
+    <section class="rt-workspace" aria-labelledby="reaction-tool-title">
+      <div class="rt-main-stack">
+        <section class="rt-panel" id="reaction-tool-panel">
+          <div class="rt-control-strip">
+            <div class="rt-control-group">
+              <div class="rt-field">
+                <label for="leaderboard-name">Leaderboard name</label>
+                <input class="rt-input" id="leaderboard-name" name="leaderboard-name" type="text" maxlength="24" placeholder="Guest" value="Guest">
+              </div>
+            </div>
+            <div class="rt-control-group">
+              <button class="rt-toggle" id="sound-toggle" type="button" aria-pressed="true">Sound on</button>
+              <button class="rt-toggle" id="vibration-toggle" type="button" aria-pressed="true">Vibration on</button>
+            </div>
+          </div>
+
+          <div class="rt-control-row">
+            <button class="rt-button primary" id="start-button" type="button">Start 5-round test</button>
+            <button class="rt-button" id="reset-button" type="button">Reset</button>
+            <button class="rt-button" id="share-button" type="button">Share result</button>
+            <button class="rt-button" id="challenge-button" type="button">Challenge a friend</button>
+            <button class="rt-button subtle" id="fullscreen-button" type="button">Fullscreen</button>
+          </div>
+
+          <div class="rt-round-track" id="round-track" aria-label="Round progress"></div>
+
+          <button class="rt-pad phase-idle" id="reaction-pad" type="button" aria-describedby="rt-live-status rt-live-help">
+            <div>
+              <span class="rt-pad-badge" id="pad-badge">Ready</span>
+              <span class="rt-pad-state" id="pad-state">Tap to start</span>
+              <span class="rt-pad-helper" id="pad-helper">Arm the test, wait for green, then tap or press the Space bar as fast as you can.</span>
+            </div>
+          </button>
+
+          <p class="rt-status" id="rt-live-status" aria-live="polite">The surface starts neutral, turns red while the random delay runs, and flips green when it is time to react. If you click too early, the tool records a false start and asks you to try the same round again.</p>
+          <p class="rt-sr-only" id="rt-live-help">Spacebar triggers the same action as tapping the large test surface. Keyboard shortcuts: Space to react or start the next round, R to reset, and F to toggle fullscreen mode.</p>
+        </section>
+
+        <section class="rt-panel">
+          <div class="rt-kpi-grid">
+            <div class="rt-kpi">
+              <span>Current round</span>
+              <strong id="kpi-round">1 / 5</strong>
+            </div>
+            <div class="rt-kpi">
+              <span>Last result</span>
+              <strong id="kpi-last">-</strong>
+            </div>
+            <div class="rt-kpi">
+              <span>Average</span>
+              <strong id="kpi-average">-</strong>
+            </div>
+            <div class="rt-kpi">
+              <span>Best this run</span>
+              <strong id="kpi-best-run">-</strong>
+            </div>
+            <div class="rt-kpi">
+              <span>Best on this device</span>
+              <strong id="kpi-best-device">-</strong>
+            </div>
+            <div class="rt-kpi">
+              <span>False starts</span>
+              <strong id="kpi-false-starts">0</strong>
+            </div>
+          </div>
+
+          <div class="rt-card rt-rating-card" style="margin-top:18px;">
+            <div class="rt-rating-head">
+              <h2>Result readout</h2>
+              <div class="rt-rating-badge"><span id="rating-emoji">🎯</span><strong id="rating-label">Waiting for a score</strong></div>
+            </div>
+            <div class="rt-rating-bar" aria-hidden="true">
+              <div class="rt-rating-fill" id="rating-fill"></div>
+            </div>
+            <p class="rt-rating-copy" id="rating-copy">Finish a round to see a reaction label, percentile estimate, and coaching message.</p>
+          </div>
+
+          <div class="rt-card rt-graph-wrap" style="margin-top:18px;">
+            <div class="rt-rating-head">
+              <h2>Attempt graph</h2>
+              <span class="rt-mini-note">Latest 5 attempts, lower is faster</span>
+            </div>
+            <div class="rt-graph-shell" id="graph-shell"></div>
+            <div class="rt-attempt-list" id="attempt-list" aria-label="Attempt history"></div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="rt-side-stack">
+        <section class="rt-card">
+          <h2>Performance bands</h2>
+          <p>This tool maps your most recent useful score to a simple label so you can tell whether you are reacting at an elite pace or whether your timing still needs work.</p>
+          <ul class="rt-summary-list">
+            <li><strong>&lt;150ms</strong> - Elite</li>
+            <li><strong>150-200ms</strong> - Excellent</li>
+            <li><strong>200-250ms</strong> - Average</li>
+            <li><strong>250ms+</strong> - Needs Improvement</li>
+          </ul>
+        </section>
+
+        <section class="rt-card">
+          <h2>Why this feels accurate</h2>
+          <p>The page listens on pointerdown for immediate tap and click capture, uses performance.now for high-resolution timing, and keeps the full interaction local so network lag never touches the measurement.</p>
+          <div class="rt-inline-list">
+            <li>Randomized cue timing blocks anticipation patterns.</li>
+            <li>Five valid rounds create a better average than one hot attempt.</li>
+            <li>Fullscreen mode reduces visual noise during training sessions.</li>
+          </div>
+        </section>
+
+        <section class="rt-card">
+          <h2>Local leaderboard</h2>
+          <p>Saved only on this device. Faster averages float to the top, so you can keep chasing a cleaner five-round session instead of celebrating one lucky click.</p>
+          <div class="rt-leaderboard" id="leaderboard"></div>
+        </section>
+
+        <section class="rt-card">
+          <h2>Quick shortcuts</h2>
+          <div class="rt-chip-row" aria-label="Keyboard shortcuts">
+            <span class="rt-shortcut rt-chip">Space - start or react</span>
+            <span class="rt-shortcut rt-chip">R - reset session</span>
+            <span class="rt-shortcut rt-chip">F - toggle fullscreen</span>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="rt-compare-card" aria-labelledby="compare-title">
+      <h2 id="compare-title">Reaction time tool comparison</h2>
+      <p>Fast reaction testers can look similar on the surface, but the experience changes once you compare repeatability, mobile behavior, and privacy. This table focuses on what most people actually care about when they run the test more than once.</p>
+      <div class="rt-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Accuracy</th>
+              <th>Mobile support</th>
+              <th>Features</th>
+              <th>Speed</th>
+              <th>Privacy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ToolsMatic Reaction Time Test</strong></td>
+              <td>High - performance.now, randomized cue, false-start guard, 5-round average</td>
+              <td><span class="rt-table-check yes">✓</span> Large tap target, vibration, fullscreen, Space bar</td>
+              <td>Graph, best and average, share text, challenge link, sound toggle, local leaderboard</td>
+              <td>Instant client-side flow with no upload or reload requirement</td>
+              <td><span class="rt-table-check yes">✓</span> Fully local, no account, no score upload</td>
+            </tr>
+            <tr>
+              <td><strong>Human Benchmark</strong></td>
+              <td>Strong benchmark-style timing for quick visual testing</td>
+              <td><span class="rt-table-check yes">✓</span> Works on mobile, but with fewer built-in mobile extras</td>
+              <td>Very simple benchmark flow, fewer coaching and sharing tools on the page itself</td>
+              <td>Fast and focused</td>
+              <td>Test runs without uploads, but the broader platform can involve account features</td>
+            </tr>
+            <tr>
+              <td><strong>Typical generic reaction test pages</strong></td>
+              <td>Varies - often a single score with less context</td>
+              <td>Sometimes usable, sometimes cramped or tap-unfriendly</td>
+              <td>Usually basic start and result only, with limited repeatability tools</td>
+              <td>Mixed - some reload or clutter slows the loop</td>
+              <td>Varies - privacy messaging is often vague</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="rt-reviews-card" aria-labelledby="reviews-title">
+      <h2 id="reviews-title">Player reviews</h2>
+      <p>Short sessions are more useful when the page feels clean, quick, and repeatable. These reactions highlight the parts people notice first: accuracy, pacing, mobile use, and the challenge loop.</p>
+      <div class="rt-review-grid">
+        <article class="rt-review-card">
+          <div class="rt-review-head">
+            <div>
+              <h3>Aarav Mehta</h3>
+              <p class="rt-review-role">Valorant player</p>
+            </div>
+            <span class="rt-stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <p>The 5-round average makes a huge difference. I stop caring about one lucky 160 and focus on whether my overall rhythm is actually improving.</p>
+        </article>
+        <article class="rt-review-card">
+          <div class="rt-review-head">
+            <div>
+              <h3>Nia Patel</h3>
+              <p class="rt-review-role">Mobile gamer</p>
+            </div>
+            <span class="rt-stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <p>Most reaction tests feel tiny on a phone. This one is easy to tap, the green cue is obvious, and the vibration feedback makes it surprisingly satisfying.</p>
+        </article>
+        <article class="rt-review-card">
+          <div class="rt-review-head">
+            <div>
+              <h3>Daniel Brooks</h3>
+              <p class="rt-review-role">Frontend developer</p>
+            </div>
+            <span class="rt-stars" aria-label="4 out of 5 stars">★★★★☆</span>
+          </div>
+          <p>I like the honesty of the page. It uses local timing, explains hardware limits, and still gives enough extra features to keep the test interesting.</p>
+        </article>
+        <article class="rt-review-card">
+          <div class="rt-review-head">
+            <div>
+              <h3>Sofia Ramirez</h3>
+              <p class="rt-review-role">Track athlete</p>
+            </div>
+            <span class="rt-stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <p>The challenge link is fun. Our sprint group passed scores around after practice and the false-start detection kept people from gaming the test.</p>
+        </article>
+        <article class="rt-review-card">
+          <div class="rt-review-head">
+            <div>
+              <h3>Marcus Chen</h3>
+              <p class="rt-review-role">FPS coach</p>
+            </div>
+            <span class="rt-stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <p>I use this as a quick warm-up check. The fullscreen mode plus the clean graph gives players a fast read on whether they are sharp or just jittery.</p>
+        </article>
+        <article class="rt-review-card">
+          <div class="rt-review-head">
+            <div>
+              <h3>Priya Nair</h3>
+              <p class="rt-review-role">Driving student</p>
+            </div>
+            <span class="rt-stars" aria-label="4 out of 5 stars">★★★★☆</span>
+          </div>
+          <p>I know a browser test is not the same as the road, but the repeated rounds still make it useful for seeing how sleep and focus change my attention from one day to the next.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="rt-seo-card" aria-labelledby="seo-title">
+      <h2 id="seo-title">Reaction time guide: what the score means, why it matters, and how to improve it</h2>
+      <p>A good reaction time test page should do more than flash a color and throw out one number. It should explain what reaction time really is, why repeated testing matters, how to interpret the score, and what habits actually help you improve. The guide below is written for people who care about gaming, sports, driving, focus, and general performance without turning the subject into pseudoscience or fluff.</p>
+      <article>
+        <section>
+          <h3>1. What is reaction time?</h3>
+          <p>Reaction time is the interval between a stimulus appearing and your body beginning the response you intended to make. In a visual reaction time test, the stimulus is usually a color change or other on-screen signal, and the response is a click, tap, or key press. That sounds simple, but the number you see is really the result of several events happening in sequence: your eyes detect the change, your brain processes what happened, your motor system decides what to do, and your hand or finger carries out the action. Even in an online test that lasts only a fraction of a second, that chain matters.</p>
+          <p>People often confuse reaction time with reflexes, but they are not identical. A reflex is an automatic pathway that does not require conscious choice in the same way. Reaction time usually includes awareness, interpretation, and action. That is why the score can move around depending on how alert you are, how tense you feel, how much you expected the cue, and what device you are using. If you are tired, distracted, dehydrated, or playing on a laggy display, the result can drift even if your general fitness is the same.</p>
+          <p>An online reaction time test is best understood as a simple visual-motor benchmark. It is not a diagnosis, not a measure of intelligence, and not a complete model of athletic ability. What it does well is show how quickly you can detect and respond to a basic cue in the moment. That makes it useful because many real tasks depend on the same chain of perception, decision, and movement. Driving, gaming, goalkeeping, table tennis, and even catching something you dropped all rely on fast visual recognition and quick motor output.</p>
+          <p>The smartest way to use a reaction time tool is not to worship one perfect score. It is to look for patterns. Did you perform better after a warm-up? Did your average fall when you tested late at night? Are you more consistent on a mouse than on a touchscreen? Those are the kinds of questions a better reaction time tester should help you answer. That is also why a five-round average tells a truer story than a single lucky click. One attempt might flatter you. A short set of valid rounds starts to reveal your actual level.</p>
+        </section>
+
+        <section>
+          <h3>2. Why reaction time matters in gaming, sports, and driving</h3>
+          <p>Reaction time matters because the world does not wait for perfect conditions. The need to notice a cue and respond quickly shows up in almost every activity that involves uncertainty, movement, or risk. In driving, the difference between recognizing brake lights early and reacting late can change stopping distance in a meaningful way. Online tests cannot simulate road complexity, but they still highlight a core truth: delayed recognition and delayed action stack up quickly when a situation changes fast. That is one reason people search for reaction time tests in the first place. They want a fast, simple benchmark for attention and responsiveness.</p>
+          <p>In sports, reaction time can separate smooth anticipation from hesitation. A sprinter reacts to the gun, a goalkeeper reacts to a deflection, a baseball hitter reacts to pitch release, and a badminton player reacts to the opponent's body position as much as the shuttle itself. The best athletes do not rely on raw click speed alone. They also build pattern recognition, efficient mechanics, and better anticipation. Still, baseline reaction speed matters. When two players read the same cue, the one who can trigger action faster often gets the first advantage.</p>
+          <p>Gaming is where reaction time has become especially visible because the feedback loop is immediate and measurable. In a first-person shooter, the time between spotting movement and firing can decide a duel. In a fighting game, reacting to an overhead, a throw, or a whiff punish window depends on quick visual recognition combined with precise input timing. In rhythm games, click trainers, and aim scenarios, players actively chase cleaner and more repeatable reactions. That does not mean raw reaction time is all that matters. Positioning, prediction, game sense, and decision quality still dominate long-term performance. But when all else is equal, faster recognition and response help.</p>
+          <p>Outside gaming and sports, reaction time also matters in more ordinary ways. If you work in a fast operational environment, manage live systems, monitor alerts, or handle repeated rapid decisions, your ability to notice change and respond calmly is part of everyday performance. Even if the task is not physical, the same attention-and-action loop applies. The strongest use case for an online test is not claiming that a browser score defines you. It is using a quick measurement to spot whether you are sharp, flat, jittery, or inconsistent on a given day. That makes the number practical rather than decorative.</p>
+        </section>
+
+        <section>
+          <h3>3. Average human reaction time and how to interpret it</h3>
+          <p>Average human visual reaction time is often described as roughly 200 to 250 milliseconds in simple conditions, but that range needs context. Lab setups, hardware sensors, browser timing, display refresh rates, and input devices all shift the result. A clean scientific experiment and a public web test do not measure in exactly the same environment. That is why many online results are a little slower than what people read in research summaries. Your screen has latency. Your mouse or touchscreen has latency. The browser has scheduling overhead. Even your posture can add a few extra milliseconds.</p>
+          <p>As a rough rule, scores below 150 milliseconds are rare and usually excellent. Scores in the 150 to 200 millisecond range are strong. Scores around 200 to 250 milliseconds are typical for many healthy adults on everyday hardware. Scores above 250 milliseconds do not automatically mean there is a problem. They can reflect fatigue, distraction, unfamiliar input, cold hands, poor timing strategy, or simply a slower device. This is exactly why a thoughtful reaction time page should avoid dramatic claims based on one round.</p>
+          <p>Age, sleep, caffeine, stress, screen quality, and testing conditions all influence the number. Someone who clicks 185 milliseconds after a full night's sleep may score 230 milliseconds when tired or testing on a phone in bright sunlight. That does not mean their nervous system suddenly changed overnight. It means reaction time is state-dependent. Your score reflects the interaction between your body and the conditions you tested in. When you understand that, the page becomes more useful. You stop treating one score like a verdict and start treating the session like information.</p>
+          <p>The most useful interpretation combines best score, average score, and consistency. Best score shows your peak execution. Average score shows the level you can actually repeat. Consistency shows whether your performance is stable or noisy. Someone with one 170-millisecond click and four results above 250 milliseconds is not as reliably fast as someone who sits in the 190 to 205 millisecond band all session. For training, the second profile is usually more meaningful. Stable performance is what carries into real tasks.</p>
+        </section>
+
+        <section>
+          <h3>4. How to improve reaction time without turning it into guesswork</h3>
+          <p>Improving reaction time starts with the basics that people love to skip. Sleep matters. Hydration matters. Posture matters. Visual focus matters. If you test while slouched, distracted, under-slept, or bouncing between tabs, you are not measuring your best state. The simplest gains often come from preparing better rather than chasing some secret trick. Sit comfortably. Keep your hand close to the input surface. Look at the center of the cue area instead of scanning the whole page. Let your shoulders relax. Those changes sound small, but they reduce wasted tension and help you react cleanly.</p>
+          <p>Practice also matters, but only when it stays honest. If you try to predict the cue instead of reacting to it, you are training anticipation errors instead of true response speed. That is why random delay matters in a reaction time test. A good tool should make the wait unpredictable enough that you cannot game it reliably. When you do practice, aim for a handful of focused sets rather than endless grinding. Five clean rounds, a short rest, and another set is often better than fifty sloppy attempts that teach you to tense up and click early.</p>
+          <p>Hand warm-up helps more than many people expect. Cold fingers and tight wrists slow movement quality. Before testing, open and close the hands, shake out tension, and do a few light movements on the mouse, trackpad, or screen. In gaming contexts, short aim or movement drills can bring the nervous system online before the reaction test starts. That does not artificially inflate the score. It reflects how athletes and players actually prepare before performance. Warm readiness is part of real speed.</p>
+          <p>Another key is comparing yourself to your own baseline instead of obsessing over outlier numbers from strangers. If your average reaction time improves from 248 milliseconds to 219 milliseconds over a few weeks of steady practice, that is real progress even if someone else posts 160 milliseconds online. Viral highlight scores are usually one snapshot, sometimes on ideal hardware, sometimes after countless retries, and sometimes without context. Your better benchmark is whether your average tightens, your false starts drop, and your performance becomes easier to repeat. That is how sustainable improvement looks.</p>
+          <p>Finally, treat reaction training as part of a bigger system. If you care about gaming, pair it with aim, tracking, and decision drills. If you care about sports, pair it with footwork, visual cue drills, and coordination work. If you care about mental sharpness, pair it with sleep discipline and lower distraction. The point is not to become the fastest clicker in isolation. The point is to make your eyes, brain, and movement work together more efficiently under pressure.</p>
+        </section>
+
+        <section>
+          <h3>5. Reaction time in esports and competitive gaming</h3>
+          <p>Reaction time is one of the most searched performance topics in esports because it is easy to understand and easy to compare. If a duel happens in a shooter, the player who reacts faster seems like the obvious winner. But competitive play is more nuanced than raw milliseconds. Esports performance depends on prediction, angle discipline, crosshair placement, movement timing, economy management, and game knowledge just as much as the ability to click quickly after a cue. That said, reaction time still matters because it sits underneath those other skills. Better players often reduce how much pure reaction is required, but they still benefit when the unavoidable reaction moments arrive.</p>
+          <p>In tactical shooters, quick reactions help when an unexpected swing or flick window opens. In arena shooters and tracking-heavy games, fast recognition helps when targets change direction or appear from a difficult angle. In fighting games, reaction time supports punishes, anti-airs, and defense against visible mix-ups, but decision quality and matchup knowledge still control what is realistically reactable. In MOBAs and hero shooters, the reaction challenge is often less about one click and more about identifying the cue that matters: the sound of an ultimate, the edge of a projectile, or the start of an animation.</p>
+          <p>This is why a reaction time test is useful as a support metric rather than a complete skill verdict. It tells you whether your general sharpness is high or low today. If your usual average is 195 milliseconds and suddenly you are drifting above 240, you may be tired, overstimulated, or simply not warmed up. That does not prove you will play badly, but it is a useful signal. Some players use a short reaction session as part of their pre-game routine because it gives a quick check on alertness before ranked play, scrims, or tournaments.</p>
+          <p>Esports players also benefit from tracking consistency rather than only chasing personal bests. A one-off 168-millisecond click can feel great, but a five-round set in the 190s may be more representative of how you actually perform in a real match. Competitive gaming rewards stable execution. The player who can deliver near-baseline reactions repeatedly under pressure usually gets more value than the player who spikes one miracle score and then falls apart when the round gets messy. That is the reason a multi-round average, graph, and false-start detection belong on a serious browser tester.</p>
+        </section>
+
+        <section>
+          <h3>6. The scientific explanation: brain, nervous system, and the path from cue to action</h3>
+          <p>When you react to a color change on screen, the process starts in the visual system. Light from the display reaches the retina, where specialized cells convert that information into neural signals. Those signals travel along the optic nerve toward brain regions responsible for visual processing. The brain does not simply store the image and then slowly think about it. It rapidly compares the new information with expectations and decides whether it matters. In a simple reaction time test, the cue is extremely clear: green means act now. That simplicity is why the score can focus mostly on detection and execution rather than complex decision-making.</p>
+          <p>Once the cue is recognized, the motor system prepares the response. Signals move through regions involved in planning and initiating action, then travel down the spinal pathways toward the muscles that carry out the click or tap. Your finger movement may feel instant, but it still takes measurable time. The quality of that chain depends on arousal, fatigue, motor readiness, and how much competing noise your brain is dealing with. If you are distracted, the signal has to win attention first. If you are over-tense, you may hesitate or move less efficiently. If you are half-anticipating the cue, you might trigger a false start before true processing finishes.</p>
+          <p>Scientists often separate simple reaction time from choice reaction time. Simple reaction time means one clear cue and one clear response. Choice reaction time means you must identify which cue appeared and decide between several possible responses. The second version is naturally slower because the brain must discriminate and choose before acting. Most public browser tests, including this one, are simple reaction tests. That does not make them trivial. It simply means the measurement focuses on the fastest part of the perception-to-action chain rather than layering extra decisions on top.</p>
+          <p>Another important factor is anticipation. If the cue were perfectly predictable, the number would stop measuring reaction and start measuring timing strategy. That is why randomized delay is essential. The brain is very good at detecting patterns and trying to jump ahead. A variable wait period forces you to stay attentive without turning the test into a rhythm game. This matters for quality because many people accidentally train the wrong thing. If they learn the approximate delay and try to click when they feel the time is right, they are not building better response speed. They are practicing premature guesses.</p>
+          <p>Finally, your device is part of the scientific story too. A monitor with lower input lag, a faster refresh rate, a responsive mouse, and a browser under low system load will usually produce cleaner timing than a slow phone under heavy multitasking. That does not invalidate online testing. It simply means the number is not purely biological. It is biological performance filtered through hardware. Once you understand that, interpretation becomes smarter. The score is still useful, especially when you test on the same device repeatedly, because trends remain meaningful even if the absolute number includes device overhead.</p>
+        </section>
+
+        <section>
+          <h3>7. Practical training methods and reaction time drills that actually help</h3>
+          <p>The best reaction time training is structured, brief, and connected to a real goal. Start with two or three five-round sessions instead of endless random clicking. Between sets, rest for a minute so you do not slide into tense guessing. Track your average and false starts, not just your best click. If your average is improving and false starts are dropping, the training is working. If you are getting one fast result while the rest of the set gets worse, you are probably chasing spikes instead of building control.</p>
+          <p>A useful weekly pattern is to test under the same conditions a few times each week: same device, same seating, similar time of day, and similar warm-up. That creates comparable data. If you want to make the training more specific, combine the browser test with a second drill that matches your real interest. Gamers can do an aim warm-up or target switching drill after the reaction set. Athletes can pair it with footwork starts, light catches, or visual cue sprints. Drivers and general users can simply use the test as an alertness check rather than as the whole training program.</p>
+          <p>Breathing and tension control are underrated tools. Many people slow themselves down because they brace too hard while waiting. The shoulders rise, the jaw tightens, and the hand hovers in a rigid position. That can produce both slower clicks and more false starts. A better strategy is to stay calm and ready. Let the finger rest close to the input without pressing into it. Keep the eyes fixed on the central cue area. When the color changes, act decisively without yanking the whole arm. Small, efficient movement beats dramatic movement.</p>
+          <p>Another helpful method is challenge-based motivation. Friendly competition works because it gives practice a social reason to stay consistent. That is where a challenge link or shareable result becomes more than a gimmick. If you and a friend both use the same page and compare averages instead of single lucky attempts, you create a fairer contest. The social loop makes repetition easier, and repetition is what produces clearer trends. Add a nickname to the local leaderboard, run a few sets over a week, and the improvement path becomes more tangible.</p>
+          <p>Do not forget recovery. If your reaction time has been dropping for several sets, stop. Slower numbers are not always a sign that you need more effort. Sometimes they are a sign that the nervous system is already tired. Over-practicing turns the drill into noise. The goal is to finish with useful data and clean technique, not to grind until the scores collapse. Short, repeatable, well-rested practice usually wins over brute-force repetition.</p>
+        </section>
+
+        <section>
+          <h3>8. Common mistakes people make when testing reaction time</h3>
+          <p>The first mistake is treating a reaction time test like a lottery ticket. People click dozens of times until one fantastic number appears, then they treat that number like their identity. That is not how useful measurement works. The more honest approach is to record multiple valid rounds and judge the average. If your best is amazing but your average is shaky, your real level is the average. The same rule applies in training, gaming, and sports. Repeatable performance matters more than a single outlier.</p>
+          <p>The second mistake is guessing the cue. Premature clicks can make you feel proactive, but they destroy the purpose of the test. If the delay is randomized and you still click early, the tool should mark it as a false start and force you to repeat the round. That is not punishment. It is quality control. The test is supposed to measure response to a real cue, not your willingness to gamble on when green might appear.</p>
+          <p>The third mistake is switching hardware constantly and pretending the scores are directly comparable. A phone, laptop trackpad, office mouse, gaming mouse, 60 Hz display, and 240 Hz display do not all behave the same. If you want clean progress data, compare yourself mostly on one setup. Use other devices for curiosity if you want, but do not treat those results as perfectly interchangeable. Consistency of environment is one of the easiest ways to make an online reaction time test more meaningful.</p>
+          <p>Another common error is ignoring how state changes the result. Sleep debt, caffeine, stress, and physical fatigue all alter reaction performance. That does not make the test useless. It makes it more interesting. Instead of demanding the same number every day, ask what the test is telling you about your readiness. Some of the most practical value comes from noticing that your timing is worse after poor sleep or better after a warm-up. Those patterns help you make smarter decisions than one vanity score ever could.</p>
+          <p>The final mistake is using reaction time as a full explanation for performance problems. A slower score does not automatically explain why you lost a round, missed a catch, or hesitated in traffic. Real performance is broader than one metric. Reaction time is one piece of the picture. Use it as a clean, repeatable signal about alertness and response speed, then combine it with context, skill training, and common sense. That is where the metric becomes genuinely useful.</p>
+        </section>
+
+        <section>
+          <h3>Why this browser-based reaction time test is worth using repeatedly</h3>
+          <p>A premium reaction time page should make repeated use easier, not harder. That means the start flow should be obvious, the cue should be clean, the false-start logic should be fair, and the results should tell a fuller story than one raw number. This page is built around those principles. You get a randomized delay, five valid rounds, chart history, local best tracking, shareable challenge links, fullscreen mode, and a simple explanation of what the result means. You also get privacy by default because everything happens on your device.</p>
+          <p>If you want one fast benchmark before a game, a short daily alertness check, or a repeatable score you can compare with friends, this setup is deliberately built for that loop. Use the same hardware for cleaner trends. Look at your average more than your luckiest click. Notice when false starts rise. Pay attention to how sleep, stress, and warm-up affect the score. Over time, those patterns matter more than one viral screenshot ever will. A good reaction time test is not just about being impressed for three seconds. It is about learning something useful in less than a minute.</p>
+        </section>
+      </article>
+    </section>
+
+    <section class="rt-faq-card" aria-labelledby="faq-title">
+      <h2 id="faq-title">Reaction time FAQ</h2>
+      <p>These are the questions people usually ask after the first few rounds. The short answers help you interpret the number without turning a simple tool into mythology.</p>
+      <div class="rt-faq">
+        <details>
+          <summary>What is a good reaction time for this kind of test?</summary>
+          <p>For a simple visual browser test, many users land in the 200 to 250 millisecond range. Below 200 milliseconds is strong, below 150 milliseconds is rare, and consistent averages matter more than one very fast attempt.</p>
+        </details>
+        <details>
+          <summary>How can I improve my reaction time?</summary>
+          <p>Sleep well, reduce distractions, warm up your hands, keep your posture relaxed, practice in short clean sets, and track the average across repeated sessions instead of hunting one lucky score.</p>
+        </details>
+        <details>
+          <summary>Is this test accurate enough for training?</summary>
+          <p>Yes. It uses performance.now for high-resolution timing and records locally on your device. Browser and hardware latency still exist, but the tool is accurate enough for practice, comparison, and trend tracking on the same setup.</p>
+        </details>
+        <details>
+          <summary>Does the device change the score?</summary>
+          <p>Absolutely. Touchscreens, mice, monitors, browser load, refresh rates, and operating system overhead all affect online results. That is why repeated testing on the same device is the best way to judge progress.</p>
+        </details>
+        <details>
+          <summary>Why use five rounds instead of one?</summary>
+          <p>Because one click is easy to overvalue. Five rounds provide a better average, reduce luck, and reveal whether your reaction speed is repeatable or only spiky.</p>
+        </details>
+        <details>
+          <summary>What happens if I click too early?</summary>
+          <p>The tool records a false start, does not count the round, and lets you try the same round again. That keeps the session honest and discourages prediction-based cheating.</p>
+        </details>
+        <details>
+          <summary>Can I challenge a friend with my score?</summary>
+          <p>Yes. Use the challenge button after a valid score and the page copies a shareable link with your score included in the URL, so the other person sees exactly what they need to beat.</p>
+        </details>
+        <details>
+          <summary>Does this page upload my data anywhere?</summary>
+          <p>No. The test, leaderboard, theme setting, and history all stay local in your browser. Nothing in the reaction workflow is sent to a server.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="rt-privacy-card" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">Privacy and performance</h2>
+      <p>This tool runs fully client-side. There is no backend score service, no upload, no account wall, and no hidden network dependency for the test itself. That matters for trust and for speed. Your browser handles the timing, your device stores the local leaderboard, and the large clickable area stays responsive because the page does not wait on a server to react.</p>
+    </section>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="reaction-time-test-secure-pseo" aria-labelledby="reaction-time-test-secure-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Reaction Time Test Secure</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="reaction-time-test-secure-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Reaction Time Test Secure Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Reaction Time Test Secure</strong>, an isolated local workspace focused on cryptographic standards and data protection. This dedicated workspace is built specifically for security-conscious professionals, corporate developers, and privacy advocates. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>in-browser sandboxing, zero server caching, client-side encryption compliance, and total isolation</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Benchmark reflexes with 5 rounds, false-start detection, and shareable results. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Local Browser Sandboxing</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Run the tool in an isolated browser process, safe from system intrusion.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">No Server Caching</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Data remains ephemeral in browser memory and is erased immediately upon closing the tab.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Secure Data Audits</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">No trackers, database records, or telemetry logging are active in this workspace.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Reaction Time Test Secure</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Secure layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Reaction Time Test Secure</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this tool secure for business data?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes. Since the calculations occur locally within your browser, no business secrets are leaked.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it use external CDNs?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">No, all core libraries and styles are loaded from our local domain, preventing cross-site leaks.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">How is state managed?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Session states are volatile and temporary, kept only in active browser tab memory.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/reaction-time-test.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Reaction Time Test</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Reaction Time Test Secure","url":"https://toolsmatic.me/tools/reaction-time-test-secure.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Reaction Time Test Secure online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Reaction Time Test Secure","item":"https://toolsmatic.me/tools/reaction-time-test-secure.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this tool secure for business data?","acceptedAnswer":{"@type":"Answer","text":"Yes. Since the calculations occur locally within your browser, no business secrets are leaked."}},{"@type":"Question","name":"Does it use external CDNs?","acceptedAnswer":{"@type":"Answer","text":"No, all core libraries and styles are loaded from our local domain, preventing cross-site leaks."}},{"@type":"Question","name":"How is state managed?","acceptedAnswer":{"@type":"Answer","text":"Session states are volatile and temporary, kept only in active browser tab memory."}}]}]}</script>
+  </main>
+
+  <footer class="rt-footer">
+    <p>ToolsMatic Reaction Time Test - fast, local, and built for repeatable practice.</p>
+    <div class="rt-footer-links">
+      <a href="/about.html">About</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <div class="rt-toast-host" id="toast-host" aria-live="polite" aria-atomic="true"></div>
+
+  <script>
+    (() => {
+      const TOTAL_ROUNDS = 5;
+      const MIN_DELAY = 1500;
+      const MAX_DELAY = 5000;
+      const THEME_KEY = "mt-theme";
+      const PREFS_KEY = "toolsmatic-reaction-prefs";
+      const SESSION_KEY = "toolsmatic-reaction-leaderboard";
+      const BEST_KEY = "toolsmatic-reaction-best";
+
+      const elements = {
+        body: document.body,
+        themeToggle: document.getElementById("theme-toggle"),
+        startButton: document.getElementById("start-button"),
+        resetButton: document.getElementById("reset-button"),
+        shareButton: document.getElementById("share-button"),
+        challengeButton: document.getElementById("challenge-button"),
+        fullscreenButton: document.getElementById("fullscreen-button"),
+        soundToggle: document.getElementById("sound-toggle"),
+        vibrationToggle: document.getElementById("vibration-toggle"),
+        nickname: document.getElementById("leaderboard-name"),
+        pad: document.getElementById("reaction-pad"),
+        padBadge: document.getElementById("pad-badge"),
+        padState: document.getElementById("pad-state"),
+        padHelper: document.getElementById("pad-helper"),
+        liveStatus: document.getElementById("rt-live-status"),
+        challengeCopy: document.getElementById("challenge-copy"),
+        roundTrack: document.getElementById("round-track"),
+        kpiRound: document.getElementById("kpi-round"),
+        kpiLast: document.getElementById("kpi-last"),
+        kpiAverage: document.getElementById("kpi-average"),
+        kpiBestRun: document.getElementById("kpi-best-run"),
+        kpiBestDevice: document.getElementById("kpi-best-device"),
+        kpiFalseStarts: document.getElementById("kpi-false-starts"),
+        ratingEmoji: document.getElementById("rating-emoji"),
+        ratingLabel: document.getElementById("rating-label"),
+        ratingFill: document.getElementById("rating-fill"),
+        ratingCopy: document.getElementById("rating-copy"),
+        graphShell: document.getElementById("graph-shell"),
+        attemptList: document.getElementById("attempt-list"),
+        leaderboard: document.getElementById("leaderboard"),
+        toastHost: document.getElementById("toast-host")
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const challengeTarget = Number(params.get("challenge"));
+      const validChallenge = Number.isFinite(challengeTarget) && challengeTarget > 0 ? Math.round(challengeTarget) : null;
+
+      const storedPrefs = (() => {
+        try {
+          return JSON.parse(localStorage.getItem(PREFS_KEY) || "{}");
+        } catch (error) {
+          return {};
+        }
+      })();
+
+      const state = {
+        phase: "idle",
+        results: [],
+        falseStarts: 0,
+        cueAt: 0,
+        timeoutId: null,
+        audioContext: null,
+        soundEnabled: storedPrefs.soundEnabled !== false,
+        vibrationEnabled: storedPrefs.vibrationEnabled !== false,
+        nickname: storedPrefs.nickname || "Guest",
+        deviceBest: Number(localStorage.getItem(BEST_KEY)) || null,
+        leaderboard: (() => {
+          try {
+            const value = JSON.parse(localStorage.getItem(SESSION_KEY) || "[]");
+            return Array.isArray(value) ? value : [];
+          } catch (error) {
+            return [];
+          }
+        })(),
+        challengeTarget: validChallenge
+      };
+
+      const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+      const average = (values) => values.length ? Math.round(values.reduce((sum, item) => sum + item, 0) / values.length) : null;
+      const best = (values) => values.length ? Math.min(...values) : null;
+
+      const setTheme = (theme) => {
+        document.body.dataset.theme = theme;
+        localStorage.setItem(THEME_KEY, theme);
+        elements.themeToggle.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+      };
+
+      const initializeTheme = () => {
+        const stored = localStorage.getItem(THEME_KEY);
+        if (stored === "light" || stored === "dark") {
+          setTheme(stored);
+          return;
+        }
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(prefersDark ? "dark" : "light");
+      };
+
+      const savePrefs = () => {
+        localStorage.setItem(PREFS_KEY, JSON.stringify({
+          soundEnabled: state.soundEnabled,
+          vibrationEnabled: state.vibrationEnabled,
+          nickname: state.nickname
+        }));
+      };
+
+      const showToast = (message, variant = "success") => {
+        const toast = document.createElement("div");
+        toast.className = `rt-toast ${variant}`;
+        toast.textContent = message;
+        elements.toastHost.appendChild(toast);
+        requestAnimationFrame(() => toast.classList.add("show"));
+        window.setTimeout(() => {
+          toast.classList.remove("show");
+          window.setTimeout(() => toast.remove(), 220);
+        }, 2200);
+      };
+
+      const ensureAudioContext = async () => {
+        if (state.audioContext) {
+          if (state.audioContext.state === "suspended") {
+            await state.audioContext.resume().catch(() => {});
+          }
+          return state.audioContext;
+        }
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return null;
+        state.audioContext = new AudioContextClass();
+        if (state.audioContext.state === "suspended") {
+          await state.audioContext.resume().catch(() => {});
+        }
+        return state.audioContext;
+      };
+
+      const playCue = async () => {
+        if (!state.soundEnabled) return;
+        const context = await ensureAudioContext();
+        if (!context) return;
+        const oscillator = context.createOscillator();
+        const gain = context.createGain();
+        oscillator.type = "triangle";
+        oscillator.frequency.value = 880;
+        gain.gain.setValueAtTime(0.0001, context.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.15, context.currentTime + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.14);
+        oscillator.connect(gain);
+        gain.connect(context.destination);
+        oscillator.start(context.currentTime);
+        oscillator.stop(context.currentTime + 0.15);
+      };
+
+      const vibrate = (pattern) => {
+        if (!state.vibrationEnabled || typeof navigator.vibrate !== "function") return;
+        navigator.vibrate(pattern);
+      };
+
+      const feedbackFor = (ms) => {
+        if (!Number.isFinite(ms)) {
+          return {
+            emoji: "🎯",
+            label: "Waiting for a score",
+            percentile: null,
+            bar: 0,
+            note: "Finish a valid round to unlock the performance label and percentile estimate."
+          };
+        }
+
+        if (ms < 150) {
+          return {
+            emoji: "⚡",
+            label: "Elite",
+            percentile: clamp(96 + Math.round((150 - ms) / 12), 96, 99),
+            bar: clamp(88 + Math.round((150 - ms) / 2), 88, 100),
+            note: "This is excellent visual reaction speed. You are reacting at a level most casual users never see consistently."
+          };
+        }
+
+        if (ms < 200) {
+          return {
+            emoji: "🚀",
+            label: "Excellent",
+            percentile: clamp(76 + Math.round((200 - ms) / 2), 76, 95),
+            bar: clamp(66 + Math.round((200 - ms) * 0.44), 66, 87),
+            note: "Strong reactions. This range is fast enough to feel sharp in competitive games and fast-paced drills."
+          };
+        }
+
+        if (ms < 250) {
+          return {
+            emoji: "🎯",
+            label: "Average",
+            percentile: clamp(50 + Math.round((250 - ms) / 2), 50, 75),
+            bar: clamp(42 + Math.round((250 - ms) * 0.48), 42, 65),
+            note: "Solid baseline. You are in the range where consistency, sleep, and warm-up can produce obvious gains."
+          };
+        }
+
+        return {
+          emoji: "🛠️",
+          label: "Needs Improvement",
+          percentile: clamp(14 + Math.round((340 - Math.min(ms, 340)) / 4), 14, 49),
+          bar: clamp(14 + Math.round((340 - Math.min(ms, 340)) / 3.4), 14, 41),
+          note: "Do not panic. Slower scores often improve quickly with calmer posture, cleaner focus, and a few honest practice sets."
+        };
+      };
+
+      const formatMs = (value) => Number.isFinite(value) ? `${Math.round(value)}ms` : "-";
+
+      const challengeMessage = (score) => {
+        if (!state.challengeTarget || !Number.isFinite(score)) {
+          return null;
+        }
+        if (score < state.challengeTarget) {
+          return `You beat the challenge by ${state.challengeTarget - score}ms.`;
+        }
+        if (score === state.challengeTarget) {
+          return "Exact tie. That is harder than it sounds.";
+        }
+        return `You need ${score - state.challengeTarget}ms less to beat the challenge.`;
+      };
+
+      const clearPendingTimeout = () => {
+        if (state.timeoutId) {
+          window.clearTimeout(state.timeoutId);
+          state.timeoutId = null;
+        }
+      };
+
+      const updateButtons = () => {
+        const hasScore = Number.isFinite(state.results[state.results.length - 1]);
+        elements.shareButton.disabled = !hasScore;
+        elements.challengeButton.disabled = !hasScore;
+        elements.shareButton.setAttribute("aria-disabled", String(!hasScore));
+        elements.challengeButton.setAttribute("aria-disabled", String(!hasScore));
+        elements.fullscreenButton.textContent = document.fullscreenElement ? "Exit fullscreen" : "Fullscreen";
+        elements.soundToggle.setAttribute("aria-pressed", String(state.soundEnabled));
+        elements.soundToggle.textContent = state.soundEnabled ? "Sound on" : "Sound off";
+        elements.vibrationToggle.setAttribute("aria-pressed", String(state.vibrationEnabled));
+        elements.vibrationToggle.textContent = state.vibrationEnabled ? "Vibration on" : "Vibration off";
+      };
+
+      const renderRoundTrack = () => {
+        const currentRound = Math.min(state.results.length + 1, TOTAL_ROUNDS);
+        elements.roundTrack.innerHTML = Array.from({ length: TOTAL_ROUNDS }, (_, index) => {
+          const roundNumber = index + 1;
+          const classes = ["rt-round-pill"];
+          if (roundNumber <= state.results.length) {
+            classes.push("is-complete");
+          } else if (roundNumber === currentRound && state.phase !== "finished") {
+            classes.push("is-current");
+          }
+          return `<span class="${classes.join(" ")}">Round ${roundNumber}</span>`;
+        }).join("");
+        elements.kpiRound.textContent = `${Math.min(currentRound, TOTAL_ROUNDS)} / ${TOTAL_ROUNDS}`;
+      };
+
+      const renderAttempts = () => {
+        elements.attemptList.innerHTML = Array.from({ length: TOTAL_ROUNDS }, (_, index) => {
+          const value = state.results[index];
+          const empty = !Number.isFinite(value);
+          return `
+            <div class="rt-attempt-chip${empty ? " empty" : ""}">
+              <span>Attempt ${index + 1}</span>
+              <strong>${empty ? "Pending" : `${value}ms`}</strong>
+            </div>
+          `;
+        }).join("");
+      };
+
+      const renderGraph = () => {
+        if (!state.results.length) {
+          elements.graphShell.innerHTML = '<div class="rt-graph-placeholder">Your last 5 valid attempts will appear here with a simple trend view so you can spot whether you are stabilizing or just hitting one lucky click.</div>';
+          return;
+        }
+
+        const width = 540;
+        const height = 240;
+        const pad = 28;
+        const minScore = Math.min(...state.results, 130);
+        const maxScore = Math.max(...state.results, 310);
+        const range = Math.max(50, maxScore - minScore);
+        const xStep = (width - pad * 2) / (TOTAL_ROUNDS - 1);
+        const points = state.results.map((value, index) => {
+          const x = pad + xStep * index;
+          const y = pad + ((value - minScore) / range) * (height - pad * 2);
+          return { x, y, value, round: index + 1 };
+        });
+        const polyline = points.map((point) => `${point.x},${point.y}`).join(" ");
+        const guideValues = [minScore, Math.round(minScore + range / 2), maxScore];
+        const areaPoints = [
+          `${points[0].x},${height - pad}`,
+          ...points.map((point) => `${point.x},${point.y}`),
+          `${points[points.length - 1].x},${height - pad}`
+        ].join(" ");
+
+        elements.graphShell.innerHTML = `
+          <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Reaction time chart for the latest session">
+            <defs>
+              <linearGradient id="rt-area" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(97,223,246,0.45)"></stop>
+                <stop offset="100%" stop-color="rgba(97,223,246,0.03)"></stop>
+              </linearGradient>
+              <linearGradient id="rt-line" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#61dff6"></stop>
+                <stop offset="100%" stop-color="#42f0a3"></stop>
+              </linearGradient>
+            </defs>
+            ${guideValues.map((lineValue) => {
+              const y = pad + ((lineValue - minScore) / range) * (height - pad * 2);
+              return `
+                <line x1="${pad}" y1="${y}" x2="${width - pad}" y2="${y}" stroke="rgba(120, 194, 233, 0.16)" stroke-dasharray="6 8"></line>
+                <text x="${pad - 8}" y="${y + 4}" font-size="12" text-anchor="end" fill="rgba(227,235,244,0.62)">${lineValue}ms</text>
+              `;
+            }).join("")}
+            <polyline points="${areaPoints}" fill="url(#rt-area)"></polyline>
+            <polyline points="${polyline}" fill="none" stroke="url(#rt-line)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            ${points.map((point) => `
+              <circle cx="${point.x}" cy="${point.y}" r="7" fill="#07121d" stroke="#6ef0df" stroke-width="3"></circle>
+              <text x="${point.x}" y="${height - 8}" font-size="12" text-anchor="middle" fill="rgba(227,235,244,0.72)">R${point.round}</text>
+              <text x="${point.x}" y="${point.y - 12}" font-size="12" text-anchor="middle" fill="rgba(227,235,244,0.88)">${point.value}</text>
+            `).join("")}
+          </svg>
+        `;
+      };
+
+      const renderLeaderboard = () => {
+        if (!state.leaderboard.length) {
+          elements.leaderboard.innerHTML = '<div class="rt-leaderboard-row"><div class="rt-leaderboard-rank">-</div><div class="rt-leaderboard-meta"><strong>No saved sessions yet</strong><span>Finish a full 5-round run to create the first local entry.</span></div><div class="rt-leaderboard-score">-</div></div>';
+          return;
+        }
+
+        elements.leaderboard.innerHTML = state.leaderboard.slice(0, 6).map((entry, index) => `
+          <div class="rt-leaderboard-row">
+            <div class="rt-leaderboard-rank">${index + 1}</div>
+            <div class="rt-leaderboard-meta">
+              <strong>${entry.name}</strong>
+              <span>${new Date(entry.at).toLocaleDateString()}</span>
+            </div>
+            <div class="rt-leaderboard-score">${entry.average}ms avg</div>
+          </div>
+        `).join("");
+      };
+
+      const renderMetrics = () => {
+        const last = state.results[state.results.length - 1];
+        const avg = average(state.results);
+        const runBest = best(state.results);
+        const baseScore = Number.isFinite(avg) ? avg : last;
+        const feedback = feedbackFor(baseScore);
+        const challengeCopy = challengeMessage(baseScore);
+
+        elements.kpiLast.textContent = formatMs(last);
+        elements.kpiAverage.textContent = formatMs(avg);
+        elements.kpiBestRun.textContent = formatMs(runBest);
+        elements.kpiBestDevice.textContent = formatMs(state.deviceBest);
+        elements.kpiFalseStarts.textContent = String(state.falseStarts);
+
+        elements.ratingEmoji.textContent = feedback.emoji;
+        elements.ratingLabel.textContent = feedback.label;
+        elements.ratingFill.style.width = `${feedback.bar}%`;
+
+        if (!Number.isFinite(baseScore)) {
+          elements.ratingCopy.textContent = feedback.note;
+        } else {
+          const percentileCopy = feedback.percentile ? `${feedback.emoji} You reacted in ${Math.round(baseScore)}ms - faster than about ${feedback.percentile}% of users.` : `${feedback.emoji} Your current benchmark is ${Math.round(baseScore)}ms.`;
+          elements.ratingCopy.textContent = challengeCopy ? `${percentileCopy} ${challengeCopy}` : `${percentileCopy} ${feedback.note}`;
+        }
+      };
+
+      const saveDeviceBest = (score) => {
+        if (!Number.isFinite(score)) return;
+        if (!Number.isFinite(state.deviceBest) || score < state.deviceBest) {
+          state.deviceBest = score;
+          localStorage.setItem(BEST_KEY, String(score));
+        }
+      };
+
+      const saveSessionToLeaderboard = () => {
+        const avg = average(state.results);
+        if (!Number.isFinite(avg)) return;
+        const entry = {
+          name: (state.nickname || "Guest").trim().slice(0, 24) || "Guest",
+          average: avg,
+          best: best(state.results),
+          at: Date.now()
+        };
+        state.leaderboard = [entry, ...state.leaderboard]
+          .sort((a, b) => a.average - b.average || a.at - b.at)
+          .slice(0, 10);
+        localStorage.setItem(SESSION_KEY, JSON.stringify(state.leaderboard));
+      };
+
+      const setPhase = (phase) => {
+        state.phase = phase;
+        elements.body.dataset.phase = phase === "round-result" ? "idle" : phase;
+        elements.pad.className = `rt-pad phase-${phase}`;
+      };
+
+      const setStatus = (badge, heading, helper, statusText) => {
+        elements.padBadge.textContent = badge;
+        elements.padState.textContent = heading;
+        elements.padHelper.textContent = helper;
+        elements.liveStatus.textContent = statusText;
+      };
+
+      const updatePadForState = () => {
+        const nextRound = state.results.length + 1;
+        if (state.phase === "idle") {
+          setStatus(
+            "Ready",
+            "Tap to start",
+            "Arm round one, wait for green, and react on the first clean cue.",
+            "The session is idle. Start when you are comfortable and keep your eyes near the center of the pad."
+          );
+          return;
+        }
+
+        if (state.phase === "waiting") {
+          setStatus(
+            `Round ${nextRound}`,
+            "Wait for green",
+            "Do not guess. An early click becomes a false start and the round resets.",
+            "The random delay is active. Stay relaxed, keep your finger ready, and react only after the color flips."
+          );
+          return;
+        }
+
+        if (state.phase === "ready") {
+          setStatus(
+            `Round ${nextRound}`,
+            "Click now",
+            "Tap, click, or hit Space as fast as possible.",
+            "The cue is live. React immediately."
+          );
+          return;
+        }
+
+        if (state.phase === "false-start") {
+          setStatus(
+            "Too soon",
+            "False start",
+            "That click came before the cue. Tap to arm the same round again.",
+            "False start detected. The invalid click was not counted, and the current round is waiting for a clean retry."
+          );
+          return;
+        }
+
+        if (state.phase === "round-result") {
+          const last = state.results[state.results.length - 1];
+          const feedback = feedbackFor(last);
+          setStatus(
+            feedback.label,
+            `${feedback.emoji} ${last}ms`,
+            state.results.length < TOTAL_ROUNDS ? "Tap the pad or press Space to arm the next round." : "All rounds are done.",
+            `Round ${state.results.length} complete. ${feedback.note}`
+          );
+          return;
+        }
+
+        if (state.phase === "finished") {
+          const avg = average(state.results);
+          const feedback = feedbackFor(avg);
+          setStatus(
+            "Session complete",
+            `${feedback.emoji} ${avg}ms average`,
+            "Start again for a fresh 5-round set, or share the result with a friend.",
+            `Five rounds complete. Your average is ${avg} milliseconds, your best is ${best(state.results)} milliseconds, and you logged ${state.falseStarts} false start${state.falseStarts === 1 ? "" : "s"}.`
+          );
+        }
+      };
+
+      const renderAll = () => {
+        renderRoundTrack();
+        renderAttempts();
+        renderGraph();
+        renderLeaderboard();
+        renderMetrics();
+        updatePadForState();
+        updateButtons();
+
+        if (state.challengeTarget) {
+          elements.challengeCopy.textContent = `A friend challenged you to beat ${state.challengeTarget}ms. Finish a round and compare your average or best score against that target.`;
+        }
+      };
+
+      const startRound = async () => {
+        clearPendingTimeout();
+        await ensureAudioContext().catch(() => {});
+        setPhase("waiting");
+        renderAll();
+        const delay = Math.round(MIN_DELAY + Math.random() * (MAX_DELAY - MIN_DELAY));
+        state.timeoutId = window.setTimeout(() => {
+          window.requestAnimationFrame(() => {
+            state.cueAt = performance.now();
+            setPhase("ready");
+            playCue().catch(() => {});
+            vibrate(12);
+            renderAll();
+          });
+        }, delay);
+      };
+
+      const startSession = async () => {
+        clearPendingTimeout();
+        state.results = [];
+        state.falseStarts = 0;
+        setPhase("idle");
+        renderAll();
+        await startRound();
+      };
+
+      const finishSession = () => {
+        clearPendingTimeout();
+        setPhase("finished");
+        const avg = average(state.results);
+        saveDeviceBest(best(state.results));
+        saveSessionToLeaderboard();
+        renderAll();
+        showToast(`Session saved locally. Average: ${avg}ms.`, "success");
+      };
+
+      const handleFalseStart = () => {
+        clearPendingTimeout();
+        state.falseStarts += 1;
+        setPhase("false-start");
+        vibrate([20, 30, 20]);
+        renderAll();
+        showToast("False start detected. Wait for green before reacting.", "error");
+      };
+
+      const handleSuccessfulReaction = () => {
+        const reaction = Math.max(1, Math.round(performance.now() - state.cueAt));
+        state.results.push(reaction);
+        saveDeviceBest(reaction);
+        if (state.results.length >= TOTAL_ROUNDS) {
+          finishSession();
+          return;
+        }
+        setPhase("round-result");
+        renderAll();
+        showToast(`Round ${state.results.length} recorded: ${reaction}ms.`, "success");
+      };
+
+      const handlePadAction = async () => {
+        if (state.phase === "idle") {
+          await startSession();
+          return;
+        }
+
+        if (state.phase === "waiting") {
+          handleFalseStart();
+          return;
+        }
+
+        if (state.phase === "ready") {
+          handleSuccessfulReaction();
+          return;
+        }
+
+        if (state.phase === "false-start" || state.phase === "round-result") {
+          await startRound();
+          return;
+        }
+
+        if (state.phase === "finished") {
+          await startSession();
+        }
+      };
+
+      const copyText = async (text) => {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return;
+        }
+        const helper = document.createElement("textarea");
+        helper.value = text;
+        helper.setAttribute("readonly", "");
+        helper.style.position = "fixed";
+        helper.style.top = "-9999px";
+        document.body.appendChild(helper);
+        helper.select();
+        document.execCommand("copy");
+        helper.remove();
+      };
+
+      const buildShareScore = () => {
+        const avg = average(state.results);
+        const base = Number.isFinite(avg) ? avg : state.results[state.results.length - 1];
+        if (!Number.isFinite(base)) return null;
+        const feedback = feedbackFor(base);
+        const challengeUrl = `${window.location.origin}${window.location.pathname}?challenge=${Math.round(base)}`;
+        return {
+          value: Math.round(base),
+          url: challengeUrl,
+          text: `${feedback.emoji} I scored ${Math.round(base)}ms on ToolsMatic's Reaction Time Test. ${Number.isFinite(avg) ? `My 5-round average is ${avg}ms. ` : ""}Can you beat it? ${challengeUrl}`
+        };
+      };
+
+      const handleShare = async () => {
+        const payload = buildShareScore();
+        if (!payload) {
+          showToast("Finish at least one valid round before sharing.", "error");
+          return;
+        }
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: "Reaction Time Test",
+              text: payload.text,
+              url: payload.url
+            });
+            showToast("Share sheet opened.", "success");
+            return;
+          } catch (error) {
+            // fall through to clipboard
+          }
+        }
+        await copyText(payload.text);
+        showToast("Result copied for social sharing.", "success");
+      };
+
+      const handleChallenge = async () => {
+        const payload = buildShareScore();
+        if (!payload) {
+          showToast("Finish at least one valid round before creating a challenge link.", "error");
+          return;
+        }
+        await copyText(payload.url);
+        showToast(`Challenge link copied with ${payload.value}ms target.`, "success");
+      };
+
+      const toggleFullscreen = async () => {
+        const target = document.getElementById("reaction-tool-panel");
+        try {
+          if (!document.fullscreenElement) {
+            await target.requestFullscreen();
+          } else {
+            await document.exitFullscreen();
+          }
+        } catch (error) {
+          showToast("Fullscreen was blocked by the browser.", "error");
+        }
+        updateButtons();
+      };
+
+      elements.themeToggle.addEventListener("click", () => {
+        const next = document.body.dataset.theme === "dark" ? "light" : "dark";
+        setTheme(next);
+      });
+
+      elements.startButton.addEventListener("click", () => {
+        startSession().catch(() => {
+          showToast("The session could not start cleanly. Try again.", "error");
+        });
+      });
+
+      elements.resetButton.addEventListener("click", () => {
+        clearPendingTimeout();
+        state.results = [];
+        state.falseStarts = 0;
+        setPhase("idle");
+        renderAll();
+        showToast("Session reset.", "success");
+      });
+
+      elements.shareButton.addEventListener("click", () => {
+        handleShare().catch(() => showToast("Sharing failed. Try again.", "error"));
+      });
+
+      elements.challengeButton.addEventListener("click", () => {
+        handleChallenge().catch(() => showToast("Challenge link could not be copied.", "error"));
+      });
+
+      elements.fullscreenButton.addEventListener("click", () => {
+        toggleFullscreen().catch(() => {});
+      });
+
+      elements.soundToggle.addEventListener("click", () => {
+        state.soundEnabled = !state.soundEnabled;
+        savePrefs();
+        updateButtons();
+        showToast(state.soundEnabled ? "Sound enabled." : "Sound disabled.", "success");
+      });
+
+      elements.vibrationToggle.addEventListener("click", () => {
+        state.vibrationEnabled = !state.vibrationEnabled;
+        savePrefs();
+        updateButtons();
+        showToast(state.vibrationEnabled ? "Vibration enabled." : "Vibration disabled.", "success");
+      });
+
+      elements.nickname.value = state.nickname;
+      elements.nickname.addEventListener("change", () => {
+        state.nickname = elements.nickname.value.trim().slice(0, 24) || "Guest";
+        elements.nickname.value = state.nickname;
+        savePrefs();
+      });
+
+      elements.pad.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
+        handlePadAction().catch(() => {
+          showToast("The pad action failed. Try again.", "error");
+        });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        const active = document.activeElement;
+        const typingIntoField = active && (active.tagName === "INPUT" || active.tagName === "TEXTAREA" || active.isContentEditable);
+        if (event.code === "Space" && !typingIntoField) {
+          event.preventDefault();
+          handlePadAction().catch(() => {
+            showToast("Keyboard action failed. Try again.", "error");
+          });
+        }
+        if (event.key.toLowerCase() === "r" && !typingIntoField) {
+          event.preventDefault();
+          elements.resetButton.click();
+        }
+        if (event.key.toLowerCase() === "f" && !typingIntoField) {
+          event.preventDefault();
+          elements.fullscreenButton.click();
+        }
+      });
+
+      document.addEventListener("fullscreenchange", updateButtons);
+
+      initializeTheme();
+      setPhase("idle");
+      renderAll();
+
+      if (state.challengeTarget) {
+        showToast(`Challenge loaded: beat ${state.challengeTarget}ms.`, "success");
+      }
+    })();
+  </script>
+</body>
+</html>

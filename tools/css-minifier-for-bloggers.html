@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>CSS Minifier for Bloggers Online | Free ToolsMatic</title>
+  <meta name="description" content="Use CSS Minifier for Bloggers online. Client-side, free, and private browser-based utility.">
+  <meta name="keywords" content="css minifier, css beautifier, css formatter, css validator, css compressor, minify css online, format css online, css prefixer, css diff, css stats, multi file css minifier">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://toolsmatic.me/tools/css-minifier-for-bloggers.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/css-minifier-for-bloggers.html">
+  <meta property="og:title" content="CSS Minifier for Bloggers Online | Free ToolsMatic">
+  <meta property="og:description" content="Use CSS Minifier for Bloggers online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CSS Minifier for Bloggers Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use CSS Minifier for Bloggers online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  
+  
+  
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"How to minify, format, validate, and inspect CSS in one browser workspace","description":"A practical guide to CSS minification, formatting, prefix handling, diff review, stats, and safe local processing.","author":{"@type":"Organization","name":"ToolsMatic"},"publisher":{"@type":"Organization","name":"ToolsMatic"},"mainEntityOfPage": "https://toolsmatic.me/tools/css-minifier-for-bloggers.html"}
+  </script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+  <style>
+    .cm-page{width:min(1280px,calc(100% - 32px));margin:0 auto 56px;--a1:#68e2ff;--a2:#59d8a1;--soft:rgba(104,226,255,.16);--soft2:rgba(89,216,161,.12);--glow:rgba(89,216,161,.2);--border:rgba(121,208,255,.16);--bg:rgba(8,18,31,.8);--mono:"JetBrains Mono","Fira Code","SFMono-Regular",Consolas,"Liberation Mono","Courier New",monospace}
+    .cm-breadcrumbs,.cm-hero,.cm-toolbar-card,.cm-editor-shell,.cm-card,.cm-compare-card,.cm-faq-card,.cm-seo-card{border:1px solid var(--border);border-radius:28px;background:radial-gradient(circle at top right,var(--soft),transparent 22rem),radial-gradient(circle at bottom left,var(--soft2),transparent 24rem),linear-gradient(180deg,rgba(15,28,44,.94),rgba(8,14,24,.92));box-shadow:0 26px 60px rgba(2,8,18,.28)}
+    .cm-breadcrumbs{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 18px;padding:14px 18px;color:rgba(226,236,245,.78);font-size:.95rem}.cm-breadcrumbs a{color:#8ce8ff;text-decoration:none}.cm-breadcrumbs span{opacity:.56}
+    .cm-hero,.cm-toolbar-card,.cm-editor-shell,.cm-card,.cm-compare-card,.cm-faq-card,.cm-seo-card{padding:22px;margin-bottom:22px}
+    .cm-eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 14px;color:#7ff7d1;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;font-weight:800}.cm-eyebrow:before{content:"";width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--a1),var(--a2));box-shadow:0 0 18px var(--glow)}
+    .cm-hero h1{margin:0 0 14px;font-size:clamp(2.25rem,4vw,3.8rem);line-height:1.04}.cm-hero p,.cm-card p,.cm-compare-card p,.cm-faq-card p,.cm-seo-card p{margin:0;color:rgba(226,236,245,.82);line-height:1.72;max-width:82ch}
+    .cm-pills,.cm-tool-row,.cm-switches,.cm-actions,.cm-history-head,.cm-file-head{display:flex;flex-wrap:wrap;gap:12px}.cm-pills{margin-top:22px}
+    .cm-pill,.cm-badge,.cm-status,.cm-summary,.cm-issue,.cm-history-item,.cm-diff-item{border:1px solid var(--border);border-radius:18px;background:rgba(8,18,31,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}.cm-pill,.cm-badge,.cm-summary{padding:12px 16px;color:rgba(236,243,248,.9);font-size:.92rem}
+    .cm-toolbar-card,.cm-editor-shell,.cm-card,.cm-compare-card,.cm-faq-card,.cm-seo-card{font-family:var(--mono)}
+    .cm-mode-tabs{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px}.cm-tab,.cm-btn{min-height:46px;padding:0 16px;border-radius:14px;border:1px solid rgba(121,208,255,.16);background:rgba(8,18,31,.76);color:rgba(236,243,248,.92);font:inherit;font-family:var(--mono);font-weight:700;cursor:pointer;transition:.18s}.cm-tab:hover,.cm-tab:focus-visible,.cm-btn:hover,.cm-btn:focus-visible{transform:translateY(-1px);border-color:rgba(121,208,255,.34);outline:none}.cm-tab.active,.cm-btn.primary{background:linear-gradient(135deg,var(--a1),var(--a2));color:#04131f;box-shadow:0 16px 36px var(--glow)}
+    .cm-switch{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;border:1px solid rgba(121,208,255,.14);background:rgba(8,18,31,.72);color:rgba(236,243,248,.88);cursor:pointer}.cm-switch input{accent-color:#68e2ff}
+    .cm-editor-grid{display:grid;grid-template-columns:minmax(0,1fr) 250px minmax(0,1fr);gap:18px;align-items:start}.cm-panel-head,.cm-stats-rail,.cm-side-grid,.cm-lists{display:grid;gap:18px}
+    .cm-panel-head{margin-bottom:14px}.cm-panel-head h2,.cm-card h2,.cm-card h3,.cm-compare-card h2,.cm-faq-card h2,.cm-seo-card h2{margin:0 0 8px}
+    .cm-panel-head p{color:rgba(224,233,242,.76);line-height:1.66}
+    .cm-editor{position:relative;min-height:480px;border-radius:24px;border:1px solid rgba(121,208,255,.16);background:rgba(5,13,24,.9);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+    .cm-highlight,.cm-textarea{margin:0;padding:20px;font:inherit;font-family:var(--mono);font-size:.94rem;line-height:1.7;white-space:pre-wrap;word-break:break-word;tab-size:2;box-sizing:border-box}
+    .cm-highlight{position:absolute;inset:0;overflow:auto;color:#d7e8f7;pointer-events:none}
+    .cm-textarea{position:relative;width:100%;height:100%;min-height:480px;border:0;resize:vertical;background:transparent;color:transparent;caret-color:#f6fbff;outline:none;z-index:1}
+    .cm-textarea::selection{background:rgba(103,232,249,.25)}
+    .cm-line.error{display:block;background:rgba(251,113,133,.1)}
+    .tok-comment{color:#6b8198}.tok-selector{color:#7dd3fc}.tok-prop{color:#f9a8d4}.tok-var{color:#fde68a}.tok-value{color:#86efac}.tok-string{color:#fdba74}.tok-atrule{color:#c4b5fd}.tok-color{color:#67e8f9}.tok-number{color:#93c5fd}
+    .cm-stats-rail{padding:18px;border-radius:24px;border:1px solid var(--border);background:rgba(8,18,31,.76);position:sticky;top:96px}
+    .cm-big-stat strong{display:block;font-size:1.7rem;color:#f8fcff;margin-bottom:6px}.cm-big-stat span,.cm-summary span{color:rgba(224,233,242,.72)}
+    .cm-status{display:flex;align-items:center;min-height:48px;padding:12px 16px;color:rgba(236,243,248,.9)}
+    .cm-output-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+    .cm-grid-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .cm-list,.cm-issue-list,.cm-history-list,.cm-diff-list,.cm-file-list{display:grid;gap:12px}
+    .cm-issue,.cm-history-item,.cm-diff-item{padding:14px}
+    .cm-issue strong,.cm-history-item strong,.cm-diff-item strong,.cm-summary strong{display:block;color:#f6fbff;margin-bottom:4px}
+    .cm-issue p,.cm-history-item p,.cm-diff-item p{margin:0;color:rgba(224,233,242,.76);line-height:1.6}
+    .cm-ok{color:#4ade80}.cm-bad{color:#fb7185}
+    .cm-file-drop{display:grid;gap:10px;place-items:center;min-height:150px;padding:18px;border-radius:22px;border:1px dashed rgba(121,208,255,.3);background:radial-gradient(circle at center,rgba(104,226,255,.08),transparent 60%),rgba(5,13,24,.84);text-align:center;transition:.18s}.cm-file-drop.drag{border-color:rgba(121,208,255,.6);transform:translateY(-1px)}
+    .cm-file-input{display:none}.cm-file-table-wrap,.cm-compare-wrap{overflow:auto;border-radius:22px;border:1px solid var(--border);background:rgba(5,13,24,.88)}
+    .cm-file-table,.cm-compare-table{width:100%;border-collapse:collapse}.cm-file-table th,.cm-file-table td,.cm-compare-table th,.cm-compare-table td{padding:14px 16px;border-bottom:1px solid rgba(121,208,255,.12);text-align:left;vertical-align:top}.cm-file-table tbody tr:nth-child(odd),.cm-compare-table tbody tr:nth-child(odd){background:rgba(12,22,37,.46)}
+    .cm-check,.cm-cross{font-weight:800;text-align:center;width:68px}.cm-check{color:#4ade80}.cm-cross{color:#fb7185}
+    .cm-faq{display:grid;gap:14px;margin-top:18px}.cm-faq details{padding:18px 20px;border-radius:20px;border:1px solid var(--border);background:rgba(8,18,31,.72)}.cm-faq summary{cursor:pointer;font-weight:700;color:#f6fbff}.cm-faq p{margin:12px 0 0;color:rgba(224,233,242,.78);line-height:1.7}
+    .cm-seo-card h3{margin:24px 0 8px}.cm-seo-card ul{margin:10px 0 0;padding-left:20px;color:rgba(224,233,242,.8);line-height:1.72}
+    @media (max-width:1160px){.cm-editor-grid{grid-template-columns:1fr}.cm-stats-rail{position:static}}
+    @media (max-width:820px){.cm-grid-two{grid-template-columns:1fr}.cm-page{width:min(100% - 20px,100%)}}
+    @media (max-width:720px){.cm-tab,.cm-btn{width:100%}.cm-output-actions,.cm-tool-row,.cm-switches,.cm-mode-tabs{width:100%}}
+  </style>
+  
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/css-minifier-for-bloggers.html">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">&#127769;</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="cm-page">
+    <nav class="cm-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><a href="/">Developer Tools</a><span>/</span><strong>CSS Minifier</strong>
+    </nav>
+
+    <section class="cm-hero">
+      <div class="cm-eyebrow">CSS workflow lab</div>
+      <h1>CSS Minifier for Bloggers</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+<p>This page combines real-time CSS minification, formatter mode, validator output, prefix handling, diff reporting, stats, file processing, and local history in one clean split-panel workspace. You can paste CSS on the left, inspect the processed output on the right, compare size reduction in the center, and move between single-snippet work and up to five uploaded files without leaving the page.</p>
+      <div class="cm-pills">
+        <div class="cm-pill">Real-time minify or beautify with copy and download</div>
+        <div class="cm-pill">Validator, diff view, stats panel, and basic unused variable cleanup</div>
+        <div class="cm-pill">Vendor prefixes, multi-file processing, local history, and mobile-safe layout</div>
+      </div>
+    </section>
+
+    <section class="cm-toolbar-card">
+      <div class="cm-mode-tabs" role="tablist" aria-label="CSS processing mode">
+        <button id="cm-mode-minify" class="cm-tab active" type="button">Minify</button>
+        <button id="cm-mode-format" class="cm-tab" type="button">Format</button>
+      </div>
+      <div class="cm-tool-row">
+        <button id="cm-load-example" class="cm-btn" type="button">Load example</button>
+        <button id="cm-clear-input" class="cm-btn" type="button">Clear</button>
+        <button id="cm-copy-output" class="cm-btn primary" type="button">Copy output</button>
+        <button id="cm-download-output" class="cm-btn" type="button">Download .css</button>
+      </div>
+      <div class="cm-switches" style="margin-top:16px;">
+        <label class="cm-switch"><input id="cm-remove-comments" type="checkbox" checked> Remove comments</label>
+        <label class="cm-switch"><input id="cm-add-prefixes" type="checkbox"> Add vendor prefixes</label>
+        <label class="cm-switch"><input id="cm-remove-vars" type="checkbox"> Remove unused variables</label>
+      </div>
+    </section>
+
+    <section class="cm-editor-shell">
+      <div class="cm-editor-grid">
+        <div>
+          <div class="cm-panel-head">
+            <h2>Input CSS</h2>
+            <p>Paste CSS here. Validation and processing happen as you type.</p>
+          </div>
+          <div class="cm-editor">
+            <pre id="cm-input-highlight" class="cm-highlight" aria-hidden="true"></pre>
+            <textarea id="cm-input" class="cm-textarea" spellcheck="false" placeholder="Paste CSS here. The output panel updates in real time."></textarea>
+          </div>
+        </div>
+
+        <aside class="cm-stats-rail">
+          <div class="cm-big-stat"><strong id="cm-original-size">0 B</strong><span>Original size</span></div>
+          <div class="cm-big-stat"><strong id="cm-output-size">0 B</strong><span>Output size</span></div>
+          <div class="cm-big-stat"><strong id="cm-reduction">0%</strong><span>Reduction</span></div>
+          <div class="cm-summary"><strong id="cm-current-mode">Minify mode</strong><span>Current processing mode</span></div>
+          <div class="cm-summary"><strong id="cm-validator-summary">No syntax issues</strong><span>Validator summary</span></div>
+          <div class="cm-summary"><strong id="cm-file-summary">No files loaded</strong><span>Multi-file processing state</span></div>
+        </aside>
+
+        <div>
+          <div class="cm-panel-head">
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;">
+              <div>
+                <h2>Processed output</h2>
+                <p id="cm-output-copy">The output updates instantly as the input changes.</p>
+              </div>
+              <div class="cm-output-actions">
+                <button id="cm-copy-inline" class="cm-btn primary" type="button">Copy</button>
+                <button id="cm-download-inline" class="cm-btn" type="button">Download</button>
+              </div>
+            </div>
+          </div>
+          <div class="cm-editor">
+            <pre id="cm-output-highlight" class="cm-highlight" aria-hidden="true"></pre>
+            <textarea id="cm-output" class="cm-textarea" spellcheck="false" readonly></textarea>
+          </div>
+        </div>
+      </div>
+      <div id="cm-status" class="cm-status" aria-live="polite" style="margin-top:18px;">Ready. Paste CSS to start minifying or formatting.</div>
+    </section>
+
+    <section class="cm-grid-two">
+      <section class="cm-card">
+        <h2>Validator &amp; Diff</h2>
+        <p>Syntax issues appear here before processing, and the diff log summarizes what changed in the current transform.</p>
+        <div class="cm-lists">
+          <div>
+            <h3>Validation issues</h3>
+            <div id="cm-issues" class="cm-issue-list">
+              <div class="cm-issue"><strong>No syntax issues</strong><p>The validator will flag common structural problems such as unbalanced braces or unclosed comments.</p></div>
+            </div>
+          </div>
+          <div>
+            <h3>Change log</h3>
+            <div id="cm-diff" class="cm-diff-list">
+              <div class="cm-diff-item"><strong>No changes yet</strong><p>Load or paste CSS to see comments removed, prefixes added, variables removed, and whitespace reduction.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cm-card">
+        <h2>CSS Stats</h2>
+        <p>The stats panel updates with the current output so you can inspect structure as well as size.</p>
+        <div id="cm-stats" class="cm-list">
+          <div class="cm-summary"><strong>0 rules</strong><span>Blocks in current output</span></div>
+          <div class="cm-summary"><strong>0 selectors</strong><span>Selector count across current output</span></div>
+          <div class="cm-summary"><strong>0 properties</strong><span>Declaration count</span></div>
+          <div class="cm-summary"><strong>0 media queries</strong><span>@media blocks detected</span></div>
+          <div class="cm-summary"><strong>0 colors</strong><span>Distinct hex/rgb/hsl colors</span></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="cm-grid-two">
+      <section class="cm-card">
+        <div class="cm-file-head">
+          <div>
+            <h2>Multiple file processing</h2>
+            <p>Load up to five CSS files, process them locally with the current settings, and download the results as a ZIP archive.</p>
+          </div>
+          <div class="cm-actions">
+            <button id="cm-browse-files" class="cm-btn primary" type="button">Browse files</button>
+            <button id="cm-download-zip" class="cm-btn" type="button">Download ZIP</button>
+            <button id="cm-clear-files" class="cm-btn" type="button">Clear files</button>
+          </div>
+        </div>
+        <input id="cm-file-input" class="cm-file-input" type="file" accept=".css,text/css" multiple>
+        <div id="cm-file-drop" class="cm-file-drop" tabindex="0" role="button" aria-label="Drop CSS files here or browse">
+          <strong>Drop up to five CSS files here or click to browse</strong>
+          <span>Files stay local. Processed outputs use your current mode and toggle settings.</span>
+        </div>
+        <div class="cm-file-table-wrap" style="margin-top:18px;">
+          <table class="cm-file-table">
+            <thead><tr><th>File</th><th>Mode</th><th>Output size</th><th>Change</th></tr></thead>
+            <tbody id="cm-file-table">
+              <tr><td colspan="4">No files loaded yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="cm-card">
+        <div class="cm-history-head">
+          <div>
+            <h2>Recent history</h2>
+            <p>Last ten CSS inputs stored only in this browser so you can recover a recent snippet fast.</p>
+          </div>
+          <button id="cm-clear-history" class="cm-btn" type="button">Clear history</button>
+        </div>
+        <div id="cm-history" class="cm-history-list">
+          <div class="cm-history-item"><strong>No history yet</strong><p>Recent snippets will appear here after you use the editor.</p></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="cm-compare-card">
+      <h2>Comparison Table</h2>
+      <p>This matrix reflects features clearly shown on public pages reviewed on April 7, 2026. A tick means the feature is visibly offered on that page, not inferred from unrelated products on the same domain.</p>
+      <div class="cm-compare-wrap">
+        <table class="cm-compare-table">
+          <thead><tr><th>Feature</th><th>ToolsMatic</th><th>Minifier.org</th><th>CSSCompressor.net</th><th>BeautifyConverter</th></tr></thead>
+          <tbody>
+            <tr><td>Real-time processing</td><td class="cm-check">&#10003;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td></tr>
+            <tr><td>Minify and beautify in one page</td><td class="cm-check">&#10003;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td><td class="cm-check">&#10003;</td></tr>
+            <tr><td>Validator with issue list</td><td class="cm-check">&#10003;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td></tr>
+            <tr><td>Vendor prefix option</td><td class="cm-check">&#10003;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td></tr>
+            <tr><td>Diff/change log</td><td class="cm-check">&#10003;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td></tr>
+            <tr><td>CSS stats panel</td><td class="cm-check">&#10003;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td></tr>
+            <tr><td>Multiple file processing</td><td class="cm-check">&#10003;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td></tr>
+            <tr><td>ZIP export</td><td class="cm-check">&#10003;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td></tr>
+            <tr><td>Local snippet history</td><td class="cm-check">&#10003;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td><td class="cm-cross">&#10005;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cm-faq-card">
+      <h2>FAQs</h2>
+      <p>These answers focus on what matters when you need a CSS minifier for actual production work rather than a barebones compression box.</p>
+      <div class="cm-faq">
+        <details><summary>Can this page format CSS back into readable code?</summary><p>Yes. Switch from Minify to Format mode and the output panel will reflow compact CSS into a readable multi-line structure.</p></details>
+        <details><summary>What kind of syntax problems does the validator catch?</summary><p>The validator checks for unclosed comments, unbalanced braces, and basic declaration issues so you can spot structural problems before trusting the output.</p></details>
+        <details><summary>How does unused variable removal work?</summary><p>It uses a basic detection pass for CSS custom properties declared with <code>--name</code> and removes declarations that do not appear in any <code>var(--name)</code> reference inside the current CSS.</p></details>
+        <details><summary>Will vendor prefix mode replace a full build tool?</summary><p>No. It is a practical browser-side helper for common properties, not a full PostCSS or Autoprefixer replacement. It is useful for quick snippets and fast iteration.</p></details>
+        <details><summary>Can I process CSS files without uploading them?</summary><p>Yes. File processing happens locally in your browser, including ZIP export of the processed results.</p></details>
+      </div>
+    </section>
+
+    <section class="cm-seo-card">
+      <h2>Why a serious CSS minifier should feel like a working editor, not a disposable one-box compressor</h2>
+      <p>A lot of CSS minifier pages still act like the job begins and ends with removing spaces. Paste code, click a button, copy a shorter file, and leave. That is enough for the smallest possible task, but it is not enough for the way developers, designers, QA teams, and site owners actually work with stylesheets. Real CSS workflows involve checking whether the input is structurally safe, understanding what changed, deciding whether you need a compact build or a readable version, handling prefixes for specific browser quirks, tracking size reduction, and sometimes processing more than one stylesheet in the same session. That is why a stronger CSS minifier needs to behave more like a live editing workspace than a basic compressor. The point is not to overwhelm the interface. The point is to remove the friction around the actual decision-making work that happens before and after minification.</p>
+      <p>CSS often sits at the center of front-end iteration. A developer may be debugging a component library. A designer may be refining a snippet before handing it to engineering. A performance-minded site owner may be reducing payload weight ahead of a release. A QA teammate may be checking whether a stylesheet survived a migration or a build step intact. In each of those cases, a minifier that only outputs one compressed string leaves too much work unresolved. People still need to know whether the input is valid, whether comment cleanup removed anything important, whether a variable cleanup pass changed the file, whether prefixes were introduced, and what the final size savings actually were. A strong browser-based CSS tool earns repeat use by making those answers visible immediately. That is the standard this page is designed around.</p>
+      <h3>Why real-time processing matters in CSS work</h3>
+      <p>Real-time processing changes the pace of debugging and cleanup. When you are editing selectors, declarations, media queries, custom properties, or utility classes, small changes can ripple through a stylesheet quickly. If a tool forces you to paste, click, wait, and repeat, it slows that loop every time you adjust a character. Real-time minification and formatting remove that pause. You edit the stylesheet, watch the output update, and immediately understand how your settings affect the result. This is especially valuable when testing comment removal, unused variable cleanup, or quick prefix additions because you can see the exact effect of a toggle without breaking your flow. That responsiveness is one of the clearest differences between a page people try once and a page they keep open while they work.</p>
+      <h3>Minify and beautify should live together</h3>
+      <p>Compression is not the only direction CSS moves. Sometimes you need a smaller file for shipping. Other times you need a readable version of compact CSS so you can debug, audit, refactor, or understand a third-party stylesheet. Treating those as two unrelated tools creates unnecessary friction. A better page lets you move between both directions in the same workspace. That is why formatter mode matters just as much as minifier mode. If a stylesheet arrives on one line, you can expand it into something readable. If you finish cleaning it up, you can immediately switch back and create a compact output again. The ability to move both ways in one interface makes the tool much more useful for maintenance, debugging, and handoff work.</p>
+      <h3>Validation belongs before compression</h3>
+      <p>Minifying broken CSS does not make it safer. In fact, it can make structural problems harder to spot because everything becomes denser. A validator that catches unclosed comments, missing closing braces, or suspicious declaration lines before you trust the output is one of the strongest quality upgrades a browser tool can offer. Even a basic validator is valuable if it surfaces the most common structural mistakes quickly. That is because CSS errors often happen in the middle of fast iteration: a selector block is half-finished, a pasted snippet is incomplete, or a comment swallowed more code than expected. Seeing those issues early prevents the minified result from feeling authoritative when the source still needs attention.</p>
+      <h3>Why change visibility matters more than people think</h3>
+      <p>One of the weaknesses of many online minifiers is that they tell you nothing about how the output changed beyond file size. That leaves users guessing. Was the reduction mostly whitespace? Were comments removed? Did a cleanup step strip unused variables? Did prefix mode add declarations that increased the output before minification pulled the total back down? A clear change log solves that. It helps users understand what happened and makes the page feel trustworthy. This is especially important when a stylesheet is being prepared for a production release, reviewed by another developer, or passed from one team to another. Knowing what changed is often just as important as having the new file itself.</p>
+      <h3>Vendor prefixes still matter in quick workflows</h3>
+      <p>No browser-side prefix helper is a full replacement for a mature build pipeline, and it should not pretend to be. But for quick snippets, debugging, prototypes, embedded widgets, and smaller production fixes, prefix support is still extremely useful. Developers frequently need to test a property like <code>user-select</code>, <code>backdrop-filter</code>, <code>appearance</code>, or <code>position: sticky</code> with a little more browser coverage than the raw declaration offers. If the page can add practical prefixes in the same workflow, it saves another round-trip to a separate tool or build step. That convenience is part of what makes a browser minifier feel advanced without becoming harder to use.</p>
+      <h3>Unused variable cleanup is a meaningful browser-side upgrade</h3>
+      <p>Custom properties make CSS systems more maintainable, but they also make stylesheets easier to clutter. During iteration, variables are introduced, renamed, and abandoned. A basic pass that removes custom property declarations with no visible <code>var(--name)</code> usage can clean up lightweight stylesheets or copied component snippets surprisingly well. It is not meant to replace a full project-wide analysis across templates, JavaScript, or runtime theming logic. It is meant to handle the common case where a snippet has obvious dead variables and the user wants a cleaner final output. That kind of focused cleanup is exactly what browser tools are best at: helping with practical, immediate tasks instead of pretending to understand the entire codebase.</p>
+      <h3>Stats turn a minifier into an inspection tool</h3>
+      <p>Once a stylesheet is processed, numbers matter. How many rules are in the result? How many selectors remain? How many declarations are being shipped? How many media queries are still present? How many distinct colors are used? Those metrics are not academic. They help people reason about complexity, duplication, visual consistency, and the shape of the stylesheet they are about to deploy or refactor. A CSS stats panel turns the tool from a pure compressor into a quick inspection environment. That is useful for performance work, system design reviews, and even design cleanup because it gives the user a fast summary without needing another parser or build report.</p>
+      <h3>Multi-file processing is one of the strongest practical differentiators</h3>
+      <p>There are many times when a single stylesheet is not the whole job. Component libraries, static sites, theme bundles, marketing pages, and exported design-system packages often involve several CSS files that need similar treatment. If the page can process up to five files locally and package the results into a ZIP archive, it becomes meaningfully more useful than tools that only handle one snippet at a time. This is especially valuable for quick batches where opening a full local pipeline would be slower than the task itself. Browser tools become sticky when they remove exactly that kind of small-but-annoying friction.</p>
+      <h3>Why split-panel layout is the right interaction model</h3>
+      <p>For CSS work, side-by-side context matters. You want to see the source and the result at the same time, and you want the reduction metrics between them so the transformation feels grounded rather than abstract. A split-panel layout also makes formatter mode more valuable because it lets you compare the readable result against the input instantly. On mobile, stacking the panels keeps the same mental model intact while staying accessible on smaller screens. This kind of layout is not just a design choice. It is a usability choice that respects how people compare, debug, and verify CSS in practice.</p>
+      <h3>Readable code presentation helps developers trust the result</h3>
+      <p>Monospace presentation, basic syntax highlighting, clean spacing, clear buttons, and consistent section grouping all matter more than flashy decoration on a tool like this. CSS is visual in the browser, but when you are editing raw source you still need code to feel readable and stable. Syntax highlighting does not need to be heavy to be effective. Even a light browser-side highlight pass makes selectors, properties, values, comments, and color tokens easier to scan. That saves time during cleanup and reduces mistakes when comparing source to output.</p>
+      <h3>Why this kind of tool can grow organically on usefulness alone</h3>
+      <p>Tool pages that perform well over time usually solve repeated work with less friction than the alternatives. They do not need to shout if they become the page people remember. A strong CSS minifier has several natural repeat-use patterns: trimming final styles before shipping, reformatting minified code for debugging, validating pasted snippets from issue threads, checking stylesheet complexity, cleaning up comments and dead variables, and processing several CSS files in one quick batch. Those are not novelty use cases. They are recurring front-end tasks. When one page handles them clearly and locally, it earns bookmarks, direct visits, and quiet recommendations within teams. That is the real path to tool-led organic growth.</p>
+      <h3>Use cases that benefit most from a stronger CSS minifier</h3>
+      <ul>
+        <li>Cleaning up component snippets before adding them to a design system or documentation site.</li>
+        <li>Taking compact vendor CSS and formatting it into something readable for debugging.</li>
+        <li>Validating stylesheet structure before shipping a small fix or embedded widget.</li>
+        <li>Adding practical prefixes to quick browser-facing snippets without firing up a full toolchain.</li>
+        <li>Processing multiple CSS files locally and downloading the final set as a ZIP archive.</li>
+        <li>Reviewing rule, selector, property, media-query, and color counts during performance or refactor work.</li>
+      </ul>
+      <p>The best CSS minifier is not the one that simply removes the most spaces. It is the one that helps you understand, trust, and reuse the result with minimal effort. That is why this page is built as a full CSS workspace rather than a thin compression form.</p>
+    </section>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="css-minifier-for-bloggers-pseo" aria-labelledby="css-minifier-for-bloggers-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>CSS Minifier for Bloggers</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="css-minifier-for-bloggers-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">CSS Minifier for Bloggers Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>CSS Minifier for Bloggers</strong>, a blogging assistant optimized for content structure and draft editing. This dedicated workspace is built specifically for content writers, blog editors, and marketers preparing digital articles. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>streamlined word-count targets, clean formatting, and instant readability previews</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Minify, format, validate, and inspect CSS in one place. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Readability draft checks</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Verify length guidelines and structure to optimize search index crawler ranking.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Frictionless copy transfer</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Copy your completed drafts cleanly without carrying over stray styling characters.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Social caption previews</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Double check character density limits before pushing content live.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use CSS Minifier for Bloggers</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Bloggers layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: CSS Minifier for Bloggers</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this helpful for SEO blogging?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Extremely! It tracks length constraints and paragraph structures crucial for search engine crawling.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it save my drafts?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">No, all writing is kept locally in your browser memory to respect content privacy.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is it mobile friendly?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, you can edit and copy blog drafts directly from your mobile phone on-the-go.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/css-minifier.html" style="color:var(--primary);text-decoration:none;font-weight:600;">CSS Minifier</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"CSS Minifier for Bloggers","url":"https://toolsmatic.me/tools/css-minifier-for-bloggers.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use CSS Minifier for Bloggers online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"CSS Minifier for Bloggers","item":"https://toolsmatic.me/tools/css-minifier-for-bloggers.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this helpful for SEO blogging?","acceptedAnswer":{"@type":"Answer","text":"Extremely! It tracks length constraints and paragraph structures crucial for search engine crawling."}},{"@type":"Question","name":"Does it save my drafts?","acceptedAnswer":{"@type":"Answer","text":"No, all writing is kept locally in your browser memory to respect content privacy."}},{"@type":"Question","name":"Is it mobile friendly?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can edit and copy blog drafts directly from your mobile phone on-the-go."}}]}]}</script>
+  </main>
+<footer>ToolsMatic - Fast, privacy-first utilities for the web.</footer>
+  <script>
+    const cm = {
+      modeMinify: document.getElementById('cm-mode-minify'),
+      modeFormat: document.getElementById('cm-mode-format'),
+      loadExample: document.getElementById('cm-load-example'),
+      clearInput: document.getElementById('cm-clear-input'),
+      copyOutput: document.getElementById('cm-copy-output'),
+      downloadOutput: document.getElementById('cm-download-output'),
+      copyInline: document.getElementById('cm-copy-inline'),
+      downloadInline: document.getElementById('cm-download-inline'),
+      removeComments: document.getElementById('cm-remove-comments'),
+      addPrefixes: document.getElementById('cm-add-prefixes'),
+      removeVars: document.getElementById('cm-remove-vars'),
+      input: document.getElementById('cm-input'),
+      output: document.getElementById('cm-output'),
+      inputHighlight: document.getElementById('cm-input-highlight'),
+      outputHighlight: document.getElementById('cm-output-highlight'),
+      originalSize: document.getElementById('cm-original-size'),
+      outputSize: document.getElementById('cm-output-size'),
+      reduction: document.getElementById('cm-reduction'),
+      currentMode: document.getElementById('cm-current-mode'),
+      validatorSummary: document.getElementById('cm-validator-summary'),
+      fileSummary: document.getElementById('cm-file-summary'),
+      outputCopy: document.getElementById('cm-output-copy'),
+      status: document.getElementById('cm-status'),
+      issues: document.getElementById('cm-issues'),
+      diff: document.getElementById('cm-diff'),
+      stats: document.getElementById('cm-stats'),
+      browseFiles: document.getElementById('cm-browse-files'),
+      downloadZip: document.getElementById('cm-download-zip'),
+      clearFiles: document.getElementById('cm-clear-files'),
+      fileInput: document.getElementById('cm-file-input'),
+      fileDrop: document.getElementById('cm-file-drop'),
+      fileTable: document.getElementById('cm-file-table'),
+      clearHistory: document.getElementById('cm-clear-history'),
+      history: document.getElementById('cm-history')
+    };
+
+    const storageKey = 'toolsmatic-css-minifier-v1';
+    const encoder = new TextEncoder();
+    const crcTable = (() => {
+      const table = [];
+      for (let i = 0; i < 256; i += 1) {
+        let value = i;
+        for (let bit = 0; bit < 8; bit += 1) {
+          value = (value & 1) ? (0xedb88320 ^ (value >>> 1)) : (value >>> 1);
+        }
+        table[i] = value >>> 0;
+      }
+      return table;
+    })();
+
+    const state = {
+      mode: 'minify',
+      output: '',
+      analysis: null,
+      issues: [],
+      diffItems: [],
+      fileResults: [],
+      history: [],
+      historyTimer: 0
+    };
+
+    function showToast(message, type) {
+      if (window.toolsMatic && typeof window.toolsMatic.showToast === 'function') {
+        window.toolsMatic.showToast(message, type || 'info');
+      }
+    }
+
+    function setStatus(message) {
+      cm.status.textContent = message;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function formatBytes(size) {
+      if (!size) return '0 B';
+      const units = ['B', 'KB', 'MB'];
+      let value = size;
+      let index = 0;
+      while (value >= 1024 && index < units.length - 1) {
+        value /= 1024;
+        index += 1;
+      }
+      return (index === 0 ? value : value.toFixed(value >= 100 ? 0 : 1)) + ' ' + units[index];
+    }
+
+    function crc32Bytes(bytes) {
+      let crc = 0xffffffff;
+      bytes.forEach((value) => {
+        crc = crcTable[(crc ^ value) & 0xff] ^ (crc >>> 8);
+      });
+      return (crc ^ 0xffffffff) >>> 0;
+    }
+
+    function saveLocalState() {
+      localStorage.setItem(storageKey, JSON.stringify({
+        history: state.history.slice(0, 10),
+        mode: state.mode,
+        removeComments: cm.removeComments.checked,
+        addPrefixes: cm.addPrefixes.checked,
+        removeVars: cm.removeVars.checked
+      }));
+    }
+
+    function loadLocalState() {
+      try {
+        const raw = localStorage.getItem(storageKey);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        state.history = Array.isArray(parsed.history) ? parsed.history.slice(0, 10) : [];
+        if (parsed.mode === 'format') state.mode = 'format';
+        cm.removeComments.checked = parsed.removeComments !== false;
+        cm.addPrefixes.checked = Boolean(parsed.addPrefixes);
+        cm.removeVars.checked = Boolean(parsed.removeVars);
+      } catch (error) {
+        state.history = [];
+      }
+    }
+
+    function syncScroll(textarea, highlight) {
+      highlight.scrollTop = textarea.scrollTop;
+      highlight.scrollLeft = textarea.scrollLeft;
+    }
+
+    function syntaxHighlight(css) {
+      const tokens = [];
+      let html = escapeHtml(css).replace(/\/\*[\s\S]*?\*\/|&quot;[\s\S]*?&quot;|&#39;[\s\S]*?&#39;/g, (match) => '@@' + (tokens.push(match) - 1) + '@@');
+      html = html.replace(/(^|}\s*)([^@{}][^{]+)(\s*\{)/gm, '$1<span class="tok-selector">$2</span>$3');
+      html = html.replace(/(@[a-z-]+)/gi, '<span class="tok-atrule">$1</span>');
+      html = html.replace(/(^|[;{\n\r]\s*)(--?[\w-]+)(\s*:)/g, '$1<span class="tok-prop">$2</span>$3');
+      html = html.replace(/(#[0-9a-fA-F]{3,8}\b|rgba?\([^)]+\)|hsla?\([^)]+\))/g, '<span class="tok-color">$1</span>');
+      html = html.replace(/\b(var\(--[\w-]+\))/g, '<span class="tok-var">$1</span>');
+      html = html.replace(/\b(-?\d*\.?\d+[a-z%]*)\b/g, '<span class="tok-number">$1</span>');
+      html = html.replace(/@@(\d+)@@/g, (_, index) => {
+        const token = tokens[Number(index)] || '';
+        if (token.indexOf('/*') === 0) return '<span class="tok-comment">' + token + '</span>';
+        return '<span class="tok-string">' + token + '</span>';
+      });
+      return html || ' ';
+    }
+
+    function validateCss(css) {
+      const issues = [];
+      const braceStack = [];
+      let line = 1;
+      let inComment = false;
+      let inString = '';
+
+      for (let i = 0; i < css.length; i += 1) {
+        const char = css[i];
+        const next = css[i + 1];
+        if (char === '\n') line += 1;
+        if (inComment) {
+          if (char === '*' && next === '/') {
+            inComment = false;
+            i += 1;
+          }
+          continue;
+        }
+        if (inString) {
+          if (char === '\\') {
+            i += 1;
+            continue;
+          }
+          if (char === inString) inString = '';
+          continue;
+        }
+        if (char === '/' && next === '*') {
+          inComment = true;
+          i += 1;
+          continue;
+        }
+        if (char === '"' || char === '\'') {
+          inString = char;
+          continue;
+        }
+        if (char === '{') braceStack.push(line);
+        if (char === '}') {
+          if (!braceStack.length) issues.push({ line, type: 'error', title: 'Unmatched closing brace', detail: 'There is a closing brace without a matching opening brace.' });
+          else braceStack.pop();
+        }
+      }
+
+      if (inComment) issues.push({ line, type: 'error', title: 'Unclosed comment', detail: 'A block comment starts but never closes.' });
+      if (inString) issues.push({ line, type: 'error', title: 'Unclosed string', detail: 'A quoted string is not terminated before the end of the input.' });
+      braceStack.forEach((openLine) => issues.push({ line: openLine, type: 'error', title: 'Unclosed block', detail: 'An opening brace does not have a matching closing brace.' }));
+
+      const lines = css.split('\n');
+      let depth = 0;
+      lines.forEach((rawLine, index) => {
+        const trimmed = rawLine.trim();
+        if (trimmed && depth > 0 && !trimmed.includes('{') && !trimmed.includes('}') && trimmed.includes(':')) {
+          const nextLine = lines[index + 1] ? lines[index + 1].trim() : '';
+          if (!trimmed.endsWith(';') && nextLine !== '}') {
+            issues.push({ line: index + 1, type: 'warning', title: 'Possible missing semicolon', detail: 'This declaration may be missing a semicolon before the next line.' });
+          }
+        }
+        depth += (rawLine.match(/{/g) || []).length;
+        depth -= (rawLine.match(/}/g) || []).length;
+      });
+      return issues;
+    }
+
+    function stripComments(css) {
+      const removed = [];
+      const cleaned = css.replace(/\/\*[\s\S]*?\*\//g, (match) => {
+        removed.push(match.trim().slice(0, 140));
+        return '';
+      });
+      return { css: cleaned, removed };
+    }
+
+    function removeUnusedVariables(css) {
+      const used = new Set((css.match(/var\(\s*(--[\w-]+)/g) || []).map((match) => match.replace(/var\(\s*/, '')));
+      const removed = [];
+      const nextCss = css.replace(/\{([^{}]*)\}/g, (match, body) => {
+        const declarations = body.split(';').map((part) => part.trim()).filter(Boolean);
+        const kept = [];
+        declarations.forEach((declaration) => {
+          const propertyMatch = declaration.match(/^(--[\w-]+)\s*:\s*([\s\S]+)$/);
+          if (propertyMatch && !used.has(propertyMatch[1])) {
+            removed.push(propertyMatch[1]);
+            return;
+          }
+          kept.push(declaration);
+        });
+        return '{ ' + (kept.length ? kept.join('; ') + '; ' : '') + '}';
+      });
+      return { css: nextCss, removed };
+    }
+
+    function addVendorPrefixes(css) {
+      const added = [];
+      const nextCss = css.replace(/\{([^{}]*)\}/g, (match, body) => {
+        const declarations = body.split(';').map((part) => part.trim()).filter(Boolean);
+        const existingProps = new Set(declarations.map((declaration) => {
+          const propertyMatch = declaration.match(/^([-\w]+)\s*:/);
+          return propertyMatch ? propertyMatch[1] : '';
+        }).filter(Boolean));
+        const next = [];
+
+        declarations.forEach((declaration) => {
+          const propertyMatch = declaration.match(/^([-\w]+)\s*:\s*([\s\S]+)$/);
+          if (!propertyMatch) {
+            next.push(declaration);
+            return;
+          }
+          const property = propertyMatch[1].trim();
+          const value = propertyMatch[2].trim();
+          const pushIfMissing = (prop, val) => {
+            if (!existingProps.has(prop)) {
+              next.push(prop + ':' + val);
+            }
+          };
+
+          if (property === 'user-select') {
+            pushIfMissing('-webkit-user-select', value);
+            pushIfMissing('-moz-user-select', value);
+            pushIfMissing('-ms-user-select', value);
+            added.push('user-select');
+          } else if (property === 'appearance') {
+            pushIfMissing('-webkit-appearance', value);
+            pushIfMissing('-moz-appearance', value);
+            added.push('appearance');
+          } else if (property === 'backdrop-filter') {
+            pushIfMissing('-webkit-backdrop-filter', value);
+            added.push('backdrop-filter');
+          } else if (property === 'hyphens') {
+            pushIfMissing('-webkit-hyphens', value);
+            pushIfMissing('-ms-hyphens', value);
+            added.push('hyphens');
+          } else if (property === 'text-size-adjust') {
+            pushIfMissing('-webkit-text-size-adjust', value);
+            pushIfMissing('-ms-text-size-adjust', value);
+            added.push('text-size-adjust');
+          } else if (property === 'background-clip' && value === 'text') {
+            pushIfMissing('-webkit-background-clip', value);
+            added.push('background-clip:text');
+          } else if (property === 'position' && value === 'sticky') {
+            if (!declarations.some((entry) => /^position\s*:\s*-webkit-sticky$/i.test(entry))) {
+              next.push('position:-webkit-sticky');
+            }
+            added.push('position:sticky');
+          }
+          next.push(property + ':' + value);
+        });
+        return '{ ' + (next.length ? next.join('; ') + '; ' : '') + '}';
+      });
+      return { css: nextCss, added };
+    }
+
+    function protectStrings(css) {
+      const tokens = [];
+      const safe = css.replace(/"(?:\\.|[^"])*"|'(?:\\.|[^'])*'/g, (match) => '@@TOKEN' + (tokens.push(match) - 1) + '@@');
+      return { safe, tokens };
+    }
+
+    function restoreStrings(css, tokens) {
+      return css.replace(/@@TOKEN(\d+)@@/g, (_, index) => tokens[Number(index)] || '');
+    }
+
+    function minifyCss(css) {
+      const protectedCss = protectStrings(css);
+      let output = protectedCss.safe.replace(/\s+/g, ' ');
+      output = output.replace(/\s*([{}:;,>~])\s*/g, '$1');
+      output = output.replace(/\s*\(\s*/g, '(').replace(/\s*\)\s*/g, ')');
+      output = output.replace(/;}/g, '}').replace(/\s*,\s*/g, ',');
+      return restoreStrings(output.trim(), protectedCss.tokens);
+    }
+
+    function formatCss(css) {
+      const protectedCss = protectStrings(css);
+      const safe = protectedCss.safe;
+      let output = '';
+      let indent = 0;
+      let pendingSpace = false;
+
+      for (let i = 0; i < safe.length; i += 1) {
+        const char = safe[i];
+        if (/\s/.test(char)) {
+          pendingSpace = true;
+          continue;
+        }
+        if (char === '{') {
+          output = output.trimEnd() + ' {\n';
+          indent += 1;
+          output += '  '.repeat(indent);
+          pendingSpace = false;
+          continue;
+        }
+        if (char === '}') {
+          indent = Math.max(0, indent - 1);
+          output = output.trimEnd() + '\n' + '  '.repeat(indent) + '}\n' + '  '.repeat(indent);
+          pendingSpace = false;
+          continue;
+        }
+        if (char === ';') {
+          output = output.trimEnd() + ';\n' + '  '.repeat(indent);
+          pendingSpace = false;
+          continue;
+        }
+        if (char === ':') {
+          output = output.trimEnd() + ': ';
+          pendingSpace = false;
+          continue;
+        }
+        if (char === ',') {
+          output += ', ';
+          pendingSpace = false;
+          continue;
+        }
+        if (pendingSpace && output && !/\s$/.test(output)) {
+          output += ' ';
+        }
+        output += char;
+        pendingSpace = false;
+      }
+      return restoreStrings(output.replace(/\n{3,}/g, '\n\n').trim(), protectedCss.tokens);
+    }
+
+    function analyzeCss(css) {
+      const clean = css.replace(/\/\*[\s\S]*?\*\//g, '');
+      const rules = (clean.match(/{/g) || []).length;
+      const selectors = (clean.match(/([^{}]+)\{/g) || []).reduce((total, segment) => {
+        const selector = segment.replace('{', '').trim();
+        if (!selector || selector.startsWith('@')) return total;
+        return total + selector.split(',').filter(Boolean).length;
+      }, 0);
+      const properties = (clean.match(/(^|[;{\n\r]\s*)(--?[\w-]+)\s*:/g) || []).length;
+      const mediaQueries = (clean.match(/@media\b/g) || []).length;
+      const colors = new Set(clean.match(/#[0-9a-fA-F]{3,8}\b|rgba?\([^)]+\)|hsla?\([^)]+\)/g) || []);
+      return { rules, selectors, properties, mediaQueries, colors: colors.size };
+    }
+
+    function buildDiff(mode, original, output, analysis, issues) {
+      const items = [];
+      items.push({ title: mode === 'minify' ? 'Minify mode active' : 'Formatter mode active', detail: mode === 'minify' ? 'Whitespace and optional removals are compressed into a shipping-friendly output.' : 'The output is expanded into a readable multi-line structure.' });
+      if (analysis.removedComments.length) items.push({ title: analysis.removedComments.length + ' comments removed', detail: 'Comment cleanup is enabled for this transform.' });
+      if (analysis.removedVariables.length) items.push({ title: analysis.removedVariables.length + ' unused variables removed', detail: analysis.removedVariables.join(', ') });
+      if (analysis.addedPrefixes.length) items.push({ title: analysis.addedPrefixes.length + ' prefixed declarations added', detail: Array.from(new Set(analysis.addedPrefixes)).join(', ') });
+      const delta = original.length - output.length;
+      if (mode === 'minify') items.push({ title: delta >= 0 ? delta + ' characters removed' : Math.abs(delta) + ' characters added', detail: 'Original ' + original.length + ' chars, output ' + output.length + ' chars.' });
+      if (mode === 'format') items.push({ title: output.split('\n').length + ' output lines generated', detail: 'Formatter mode expanded compact CSS into a readable block layout.' });
+      if (issues.length) items.push({ title: issues.length + ' validator issues detected', detail: 'Review the issue list before trusting the output in production.' });
+      return items;
+    }
+
+    function processCss(css) {
+      let working = css;
+      const removedComments = [];
+      const removedVariables = [];
+      const addedPrefixes = [];
+
+      if (cm.removeComments.checked) {
+        const result = stripComments(working);
+        working = result.css;
+        removedComments.push(...result.removed);
+      }
+      if (cm.removeVars.checked) {
+        const result = removeUnusedVariables(working);
+        working = result.css;
+        removedVariables.push(...result.removed);
+      }
+      if (cm.addPrefixes.checked) {
+        const result = addVendorPrefixes(working);
+        working = result.css;
+        addedPrefixes.push(...result.added);
+      }
+
+      const output = state.mode === 'minify' ? minifyCss(working) : formatCss(working);
+      return { output, removedComments, removedVariables, addedPrefixes };
+    }
+
+    function renderIssues(issues) {
+      if (!issues.length) {
+        cm.issues.innerHTML = '<div class="cm-issue"><strong>No syntax issues</strong><p>The validator will flag common structural problems such as unbalanced braces or unclosed comments.</p></div>';
+        cm.validatorSummary.textContent = 'No syntax issues';
+        return;
+      }
+      cm.validatorSummary.textContent = issues.length + ' issue' + (issues.length === 1 ? '' : 's') + ' detected';
+      cm.issues.innerHTML = issues.map((issue) => '<div class="cm-issue"><strong class="cm-bad">Line ' + issue.line + ' - ' + escapeHtml(issue.title) + '</strong><p>' + escapeHtml(issue.detail) + '</p></div>').join('');
+    }
+
+    function renderDiff(items) {
+      if (!items.length) {
+        cm.diff.innerHTML = '<div class="cm-diff-item"><strong>No changes yet</strong><p>Load or paste CSS to see comments removed, prefixes added, variables removed, and whitespace reduction.</p></div>';
+        return;
+      }
+      cm.diff.innerHTML = items.map((item) => '<div class="cm-diff-item"><strong>' + escapeHtml(item.title) + '</strong><p>' + escapeHtml(item.detail) + '</p></div>').join('');
+    }
+
+    function renderStats(stats) {
+      cm.stats.innerHTML = [
+        { value: stats.rules + ' rules', label: 'Blocks in current output' },
+        { value: stats.selectors + ' selectors', label: 'Selector count across current output' },
+        { value: stats.properties + ' properties', label: 'Declaration count' },
+        { value: stats.mediaQueries + ' media queries', label: '@media blocks detected' },
+        { value: stats.colors + ' colors', label: 'Distinct hex/rgb/hsl colors' }
+      ].map((item) => '<div class="cm-summary"><strong>' + escapeHtml(item.value) + '</strong><span>' + escapeHtml(item.label) + '</span></div>').join('');
+    }
+
+    function renderHistory() {
+      if (!state.history.length) {
+        cm.history.innerHTML = '<div class="cm-history-item"><strong>No history yet</strong><p>Recent snippets will appear here after you use the editor.</p></div>';
+        return;
+      }
+      cm.history.innerHTML = state.history.map((item) => '<div class="cm-history-item"><strong>' + escapeHtml(item.mode === 'minify' ? 'Minify snapshot' : 'Format snapshot') + '</strong><p>' + escapeHtml(item.preview) + '</p><div class="cm-actions" style="margin-top:10px;"><button class="cm-btn" type="button" data-history-load="' + item.id + '">Load</button><span class="cm-badge">' + escapeHtml(item.timestamp) + '</span></div></div>').join('');
+    }
+
+    function updateSizeRail(input, output) {
+      const inputBytes = encoder.encode(input).byteLength;
+      const outputBytes = encoder.encode(output).byteLength;
+      const reduction = inputBytes ? Math.round(((inputBytes - outputBytes) / inputBytes) * 100) : 0;
+      cm.originalSize.textContent = formatBytes(inputBytes);
+      cm.outputSize.textContent = formatBytes(outputBytes);
+      cm.reduction.textContent = reduction + '%';
+      cm.currentMode.textContent = state.mode === 'minify' ? 'Minify mode' : 'Format mode';
+    }
+
+    function scheduleHistorySave() {
+      clearTimeout(state.historyTimer);
+      const value = cm.input.value.trim();
+      if (!value) return;
+      state.historyTimer = setTimeout(() => {
+        const preview = value.replace(/\s+/g, ' ').slice(0, 120);
+        state.history = [{
+          id: Date.now(),
+          value: cm.input.value,
+          mode: state.mode,
+          preview,
+          timestamp: new Date().toLocaleString('en-IN', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })
+        }, ...state.history.filter((entry) => entry.value !== cm.input.value)].slice(0, 10);
+        saveLocalState();
+        renderHistory();
+      }, 500);
+    }
+
+    function updateHighlights() {
+      cm.inputHighlight.innerHTML = syntaxHighlight(cm.input.value);
+      cm.outputHighlight.innerHTML = syntaxHighlight(cm.output.value);
+      syncScroll(cm.input, cm.inputHighlight);
+      syncScroll(cm.output, cm.outputHighlight);
+    }
+
+    function runProcessor() {
+      const input = cm.input.value;
+      state.issues = validateCss(input);
+      const result = processCss(input);
+      state.output = result.output;
+      state.analysis = result;
+      state.diffItems = buildDiff(state.mode, input, result.output, result, state.issues);
+      cm.output.value = result.output;
+      cm.outputCopy.textContent = state.mode === 'minify' ? 'The output reflects your current minify settings in real time.' : 'The output reflects formatter mode and any enabled cleanup settings.';
+      updateSizeRail(input, result.output);
+      renderIssues(state.issues);
+      renderDiff(state.diffItems);
+      renderStats(analyzeCss(result.output));
+      updateHighlights();
+      scheduleHistorySave();
+      setStatus(input ? 'CSS processed in real time.' : 'Ready. Paste CSS to start minifying or formatting.');
+    }
+
+    function createZip(files) {
+      const locals = [];
+      const centrals = [];
+      let offset = 0;
+      const write16 = (view, pos, value) => view.setUint16(pos, value, true);
+      const write32 = (view, pos, value) => view.setUint32(pos, value >>> 0, true);
+
+      files.forEach((file) => {
+        const nameBytes = encoder.encode(file.name);
+        const dataBytes = encoder.encode(file.content);
+        const crc = crc32Bytes(dataBytes);
+
+        const local = new Uint8Array(30 + nameBytes.length + dataBytes.length);
+        const localView = new DataView(local.buffer);
+        write32(localView, 0, 0x04034b50);
+        write16(localView, 4, 20);
+        write16(localView, 6, 0);
+        write16(localView, 8, 0);
+        write16(localView, 10, 0);
+        write16(localView, 12, 0);
+        write32(localView, 14, crc);
+        write32(localView, 18, dataBytes.length);
+        write32(localView, 22, dataBytes.length);
+        write16(localView, 26, nameBytes.length);
+        write16(localView, 28, 0);
+        local.set(nameBytes, 30);
+        local.set(dataBytes, 30 + nameBytes.length);
+        locals.push(local);
+
+        const central = new Uint8Array(46 + nameBytes.length);
+        const centralView = new DataView(central.buffer);
+        write32(centralView, 0, 0x02014b50);
+        write16(centralView, 4, 20);
+        write16(centralView, 6, 20);
+        write16(centralView, 8, 0);
+        write16(centralView, 10, 0);
+        write16(centralView, 12, 0);
+        write16(centralView, 14, 0);
+        write32(centralView, 16, crc);
+        write32(centralView, 20, dataBytes.length);
+        write32(centralView, 24, dataBytes.length);
+        write16(centralView, 28, nameBytes.length);
+        write16(centralView, 30, 0);
+        write16(centralView, 32, 0);
+        write16(centralView, 34, 0);
+        write16(centralView, 36, 0);
+        write32(centralView, 38, 0);
+        write32(centralView, 42, offset);
+        central.set(nameBytes, 46);
+        centrals.push(central);
+        offset += local.length;
+      });
+
+      const centralSize = centrals.reduce((sum, item) => sum + item.length, 0);
+      const end = new Uint8Array(22);
+      const endView = new DataView(end.buffer);
+      write32(endView, 0, 0x06054b50);
+      write16(endView, 4, 0);
+      write16(endView, 6, 0);
+      write16(endView, 8, files.length);
+      write16(endView, 10, files.length);
+      write32(endView, 12, centralSize);
+      write32(endView, 16, offset);
+      write16(endView, 20, 0);
+
+      return new Blob([...locals, ...centrals, end], { type: 'application/zip' });
+    }
+
+    function updateFileTable() {
+      if (!state.fileResults.length) {
+        cm.fileTable.innerHTML = '<tr><td colspan="4">No files loaded yet.</td></tr>';
+        cm.fileSummary.textContent = 'No files loaded';
+        return;
+      }
+      cm.fileSummary.textContent = state.fileResults.length + ' file' + (state.fileResults.length === 1 ? '' : 's') + ' ready';
+      cm.fileTable.innerHTML = state.fileResults.map((file) => '<tr><td>' + escapeHtml(file.name) + '</td><td>' + escapeHtml(file.mode) + '</td><td>' + escapeHtml(formatBytes(encoder.encode(file.output).byteLength)) + '</td><td>' + escapeHtml(file.changeText) + '</td></tr>').join('');
+    }
+
+    async function handleFiles(fileList) {
+      const files = Array.from(fileList || []).slice(0, 5);
+      if (!files.length) return;
+      const results = [];
+      for (const file of files) {
+        const text = await file.text();
+        const issues = validateCss(text);
+        const processed = processCss(text);
+        const inputBytes = encoder.encode(text).byteLength;
+        const outputBytes = encoder.encode(processed.output).byteLength;
+        const reduction = inputBytes ? Math.round(((inputBytes - outputBytes) / inputBytes) * 100) : 0;
+        const suffix = state.mode === 'minify' ? '.min.css' : '.formatted.css';
+        results.push({
+          name: file.name.replace(/\.css$/i, '') + suffix,
+          output: processed.output,
+          mode: state.mode === 'minify' ? 'Minify' : 'Format',
+          changeText: reduction + '% - ' + issues.length + ' issue' + (issues.length === 1 ? '' : 's')
+        });
+      }
+      state.fileResults = results;
+      updateFileTable();
+      setStatus(results.length + ' file' + (results.length === 1 ? '' : 's') + ' processed locally.');
+    }
+
+    async function copyOutput() {
+      if (!cm.output.value) {
+        setStatus('There is no output to copy yet.');
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(cm.output.value);
+        showToast('Output copied', 'success');
+      } catch (error) {
+        setStatus('Copy failed in this browser.');
+      }
+    }
+
+    function downloadTextFile(filename, content, type) {
+      const blob = new Blob([content], { type: type || 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function setMode(mode) {
+      state.mode = mode;
+      cm.modeMinify.classList.toggle('active', mode === 'minify');
+      cm.modeFormat.classList.toggle('active', mode === 'format');
+      saveLocalState();
+      runProcessor();
+    }
+
+    function initFromStorage() {
+      loadLocalState();
+      cm.modeMinify.classList.toggle('active', state.mode === 'minify');
+      cm.modeFormat.classList.toggle('active', state.mode === 'format');
+      renderHistory();
+      updateFileTable();
+      runProcessor();
+    }
+
+    initFromStorage();
+
+    cm.input.addEventListener('input', runProcessor);
+    cm.input.addEventListener('scroll', () => syncScroll(cm.input, cm.inputHighlight));
+    cm.output.addEventListener('scroll', () => syncScroll(cm.output, cm.outputHighlight));
+    cm.removeComments.addEventListener('change', () => { saveLocalState(); runProcessor(); });
+    cm.addPrefixes.addEventListener('change', () => { saveLocalState(); runProcessor(); });
+    cm.removeVars.addEventListener('change', () => { saveLocalState(); runProcessor(); });
+    cm.modeMinify.addEventListener('click', () => setMode('minify'));
+    cm.modeFormat.addEventListener('click', () => setMode('format'));
+    cm.loadExample.addEventListener('click', () => {
+      cm.input.value = ':root {\n  --brand: #52d8ff;\n  --unused: #ccc;\n}\n\n.card {\n  user-select: none;\n  background: linear-gradient(180deg, #0f172a, var(--brand));\n  color: #ffffff;\n}\n\n@media (min-width: 768px) {\n  .card, .panel {\n    backdrop-filter: blur(8px);\n    appearance: none;\n  }\n}\n/* remove me */';
+      runProcessor();
+      setStatus('Example CSS loaded.');
+    });
+    cm.clearInput.addEventListener('click', () => {
+      cm.input.value = '';
+      runProcessor();
+      setStatus('Input cleared.');
+    });
+    cm.copyOutput.addEventListener('click', copyOutput);
+    cm.copyInline.addEventListener('click', copyOutput);
+    cm.downloadOutput.addEventListener('click', () => {
+      if (!cm.output.value) { setStatus('There is no output to download yet.'); return; }
+      downloadTextFile(state.mode === 'minify' ? 'toolsmatic.min.css' : 'toolsmatic.formatted.css', cm.output.value, 'text/css;charset=utf-8');
+    });
+    cm.downloadInline.addEventListener('click', () => {
+      if (!cm.output.value) { setStatus('There is no output to download yet.'); return; }
+      downloadTextFile(state.mode === 'minify' ? 'toolsmatic.min.css' : 'toolsmatic.formatted.css', cm.output.value, 'text/css;charset=utf-8');
+    });
+    cm.browseFiles.addEventListener('click', () => cm.fileInput.click());
+    cm.fileInput.addEventListener('change', () => handleFiles(cm.fileInput.files));
+    cm.fileDrop.addEventListener('click', () => cm.fileInput.click());
+    cm.fileDrop.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        cm.fileInput.click();
+      }
+    });
+    ['dragenter', 'dragover'].forEach((name) => cm.fileDrop.addEventListener(name, (event) => { event.preventDefault(); cm.fileDrop.classList.add('drag'); }));
+    ['dragleave', 'drop'].forEach((name) => cm.fileDrop.addEventListener(name, (event) => { event.preventDefault(); cm.fileDrop.classList.remove('drag'); }));
+    cm.fileDrop.addEventListener('drop', (event) => handleFiles(event.dataTransfer.files));
+    cm.clearFiles.addEventListener('click', () => {
+      state.fileResults = [];
+      cm.fileInput.value = '';
+      updateFileTable();
+      setStatus('File batch cleared.');
+    });
+    cm.downloadZip.addEventListener('click', () => {
+      if (!state.fileResults.length) { setStatus('There are no processed files to download.'); return; }
+      const zip = createZip(state.fileResults.map((file) => ({ name: file.name, content: file.output })));
+      const url = URL.createObjectURL(zip);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'toolsmatic-css-' + (state.mode === 'minify' ? 'minified' : 'formatted') + '.zip';
+      link.click();
+      URL.revokeObjectURL(url);
+      showToast('ZIP downloaded', 'success');
+    });
+    cm.clearHistory.addEventListener('click', () => {
+      state.history = [];
+      saveLocalState();
+      renderHistory();
+      setStatus('History cleared.');
+    });
+    cm.history.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-history-load]');
+      if (!button) return;
+      const item = state.history.find((entry) => entry.id === Number(button.dataset.historyLoad));
+      if (!item) return;
+      cm.input.value = item.value;
+      setMode(item.mode || 'minify');
+      runProcessor();
+      showToast('History item loaded', 'success');
+    });
+  </script>
+</body>
+</html>

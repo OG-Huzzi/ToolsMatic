@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Hash Generator for Business Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Hash Generator for Business online. Client-side, free, and private browser-based utility.">
+  <meta name="keywords" content="hash generator, md5 generator, sha256 generator, sha512 generator, crc32 calculator, hmac generator, hash verifier, compare hashes, file hash checker, online hash tool">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://toolsmatic.me/tools/hash-generator-for-business.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/hash-generator-for-business.html">
+  <meta property="og:title" content="Hash Generator for Business Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Hash Generator for Business online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hash Generator for Business Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Hash Generator for Business online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  
+  
+  
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"How to use an advanced hash generator for text, files, HMAC, verification, and comparison","description":"A practical guide to generating and verifying hashes locally in the browser with MD5, SHA family algorithms, CRC32, HMAC, batch hashing, and file integrity checks.","author":{"@type":"Organization","name":"ToolsMatic"},"publisher":{"@type":"Organization","name":"ToolsMatic"},"mainEntityOfPage": "https://toolsmatic.me/tools/hash-generator-for-business.html"}
+  </script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+  <style>
+    .hg-page{width:min(1260px,calc(100% - 32px));margin:0 auto 56px;--a1:#67e8f9;--a2:#34d399;--soft:rgba(103,232,249,.16);--soft2:rgba(52,211,153,.12);--glow:rgba(45,212,191,.22);--border:rgba(121,208,255,.16);--panel:rgba(8,18,31,.8);--mono:"JetBrains Mono","Fira Code","SFMono-Regular",Consolas,"Liberation Mono","Courier New",monospace}
+    .hg-breadcrumbs,.hg-hero,.hg-tool-shell,.hg-card,.hg-compare-card,.hg-faq-card,.hg-seo-card{border:1px solid var(--border);border-radius:28px;background:radial-gradient(circle at top right,var(--soft),transparent 22rem),radial-gradient(circle at bottom left,var(--soft2),transparent 24rem),linear-gradient(180deg,rgba(15,28,44,.94),rgba(8,14,24,.92));box-shadow:0 26px 60px rgba(2,8,18,.28)}
+    .hg-breadcrumbs{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 18px;padding:14px 18px;color:rgba(226,236,245,.78);font-size:.95rem}.hg-breadcrumbs a{color:#8ce8ff;text-decoration:none}.hg-breadcrumbs span{opacity:.56}
+    .hg-hero,.hg-tool-shell,.hg-card,.hg-compare-card,.hg-faq-card,.hg-seo-card{padding:22px;margin-bottom:22px}
+    .hg-eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 14px;color:#7ff7d1;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;font-weight:800}.hg-eyebrow:before{content:"";width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--a1),var(--a2));box-shadow:0 0 18px var(--glow)}
+    .hg-hero h1{margin:0 0 14px;font-size:clamp(2.3rem,4vw,3.8rem);line-height:1.04}.hg-hero p,.hg-card p,.hg-compare-card p,.hg-faq-card p,.hg-seo-card p{margin:0;color:rgba(226,236,245,.82);line-height:1.72;max-width:78ch}
+    .hg-pills,.hg-tab-list,.hg-toolbar,.hg-meta,.hg-actions,.hg-batch-toolbar,.hg-history-head{display:flex;flex-wrap:wrap;gap:12px}.hg-pills{margin-top:22px}
+    .hg-pill,.hg-badge,.hg-status,.hg-history-item,.hg-verify-line,.hg-summary{border:1px solid var(--border);border-radius:18px;background:rgba(8,18,31,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+    .hg-pill,.hg-badge,.hg-summary{padding:12px 16px;color:rgba(236,243,248,.9);font-size:.92rem}
+    .hg-tool-shell,.hg-card,.hg-compare-card,.hg-faq-card,.hg-seo-card{font-family:var(--mono)}
+    .hg-tab{min-height:46px;padding:0 18px;border-radius:999px;border:1px solid rgba(121,208,255,.16);background:rgba(8,18,31,.76);color:rgba(236,243,248,.9);font:inherit;font-weight:700;cursor:pointer;transition:.18s}.hg-tab:hover,.hg-tab:focus-visible,.hg-btn:hover,.hg-btn:focus-visible{transform:translateY(-1px);border-color:rgba(121,208,255,.34);outline:none}.hg-tab.is-active{background:linear-gradient(135deg,var(--a1),var(--a2));color:#04131f;box-shadow:0 18px 34px var(--glow)}
+    .hg-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;align-items:start}.hg-main,.hg-side,.hg-verify-grid{display:grid;gap:18px}.hg-panel{display:none}.hg-panel.is-active{display:block}
+    .hg-head{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:16px}.hg-head h2,.hg-head h3,.hg-card h3,.hg-compare-card h2,.hg-faq-card h2,.hg-seo-card h2{margin:0 0 6px}.hg-head p{color:rgba(224,233,242,.76);line-height:1.68}
+    .hg-btn,.hg-select,.hg-input,.hg-textarea{font:inherit;font-family:var(--mono)}.hg-btn{min-height:44px;padding:0 16px;border-radius:14px;border:1px solid rgba(121,208,255,.16);background:rgba(8,18,31,.78);color:rgba(236,243,248,.92);font-weight:700;cursor:pointer;transition:.18s}.hg-btn.primary{background:linear-gradient(135deg,var(--a1),var(--a2));color:#04131f;box-shadow:0 16px 36px var(--glow)}
+    .hg-textarea,.hg-input,.hg-select{width:100%;box-sizing:border-box;border-radius:18px;border:1px solid rgba(121,208,255,.16);background:rgba(5,13,24,.88);color:#ecf4f8;padding:16px 18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}.hg-textarea{min-height:220px;resize:vertical;line-height:1.6}.hg-textarea.mini{min-height:132px}.hg-input,.hg-select{min-height:48px}.hg-textarea:focus,.hg-input:focus,.hg-select:focus{outline:none;border-color:rgba(121,208,255,.38);box-shadow:0 0 0 3px rgba(103,232,249,.12)}
+    .hg-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,320px);gap:18px}.hg-box{padding:18px;border-radius:22px;border:1px solid var(--border);background:rgba(8,18,31,.72)}.hg-box p{margin:10px 0 0;color:rgba(224,233,242,.76);line-height:1.62}.hg-switch{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;border:1px solid rgba(121,208,255,.14);background:rgba(8,18,31,.72);color:rgba(236,243,248,.88);cursor:pointer}.hg-switch input{accent-color:#67e8f9}
+    .hg-dropzone{display:grid;gap:12px;place-items:center;min-height:220px;padding:24px;border-radius:24px;border:1px dashed rgba(121,208,255,.28);background:radial-gradient(circle at center,rgba(103,232,249,.08),transparent 65%),rgba(5,13,24,.82);text-align:center;transition:.18s}.hg-dropzone.drag{border-color:rgba(121,208,255,.56);transform:translateY(-1px)}
+    .hg-output-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}.hg-output{padding:18px;border-radius:22px;border:1px solid var(--border);background:rgba(8,18,31,.76);box-shadow:inset 0 1px 0 rgba(255,255,255,.03);transition:.18s}.hg-output.match{border-color:rgba(52,211,153,.48);box-shadow:0 18px 34px rgba(22,163,74,.16)}.hg-output-top{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:14px}.hg-output-top h3{margin:0 0 4px;font-size:1.02rem}.hg-output-top p{margin:0;font-size:.88rem;color:rgba(219,230,240,.66)}.hg-code{min-height:108px;margin:0 0 12px;padding:14px;border-radius:18px;border:1px solid rgba(121,208,255,.12);background:rgba(4,10,19,.92);color:#c9f7ff;white-space:pre-wrap;word-break:break-word;line-height:1.72;font-size:.92rem}.hg-note{color:rgba(224,233,242,.72);font-size:.9rem;line-height:1.6}
+    .hg-status{display:flex;align-items:center;min-height:48px;padding:12px 16px;color:rgba(236,243,248,.9)}
+    .hg-list,.hg-history-list,.hg-faq{display:grid;gap:10px}.hg-history-item{padding:14px}.hg-history-item p{margin:0;color:rgba(224,233,242,.74);line-height:1.55;word-break:break-word}.hg-history-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;font-size:.84rem;color:rgba(205,217,227,.66)}.hg-history-meta button{min-height:34px;padding:0 12px;border-radius:12px;border:1px solid rgba(121,208,255,.16);background:rgba(8,18,31,.78);color:rgba(236,243,248,.9);font:inherit;cursor:pointer}
+    .hg-verify-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.hg-verify-results{display:grid;gap:10px;margin-top:16px}.hg-verify-line{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:14px 16px}.ok{color:#4ade80}.bad{color:#fb7185}.hg-compare-status{margin-top:16px;padding:16px;border-radius:18px;border:1px solid var(--border);background:rgba(8,18,31,.72);font-weight:700}.hg-compare-status.match{border-color:rgba(74,222,128,.42);color:#4ade80}.hg-compare-status.mismatch{border-color:rgba(251,113,133,.36);color:#fb7185}
+    .hg-table-wrap{margin-top:16px;overflow:auto;border-radius:20px;border:1px solid var(--border);background:rgba(5,13,24,.88)}.hg-table,.hg-compare-table{width:100%;border-collapse:collapse}.hg-table th,.hg-table td,.hg-compare-table th,.hg-compare-table td{padding:14px 16px;border-bottom:1px solid rgba(121,208,255,.12);text-align:left;vertical-align:top}.hg-table tbody tr:nth-child(odd),.hg-compare-table tbody tr:nth-child(odd){background:rgba(12,22,37,.46)}.hg-check,.hg-cross{font-weight:800;text-align:center;width:68px}.hg-check{color:#4ade80}.hg-cross{color:#fb7185}
+    .hg-faq details{padding:18px 20px;border-radius:20px;border:1px solid var(--border);background:rgba(8,18,31,.72)}.hg-faq summary{cursor:pointer;font-weight:700;color:#f6fbff}.hg-faq p{margin:12px 0 0;color:rgba(224,233,242,.78);line-height:1.7}
+    .hg-seo-card h3{margin:24px 0 8px}.hg-seo-card ul{margin:10px 0 0;padding-left:20px;color:rgba(224,233,242,.8);line-height:1.72}
+    @media (max-width:1080px){.hg-layout,.hg-split,.hg-verify-grid{grid-template-columns:1fr}.hg-output-grid{grid-template-columns:1fr}}
+    @media (max-width:720px){.hg-page{width:min(100% - 20px,100%)}.hg-tab,.hg-btn{width:100%}}
+  </style>
+  
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/hash-generator-for-business.html">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">&#127769;</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="hg-page">
+    <nav class="hg-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><a href="/">Developer Tools</a><span>/</span><strong>Hash Generator</strong>
+    </nav>
+
+    <section class="hg-hero">
+      <div class="hg-eyebrow">Developer hash lab</div>
+      <h1>Hash Generator for Business</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+<p>This workspace generates MD5, SHA-1, SHA-256, SHA-384, SHA-512, CRC32, and HMAC hashes with a clean developer-first UI. You can hash plain text in real time, drag in files for local checksums, verify a known digest, compare two hashes side by side, batch-hash multiple lines, detect likely formats, and revisit the last twenty analyses stored only in your own browser.</p>
+      <div class="hg-pills">
+        <div class="hg-pill">Text and file hashing with copy buttons for every result</div>
+        <div class="hg-pill">Verification, comparison, HMAC, CRC32, batch mode, and local history</div>
+        <div class="hg-pill">Monospace output, mobile-friendly layout, and zero external runtime dependencies</div>
+      </div>
+    </section>
+
+    <section class="hg-tool-shell">
+      <div class="hg-tab-list" role="tablist" aria-label="Hash modes">
+        <button class="hg-tab is-active" type="button" data-tab="text">Text</button>
+        <button class="hg-tab" type="button" data-tab="file">File</button>
+        <button class="hg-tab" type="button" data-tab="verify">Verify</button>
+        <button class="hg-tab" type="button" data-tab="batch">Batch</button>
+      </div>
+
+      <div class="hg-layout">
+        <div class="hg-main">
+          <section class="hg-card">
+            <div id="hg-panel-text" class="hg-panel is-active">
+              <div class="hg-head">
+                <div>
+                  <h2>Text input</h2>
+                  <p>Type or paste text and every supported output updates instantly. Add a secret key to generate HMAC-SHA256 and HMAC-SHA512 in the same view.</p>
+                </div>
+                <div class="hg-toolbar">
+                  <button id="hg-load-example" class="hg-btn" type="button">Load example</button>
+                  <button id="hg-clear-text" class="hg-btn" type="button">Clear</button>
+                  <button id="hg-copy-all" class="hg-btn primary" type="button">Copy all outputs</button>
+                </div>
+              </div>
+              <div class="hg-split">
+                <div>
+                  <textarea id="hg-text-input" class="hg-textarea" placeholder="Type or paste text here. Hashes update instantly without any submit button."></textarea>
+                  <div class="hg-meta" style="margin-top:14px;">
+                    <div id="hg-char-count" class="hg-badge">0 chars</div>
+                    <div id="hg-byte-count" class="hg-badge">0 bytes</div>
+                    <div id="hg-source-pill" class="hg-badge">Live source: text input</div>
+                  </div>
+                </div>
+                <div class="hg-main">
+                  <div class="hg-box">
+                    <label for="hg-secret-key">Secret key for HMAC</label>
+                    <input id="hg-secret-key" class="hg-input" type="text" placeholder="Optional secret key for HMAC-SHA256 and HMAC-SHA512">
+                    <p>Use this when you need a keyed digest for webhook signatures, API auth flows, or integrity checks that require a shared secret.</p>
+                  </div>
+                  <div class="hg-box">
+                    <label class="hg-switch"><input id="hg-case-toggle" type="checkbox"> Uppercase output</label>
+                    <p>All outputs stay in hex format for consistency. Toggle uppercase when you need to match vendor docs, checksum pages, or internal standards.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="hg-panel-file" class="hg-panel">
+              <div class="hg-head">
+                <div>
+                  <h2>File hashing</h2>
+                  <p>Drop any file here or browse manually. The file stays local while the tool generates every standard digest at once.</p>
+                </div>
+                <div class="hg-toolbar">
+                  <button id="hg-browse-file" class="hg-btn primary" type="button">Browse file</button>
+                  <button id="hg-clear-file" class="hg-btn" type="button">Clear file</button>
+                </div>
+              </div>
+              <input id="hg-file-input" type="file" hidden>
+              <div id="hg-dropzone" class="hg-dropzone" tabindex="0" role="button" aria-label="Drop a file or browse">
+                <strong>Drop a file here or click to browse</strong>
+                <span>Any file type. Every checksum is calculated locally in your browser.</span>
+              </div>
+              <div class="hg-meta" style="margin-top:16px;">
+                <div id="hg-file-pill" class="hg-badge">No file selected</div>
+                <div class="hg-badge">Local processing only</div>
+                <div class="hg-badge">All hashes shown together</div>
+              </div>
+            </div>
+
+            <div id="hg-panel-verify" class="hg-panel">
+              <div class="hg-head">
+                <div>
+                  <h2>Verify and compare</h2>
+                  <p>Paste a known hash to see which algorithm matches your current text or file result, then compare two digests side by side with a fast visual indicator.</p>
+                </div>
+              </div>
+              <div class="hg-verify-grid">
+                <div class="hg-box">
+                  <label for="hg-known-hash">Known hash to verify</label>
+                  <textarea id="hg-known-hash" class="hg-textarea mini" placeholder="Paste a known digest to detect the format and match it against the current outputs."></textarea>
+                  <div id="hg-detector-pills" class="hg-meta" style="margin-top:14px;"></div>
+                  <div id="hg-verify-results" class="hg-verify-results"></div>
+                </div>
+                <div class="hg-box">
+                  <label for="hg-compare-left">Hash A</label>
+                  <textarea id="hg-compare-left" class="hg-textarea mini" placeholder="Paste the first hash"></textarea>
+                  <label for="hg-compare-right" style="display:block;margin-top:14px;">Hash B</label>
+                  <textarea id="hg-compare-right" class="hg-textarea mini" placeholder="Paste the second hash"></textarea>
+                  <div id="hg-compare-status" class="hg-compare-status">Paste two hashes to compare them.</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="hg-panel-batch" class="hg-panel">
+              <div class="hg-head">
+                <div>
+                  <h2>Batch line hashing</h2>
+                  <p>Paste multiple lines and get a digest for each one. This is useful for test fixtures, QA datasets, lists of identifiers, and repeated integrity checks.</p>
+                </div>
+                <div class="hg-batch-toolbar">
+                  <select id="hg-batch-algorithm" class="hg-select">
+                    <option value="MD5">MD5</option><option value="SHA-1">SHA-1</option><option value="SHA-256" selected>SHA-256</option><option value="SHA-384">SHA-384</option><option value="SHA-512">SHA-512</option><option value="CRC32">CRC32</option><option value="HMAC-SHA256">HMAC-SHA256</option><option value="HMAC-SHA512">HMAC-SHA512</option>
+                  </select>
+                  <button id="hg-copy-batch" class="hg-btn primary" type="button">Copy batch output</button>
+                  <button id="hg-clear-batch" class="hg-btn" type="button">Clear</button>
+                </div>
+              </div>
+              <textarea id="hg-batch-input" class="hg-textarea" placeholder="Paste one input per line. Empty lines are ignored."></textarea>
+              <div class="hg-meta" style="margin-top:14px;">
+                <div id="hg-batch-summary" class="hg-badge">0 lines ready</div>
+                <div class="hg-badge">Uses the selected algorithm for each line</div>
+              </div>
+              <div class="hg-table-wrap">
+                <table class="hg-table">
+                  <thead><tr><th>#</th><th>Input</th><th>Hash</th></tr></thead>
+                  <tbody id="hg-batch-body"><tr><td colspan="3">Paste multiple lines to generate batch hashes.</td></tr></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="hg-card">
+            <div class="hg-head">
+              <div>
+                <h2>All hash outputs</h2>
+                <p id="hg-output-context">Type text or load a file to fill every algorithm card in one pass.</p>
+              </div>
+              <div class="hg-actions">
+                <div id="hg-current-mode" class="hg-summary"><strong>Current source</strong><span>Text input</span></div>
+              </div>
+            </div>
+            <div id="hg-output-grid" class="hg-output-grid"></div>
+          </section>
+
+          <div id="hg-status" class="hg-status" aria-live="polite">Ready. Type text, drop a file, or open verification mode.</div>
+        </div>
+
+        <aside class="hg-side">
+          <section class="hg-card">
+            <h3>Current analysis</h3>
+            <div class="hg-list">
+              <div class="hg-summary"><strong id="hg-summary-source">Text input</strong><span>Current source feeding the result cards</span></div>
+              <div class="hg-summary"><strong id="hg-summary-detector">No hash detected yet</strong><span>Format detector summary from verification mode</span></div>
+              <div class="hg-summary"><strong id="hg-summary-match">No verification match yet</strong><span>Known-hash result against the active outputs</span></div>
+            </div>
+          </section>
+          <section class="hg-card">
+            <div class="hg-history-head">
+              <div>
+                <h3>Recent history</h3>
+                <p style="margin:0;">Last twenty text or file analyses stored only in this browser.</p>
+              </div>
+              <button id="hg-clear-history" class="hg-btn" type="button">Clear history</button>
+            </div>
+            <div id="hg-history-list" class="hg-history-list">
+              <div class="hg-history-item"><strong>No saved entries yet</strong><p>Recent text and file hashes will appear here after you start using the tool.</p></div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="hg-compare-card">
+      <h2>Comparison Table</h2>
+      <p>This matrix reflects features clearly presented on public pages reviewed on April 7, 2026. A tick means the feature is visibly offered on that page, not inferred from other tools on the same domain.</p>
+      <div class="hg-table-wrap">
+        <table class="hg-compare-table">
+          <thead><tr><th>Feature</th><th>ToolsMatic</th><th>Browserling</th><th>CodeUtil</th><th>HashGenerator.co</th></tr></thead>
+          <tbody>
+            <tr><td>Real-time text hashing</td><td class="hg-check">&#10003;</td><td class="hg-cross">&#10005;</td><td class="hg-cross">&#10005;</td><td class="hg-cross">&#10005;</td></tr>
+            <tr><td>Multiple outputs shown together</td><td class="hg-check">&#10003;</td><td class="hg-check">&#10003;</td><td class="hg-check">&#10003;</td><td class="hg-check">&#10003;</td></tr>
+            <tr><td>File hashing on the same page</td><td class="hg-check">&#10003;</td><td class="hg-cross">&#10005;</td><td class="hg-check">&#10003;</td><td class="hg-check">&#10003;</td></tr>
+            <tr><td>HMAC support</td><td class="hg-check">&#10003;</td><td class="hg-cross">&#10005;</td><td class="hg-check">&#10003;</td><td class="hg-check">&#10003;</td></tr>
+            <tr><td>Verification workflow</td><td class="hg-check">&#10003;</td><td class="hg-cross">&#10005;</td><td class="hg-cross">&#10005;</td><td class="hg-check">&#10003;</td></tr>
+            <tr><td>Hash comparison</td><td class="hg-check">&#10003;</td><td class="hg-cross">&#10005;</td><td class="hg-cross">&#10005;</td><td class="hg-check">&#10003;</td></tr>
+            <tr><td>CRC32 in the same interface</td><td class="hg-check">&#10003;</td><td class="hg-check">&#10003;</td><td class="hg-cross">&#10005;</td><td class="hg-cross">&#10005;</td></tr>
+            <tr><td>Hash format detector</td><td class="hg-check">&#10003;</td><td class="hg-cross">&#10005;</td><td class="hg-cross">&#10005;</td><td class="hg-cross">&#10005;</td></tr>
+            <tr><td>Batch line hashing</td><td class="hg-check">&#10003;</td><td class="hg-cross">&#10005;</td><td class="hg-cross">&#10005;</td><td class="hg-cross">&#10005;</td></tr>
+            <tr><td>Local recent-history panel</td><td class="hg-check">&#10003;</td><td class="hg-cross">&#10005;</td><td class="hg-cross">&#10005;</td><td class="hg-check">&#10003;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="hg-faq-card">
+      <h2>FAQs</h2>
+      <p>These cover the questions that usually matter most when developers or technical teams evaluate a browser hash generator.</p>
+      <div class="hg-faq">
+        <details><summary>Why include MD5 and SHA-1 if they are weak?</summary><p>They are still useful for legacy checksums and compatibility checks. The page keeps them clearly labeled so you can use them intentionally instead of accidentally.</p></details>
+        <details><summary>When should I use SHA-256 versus SHA-512?</summary><p>SHA-256 is the practical default for most integrity and API workflows. SHA-512 is useful when you want a longer digest or when a spec explicitly calls for it.</p></details>
+        <details><summary>What is the point of CRC32 if it is not cryptographic?</summary><p>CRC32 is valuable for quick integrity checks, archives, and protocols that still expect that checksum specifically. It is not a secure substitute for SHA-family hashes.</p></details>
+        <details><summary>Does file hashing upload my files anywhere?</summary><p>No. File bytes are read locally by your browser and digests are generated on your device.</p></details>
+        <details><summary>What does the hash format detector actually do?</summary><p>It looks at digest length and whether the value is plain hex, then suggests the most likely supported algorithm family.</p></details>
+        <details><summary>Can I use this for API signature testing?</summary><p>Yes. Add a secret key in the HMAC box, then use HMAC-SHA256 or HMAC-SHA512 for webhook validation and request-signing tests.</p></details>
+      </div>
+    </section>
+
+    <section class="hg-seo-card">
+      <h2>Why an advanced online hash generator earns repeat use instead of being just another one-time checksum page</h2>
+      <p>Most people do not search for a hash generator because they want a novelty tool. They search because a real job is blocked until they can trust a digest, verify a file, compare two values, or reproduce a signature. That is why a serious online hash generator should do more than output a single checksum from a text box. It should respect the way technical work actually happens: one input can need several algorithms, the same session can move from text to file verification, and a known digest often matters more than the generation step itself. This page is designed around that reality. Instead of forcing you into a slow loop of selecting one algorithm at a time, it shows the important outputs together, keeps copy actions close to each digest, and brings verification, comparison, detection, HMAC, and batch work into the same workspace. That makes it useful for development, QA, operations, and security work, not just for a one-off checksum lookup.</p>
+      <p>Hashing appears in far more workflows than many people realize. Developers use hashes to compare API payloads, validate downloaded assets, verify signed webhooks, and match legacy system requirements. DevOps teams use them when checking release artifacts, mirroring packages, validating generated files, or confirming that an exported bundle matches what a pipeline expects. Security engineers use them for integrity checks, evidence handling, and reproducible comparisons between known and observed values. Support teams and technically minded end users use them when a vendor publishes a checksum beside a download and they want to confirm that the file they received is intact before opening it. Because the use cases are so practical, a strong hash page can become a daily-use browser tool very quickly. The real differentiator is not whether a page can calculate SHA-256 at all. The differentiator is how much friction it removes once you are doing real work.</p>
+      <h3>Why showing all the major hashes together matters</h3>
+      <p>In technical workflows, context matters. A lot of tools still make you choose one algorithm, click generate, then repeat the process when you need another digest. That design wastes time and makes comparison harder than it should be. In practice, users often need several outputs at once. A release note may publish MD5 and SHA-256 together. A legacy system may still expect SHA-1 while a newer integration requires SHA-512. An engineer debugging binary data might need CRC32 for format compatibility while also keeping a stronger digest nearby for normal integrity checks. When all of those outputs appear in one screen and update immediately, the tool becomes far more practical. You stop treating hashing like a repetitive mini-task and start treating it like a live inspection surface. That is a big reason why all-output views perform so well with experienced users: they align with the way technical decisions are actually made.</p>
+      <h3>Real-time hashing improves debugging speed</h3>
+      <p>Real-time updates are not just a nice animation. They materially improve iteration speed when you are testing small differences. Hash mismatches are often caused by subtle changes: an extra newline, an invisible space, an altered delimiter, a slightly different JSON body, or a copy-paste issue inside a payload. If a page forces a button click after every edit, it slows the feedback loop and makes the tool feel more like a form than a lab. When hashing updates as you type, problems surface faster. You can trim a character, see every digest change immediately, and confirm which version matches the published or expected value. This is especially useful for signature debugging, fixture creation, documentation work, and testing with synthetic payloads where tiny differences can completely change the digest.</p>
+      <h3>File hashing should feel local, obvious, and trustworthy</h3>
+      <p>File hashing is one of the highest-intent use cases in this category, and it should never feel ambiguous. If someone is verifying a release archive, installer, exported bundle, or backup file, they want the workflow to be clear and dependable. That means drag and drop should be obvious, the file should stay local, and the resulting digests should be shown without unnecessary format switching. The best browser-based file hash tool is not the one with the most decorative UI. It is the one that makes the privacy model easy to understand and keeps the integrity workflow fast. A page that reads the file locally in the browser, generates the hashes on the device, and lets the user compare or verify without another upload step is immediately more trustworthy for serious use. That clarity is especially important because checksums are often used exactly when users are already thinking about safety and authenticity.</p>
+      <h3>HMAC support belongs in the same workspace, not in a different tool</h3>
+      <p>Developers often jump between plain digests and keyed digests in the same session. A webhook provider may document an HMAC-SHA256 signature, while your broader release process still uses SHA-256 or SHA-512 checksums for file integrity. Splitting those tasks across separate tools adds friction that serves no real purpose. When HMAC sits beside the standard hash outputs, you can test both workflows without retyping the same message or opening another tab. That becomes valuable very quickly in API debugging, webhook validation, internal auth tooling, and request-signing checks. A tool that supports HMAC in the same interface also becomes more useful for teams because it covers both checksum work and authentication-related digest work inside one page. That is part of what makes a hash generator feel advanced without becoming harder to use.</p>
+      <h3>Verification and comparison are where practical value really shows up</h3>
+      <p>Generating a hash is only half the story. In many workflows the real question is not “what is the digest?” but “does this match what I expected?” Verification mode answers that by taking a known hash and checking it against the current outputs. Comparison does something equally important by telling you whether two values normalize to the same digest without forcing you to scan long strings manually. This matters because visual comparison of hashes is error-prone. Human eyes are not great at spotting one changed character in sixty-four or one-hundred-twenty-eight hex digits. A good tool removes that burden. When verification, comparison, and format detection sit beside the generator, the page stops being a checksum toy and starts becoming a working analysis environment. That is the kind of utility users remember and keep open.</p>
+      <h3>Batch hashing saves repetitive work</h3>
+      <p>There are plenty of times when one value at a time is simply too slow. QA teams may want digests for a line-based fixture set. Developers may need a hash per identifier in a quick test list. Operations teams may want to sanity-check several strings or sample records before putting together an automation step. In those cases, batch hashing is far more useful than rerunning a single-input tool again and again. A browser-based batch mode makes this convenient even when you do not want to open a terminal or write a short script. That matters because not every environment is comfortable for command-line work, and not every small task justifies another custom script. The best online tools earn repeat visits when they handle these medium-sized repetitive jobs cleanly enough that users do not feel pushed into another workflow unless they truly need one.</p>
+      <h3>Why format detection is more useful than it first appears</h3>
+      <p>Hash format detection sounds small until you start dealing with unknown values from logs, screenshots, issue threads, or vendor documentation. A user may see a 32-character hex string and suspect MD5, or a 64-character digest and wonder whether it is SHA-256 or HMAC-SHA256. A practical detector does not pretend to know the full origin of a value, but it can give a fast, useful hint based on length and format. That reduces guesswork and helps the user choose the right path for verification. In real work, small hints like this are often what make a tool feel more complete than the rest of the field. They do not replace deeper analysis, but they speed up the first decision and keep the flow moving.</p>
+      <h3>Readable output is part of the feature set</h3>
+      <p>Good developer UX is rarely about adding more chrome. It is about reducing mistakes. That is why monospace presentation matters for hashes, why copy buttons belong next to each result, and why uppercase or lowercase output control is more useful than it looks. Some systems publish uppercase checksums. Some internal tools or documentation use lowercase by default. A flexible page should handle both without forcing the user into manual transformations. Clear labels matter too. MD5, SHA-1, SHA-256, SHA-384, SHA-512, CRC32, and HMAC digests serve different purposes, and the interface should help the user understand that at a glance. When output is well-organized and easy to copy, the risk of grabbing the wrong digest or misreading a long value drops immediately.</p>
+      <h3>Local history is one of the most practical quality-of-life upgrades</h3>
+      <p>Hash workflows often repeat within the same session. The same payload may be tested several times, a sample file may be checked alongside text fixtures, or a message may be hashed with slightly different keys. Local history helps because it removes the need to re-paste inputs and gives the user a simple trail of recent work without storing anything on a remote server. Keeping that history in the browser only, and allowing it to be cleared easily, strikes the right balance between convenience and privacy. Features like this rarely dominate marketing copy on other sites, but they are exactly the details that make a tool feel complete to the people who actually use it often.</p>
+      <h3>Choosing the right algorithm still matters</h3>
+      <p>Not every algorithm is appropriate for every job. MD5 and SHA-1 still exist in real systems, but they should be treated as compatibility and legacy choices, not modern security defaults. CRC32 is useful for checksum workflows and protocol compatibility, not for cryptographic trust. SHA-256 is the practical default for many integrity checks. SHA-384 and SHA-512 are useful when longer digests or specific standards matter. HMAC should be used when a secret key is part of the protocol and authenticity matters in addition to integrity. A good online hash generator should make those options easy to access while still signaling the tradeoffs clearly. Speed is useful, but clarity is what keeps speed from turning into mistakes.</p>
+      <h3>Why this kind of page can spread organically on usefulness alone</h3>
+      <p>Tools that grow through search and direct repeat use usually do one thing well: they solve repeated tasks with less friction than the alternatives. Developers share the pages that save them time. Teams keep returning to tools that are fast, readable, private by default, and broad enough to handle the surrounding workflow without needing three extra tabs. A page that combines text hashing, file hashing, HMAC, verification, comparison, batch mode, format detection, copy actions, and local history is not just another generator. It becomes the default browser workspace for small but constant hashing jobs. That is what gives a page staying power. It is not hype on its own. It is remembered usefulness. And remembered usefulness is exactly what strong product-led organic growth is built on.</p>
+      <ul>
+        <li>Use text mode when you need fast, live digests while editing or debugging payloads.</li>
+        <li>Use file mode when you want to verify downloads, archives, or exported artifacts without uploading them.</li>
+        <li>Use verification mode when you already have a known digest and need to see what matches.</li>
+        <li>Use comparison when two long hash values need a definitive match or mismatch answer.</li>
+        <li>Use batch mode when one value at a time becomes repetitive and slow.</li>
+      </ul>
+      <p>The strongest online hash generator is not the one with the loudest design. It is the one that quietly removes the most friction from real work. That is the standard this page is built around.</p>
+    </section>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="hash-generator-for-business-pseo" aria-labelledby="hash-generator-for-business-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Hash Generator for Business</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="hash-generator-for-business-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Hash Generator for Business Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Hash Generator for Business</strong>, a corporate-compliant, secure web utility designed for fast corporate operations. This dedicated workspace is built specifically for business analysts, enterprise teams, executives, and organizations requiring zero-install web utilities. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>complete commercial compliance, zero data storage tracking, and clear workspace focus</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Generate, verify, compare, and batch-hash digests in one place. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Compliance Alignment</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Zero external database storage ensures data stays entirely within sandboxed execution memory.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Enterprise Productivity</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Skip heavy native client installations or lengthy security reviews; runs instantly inside the browser.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Workspace Cleanliness</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Sleek interface layout maximizes screen real-estate and minimizes workplace clutter.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Hash Generator for Business</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Business layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Hash Generator for Business</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this business utility secure?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Absolutely. Calculations and conversions run entirely locally, meaning no business data is ever sent to our servers.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Are there corporate usage fees?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">No, all ToolsMatic utilities are completely free for both personal and commercial operations.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does this comply with GDPR/CCPA?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, because we do not collect, process, or store any of the personal or company data you paste.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/hash-generator.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Hash Generator</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Hash Generator for Business","url":"https://toolsmatic.me/tools/hash-generator-for-business.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Hash Generator for Business online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Hash Generator for Business","item":"https://toolsmatic.me/tools/hash-generator-for-business.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this business utility secure?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Calculations and conversions run entirely locally, meaning no business data is ever sent to our servers."}},{"@type":"Question","name":"Are there corporate usage fees?","acceptedAnswer":{"@type":"Answer","text":"No, all ToolsMatic utilities are completely free for both personal and commercial operations."}},{"@type":"Question","name":"Does this comply with GDPR/CCPA?","acceptedAnswer":{"@type":"Answer","text":"Yes, because we do not collect, process, or store any of the personal or company data you paste."}}]}]}</script>
+  </main>
+<footer>ToolsMatic - Fast, privacy-first utilities for the web.</footer>
+  <script>
+    const hg = {
+      tabs: Array.from(document.querySelectorAll('.hg-tab')),
+      panels: {
+        text: document.getElementById('hg-panel-text'),
+        file: document.getElementById('hg-panel-file'),
+        verify: document.getElementById('hg-panel-verify'),
+        batch: document.getElementById('hg-panel-batch')
+      },
+      textInput: document.getElementById('hg-text-input'),
+      secretKey: document.getElementById('hg-secret-key'),
+      caseToggle: document.getElementById('hg-case-toggle'),
+      charCount: document.getElementById('hg-char-count'),
+      byteCount: document.getElementById('hg-byte-count'),
+      sourcePill: document.getElementById('hg-source-pill'),
+      outputContext: document.getElementById('hg-output-context'),
+      currentMode: document.getElementById('hg-current-mode'),
+      outputGrid: document.getElementById('hg-output-grid'),
+      status: document.getElementById('hg-status'),
+      loadExample: document.getElementById('hg-load-example'),
+      clearText: document.getElementById('hg-clear-text'),
+      copyAll: document.getElementById('hg-copy-all'),
+      browseFile: document.getElementById('hg-browse-file'),
+      clearFile: document.getElementById('hg-clear-file'),
+      fileInput: document.getElementById('hg-file-input'),
+      filePill: document.getElementById('hg-file-pill'),
+      dropzone: document.getElementById('hg-dropzone'),
+      knownHash: document.getElementById('hg-known-hash'),
+      detectorPills: document.getElementById('hg-detector-pills'),
+      verifyResults: document.getElementById('hg-verify-results'),
+      compareLeft: document.getElementById('hg-compare-left'),
+      compareRight: document.getElementById('hg-compare-right'),
+      compareStatus: document.getElementById('hg-compare-status'),
+      batchAlgorithm: document.getElementById('hg-batch-algorithm'),
+      batchInput: document.getElementById('hg-batch-input'),
+      batchBody: document.getElementById('hg-batch-body'),
+      batchSummary: document.getElementById('hg-batch-summary'),
+      copyBatch: document.getElementById('hg-copy-batch'),
+      clearBatch: document.getElementById('hg-clear-batch'),
+      summarySource: document.getElementById('hg-summary-source'),
+      summaryDetector: document.getElementById('hg-summary-detector'),
+      summaryMatch: document.getElementById('hg-summary-match'),
+      historyList: document.getElementById('hg-history-list'),
+      clearHistory: document.getElementById('hg-clear-history')
+    };
+
+    const storageKey = 'toolsmatic-hash-generator-v1';
+    const outputOrder = ['MD5', 'SHA-1', 'SHA-256', 'SHA-384', 'SHA-512', 'CRC32', 'HMAC-SHA256', 'HMAC-SHA512'];
+    const outputInfo = {
+      'MD5': { label: 'MD5', note: '32 chars · legacy checksum' },
+      'SHA-1': { label: 'SHA-1', note: '40 chars · deprecated security hash' },
+      'SHA-256': { label: 'SHA-256', note: '64 chars · strong default' },
+      'SHA-384': { label: 'SHA-384', note: '96 chars · longer SHA-2 digest' },
+      'SHA-512': { label: 'SHA-512', note: '128 chars · highest SHA-2 output here' },
+      'CRC32': { label: 'CRC32', note: '8 chars · checksum for compatibility' },
+      'HMAC-SHA256': { label: 'HMAC-SHA256', note: '64 chars · keyed integrity digest' },
+      'HMAC-SHA512': { label: 'HMAC-SHA512', note: '128 chars · keyed long digest' }
+    };
+
+    const state = {
+      activeTab: 'text',
+      caseUpper: false,
+      outputSource: 'text',
+      sourceLabel: 'Text input',
+      fileName: '',
+      textResults: {},
+      fileResults: {},
+      hmacResults: {},
+      matchingAlgorithms: [],
+      history: [],
+      batchRows: [],
+      jobs: { text: 0, file: 0, batch: 0 },
+      lastHistorySignature: '',
+      historyTimer: 0
+    };
+
+    const encoder = new TextEncoder();
+    const md5Shift = [
+      7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22,
+      5, 9, 14, 20, 5, 9, 14, 20, 5, 9, 14, 20, 5, 9, 14, 20,
+      4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23,
+      6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21
+    ];
+    const md5K = Array.from({ length: 64 }, (_, index) => Math.floor(Math.abs(Math.sin(index + 1)) * 4294967296) >>> 0);
+    const crcTable = (() => {
+      const table = [];
+      for (let index = 0; index < 256; index += 1) {
+        let value = index;
+        for (let bit = 0; bit < 8; bit += 1) {
+          value = (value & 1) ? (0xedb88320 ^ (value >>> 1)) : (value >>> 1);
+        }
+        table[index] = value >>> 0;
+      }
+      return table;
+    })();
+
+    function showToast(message, type) {
+      if (window.toolsMatic && typeof window.toolsMatic.showToast === 'function') {
+        window.toolsMatic.showToast(message, type || 'info');
+      }
+    }
+
+    function setStatus(message) {
+      hg.status.textContent = message;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function normalizeHash(value) {
+      return String(value || '').replace(/\s+/g, '').toLowerCase();
+    }
+
+    function renderCase(value) {
+      if (!value) return '';
+      return state.caseUpper ? value.toUpperCase() : value.toLowerCase();
+    }
+
+    function formatBytes(bytes) {
+      if (!bytes) return '0 B';
+      const units = ['B', 'KB', 'MB', 'GB'];
+      let value = bytes;
+      let unitIndex = 0;
+      while (value >= 1024 && unitIndex < units.length - 1) {
+        value /= 1024;
+        unitIndex += 1;
+      }
+      return (unitIndex === 0 ? value : value.toFixed(value >= 100 ? 0 : 1)) + ' ' + units[unitIndex];
+    }
+
+    function formatTime(timestamp) {
+      try {
+        return new Date(timestamp).toLocaleString('en-IN', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
+      } catch (error) {
+        return '';
+      }
+    }
+
+    function bufferToHex(buffer) {
+      const bytes = buffer instanceof Uint8Array ? buffer : new Uint8Array(buffer);
+      let output = '';
+      bytes.forEach((value) => {
+        output += value.toString(16).padStart(2, '0');
+      });
+      return output;
+    }
+
+    function add32(left, right) {
+      return (((left >>> 0) + (right >>> 0)) & 0xffffffff) >>> 0;
+    }
+
+    function leftRotate(value, shift) {
+      return ((value << shift) | (value >>> (32 - shift))) >>> 0;
+    }
+
+    function wordToHexLE(word) {
+      let output = '';
+      for (let index = 0; index < 4; index += 1) {
+        output += ((word >>> (index * 8)) & 0xff).toString(16).padStart(2, '0');
+      }
+      return output;
+    }
+
+    function md5Hex(bytes) {
+      const words = [];
+      for (let index = 0; index < bytes.length; index += 1) {
+        words[index >> 2] = (words[index >> 2] || 0) | (bytes[index] << ((index % 4) * 8));
+      }
+      const bitLength = bytes.length * 8;
+      const lowIndex = bitLength >> 5;
+      words[lowIndex] = (words[lowIndex] || 0) | (0x80 << (bitLength % 32));
+      words[(((bitLength + 64) >>> 9) << 4) + 14] = bitLength >>> 0;
+      words[(((bitLength + 64) >>> 9) << 4) + 15] = Math.floor(bitLength / 0x100000000) >>> 0;
+
+      let a0 = 0x67452301;
+      let b0 = 0xefcdab89;
+      let c0 = 0x98badcfe;
+      let d0 = 0x10325476;
+
+      for (let chunkIndex = 0; chunkIndex < words.length; chunkIndex += 16) {
+        let a = a0;
+        let b = b0;
+        let c = c0;
+        let d = d0;
+        for (let round = 0; round < 64; round += 1) {
+          let f;
+          let g;
+          if (round < 16) {
+            f = (b & c) | ((~b) & d);
+            g = round;
+          } else if (round < 32) {
+            f = (d & b) | ((~d) & c);
+            g = (5 * round + 1) % 16;
+          } else if (round < 48) {
+            f = b ^ c ^ d;
+            g = (3 * round + 5) % 16;
+          } else {
+            f = c ^ (b | (~d));
+            g = (7 * round) % 16;
+          }
+          const nextD = d;
+          d = c;
+          c = b;
+          const sum = add32(add32(add32(a, f), md5K[round]), words[chunkIndex + g] || 0);
+          b = add32(b, leftRotate(sum, md5Shift[round]));
+          a = nextD;
+        }
+        a0 = add32(a0, a);
+        b0 = add32(b0, b);
+        c0 = add32(c0, c);
+        d0 = add32(d0, d);
+      }
+      return [a0, b0, c0, d0].map(wordToHexLE).join('');
+    }
+
+    function crc32Hex(bytes) {
+      let crc = 0xffffffff;
+      bytes.forEach((value) => {
+        crc = crcTable[(crc ^ value) & 0xff] ^ (crc >>> 8);
+      });
+      return ((crc ^ 0xffffffff) >>> 0).toString(16).padStart(8, '0');
+    }
+
+    async function hashBytesForAlgorithm(bytes, algorithm) {
+      if (algorithm === 'MD5') return md5Hex(bytes);
+      if (algorithm === 'CRC32') return crc32Hex(bytes);
+      const digest = await crypto.subtle.digest(algorithm, bytes);
+      return bufferToHex(digest);
+    }
+
+    async function computeStandardHashes(bytes) {
+      const values = await Promise.all([
+        hashBytesForAlgorithm(bytes, 'MD5'),
+        hashBytesForAlgorithm(bytes, 'SHA-1'),
+        hashBytesForAlgorithm(bytes, 'SHA-256'),
+        hashBytesForAlgorithm(bytes, 'SHA-384'),
+        hashBytesForAlgorithm(bytes, 'SHA-512'),
+        hashBytesForAlgorithm(bytes, 'CRC32')
+      ]);
+      return { 'MD5': values[0], 'SHA-1': values[1], 'SHA-256': values[2], 'SHA-384': values[3], 'SHA-512': values[4], 'CRC32': values[5] };
+    }
+
+    async function computeHmac(text, algorithm, secret) {
+      const cryptoKey = await crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: algorithm }, false, ['sign']);
+      const signature = await crypto.subtle.sign('HMAC', cryptoKey, encoder.encode(text));
+      return bufferToHex(signature);
+    }
+
+    async function computeHmacHashes(text, secret) {
+      const values = await Promise.all([computeHmac(text, 'SHA-256', secret), computeHmac(text, 'SHA-512', secret)]);
+      return { 'HMAC-SHA256': values[0], 'HMAC-SHA512': values[1] };
+    }
+
+    async function hashTextForAlgorithm(text, algorithm) {
+      const normalizedSecret = hg.secretKey.value.trim();
+      if (algorithm === 'HMAC-SHA256') {
+        if (!normalizedSecret) throw new Error('Add a secret key for HMAC-SHA256.');
+        return computeHmac(text, 'SHA-256', normalizedSecret);
+      }
+      if (algorithm === 'HMAC-SHA512') {
+        if (!normalizedSecret) throw new Error('Add a secret key for HMAC-SHA512.');
+        return computeHmac(text, 'SHA-512', normalizedSecret);
+      }
+      return hashBytesForAlgorithm(encoder.encode(text), algorithm);
+    }
+
+    function detectHashFormat(hash) {
+      const clean = normalizeHash(hash);
+      if (!clean) return ['Paste a hash to detect the likely format.'];
+      if (!/^[a-f0-9]+$/i.test(clean)) return ['Not a plain hexadecimal hash.'];
+      if (clean.length === 8) return ['Likely CRC32'];
+      if (clean.length === 32) return ['Likely MD5'];
+      if (clean.length === 40) return ['Likely SHA-1'];
+      if (clean.length === 64) return ['Likely SHA-256 or HMAC-SHA256'];
+      if (clean.length === 96) return ['Likely SHA-384'];
+      if (clean.length === 128) return ['Likely SHA-512 or HMAC-SHA512'];
+      return ['Hex digest detected, but not one of the supported lengths on this page.'];
+    }
+
+    function getStandardResults() {
+      return state.outputSource === 'file' ? state.fileResults : state.textResults;
+    }
+
+    function getDisplayedResults() {
+      const standard = getStandardResults() || {};
+      const output = { ...standard };
+      if (state.outputSource === 'text' && Object.keys(state.hmacResults).length) {
+        output['HMAC-SHA256'] = state.hmacResults['HMAC-SHA256'] || '';
+        output['HMAC-SHA512'] = state.hmacResults['HMAC-SHA512'] || '';
+      }
+      return output;
+    }
+
+    function saveLocalState() {
+      localStorage.setItem(storageKey, JSON.stringify({
+        caseUpper: state.caseUpper,
+        history: state.history.slice(0, 20),
+        batchAlgorithm: hg.batchAlgorithm.value
+      }));
+    }
+
+    function loadLocalState() {
+      try {
+        const raw = localStorage.getItem(storageKey);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        state.caseUpper = Boolean(parsed.caseUpper);
+        state.history = Array.isArray(parsed.history) ? parsed.history.slice(0, 20) : [];
+        if (typeof parsed.batchAlgorithm === 'string') {
+          hg.batchAlgorithm.value = parsed.batchAlgorithm;
+        }
+      } catch (error) {
+        state.history = [];
+      }
+    }
+
+    function pushHistoryEntry(entry) {
+      if (entry.signature === state.lastHistorySignature) return;
+      state.lastHistorySignature = entry.signature;
+      state.history = [entry, ...state.history.filter((item) => item.signature !== entry.signature)].slice(0, 20);
+      saveLocalState();
+      renderHistory();
+    }
+
+    function scheduleTextHistory(text, results) {
+      clearTimeout(state.historyTimer);
+      if (!text.trim()) return;
+      state.historyTimer = setTimeout(() => {
+        pushHistoryEntry({
+          id: Date.now(),
+          signature: 'text:' + text + ':' + (results['SHA-256'] || ''),
+          type: 'text',
+          preview: text.slice(0, 120),
+          value: text.slice(0, 5000),
+          primary: results['SHA-256'] || '',
+          timestamp: Date.now()
+        });
+      }, 500);
+    }
+
+    function renderHistory() {
+      if (!state.history.length) {
+        hg.historyList.innerHTML = '<div class="hg-history-item"><strong>No saved entries yet</strong><p>Recent text and file hashes will appear here after you start using the tool.</p></div>';
+        return;
+      }
+      hg.historyList.innerHTML = state.history.map((item) => {
+        const isText = item.type === 'text';
+        return (
+          '<div class="hg-history-item">' +
+            '<strong>' + escapeHtml(isText ? 'Text hash' : 'File hash') + '</strong>' +
+            '<p>' + escapeHtml(item.preview || 'Untitled entry') + '</p>' +
+            '<div class="hg-history-meta">' +
+              '<span>' + escapeHtml(formatTime(item.timestamp)) + '</span>' +
+              '<span>' + escapeHtml(item.primary ? item.primary.slice(0, 16) + '...' : '') + '</span>' +
+              (isText ? '<button type="button" data-history-load="' + item.id + '">Load</button>' : '') +
+            '</div>' +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    function renderTabs() {
+      hg.tabs.forEach((button) => {
+        const active = button.dataset.tab === state.activeTab;
+        button.classList.toggle('is-active', active);
+        hg.panels[button.dataset.tab].classList.toggle('is-active', active);
+      });
+    }
+
+    function getOutputPlaceholder(algorithm) {
+      if (algorithm.indexOf('HMAC') === 0) {
+        if (state.outputSource !== 'text') return 'HMAC appears when the text workspace is active.';
+        if (!hg.textInput.value) return 'Type text to generate keyed hashes.';
+        if (!hg.secretKey.value.trim()) return 'Add a secret key to generate HMAC.';
+        return 'HMAC output will appear here.';
+      }
+      if (state.outputSource === 'file') {
+        return state.fileName ? 'File hash will appear here.' : 'Drop a file to generate this digest.';
+      }
+      return hg.textInput.value ? 'Hash output will appear here.' : 'Type or paste text to generate this digest.';
+    }
+
+    function updateVerificationState() {
+      const known = normalizeHash(hg.knownHash.value);
+      const results = getDisplayedResults();
+      state.matchingAlgorithms = known
+        ? Object.entries(results).filter(([, value]) => normalizeHash(value) && normalizeHash(value) === known).map(([algorithm]) => algorithm)
+        : [];
+    }
+
+    function renderOutputGrid() {
+      updateVerificationState();
+      const results = getDisplayedResults();
+      hg.outputGrid.innerHTML = outputOrder.map((algorithm) => {
+        const value = results[algorithm] || '';
+        const info = outputInfo[algorithm];
+        const note = value ? (state.matchingAlgorithms.includes(algorithm) ? 'Known hash matches this output.' : info.note) : getOutputPlaceholder(algorithm);
+        return (
+          '<article class="hg-output' + (state.matchingAlgorithms.includes(algorithm) ? ' match' : '') + '">' +
+            '<div class="hg-output-top">' +
+              '<div><h3>' + escapeHtml(info.label) + '</h3><p>' + escapeHtml(info.note) + '</p></div>' +
+              '<button class="hg-btn" type="button" data-copy-output="' + escapeHtml(algorithm) + '"' + (value ? '' : ' disabled') + '>Copy</button>' +
+            '</div>' +
+            '<pre class="hg-code">' + escapeHtml(value ? renderCase(value) : '-') + '</pre>' +
+            '<div class="hg-note">' + escapeHtml(note) + '</div>' +
+          '</article>'
+        );
+      }).join('');
+      hg.outputContext.textContent = state.outputSource === 'file'
+        ? (state.fileName ? 'Showing file hashes for ' + state.fileName + '.' : 'Drop a file to fill the algorithm cards.')
+        : (hg.textInput.value ? 'Showing live hashes for the current text input.' : 'Type text to fill every algorithm card in real time.');
+      hg.currentMode.innerHTML = '<strong>Current source</strong><span>' + escapeHtml(state.sourceLabel) + '</span>';
+      hg.summarySource.textContent = state.sourceLabel;
+      hg.summaryMatch.textContent = state.matchingAlgorithms.length ? state.matchingAlgorithms.join(', ') + ' matched' : 'No verification match yet';
+    }
+
+    function renderDetector() {
+      const hints = detectHashFormat(hg.knownHash.value);
+      hg.detectorPills.innerHTML = hints.map((hint) => '<div class="hg-badge"><strong>' + escapeHtml(hint) + '</strong></div>').join('');
+      hg.summaryDetector.textContent = hints[0];
+    }
+
+    function renderVerificationResults() {
+      const known = normalizeHash(hg.knownHash.value);
+      const results = getDisplayedResults();
+      hg.verifyResults.innerHTML = outputOrder.map((algorithm) => {
+        const value = normalizeHash(results[algorithm]);
+        if (!known) return '<div class="hg-verify-line"><span>' + escapeHtml(outputInfo[algorithm].label) + '</span><span>Waiting for a known hash</span></div>';
+        if (!value) return '<div class="hg-verify-line"><span>' + escapeHtml(outputInfo[algorithm].label) + '</span><span class="bad">&#10005; No current output</span></div>';
+        if (value === known) return '<div class="hg-verify-line"><span>' + escapeHtml(outputInfo[algorithm].label) + '</span><span class="ok">&#10003; Match</span></div>';
+        return '<div class="hg-verify-line"><span>' + escapeHtml(outputInfo[algorithm].label) + '</span><span class="bad">&#10005; No match</span></div>';
+      }).join('');
+    }
+
+    function renderCompareStatus() {
+      const left = normalizeHash(hg.compareLeft.value);
+      const right = normalizeHash(hg.compareRight.value);
+      hg.compareStatus.classList.remove('match', 'mismatch');
+      if (!left || !right) {
+        hg.compareStatus.textContent = 'Paste two hashes to compare them.';
+        return;
+      }
+      if (left === right) {
+        hg.compareStatus.textContent = 'Match: both hashes normalize to the same value.';
+        hg.compareStatus.classList.add('match');
+        return;
+      }
+      hg.compareStatus.textContent = 'Mismatch: the two hashes are different.';
+      hg.compareStatus.classList.add('mismatch');
+    }
+
+    function renderBatchRows() {
+      if (!state.batchRows.length) {
+        hg.batchBody.innerHTML = '<tr><td colspan="3">Paste multiple lines to generate batch hashes.</td></tr>';
+        return;
+      }
+      hg.batchBody.innerHTML = state.batchRows.map((row) => '<tr><td>' + row.index + '</td><td><code>' + escapeHtml(row.input) + '</code></td><td><code>' + escapeHtml(renderCase(row.hash)) + '</code></td></tr>').join('');
+    }
+
+    function refreshTool() {
+      hg.charCount.textContent = hg.textInput.value.length + ' chars';
+      hg.byteCount.textContent = formatBytes(encoder.encode(hg.textInput.value).byteLength);
+      hg.sourcePill.textContent = 'Live source: text input';
+      renderOutputGrid();
+      renderDetector();
+      renderVerificationResults();
+      renderCompareStatus();
+      renderBatchRows();
+      renderHistory();
+      saveLocalState();
+    }
+
+    function setTab(tab) {
+      state.activeTab = tab;
+      if (tab === 'text') {
+        state.outputSource = 'text';
+        state.sourceLabel = 'Text input';
+        setStatus('Text hashing mode ready.');
+      } else if (tab === 'file') {
+        state.outputSource = 'file';
+        state.sourceLabel = state.fileName || 'File hashing';
+        setStatus('File hashing mode ready.');
+      } else if (tab === 'verify') {
+        setStatus('Verification mode ready. Paste a known hash or compare two values.');
+      } else {
+        setStatus('Batch hashing mode ready. Paste one input per line.');
+      }
+      renderTabs();
+      refreshTool();
+    }
+
+    async function updateTextHashes() {
+      state.outputSource = 'text';
+      state.sourceLabel = 'Text input';
+      const text = hg.textInput.value;
+      const secret = hg.secretKey.value.trim();
+      if (!window.crypto || !window.crypto.subtle) {
+        setStatus('Web Crypto API is not available in this browser.');
+        return;
+      }
+      if (!text) {
+        state.textResults = {};
+        state.hmacResults = {};
+        refreshTool();
+        setStatus(secret ? 'Type text to generate hashes and HMAC.' : 'Type or paste text to start hashing.');
+        return;
+      }
+      const bytes = encoder.encode(text);
+      const job = ++state.jobs.text;
+      setStatus('Generating hashes...');
+      try {
+        const [standard, hmac] = await Promise.all([computeStandardHashes(bytes), secret ? computeHmacHashes(text, secret) : Promise.resolve({})]);
+        if (job !== state.jobs.text) return;
+        state.textResults = standard;
+        state.hmacResults = hmac;
+        state.sourceLabel = 'Text input · ' + text.length + ' chars · ' + formatBytes(bytes.byteLength);
+        refreshTool();
+        setStatus('Text hashes updated.');
+        scheduleTextHistory(text, standard);
+      } catch (error) {
+        setStatus('Unable to generate text hashes.');
+      }
+    }
+
+    async function handleFile(file) {
+      if (!file) return;
+      if (!window.crypto || !window.crypto.subtle) {
+        setStatus('Web Crypto API is not available in this browser.');
+        return;
+      }
+      state.outputSource = 'file';
+      state.fileName = file.name;
+      state.sourceLabel = file.name + ' · ' + formatBytes(file.size);
+      hg.filePill.textContent = file.name + ' · ' + formatBytes(file.size);
+      refreshTool();
+      setStatus('Reading file...');
+      const job = ++state.jobs.file;
+      try {
+        const bytes = new Uint8Array(await file.arrayBuffer());
+        const standard = await computeStandardHashes(bytes);
+        if (job !== state.jobs.file) return;
+        state.fileResults = standard;
+        refreshTool();
+        setStatus('File hashes ready.');
+        pushHistoryEntry({ id: Date.now(), signature: 'file:' + file.name + ':' + (standard['SHA-256'] || ''), type: 'file', preview: file.name, primary: standard['SHA-256'] || '', timestamp: Date.now() });
+      } catch (error) {
+        setStatus('Unable to read that file.');
+      }
+    }
+
+    function clearFileState() {
+      state.fileName = '';
+      state.fileResults = {};
+      hg.fileInput.value = '';
+      hg.filePill.textContent = 'No file selected';
+      if (state.activeTab === 'file') {
+        state.outputSource = 'file';
+        state.sourceLabel = 'File hashing';
+      } else if (state.outputSource === 'file') {
+        state.outputSource = 'text';
+        state.sourceLabel = 'Text input';
+      }
+      refreshTool();
+      setStatus('File state cleared.');
+    }
+
+    async function updateBatch() {
+      const lines = hg.batchInput.value.replace(/\r\n/g, '\n').split('\n').filter((line) => line.length > 0);
+      hg.batchSummary.textContent = lines.length + ' lines ready';
+      if (!lines.length) {
+        state.batchRows = [];
+        refreshTool();
+        return;
+      }
+      const job = ++state.jobs.batch;
+      const algorithm = hg.batchAlgorithm.value;
+      setStatus('Generating batch hashes...');
+      try {
+        const rows = await Promise.all(lines.map(async (line, index) => ({ index: index + 1, input: line, hash: await hashTextForAlgorithm(line, algorithm) })));
+        if (job !== state.jobs.batch) return;
+        state.batchRows = rows;
+        refreshTool();
+        setStatus('Batch hashes updated.');
+      } catch (error) {
+        state.batchRows = [];
+        refreshTool();
+        setStatus(error.message || 'Unable to generate batch hashes.');
+      }
+    }
+
+    function loadExampleText() {
+      hg.textInput.value = 'ToolsMatic hash generator sample\npayload=local-only\nversion=2026-04-07';
+      updateTextHashes();
+      setStatus('Example text loaded.');
+    }
+
+    async function copyText(value, successMessage) {
+      if (!value) return;
+      try {
+        await navigator.clipboard.writeText(value);
+        showToast(successMessage, 'success');
+      } catch (error) {
+        setStatus('Copy failed in this browser.');
+      }
+    }
+
+    function buildAllOutputText() {
+      const results = getDisplayedResults();
+      return outputOrder.filter((algorithm) => results[algorithm]).map((algorithm) => algorithm + ': ' + renderCase(results[algorithm])).join('\n');
+    }
+
+    function handleHistoryClick(event) {
+      const button = event.target.closest('button[data-history-load]');
+      if (!button) return;
+      const id = Number(button.dataset.historyLoad);
+      const item = state.history.find((entry) => Number(entry.id) === id);
+      if (!item || item.type !== 'text') return;
+      hg.textInput.value = item.value || item.preview || '';
+      setTab('text');
+      updateTextHashes();
+      setStatus('Loaded a saved text input from history.');
+      showToast('History item loaded', 'success');
+    }
+
+    function handleDropzoneKey(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        hg.fileInput.click();
+      }
+    }
+
+    loadLocalState();
+    hg.caseToggle.checked = state.caseUpper;
+    renderTabs();
+    refreshTool();
+
+    hg.tabs.forEach((button) => button.addEventListener('click', () => setTab(button.dataset.tab)));
+    hg.textInput.addEventListener('input', updateTextHashes);
+    hg.secretKey.addEventListener('input', updateTextHashes);
+    hg.caseToggle.addEventListener('change', () => { state.caseUpper = hg.caseToggle.checked; refreshTool(); setStatus('Output casing updated.'); });
+    hg.loadExample.addEventListener('click', loadExampleText);
+    hg.clearText.addEventListener('click', () => { hg.textInput.value = ''; hg.secretKey.value = ''; state.textResults = {}; state.hmacResults = {}; refreshTool(); setStatus('Text input cleared.'); });
+    hg.copyAll.addEventListener('click', () => {
+      const payload = buildAllOutputText();
+      if (!payload) { setStatus('There are no hash outputs to copy yet.'); return; }
+      copyText(payload, 'All outputs copied');
+    });
+    hg.browseFile.addEventListener('click', () => hg.fileInput.click());
+    hg.fileInput.addEventListener('change', () => { const file = hg.fileInput.files && hg.fileInput.files[0]; if (file) handleFile(file); });
+    hg.clearFile.addEventListener('click', clearFileState);
+    hg.dropzone.addEventListener('click', () => hg.fileInput.click());
+    hg.dropzone.addEventListener('keydown', handleDropzoneKey);
+    ['dragenter', 'dragover'].forEach((name) => hg.dropzone.addEventListener(name, (event) => { event.preventDefault(); hg.dropzone.classList.add('drag'); }));
+    ['dragleave', 'drop'].forEach((name) => hg.dropzone.addEventListener(name, (event) => { event.preventDefault(); hg.dropzone.classList.remove('drag'); }));
+    hg.dropzone.addEventListener('drop', (event) => { const file = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0]; if (file) handleFile(file); });
+    hg.knownHash.addEventListener('input', refreshTool);
+    hg.compareLeft.addEventListener('input', renderCompareStatus);
+    hg.compareRight.addEventListener('input', renderCompareStatus);
+    hg.batchInput.addEventListener('input', updateBatch);
+    hg.batchAlgorithm.addEventListener('change', () => { saveLocalState(); updateBatch(); });
+    hg.copyBatch.addEventListener('click', () => {
+      if (!state.batchRows.length) { setStatus('There are no batch rows to copy.'); return; }
+      const payload = state.batchRows.map((row) => row.index + '. ' + row.input + ' => ' + renderCase(row.hash)).join('\n');
+      copyText(payload, 'Batch output copied');
+    });
+    hg.clearBatch.addEventListener('click', () => { hg.batchInput.value = ''; state.batchRows = []; refreshTool(); setStatus('Batch input cleared.'); });
+    hg.outputGrid.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-copy-output]');
+      if (!button) return;
+      const value = getDisplayedResults()[button.dataset.copyOutput];
+      if (!value) return;
+      copyText(renderCase(value), button.dataset.copyOutput + ' copied');
+    });
+    hg.historyList.addEventListener('click', handleHistoryClick);
+    hg.clearHistory.addEventListener('click', () => { state.history = []; state.lastHistorySignature = ''; saveLocalState(); renderHistory(); setStatus('Local history cleared.'); });
+
+    setStatus('Ready. Type text, drop a file, or open verification mode.');
+  </script>
+</body>
+</html>

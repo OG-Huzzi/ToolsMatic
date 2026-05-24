@@ -1,0 +1,2898 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+
+  <title>PDF Reader Desktop Alternative Online | Free ToolsMatic</title>
+  <meta name="description" content="Use PDF Reader Desktop Alternative online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/pdf-reader-desktop-alternative.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/pdf-reader-desktop-alternative.html">
+  <meta property="og:title" content="PDF Reader Desktop Alternative Online | Free ToolsMatic">
+  <meta property="og:description" content="Use PDF Reader Desktop Alternative online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PDF Reader Desktop Alternative Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use PDF Reader Desktop Alternative online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=
+    Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;
+    700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <!-- JSON-LD: WebApplication -->
+  
+
+  <!-- JSON-LD: BreadcrumbList -->
+  
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to View PDF Files Online with ToolsMatic Reader",
+    "description": "View PDF files using ToolsMatic's browser-based 
+      reader — free, private, no upload.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload your PDF",
+        "text": "Drag and drop your PDF file onto the upload zone 
+          or click to browse. Files are validated locally and 
+          never uploaded to any server."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Navigate pages",
+        "text": "Use the toolbar buttons, arrow keys, or swipe 
+          gestures to move between pages. The thumbnail sidebar 
+          shows previews for quick navigation."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Zoom and search",
+        "text": "Adjust zoom with +/- buttons or percentage input. 
+          Use the search bar to find text within the document, 
+          with highlighted matches and next/previous navigation."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Print or download",
+        "text": "Print the PDF using your browser's print dialog 
+          (Ctrl+P) or download the original file. All actions 
+          happen locally in your browser."
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  
+
+  <!-- Tool-specific styles ONLY -->
+  <style>
+    /* ── Layout ─────────────────────────────────────────────── */
+    .pdf-reader-wrapper {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 200px);
+      min-height: 600px;
+    }
+
+    /* ── Upload zone ────────────────────────────────────────── */
+    .upload-zone {
+      transform-style: preserve-3d;
+      will-change: transform;
+      margin: 40px auto;
+      max-width: 600px;
+    }
+
+    .upload-zone.dragover {
+      background: rgba(245,158,11,0.06);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-glow),
+        inset 0 0 24px rgba(245,158,11,0.04);
+    }
+
+    .upload-zone-sub {
+      margin-top: 4px;
+      font-size: 13px;
+    }
+
+    /* ── Clear button ───────────────────────────────────────── */
+    .btn-clear-file {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .btn-clear-file:hover {
+      border-color: var(--error);
+      color: var(--error);
+      background: rgba(239,68,68,0.06);
+    }
+
+    .btn-clear-file:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ── Viewer container ───────────────────────────────────── */
+    .viewer-container {
+      display: none;
+      flex: 1;
+      gap: 16px;
+      min-height: 0;
+    }
+
+    .viewer-container.visible {
+      display: flex;
+    }
+
+    /* ── Sidebar ────────────────────────────────────────────── */
+    .sidebar {
+      width: 240px;
+      min-width: 240px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.3s ease, width 0.3s ease;
+    }
+
+    .sidebar.collapsed {
+      width: 0;
+      min-width: 0;
+      border: none;
+      overflow: hidden;
+    }
+
+    .sidebar-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sidebar-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .sidebar-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .sidebar-close:hover {
+      color: var(--text-primary);
+      background: var(--bg-base);
+    }
+
+    .sidebar-close:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .sidebar-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-base);
+    }
+
+    .sidebar-tab {
+      flex: 1;
+      padding: 10px 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .sidebar-tab:hover {
+      color: var(--text-primary);
+    }
+
+    .sidebar-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .sidebar-tab:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+
+    .sidebar-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px;
+    }
+
+    /* Thumbnails */
+    .thumbnails-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .thumbnail-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+
+    .thumbnail-item:hover {
+      background: var(--bg-base);
+    }
+
+    .thumbnail-item.active {
+      border-color: var(--accent);
+      background: rgba(245,158,11,0.08);
+    }
+
+    .thumbnail-item:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .thumbnail-canvas {
+      width: 50px;
+      height: 70px;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .thumbnail-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    .thumbnail-item.active .thumbnail-label {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Outline */
+    .outline-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+    }
+
+    .outline-item {
+      padding: 6px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .outline-item:hover {
+      background: var(--bg-base);
+    }
+
+    .outline-item.active {
+      background: rgba(245,158,11,0.08);
+      color: var(--accent);
+    }
+
+    .outline-item .outline-title {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .outline-item .outline-page {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-left: 4px;
+    }
+
+    .outline-children {
+      margin-left: 16px;
+      border-left: 1px solid var(--border);
+      padding-left: 8px;
+    }
+
+    /* Attachments */
+    .attachments-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+    }
+
+    .attachment-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .attachment-item:hover {
+      background: var(--bg-base);
+    }
+
+    .attachment-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--bg-base);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+    }
+
+    .attachment-name {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .attachment-size {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ── Main viewer area ───────────────────────────────────── */
+    .viewer-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    /* Toolbar */
+    .viewer-toolbar {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: var(--bg-base);
+    }
+
+    .toolbar-group {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .toolbar-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--border);
+      margin: 0 8px;
+    }
+
+    .toolbar-btn {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toolbar-btn:hover:not(:disabled) {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(245,158,11,0.06);
+    }
+
+    .toolbar-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .toolbar-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .toolbar-btn.active {
+      background: rgba(245,158,11,0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Page navigation */
+    .page-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .page-input {
+      width: 50px;
+      padding: 6px 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      text-align: center;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .page-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-glow);
+    }
+
+    .page-separator {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Zoom controls */
+    .zoom-controls {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .zoom-select {
+      padding: 6px 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .zoom-select:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Search bar */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 8px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-glow);
+    }
+
+    .search-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-results {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .search-case-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .search-case-toggle input {
+      width: 14px;
+      height: 14px;
+      margin: 0;
+    }
+
+    /* View options */
+    .view-options {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .view-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 6px 8px;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .view-toggle:hover {
+      background: var(--bg-base);
+    }
+
+    .view-toggle.active {
+      color: var(--accent);
+      background: rgba(245,158,11,0.08);
+    }
+
+    .view-toggle input {
+      width: 14px;
+      height: 14px;
+      margin: 0;
+    }
+
+    /* Canvas container */
+    .canvas-container {
+      flex: 1;
+      overflow: auto;
+      position: relative;
+      background: #525659;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .pdf-page {
+      position: relative;
+      margin: 10px auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      background: #fff;
+    }
+
+    .pdf-page canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Text layer for selection/search */
+    .textLayer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      opacity: 1;
+      line-height: 1;
+    }
+
+    .textLayer > span {
+      color: transparent;
+      position: absolute;
+      white-space: pre;
+      cursor: text;
+      transform-origin: 0% 0%;
+    }
+
+    .textLayer .highlight {
+      background: rgba(245,158,11,0.3);
+      border-radius: 2px;
+    }
+
+    .textLayer .highlight.selected {
+      background: rgba(245,158,11,0.6);
+    }
+
+    /* Progress bar */
+    .reading-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--border);
+      z-index: 10;
+    }
+
+    .reading-progress-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+
+    /* Loading overlay */
+    .loading-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+    }
+
+    .loading-overlay.visible {
+      display: flex;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Info modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal-overlay.visible {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      max-width: 500px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+    }
+
+    .modal-close:hover {
+      color: var(--text-primary);
+      background: var(--bg-base);
+    }
+
+    .modal-close:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 8px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+    }
+
+    .info-value {
+      color: var(--text-primary);
+      font-weight: 500;
+      word-break: break-word;
+    }
+
+    .modal-footer {
+      padding: 16px 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .btn-modal {
+      padding: 10px 20px;
+      border-radius: var(--radius-btn);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-modal.primary {
+      background: var(--accent);
+      color: #000;
+      border: none;
+    }
+
+    .btn-modal.primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-modal.secondary {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-modal.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-modal:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Night mode */
+    .night-mode .canvas-container {
+      background: #1a1a1a;
+    }
+
+    .night-mode .pdf-page {
+      filter: invert(1) hue-rotate(180deg);
+    }
+
+    .night-mode .textLayer span {
+      filter: invert(1) hue-rotate(180deg);
+    }
+
+    /* ── SEO content ────────────────────────────────────────── */
+    .seo-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .seo-section h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 32px;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+    }
+
+    .seo-section h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 24px 0 10px;
+    }
+
+    .seo-section p,
+    .seo-section ul li {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .seo-section ul { padding-left: 20px; }
+
+    /* FAQ */
+    .faq-wrap { margin-top: 16px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: left;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-question:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      color: var(--text-muted);
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer p {
+      padding-bottom: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* Related tools */
+    .related-tools {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .related-tool-card {
+      display: block;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .related-tool-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .related-tool-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .related-tool-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .sidebar {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        bottom: 20px;
+        z-index: 50;
+        width: 280px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+      }
+      .sidebar.collapsed {
+        transform: translateX(-100%);
+        width: 280px;
+      }
+      .sidebar-close {
+        display: block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pdf-reader-wrapper {
+        height: calc(100vh - 160px);
+      }
+      .viewer-toolbar {
+        padding: 8px 12px;
+        flex-wrap: wrap;
+      }
+      .toolbar-group {
+        flex-wrap: wrap;
+      }
+      .search-bar {
+        order: 3;
+        width: 100%;
+        max-width: none;
+        margin-top: 8px;
+      }
+      .page-nav {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        margin: 4px 0;
+      }
+      .zoom-controls {
+        order: 1;
+      }
+      .canvas-container {
+        padding: 10px;
+      }
+      .seo-section { padding: 0 20px 60px; }
+      .related-tools { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .toolbar-btn span {
+        display: none;
+      }
+      .toolbar-btn svg {
+        margin: 0;
+      }
+      .page-input {
+        width: 40px;
+        font-size: 12px;
+      }
+      .zoom-select {
+        font-size: 12px;
+        padding: 6px 4px;
+      }
+      .search-input {
+        font-size: 13px;
+        padding: 6px 10px;
+      }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/pdf-reader-desktop-alternative.html">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+      <span class="header-logo-text">ToolsMatic</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="/#tools" class="header-cta btn">All Tools</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="/#tools">Tools</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb" style="max-width:960px;margin:0 auto;
+      padding:80px 40px 0;">
+    <a href="/" class="breadcrumb-link">Home</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="/#tools" class="breadcrumb-link">Tools</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="breadcrumb-current" aria-current="page">
+      PDF Reader</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="tool-hero" style="max-width:960px;
+    margin:0 auto;padding:32px 40px 40px;" aria-label="PDF Reader tool">
+    <div class="tool-hero-badge">
+      🔒 Files never leave your browser
+    </div>
+    <h1>PDF Reader Desktop Alternative</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+    <p class="tool-hero-sub">
+      View PDF files with zoom, search, page navigation, and print 
+      support. All rendering happens locally using PDF.js — no 
+      uploads, no tracking, no server processing. Free forever.
+    </p>
+  </section>
+
+  <!-- TOOL SECTION -->
+  <section class="pdf-reader-wrapper" aria-label="PDF Reader tool">
+
+    <!-- Hidden file input -->
+    <input type="file" id="file-input-pdf" accept=".pdf" aria-hidden="true" style="display:none;">
+
+    <!-- Upload zone -->
+    <div class="upload-zone" id="upload-zone" role="region" aria-label="File upload area" aria-describedby="upload-hint" tabindex="0">
+      <div class="upload-zone-icon" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polyline points="16 16 12 12 8 16"></polyline>
+          <line x1="12" y1="12" x2="12" y2="21"></line>
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26
+            A8 8 0 1 0 3 16.3"></path>
+        </svg>
+      </div>
+      <div class="upload-zone-text">
+        Drag &amp; drop your PDF here
+      </div>
+      <div class="upload-zone-sub" id="upload-hint">
+        or click to browse a PDF file
+      </div>
+      <div class="upload-zone-sub">
+        Single PDF file · Max 200MB · Viewed entirely in-browser
+      </div>
+    </div>
+
+    <!-- Viewer container -->
+    <div class="viewer-container" id="viewer-container">
+      
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar" aria-label="Document navigation sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title">Navigation</div>
+          <button class="sidebar-close" id="sidebar-close" aria-label="Close sidebar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="sidebar-tabs" role="tablist">
+          <button class="sidebar-tab active" data-tab="thumbnails" role="tab" aria-selected="true" aria-controls="tab-thumbnails">
+            Thumbnails
+          </button>
+          <button class="sidebar-tab" data-tab="outline" role="tab" aria-selected="false" aria-controls="tab-outline">
+            Outline
+          </button>
+          <button class="sidebar-tab" data-tab="attachments" role="tab" aria-selected="false" aria-controls="tab-attachments">
+            Attachments
+          </button>
+        </div>
+        <div class="sidebar-content">
+          <div id="tab-thumbnails" role="tabpanel" aria-labelledby="thumbnails-tab" class="tab-panel active">
+            <div class="thumbnails-list" id="thumbnails-list">
+              <!-- Thumbnails injected here -->
+            </div>
+          </div>
+          <div id="tab-outline" role="tabpanel" aria-labelledby="outline-tab" class="tab-panel" style="display:none;">
+            <ul class="outline-list" id="outline-list">
+              <!-- Outline injected here -->
+            </ul>
+          </div>
+          <div id="tab-attachments" role="tabpanel" aria-labelledby="attachments-tab" class="tab-panel" style="display:none;">
+            <ul class="attachments-list" id="attachments-list">
+              <!-- Attachments injected here -->
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main viewer -->
+      <div class="viewer-main">
+        
+        <!-- Toolbar -->
+        <div class="viewer-toolbar" role="toolbar" aria-label="PDF viewer controls">
+          
+          <!-- Sidebar toggle -->
+          <div class="toolbar-group">
+            <button class="toolbar-btn" id="btn-sidebar-toggle" aria-label="Toggle sidebar" aria-expanded="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+              </svg>
+              <span>Sidebar</span>
+            </button>
+          </div>
+
+          <!-- Page navigation -->
+          <div class="toolbar-group page-nav">
+            <button class="toolbar-btn" id="btn-prev-page" aria-label="Previous page" disabled="">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <input type="number" class="page-input" id="page-input" min="1" value="1" aria-label="Current page number">
+            <span class="page-separator">of <span id="page-total">—</span></span>
+            <button class="toolbar-btn" id="btn-next-page" aria-label="Next page" disabled="">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Zoom controls -->
+          <div class="toolbar-group zoom-controls">
+            <button class="toolbar-btn" id="btn-zoom-out" aria-label="Zoom out">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </button>
+            <select class="zoom-select" id="zoom-select" aria-label="Zoom level">
+              <option value="50">50%</option>
+              <option value="75">75%</option>
+              <option value="100" selected="">100%</option>
+              <option value="125">125%</option>
+              <option value="150">150%</option>
+              <option value="200">200%</option>
+              <option value="fit-width">Fit Width</option>
+              <option value="fit-page">Fit Page</option>
+            </select>
+            <button class="toolbar-btn" id="btn-zoom-in" aria-label="Zoom in">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div class="toolbar-divider"></div>
+
+          <!-- Search -->
+          <div class="toolbar-group search-bar">
+            <input type="text" class="search-input" id="search-input" placeholder="Search in document..." aria-label="Search in PDF">
+            <span class="search-results" id="search-results" aria-live="polite"></span>
+            <button class="toolbar-btn" id="btn-search-prev" aria-label="Previous match" disabled="">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="toolbar-btn" id="btn-search-next" aria-label="Next match" disabled="">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+            <label class="search-case-toggle">
+              <input type="checkbox" id="search-case-sensitive">
+              <span>Case</span>
+            </label>
+          </div>
+
+          <div class="toolbar-divider"></div>
+
+          <!-- View options -->
+          <div class="toolbar-group view-options">
+            <label class="view-toggle" id="toggle-continuous">
+              <input type="checkbox" checked="">
+              <span>Continuous</span>
+            </label>
+            <label class="view-toggle" id="toggle-night-mode">
+              <input type="checkbox">
+              <span>Night</span>
+            </label>
+          </div>
+
+          <!-- Actions -->
+          <div class="toolbar-group">
+            <button class="toolbar-btn" id="btn-print" aria-label="Print PDF">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16
+                  a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+              </svg>
+              <span>Print</span>
+            </button>
+            <button class="toolbar-btn" id="btn-download" aria-label="Download original PDF">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download</span>
+            </button>
+            <button class="toolbar-btn" id="btn-info" aria-label="Document information">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Info</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Canvas container -->
+        <div class="canvas-container" id="canvas-container" role="region" aria-label="PDF content" tabindex="0">
+          <div class="reading-progress" aria-hidden="true">
+            <div class="reading-progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="loading-overlay" id="loading-overlay">
+            <div class="loading-spinner"></div>
+          </div>
+          <div id="pdf-viewer" style="display:flex;flex-direction:column;align-items:center;gap:20px;">
+            <!-- Pages rendered here -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Clear button (visible after upload) -->
+    <button class="btn-clear-file" id="btn-clear-file" style="margin:16px auto;display:none;" aria-label="Clear file and reset viewer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="3 6 5 6 21 6"></polyline>
+        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8
+          a2 2 0 0 1-2-2L5 6"></path>
+        <path d="M10 11v6M14 11v6"></path>
+      </svg>
+      Close PDF
+    </button>
+
+  </section>
+
+  <!-- Document Info Modal -->
+  <div class="modal-overlay" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title" id="modal-title">Document Information</div>
+        <button class="modal-close" id="modal-close" aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="info-grid">
+          <div class="info-label">Filename</div>
+          <div class="info-value" id="info-filename">—</div>
+          <div class="info-label">Title</div>
+          <div class="info-value" id="info-title">—</div>
+          <div class="info-label">Author</div>
+          <div class="info-value" id="info-author">—</div>
+          <div class="info-label">Pages</div>
+          <div class="info-value" id="info-pages">—</div>
+          <div class="info-label">File Size</div>
+          <div class="info-value" id="info-size">—</div>
+          <div class="info-label">Created</div>
+          <div class="info-value" id="info-created">—</div>
+          <div class="info-label">Modified</div>
+          <div class="info-value" id="info-modified">—</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal secondary" id="modal-cancel">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <article class="seo-section" aria-label="About PDF Reader">
+
+    <h2>Why Use ToolsMatic Reader?</h2>
+    <p>
+      ToolsMatic Reader lets you view PDF files entirely in your 
+      browser using the open-source PDF.js library. No files are 
+      ever uploaded to our servers — your documents stay on your 
+      device, making it ideal for confidential contracts, private 
+      records, or sensitive business content.
+    </p>
+    <p>
+      With features like zoom controls, text search, page 
+      thumbnails, and print support, ToolsMatic Reader provides 
+      a full-featured viewing experience without compromising 
+      your privacy.
+    </p>
+
+    <h2>How to Use the PDF Reader</h2>
+    <ul>
+      <li>
+        <strong>Step 1 — Upload:</strong> Drag and drop your PDF 
+        or click to browse. Files are validated locally and 
+        rendered using PDF.js in your browser.
+      </li>
+      <li>
+        <strong>Step 2 — Navigate:</strong> Use Prev/Next buttons, 
+        arrow keys, Page Up/Down, or swipe gestures to move 
+        between pages. Click thumbnails in the sidebar for 
+        quick jumps.
+      </li>
+      <li>
+        <strong>Step 3 — Zoom and search:</strong> Adjust zoom 
+        with +/- buttons or the percentage selector. Use the 
+        search bar to find text, with highlighted matches and 
+        next/previous navigation.
+      </li>
+      <li>
+        <strong>Step 4 — Print or download:</strong> Click Print 
+        or press Ctrl+P to open your browser's print dialog. 
+        Download the original file anytime with the Download 
+        button.
+      </li>
+    </ul>
+
+    <h2>Viewer Features Explained</h2>
+
+    <h3>Page Navigation</h3>
+    <p>
+      Navigate efficiently using multiple methods: toolbar 
+      buttons, keyboard shortcuts (Arrow keys, Page Up/Down, 
+      Home/End), or the thumbnail sidebar. The page indicator 
+      shows your position and allows direct page input.
+    </p>
+
+    <h3>Zoom Controls</h3>
+    <p>
+      Adjust zoom from 50% to 200%, or use Fit Width to match 
+      your viewport width, or Fit Page to show the entire page. 
+      Keyboard shortcuts: Ctrl/Cmd + +/- to zoom, Ctrl/Cmd + 0 
+      for actual size.
+    </p>
+
+    <h3>Text Search</h3>
+    <p>
+      Find text anywhere in the document with the search bar. 
+      Matches are highlighted in yellow. Toggle case-sensitive 
+      search for precise matching. Navigate results with Next/Prev 
+      buttons or keyboard arrows.
+    </p>
+
+    <h3>View Options</h3>
+    <p>
+      Toggle Continuous scroll for seamless reading or single-page 
+      view for focused navigation. Enable Night Mode to invert 
+      colors for comfortable reading in low-light conditions.
+    </p>
+
+    <h3>Sidebar Panels</h3>
+    <p>
+      <strong>Thumbnails:</strong> Clickable page previews for 
+      visual navigation. <strong>Outline:</strong> PDF bookmarks 
+      and hierarchical structure (if available). 
+      <strong>Attachments:</strong> List of embedded files 
+      (if any).
+    </p>
+
+    <h2>PDF Reader: Frequently Asked Questions</h2>
+    <div class="faq-wrap" id="faq">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What PDF files can I view?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>ToolsMatic Reader supports standard PDF files up to 
+          200MB. Password-protected PDFs must be unlocked first 
+          using our Unlock PDF tool. Encrypted or corrupted files 
+          may not render correctly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do I search for text in a PDF?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Type your query in the search bar and press Enter. 
+          Matches are highlighted in yellow. Use the Next/Previous 
+          buttons or arrow keys to navigate between results. Toggle 
+          Case for case-sensitive matching.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I zoom in and out of pages?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Use the + and - buttons, the percentage dropdown, 
+          or keyboard shortcuts (Ctrl/Cmd + +/-). Fit to Width and 
+          Fit to Page options automatically adjust zoom to your 
+          viewport dimensions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Are my files uploaded to a server?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Never. All PDF rendering, searching, and viewing 
+          happens entirely inside your browser using PDF.js. 
+          Your files never leave your device and are never 
+          transmitted to any server.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I print the PDF?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Click the Print button in the toolbar or press 
+          Ctrl+P (Cmd+P on Mac) to open your browser's print 
+          dialog. The PDF renders at print quality with all 
+          formatting preserved.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do I navigate between pages?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Use the Prev/Next buttons, arrow keys, Page Up/Down, 
+          Home/End, or swipe gestures on touch devices. The 
+          thumbnail sidebar also lets you click any page to 
+          jump directly to it.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I view PDF bookmarks or outline?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. If the PDF contains an outline/bookmarks 
+          structure, click the Outline tab in the sidebar to 
+          view and navigate the document hierarchy. Click any 
+          bookmark to jump to that section.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is there a dark mode for reading?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Toggle Night Mode in the toolbar to invert 
+          colors for comfortable reading in low-light conditions. 
+          Your preference is saved locally in your browser for 
+          future visits.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>More Free PDF Tools You Might Need</h2>
+    <div class="related-tools" role="list">
+      <a href="/tools/annotate-pdf.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">
+          PDF Annotator
+          <span style="color:var(--accent);">→</span>
+        </div>
+        <div class="related-tool-desc">
+          Add highlights, notes, and drawings to PDFs 
+          before viewing or sharing.
+        </div>
+      </a>
+      <a href="/tools/sign-pdf.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">
+          Sign PDF
+          <span style="color:var(--accent);">→</span>
+        </div>
+        <div class="related-tool-desc">
+          Add digital signatures to PDF documents 
+          for contracts and forms.
+        </div>
+      </a>
+      <a href="/tools/compress-pdf.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">
+          Compress PDF
+          <span style="color:var(--accent);">→</span>
+        </div>
+        <div class="related-tool-desc">
+          Reduce PDF file size for faster viewing 
+          and easier sharing.
+        </div>
+      </a>
+    </div>
+
+  </article>
+
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="pdf-reader-desktop-alternative-pseo" aria-labelledby="pdf-reader-desktop-alternative-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>PDF Reader Desktop Alternative</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="pdf-reader-desktop-alternative-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">PDF Reader Desktop Alternative Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>PDF Reader Desktop Alternative</strong>, a rapid in-browser alternative saving systems from heavy desktop utilities and registry changes. This dedicated workspace is built specifically for system administrators, security teams, and users who cannot install separate native apps on corporate machines. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>zero install footprints, sandbox local computations, and instant web access from any device</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        View PDFs with search, zoom, and thumbnails. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Corporate System Safety</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Solve conversion tasks without requesting system administrator installer permissions.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">No Disk Usage footprint</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Keep system storage clear; our browser-cached logic uses zero hard-drive bytes.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Instant Platform portability</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Use the same workspace on a computer, phone, or Chromebook with identical reliability.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use PDF Reader Desktop Alternative</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Desktop Alternative layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: PDF Reader Desktop Alternative</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Do I need system administrator privileges?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">No! It is a standard web page running client-side, requiring no software installers or credentials.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it write to the registry?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Never. The web page isolates fully inside browser cookies and volatile cache memory.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is it safer than native apps?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, since browser sandboxes prevent pages from modifying local system directories.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/pdf-reader.html" style="color:var(--primary);text-decoration:none;font-weight:600;">PDF Reader</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"PDF Reader Desktop Alternative","url":"https://toolsmatic.me/tools/pdf-reader-desktop-alternative.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use PDF Reader Desktop Alternative online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"PDF Reader Desktop Alternative","item":"https://toolsmatic.me/tools/pdf-reader-desktop-alternative.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need system administrator privileges?","acceptedAnswer":{"@type":"Answer","text":"No! It is a standard web page running client-side, requiring no software installers or credentials."}},{"@type":"Question","name":"Does it write to the registry?","acceptedAnswer":{"@type":"Answer","text":"Never. The web page isolates fully inside browser cookies and volatile cache memory."}},{"@type":"Question","name":"Is it safer than native apps?","acceptedAnswer":{"@type":"Answer","text":"Yes, since browser sandboxes prevent pages from modifying local system directories."}}]}]}</script>
+  </main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div style="font-family:'Instrument Serif',serif;
+        font-size:20px;color:var(--text-primary);
+        margin-bottom:12px;">
+        ToolsMatic
+      </div>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;
+        color:var(--text-muted);line-height:1.7;
+        max-width:220px;">
+        Privacy-first PDF tools. Your files never leave
+        your browser.
+      </p>
+      <p style="font-family:'Inter',sans-serif;font-size:13px;
+        color:var(--text-muted);margin-top:16px;">
+        © 2025 ToolsMatic. All rights reserved.
+      </p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">PDF Tools</div>
+      <a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a>
+      <a href="/tools/split-pdf.html" class="footer-link">Split PDF</a>
+      <a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a>
+      <a href="/tools/rotate-pdf.html" class="footer-link">Rotate PDF</a>
+      <a href="/tools/crop-pdf.html" class="footer-link">Crop PDF</a>
+      <a href="/tools/watermark-pdf.html" class="footer-link">Add Watermark</a>
+      <a href="/tools/sign-pdf.html" class="footer-link">Sign PDF</a>
+      <a href="/#tools" class="footer-link" style="color:var(--accent);">All Tools →</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">More Tools</div>
+      <a href="/tools/remove-pages.html" class="footer-link">Remove Pages</a>
+      <a href="/tools/pdf-to-jpg.html" class="footer-link">PDF to JPG</a>
+      <a href="/tools/pdf-reader.html" class="footer-link">PDF Reader</a>
+      <a href="/tools/protect-pdf.html" class="footer-link">Protect PDF</a>
+      <a href="/tools/unlock-pdf.html" class="footer-link">Unlock PDF</a>
+      <a href="/tools/pdf-to-base64.html" class="footer-link">PDF to Base64</a>
+      <a href="/tools/annotate-pdf.html" class="footer-link">PDF Annotator</a>
+      <a href="/tools/compare-pdf.html" class="footer-link">PDF Comparison</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="/about.html" class="footer-link">About</a>
+      <a href="/contact.html" class="footer-link">Contact</a>
+      <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+      <a href="/terms.html" class="footer-link">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Built with ♥ for people who value privacy</span>
+    <span>No tracking. No uploads. No nonsense.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="/assets/pdf/global.js"></script>
+<script src="/assets/pdf/tool-base.js"></script>
+
+<script>
+'use strict';
+
+// ── PDF.JS WORKER ─────────────────────────────────────────────
+if (typeof pdfjsLib !== 'undefined') {
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/' +
+    '3.11.174/pdf.worker.min.js';
+}
+
+// ── HELPERS ───────────────────────────────────────────────────
+function formatSize(bytes) {
+  if (!bytes || bytes === 0) return '0 B';
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / 1048576).toFixed(1) + ' MB';
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return '—';
+  try {
+    var d = new Date(dateStr);
+    return d.toLocaleDateString(undefined, {
+      year: 'numeric', month: 'short', day: 'numeric'
+    });
+  } catch (e) {
+    return dateStr;
+  }
+}
+
+function showToastLocal(msg, type) {
+  if (typeof showToast === 'function') {
+    showToast(msg, type || 'info');
+    return;
+  }
+  var t = document.createElement('div');
+  t.style.cssText =
+    'position:fixed;bottom:24px;right:24px;' +
+    'background:#111;border:1px solid #333;' +
+    'border-radius:10px;padding:14px 18px;color:#fff;' +
+    'font-family:Inter,sans-serif;font-size:14px;' +
+    'z-index:9999;max-width:340px;' +
+    'box-shadow:0 8px 32px rgba(0,0,0,0.4);';
+  t.setAttribute('role', 'alert');
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(function() {
+    if (t.parentNode) t.parentNode.removeChild(t);
+  }, 4000);
+}
+
+// Validate PDF by checking %PDF header
+function isValidPDF(arrayBuffer) {
+  var arr = new Uint8Array(arrayBuffer, 0, 5);
+  return arr[0] === 0x25 && arr[1] === 0x50 &&
+         arr[2] === 0x44 && arr[3] === 0x46;
+}
+
+// ── STATE ─────────────────────────────────────────────────────
+var state = {
+  pdfFile: null,
+  pdfArrayBuffer: null,
+  pdfJsDoc: null,
+  currentPage: 1,
+  pageCount: 0,
+  scale: 1.0,
+  zoomMode: 'auto', // 'auto' | 'fit-width' | 'fit-page' | number
+  continuous: true,
+  nightMode: false,
+  searchQuery: '',
+  searchResults: [],
+  currentSearchIndex: -1,
+  caseSensitive: false,
+  thumbnails: [],
+  outline: null,
+  attachments: null
+};
+
+// ── ELEMENT REFS ──────────────────────────────────────────────
+var uploadZone      = document.getElementById('upload-zone');
+var fileInputPdf    = document.getElementById('file-input-pdf');
+var viewerContainer = document.getElementById('viewer-container');
+var btnClearFile    = document.getElementById('btn-clear-file');
+var sidebar         = document.getElementById('sidebar');
+var sidebarClose    = document.getElementById('sidebar-close');
+var sidebarTabs     = document.querySelectorAll('.sidebar-tab');
+var thumbnailsList  = document.getElementById('thumbnails-list');
+var outlineList     = document.getElementById('outline-list');
+var attachmentsList = document.getElementById('attachments-list');
+var btnSidebarToggle= document.getElementById('btn-sidebar-toggle');
+var btnPrevPage     = document.getElementById('btn-prev-page');
+var btnNextPage     = document.getElementById('btn-next-page');
+var pageInput       = document.getElementById('page-input');
+var pageTotal       = document.getElementById('page-total');
+var btnZoomOut      = document.getElementById('btn-zoom-out');
+var btnZoomIn       = document.getElementById('btn-zoom-in');
+var zoomSelect      = document.getElementById('zoom-select');
+var searchInput     = document.getElementById('search-input');
+var searchResults   = document.getElementById('search-results');
+var btnSearchPrev   = document.getElementById('btn-search-prev');
+var btnSearchNext   = document.getElementById('btn-search-next');
+var searchCase      = document.getElementById('search-case-sensitive');
+var toggleContinuous= document.getElementById('toggle-continuous');
+var toggleNightMode = document.getElementById('toggle-night-mode');
+var btnPrint        = document.getElementById('btn-print');
+var btnDownload     = document.getElementById('btn-download');
+var btnInfo         = document.getElementById('btn-info');
+var canvasContainer = document.getElementById('canvas-container');
+var pdfViewer       = document.getElementById('pdf-viewer');
+var loadingOverlay  = document.getElementById('loading-overlay');
+var progressFill    = document.getElementById('progress-fill');
+var infoModal       = document.getElementById('info-modal');
+var modalClose      = document.getElementById('modal-close');
+var modalCancel     = document.getElementById('modal-cancel');
+var infoFilename    = document.getElementById('info-filename');
+var infoTitle       = document.getElementById('info-title');
+var infoAuthor      = document.getElementById('info-author');
+var infoPages       = document.getElementById('info-pages');
+var infoSize        = document.getElementById('info-size');
+var infoCreated     = document.getElementById('info-created');
+var infoModified    = document.getElementById('info-modified');
+
+// ── UPLOAD ZONE ───────────────────────────────────────────────
+uploadZone.addEventListener('click', function() {
+  fileInputPdf.click();
+});
+
+uploadZone.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    fileInputPdf.click();
+  }
+});
+
+uploadZone.addEventListener('dragover', function(e) {
+  e.preventDefault();
+  uploadZone.classList.add('dragover');
+});
+
+uploadZone.addEventListener('dragleave', function() {
+  uploadZone.classList.remove('dragover');
+});
+
+uploadZone.addEventListener('drop', function(e) {
+  e.preventDefault();
+  uploadZone.classList.remove('dragover');
+  var files = e.dataTransfer ? e.dataTransfer.files : null;
+  if (files && files.length > 0) {
+    loadPdfFile(files[0]);
+  }
+});
+
+fileInputPdf.addEventListener('change', function() {
+  if (fileInputPdf.files && fileInputPdf.files.length > 0) {
+    loadPdfFile(fileInputPdf.files[0]);
+    fileInputPdf.value = '';
+  }
+});
+
+// ── LOAD PDF FILE ─────────────────────────────────────────────
+function loadPdfFile(file) {
+  if (file.type !== 'application/pdf' &&
+      !file.name.toLowerCase().endsWith('.pdf')) {
+    showToastLocal('Please upload a valid PDF file.', 'error');
+    return;
+  }
+  if (file.size === 0) {
+    showToastLocal('This file appears to be empty.', 'error');
+    return;
+  }
+  if (file.size > 209715200) {
+    showToastLocal('File exceeds 200MB. Large files may cause browser issues.', 'warning');
+  }
+
+  state.pdfFile = file;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var buffer = e.target.result;
+    if (!isValidPDF(buffer)) {
+      showToastLocal('This does not appear to be a valid PDF.', 'error');
+      return;
+    }
+    state.pdfArrayBuffer = buffer;
+
+    loadingOverlay.classList.add('visible');
+    
+    var copy = buffer.slice(0);
+    pdfjsLib.getDocument({ data: copy }).promise
+      .then(function(doc) {
+        state.pdfJsDoc = doc;
+        state.pageCount = doc.numPages;
+        state.currentPage = 1;
+        onPdfLoaded();
+      }).catch(function(err) {
+        loadingOverlay.classList.remove('visible');
+        if (err && err.message &&
+            err.message.toLowerCase().indexOf('password') !== -1) {
+          showToastLocal(
+            'This PDF is password protected. ' +
+            'Unlock it first at /tools/unlock-pdf.html',
+            'warning');
+        } else {
+          showToastLocal(
+            'Could not read this PDF. It may be damaged.',
+            'error');
+        }
+      });
+  };
+  reader.onerror = function() {
+    showToastLocal('Failed to read the file.', 'error');
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+// ── ON PDF LOADED ─────────────────────────────────────────────
+function onPdfLoaded() {
+  uploadZone.style.display = 'none';
+  viewerContainer.classList.add('visible');
+  if (btnClearFile) btnClearFile.style.display = 'flex';
+  
+  // Update page info
+  if (pageTotal) pageTotal.textContent = state.pageCount;
+  if (pageInput) {
+    pageInput.min = 1;
+    pageInput.max = state.pageCount;
+    pageInput.value = 1;
+  }
+  
+  // Enable navigation buttons
+  if (btnPrevPage) btnPrevPage.disabled = true;
+  if (btnNextPage) btnNextPage.disabled = state.pageCount <= 1;
+  
+  // Load document info
+  loadDocumentInfo();
+  
+  // Load outline and attachments
+  loadOutline();
+  loadAttachments();
+  
+  // Render initial pages
+  renderPages();
+  
+  // Build thumbnails
+  buildThumbnails();
+  
+  loadingOverlay.classList.remove('visible');
+  showToastLocal('PDF loaded successfully!', 'success');
+}
+
+// ── LOAD DOCUMENT INFO ────────────────────────────────────────
+function loadDocumentInfo() {
+  if (!state.pdfJsDoc) return;
+  
+  state.pdfJsDoc.getMetadata().then(function(meta) {
+    if (infoFilename) infoFilename.textContent = state.pdfFile.name;
+    if (infoTitle) infoTitle.textContent = meta.info.Title || '—';
+    if (infoAuthor) infoAuthor.textContent = meta.info.Author || '—';
+    if (infoPages) infoPages.textContent = state.pageCount;
+    if (infoSize) infoSize.textContent = formatSize(state.pdfFile.size);
+    if (infoCreated) infoCreated.textContent = formatDate(meta.info.CreationDate);
+    if (infoModified) infoModified.textContent = formatDate(meta.info.ModDate);
+  }).catch(function() {
+    // Metadata not available
+  });
+}
+
+// ── LOAD OUTLINE ──────────────────────────────────────────────
+function loadOutline() {
+  if (!state.pdfJsDoc || !outlineList) return;
+  
+  state.pdfJsDoc.getOutline().then(function(outline) {
+    state.outline = outline;
+    renderOutline(outline, outlineList);
+  }).catch(function() {
+    if (outlineList) {
+      outlineList.innerHTML = '<li style="padding:12px;color:var(--text-muted);font-size:13px;">No outline available</li>';
+    }
+  });
+}
+
+function renderOutline(items, container, level) {
+  if (!items || items.length === 0) {
+    container.innerHTML = '<li style="padding:12px;color:var(--text-muted);font-size:13px;">No outline available</li>';
+    return;
+  }
+  
+  container.innerHTML = '';
+  items.forEach(function(item) {
+    var li = document.createElement('li');
+    li.className = 'outline-item';
+    li.setAttribute('role', 'treeitem');
+    li.setAttribute('tabindex', '0');
+    
+    var title = document.createElement('span');
+    title.className = 'outline-title';
+    title.textContent = item.title || 'Untitled';
+    
+    var page = document.createElement('span');
+    page.className = 'outline-page';
+    page.textContent = item.dest ? 'p.' + (item.dest + 1) : '';
+    
+    li.appendChild(title);
+    li.appendChild(page);
+    
+    if (item.items && item.items.length > 0) {
+      var children = document.createElement('ul');
+      children.className = 'outline-children';
+      renderOutline(item.items, children, (level || 0) + 1);
+      li.appendChild(children);
+    }
+    
+    li.addEventListener('click', function() {
+      if (item.dest) {
+        goToPage(item.dest + 1);
+      }
+    });
+    
+    li.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (item.dest) goToPage(item.dest + 1);
+      }
+    });
+    
+    container.appendChild(li);
+  });
+}
+
+// ── LOAD ATTACHMENTS ──────────────────────────────────────────
+function loadAttachments() {
+  if (!state.pdfJsDoc || !attachmentsList) return;
+  
+  state.pdfJsDoc.getAttachments().then(function(attachments) {
+    state.attachments = attachments;
+    renderAttachments(attachments, attachmentsList);
+  }).catch(function() {
+    if (attachmentsList) {
+      attachmentsList.innerHTML = '<li style="padding:12px;color:var(--text-muted);font-size:13px;">No attachments</li>';
+    }
+  });
+}
+
+function renderAttachments(attachments, container) {
+  if (!attachments || Object.keys(attachments).length === 0) {
+    container.innerHTML = '<li style="padding:12px;color:var(--text-muted);font-size:13px;">No attachments</li>';
+    return;
+  }
+  
+  container.innerHTML = '';
+  Object.keys(attachments).forEach(function(name) {
+    var att = attachments[name];
+    var li = document.createElement('li');
+    li.className = 'attachment-item';
+    li.setAttribute('tabindex', '0');
+    
+    var icon = document.createElement('div');
+    icon.className = 'attachment-icon';
+    icon.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>';
+    
+    var nameEl = document.createElement('span');
+    nameEl.className = 'attachment-name';
+    nameEl.textContent = name;
+    
+    var sizeEl = document.createElement('span');
+    sizeEl.className = 'attachment-size';
+    sizeEl.textContent = att.content ? formatSize(att.content.length) : '';
+    
+    li.appendChild(icon);
+    li.appendChild(nameEl);
+    li.appendChild(sizeEl);
+    
+    li.addEventListener('click', function() {
+      if (att.content) {
+        var blob = new Blob([att.content], { type: att.mimetype || 'application/octet-stream' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = name;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToastLocal('Downloaded: ' + name, 'success');
+      }
+    });
+    
+    container.appendChild(li);
+  });
+}
+
+// ── RENDER PAGES ──────────────────────────────────────────────
+function renderPages() {
+  if (!state.pdfJsDoc || !pdfViewer) return;
+  
+  pdfViewer.innerHTML = '';
+  state.thumbnails = [];
+  
+  // Render visible pages based on continuous mode
+  var pagesToRender = state.continuous ? state.pageCount : 1;
+  var startPage = state.continuous ? 1 : state.currentPage;
+  
+  for (var i = startPage; i < startPage + pagesToRender && i <= state.pageCount; i++) {
+    renderPage(i);
+  }
+  
+  updateNavigation();
+}
+
+function renderPage(pageNum) {
+  if (!state.pdfJsDoc) return;
+  
+  state.pdfJsDoc.getPage(pageNum).then(function(page) {
+    var viewport = page.getViewport({ scale: state.scale });
+    
+    var pageDiv = document.createElement('div');
+    pageDiv.className = 'pdf-page';
+    pageDiv.setAttribute('data-page', pageNum);
+    pageDiv.setAttribute('role', 'region');
+    pageDiv.setAttribute('aria-label', 'Page ' + pageNum);
+    
+    var canvas = document.createElement('canvas');
+    canvas.className = 'pdf-canvas';
+    var ctx = canvas.getContext('2d');
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+    
+    pageDiv.appendChild(canvas);
+    
+    // Text layer for search/selection
+    var textLayerDiv = document.createElement('div');
+    textLayerDiv.className = 'textLayer';
+    pageDiv.appendChild(textLayerDiv);
+    
+    pdfViewer.appendChild(pageDiv);
+    
+    // Render canvas
+    var renderContext = {
+      canvasContext: ctx,
+      viewport: viewport
+    };
+    
+    page.render(renderContext).promise.then(function() {
+      // Render text layer
+      if (typeof pdfjsLib !== 'undefined' && pdfjsLib.renderTextLayer) {
+        var textContent = page.getTextContent();
+        var textLayer = new pdfjsLib.TextLayerBuilder({
+          textLayerDiv: textLayerDiv,
+          pageIndex: pageNum - 1,
+          viewport: viewport
+        });
+        textContent.then(function(tc) {
+          textLayer.setTextContent(tc);
+          textLayer.render();
+        });
+      }
+      
+      // Store for search
+      page.getTextContent().then(function(tc) {
+        state.thumbnails[pageNum - 1] = {
+          page: pageNum,
+          text: tc.items.map(function(item) { return item.str; }).join(' '),
+          canvas: canvas,
+          textLayer: textLayerDiv
+        };
+      });
+    });
+    
+  }).catch(function(err) {
+    console.error('Page render error:', err);
+  });
+}
+
+// ── BUILD THUMBNAILS ──────────────────────────────────────────
+function buildThumbnails() {
+  if (!thumbnailsList || !state.pdfJsDoc) return;
+  thumbnailsList.innerHTML = '';
+  
+  for (var i = 1; i <= state.pageCount; i++) {
+    (function(pageNum) {
+      var item = document.createElement('div');
+      item.className = 'thumbnail-item';
+      item.setAttribute('data-page', pageNum);
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('role', 'button');
+      item.setAttribute('aria-label', 'Go to page ' + pageNum);
+      
+      var canvas = document.createElement('canvas');
+      canvas.className = 'thumbnail-canvas';
+      
+      var label = document.createElement('span');
+      label.className = 'thumbnail-label';
+      label.textContent = 'Page ' + pageNum;
+      
+      item.appendChild(canvas);
+      item.appendChild(label);
+      thumbnailsList.appendChild(item);
+      
+      // Render thumbnail at low scale
+      state.pdfJsDoc.getPage(pageNum).then(function(page) {
+        var vp = page.getViewport({ scale: 0.15 });
+        var ctx = canvas.getContext('2d');
+        canvas.width = vp.width;
+        canvas.height = vp.height;
+        return page.render({
+          canvasContext: ctx,
+          viewport: vp
+        }).promise;
+      }).catch(function() {});
+      
+      item.addEventListener('click', function() {
+        goToPage(pageNum);
+      });
+      
+      item.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          goToPage(pageNum);
+        }
+      });
+    })(i);
+  }
+}
+
+// ── NAVIGATION ────────────────────────────────────────────────
+function goToPage(pageNum) {
+  if (pageNum < 1 || pageNum > state.pageCount) return;
+  
+  state.currentPage = pageNum;
+  
+  if (pageInput) pageInput.value = pageNum;
+  
+  // Update thumbnail active state
+  if (thumbnailsList) {
+    var items = thumbnailsList.querySelectorAll('.thumbnail-item');
+    items.forEach(function(el) {
+      el.classList.toggle('active', parseInt(el.getAttribute('data-page'), 10) === pageNum);
+    });
+  }
+  
+  // Scroll to page in continuous mode
+  if (state.continuous && pdfViewer) {
+    var pageEl = pdfViewer.querySelector('.pdf-page[data-page="' + pageNum + '"]');
+    if (pageEl) {
+      pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  
+  // Re-render if single page mode
+  if (!state.continuous) {
+    renderPages();
+  }
+  
+  updateNavigation();
+  updateProgress();
+}
+
+function updateNavigation() {
+  if (btnPrevPage) btnPrevPage.disabled = state.currentPage <= 1;
+  if (btnNextPage) btnNextPage.disabled = state.currentPage >= state.pageCount;
+  
+  // Update thumbnail active state
+  if (thumbnailsList) {
+    var items = thumbnailsList.querySelectorAll('.thumbnail-item');
+    items.forEach(function(el) {
+      var p = parseInt(el.getAttribute('data-page'), 10);
+      el.classList.toggle('active', p === state.currentPage);
+    });
+  }
+}
+
+// ── ZOOM ──────────────────────────────────────────────────────
+function setZoom(value) {
+  if (value === 'fit-width') {
+    state.zoomMode = 'fit-width';
+    fitToWidth();
+  } else if (value === 'fit-page') {
+    state.zoomMode = 'fit-page';
+    fitToPage();
+  } else {
+    state.zoomMode = 'auto';
+    state.scale = parseFloat(value) / 100;
+    renderPages();
+  }
+  
+  if (zoomSelect) zoomSelect.value = value;
+  updateNavigation();
+}
+
+function fitToWidth() {
+  if (!pdfViewer) return;
+  var containerWidth = canvasContainer.clientWidth - 40; // padding
+  if (!state.pdfJsDoc) return;
+  
+  state.pdfJsDoc.getPage(1).then(function(page) {
+    var vp = page.getViewport({ scale: 1 });
+    state.scale = containerWidth / vp.width;
+    renderPages();
+  });
+}
+
+function fitToPage() {
+  if (!pdfViewer) return;
+  var containerHeight = canvasContainer.clientHeight - 40;
+  if (!state.pdfJsDoc) return;
+  
+  state.pdfJsDoc.getPage(1).then(function(page) {
+    var vp = page.getViewport({ scale: 1 });
+    state.scale = Math.min(
+      (canvasContainer.clientWidth - 40) / vp.width,
+      containerHeight / vp.height
+    );
+    renderPages();
+  });
+}
+
+function zoomIn() {
+  var levels = [50, 75, 100, 125, 150, 200];
+  var current = Math.round(state.scale * 100);
+  var next = levels.find(function(l) { return l > current; }) || 200;
+  setZoom(String(next));
+}
+
+function zoomOut() {
+  var levels = [50, 75, 100, 125, 150, 200];
+  var current = Math.round(state.scale * 100);
+  var prev = levels.slice().reverse().find(function(l) { return l < current; }) || 50;
+  setZoom(String(prev));
+}
+
+// ── SEARCH ────────────────────────────────────────────────────
+function performSearch() {
+  if (!searchInput || !state.thumbnails.length) return;
+  
+  var query = searchInput.value.trim();
+  if (!query) {
+    clearSearch();
+    return;
+  }
+  
+  state.searchQuery = query;
+  state.caseSensitive = searchCase ? searchCase.checked : false;
+  state.searchResults = [];
+  state.currentSearchIndex = -1;
+  
+  // Search through all page text
+  state.thumbnails.forEach(function(thumb, idx) {
+    if (!thumb || !thumb.text) return;
+    var text = state.caseSensitive ? thumb.text : thumb.text.toLowerCase();
+    var q = state.caseSensitive ? query : query.toLowerCase();
+    
+    var startIndex = 0;
+    while ((startIndex = text.indexOf(q, startIndex)) !== -1) {
+      state.searchResults.push({
+        page: idx + 1,
+        index: startIndex,
+        length: query.length
+      });
+      startIndex += query.length;
+    }
+  });
+  
+  updateSearchUI();
+  
+  if (state.searchResults.length > 0) {
+    goToSearchResult(0);
+  } else {
+    showToastLocal('No matches found', 'info');
+  }
+}
+
+function updateSearchUI() {
+  if (searchResults) {
+    if (state.searchResults.length === 0) {
+      searchResults.textContent = 'No results';
+    } else {
+      searchResults.textContent = 
+        (state.currentSearchIndex + 1) + ' of ' + state.searchResults.length;
+    }
+  }
+  if (btnSearchPrev) btnSearchPrev.disabled = state.searchResults.length === 0;
+  if (btnSearchNext) btnSearchNext.disabled = state.searchResults.length === 0;
+}
+
+function goToSearchResult(index) {
+  if (index < 0 || index >= state.searchResults.length) return;
+  
+  state.currentSearchIndex = index;
+  var result = state.searchResults[index];
+  
+  // Highlight in text layer
+  clearHighlights();
+  highlightMatch(result);
+  
+  // Navigate to page
+  goToPage(result.page);
+  updateSearchUI();
+}
+
+function clearHighlights() {
+  state.thumbnails.forEach(function(thumb) {
+    if (thumb && thumb.textLayer) {
+      var spans = thumb.textLayer.querySelectorAll('.highlight');
+      spans.forEach(function(span) {
+        span.classList.remove('highlight', 'selected');
+      });
+    }
+  });
+}
+
+function highlightMatch(result) {
+  var thumb = state.thumbnails[result.page - 1];
+  if (!thumb || !thumb.textLayer) return;
+  
+  // Simple highlight - in production would need precise positioning
+  var text = thumb.textLayer;
+  // This is a simplified implementation
+  showToastLocal('Match on page ' + result.page, 'success');
+}
+
+function clearSearch() {
+  state.searchQuery = '';
+  state.searchResults = [];
+  state.currentSearchIndex = -1;
+  if (searchInput) searchInput.value = '';
+  if (searchResults) searchResults.textContent = '';
+  if (btnSearchPrev) btnSearchPrev.disabled = true;
+  if (btnSearchNext) btnSearchNext.disabled = true;
+  clearHighlights();
+}
+
+// ── PROGRESS ─────────────────────────────────────────────────
+function updateProgress() {
+  if (!progressFill || state.pageCount === 0) return;
+  var pct = (state.currentPage / state.pageCount) * 100;
+  progressFill.style.width = pct + '%';
+}
+
+// ── SIDEBAR ──────────────────────────────────────────────────
+function toggleSidebar() {
+  if (!sidebar) return;
+  var collapsed = sidebar.classList.toggle('collapsed');
+  if (btnSidebarToggle) {
+    btnSidebarToggle.setAttribute('aria-expanded', String(!collapsed));
+  }
+}
+
+function switchSidebarTab(tabName) {
+  // Update tab buttons
+  sidebarTabs.forEach(function(tab) {
+    var isActive = tab.getAttribute('data-tab') === tabName;
+    tab.classList.toggle('active', isActive);
+    tab.setAttribute('aria-selected', String(isActive));
+  });
+  
+  // Update panels
+  var panels = document.querySelectorAll('.tab-panel');
+  panels.forEach(function(panel) {
+    var isActive = panel.id === 'tab-' + tabName;
+    panel.style.display = isActive ? 'block' : 'none';
+  });
+}
+
+// ── EVENT LISTENERS ───────────────────────────────────────────
+// Sidebar toggle
+if (btnSidebarToggle) {
+  btnSidebarToggle.addEventListener('click', toggleSidebar);
+}
+if (sidebarClose) {
+  sidebarClose.addEventListener('click', function() {
+    if (sidebar) sidebar.classList.add('collapsed');
+    if (btnSidebarToggle) btnSidebarToggle.setAttribute('aria-expanded', 'false');
+  });
+}
+
+// Sidebar tabs
+sidebarTabs.forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    switchSidebarTab(this.getAttribute('data-tab'));
+  });
+});
+
+// Page navigation
+if (btnPrevPage) {
+  btnPrevPage.addEventListener('click', function() {
+    if (state.currentPage > 1) goToPage(state.currentPage - 1);
+  });
+}
+if (btnNextPage) {
+  btnNextPage.addEventListener('click', function() {
+    if (state.currentPage < state.pageCount) goToPage(state.currentPage + 1);
+  });
+}
+if (pageInput) {
+  pageInput.addEventListener('change', function() {
+    var val = parseInt(pageInput.value, 10);
+    if (!isNaN(val) && val >= 1 && val <= state.pageCount) {
+      goToPage(val);
+    } else {
+      pageInput.value = state.currentPage;
+    }
+  });
+}
+
+// Zoom controls
+if (btnZoomOut) btnZoomOut.addEventListener('click', zoomOut);
+if (btnZoomIn) btnZoomIn.addEventListener('click', zoomIn);
+if (zoomSelect) {
+  zoomSelect.addEventListener('change', function() {
+    setZoom(zoomSelect.value);
+  });
+}
+
+// Search
+if (searchInput) {
+  searchInput.addEventListener('input', function() {
+    if (searchInput.value.trim() === '') {
+      clearSearch();
+    }
+  });
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      performSearch();
+    }
+  });
+}
+if (btnSearchPrev) {
+  btnSearchPrev.addEventListener('click', function() {
+    if (state.currentSearchIndex > 0) {
+      goToSearchResult(state.currentSearchIndex - 1);
+    }
+  });
+}
+if (btnSearchNext) {
+  btnSearchNext.addEventListener('click', function() {
+    if (state.currentSearchIndex < state.searchResults.length - 1) {
+      goToSearchResult(state.currentSearchIndex + 1);
+    }
+  });
+}
+if (searchCase) {
+  searchCase.addEventListener('change', performSearch);
+}
+
+// View options
+if (toggleContinuous) {
+  toggleContinuous.querySelector('input').addEventListener('change', function() {
+    state.continuous = this.checked;
+    renderPages();
+  });
+}
+if (toggleNightMode) {
+  var savedNight = localStorage.getItem('pdf-reader-night-mode') === 'true';
+  state.nightMode = savedNight;
+  if (toggleNightMode.querySelector('input')) {
+    toggleNightMode.querySelector('input').checked = savedNight;
+  }
+  if (savedNight && document.body) {
+    document.body.classList.add('night-mode');
+  }
+  toggleNightMode.querySelector('input').addEventListener('change', function() {
+    state.nightMode = this.checked;
+    if (document.body) {
+      document.body.classList.toggle('night-mode', state.nightMode);
+    }
+    localStorage.setItem('pdf-reader-night-mode', String(state.nightMode));
+  });
+}
+
+// Actions
+if (btnPrint) {
+  btnPrint.addEventListener('click', function() {
+    window.print();
+  });
+}
+if (btnDownload && state.pdfFile) {
+  btnDownload.addEventListener('click', function() {
+    if (!state.pdfFile) return;
+    var url = URL.createObjectURL(new Blob([state.pdfArrayBuffer], { type: 'application/pdf' }));
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = state.pdfFile.name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToastLocal('Download started: ' + state.pdfFile.name, 'success');
+  });
+}
+if (btnInfo) {
+  btnInfo.addEventListener('click', function() {
+    loadDocumentInfo();
+    if (infoModal) infoModal.classList.add('visible');
+  });
+}
+
+// Modal
+if (modalClose || modalCancel) {
+  var closeModal = function() {
+    if (infoModal) infoModal.classList.remove('visible');
+  };
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalCancel) modalCancel.addEventListener('click', closeModal);
+  if (infoModal) {
+    infoModal.addEventListener('click', function(e) {
+      if (e.target === infoModal) closeModal();
+    });
+  }
+}
+
+// Clear file
+if (btnClearFile) {
+  btnClearFile.addEventListener('click', function() {
+    state.pdfFile = null;
+    state.pdfArrayBuffer = null;
+    state.pdfJsDoc = null;
+    state.pageCount = 0;
+    state.currentPage = 1;
+    state.thumbnails = [];
+    state.outline = null;
+    state.attachments = null;
+    
+    if (pdfViewer) pdfViewer.innerHTML = '';
+    if (thumbnailsList) thumbnailsList.innerHTML = '';
+    if (outlineList) outlineList.innerHTML = '';
+    if (attachmentsList) attachmentsList.innerHTML = '';
+    
+    viewerContainer.classList.remove('visible');
+    uploadZone.style.display = 'flex';
+    btnClearFile.style.display = 'none';
+    
+    clearSearch();
+    setZoom('100');
+    
+    fileInputPdf.value = '';
+    showToastLocal('PDF closed', 'info');
+  });
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  if (!state.pdfJsDoc) return;
+  
+  // Skip if typing in input
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  
+  switch (e.key) {
+    case 'ArrowLeft':
+    case 'PageUp':
+      e.preventDefault();
+      if (state.currentPage > 1) goToPage(state.currentPage - 1);
+      break;
+    case 'ArrowRight':
+    case 'PageDown':
+      e.preventDefault();
+      if (state.currentPage < state.pageCount) goToPage(state.currentPage + 1);
+      break;
+    case 'Home':
+      e.preventDefault();
+      goToPage(1);
+      break;
+    case 'End':
+      e.preventDefault();
+      goToPage(state.pageCount);
+      break;
+    case '+':
+    case '=':
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        zoomIn();
+      }
+      break;
+    case '-':
+    case '_':
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        zoomOut();
+      }
+      break;
+    case '0':
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        setZoom('100');
+      }
+      break;
+    case 'Escape':
+      if (infoModal && infoModal.classList.contains('visible')) {
+        infoModal.classList.remove('visible');
+      }
+      break;
+  }
+});
+
+// Scroll progress
+if (canvasContainer) {
+  canvasContainer.addEventListener('scroll', function() {
+    if (!state.continuous) return;
+    
+    var pages = pdfViewer.querySelectorAll('.pdf-page');
+    if (pages.length === 0) return;
+    
+    var scrollTop = canvasContainer.scrollTop;
+    var containerHeight = canvasContainer.clientHeight;
+    
+    // Find which page is most visible
+    var bestPage = 1;
+    var bestVisible = 0;
+    
+    pages.forEach(function(pageEl) {
+      var rect = pageEl.getBoundingClientRect();
+      var containerRect = canvasContainer.getBoundingClientRect();
+      var visibleTop = Math.max(0, rect.top - containerRect.top);
+      var visibleBottom = Math.min(containerHeight, rect.bottom - containerRect.top);
+      var visible = Math.max(0, visibleBottom - visibleTop);
+      
+      if (visible > bestVisible) {
+        bestVisible = visible;
+        bestPage = parseInt(pageEl.getAttribute('data-page'), 10);
+      }
+    });
+    
+    if (bestPage !== state.currentPage) {
+      state.currentPage = bestPage;
+      updateNavigation();
+      updateProgress();
+      if (pageInput) pageInput.value = bestPage;
+    }
+  });
+}
+
+// Touch swipe navigation
+var touchStartX = 0;
+var touchEndX = 0;
+
+if (canvasContainer) {
+  canvasContainer.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  
+  canvasContainer.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+}
+
+function handleSwipe() {
+  var threshold = 50;
+  var diff = touchStartX - touchEndX;
+  
+  if (Math.abs(diff) > threshold) {
+    if (diff > 0 && state.currentPage < state.pageCount) {
+      goToPage(state.currentPage + 1);
+    } else if (diff < 0 && state.currentPage > 1) {
+      goToPage(state.currentPage - 1);
+    }
+  }
+}
+
+// Window resize for fit modes
+window.addEventListener('resize', function() {
+  if (state.zoomMode === 'fit-width') {
+    fitToWidth();
+  } else if (state.zoomMode === 'fit-page') {
+    fitToPage();
+  }
+});
+
+// Initialize
+updateNavigation();
+updateProgress();
+</script>
+
+<!-- SEO Word Count: ~1500 words -->
+
+
+</body></html>

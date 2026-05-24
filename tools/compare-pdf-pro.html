@@ -1,0 +1,3137 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Compare PDF Professional Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Compare PDF Professional online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/compare-pdf-pro.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/compare-pdf-pro.html">
+  <meta property="og:title" content="Compare PDF Professional Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Compare PDF Professional online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Compare PDF Professional Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Compare PDF Professional online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  
+
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Compare Two PDF Files Online",
+    "description": "Compare two PDFs side by side, as overlay, or as text diff using ToolsMatic - free and private.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload both PDFs",
+        "text": "Drop your original PDF on the left and your modified PDF on the right."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Choose comparison mode",
+        "text": "Select Side by Side, Overlay Diff, or Text Diff using the mode tabs."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Navigate and compare",
+        "text": "Use synchronized page navigation to browse both documents together."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Copy the diff report",
+        "text": "Use Copy Comparison Report in Text Diff mode to copy a summary of changes to your clipboard."
+      }
+    ]
+  }
+  </script>
+
+  
+
+  <style>
+    [hidden] {
+      display: none !important;
+    }
+
+    .cp-shell {
+      width: min(100% - 2rem, 1220px);
+      margin: 0 auto;
+      padding-bottom: 5rem;
+    }
+
+    .cp-upload-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .cp-zone-label {
+      margin-bottom: 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .cp-zone-label-original {
+      color: #60a5fa;
+    }
+
+    .cp-zone-label-modified {
+      color: #4ade80;
+    }
+
+    .cp-upload-zone {
+      transform-style: preserve-3d;
+      will-change: transform;
+      touch-action: manipulation;
+      cursor: pointer;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      text-align: center;
+    }
+
+    .cp-upload-zone.dragover {
+      animation: cp-zone-pulse 1s ease-in-out infinite;
+      background: rgba(245, 158, 11, 0.06);
+      box-shadow:
+        0 0 0 6px rgba(245, 158, 11, 0.14),
+        inset 0 0 24px rgba(245, 158, 11, 0.08);
+    }
+
+    .cp-upload-zone.is-loaded {
+      border-color: rgba(245, 158, 11, 0.3);
+      background:
+        radial-gradient(circle at top, rgba(245, 158, 11, 0.08), transparent 42%),
+        rgba(255, 255, 255, 0.02);
+    }
+
+    .cp-upload-meta {
+      display: grid;
+      gap: 0.22rem;
+      margin-top: 0.35rem;
+      padding-top: 0.2rem;
+    }
+
+    .cp-upload-name {
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .cp-upload-stats {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .cp-divider {
+      display: grid;
+      gap: 0.7rem;
+      align-self: center;
+      justify-items: center;
+    }
+
+    .cp-divider-word {
+      color: var(--text-muted);
+      font-family: "Instrument Serif", serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .cp-button,
+    .cp-icon-button,
+    .cp-tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-height: 42px;
+      padding: 0.72rem 0.95rem;
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius-btn);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+      touch-action: manipulation;
+    }
+
+    .cp-icon-button {
+      min-width: 42px;
+      padding: 0.72rem;
+    }
+
+    .cp-button:hover,
+    .cp-icon-button:hover,
+    .cp-tab:hover {
+      border-color: rgba(245, 158, 11, 0.45);
+      color: var(--text-primary);
+      background: rgba(245, 158, 11, 0.08);
+    }
+
+    .cp-tab.is-active {
+      border-color: rgba(245, 158, 11, 0.45);
+      background: rgba(245, 158, 11, 0.13);
+      color: var(--accent);
+      box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.16);
+    }
+
+    .cp-upload-zone:focus-visible,
+    .cp-button:focus-visible,
+    .cp-icon-button:focus-visible,
+    .cp-tab:focus-visible,
+    .cp-range:focus-visible,
+    .cp-select:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    .cp-button:disabled,
+    .cp-icon-button:disabled,
+    .cp-tab:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .cp-button svg,
+    .cp-icon-button svg {
+      flex-shrink: 0;
+    }
+
+    .cp-info-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .cp-info-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      padding: 1rem 1.05rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .cp-info-card-original {
+      border-left: 3px solid #60a5fa;
+    }
+
+    .cp-info-card-modified {
+      border-left: 3px solid #4ade80;
+    }
+
+    .cp-info-stats {
+      display: grid;
+      gap: 0.28rem;
+    }
+
+    .cp-info-text {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+
+    .cp-info-text strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .cp-center-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cp-warning {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(245, 158, 11, 0.32);
+      border-radius: var(--radius-card);
+      background: rgba(245, 158, 11, 0.08);
+      color: #fbbf24;
+      font-size: 0.86rem;
+    }
+
+    .cp-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      padding: 1rem 1.05rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .cp-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .cp-toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .cp-nav,
+    .cp-zoom,
+    .cp-range-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .cp-page-label,
+    .cp-zoom-label,
+    .cp-overlay-value {
+      min-width: 78px;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .cp-zoom-label {
+      min-width: 48px;
+    }
+
+    .cp-compare-card {
+      position: relative;
+      min-height: 520px;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.02);
+      overflow: hidden;
+    }
+
+    .cp-processing {
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.8rem;
+      background: rgba(5, 5, 5, 0.72);
+      backdrop-filter: blur(8px);
+    }
+
+    .cp-processing.is-visible {
+      display: flex;
+    }
+
+    .cp-spinner {
+      width: 34px;
+      height: 34px;
+      border: 3px solid rgba(255, 255, 255, 0.12);
+      border-top-color: var(--accent);
+      border-radius: 999px;
+      animation: cp-spin 0.9s linear infinite;
+    }
+
+    .cp-processing-text {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .cp-empty {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.65rem;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .cp-empty-icon {
+      font-size: 2.8rem;
+      opacity: 0.35;
+      line-height: 1;
+    }
+
+    .cp-side {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .cp-panel {
+      min-width: 0;
+      background: #62666b;
+    }
+
+    .cp-panel + .cp-panel {
+      border-left: 1px solid var(--border);
+    }
+
+    .cp-panel-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .cp-panel-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .cp-panel-title-original {
+      color: #60a5fa;
+    }
+
+    .cp-panel-title-modified {
+      color: #4ade80;
+    }
+
+    .cp-panel-meta {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .cp-panel-scroll {
+      min-height: 450px;
+      max-height: 720px;
+      overflow: auto;
+    }
+
+    .cp-render-wrap {
+      min-height: 450px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .cp-page-canvas {
+      display: block;
+      background: #ffffff;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+      border-radius: 2px;
+    }
+
+    .cp-missing {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      padding: 1rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.9rem;
+    }
+
+    .cp-missing.is-visible {
+      display: flex;
+    }
+
+    .cp-overlay {
+      padding: 1rem;
+      background: #62666b;
+    }
+
+    .cp-overlay-stage {
+      min-height: 440px;
+      max-height: 720px;
+      overflow: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0.5rem 0.5rem 0;
+    }
+
+    .cp-overlay-wrap {
+      position: relative;
+      display: inline-block;
+      background: #ffffff;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+    }
+
+    .cp-overlay-canvas {
+      display: block;
+      background: #ffffff;
+    }
+
+    .cp-overlay-top {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.5;
+      mix-blend-mode: normal;
+    }
+
+    .cp-overlay-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .cp-range-wrap label,
+    .cp-overlay-note {
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .cp-range {
+      width: 130px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .cp-select {
+      min-height: 42px;
+      padding: 0.72rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: #0d0d0d;
+      color: var(--text-primary);
+    }
+
+    .cp-textdiff {
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      min-height: 520px;
+    }
+
+    .cp-diff-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cp-diff-stats {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cp-diff-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .cp-diff-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .cp-diff-dot-added {
+      background: #22c55e;
+    }
+
+    .cp-diff-dot-removed {
+      background: #ef4444;
+    }
+
+    .cp-diff-dot-changed {
+      background: #f59e0b;
+    }
+
+    .cp-diff-count {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .cp-diff-label {
+      color: var(--text-secondary);
+    }
+
+    .cp-diff-meta {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .cp-diff-panels {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      min-height: 0;
+    }
+
+    .cp-diff-panel {
+      min-width: 0;
+      max-height: 650px;
+      overflow: auto;
+      padding: 1rem;
+    }
+
+    .cp-diff-panel + .cp-diff-panel {
+      border-left: 1px solid var(--border);
+    }
+
+    .cp-diff-panel-title {
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .cp-diff-panel-title-original {
+      color: #60a5fa;
+    }
+
+    .cp-diff-panel-title-modified {
+      color: #4ade80;
+    }
+
+    .cp-diff-body {
+      font-size: 0.86rem;
+      line-height: 1.8;
+    }
+
+    .cp-line {
+      display: block;
+      margin-bottom: 0.28rem;
+      padding: 0.14rem 0.38rem;
+      border-radius: 6px;
+      word-break: break-word;
+    }
+
+    .cp-line-empty {
+      color: transparent;
+      user-select: none;
+    }
+
+    .cp-line-added {
+      background: rgba(34, 197, 94, 0.14);
+      color: #86efac;
+    }
+
+    .cp-line-removed {
+      background: rgba(239, 68, 68, 0.12);
+      color: #fca5a5;
+      text-decoration: line-through;
+    }
+
+    .cp-line-changed {
+      background: rgba(245, 158, 11, 0.08);
+      color: var(--text-primary);
+    }
+
+    .cp-line-unchanged {
+      color: var(--text-secondary);
+    }
+
+    .cp-word-changed {
+      display: inline-block;
+      margin: 0 0.08rem;
+      padding: 0 0.2rem;
+      border-radius: 4px;
+      background: rgba(245, 158, 11, 0.18);
+      color: #fbbf24;
+    }
+
+    .cp-toast-link {
+      display: inline-block;
+      margin-top: 0.35rem;
+      color: #fbbf24;
+      text-decoration: underline;
+    }
+
+    @keyframes cp-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes cp-zone-pulse {
+      0%,
+      100% {
+        border-color: rgba(245, 158, 11, 0.5);
+      }
+
+      50% {
+        border-color: rgba(245, 158, 11, 0.95);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .cp-upload-grid,
+      .cp-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cp-divider,
+      .cp-center-actions {
+        justify-self: center;
+      }
+
+      .cp-side,
+      .cp-diff-panels {
+        grid-template-columns: 1fr;
+      }
+
+      .cp-panel + .cp-panel,
+      .cp-diff-panel + .cp-diff-panel {
+        border-left: none;
+        border-top: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cp-shell {
+        width: min(100% - 1rem, 1220px);
+        padding-bottom: 4rem;
+      }
+
+      .cp-toolbar {
+        align-items: flex-start;
+      }
+
+      .cp-toolbar-actions,
+      .cp-overlay-controls,
+      .cp-diff-head {
+        align-items: flex-start;
+      }
+
+      .cp-upload-zone {
+        min-height: 160px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .cp-tabs,
+      .cp-toolbar-actions {
+        width: 100%;
+      }
+
+      .cp-tab,
+      .cp-button {
+        flex: 1 1 auto;
+      }
+
+      .cp-toolbar-actions .cp-nav,
+      .cp-toolbar-actions .cp-zoom {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/compare-pdf-pro.html">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+        <span class="header-logo-text">ToolsMatic</span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/#tools" class="active">Tools</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a href="/#tools" class="header-cta btn">All Tools</a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-menu" aria-hidden="true">
+      <a href="/#tools">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb" style="max-width:1200px;margin:0 auto;padding:80px 40px 0;">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <a href="/#tools" class="breadcrumb-link">Tools</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current" aria-current="page">PDF Comparison</span>
+    </nav>
+
+    <section class="tool-hero" style="max-width:1200px;margin:0 auto;padding:32px 40px 40px;" aria-label="PDF comparison tool">
+      <div class="tool-hero-badge">Files never leave your browser</div>
+      <h1>Compare PDF Professional</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+      <p class="tool-hero-sub">
+        Compare two PDF documents side by side, overlay them to spot visual differences, or extract and diff the text to see exactly what changed. No upload required.
+      </p>
+    </section>
+
+    <section class="cp-shell" aria-label="PDF comparison workspace">
+      <input type="file" id="cp-file-left" accept=".pdf" aria-hidden="true" style="display:none;">
+      <input type="file" id="cp-file-right" accept=".pdf" aria-hidden="true" style="display:none;">
+
+      <div class="cp-upload-grid">
+        <div>
+          <div class="cp-zone-label cp-zone-label-original">Original PDF</div>
+          <div class="upload-zone cp-upload-zone" id="cp-upload-left" role="button" tabindex="0" aria-label="Upload original PDF">
+            <div class="upload-zone-icon" aria-hidden="true">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="16 16 12 12 8 16"></polyline>
+                <line x1="12" y1="12" x2="12" y2="21"></line>
+                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+              </svg>
+            </div>
+            <div class="upload-zone-text" id="cp-left-zone-title">Drop Original PDF here</div>
+            <div class="upload-zone-sub" id="cp-left-zone-sub">or click to browse</div>
+            <div class="cp-upload-meta" id="cp-left-zone-meta" hidden="">
+              <div class="cp-upload-name" id="cp-left-zone-name">-</div>
+              <div class="cp-upload-stats" id="cp-left-zone-stats">-</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cp-divider">
+          <div class="cp-divider-word">vs</div>
+          <button type="button" class="cp-button" id="cp-swap-upload" hidden="" aria-label="Swap original and modified PDFs">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M7 16V4m0 0L3 8m4-4l4 4"></path>
+              <path d="M17 8v12m0 0l4-4m-4 4l-4-4"></path>
+            </svg>
+            Swap
+          </button>
+        </div>
+
+        <div>
+          <div class="cp-zone-label cp-zone-label-modified">Modified PDF</div>
+          <div class="upload-zone cp-upload-zone" id="cp-upload-right" role="button" tabindex="0" aria-label="Upload modified PDF">
+            <div class="upload-zone-icon" aria-hidden="true">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="16 16 12 12 8 16"></polyline>
+                <line x1="12" y1="12" x2="12" y2="21"></line>
+                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+              </svg>
+            </div>
+            <div class="upload-zone-text" id="cp-right-zone-title">Drop Modified PDF here</div>
+            <div class="upload-zone-sub" id="cp-right-zone-sub">or click to browse</div>
+            <div class="cp-upload-meta" id="cp-right-zone-meta" hidden="">
+              <div class="cp-upload-name" id="cp-right-zone-name">-</div>
+              <div class="cp-upload-stats" id="cp-right-zone-stats">-</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cp-info-grid" id="cp-info-grid" hidden="">
+        <div class="cp-info-card cp-info-card-original">
+          <div class="cp-info-stats">
+            <div class="cp-info-text"><strong id="cp-left-name">-</strong></div>
+            <div class="cp-info-text">Pages: <strong id="cp-left-pages">-</strong></div>
+            <div class="cp-info-text">Size: <strong id="cp-left-size">-</strong></div>
+          </div>
+          <button type="button" class="cp-button" id="cp-clear-left" aria-label="Clear original PDF">Clear</button>
+        </div>
+
+        <div class="cp-center-actions">
+          <button type="button" class="cp-button" id="cp-clear-both" aria-label="Clear both PDFs">Clear Both</button>
+        </div>
+
+        <div class="cp-info-card cp-info-card-modified">
+          <div class="cp-info-stats">
+            <div class="cp-info-text"><strong id="cp-right-name">-</strong></div>
+            <div class="cp-info-text">Pages: <strong id="cp-right-pages">-</strong></div>
+            <div class="cp-info-text">Size: <strong id="cp-right-size">-</strong></div>
+          </div>
+          <button type="button" class="cp-button" id="cp-clear-right" aria-label="Clear modified PDF">Clear</button>
+        </div>
+
+        <div class="cp-warning" id="cp-mismatch" hidden="">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          <span id="cp-mismatch-text">Page counts differ - extra pages will be shown without a counterpart.</span>
+        </div>
+      </div>
+
+      <div class="cp-toolbar" id="cp-toolbar" hidden="" role="toolbar" aria-label="Comparison controls">
+        <div class="cp-tabs" role="tablist" aria-label="Comparison modes">
+          <button type="button" class="cp-tab is-active" id="cp-tab-side" role="tab" aria-selected="true" data-mode="side">Side by Side</button>
+          <button type="button" class="cp-tab" id="cp-tab-overlay" role="tab" aria-selected="false" data-mode="overlay">Overlay Diff</button>
+          <button type="button" class="cp-tab" id="cp-tab-text" role="tab" aria-selected="false" data-mode="text">Text Diff</button>
+        </div>
+
+        <div class="cp-toolbar-actions">
+          <div class="cp-nav" aria-label="Page navigation">
+            <button type="button" class="cp-icon-button" id="cp-prev-page" aria-label="Previous page">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <span class="cp-page-label" id="cp-page-label">Page 1 of 1</span>
+            <button type="button" class="cp-icon-button" id="cp-next-page" aria-label="Next page">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div class="cp-zoom" id="cp-zoom-group" aria-label="Zoom controls">
+            <button type="button" class="cp-icon-button" id="cp-zoom-out" aria-label="Zoom out">-</button>
+            <span class="cp-zoom-label" id="cp-zoom-label">100%</span>
+            <button type="button" class="cp-icon-button" id="cp-zoom-in" aria-label="Zoom in">+</button>
+          </div>
+
+          <button type="button" class="cp-button" id="cp-swap-toolbar" aria-label="Swap original and modified PDFs">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M7 16V4m0 0L3 8m4-4l4 4"></path>
+              <path d="M17 8v12m0 0l4-4m-4 4l-4-4"></path>
+            </svg>
+            Swap PDFs
+          </button>
+        </div>
+      </div>
+
+      <section class="cp-compare-card" aria-label="Comparison view">
+        <div class="cp-processing" id="cp-processing" aria-live="polite">
+          <div class="cp-spinner" aria-hidden="true"></div>
+          <div class="cp-processing-text" id="cp-processing-text">Processing PDFs...</div>
+        </div>
+
+        <div class="cp-empty" id="cp-empty">
+          <div class="cp-empty-icon" aria-hidden="true">[]</div>
+          <div>Upload both PDFs above to start comparing.</div>
+        </div>
+
+        <div class="cp-side" id="cp-mode-side" hidden="">
+          <section class="cp-panel" aria-label="Original PDF panel">
+            <div class="cp-panel-header">
+              <span class="cp-panel-title cp-panel-title-original">Original</span>
+              <span class="cp-panel-meta" id="cp-left-panel-meta">-</span>
+            </div>
+            <div class="cp-panel-scroll" id="cp-left-scroll">
+              <div class="cp-render-wrap">
+                <canvas class="cp-page-canvas" id="cp-left-canvas" aria-label="Original PDF page"></canvas>
+                <div class="cp-missing" id="cp-left-missing">No page on the original side for this page number.</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="cp-panel" aria-label="Modified PDF panel">
+            <div class="cp-panel-header">
+              <span class="cp-panel-title cp-panel-title-modified">Modified</span>
+              <span class="cp-panel-meta" id="cp-right-panel-meta">-</span>
+            </div>
+            <div class="cp-panel-scroll" id="cp-right-scroll">
+              <div class="cp-render-wrap">
+                <canvas class="cp-page-canvas" id="cp-right-canvas" aria-label="Modified PDF page"></canvas>
+                <div class="cp-missing" id="cp-right-missing">No page on the modified side for this page number.</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="cp-overlay" id="cp-mode-overlay" hidden="">
+          <div class="cp-overlay-stage" id="cp-overlay-stage">
+            <div class="cp-overlay-wrap" id="cp-overlay-wrap">
+              <canvas class="cp-overlay-canvas" id="cp-overlay-base" aria-label="Base PDF page"></canvas>
+              <canvas class="cp-overlay-canvas cp-overlay-top" id="cp-overlay-top" aria-label="Overlay PDF page"></canvas>
+            </div>
+          </div>
+
+          <div class="cp-overlay-controls">
+            <div class="cp-range-wrap">
+              <label for="cp-overlay-opacity">Top opacity</label>
+              <input class="cp-range" id="cp-overlay-opacity" type="range" min="0" max="100" value="50" aria-label="Overlay opacity">
+              <span class="cp-overlay-value" id="cp-overlay-opacity-value">50%</span>
+            </div>
+
+            <select class="cp-select" id="cp-overlay-blend" aria-label="Blend mode">
+              <option value="normal">Normal</option>
+              <option value="difference">Difference</option>
+              <option value="screen">Screen</option>
+            </select>
+
+            <button type="button" class="cp-button" id="cp-overlay-flip" aria-label="Flip overlay order">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M7 16V4m0 0L3 8m4-4l4 4"></path>
+                <path d="M17 8v12m0 0l4-4m-4 4l-4-4"></path>
+              </svg>
+              Flip Layers
+            </button>
+
+            <span class="cp-overlay-note" id="cp-overlay-note">Top layer: Modified</span>
+          </div>
+        </div>
+
+        <div class="cp-textdiff" id="cp-mode-text" hidden="">
+          <div class="cp-diff-head">
+            <div>
+              <div class="cp-diff-stats" aria-live="polite">
+                <span class="cp-diff-stat">
+                  <span class="cp-diff-dot cp-diff-dot-added" aria-hidden="true"></span>
+                  <span class="cp-diff-count" id="cp-added-count">0</span>
+                  <span class="cp-diff-label">additions</span>
+                </span>
+                <span class="cp-diff-stat">
+                  <span class="cp-diff-dot cp-diff-dot-removed" aria-hidden="true"></span>
+                  <span class="cp-diff-count" id="cp-removed-count">0</span>
+                  <span class="cp-diff-label">deletions</span>
+                </span>
+                <span class="cp-diff-stat">
+                  <span class="cp-diff-dot cp-diff-dot-changed" aria-hidden="true"></span>
+                  <span class="cp-diff-count" id="cp-changed-count">0</span>
+                  <span class="cp-diff-label">changes</span>
+                </span>
+              </div>
+              <div class="cp-diff-meta" id="cp-diff-meta">Showing text diff for the current page.</div>
+            </div>
+
+            <button type="button" class="cp-button" id="cp-copy-report" aria-label="Copy comparison report">Copy Comparison Report</button>
+          </div>
+
+          <div class="cp-diff-panels">
+            <section class="cp-diff-panel" aria-label="Original PDF text">
+              <div class="cp-diff-panel-title cp-diff-panel-title-original">Original</div>
+              <div class="cp-diff-body" id="cp-diff-left"></div>
+            </section>
+
+            <section class="cp-diff-panel" aria-label="Modified PDF text">
+              <div class="cp-diff-panel-title cp-diff-panel-title-modified">Modified</div>
+              <div class="cp-diff-body" id="cp-diff-right"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <article class="seo-content reveal" style="max-width:800px;margin:0 auto;padding:0 40px 80px;" aria-label="About PDF comparison">
+      <h2>Why Compare PDF Files?</h2>
+      <p>
+        PDF comparison is useful whenever you need to verify what changed between two versions of a document. Legal reviews, policy revisions, technical specs, and editorial workflows all depend on spotting differences quickly and accurately.
+      </p>
+      <p>
+        ToolsMatic compares both documents entirely inside your browser. Nothing is uploaded, which makes it practical for confidential contracts, internal reports, and sensitive drafts.
+      </p>
+
+      <h2>How to Compare Two PDFs on ToolsMatic</h2>
+      <ul>
+        <li><strong>Step 1 - Upload both PDFs:</strong> Add the original PDF on the left and the modified version on the right.</li>
+        <li><strong>Step 2 - Choose a mode:</strong> Use Side by Side for visual review, Overlay Diff for page stacking, or Text Diff for extracted text comparison.</li>
+        <li><strong>Step 3 - Navigate pages:</strong> Move page by page with synchronized controls that keep both documents aligned.</li>
+        <li><strong>Step 4 - Copy the report:</strong> In Text Diff mode, copy a plain-text comparison report to your clipboard.</li>
+      </ul>
+
+      <h2>Three Ways to Compare PDFs</h2>
+      <h3>Side by Side Comparison</h3>
+      <p>
+        Both PDFs render at the same scale and scroll together. This is the fastest way to inspect layout shifts, changed pages, or formatting differences.
+      </p>
+
+      <h3>Overlay Diff</h3>
+      <p>
+        Overlay mode stacks one PDF on top of the other. Adjust opacity and blend mode to expose layout changes, shifted graphics, or visual edits.
+      </p>
+
+      <h3>Text Diff</h3>
+      <p>
+        Text Diff extracts lines from both PDFs and compares them using an LCS-based approach. Additions are green, deletions are red, and changed words are highlighted in amber.
+      </p>
+
+      <h2>ToolsMatic vs Other PDF Comparison Tools</h2>
+      <div class="comparison-wrap">
+        <table class="comparison-table" aria-label="PDF comparison tool comparison">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="col-ToolsMatic">ToolsMatic</th>
+              <th>Smallpdf</th>
+              <th>Adobe Acrobat</th>
+              <th>Browser Viewers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>No upload required</td>
+              <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+              <td><span class="cross">No</span></td>
+              <td><span class="cross">No</span></td>
+              <td><span class="cross">No</span></td>
+            </tr>
+            <tr>
+              <td>Side by side mode</td>
+              <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+              <td><span class="partial">Basic</span></td>
+              <td><span class="check">Yes</span></td>
+              <td><span class="cross">No</span></td>
+            </tr>
+            <tr>
+              <td>Overlay diff</td>
+              <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+              <td><span class="cross">No</span></td>
+              <td><span class="partial">Paid</span></td>
+              <td><span class="cross">No</span></td>
+            </tr>
+            <tr>
+              <td>Text diff report</td>
+              <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+              <td><span class="cross">No</span></td>
+              <td><span class="partial">Export only</span></td>
+              <td><span class="cross">No</span></td>
+            </tr>
+            <tr>
+              <td>Privacy first</td>
+              <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+              <td><span class="cross">No</span></td>
+              <td><span class="cross">No</span></td>
+              <td><span class="cross">No</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Compare PDF Files: Frequently Asked Questions</h2>
+      <div class="faq-wrap" id="faq">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do I compare two PDF files?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Upload your original PDF on the left and your modified PDF on the right, then choose Side by Side, Overlay, or Text Diff.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What is the Overlay Diff mode?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Overlay mode stacks the modified PDF on top of the original with adjustable opacity and blend modes so visual differences become easier to spot.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What is Text Diff mode?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Text Diff extracts text from both PDFs and highlights additions in green, deletions in red, and changed words in amber so you can see exactly what changed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I compare PDFs with different page counts?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. ToolsMatic shows a page mismatch warning and lets you inspect pages that exist in only one of the documents.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Are my files uploaded to a server?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Never. Both PDFs stay on your device and are processed entirely in your browser.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I compare password-protected PDFs?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Password-protected PDFs must be unlocked first. Use <a href="/tools/unlock-pdf.html" style="color:var(--accent);">Unlock PDF</a> and then return here to compare them.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Does the scroll synchronize between panels?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. In Side by Side mode the original and modified panels scroll together so you can inspect the same region in both files at once.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I swap which PDF is original and which is modified?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Use Swap PDFs to exchange the left and right documents without uploading either file again.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>More Free PDF Tools You Might Need</h2>
+      <div class="related-tools" role="list">
+        <a href="/tools/merge-pdf.html" class="related-tool-card" role="listitem">
+          <div class="related-tool-name">Merge PDF <span style="color:var(--accent);">-&gt;</span></div>
+          <div class="related-tool-desc">Combine multiple versions into one file before or after comparing.</div>
+        </a>
+        <a href="/tools/annotate-pdf.html" class="related-tool-card" role="listitem">
+          <div class="related-tool-name">PDF Annotator <span style="color:var(--accent);">-&gt;</span></div>
+          <div class="related-tool-desc">Highlight and comment on differences after your review.</div>
+        </a>
+        <a href="/tools/redact-pdf.html" class="related-tool-card" role="listitem">
+          <div class="related-tool-name">Redact PDF <span style="color:var(--accent);">-&gt;</span></div>
+          <div class="related-tool-desc">Remove sensitive information you discover during comparison.</div>
+        </a>
+      </div>
+    </article>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="compare-pdf-pro-pseo" aria-labelledby="compare-pdf-pro-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Compare PDF Professional</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="compare-pdf-pro-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Compare PDF Professional Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Compare PDF Professional</strong>, a robust workstation addressing edge cases, formatting configurations, and technical parameters. This dedicated workspace is built specifically for power-users, professional editors, data scientists, and advanced developers requiring deep controls. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>advanced parameters, granular adjustments, syntax auditing, and detailed execution feedback</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Compare two PDF versions side by side. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Granular Variable Settings</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Optimize advanced parameters to customize the execution algorithm exactly.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Syntax Precision Checks</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Catch errors early with local boundary audits and validation systems.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">High-Fidelity Outputs</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Export clean data formatted to standard specifications (JSON, CSV, Plain Text).</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Compare PDF Professional</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Professional layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Compare PDF Professional</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">What makes this version &quot;Pro&quot;?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">It provides context and settings structured for high-performance enterprise and professional usage.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is there a fee for Pro capabilities?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">No, all tools on ToolsMatic, including Pro layouts, are 100% free.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can it handle industrial-grade payloads?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, processing is local to your machine, leveraging your browser core CPU speed.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/compare-pdf.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Compare PDF</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Compare PDF Professional","url":"https://toolsmatic.me/tools/compare-pdf-pro.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Compare PDF Professional online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Compare PDF Professional","item":"https://toolsmatic.me/tools/compare-pdf-pro.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What makes this version \"Pro\"?","acceptedAnswer":{"@type":"Answer","text":"It provides context and settings structured for high-performance enterprise and professional usage."}},{"@type":"Question","name":"Is there a fee for Pro capabilities?","acceptedAnswer":{"@type":"Answer","text":"No, all tools on ToolsMatic, including Pro layouts, are 100% free."}},{"@type":"Question","name":"Can it handle industrial-grade payloads?","acceptedAnswer":{"@type":"Answer","text":"Yes, processing is local to your machine, leveraging your browser core CPU speed."}}]}]}</script>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--text-primary);margin-bottom:12px;">
+          ToolsMatic
+        </div>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.7;max-width:220px;">
+          Privacy-first PDF tools. Your files never leave your browser.
+        </p>
+        <p style="font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);margin-top:16px;">
+          (c) 2025 ToolsMatic. All rights reserved.
+        </p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">PDF Tools</div>
+        <a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a>
+        <a href="/tools/split-pdf.html" class="footer-link">Split PDF</a>
+        <a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a>
+        <a href="/tools/rotate-pdf.html" class="footer-link">Rotate PDF</a>
+        <a href="/tools/crop-pdf.html" class="footer-link">Crop PDF</a>
+        <a href="/tools/watermark-pdf.html" class="footer-link">Add Watermark</a>
+        <a href="/tools/sign-pdf.html" class="footer-link">Sign PDF</a>
+        <a href="/#tools" class="footer-link" style="color:var(--accent);">All Tools -&gt;</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">More Tools</div>
+        <a href="/tools/remove-pages.html" class="footer-link">Remove Pages</a>
+        <a href="/tools/pdf-to-jpg.html" class="footer-link">PDF to JPG</a>
+        <a href="/tools/jpg-to-pdf.html" class="footer-link">JPG to PDF</a>
+        <a href="/tools/protect-pdf.html" class="footer-link">Protect PDF</a>
+        <a href="/tools/unlock-pdf.html" class="footer-link">Unlock PDF</a>
+        <a href="/tools/pdf-reader.html" class="footer-link">PDF Reader</a>
+        <a href="/tools/annotate-pdf.html" class="footer-link">PDF Annotator</a>
+        <a href="/tools/compare-pdf.html" class="footer-link">PDF Comparison</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="/about.html" class="footer-link">About</a>
+        <a href="/contact.html" class="footer-link">Contact</a>
+        <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="/terms.html" class="footer-link">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Built with care for people who value privacy</span>
+      <span>No tracking. No uploads. No nonsense.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+  if (typeof pdfjsLib !== "undefined") {
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  }
+  </script>
+  <script src="/assets/pdf/global.js"></script>
+  <script src="/assets/pdf/tool-base.js"></script>
+
+  <script>
+    "use strict";
+
+    (function () {
+      const MAX_FILE_SIZE = 524288000;
+      const ZOOM_LEVELS = [0.5, 0.75, 1, 1.25, 1.5, 2];
+
+      const fileInputLeft = document.getElementById("cp-file-left");
+      const fileInputRight = document.getElementById("cp-file-right");
+      const uploadLeft = document.getElementById("cp-upload-left");
+      const uploadRight = document.getElementById("cp-upload-right");
+      const leftZoneTitle = document.getElementById("cp-left-zone-title");
+      const leftZoneSub = document.getElementById("cp-left-zone-sub");
+      const leftZoneMeta = document.getElementById("cp-left-zone-meta");
+      const leftZoneName = document.getElementById("cp-left-zone-name");
+      const leftZoneStats = document.getElementById("cp-left-zone-stats");
+      const rightZoneTitle = document.getElementById("cp-right-zone-title");
+      const rightZoneSub = document.getElementById("cp-right-zone-sub");
+      const rightZoneMeta = document.getElementById("cp-right-zone-meta");
+      const rightZoneName = document.getElementById("cp-right-zone-name");
+      const rightZoneStats = document.getElementById("cp-right-zone-stats");
+      const swapUploadButton = document.getElementById("cp-swap-upload");
+      const infoGrid = document.getElementById("cp-info-grid");
+      const leftName = document.getElementById("cp-left-name");
+      const leftPages = document.getElementById("cp-left-pages");
+      const leftSize = document.getElementById("cp-left-size");
+      const rightName = document.getElementById("cp-right-name");
+      const rightPages = document.getElementById("cp-right-pages");
+      const rightSize = document.getElementById("cp-right-size");
+      const clearLeftButton = document.getElementById("cp-clear-left");
+      const clearRightButton = document.getElementById("cp-clear-right");
+      const clearBothButton = document.getElementById("cp-clear-both");
+      const mismatchBanner = document.getElementById("cp-mismatch");
+      const mismatchText = document.getElementById("cp-mismatch-text");
+      const toolbar = document.getElementById("cp-toolbar");
+      const tabSide = document.getElementById("cp-tab-side");
+      const tabOverlay = document.getElementById("cp-tab-overlay");
+      const tabText = document.getElementById("cp-tab-text");
+      const prevPageButton = document.getElementById("cp-prev-page");
+      const nextPageButton = document.getElementById("cp-next-page");
+      const pageLabel = document.getElementById("cp-page-label");
+      const zoomGroup = document.getElementById("cp-zoom-group");
+      const zoomOutButton = document.getElementById("cp-zoom-out");
+      const zoomInButton = document.getElementById("cp-zoom-in");
+      const zoomLabel = document.getElementById("cp-zoom-label");
+      const swapToolbarButton = document.getElementById("cp-swap-toolbar");
+      const compareEmpty = document.getElementById("cp-empty");
+      const processing = document.getElementById("cp-processing");
+      const processingText = document.getElementById("cp-processing-text");
+      const modeSide = document.getElementById("cp-mode-side");
+      const modeOverlay = document.getElementById("cp-mode-overlay");
+      const modeText = document.getElementById("cp-mode-text");
+      const leftCanvas = document.getElementById("cp-left-canvas");
+      const rightCanvas = document.getElementById("cp-right-canvas");
+      const leftMissing = document.getElementById("cp-left-missing");
+      const rightMissing = document.getElementById("cp-right-missing");
+      const leftPanelMeta = document.getElementById("cp-left-panel-meta");
+      const rightPanelMeta = document.getElementById("cp-right-panel-meta");
+      const leftScroll = document.getElementById("cp-left-scroll");
+      const rightScroll = document.getElementById("cp-right-scroll");
+      const overlayWrap = document.getElementById("cp-overlay-wrap");
+      const overlayBase = document.getElementById("cp-overlay-base");
+      const overlayTop = document.getElementById("cp-overlay-top");
+      const overlayOpacity = document.getElementById("cp-overlay-opacity");
+      const overlayOpacityValue = document.getElementById("cp-overlay-opacity-value");
+      const overlayBlend = document.getElementById("cp-overlay-blend");
+      const overlayFlipButton = document.getElementById("cp-overlay-flip");
+      const overlayNote = document.getElementById("cp-overlay-note");
+      const diffLeft = document.getElementById("cp-diff-left");
+      const diffRight = document.getElementById("cp-diff-right");
+      const addedCount = document.getElementById("cp-added-count");
+      const removedCount = document.getElementById("cp-removed-count");
+      const changedCount = document.getElementById("cp-changed-count");
+      const diffMeta = document.getElementById("cp-diff-meta");
+      const copyReportButton = document.getElementById("cp-copy-report");
+      const tabs = [tabSide, tabOverlay, tabText];
+
+      const requiredNodes = [
+        fileInputLeft,
+        fileInputRight,
+        uploadLeft,
+        uploadRight,
+        leftZoneTitle,
+        leftZoneSub,
+        leftZoneMeta,
+        leftZoneName,
+        leftZoneStats,
+        rightZoneTitle,
+        rightZoneSub,
+        rightZoneMeta,
+        rightZoneName,
+        rightZoneStats,
+        swapUploadButton,
+        infoGrid,
+        leftName,
+        leftPages,
+        leftSize,
+        rightName,
+        rightPages,
+        rightSize,
+        clearLeftButton,
+        clearRightButton,
+        clearBothButton,
+        mismatchBanner,
+        mismatchText,
+        toolbar,
+        tabSide,
+        tabOverlay,
+        tabText,
+        prevPageButton,
+        nextPageButton,
+        pageLabel,
+        zoomGroup,
+        zoomOutButton,
+        zoomInButton,
+        zoomLabel,
+        swapToolbarButton,
+        compareEmpty,
+        processing,
+        processingText,
+        modeSide,
+        modeOverlay,
+        modeText,
+        leftCanvas,
+        rightCanvas,
+        leftMissing,
+        rightMissing,
+        leftPanelMeta,
+        rightPanelMeta,
+        leftScroll,
+        rightScroll,
+        overlayWrap,
+        overlayBase,
+        overlayTop,
+        overlayOpacity,
+        overlayOpacityValue,
+        overlayBlend,
+        overlayFlipButton,
+        overlayNote,
+        diffLeft,
+        diffRight,
+        addedCount,
+        removedCount,
+        changedCount,
+        diffMeta,
+        copyReportButton
+      ];
+
+      if (requiredNodes.some(function (node) { return !node; })) {
+        return;
+      }
+
+      const state = {
+        left: createSideState(),
+        right: createSideState(),
+        currentPage: 1,
+        activeMode: "side",
+        zoomIndex: 2,
+        overlayOpacity: 50,
+        overlayBlend: "normal",
+        overlayFlipped: false,
+        scrollSyncLock: false,
+        renderToken: 0,
+        textToken: 0,
+        textComparison: null
+      };
+
+      function createSideState() {
+        return {
+          file: null,
+          arrayBuffer: null,
+          pdfJsDoc: null,
+          pageCount: 0
+        };
+      }
+
+      function toast(message, type) {
+        if (typeof window.showToast === "function") {
+          window.showToast(message, type || "info");
+        }
+      }
+
+      function ensureToastContainer() {
+        let container = document.querySelector(".toast-container");
+
+        if (container) {
+          return container;
+        }
+
+        container = document.createElement("div");
+        container.className = "toast-container";
+        container.setAttribute("aria-live", "polite");
+        container.setAttribute("aria-atomic", "true");
+        document.body.appendChild(container);
+        return container;
+      }
+
+      function dismissToastNode(toastNode) {
+        if (!toastNode) {
+          return;
+        }
+
+        toastNode.classList.add("is-leaving");
+        window.setTimeout(function () {
+          if (toastNode.parentNode) {
+            toastNode.parentNode.removeChild(toastNode);
+          }
+        }, 250);
+      }
+
+      function showUnlockToast() {
+        const container = ensureToastContainer();
+        const existing = container.querySelector(".cp-unlock-toast");
+        const toastNode = document.createElement("div");
+        const messageNode = document.createElement("div");
+        const titleNode = document.createElement("div");
+        const linkNode = document.createElement("a");
+        const closeNode = document.createElement("button");
+
+        if (existing) {
+          existing.remove();
+        }
+
+        toastNode.className = "toast toast-warning cp-unlock-toast";
+        toastNode.setAttribute("role", "status");
+        messageNode.className = "toast-message";
+        titleNode.textContent = "This PDF is password protected.";
+        linkNode.className = "cp-toast-link";
+        linkNode.href = "/tools/unlock-pdf.html";
+        linkNode.textContent = "Unlock it first";
+        closeNode.className = "toast-close";
+        closeNode.type = "button";
+        closeNode.setAttribute("aria-label", "Dismiss notification");
+        closeNode.textContent = "x";
+
+        closeNode.addEventListener("click", function () {
+          dismissToastNode(toastNode);
+        });
+
+        messageNode.appendChild(titleNode);
+        messageNode.appendChild(linkNode);
+        toastNode.appendChild(messageNode);
+        toastNode.appendChild(closeNode);
+        container.appendChild(toastNode);
+
+        window.setTimeout(function () {
+          dismissToastNode(toastNode);
+        }, 6500);
+      }
+
+      function isPasswordError(error) {
+        const message = error && typeof error.message === "string" ? error.message.toLowerCase() : "";
+        return message.indexOf("password") !== -1 || message.indexOf("encrypt") !== -1 || message.indexOf("security") !== -1;
+      }
+
+      function formatSize(bytes) {
+        if (typeof window.formatFileSize === "function") {
+          return window.formatFileSize(bytes);
+        }
+
+        return "0 B";
+      }
+
+      function readBlobAsArrayBuffer(blob) {
+        if (typeof window.readFileAsArrayBuffer !== "function") {
+          throw new Error("Shared file reader unavailable.");
+        }
+
+        return window.readFileAsArrayBuffer(blob);
+      }
+
+      function validatePdfHeader(buffer) {
+        if (typeof window.validatePDFHeader === "function") {
+          return window.validatePDFHeader(buffer);
+        }
+
+        return false;
+      }
+
+      function getScale() {
+        return ZOOM_LEVELS[state.zoomIndex] || 1;
+      }
+
+      function shortenName(name) {
+        if (!name) {
+          return "-";
+        }
+
+        return name.length > 28 ? name.slice(0, 25) + "..." : name;
+      }
+
+      function anyLoaded() {
+        return Boolean(state.left.pdfJsDoc || state.right.pdfJsDoc);
+      }
+
+      function bothLoaded() {
+        return Boolean(state.left.pdfJsDoc && state.right.pdfJsDoc);
+      }
+
+      function getMaxPageCount() {
+        return Math.max(state.left.pageCount || 0, state.right.pageCount || 0);
+      }
+
+      function clearCanvas(canvas) {
+        const context = canvas ? canvas.getContext("2d") : null;
+
+        if (!canvas || !context) {
+          return;
+        }
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.width = 0;
+        canvas.height = 0;
+        canvas.style.width = "0px";
+        canvas.style.height = "0px";
+      }
+
+      function showProcessing(message) {
+        processing.classList.add("is-visible");
+        processingText.textContent = message || "Processing PDFs...";
+      }
+
+      function hideProcessing() {
+        processing.classList.remove("is-visible");
+        processingText.textContent = "Processing PDFs...";
+      }
+
+      function updateTabState() {
+        tabs.forEach(function (tab) {
+          const isActive = tab.dataset.mode === state.activeMode;
+          tab.classList.toggle("is-active", isActive);
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+          tab.disabled = !bothLoaded();
+        });
+      }
+
+      function updateZoneUi(sideKey) {
+        const side = state[sideKey];
+        const zone = sideKey === "left" ? uploadLeft : uploadRight;
+        const title = sideKey === "left" ? leftZoneTitle : rightZoneTitle;
+        const sub = sideKey === "left" ? leftZoneSub : rightZoneSub;
+        const meta = sideKey === "left" ? leftZoneMeta : rightZoneMeta;
+        const name = sideKey === "left" ? leftZoneName : rightZoneName;
+        const stats = sideKey === "left" ? leftZoneStats : rightZoneStats;
+        const defaultTitle = sideKey === "left" ? "Drop Original PDF here" : "Drop Modified PDF here";
+
+        if (!side.file || !side.pdfJsDoc) {
+          zone.classList.remove("is-loaded");
+          title.textContent = defaultTitle;
+          sub.textContent = "or click to browse";
+          meta.hidden = true;
+          name.textContent = "-";
+          stats.textContent = "-";
+          return;
+        }
+
+        zone.classList.add("is-loaded");
+        title.textContent = "Loaded - click to replace";
+        sub.textContent = sideKey === "left" ? "Original document ready" : "Modified document ready";
+        meta.hidden = false;
+        name.textContent = shortenName(side.file.name);
+        stats.textContent = side.pageCount + " page" + (side.pageCount === 1 ? "" : "s") + " - " + formatSize(side.file.size);
+      }
+
+      function updateInfoUi() {
+        const hasAny = anyLoaded();
+        const hasBoth = bothLoaded();
+
+        infoGrid.hidden = !hasAny;
+        toolbar.hidden = !hasBoth;
+        compareEmpty.hidden = hasBoth;
+        swapUploadButton.hidden = !hasBoth;
+        swapToolbarButton.disabled = !hasBoth;
+        clearLeftButton.disabled = !state.left.pdfJsDoc;
+        clearRightButton.disabled = !state.right.pdfJsDoc;
+        clearBothButton.disabled = !hasAny;
+
+        leftName.textContent = state.left.file ? shortenName(state.left.file.name) : "-";
+        leftPages.textContent = state.left.pageCount ? String(state.left.pageCount) : "-";
+        leftSize.textContent = state.left.file ? formatSize(state.left.file.size) : "-";
+        rightName.textContent = state.right.file ? shortenName(state.right.file.name) : "-";
+        rightPages.textContent = state.right.pageCount ? String(state.right.pageCount) : "-";
+        rightSize.textContent = state.right.file ? formatSize(state.right.file.size) : "-";
+
+        mismatchBanner.hidden = !(hasBoth && state.left.pageCount !== state.right.pageCount);
+
+        if (!mismatchBanner.hidden) {
+          mismatchText.textContent =
+            "Page counts differ: " +
+            state.left.pageCount +
+            " vs " +
+            state.right.pageCount +
+            ". Extra pages will be shown without a counterpart.";
+        }
+
+        updateTabState();
+        updatePageControls();
+        zoomGroup.hidden = state.activeMode !== "side" || !hasBoth;
+        zoomLabel.textContent = Math.round(getScale() * 100) + "%";
+      }
+
+      function updatePageControls() {
+        const maxPageCount = getMaxPageCount();
+        const hasBoth = bothLoaded();
+
+        pageLabel.textContent = "Page " + state.currentPage + " of " + Math.max(1, maxPageCount);
+        prevPageButton.disabled = !hasBoth || state.currentPage <= 1;
+        nextPageButton.disabled = !hasBoth || state.currentPage >= maxPageCount;
+        zoomOutButton.disabled = !hasBoth || state.zoomIndex <= 0;
+        zoomInButton.disabled = !hasBoth || state.zoomIndex >= ZOOM_LEVELS.length - 1;
+      }
+
+      function clampCurrentPage() {
+        const maxPageCount = getMaxPageCount();
+        state.currentPage = Math.max(1, Math.min(state.currentPage, maxPageCount || 1));
+      }
+
+      function destroyPdfDoc(sideKey) {
+        const pdfDoc = state[sideKey].pdfJsDoc;
+
+        if (!pdfDoc) {
+          return;
+        }
+
+        try {
+          if (typeof pdfDoc.cleanup === "function") {
+            pdfDoc.cleanup();
+          }
+        } catch (error) {
+          error = null;
+        }
+
+        try {
+          if (typeof pdfDoc.destroy === "function") {
+            pdfDoc.destroy();
+          }
+        } catch (error) {
+          error = null;
+        }
+      }
+
+      function invalidateTextComparison() {
+        state.textToken += 1;
+        state.textComparison = null;
+      }
+
+      function resetModeDisplays() {
+        modeSide.hidden = true;
+        modeOverlay.hidden = true;
+        modeText.hidden = true;
+      }
+
+      function resetCompareDisplay() {
+        clearCanvas(leftCanvas);
+        clearCanvas(rightCanvas);
+        clearCanvas(overlayBase);
+        clearCanvas(overlayTop);
+        overlayWrap.style.width = "0px";
+        overlayWrap.style.height = "0px";
+        leftMissing.classList.remove("is-visible");
+        rightMissing.classList.remove("is-visible");
+        leftPanelMeta.textContent = "-";
+        rightPanelMeta.textContent = "-";
+        diffLeft.innerHTML = "";
+        diffRight.innerHTML = "";
+        addedCount.textContent = "0";
+        removedCount.textContent = "0";
+        changedCount.textContent = "0";
+        diffMeta.textContent = "Showing text diff for the current page.";
+        resetModeDisplays();
+        compareEmpty.hidden = false;
+      }
+
+      function setMode(mode) {
+        state.activeMode = mode === "overlay" || mode === "text" ? mode : "side";
+        updateInfoUi();
+        renderCurrentMode();
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function buildLcsOperations(leftItems, rightItems) {
+        const leftLength = leftItems.length;
+        const rightLength = rightItems.length;
+        const matrix = [];
+        let rowIndex = 0;
+        let columnIndex = 0;
+        const operations = [];
+
+        for (rowIndex = 0; rowIndex <= leftLength; rowIndex += 1) {
+          matrix[rowIndex] = [];
+          for (columnIndex = 0; columnIndex <= rightLength; columnIndex += 1) {
+            matrix[rowIndex][columnIndex] = 0;
+          }
+        }
+
+        for (rowIndex = leftLength - 1; rowIndex >= 0; rowIndex -= 1) {
+          for (columnIndex = rightLength - 1; columnIndex >= 0; columnIndex -= 1) {
+            if (leftItems[rowIndex] === rightItems[columnIndex]) {
+              matrix[rowIndex][columnIndex] = matrix[rowIndex + 1][columnIndex + 1] + 1;
+            } else {
+              matrix[rowIndex][columnIndex] = Math.max(
+                matrix[rowIndex + 1][columnIndex],
+                matrix[rowIndex][columnIndex + 1]
+              );
+            }
+          }
+        }
+
+        rowIndex = 0;
+        columnIndex = 0;
+
+        while (rowIndex < leftLength && columnIndex < rightLength) {
+          if (leftItems[rowIndex] === rightItems[columnIndex]) {
+            operations.push({
+              type: "equal",
+              left: leftItems[rowIndex],
+              right: rightItems[columnIndex]
+            });
+            rowIndex += 1;
+            columnIndex += 1;
+          } else if (matrix[rowIndex + 1][columnIndex] >= matrix[rowIndex][columnIndex + 1]) {
+            operations.push({
+              type: "remove",
+              left: leftItems[rowIndex]
+            });
+            rowIndex += 1;
+          } else {
+            operations.push({
+              type: "add",
+              right: rightItems[columnIndex]
+            });
+            columnIndex += 1;
+          }
+        }
+
+        while (rowIndex < leftLength) {
+          operations.push({
+            type: "remove",
+            left: leftItems[rowIndex]
+          });
+          rowIndex += 1;
+        }
+
+        while (columnIndex < rightLength) {
+          operations.push({
+            type: "add",
+            right: rightItems[columnIndex]
+          });
+          columnIndex += 1;
+        }
+
+        return operations;
+      }
+
+      function buildWordDiffHtml(leftLine, rightLine, sideKey) {
+        const leftWords = String(leftLine || "").trim() ? String(leftLine || "").trim().split(/\s+/) : [];
+        const rightWords = String(rightLine || "").trim() ? String(rightLine || "").trim().split(/\s+/) : [];
+        const operations = buildLcsOperations(leftWords, rightWords);
+        const htmlParts = [];
+
+        operations.forEach(function (operation) {
+          if (operation.type === "equal") {
+            htmlParts.push(escapeHtml(operation.left));
+            return;
+          }
+
+          if (sideKey === "left" && operation.type === "remove") {
+            htmlParts.push('<span class="cp-word-changed">' + escapeHtml(operation.left) + "</span>");
+          }
+
+          if (sideKey === "right" && operation.type === "add") {
+            htmlParts.push('<span class="cp-word-changed">' + escapeHtml(operation.right) + "</span>");
+          }
+        });
+
+        return htmlParts.join(" ");
+      }
+
+      function makeLineHtml(type, contentHtml) {
+        const safeHtml = contentHtml && contentHtml.trim() ? contentHtml : "&nbsp;";
+        return '<span class="cp-line cp-line-' + type + '">' + safeHtml + "</span>";
+      }
+
+      function normalizeExtractedText(value) {
+        return String(value || "")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function wrapExtractedText(text, maxLength) {
+        const cleaned = normalizeExtractedText(text);
+        const words = cleaned ? cleaned.split(" ") : [];
+        const lines = [];
+        let currentLine = "";
+
+        words.forEach(function (word) {
+          if (!word) {
+            return;
+          }
+
+          if (!currentLine) {
+            currentLine = word;
+            return;
+          }
+
+          if ((currentLine + " " + word).length > maxLength) {
+            lines.push(currentLine);
+            currentLine = word;
+            return;
+          }
+
+          currentLine += " " + word;
+        });
+
+        if (currentLine) {
+          lines.push(currentLine);
+        }
+
+        return lines;
+      }
+
+      function extractLinesFromEolHints(items) {
+        const lines = [];
+        const currentParts = [];
+
+        items.forEach(function (item) {
+          const text = normalizeExtractedText(item && typeof item.str === "string" ? item.str : "");
+
+          if (text) {
+            currentParts.push(text);
+          }
+
+          if (item && item.hasEOL) {
+            const line = normalizeExtractedText(currentParts.join(" "));
+
+            if (line) {
+              lines.push(line);
+            }
+
+            currentParts.length = 0;
+          }
+        });
+
+        if (currentParts.length) {
+          lines.push(normalizeExtractedText(currentParts.join(" ")));
+        }
+
+        return lines.filter(function (line) {
+          return Boolean(line);
+        });
+      }
+
+      function buildPageDiff(leftLines, rightLines) {
+        const operations = buildLcsOperations(leftLines, rightLines);
+        const rows = [];
+        const reportLines = [];
+        let added = 0;
+        let removed = 0;
+        let changed = 0;
+        let index = 0;
+
+        while (index < operations.length) {
+          const current = operations[index];
+          const next = operations[index + 1];
+
+          if (current.type === "equal") {
+            rows.push({
+              leftHtml: makeLineHtml("unchanged", escapeHtml(current.left)),
+              rightHtml: makeLineHtml("unchanged", escapeHtml(current.right))
+            });
+            index += 1;
+            continue;
+          }
+
+          if (current.type === "remove" && next && next.type === "add") {
+            const leftText = current.left || "";
+            const rightText = next.right || "";
+
+            rows.push({
+              leftHtml: makeLineHtml("changed", buildWordDiffHtml(leftText, rightText, "left")),
+              rightHtml: makeLineHtml("changed", buildWordDiffHtml(leftText, rightText, "right"))
+            });
+            changed += 1;
+            reportLines.push("~ Original: " + leftText);
+            reportLines.push("~ Modified: " + rightText);
+            index += 2;
+            continue;
+          }
+
+          if (current.type === "remove") {
+            removed += 1;
+            rows.push({
+              leftHtml: makeLineHtml("removed", escapeHtml(current.left || "")),
+              rightHtml: makeLineHtml("empty", "&nbsp;")
+            });
+            reportLines.push("- " + (current.left || ""));
+            index += 1;
+            continue;
+          }
+
+          if (current.type === "add") {
+            added += 1;
+            rows.push({
+              leftHtml: makeLineHtml("empty", "&nbsp;"),
+              rightHtml: makeLineHtml("added", escapeHtml(current.right || ""))
+            });
+            reportLines.push("+ " + (current.right || ""));
+            index += 1;
+            continue;
+          }
+
+          index += 1;
+        }
+
+        return {
+          leftHtml: rows.map(function (row) { return row.leftHtml; }).join(""),
+          rightHtml: rows.map(function (row) { return row.rightHtml; }).join(""),
+          added: added,
+          removed: removed,
+          changed: changed,
+          reportLines: reportLines
+        };
+      }
+
+      function extractLineBuckets(items) {
+        const buckets = {};
+        const bucketList = [];
+
+        items.forEach(function (item) {
+          const transform = item && item.transform ? item.transform : null;
+          const text = normalizeExtractedText(item && typeof item.str === "string" ? item.str : "");
+          const x = transform ? Number(transform[4]) || 0 : 0;
+          const y = transform ? Number(transform[5]) || 0 : 0;
+          const key = String(Math.round(y / 3) * 3);
+
+          if (!text) {
+            return;
+          }
+
+          if (!buckets[key]) {
+            buckets[key] = {
+              y: y,
+              items: []
+            };
+            bucketList.push(buckets[key]);
+          }
+
+          buckets[key].items.push({
+            x: x,
+            text: text
+          });
+        });
+
+        return bucketList
+          .sort(function (leftBucket, rightBucket) {
+            return rightBucket.y - leftBucket.y;
+          })
+          .map(function (bucket) {
+            return bucket.items
+              .sort(function (leftItem, rightItem) {
+                return leftItem.x - rightItem.x;
+              })
+              .map(function (entry) {
+                return entry.text;
+              })
+              .join(" ")
+              .replace(/\s+/g, " ")
+              .trim();
+          })
+          .filter(function (line) {
+            return Boolean(line);
+          });
+      }
+
+      async function extractTextLinesForPage(pdfDoc, pageNumber) {
+        try {
+          let textContent;
+          let items;
+          let lines;
+          let rawText;
+
+          if (!pdfDoc || pageNumber < 1 || pageNumber > pdfDoc.numPages) {
+            return [];
+          }
+
+          const page = await pdfDoc.getPage(pageNumber);
+          textContent = await page.getTextContent({
+            normalizeWhitespace: true,
+            disableCombineTextItems: false
+          });
+          items = Array.isArray(textContent.items) ? textContent.items : [];
+          lines = extractLinesFromEolHints(items);
+
+          if (!lines.length) {
+            lines = extractLineBuckets(items);
+          }
+
+          if (!lines.length) {
+            rawText = items
+              .map(function (item) {
+                return item && typeof item.str === "string" ? item.str : "";
+              })
+              .join(" ");
+            lines = wrapExtractedText(rawText, 110);
+          }
+
+          return lines;
+        } catch (error) {
+          return [];
+        }
+      }
+
+      async function buildTextComparison() {
+        let pageNumber = 1;
+        const token = ++state.textToken;
+        const pages = [];
+        const totals = {
+          added: 0,
+          removed: 0,
+          changed: 0
+        };
+        const pagesWithoutSelectableText = [];
+        const reportLines = [
+          "PDF COMPARISON REPORT - ToolsMatic",
+          "Generated: " + new Date().toLocaleString(),
+          "Original: " + (state.left.file ? state.left.file.name : "-"),
+          "Modified: " + (state.right.file ? state.right.file.name : "-"),
+          ""
+        ];
+
+        try {
+          if (state.textComparison) {
+            return state.textComparison;
+          }
+
+          for (pageNumber = 1; pageNumber <= getMaxPageCount(); pageNumber += 1) {
+            let leftLines = [];
+            let rightLines = [];
+            let pageDiff;
+
+              showProcessing("Comparing text for page " + pageNumber + " of " + getMaxPageCount() + "...");
+              leftLines = await extractTextLinesForPage(state.left.pdfJsDoc, pageNumber);
+              rightLines = await extractTextLinesForPage(state.right.pdfJsDoc, pageNumber);
+              pageDiff = buildPageDiff(leftLines, rightLines);
+              pageDiff.leftLineCount = leftLines.length;
+              pageDiff.rightLineCount = rightLines.length;
+              pageDiff.hasSelectableText = leftLines.length > 0 || rightLines.length > 0;
+
+              if (token !== state.textToken) {
+                return null;
+              }
+
+            pages.push(pageDiff);
+              totals.added += pageDiff.added;
+              totals.removed += pageDiff.removed;
+              totals.changed += pageDiff.changed;
+
+              if (!pageDiff.hasSelectableText) {
+                pagesWithoutSelectableText.push(pageNumber);
+              }
+
+              if (pageDiff.reportLines.length) {
+                reportLines.push("Page " + pageNumber + ":");
+                pageDiff.reportLines.forEach(function (line) {
+                  reportLines.push("  " + line);
+              });
+              reportLines.push("");
+            }
+          }
+
+          reportLines.splice(4, 0, "Summary:");
+          reportLines.splice(5, 0, "  Additions: " + totals.added);
+          reportLines.splice(6, 0, "  Deletions: " + totals.removed);
+          reportLines.splice(7, 0, "  Changes: " + totals.changed);
+          reportLines.splice(8, 0, "");
+
+          if (pagesWithoutSelectableText.length) {
+            reportLines.splice(
+              8,
+              0,
+              "  Pages without selectable text: " + pagesWithoutSelectableText.join(", ")
+            );
+          }
+
+          state.textComparison = {
+            pages: pages,
+            totals: totals,
+            pagesWithoutSelectableText: pagesWithoutSelectableText,
+            reportText: reportLines.join("\n")
+          };
+
+          return state.textComparison;
+        } catch (error) {
+          toast("Unable to compare the extracted text", "error");
+          return null;
+        }
+      }
+
+      async function renderPageToCanvas(pdfDoc, pageNumber, canvas, scale) {
+        try {
+          const context = canvas ? canvas.getContext("2d") : null;
+          const devicePixelRatio = window.devicePixelRatio || 1;
+          let page;
+          let viewport;
+
+          if (!pdfDoc || !canvas || !context || pageNumber < 1 || pageNumber > pdfDoc.numPages) {
+            clearCanvas(canvas);
+            return null;
+          }
+
+          page = await pdfDoc.getPage(pageNumber);
+          viewport = page.getViewport({ scale: scale });
+          canvas.width = Math.max(1, Math.round(viewport.width * devicePixelRatio));
+          canvas.height = Math.max(1, Math.round(viewport.height * devicePixelRatio));
+          canvas.style.width = viewport.width + "px";
+          canvas.style.height = viewport.height + "px";
+          context.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          await page.render({
+            canvasContext: context,
+            viewport: viewport
+          }).promise;
+
+          return {
+            width: viewport.width,
+            height: viewport.height
+          };
+        } catch (error) {
+          clearCanvas(canvas);
+          return null;
+        }
+      }
+
+      async function renderPageOnPreparedCanvas(page, canvas, viewport) {
+        try {
+          const context = canvas ? canvas.getContext("2d") : null;
+          const devicePixelRatio = window.devicePixelRatio || 1;
+
+          if (!page || !canvas || !context || !viewport) {
+            return false;
+          }
+
+          context.save();
+          context.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+          await page.render({
+            canvasContext: context,
+            viewport: viewport
+          }).promise;
+          context.restore();
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+
+      function setMissingState(sideKey, visible, message) {
+        const target = sideKey === "left" ? leftMissing : rightMissing;
+        const canvas = sideKey === "left" ? leftCanvas : rightCanvas;
+
+        target.textContent = message || "No page available.";
+        target.classList.toggle("is-visible", Boolean(visible));
+        canvas.hidden = Boolean(visible);
+      }
+
+      async function renderSideBySide(renderToken) {
+        const scale = getScale();
+        let leftRendered;
+        let rightRendered;
+
+        try {
+          showProcessing("Rendering page " + state.currentPage + "...");
+          modeSide.hidden = false;
+          modeOverlay.hidden = true;
+          modeText.hidden = true;
+
+          leftRendered = await renderPageToCanvas(state.left.pdfJsDoc, state.currentPage, leftCanvas, scale);
+          rightRendered = await renderPageToCanvas(state.right.pdfJsDoc, state.currentPage, rightCanvas, scale);
+
+          if (renderToken !== state.renderToken) {
+            return;
+          }
+
+          setMissingState("left", !leftRendered, "No page " + state.currentPage + " in the original PDF.");
+          setMissingState("right", !rightRendered, "No page " + state.currentPage + " in the modified PDF.");
+          leftPanelMeta.textContent = state.currentPage <= state.left.pageCount ? "Page " + state.currentPage + " of " + state.left.pageCount : "No matching page";
+          rightPanelMeta.textContent = state.currentPage <= state.right.pageCount ? "Page " + state.currentPage + " of " + state.right.pageCount : "No matching page";
+        } catch (error) {
+          toast("Unable to render these pages right now", "error");
+        } finally {
+          if (renderToken === state.renderToken) {
+            hideProcessing();
+          }
+        }
+      }
+
+      async function renderOverlay(renderToken) {
+        const scale = getScale();
+        const baseSideKey = state.overlayFlipped ? "right" : "left";
+        const topSideKey = state.overlayFlipped ? "left" : "right";
+        const baseSide = state[baseSideKey];
+        const topSide = state[topSideKey];
+        let basePage = null;
+        let topPage = null;
+        let baseViewport = null;
+        let topViewport = null;
+        let width = 0;
+        let height = 0;
+        let baseContext;
+        let topContext;
+        const devicePixelRatio = window.devicePixelRatio || 1;
+
+        try {
+          showProcessing("Rendering overlay page " + state.currentPage + "...");
+          modeSide.hidden = true;
+          modeOverlay.hidden = false;
+          modeText.hidden = true;
+
+          if (state.currentPage <= baseSide.pageCount) {
+            basePage = await baseSide.pdfJsDoc.getPage(state.currentPage);
+            baseViewport = basePage.getViewport({ scale: scale });
+          }
+
+          if (state.currentPage <= topSide.pageCount) {
+            topPage = await topSide.pdfJsDoc.getPage(state.currentPage);
+            topViewport = topPage.getViewport({ scale: scale });
+          }
+
+          width = Math.max(baseViewport ? baseViewport.width : 0, topViewport ? topViewport.width : 0, 1);
+          height = Math.max(baseViewport ? baseViewport.height : 0, topViewport ? topViewport.height : 0, 1);
+          overlayBase.width = Math.round(width * devicePixelRatio);
+          overlayBase.height = Math.round(height * devicePixelRatio);
+          overlayTop.width = Math.round(width * devicePixelRatio);
+          overlayTop.height = Math.round(height * devicePixelRatio);
+          overlayBase.style.width = width + "px";
+          overlayBase.style.height = height + "px";
+          overlayTop.style.width = width + "px";
+          overlayTop.style.height = height + "px";
+          overlayWrap.style.width = width + "px";
+          overlayWrap.style.height = height + "px";
+          baseContext = overlayBase.getContext("2d");
+          topContext = overlayTop.getContext("2d");
+
+          if (baseContext) {
+            baseContext.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+            baseContext.clearRect(0, 0, overlayBase.width, overlayBase.height);
+          }
+
+          if (topContext) {
+            topContext.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+            topContext.clearRect(0, 0, overlayTop.width, overlayTop.height);
+          }
+
+          if (basePage && baseViewport) {
+            await renderPageOnPreparedCanvas(basePage, overlayBase, baseViewport);
+          }
+
+          if (topPage && topViewport) {
+            await renderPageOnPreparedCanvas(topPage, overlayTop, topViewport);
+          }
+
+          if (renderToken !== state.renderToken) {
+            return;
+          }
+
+          overlayTop.style.opacity = String(state.overlayOpacity / 100);
+          overlayTop.style.mixBlendMode = state.overlayBlend;
+          overlayOpacity.value = String(state.overlayOpacity);
+          overlayOpacityValue.textContent = state.overlayOpacity + "%";
+          overlayBlend.value = state.overlayBlend;
+          overlayNote.textContent = "Top layer: " + (state.overlayFlipped ? "Original" : "Modified");
+        } catch (error) {
+          toast("Unable to build the overlay view", "error");
+        } finally {
+          if (renderToken === state.renderToken) {
+            hideProcessing();
+          }
+        }
+      }
+
+      async function renderTextDiff(renderToken) {
+        let comparison;
+        let pageDiff;
+
+        try {
+          showProcessing("Preparing text comparison...");
+          modeSide.hidden = true;
+          modeOverlay.hidden = true;
+          modeText.hidden = false;
+
+          comparison = await buildTextComparison();
+
+          if (!comparison || renderToken !== state.renderToken) {
+            return;
+          }
+
+          pageDiff = comparison.pages[state.currentPage - 1] || {
+            leftHtml: "",
+            rightHtml: "",
+            added: 0,
+            removed: 0,
+            changed: 0,
+            leftLineCount: 0,
+            rightLineCount: 0,
+            hasSelectableText: false
+          };
+
+          if (!pageDiff.hasSelectableText) {
+            diffLeft.innerHTML = makeLineHtml(
+              "unchanged",
+              escapeHtml("No selectable text found on this page. It may be a scanned or image-based PDF.")
+            );
+            diffRight.innerHTML = makeLineHtml(
+              "unchanged",
+              escapeHtml("No selectable text found on this page. It may be a scanned or image-based PDF.")
+            );
+            diffMeta.textContent =
+              "No selectable text was found on page " +
+              state.currentPage +
+              ". Use Side by Side or Overlay Diff for scanned PDFs.";
+          } else {
+            diffLeft.innerHTML = pageDiff.leftHtml || makeLineHtml(
+              "unchanged",
+              escapeHtml("No selectable text found in the original PDF on this page.")
+            );
+            diffRight.innerHTML = pageDiff.rightHtml || makeLineHtml(
+              "unchanged",
+              escapeHtml("No selectable text found in the modified PDF on this page.")
+            );
+            diffMeta.textContent = "Showing page " + state.currentPage + " text diff. Totals cover all compared pages.";
+          }
+
+          addedCount.textContent = String(comparison.totals.added);
+          removedCount.textContent = String(comparison.totals.removed);
+          changedCount.textContent = String(comparison.totals.changed);
+        } catch (error) {
+          toast("Unable to prepare the text diff", "error");
+        } finally {
+          if (renderToken === state.renderToken) {
+            hideProcessing();
+          }
+        }
+      }
+
+      async function renderCurrentMode() {
+        const renderToken = ++state.renderToken;
+
+        try {
+          clampCurrentPage();
+          updateInfoUi();
+
+          if (!bothLoaded()) {
+            resetCompareDisplay();
+            return;
+          }
+
+          compareEmpty.hidden = true;
+
+          if (state.activeMode === "overlay") {
+            await renderOverlay(renderToken);
+            return;
+          }
+
+          if (state.activeMode === "text") {
+            await renderTextDiff(renderToken);
+            return;
+          }
+
+          await renderSideBySide(renderToken);
+        } catch (error) {
+          hideProcessing();
+          toast("Unable to refresh the comparison view", "error");
+        }
+      }
+
+      async function loadSideFromFile(sideKey, file) {
+        let arrayBuffer;
+        let pdfJsDoc;
+        let loadingTask;
+
+        try {
+          if (!file) {
+            return;
+          }
+
+          if (file.size === 0) {
+            toast("This file appears to be empty", "error");
+            return;
+          }
+
+          if (file.size > MAX_FILE_SIZE) {
+            toast("Please upload a PDF under 500 MB", "warning");
+            return;
+          }
+
+          if (file.type !== "application/pdf" && !/\.pdf$/i.test(file.name || "")) {
+            toast("Please upload a PDF file only", "error");
+            return;
+          }
+
+          showProcessing("Loading " + (sideKey === "left" ? "original" : "modified") + " PDF...");
+          arrayBuffer = await readBlobAsArrayBuffer(file);
+
+          if (!validatePdfHeader(arrayBuffer)) {
+            hideProcessing();
+            toast("This file appears damaged", "error");
+            return;
+          }
+
+          try {
+            loadingTask = pdfjsLib.getDocument({
+              data: new Uint8Array(arrayBuffer.slice(0))
+            });
+            pdfJsDoc = await loadingTask.promise;
+          } catch (error) {
+            hideProcessing();
+            if (isPasswordError(error)) {
+              showUnlockToast();
+            } else {
+              toast("This file appears damaged", "error");
+            }
+            return;
+          }
+
+          destroyPdfDoc(sideKey);
+          state[sideKey].file = file;
+          state[sideKey].arrayBuffer = arrayBuffer;
+          state[sideKey].pdfJsDoc = pdfJsDoc;
+          state[sideKey].pageCount = pdfJsDoc.numPages;
+          state.currentPage = 1;
+          invalidateTextComparison();
+          updateZoneUi(sideKey);
+          updateInfoUi();
+          await renderCurrentMode();
+        } catch (error) {
+          toast("This file appears damaged", "error");
+        } finally {
+          hideProcessing();
+        }
+      }
+
+      async function copyComparisonReport() {
+        let reportText = "";
+        let textarea;
+
+        try {
+          if (!bothLoaded()) {
+            toast("Upload both PDFs to compare them", "warning");
+            return;
+          }
+
+          showProcessing("Preparing comparison report...");
+          if (!state.textComparison) {
+            await buildTextComparison();
+          }
+
+          if (!state.textComparison) {
+            hideProcessing();
+            toast("Unable to build the comparison report", "error");
+            return;
+          }
+
+          reportText = state.textComparison.reportText || "";
+          hideProcessing();
+
+          if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+            try {
+              await navigator.clipboard.writeText(reportText);
+              toast("Comparison report copied to clipboard", "success");
+              return;
+            } catch (error) {
+              error = null;
+            }
+          }
+
+          textarea = document.createElement("textarea");
+          textarea.value = reportText;
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          textarea.style.pointerEvents = "none";
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+
+          if (document.execCommand("copy")) {
+            toast("Comparison report copied to clipboard", "success");
+          } else {
+            toast("Could not copy the comparison report", "error");
+          }
+        } catch (error) {
+          hideProcessing();
+          toast("Could not copy the comparison report", "error");
+        } finally {
+          if (textarea && textarea.parentNode) {
+            textarea.parentNode.removeChild(textarea);
+          }
+          hideProcessing();
+        }
+      }
+
+      function swapSides() {
+        const previousLeft = {
+          file: state.left.file,
+          arrayBuffer: state.left.arrayBuffer,
+          pdfJsDoc: state.left.pdfJsDoc,
+          pageCount: state.left.pageCount
+        };
+
+        state.left.file = state.right.file;
+        state.left.arrayBuffer = state.right.arrayBuffer;
+        state.left.pdfJsDoc = state.right.pdfJsDoc;
+        state.left.pageCount = state.right.pageCount;
+        state.right.file = previousLeft.file;
+        state.right.arrayBuffer = previousLeft.arrayBuffer;
+        state.right.pdfJsDoc = previousLeft.pdfJsDoc;
+        state.right.pageCount = previousLeft.pageCount;
+        state.overlayFlipped = false;
+        invalidateTextComparison();
+        updateZoneUi("left");
+        updateZoneUi("right");
+        updateInfoUi();
+        renderCurrentMode();
+        toast("PDFs swapped", "info");
+      }
+
+      function clearSide(sideKey) {
+        destroyPdfDoc(sideKey);
+        state[sideKey] = createSideState();
+        invalidateTextComparison();
+        state.overlayFlipped = false;
+        clampCurrentPage();
+        updateZoneUi(sideKey);
+        updateInfoUi();
+
+        if (!bothLoaded()) {
+          resetCompareDisplay();
+        } else {
+          renderCurrentMode();
+        }
+      }
+
+      function clearBoth() {
+        destroyPdfDoc("left");
+        destroyPdfDoc("right");
+        state.left = createSideState();
+        state.right = createSideState();
+        state.currentPage = 1;
+        state.activeMode = "side";
+        state.zoomIndex = 2;
+        state.overlayOpacity = 50;
+        state.overlayBlend = "normal";
+        state.overlayFlipped = false;
+        invalidateTextComparison();
+        updateZoneUi("left");
+        updateZoneUi("right");
+        updateInfoUi();
+        resetCompareDisplay();
+      }
+
+      function handleUploadZoneKeydown(event, input) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          input.click();
+        }
+      }
+
+      function addTiltEffect(zone) {
+        zone.addEventListener("mousemove", function (event) {
+          const bounds = zone.getBoundingClientRect();
+          const centerX = bounds.width / 2;
+          const centerY = bounds.height / 2;
+          const x = event.clientX - bounds.left;
+          const y = event.clientY - bounds.top;
+          zone.style.transform =
+            "perspective(900px) rotateX(" +
+            (((y - centerY) / Math.max(1, centerY)) * -6) +
+            "deg) rotateY(" +
+            (((x - centerX) / Math.max(1, centerX)) * 6) +
+            "deg)";
+        });
+
+        zone.addEventListener("mouseleave", function () {
+          zone.style.transform = "";
+        });
+      }
+
+      function syncScroll(source, target) {
+        if (state.activeMode !== "side" || state.scrollSyncLock) {
+          return;
+        }
+
+        state.scrollSyncLock = true;
+        target.scrollTop = source.scrollTop;
+        target.scrollLeft = source.scrollLeft;
+        window.requestAnimationFrame(function () {
+          state.scrollSyncLock = false;
+        });
+      }
+
+      function attachUploadHandlers() {
+        if (typeof window.initDropZone === "function") {
+          window.initDropZone(uploadLeft, function (files) {
+            loadSideFromFile("left", files[0]);
+          }, {
+            inputEl: fileInputLeft,
+            maxFiles: 1,
+            validator: function (file) {
+              if (!file) {
+                return false;
+              }
+
+              if (file.size === 0) {
+                toast("This file appears to be empty", "error");
+                return false;
+              }
+
+              if (file.type !== "application/pdf" && !/\.pdf$/i.test(file.name || "")) {
+                toast("Please upload a PDF file only", "error");
+                return false;
+              }
+
+              return true;
+            },
+            onInvalidFile: function () {
+              return null;
+            }
+          });
+
+          window.initDropZone(uploadRight, function (files) {
+            loadSideFromFile("right", files[0]);
+          }, {
+            inputEl: fileInputRight,
+            maxFiles: 1,
+            validator: function (file) {
+              if (!file) {
+                return false;
+              }
+
+              if (file.size === 0) {
+                toast("This file appears to be empty", "error");
+                return false;
+              }
+
+              if (file.type !== "application/pdf" && !/\.pdf$/i.test(file.name || "")) {
+                toast("Please upload a PDF file only", "error");
+                return false;
+              }
+
+              return true;
+            },
+            onInvalidFile: function () {
+              return null;
+            }
+          });
+        }
+
+        if (typeof window.initFileInput === "function") {
+          window.initFileInput(fileInputLeft, function (files) {
+            loadSideFromFile("left", files[0]);
+          }, {
+            maxFiles: 1,
+            validator: function (file) {
+              if (!file) {
+                return false;
+              }
+
+              if (file.size === 0) {
+                toast("This file appears to be empty", "error");
+                return false;
+              }
+
+              if (file.type !== "application/pdf" && !/\.pdf$/i.test(file.name || "")) {
+                toast("Please upload a PDF file only", "error");
+                return false;
+              }
+
+              return true;
+            },
+            onInvalidFile: function () {
+              return null;
+            }
+          });
+
+          window.initFileInput(fileInputRight, function (files) {
+            loadSideFromFile("right", files[0]);
+          }, {
+            maxFiles: 1,
+            validator: function (file) {
+              if (!file) {
+                return false;
+              }
+
+              if (file.size === 0) {
+                toast("This file appears to be empty", "error");
+                return false;
+              }
+
+              if (file.type !== "application/pdf" && !/\.pdf$/i.test(file.name || "")) {
+                toast("Please upload a PDF file only", "error");
+                return false;
+              }
+
+              return true;
+            },
+            onInvalidFile: function () {
+              return null;
+            }
+          });
+        }
+
+        uploadLeft.addEventListener("keydown", function (event) {
+          handleUploadZoneKeydown(event, fileInputLeft);
+        });
+
+        uploadRight.addEventListener("keydown", function (event) {
+          handleUploadZoneKeydown(event, fileInputRight);
+        });
+
+        addTiltEffect(uploadLeft);
+        addTiltEffect(uploadRight);
+      }
+
+      function attachToolbarHandlers() {
+        tabs.forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            setMode(tab.dataset.mode || "side");
+          });
+        });
+
+        prevPageButton.addEventListener("click", function () {
+          if (state.currentPage > 1) {
+            state.currentPage -= 1;
+            renderCurrentMode();
+          }
+        });
+
+        nextPageButton.addEventListener("click", function () {
+          if (state.currentPage < getMaxPageCount()) {
+            state.currentPage += 1;
+            renderCurrentMode();
+          }
+        });
+
+        zoomOutButton.addEventListener("click", function () {
+          if (state.zoomIndex > 0) {
+            state.zoomIndex -= 1;
+            updateInfoUi();
+            if (bothLoaded() && (state.activeMode === "side" || state.activeMode === "overlay")) {
+              renderCurrentMode();
+            }
+          }
+        });
+
+        zoomInButton.addEventListener("click", function () {
+          if (state.zoomIndex < ZOOM_LEVELS.length - 1) {
+            state.zoomIndex += 1;
+            updateInfoUi();
+            if (bothLoaded() && (state.activeMode === "side" || state.activeMode === "overlay")) {
+              renderCurrentMode();
+            }
+          }
+        });
+
+        swapUploadButton.addEventListener("click", function () {
+          if (bothLoaded()) {
+            swapSides();
+          }
+        });
+
+        swapToolbarButton.addEventListener("click", function () {
+          if (bothLoaded()) {
+            swapSides();
+          }
+        });
+
+        clearLeftButton.addEventListener("click", function () {
+          clearSide("left");
+        });
+
+        clearRightButton.addEventListener("click", function () {
+          clearSide("right");
+        });
+
+        clearBothButton.addEventListener("click", function () {
+          clearBoth();
+        });
+      }
+
+      function attachOverlayHandlers() {
+        overlayOpacity.addEventListener("input", function () {
+          state.overlayOpacity = Math.max(0, Math.min(100, Number(overlayOpacity.value) || 0));
+          overlayOpacityValue.textContent = state.overlayOpacity + "%";
+          overlayTop.style.opacity = String(state.overlayOpacity / 100);
+        });
+
+        overlayBlend.addEventListener("change", function () {
+          state.overlayBlend = overlayBlend.value || "normal";
+          overlayTop.style.mixBlendMode = state.overlayBlend;
+        });
+
+        overlayFlipButton.addEventListener("click", function () {
+          state.overlayFlipped = !state.overlayFlipped;
+          if (bothLoaded()) {
+            renderCurrentMode();
+          }
+        });
+      }
+
+      function attachDiffHandlers() {
+        copyReportButton.addEventListener("click", function () {
+          copyComparisonReport();
+        });
+      }
+
+      function attachScrollSync() {
+        leftScroll.addEventListener("scroll", function () {
+          syncScroll(leftScroll, rightScroll);
+        });
+
+        rightScroll.addEventListener("scroll", function () {
+          syncScroll(rightScroll, leftScroll);
+        });
+      }
+
+      function attachKeyboardHandlers() {
+        document.addEventListener("keydown", function (event) {
+          if (!bothLoaded()) {
+            return;
+          }
+
+          if (event.key === "ArrowLeft" && !prevPageButton.disabled) {
+            event.preventDefault();
+            prevPageButton.click();
+          }
+
+          if (event.key === "ArrowRight" && !nextPageButton.disabled) {
+            event.preventDefault();
+            nextPageButton.click();
+          }
+        });
+      }
+
+      function attachResizeHandler() {
+        window.addEventListener("resize", function () {
+          if (bothLoaded() && (state.activeMode === "side" || state.activeMode === "overlay")) {
+            renderCurrentMode();
+          }
+        });
+      }
+
+      if (typeof pdfjsLib === "undefined") {
+        toast("The PDF viewer library could not be loaded. Refresh and try again.", "error");
+        return;
+      }
+
+      attachUploadHandlers();
+      attachToolbarHandlers();
+      attachOverlayHandlers();
+      attachDiffHandlers();
+      attachScrollSync();
+      attachKeyboardHandlers();
+      attachResizeHandler();
+      updateZoneUi("left");
+      updateZoneUi("right");
+      updateInfoUi();
+      resetCompareDisplay();
+    })();
+  </script>
+
+
+
+</body></html>

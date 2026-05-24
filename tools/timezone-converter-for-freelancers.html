@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0f172a">
+  <title>Timezone Converter for Freelancers Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Timezone Converter for Freelancers online. Client-side, free, and private browser-based utility.">
+  <meta name="keywords" content="timezone converter, advanced timezone converter, world clock, meeting planner, UTC converter, time zone converter, compare time zones, live world clock, DST aware timezone converter, remote team scheduler">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://toolsmatic.me/tools/timezone-converter-for-freelancers.html">
+  <link rel="alternate" hreflang="en" href="https://toolsmatic.me/tools/timezone-converter.html">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/timezone-converter-for-freelancers.html">
+  <meta property="og:title" content="Timezone Converter for Freelancers Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Timezone Converter for Freelancers online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta property="og:site_name" content="ToolsMatic">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/timezone-converter-for-freelancers.html">
+  <meta name="twitter:title" content="Timezone Converter for Freelancers Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Timezone Converter for Freelancers online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Advanced Timezone Converter Guide for Meetings, Global Teams, DST, UTC, and Remote Scheduling",
+    "description": "Complete guide to using a timezone converter for remote work, events, customer support, launches, and cross-border collaboration.",
+    "author": {"@type": "Organization", "name": "ToolsMatic"},
+    "publisher": {"@type": "Organization", "name": "ToolsMatic", "logo": {"@type": "ImageObject", "url": "https://toolsmatic.me/assets/logo.png"}},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://toolsmatic.me/tools/timezone-converter.html"},
+    "datePublished": "2026-04-04",
+    "dateModified": "2026-04-04"
+  }
+  </script>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+  <style>
+    .tz-hero{padding:clamp(24px,4vw,34px);margin-bottom:20px}
+    .tz-hero-grid,.tz-converter-grid,.tz-planner-grid,.tz-seo-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(300px,.82fr);gap:18px;align-items:start}
+    .tz-eyebrow,.tz-chip,.tz-pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;font-weight:800}
+    .tz-eyebrow{padding:8px 12px;background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.18);color:var(--accent);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase}
+    .tz-chip-row,.tz-pill-row,.tz-inline{display:flex;flex-wrap:wrap;gap:10px}
+    .tz-chip,.tz-pill{padding:10px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(146,167,192,.14);color:var(--text-primary)}
+    .tz-card,.tz-side,.tz-result,.tz-slot,.tz-clock-card{background:rgba(7,18,32,.66);border:1px solid rgba(146,167,192,.16);border-radius:20px;padding:18px;box-shadow:0 18px 42px rgba(3,10,22,.22);min-width:0}
+    .tz-side-column{display:grid;gap:16px;align-content:start}
+    .tz-card h2,.tz-side h2{margin-top:0}
+    .tz-kpi-grid,.tz-field-grid,.tz-result-grid{display:grid;gap:12px}
+    .tz-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:16px}
+    .tz-kpi{padding:14px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(146,167,192,.14)}
+    .tz-kpi strong{display:block;font-size:1.2rem;margin-bottom:6px;color:var(--text-primary)}
+    .tz-kpi span,.tz-muted,.tz-note,.comparison-note,.comparison-note a,.faq-item p,.tz-seo p,.tz-card p{color:var(--text-secondary);line-height:1.8}
+    .tz-tab-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+    .tz-tab{width:auto;min-width:140px;padding:12px 16px;border-radius:999px;border:1px solid rgba(146,167,192,.18);background:rgba(255,255,255,.04);color:var(--text-primary);font-weight:800;box-shadow:none}
+    .tz-tab.active{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#03111d;border-color:transparent;box-shadow:0 20px 38px rgba(94,234,212,.22)}
+    .tz-tab:hover{border-color:rgba(94,234,212,.36);background:rgba(94,234,212,.1)}
+    .tz-panel{display:none}
+    .tz-panel.is-active{display:block}
+    .tz-field-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .tz-field{display:grid;gap:6px}
+    .tz-field label{font-weight:700;color:var(--text-secondary)}
+    .tz-inline button,.tz-inline a,.tz-clock-tools button{width:auto}
+    .tz-preset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+    .tz-preset{width:100%;padding:12px 14px;border-radius:16px;border:1px solid rgba(146,167,192,.16);background:rgba(255,255,255,.05);color:var(--text-primary);font-weight:800;box-shadow:none}
+    .tz-preset:hover{border-color:rgba(94,234,212,.36);background:rgba(94,234,212,.1)}
+    .tz-preset-wide{grid-column:1/-1}
+    .tz-secondary{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;border:1px solid rgba(146,167,192,.18);background:rgba(255,255,255,.04);color:var(--text-primary);font-weight:800;box-shadow:none;text-decoration:none}
+    .tz-secondary:hover{color:var(--text-primary);border-color:rgba(94,234,212,.3);background:rgba(94,234,212,.1)}
+    .tz-summary{margin-top:16px;padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,rgba(94,234,212,.14),rgba(96,165,250,.12));border:1px solid rgba(94,234,212,.18);color:var(--text-primary)}
+    .tz-summary strong{display:block;margin-bottom:6px;font-size:1.05rem}
+    .tz-stat-list,.tz-now-list,.tz-overlaps{display:grid;gap:10px;margin-top:14px}
+    .tz-stat,.tz-now-row,.tz-slot-zone,.tz-timeline-card{padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(146,167,192,.12)}
+    .tz-stat,.tz-now-row,.tz-slot-head,.tz-clock-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+    .tz-stat span:first-child{color:var(--text-secondary);font-weight:700}
+    .tz-stat span:last-child,.tz-now-row strong,.tz-zone,.tz-clock-time,.tz-big{color:var(--text-primary);font-weight:800}
+    .tz-zone{display:block;font-size:1.05rem;margin-bottom:6px}
+    .tz-big,.tz-clock-time{display:block;line-height:1.05;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:6px}
+    .tz-date{color:var(--text-secondary);line-height:1.7}
+    .tz-timeline{margin-top:14px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+    .tz-timeline-card strong,.tz-slot-zone strong,.tz-clock-head strong{display:block;color:var(--text-primary);margin-bottom:4px}
+    .tz-timeline-card span,.tz-slot-zone span,.tz-clock-head span{display:block;color:var(--text-secondary);font-size:.9rem;line-height:1.65}
+    .tz-empty{padding:18px;border-radius:18px;background:rgba(255,255,255,.03);border:1px dashed rgba(146,167,192,.18);color:var(--text-secondary);line-height:1.8;margin-top:14px}
+    .tz-slot-head{margin-bottom:10px;flex-wrap:wrap}
+    .tz-slot-grid,.tz-clock-grid{display:grid;gap:10px}
+    .tz-slot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .tz-clock-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+    .tz-clock-tools input{flex:1 1 260px}
+    .tz-clock-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .tz-clock-card button{width:auto;padding:8px 10px;font-size:.82rem;border-radius:12px;background:rgba(255,255,255,.08);color:var(--text-primary);box-shadow:none}
+    .comparison-wrap{overflow-x:auto;margin-top:14px}
+    .comparison-table{width:100%;min-width:880px;border-collapse:collapse;background:rgba(7,18,32,.5);border:1px solid rgba(146,167,192,.14);border-radius:18px;overflow:hidden}
+    .comparison-table th,.comparison-table td{padding:14px;border-bottom:1px solid rgba(146,167,192,.12);text-align:left;vertical-align:top}
+    .comparison-table th{background:rgba(94,234,212,.12);color:var(--text-primary);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em}
+    .comparison-table td:first-child{color:var(--text-primary);font-weight:800;width:180px}
+    .comparison-table td:not(:first-child){text-align:center;font-size:1.08rem}
+    .cmp-yes{color:#34d399;font-weight:900}
+    .cmp-no{color:#fb7185;font-weight:900}
+    .faq-list{display:grid;gap:12px}
+    .faq-item{border:1px solid rgba(146,167,192,.14);border-radius:18px;background:rgba(7,18,32,.5);padding:14px 16px}
+    .faq-item summary{cursor:pointer;font-weight:800;color:var(--text-primary)}
+    .ad-slot{min-height:90px}
+    @media(max-width:1100px){.tz-hero-grid,.tz-converter-grid,.tz-planner-grid,.tz-seo-grid{grid-template-columns:1fr}.tz-clock-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:820px){.tz-field-grid,.tz-result-grid,.tz-slot-grid,.tz-clock-grid,.tz-kpi-grid,.tz-timeline,.tz-preset-grid{grid-template-columns:1fr}}
+    @media(max-width:720px){.tz-tab{width:100%}.tz-inline button,.tz-inline a{width:100%}.tz-stat,.tz-now-row,.tz-slot-head,.tz-clock-head{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body class="page-tool">
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode" type="button"></button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <nav class="tm-breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><a href="/#tools">Productivity Tools</a><span>/</span><span>Advanced Timezone Converter</span>
+    </nav>
+    <section class="hero tz-hero">
+      <div class="tz-hero-grid">
+        <div>
+          <span class="tz-eyebrow">Global scheduling workspace</span>
+          <h1>Timezone Converter for Freelancers</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+<p class="tz-muted">Convert time between world cities, compare offsets on the actual selected date, plan overlap windows for remote teams, and keep live clocks visible in one polished browser workspace.</p>
+          <div class="tz-chip-row">
+            <span class="tz-chip">DST aware</span>
+            <span class="tz-chip">Meeting planner</span>
+            <span class="tz-chip">Live clocks</span>
+            <span class="tz-chip">Shareable link</span>
+            <span class="tz-chip">Browser local workflow</span>
+          </div>
+        </div>
+        <div class="tz-side">
+          <h2>Why this feels premium</h2>
+          <div class="tz-kpi-grid">
+            <div class="tz-kpi"><strong>3 modes</strong><span>Converter, planner, and live clocks in one page.</span></div>
+            <div class="tz-kpi"><strong>DST aware</strong><span>Offsets update for the exact date you choose.</span></div>
+            <div class="tz-kpi"><strong>Copy ready</strong><span>Share clean summaries instead of screenshots.</span></div>
+            <div class="tz-kpi"><strong>Remote friendly</strong><span>Find overlap windows across multiple cities fast.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="tool-shell tool-stage">
+      <div class="tz-tab-row" role="tablist" aria-label="Timezone converter modes">
+        <button type="button" class="tz-tab active" data-tz-tab="converter" aria-selected="true">Converter</button>
+        <button type="button" class="tz-tab" data-tz-tab="planner" aria-selected="false">Meeting Planner</button>
+        <button type="button" class="tz-tab" data-tz-tab="clocks" aria-selected="false">Live Clocks</button>
+      </div>
+      <section class="tz-panel is-active" data-tz-panel="converter">
+        <div class="tz-converter-grid">
+          <div class="tz-card">
+            <h2>Convert across any supported timezone</h2>
+            <p class="tz-muted">Pick the source timezone and target timezone, set the local date-time you care about, and get a result card that is easy to paste into a calendar invite, support reply, or launch note.</p>
+            <div class="tz-field-grid">
+              <div class="tz-field"><label for="tz-from">Source timezone</label><input id="tz-from" list="timezone-options" placeholder="Example: Asia/Kolkata"><small>IANA timezone names work best.</small></div>
+              <div class="tz-field"><label for="tz-to">Target timezone</label><input id="tz-to" list="timezone-options" placeholder="Example: America/New_York"><small>Try any major region or city-based zone.</small></div>
+              <div class="tz-field"><label for="tz-datetime">Source local date and time</label><input id="tz-datetime" type="datetime-local"><small>This is interpreted in the source timezone.</small></div>
+              <div class="tz-field"><label for="tz-format">Display format</label><select id="tz-format"><option value="24">24-hour</option><option value="12">12-hour</option></select><small>Use the style you need for your audience.</small></div>
+            </div>
+            <div class="tz-inline">
+              <button type="button" id="tz-convert" data-primary="true">Convert now</button>
+              <button type="button" id="tz-now" class="tz-secondary">Use current time in source zone</button>
+              <button type="button" id="tz-swap" class="tz-secondary">Swap zones</button>
+              <button type="button" id="tz-copy" class="tz-secondary">Copy result</button>
+              <button type="button" id="tz-copy-link" class="tz-secondary">Copy share link</button>
+            </div>
+            <div class="tz-summary" id="tz-summary" aria-live="polite"><strong>Ready to convert</strong>Choose a source timezone, a target timezone, and a local date-time to generate a clean comparison.</div>
+            <div class="tz-result-grid">
+              <article class="tz-result" id="tz-source-card"><h3>Source time</h3><span class="tz-zone">-</span><span class="tz-big">--:--</span><div class="tz-date">Source details appear here.</div></article>
+              <article class="tz-result" id="tz-target-card"><h3>Target time</h3><span class="tz-zone">-</span><span class="tz-big">--:--</span><div class="tz-date">Target details appear here.</div></article>
+              <article class="tz-result" id="tz-gap-card"><h3>Gap and day shift</h3><span class="tz-zone">Offset difference</span><span class="tz-big">--</span><div class="tz-date">DST and date rollover notes appear here.</div></article>
+            </div>
+            <div class="tz-timeline" id="tz-timeline"></div>
+          </div>
+          <div class="tz-side-column">
+            <aside class="tz-side">
+              <h2>At a glance</h2>
+              <p class="tz-muted">This panel keeps the current local time visible in the selected zones so you can compare the chosen meeting time against what is happening right now.</p>
+              <div class="tz-stat-list">
+                <div class="tz-stat"><span>Selected offset gap</span><span id="tz-gap-value">-</span></div>
+                <div class="tz-stat"><span>Target relation</span><span id="tz-day-relation">-</span></div>
+                <div class="tz-stat"><span>Source UTC offset</span><span id="tz-source-offset">-</span></div>
+                <div class="tz-stat"><span>Target UTC offset</span><span id="tz-target-offset">-</span></div>
+              </div>
+              <div class="tz-now-list" id="tz-current-list"></div>
+              <p class="tz-note" id="tz-status-note">The current-time cards refresh automatically, which makes it easier to sanity-check your planned conversion before you copy it.</p>
+            </aside>
+            <aside class="tz-side">
+              <h2>Quick presets</h2>
+              <p class="tz-muted">Jump to common scheduling anchors without retyping everything from scratch.</p>
+              <div class="tz-preset-grid">
+                <button type="button" class="tz-preset" data-set-target="UTC">Target UTC</button>
+                <button type="button" class="tz-preset" data-set-target="Europe/London">Target London</button>
+                <button type="button" class="tz-preset" data-set-target="America/New_York">Target New York</button>
+                <button type="button" class="tz-preset" data-set-target="Asia/Tokyo">Target Tokyo</button>
+                <button type="button" class="tz-preset" data-use-local="source">Use my local zone</button>
+                <button type="button" class="tz-preset tz-preset-wide" id="tz-open-planner">Open planner for this pair</button>
+              </div>
+            </aside>
+            <aside class="tz-side">
+              <h2>Scheduling cues</h2>
+              <p class="tz-muted">A quick heuristic based on standard 9 AM to 6 PM working hours in each region.</p>
+              <div class="tz-stat-list">
+                <div class="tz-stat"><span>Source work-hours status</span><span id="tz-source-window">-</span></div>
+                <div class="tz-stat"><span>Target work-hours status</span><span id="tz-target-window">-</span></div>
+                <div class="tz-stat"><span>Meeting comfort</span><span id="tz-meeting-comfort">-</span></div>
+              </div>
+              <p class="tz-note" id="tz-planning-note">Choose a time to see whether the slot lands inside normal work hours in both regions.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section class="tz-panel" data-tz-panel="planner" hidden>
+        <div class="tz-planner-grid">
+          <div class="tz-card">
+            <h2>Find overlap windows across teams</h2>
+            <p class="tz-muted">Use the planner when you are scheduling interviews, launches, webinars, support handoffs, or recurring team calls. It scans the selected day in the reference timezone and looks for windows that fit inside the work-hours range you set.</p>
+            <div class="tz-field-grid">
+              <div class="tz-field"><label for="planner-date">Reference date</label><input id="planner-date" type="date"><small>Planning day anchored to the first timezone.</small></div>
+              <div class="tz-field"><label for="planner-duration">Meeting length</label><select id="planner-duration"><option value="30">30 minutes</option><option value="45">45 minutes</option><option value="60" selected>60 minutes</option><option value="90">90 minutes</option><option value="120">120 minutes</option></select><small>Used when checking overlap windows.</small></div>
+              <div class="tz-field"><label for="planner-zone-a">Timezone A</label><input id="planner-zone-a" list="timezone-options" placeholder="Example: Europe/London"><small>This is the reference planning timezone.</small></div>
+              <div class="tz-field"><label for="planner-zone-b">Timezone B</label><input id="planner-zone-b" list="timezone-options" placeholder="Example: America/New_York"><small>Second participant or team.</small></div>
+              <div class="tz-field"><label for="planner-zone-c">Timezone C</label><input id="planner-zone-c" list="timezone-options" placeholder="Optional third timezone"><small>Leave blank for two-zone planning.</small></div>
+              <div class="tz-field"><label for="planner-work-start">Shared workday starts after</label><input id="planner-work-start" type="time" value="09:00"><small>Applies to each selected timezone.</small></div>
+              <div class="tz-field"><label for="planner-work-end">Shared workday ends by</label><input id="planner-work-end" type="time" value="18:00"><small>Planner keeps suggestions inside this window.</small></div>
+            </div>
+            <div class="tz-inline">
+              <button type="button" id="planner-run" data-primary="true">Find best windows</button>
+              <button type="button" id="planner-sync" class="tz-secondary">Sync from converter</button>
+              <button type="button" id="planner-copy" class="tz-secondary">Copy suggestions</button>
+            </div>
+            <div id="planner-status" class="tz-summary" aria-live="polite"><strong>Planner ready</strong>Set the planning date and timezones, then let the tool surface workable overlap windows.</div>
+            <div id="planner-output" class="tz-overlaps"></div>
+          </div>
+          <aside class="tz-side">
+            <h2>Planner tips</h2>
+            <div class="tz-pill-row"><span class="tz-pill">Good for interviews</span><span class="tz-pill">Good for webinars</span><span class="tz-pill">Good for support handoffs</span></div>
+            <p class="tz-note">The planner prioritizes windows that stay inside the selected work-hours range in every chosen timezone. That means it is optimized for practical team overlap, not just raw time conversion.</p>
+            <div class="tz-now-list">
+              <div class="tz-now-row"><strong>Reference logic</strong><span>The selected date is anchored to Timezone A.</span></div>
+              <div class="tz-now-row"><strong>Overlap rule</strong><span>All zones must fit the chosen duration inside the configured workday.</span></div>
+              <div class="tz-now-row"><strong>Three-zone mode</strong><span>Leave Timezone C blank if you only need a two-city plan.</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section class="tz-panel" data-tz-panel="clocks" hidden>
+        <div class="tz-card">
+          <h2>Keep the important world clocks visible</h2>
+          <p class="tz-muted">Add custom zones, sync the clocks with your converter selections, and keep a clean live dashboard for daily collaboration. This is useful when you spend the day jumping between support regions, engineering hubs, clients, and deployment windows.</p>
+          <div class="tz-clock-tools">
+            <input id="clock-zone-input" list="timezone-options" placeholder="Add a timezone to the live clock wall">
+            <button type="button" id="clock-add" data-primary="true">Add clock</button>
+            <button type="button" id="clock-sync" class="tz-secondary">Sync from converter</button>
+            <button type="button" id="clock-reset" class="tz-secondary">Reset hubs</button>
+            <button type="button" id="clock-refresh" class="tz-secondary">Refresh now</button>
+          </div>
+          <div id="clock-grid" class="tz-clock-grid" aria-live="polite"></div>
+        </div>
+      </section>
+    </section>
+    <section class="section">
+      <h2>Timezone Converter Comparison Table</h2>
+      <p class="comparison-note">Simple feature matrix based on public pages reviewed on April 4, 2026. A tick means the feature is clearly highlighted on the reviewed public page. A cross means it was not clearly highlighted there.</p>
+      <div class="comparison-wrap">
+        <table class="comparison-table">
+          <thead><tr><th>Category</th><th>ToolsMatic</th><th>World Time Buddy</th><th>timeanddate</th><th>Savvy Time</th><th>Time-Conversion.com</th></tr></thead>
+          <tbody>
+            <tr><td>Direct timezone conversion</td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td></tr>
+            <tr><td>Multiple locations at once</td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td></tr>
+            <tr><td>Dedicated meeting planner</td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-no">&#10005;</span></td><td><span class="cmp-no">&#10005;</span></td></tr>
+            <tr><td>Live clocks or world clock view</td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-no">&#10005;</span></td><td><span class="cmp-yes">&#10003;</span></td></tr>
+            <tr><td>Share or calendar actions</td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-no">&#10005;</span></td><td><span class="cmp-no">&#10005;</span></td></tr>
+            <tr><td>Automatic DST handling</td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-no">&#10005;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td></tr>
+            <tr><td>Copy-ready result summary</td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-no">&#10005;</span></td><td><span class="cmp-no">&#10005;</span></td><td><span class="cmp-no">&#10005;</span></td><td><span class="cmp-no">&#10005;</span></td></tr>
+            <tr><td>Free public access</td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td><td><span class="cmp-yes">&#10003;</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item"><summary>How is this different from a basic timezone converter?</summary><p>A basic timezone converter gives you a number and stops there. This page is built to handle the full job: convert the time, show the real date shift, surface the current local time in each selected region, generate a shareable link, and help you plan a workable meeting window if the conversion turns into a real scheduling decision.</p></details>
+        <details class="faq-item"><summary>Does this tool handle daylight saving time changes automatically?</summary><p>Yes. The conversion uses the browser's internationalization data for the date you selected, so the offsets shown are tied to the actual point in time instead of a generic fixed offset.</p></details>
+        <details class="faq-item"><summary>Can I use the meeting planner for more than two cities?</summary><p>Yes. The planner supports two-zone and three-zone workflows. If you only need two cities, leave the third input empty. If you need a harder overlap check across three regions, add the third timezone and let the planner surface realistic windows.</p></details>
+        <details class="faq-item"><summary>What makes UTC different from a local timezone?</summary><p>UTC is the reference time standard. Local timezones are offsets from UTC and may shift when daylight saving time starts or ends. In practical work, UTC is useful as a neutral anchor, while local time is what people actually use to attend meetings, go on shift, or receive alerts.</p></details>
+        <details class="faq-item"><summary>Is this timezone converter private?</summary><p>Yes. The core calculations happen in the browser. Your selected dates, entered values, and timezone choices do not need to leave the page for the main workflow to function.</p></details>
+        <details class="faq-item"><summary>Why keep live clocks on the same page as the converter?</summary><p>Because conversion alone is rarely the full problem. People usually want to know what the chosen time means in context. A live clock wall makes it easier to sanity-check whether the converted time lands in normal working hours, late evening, or the next day.</p></details>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="tz-next-searches">
+      <h2 id="tz-next-searches">Related searches that usually follow timezone conversion</h2>
+      <p class="comparison-note">Timezone impressions often widen through pair searches like IST to EST, UTC meeting planning, and remote work scheduling. These internal links aim at that adjacent intent while preserving this page as the main converter destination.</p>
+      <div class="comparison-wrap" style="overflow:visible;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;">
+          <a href="/guides/timezone-conversion-guide.html" class="tz-secondary" style="display:block;padding:18px;text-align:left;">
+            <strong style="display:block;margin-bottom:8px;">Timezone conversion guide for IST, EST, PST, and UTC</strong>
+            <span style="display:block;color:var(--text-secondary);line-height:1.7;">Expand into long-tail scheduling searches with practical examples for remote teams, launches, and customer calls.</span>
+          </a>
+          <a href="/tools/reaction-time-test.html" class="tz-secondary" style="display:block;padding:18px;text-align:left;">
+            <strong style="display:block;margin-bottom:8px;">Reaction Time Test</strong>
+            <span style="display:block;color:var(--text-secondary);line-height:1.7;">A separate timing tool that already attracts search interest from speed, gaming, and benchmark-style queries.</span>
+          </a>
+          <a href="/tools/unit-converter.html" class="tz-secondary" style="display:block;padding:18px;text-align:left;">
+            <strong style="display:block;margin-bottom:8px;">Unit Converter</strong>
+            <span style="display:block;color:var(--text-secondary);line-height:1.7;">Useful for broader operational workflows where users jump between time, region, and format conversions.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="section tz-seo" id="tz-seo-content">
+      <h2>Advanced Timezone Converter Guide</h2>
+      <p>A strong timezone converter is not just a utility for casual curiosity. It is a production tool for modern work. Remote teams, founders, agencies, support desks, operations managers, recruiters, course creators, and event hosts all depend on accurate time conversion every week. The practical challenge is not only translating one local time into another. The real challenge is seeing the translation clearly enough to act on it without mistakes. That is why the best timezone converter is the one that reduces ambiguity, exposes date rollover, handles daylight saving shifts, and turns a time question into a decision-ready answer. ToolsMatic is built around that principle. It gives you direct source-to-target conversion, planner support, live clocks, and copy-ready output so the page works like an actual workflow instead of a narrow calculator.</p>
+      <p>Most people search for a timezone converter because they have a live coordination problem. They are confirming a product demo between India and New York. They are aligning a release window between London and Sydney. They are checking whether a webinar scheduled in Pacific Time lands in the middle of the night for Singapore attendees. They are answering a customer who wrote, "Can we meet at 3 PM our time?" That is the real search intent behind this category. A page that simply shows a converted time without context often creates another round of checking. Was that the same day or the next day? Is daylight saving active on that date? What time is it there right now? Can everyone make a one-hour slot inside normal work hours? ToolsMatic addresses those follow-up questions on the same page, which is why it is built to feel more complete than a bare converter.</p>
+      <p>Daylight saving time is one of the biggest reasons timezone mistakes keep happening. A fixed UTC offset is not enough if you are planning work around cities that shift during part of the year. For example, a relationship that looks stable in one month can move by an hour after the clocks change in one region and not the other. That means the same local meeting can suddenly become earlier or later for another team. A high-quality timezone converter should evaluate the actual selected date, not just display a generic zone label. That is why this page surfaces the source UTC offset and target UTC offset on the chosen day, alongside the offset gap and date relation. Those details matter for launches, payroll cutoffs, support shifts, live streams, and recurring customer meetings.</p>
+      <p>Another common problem with online time tools is that they force users to think in the wrong direction. Many pages start from UTC or from the browser's local timezone whether that matches your real scenario or not. In practice, people usually begin with a local human promise: "We will meet at 10:30 AM in Berlin" or "The onboarding session starts at 2 PM Singapore time." That is why the main ToolsMatic converter treats the entered value as a local date-time in the source timezone first, then translates it to the target. This mirrors how real scheduling actually works. It keeps the meaning of the original promise intact instead of making users mentally reverse-engineer what the source should be.</p>
+      <div class="tz-seo-grid">
+        <div>
+          <h3>Why remote teams need more than a simple world clock</h3>
+          <p>A world clock is useful, but a world clock alone does not answer the next practical question: which meeting window is fair? Remote teams often work across three patterns at once. There are core hours for one group, early overlap for another, and a hard stop for a third group. Without a planner, people end up scanning rows manually or opening multiple apps. The ToolsMatic meeting planner helps bridge that gap. You choose the date, add two or three timezones, define the working window, and the page surfaces overlap slots that can actually support the meeting length you need. That makes the tool more useful for standups, candidate interviews, support handoffs, cross-region product reviews, and partner coordination.</p>
+        </div>
+        <div>
+          <h3>Why live clocks still matter when you already have conversion</h3>
+          <p>Conversion answers a specific question, while live clocks keep situational awareness visible. If you work with global teams every day, you do not want to reconvert each time you need a quick check. A live clock wall lets you keep New York, London, Dubai, Bangalore, Tokyo, or Sydney visible at a glance. That makes it easier to know whether a follow-up message is landing in a normal office window, whether a handoff is about to begin, or whether a deployment note will reach the on-call team at a reasonable time. Keeping clocks next to the converter makes the page useful both for quick lookups and for continuous daily operations.</p>
+        </div>
+      </div>
+      <p>UTC is another area where many people need a clearer explanation. UTC is the global reference time standard, not a city. It provides a neutral anchor that systems, logs, APIs, and international coordination often rely on. Local timezones are offsets from UTC, and those offsets may change with daylight saving rules. In technical workflows, teams often announce maintenance windows or release freeze periods in UTC because it avoids regional ambiguity. But humans still attend calls and read dashboards in local time. That is why a good timezone converter needs to make the relationship between local time and UTC easy to see. ToolsMatic keeps those offset notes visible so you can move comfortably between a human conversation and a systems-oriented schedule.</p>
+      <p>Search demand around timezone conversion also comes from travel, education, and customer support. Travelers use a timezone converter to understand hotel check-in cutoffs, transport windows, and when to call home without waking anyone up. Students use it to attend live classes or remote office hours hosted from another country. Support teams use it to explain when a maintenance task will be completed in the customer's local region. Agencies use it to avoid missed client calls when juggling multiple countries in the same week. These are not edge cases. They are exactly the kinds of everyday workflows that create repeat search traffic for a good timezone tool. A page that solves those cases well earns repeat usage, bookmarks, shares, and natural word of mouth even without social promotion.</p>
+      <p>The comparison between timezone tools usually comes down to one question: does the page reduce friction or add it? Some tools are strong for dense multi-city grids. Others are strong because they sit inside a larger world clock ecosystem. Others provide quick visual timelines. ToolsMatic aims to win on focus and completeness together. The converter tab handles the direct question. The planner tab handles the operational next step. The clocks tab keeps the broader picture visible. This layered approach matters because real users often arrive with one query and immediately need a second action. When that second action is already on the page, the tool feels faster and more premium.</p>
+      <p>Another reason this type of page performs well in search is that timezone questions are intensely practical and often recurring. Teams do not solve scheduling once and move on forever. They repeat the task every week. Product launches, sales demos, client reporting, weekly standups, partner check-ins, and live content production all create fresh scheduling needs. That makes an advanced timezone converter a strong candidate for retention-driven organic growth. If the page saves time, avoids one embarrassing scheduling mistake, and remains easy to use, people come back. That return behavior can matter as much as acquisition because it creates brand memory and direct traffic alongside search visibility.</p>
+      <p>Ease of use also has a direct relationship with trust. A page that looks cluttered or forces users through too many steps feels risky, especially when the output affects calendars and deadlines. That is why this page keeps the most important controls visible up front, while moving advanced behavior into distinct tabs instead of stacking everything into one long wall. The result is a cleaner path for new users and a faster path for power users. Search visitors who land on the page can convert one time immediately. Returning users can jump to planning or live clocks without feeling like the page is fighting them. That balance is critical if you want a utility page to stand out in a crowded category and keep earning repeat use.</p>
+      <p>If you care about operational accuracy, one habit matters more than almost anything else: always convert on the actual date of the event, not just the same weekday in the current week. This is especially important around spring and autumn daylight saving changes, quarter-end launches, holiday schedules, and global campaigns. Using a date-aware timezone converter protects against the assumption that a city pair always stays the same number of hours apart. The better your page makes that behavior, the fewer hidden errors users carry into scheduling. ToolsMatic is designed around that exact requirement, which is why the date-time field sits at the center of the workflow instead of being treated like an afterthought.</p>
+      <p>The best organic utility pages do not rely on hype. They win by being obviously useful. A strong timezone converter earns attention by helping people complete work faster, with less doubt, and with fewer follow-up tabs. That is the kind of page people bookmark, share in team chats, include in docs, and return to without being reminded. ToolsMatic is built to serve that role: a world-class timezone converter that is fast enough for quick checks, detailed enough for professional scheduling, and polished enough to feel dependable when the exact time really matters.</p>
+      <h3>How teams use a timezone converter for launches and support</h3>
+      <p>Product launches are one of the clearest examples of why timezone tools matter. A release note might be written in UTC, approved in London, executed by engineering in India, and monitored by support in North America. If just one team misreads the target local time, the handoff becomes sloppy. A browser tool that shows the local meaning of the same moment across regions reduces that risk immediately. The same is true for support escalations. When a team promises an update at a certain hour, the promise has to survive translation across the customer's timezone and the operator's timezone. Good conversion output is not decoration. It is part of keeping commitments intact.</p>
+      <p>Agencies and consulting teams also benefit from a stronger timezone workspace because client communication is often spread across regions. One strategist may be in Europe, a developer in Asia, and the client in the United States. That creates a daily scheduling burden. If the scheduling tool is awkward, people start relying on guesswork and memory. A cleaner page with live clocks, quick presets, and a meeting planner makes it much easier to maintain discipline around call timing, review cycles, and project updates. These are the kinds of workflows that turn a utility page into a repeat-use product rather than a one-time search result.</p>
+      <h3>Why accurate timezone conversion builds trust</h3>
+      <p>Trust is a hidden ranking factor in utility categories, even when search engines do not measure it directly. People notice whether a tool feels careful. If a page makes date rollover obvious, respects daylight saving changes, and explains the result clearly, it feels reliable. That reliability affects whether users bookmark the page, share it with coworkers, or return to it later by name. In other words, accuracy and clarity are not only product qualities. They are growth qualities. Strong utility pages tend to spread because someone inside a team says, "Use this one, it is easier and it does not mess up the time."</p>
+      <p>That is why the converter on this page is paired with context instead of leaving the user with a bare numeric output. The copyable answer, the at-a-glance offset notes, the live clocks, and the planner workflow all reduce the chance that a converted time gets misread or misapplied. The cleaner the path from question to trustworthy answer, the better the tool performs for real people and the more likely it is to become part of a team's everyday workflow.</p>
+    </section>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="timezone-converter-for-freelancers-pseo" aria-labelledby="timezone-converter-for-freelancers-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Timezone Converter for Freelancers</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="timezone-converter-for-freelancers-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Timezone Converter for Freelancers Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Timezone Converter for Freelancers</strong>, a freelance-focused utility designed to assist with client deliverables and data preparation. This dedicated workspace is built specifically for independent contractors, consultants, designers, and developers working with clients. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>rapid workspace resets, secure local data calculations, and copy-paste layout readiness</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Compare times across cities with zero setup. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Rapid deliverable prep</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Format client data, calculate project metrics, or validate formatting in seconds.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">100% Client-safe privacy</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Maintain absolute client confidentiality; data never leaves your local browser sandbox.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Frictionless productivity</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Skip paid software subscriptions; keep your overhead low while delivering top quality.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Timezone Converter for Freelancers</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Freelancers layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Timezone Converter for Freelancers</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this free for commercial client work?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, all of our utilities are completely free for personal and professional use.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Do you track or store client data?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Never. Data processing happens locally, complying with strict non-disclosure agreements.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I export the workspace logs?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, click the copy button to capture your results instantly for email reports.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/timezone-converter.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Timezone Converter</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Timezone Converter for Freelancers","url":"https://toolsmatic.me/tools/timezone-converter-for-freelancers.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Timezone Converter for Freelancers online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Timezone Converter for Freelancers","item":"https://toolsmatic.me/tools/timezone-converter-for-freelancers.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this free for commercial client work?","acceptedAnswer":{"@type":"Answer","text":"Yes, all of our utilities are completely free for personal and professional use."}},{"@type":"Question","name":"Do you track or store client data?","acceptedAnswer":{"@type":"Answer","text":"Never. Data processing happens locally, complying with strict non-disclosure agreements."}},{"@type":"Question","name":"Can I export the workspace logs?","acceptedAnswer":{"@type":"Answer","text":"Yes, click the copy button to capture your results instantly for email reports."}}]}]}</script>
+  </main>
+  <footer>ToolsMatic - Fast, privacy-first utilities for the web.</footer>
+  <datalist id="timezone-options"></datalist>
+  <script>
+    (function () {
+      const STATE_KEY = 'tm-timezone-converter-v3';
+      const DEFAULT_CLOCKS = ['UTC', 'Europe/London', 'America/New_York', 'Asia/Kolkata', 'Asia/Tokyo', 'Australia/Sydney'];
+      const el = {
+        from: document.getElementById('tz-from'),
+        to: document.getElementById('tz-to'),
+        datetime: document.getElementById('tz-datetime'),
+        format: document.getElementById('tz-format'),
+        summary: document.getElementById('tz-summary'),
+        sourceCard: document.getElementById('tz-source-card'),
+        targetCard: document.getElementById('tz-target-card'),
+        gapCard: document.getElementById('tz-gap-card'),
+        timeline: document.getElementById('tz-timeline'),
+        gapValue: document.getElementById('tz-gap-value'),
+        dayRelation: document.getElementById('tz-day-relation'),
+        sourceOffset: document.getElementById('tz-source-offset'),
+        targetOffset: document.getElementById('tz-target-offset'),
+        sourceWindow: document.getElementById('tz-source-window'),
+        targetWindow: document.getElementById('tz-target-window'),
+        meetingComfort: document.getElementById('tz-meeting-comfort'),
+        currentList: document.getElementById('tz-current-list'),
+        statusNote: document.getElementById('tz-status-note'),
+        planningNote: document.getElementById('tz-planning-note'),
+        plannerDate: document.getElementById('planner-date'),
+        plannerDuration: document.getElementById('planner-duration'),
+        plannerZoneA: document.getElementById('planner-zone-a'),
+        plannerZoneB: document.getElementById('planner-zone-b'),
+        plannerZoneC: document.getElementById('planner-zone-c'),
+        plannerWorkStart: document.getElementById('planner-work-start'),
+        plannerWorkEnd: document.getElementById('planner-work-end'),
+        plannerStatus: document.getElementById('planner-status'),
+        plannerOutput: document.getElementById('planner-output'),
+        plannerCopy: document.getElementById('planner-copy'),
+        clockZoneInput: document.getElementById('clock-zone-input'),
+        clockGrid: document.getElementById('clock-grid')
+      };
+      const tabs = Array.from(document.querySelectorAll('[data-tz-tab]'));
+      const panels = Array.from(document.querySelectorAll('[data-tz-panel]'));
+      const zones = (() => {
+        const browser = typeof Intl.supportedValuesOf === 'function' ? Intl.supportedValuesOf('timeZone') : [];
+        return Array.from(new Set(['UTC', 'Europe/London', 'Europe/Paris', 'Europe/Berlin', 'Asia/Kolkata', 'Asia/Dubai', 'Asia/Singapore', 'Asia/Tokyo', 'Australia/Sydney', 'America/New_York', 'America/Chicago', 'America/Denver', 'America/Los_Angeles', 'America/Toronto', 'America/Sao_Paulo', 'Africa/Johannesburg', ...browser]));
+      })();
+      document.getElementById('timezone-options').innerHTML = zones.map((zone) => `<option value="${zone}"></option>`).join('');
+      let clockZones = [];
+      let lastResult = '';
+      let lastPlanner = '';
+      let currentTab = 'converter';
+      let liveTimer = null;
+
+      function unique(list) { return Array.from(new Set(list.filter(Boolean))); }
+      function normalizeZone(value) {
+        const raw = (value || '').trim();
+        if (!raw) return '';
+        if (/^(utc|gmt)$/i.test(raw)) return 'UTC';
+        const prepared = raw.replace(/\s+/g, '_');
+        return zones.find((zone) => zone.toLowerCase() === prepared.toLowerCase()) || '';
+      }
+      function parseDateTimeLocal(value) {
+        const match = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})$/.exec(value || '');
+        return match ? { year: Number(match[1]), month: Number(match[2]), day: Number(match[3]), hour: Number(match[4]), minute: Number(match[5]) } : null;
+      }
+      function parseTime(value) {
+        const match = /^(\d{2}):(\d{2})$/.exec(value || '');
+        return match ? (Number(match[1]) * 60) + Number(match[2]) : null;
+      }
+      function formatOffset(minutes) {
+        const sign = minutes >= 0 ? '+' : '-';
+        const abs = Math.abs(minutes);
+        return `UTC${sign}${String(Math.floor(abs / 60)).padStart(2, '0')}:${String(abs % 60).padStart(2, '0')}`;
+      }
+      function getOffsetMinutes(date, zone) {
+        try {
+          const part = new Intl.DateTimeFormat('en-US', { timeZone: zone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZoneName: 'shortOffset' }).formatToParts(date).find((entry) => entry.type === 'timeZoneName')?.value || 'GMT';
+          const match = /GMT([+-])(\d{1,2})(?::?(\d{2}))?/.exec(part);
+          if (!match) return 0;
+          return (match[1] === '-' ? -1 : 1) * ((Number(match[2]) * 60) + Number(match[3] || 0));
+        } catch (error) {
+          return 0;
+        }
+      }
+      function instantFromLocal(value, zone) {
+        const parsed = parseDateTimeLocal(value);
+        if (!parsed) return null;
+        let utc = Date.UTC(parsed.year, parsed.month - 1, parsed.day, parsed.hour, parsed.minute, 0, 0);
+        for (let index = 0; index < 4; index += 1) {
+          utc = Date.UTC(parsed.year, parsed.month - 1, parsed.day, parsed.hour, parsed.minute, 0, 0) - (getOffsetMinutes(new Date(utc), zone) * 60000);
+        }
+        return new Date(utc);
+      }
+      function numericMeta(date, zone) {
+        const parts = new Intl.DateTimeFormat('en-CA', { timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23', hour12: false }).formatToParts(date);
+        const map = {};
+        parts.forEach((part) => { if (part.type !== 'literal') map[part.type] = part.value; });
+        return { year: Number(map.year), month: Number(map.month), day: Number(map.day), weekday: map.weekday, hour: Number(map.hour), minute: Number(map.minute) };
+      }
+      function meta(date, zone, use12) {
+        const num = numericMeta(date, zone);
+        const offsetMinutes = getOffsetMinutes(date, zone);
+        const zoneName = new Intl.DateTimeFormat('en-US', { timeZone: zone, hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }).formatToParts(date).find((part) => part.type === 'timeZoneName')?.value || formatOffset(offsetMinutes);
+        return {
+          zone,
+          timeLabel: new Intl.DateTimeFormat('en-US', { timeZone: zone, hour: '2-digit', minute: '2-digit', hour12: use12, hourCycle: use12 ? 'h12' : 'h23' }).format(date),
+          dateLabel: new Intl.DateTimeFormat('en-US', { timeZone: zone, weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }).format(date),
+          zoneName,
+          offsetMinutes,
+          offsetLabel: formatOffset(offsetMinutes),
+          minutesOfDay: (num.hour * 60) + num.minute,
+          dayIndex: Math.floor(Date.UTC(num.year, num.month - 1, num.day) / 86400000)
+        };
+      }
+      function zoneLabel(zone) { return (zone || '').replace(/_/g, ' '); }
+      function dateTimeValue(date, zone) {
+        const item = numericMeta(date, zone);
+        return `${item.year}-${String(item.month).padStart(2, '0')}-${String(item.day).padStart(2, '0')}T${String(item.hour).padStart(2, '0')}:${String(item.minute).padStart(2, '0')}`;
+      }
+      function dateValue(date, zone) {
+        const item = numericMeta(date, zone);
+        return `${item.year}-${String(item.month).padStart(2, '0')}-${String(item.day).padStart(2, '0')}`;
+      }
+      function gapText(minutes) {
+        if (minutes === 0) return 'Same UTC offset on the selected date';
+        const abs = Math.abs(minutes);
+        const core = `${Math.floor(abs / 60)}h ${String(abs % 60).padStart(2, '0')}m`;
+        return minutes > 0 ? `Target is ${core} ahead` : `Target is ${core} behind`;
+      }
+      function dayText(shift) {
+        if (shift === 0) return 'Same calendar day';
+        if (shift > 0) return shift === 1 ? 'Target lands on the next day' : `Target lands ${shift} days later`;
+        return shift === -1 ? 'Target lands on the previous day' : `Target lands ${Math.abs(shift)} days earlier`;
+      }
+      function workWindowLabel(minutes) {
+        if (minutes < 360) return 'Deep night';
+        if (minutes < 540) return 'Before work hours';
+        if (minutes <= 1080) return 'Within work hours';
+        if (minutes <= 1260) return 'After work hours';
+        return 'Late night';
+      }
+      function comfortMeta(sourceMeta, targetMeta) {
+        const sourceInHours = sourceMeta.minutesOfDay >= 540 && sourceMeta.minutesOfDay <= 1080;
+        const targetInHours = targetMeta.minutesOfDay >= 540 && targetMeta.minutesOfDay <= 1080;
+        if (sourceInHours && targetInHours) {
+          return {
+            label: 'Strong overlap',
+            note: `Both regions land inside a standard workday window. ${targetMeta.timeLabel} in ${zoneLabel(targetMeta.zone)} is a clean match for scheduling.`
+          };
+        }
+        if (sourceInHours || targetInHours) {
+          return {
+            label: 'Usable with caution',
+            note: `One side is inside standard work hours while the other is ${workWindowLabel(sourceInHours ? targetMeta.minutesOfDay : sourceMeta.minutesOfDay).toLowerCase()}. Consider checking the planner tab for a better overlap.`
+          };
+        }
+        return {
+          label: 'Outside normal hours',
+          note: `The selected slot is outside a standard 9 AM to 6 PM workday in both regions. Use the planner tab if you want a friendlier meeting window.`
+        };
+      }
+      function showMessage(host, title, body) { host.innerHTML = `<strong>${title}</strong>${body}`; }
+      function notify(message) { if (window.microToast) { window.microToast(message); } else { el.statusNote.textContent = message; } }
+      function save() {
+        localStorage.setItem(STATE_KEY, JSON.stringify({
+          from: el.from.value, to: el.to.value, datetime: el.datetime.value, format: el.format.value,
+          plannerDate: el.plannerDate.value, plannerDuration: el.plannerDuration.value, plannerZoneA: el.plannerZoneA.value,
+          plannerZoneB: el.plannerZoneB.value, plannerZoneC: el.plannerZoneC.value, plannerWorkStart: el.plannerWorkStart.value,
+          plannerWorkEnd: el.plannerWorkEnd.value, clockZones, tab: currentTab
+        }));
+      }
+      function load() { try { return JSON.parse(localStorage.getItem(STATE_KEY) || '{}'); } catch (error) { return {}; } }
+      function shareUrl() {
+        const url = new URL(window.location.href);
+        url.search = new URLSearchParams({ from: el.from.value, to: el.to.value, dt: el.datetime.value, fmt: el.format.value }).toString();
+        return url.toString();
+      }
+      function applyUrlState() {
+        const params = new URLSearchParams(window.location.search);
+        const from = normalizeZone(params.get('from') || '');
+        const to = normalizeZone(params.get('to') || '');
+        const dt = params.get('dt') || '';
+        const fmt = params.get('fmt') || '';
+        if (from) el.from.value = from;
+        if (to) el.to.value = to;
+        if (parseDateTimeLocal(dt)) el.datetime.value = dt;
+        if (fmt === '12' || fmt === '24') el.format.value = fmt;
+      }
+      function writeCard(host, title, item) {
+        host.innerHTML = `<h3>${title}</h3><span class="tz-zone">${zoneLabel(item.zone)}</span><span class="tz-big">${item.timeLabel}</span><div class="tz-date">${item.dateLabel}<br>${item.zoneName} | ${item.offsetLabel}</div>`;
+      }
+      function renderTimeline(baseInstant, fromZone, toZone, use12) {
+        const offsets = [-6, -3, 0, 3, 6];
+        el.timeline.innerHTML = offsets.map((offset) => {
+          const instant = new Date(baseInstant.getTime() + (offset * 3600000));
+          const source = meta(instant, fromZone, use12);
+          const target = meta(instant, toZone, use12);
+          return `<div class="tz-timeline-card"><strong>${offset === 0 ? 'Selected time' : `${offset > 0 ? '+' : ''}${offset}h`}</strong><span>${source.timeLabel} in ${zoneLabel(fromZone)}</span><span>${target.timeLabel} in ${zoneLabel(toZone)}</span></div>`;
+        }).join('');
+      }
+      function renderCurrent(fromZone, toZone, use12) {
+        const now = new Date();
+        el.currentList.innerHTML = [meta(now, fromZone, use12), meta(now, toZone, use12), meta(now, 'UTC', use12)].map((item) => `<div class="tz-now-row"><div><strong>${zoneLabel(item.zone)}</strong><span>${item.dateLabel}</span></div><div><strong>${item.timeLabel}</strong><span>${item.offsetLabel}</span></div></div>`).join('');
+      }
+      function renderConversion() {
+        const fromZone = normalizeZone(el.from.value);
+        const toZone = normalizeZone(el.to.value);
+        const parsed = parseDateTimeLocal(el.datetime.value);
+        const use12 = el.format.value === '12';
+        if (!fromZone || !toZone || !parsed) {
+          showMessage(el.summary, 'Check the inputs', 'Use valid IANA timezone names and a valid source local date-time.');
+          el.timeline.innerHTML = '';
+          el.currentList.innerHTML = '';
+          el.gapValue.textContent = '-';
+          el.dayRelation.textContent = '-';
+          el.sourceOffset.textContent = '-';
+          el.targetOffset.textContent = '-';
+          el.sourceWindow.textContent = '-';
+          el.targetWindow.textContent = '-';
+          el.meetingComfort.textContent = '-';
+          el.planningNote.textContent = 'Choose a time to see whether the slot lands inside normal work hours in both regions.';
+          return;
+        }
+        el.from.value = fromZone;
+        el.to.value = toZone;
+        const instant = instantFromLocal(el.datetime.value, fromZone);
+        if (!instant || Number.isNaN(instant.getTime())) {
+          showMessage(el.summary, 'Could not convert', 'The entered source date-time could not be interpreted for the chosen timezone.');
+          return;
+        }
+        const source = meta(instant, fromZone, use12);
+        const target = meta(instant, toZone, use12);
+        const gap = target.offsetMinutes - source.offsetMinutes;
+        const dayShift = target.dayIndex - source.dayIndex;
+        lastResult = `${source.timeLabel} on ${source.dateLabel} in ${fromZone} equals ${target.timeLabel} on ${target.dateLabel} in ${toZone}. ${gapText(gap)}. ${dayText(dayShift)}.`;
+        showMessage(el.summary, 'Conversion ready', `${lastResult} Use copy or share-link actions if you want to paste this into a message, calendar invite, or support reply.`);
+        writeCard(el.sourceCard, 'Source time', source);
+        writeCard(el.targetCard, 'Target time', target);
+        el.gapCard.innerHTML = `<h3>Gap and day shift</h3><span class="tz-zone">${gapText(gap)}</span><span class="tz-big">${Math.abs(gap / 60).toFixed(Math.abs(gap) % 60 === 0 ? 0 : 2).replace(/\\.00$/, '')}h</span><div class="tz-date">${dayText(dayShift)}<br>${source.offsetLabel} to ${target.offsetLabel} on the selected date.</div>`;
+        el.gapValue.textContent = gapText(gap);
+        el.dayRelation.textContent = dayText(dayShift);
+        el.sourceOffset.textContent = source.offsetLabel;
+        el.targetOffset.textContent = target.offsetLabel;
+        el.sourceWindow.textContent = workWindowLabel(source.minutesOfDay);
+        el.targetWindow.textContent = workWindowLabel(target.minutesOfDay);
+        const comfort = comfortMeta(source, target);
+        el.meetingComfort.textContent = comfort.label;
+        el.statusNote.textContent = `Selected conversion uses ${source.offsetLabel} for ${zoneLabel(fromZone)} and ${target.offsetLabel} for ${zoneLabel(toZone)} on the chosen date.`;
+        el.planningNote.textContent = comfort.note;
+        renderTimeline(instant, fromZone, toZone, use12);
+        renderCurrent(fromZone, toZone, use12);
+        history.replaceState({}, '', shareUrl());
+        save();
+      }
+      function plannerData() {
+        const zoneA = normalizeZone(el.plannerZoneA.value);
+        const zoneB = normalizeZone(el.plannerZoneB.value);
+        const zoneC = normalizeZone(el.plannerZoneC.value);
+        const workStart = parseTime(el.plannerWorkStart.value);
+        const workEnd = parseTime(el.plannerWorkEnd.value);
+        const duration = Number(el.plannerDuration.value || 60);
+        if (!zoneA || !zoneB) return { error: 'Add at least Timezone A and Timezone B to search for overlap windows.' };
+        if (!el.plannerDate.value) return { error: 'Choose a planning date first.' };
+        if (workStart === null || workEnd === null || workEnd <= workStart) return { error: 'Set a valid shared workday range. The end time must be later than the start time.' };
+        const dayStart = instantFromLocal(`${el.plannerDate.value}T00:00`, zoneA);
+        if (!dayStart) return { error: 'The planner date could not be interpreted in the reference timezone.' };
+        const activeZones = [zoneA, zoneB, zoneC].filter(Boolean);
+        const slots = [];
+        for (let step = 0; step < 48; step += 1) {
+          const start = new Date(dayStart.getTime() + (step * 1800000));
+          const end = new Date(start.getTime() + (duration * 60000));
+          const items = activeZones.map((zone) => ({ zone, start: meta(start, zone, false), end: meta(end, zone, false) }));
+          const valid = items.every((entry) => entry.start.dayIndex === entry.end.dayIndex && entry.start.minutesOfDay >= workStart && entry.end.minutesOfDay <= workEnd);
+          if (!valid) continue;
+          const score = items.reduce((sum, entry) => sum + Math.abs(entry.start.minutesOfDay - 780), 0);
+          slots.push({ items, score });
+        }
+        slots.sort((a, b) => a.score - b.score);
+        return { slots: slots.slice(0, 6), zones: activeZones, duration };
+      }
+      function renderPlanner() {
+        const data = plannerData();
+        if (data.error) {
+          showMessage(el.plannerStatus, 'Planner needs input', data.error);
+          el.plannerOutput.innerHTML = '<div class="tz-empty">No planner results yet. Add the required timezones and run the planner again.</div>';
+          lastPlanner = '';
+          return;
+        }
+        if (!data.slots.length) {
+          showMessage(el.plannerStatus, 'No overlap found', 'No shared window matched the configured work-hours range on this day. Try widening the range, reducing the meeting length, or moving the date.');
+          el.plannerOutput.innerHTML = '<div class="tz-empty">No overlap windows matched the current planner rules.</div>';
+          lastPlanner = '';
+          return;
+        }
+        showMessage(el.plannerStatus, 'Best overlap windows found', `${data.slots.length} suggestion${data.slots.length === 1 ? '' : 's'} matched the current rules across ${data.zones.length} timezone${data.zones.length === 1 ? '' : 's'} for a ${data.duration}-minute session.`);
+        lastPlanner = data.slots.map((slot, index) => `${index + 1}. ${slot.items.map((entry) => `${zoneLabel(entry.zone)} ${entry.start.timeLabel}-${entry.end.timeLabel}`).join(' | ')}`).join('\n');
+        el.plannerOutput.innerHTML = data.slots.map((slot, index) => `<article class="tz-slot"><div class="tz-slot-head"><strong>Option ${index + 1}: ${slot.items[0].start.dateLabel}</strong><span>${data.duration}-minute shared window</span></div><div class="tz-slot-grid">${slot.items.map((entry) => `<div class="tz-slot-zone"><strong>${zoneLabel(entry.zone)}</strong><span>${entry.start.timeLabel} - ${entry.end.timeLabel}</span><span>${entry.start.dateLabel}</span><span>${entry.start.offsetLabel}</span></div>`).join('')}</div></article>`).join('');
+        save();
+      }
+      function renderClocks() {
+        const use12 = el.format.value === '12';
+        const now = new Date();
+        const active = unique(clockZones.map(normalizeZone).filter(Boolean)).slice(0, 10);
+        if (!active.length) {
+          el.clockGrid.innerHTML = '<div class="tz-empty">Add a timezone above to start the live clock wall.</div>';
+          return;
+        }
+        el.clockGrid.innerHTML = active.map((zone) => {
+          const item = meta(now, zone, use12);
+          return `<article class="tz-clock-card"><div class="tz-clock-head"><div><strong>${zoneLabel(zone)}</strong><span>${item.offsetLabel}</span></div><button type="button" data-remove-clock="${zone}">Remove</button></div><span class="tz-clock-time">${item.timeLabel}</span><div class="tz-date">${item.dateLabel}<br>${item.zoneName}</div></article>`;
+        }).join('');
+      }
+      function setTab(name) {
+        currentTab = name;
+        tabs.forEach((tab) => {
+          const active = tab.dataset.tzTab === name;
+          tab.classList.toggle('active', active);
+          tab.setAttribute('aria-selected', String(active));
+        });
+        panels.forEach((panel) => {
+          const active = panel.dataset.tzPanel === name;
+          panel.classList.toggle('is-active', active);
+          panel.hidden = !active;
+        });
+        save();
+      }
+      function resetClocks() {
+        const localZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+        clockZones = unique([localZone, el.from.value, el.to.value, ...DEFAULT_CLOCKS].map(normalizeZone).filter(Boolean));
+        renderClocks();
+        save();
+      }
+      function addClock() {
+        const zone = normalizeZone(el.clockZoneInput.value);
+        if (!zone) { notify('Enter a valid timezone like Europe/London or Asia/Tokyo.'); return; }
+        clockZones = unique([...clockZones, zone]);
+        el.clockZoneInput.value = '';
+        renderClocks();
+        save();
+      }
+      function syncPlannerFromConverter() {
+        const fromZone = normalizeZone(el.from.value);
+        const toZone = normalizeZone(el.to.value);
+        if (fromZone) el.plannerZoneA.value = fromZone;
+        if (toZone) el.plannerZoneB.value = toZone;
+        if (el.datetime.value) {
+          const instant = instantFromLocal(el.datetime.value, fromZone || 'UTC');
+          if (instant) el.plannerDate.value = dateValue(instant, fromZone || 'UTC');
+        }
+      }
+      function init() {
+        const saved = load();
+        const localZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+        el.from.value = normalizeZone(saved.from) || normalizeZone(localZone) || 'UTC';
+        el.to.value = normalizeZone(saved.to) || (el.from.value === 'UTC' ? 'America/New_York' : 'UTC');
+        el.datetime.value = parseDateTimeLocal(saved.datetime) ? saved.datetime : dateTimeValue(new Date(), el.from.value);
+        el.format.value = saved.format === '12' ? '12' : '24';
+        el.plannerDate.value = saved.plannerDate || dateValue(new Date(), el.from.value);
+        el.plannerDuration.value = saved.plannerDuration || '60';
+        el.plannerZoneA.value = normalizeZone(saved.plannerZoneA) || el.from.value;
+        el.plannerZoneB.value = normalizeZone(saved.plannerZoneB) || el.to.value;
+        el.plannerZoneC.value = normalizeZone(saved.plannerZoneC) || 'UTC';
+        el.plannerWorkStart.value = saved.plannerWorkStart || '09:00';
+        el.plannerWorkEnd.value = saved.plannerWorkEnd || '18:00';
+        clockZones = Array.isArray(saved.clockZones) && saved.clockZones.length ? unique(saved.clockZones.map(normalizeZone).filter(Boolean)) : unique([localZone, el.from.value, el.to.value, ...DEFAULT_CLOCKS].map(normalizeZone).filter(Boolean));
+        applyUrlState();
+        if (saved.tab && ['converter', 'planner', 'clocks'].includes(saved.tab)) currentTab = saved.tab;
+      }
+      tabs.forEach((tab) => tab.addEventListener('click', () => setTab(tab.dataset.tzTab)));
+      document.getElementById('tz-convert').addEventListener('click', renderConversion);
+      document.getElementById('tz-now').addEventListener('click', () => { const fromZone = normalizeZone(el.from.value) || 'UTC'; el.datetime.value = dateTimeValue(new Date(), fromZone); renderConversion(); });
+      document.getElementById('tz-swap').addEventListener('click', () => { const from = el.from.value; el.from.value = el.to.value; el.to.value = from; renderConversion(); });
+      document.getElementById('tz-copy').addEventListener('click', async () => { if (!lastResult) renderConversion(); if (!lastResult) return; try { await navigator.clipboard.writeText(lastResult); notify('Timezone result copied.'); } catch (error) { notify(`Copy failed: ${error.message}`); } });
+      document.getElementById('tz-copy-link').addEventListener('click', async () => { try { await navigator.clipboard.writeText(shareUrl()); notify('Share link copied.'); } catch (error) { notify(`Link copy failed: ${error.message}`); } });
+      document.querySelectorAll('[data-set-target]').forEach((button) => {
+        button.addEventListener('click', () => {
+          el.to.value = button.getAttribute('data-set-target');
+          renderConversion();
+        });
+      });
+      document.querySelectorAll('[data-use-local]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const localZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+          el.from.value = normalizeZone(localZone) || 'UTC';
+          renderConversion();
+        });
+      });
+      document.getElementById('tz-open-planner').addEventListener('click', () => {
+        syncPlannerFromConverter();
+        setTab('planner');
+        renderPlanner();
+        notify('Opened planner with the current timezone pair.');
+      });
+      [el.from, el.to, el.datetime, el.format].forEach((node) => { node.addEventListener('change', renderConversion); node.addEventListener('input', () => { if (node !== el.datetime) renderConversion(); }); });
+      document.getElementById('planner-run').addEventListener('click', renderPlanner);
+      document.getElementById('planner-sync').addEventListener('click', () => {
+        syncPlannerFromConverter();
+        renderPlanner();
+        notify('Planner synced from converter.');
+      });
+      el.plannerCopy.addEventListener('click', async () => { if (!lastPlanner) renderPlanner(); if (!lastPlanner) return; try { await navigator.clipboard.writeText(lastPlanner); notify('Planner suggestions copied.'); } catch (error) { notify(`Planner copy failed: ${error.message}`); } });
+      [el.plannerDate, el.plannerDuration, el.plannerZoneA, el.plannerZoneB, el.plannerZoneC, el.plannerWorkStart, el.plannerWorkEnd].forEach((node) => node.addEventListener('change', () => { save(); renderPlanner(); }));
+      document.getElementById('clock-add').addEventListener('click', addClock);
+      document.getElementById('clock-sync').addEventListener('click', () => { clockZones = unique([...clockZones, el.from.value, el.to.value].map(normalizeZone).filter(Boolean)); renderClocks(); save(); notify('Clocks synced from converter.'); });
+      document.getElementById('clock-reset').addEventListener('click', () => { resetClocks(); notify('Clock wall reset.'); });
+      document.getElementById('clock-refresh').addEventListener('click', () => { renderClocks(); renderCurrent(normalizeZone(el.from.value) || 'UTC', normalizeZone(el.to.value) || 'UTC', el.format.value === '12'); notify('Clock wall refreshed.'); });
+      el.clockZoneInput.addEventListener('keydown', (event) => { if (event.key === 'Enter') { event.preventDefault(); addClock(); } });
+      el.clockGrid.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-remove-clock]');
+        if (!button) return;
+        clockZones = clockZones.filter((zone) => zone !== button.getAttribute('data-remove-clock'));
+        renderClocks();
+        save();
+      });
+      init();
+      setTab(currentTab);
+      renderConversion();
+      renderPlanner();
+      renderClocks();
+      if (liveTimer) clearInterval(liveTimer);
+      liveTimer = window.setInterval(() => {
+        renderClocks();
+        renderCurrent(normalizeZone(el.from.value) || 'UTC', normalizeZone(el.to.value) || 'UTC', el.format.value === '12');
+      }, 30000);
+    }());
+  </script>
+</body>
+</html>

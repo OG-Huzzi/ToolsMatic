@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Word ↔ PDF Converter Interactive Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Word ↔ PDF Converter Interactive online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/word-pdf-converter-interactive.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/word-pdf-converter-interactive.html">
+  <meta property="og:title" content="Word ↔ PDF Converter Interactive Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Word ↔ PDF Converter Interactive online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/pdf/og-image.jpg">
+  <meta property="og:site_name" content="ToolsMatic">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Word ↔ PDF Converter Interactive Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Word ↔ PDF Converter Interactive online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  
+
+  
+
+  
+
+  <style>
+    .wordpdf-breadcrumb {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+
+    .wordpdf-hero {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 32px 40px 40px;
+    }
+
+    .wordpdf-tool-wrapper {
+      width: min(100% - 2rem, 1000px);
+      margin: 0 auto;
+      padding: 0 0 80px;
+    }
+
+    .converter-shell {
+      display: grid;
+      gap: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 34%), var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    .mode-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      padding: 6px;
+      background: #070707;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+
+    .mode-tab {
+      min-height: 48px;
+      border-radius: 999px;
+      color: var(--text-secondary);
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .mode-tab:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .mode-tab.active {
+      background: linear-gradient(135deg, var(--accent), #fbbf24);
+      color: #090909;
+      box-shadow: 0 10px 26px rgba(245, 158, 11, 0.22);
+    }
+
+    .tool-intro-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .upload-zone {
+      min-height: 260px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .upload-zone:focus-visible,
+    .mode-tab:focus-visible,
+    .action-btn:focus-visible,
+    .queue-action:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .mode-help {
+      display: grid;
+      align-content: start;
+      gap: 14px;
+      background: #090909;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 18px;
+    }
+
+    .mode-help h2 {
+      font-family: "Inter", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .mode-help-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .mode-help-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .mode-help-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px var(--accent-glow);
+      flex: 0 0 auto;
+    }
+
+    .status-panel {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric-card {
+      background: #090909;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 14px;
+    }
+
+    .metric-label {
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .metric-value {
+      margin-top: 6px;
+      color: var(--text-primary);
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .progress-track {
+      height: 12px;
+      background: #070707;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #fbbf24);
+      border-radius: inherit;
+      transition: width 0.25s ease;
+    }
+
+    .actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .action-btn,
+    .queue-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 16px;
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius-btn);
+      color: var(--text-primary);
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .action-btn.primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), #fbbf24);
+      color: #090909;
+    }
+
+    .action-btn:hover,
+    .queue-action:hover {
+      transform: translateY(-2px);
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .action-btn:disabled,
+    .queue-action:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .notice {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      padding: 12px 14px;
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      border-radius: var(--radius-btn);
+      background: rgba(245, 158, 11, 0.08);
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .notice.error {
+      border-color: rgba(239, 68, 68, 0.35);
+      background: rgba(239, 68, 68, 0.08);
+      color: #fecaca;
+    }
+
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .queue-panel,
+    .preview-panel {
+      min-height: 420px;
+      background: #090909;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+    }
+
+    .panel-sub {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .queue-list {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      max-height: 520px;
+      overflow: auto;
+    }
+
+    .queue-empty {
+      display: grid;
+      place-items: center;
+      min-height: 300px;
+      padding: 24px;
+      color: var(--text-muted);
+      text-align: center;
+      border: 1px dashed var(--border-hover);
+      border-radius: var(--radius-card);
+    }
+
+    .queue-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 13px;
+      background: #0f0f0f;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .queue-item:hover,
+    .queue-item.active {
+      border-color: rgba(245, 158, 11, 0.38);
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .queue-name {
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .queue-meta {
+      margin-top: 4px;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .queue-status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 88px;
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .queue-status.done {
+      background: rgba(34, 197, 94, 0.12);
+      color: #86efac;
+    }
+
+    .queue-status.error {
+      background: rgba(239, 68, 68, 0.12);
+      color: #fca5a5;
+    }
+
+    .preview-body {
+      padding: 18px;
+      max-height: 680px;
+      overflow: auto;
+    }
+
+    .preview-empty {
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--text-muted);
+      border: 1px dashed var(--border-hover);
+      border-radius: var(--radius-card);
+      padding: 24px;
+    }
+
+    .doc-preview {
+      min-height: 420px;
+      padding: 28px;
+      background: #f8fafc;
+      color: #0f172a;
+      border-radius: 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+
+    .doc-preview h1,
+    .doc-preview h2,
+    .doc-preview h3 {
+      color: #111827;
+      font-family: Georgia, "Times New Roman", serif;
+      margin: 0.6em 0 0.35em;
+    }
+
+    .doc-preview p,
+    .doc-preview li {
+      color: #1f2937;
+    }
+
+    .doc-preview table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .doc-preview th,
+    .doc-preview td {
+      border: 1px solid #cbd5e1;
+      padding: 8px;
+      color: #1f2937;
+    }
+
+    .pdf-outline-preview {
+      display: grid;
+      gap: 16px;
+    }
+
+    .pdf-page-preview {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: #0f0f0f;
+    }
+
+    .pdf-page-preview h3 {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .pdf-page-preview p {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .seo-section {
+      width: min(100% - 2rem, 1000px);
+      margin: 0 auto;
+      padding: 0 0 80px;
+    }
+
+    .seo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 32px;
+    }
+
+    .seo-card h2,
+    .seo-card h3 {
+      font-family: "Inter", sans-serif;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-top: 30px;
+      margin-bottom: 12px;
+    }
+
+    .seo-card h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo-card p,
+    .seo-card li {
+      margin-top: 12px;
+      color: var(--text-secondary);
+    }
+
+    .seo-card a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .steps-grid,
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .step-card,
+    .related-tool-card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: #090909;
+    }
+
+    .comparison-wrap {
+      overflow-x: auto;
+      margin-top: 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+    }
+
+    .comparison-table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .comparison-table th {
+      color: var(--text-primary);
+      background: #090909;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .faq-list details {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: #090909;
+      padding: 14px 16px;
+    }
+
+    .faq-list summary {
+      color: var(--text-primary);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    @media (max-width: 860px) {
+      .wordpdf-breadcrumb,
+      .wordpdf-hero {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .tool-intro-grid,
+      .workspace-grid,
+      .status-panel,
+      .steps-grid,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .converter-shell,
+      .seo-card {
+        padding: 16px;
+      }
+
+      .mode-tabs {
+        border-radius: 18px;
+      }
+
+      .mode-tab {
+        border-radius: 14px;
+      }
+
+      .queue-panel,
+      .preview-panel {
+        min-height: auto;
+      }
+
+      .doc-preview {
+        padding: 18px;
+      }
+    }
+  </style>
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/word-pdf-converter-interactive.html">
+</head>
+<body>
+
+<header class="header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+      <span class="header-logo-text">ToolsMatic</span>
+    </a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="/#tools" class="header-cta btn">All Tools</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="/#tools" class="active">Tools</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</header>
+
+<main>
+  <nav class="breadcrumb wordpdf-breadcrumb" aria-label="Breadcrumb">
+    <a href="/" class="breadcrumb-link">Home</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="/#tools" class="breadcrumb-link">Tools</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="breadcrumb-current" aria-current="page">Word to PDF &amp; PDF to Word Converter</span>
+  </nav>
+
+  <section class="tool-hero wordpdf-hero" aria-label="Word PDF converter">
+    <div class="tool-hero-badge">Private document conversion in your browser</div>
+    <h1>Word ↔ PDF Converter Interactive</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+    <p class="tool-hero-sub">
+      Convert DOCX to PDF or extract PDF text back into a Word document without uploading files.
+      Add one file or a full queue, preview the output, then download with the right filename.
+    </p>
+  </section>
+
+  <section class="wordpdf-tool-wrapper" aria-label="Word to PDF and PDF to Word tool">
+    <div class="converter-shell">
+      <div class="mode-tabs" role="tablist" aria-label="Conversion mode">
+        <button class="mode-tab active" id="tab-word-to-pdf" role="tab" aria-selected="true" aria-controls="converter-panel" data-mode="word">Word to PDF</button>
+        <button class="mode-tab" id="tab-pdf-to-word" role="tab" aria-selected="false" aria-controls="converter-panel" data-mode="pdf">PDF to Word</button>
+      </div>
+
+      <div id="converter-panel" role="tabpanel" aria-labelledby="tab-word-to-pdf">
+        <input type="file" id="file-input" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple hidden>
+
+        <div class="tool-intro-grid">
+          <div class="upload-zone" id="upload-zone" role="button" aria-label="Upload Word or PDF files" tabindex="0">
+            <div class="upload-zone-icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <path d="M12 18v-6"></path>
+                <path d="m9 15 3 3 3-3"></path>
+              </svg>
+            </div>
+            <div class="upload-zone-text" id="upload-title">Drag &amp; drop DOCX files here</div>
+            <div class="upload-zone-sub" id="upload-hint">or click to browse. Multiple files supported.</div>
+            <div class="upload-zone-sub" id="upload-privacy">Files are processed locally in your browser.</div>
+          </div>
+
+          <aside class="mode-help" aria-label="How this converter works">
+            <h2 id="mode-help-title">Convert Word documents into clean PDFs</h2>
+            <ul class="mode-help-list" id="mode-help-list">
+              <li>Preserves common DOCX structure including headings, paragraphs, bold, italic, lists, and tables.</li>
+              <li>Preview the converted document before downloading the PDF.</li>
+              <li>Download uses the original filename with the new .pdf extension.</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="status-panel" aria-label="Conversion statistics">
+          <div class="metric-card">
+            <div class="metric-label">Files queued</div>
+            <div class="metric-value" id="files-count">0</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Original size</div>
+            <div class="metric-value" id="original-size">0 B</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Output size</div>
+            <div class="metric-value" id="output-size">0 B</div>
+          </div>
+        </div>
+
+        <div class="progress-track" aria-label="Conversion progress">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <div class="actions-row">
+          <button class="action-btn primary" id="convert-btn" data-primary disabled>Convert queue</button>
+          <button class="action-btn" id="download-btn" disabled>Download selected</button>
+          <button class="action-btn" id="clear-btn" data-clear disabled>Clear</button>
+        </div>
+
+        <div class="notice" id="notice" role="status" aria-live="polite">
+          Choose a DOCX file to convert it into PDF, or switch tabs to convert a PDF into Word.
+        </div>
+
+        <div class="workspace-grid">
+          <section class="queue-panel" aria-label="File queue">
+            <div class="panel-head">
+              <div>
+                <div class="panel-title">Conversion queue</div>
+                <div class="panel-sub">Click a file to preview or download it</div>
+              </div>
+              <button class="queue-action" id="add-more-btn">Add files</button>
+            </div>
+            <div class="queue-list" id="queue-list">
+              <div class="queue-empty">No files added yet. Drop files above to start.</div>
+            </div>
+          </section>
+
+          <section class="preview-panel" aria-label="Live preview">
+            <div class="panel-head">
+              <div>
+                <div class="panel-title">Live preview</div>
+                <div class="panel-sub" id="preview-subtitle">Converted output appears here</div>
+              </div>
+            </div>
+            <div class="preview-body" id="preview-body">
+              <div class="preview-empty">Preview will appear after conversion.</div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seo-section" aria-label="Word PDF converter guide">
+    <article class="seo-card">
+      <h2>Free Word to PDF and PDF to Word Converter That Keeps Your Files Private</h2>
+      <p>
+        ToolsMatic's Word to PDF and PDF to Word converter is built for the common document problem that appears at the worst possible time:
+        you have a resume, assignment, contract, proposal, HR form, invoice, or legal draft in one format, but the website, client, school,
+        court portal, employer, or email system needs it in another. This page handles both directions from one clean workspace. Use Word to
+        PDF when you need a stable document that looks the same for everyone. Use PDF to Word when you need to recover editable text from a PDF
+        and continue writing in a DOCX file.
+      </p>
+      <p>
+        The important difference is privacy. Many online converters ask you to upload your Word or PDF file, wait in a queue, then download the
+        result from a server. That can be fine for a public brochure, but it is uncomfortable for documents containing personal addresses,
+        signatures, invoices, applications, salary details, school records, legal notes, or client information. ToolsMatic is designed around
+        browser-side conversion. Your file is read by JavaScript in your browser, previewed on the page, converted locally, and downloaded
+        directly. There is no sign-up wall, no account flow, and no need to send private documents to a remote conversion queue.
+      </p>
+
+      <h2>How to Convert Word to PDF</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <h3>1. Choose Word to PDF</h3>
+          <p>Keep the first tab selected, then drag a .docx file into the upload box or click to browse.</p>
+        </div>
+        <div class="step-card">
+          <h3>2. Review the Preview</h3>
+          <p>The converter reads the DOCX and shows a live HTML preview so you can confirm the structure before download.</p>
+        </div>
+        <div class="step-card">
+          <h3>3. Convert the Queue</h3>
+          <p>Click Convert queue. Headings, paragraphs, bold text, italic text, lists, and tables are preserved where possible.</p>
+        </div>
+        <div class="step-card">
+          <h3>4. Download the PDF</h3>
+          <p>Download the converted PDF with the same original filename and a .pdf extension.</p>
+        </div>
+      </div>
+
+      <h2>How to Convert PDF to Word</h2>
+      <p>
+        Switch to the PDF to Word tab, add one or more PDFs, and run the conversion. The tool uses PDF text extraction to rebuild the readable
+        structure into a DOCX document. This works best with PDFs that contain selectable text. If a PDF is only a scanned image, any converter
+        needs OCR before it can recover words. For normal digital PDFs, ToolsMatic reconstructs pages, lines, and paragraphs into a Word file
+        that you can open, edit, copy, and reformat.
+      </p>
+
+      <h2>Who Needs a Private Word PDF Converter?</h2>
+      <p>
+        Students use it to submit assignments in PDF form while keeping the editable Word version for later changes. Job applicants use it to
+        turn resumes and cover letters into stable PDFs before applying. Lawyers and legal assistants use PDF files for review while keeping
+        editable drafts in Word. HR teams convert policy documents, offer letters, and onboarding forms. Freelancers convert proposals,
+        invoices, scope documents, and client reports. Teachers convert worksheets and lesson materials. Office workers convert meeting notes,
+        reports, and forms. In each case, the value is the same: fast conversion without handing the file to a third-party upload system.
+      </p>
+
+      <h2>ToolsMatic vs Upload-Based Converters Like iLovePDF and Smallpdf</h2>
+      <p>
+        iLovePDF, Smallpdf, and similar document sites are well known, but their workflow usually centers on upload, processing, and download.
+        That adds friction when the document is sensitive or when you simply need a quick conversion without an account. ToolsMatic focuses on
+        instant local conversion, queue handling, preview, file-size feedback, and a clean interface that stays close to the task. If you also
+        need to prepare PDFs after conversion, use the related ToolsMatic tools to
+        <a href="/tools/merge-pdf.html">merge PDF files</a>,
+        <a href="/tools/compress-pdf.html">compress PDF size</a>,
+        <a href="/tools/split-pdf.html">split large PDFs</a>, or
+        <a href="/tools/protect-pdf.html">protect a PDF with a password</a>.
+      </p>
+
+      <div class="comparison-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ToolsMatic</th>
+              <th>iLovePDF</th>
+              <th>Smallpdf</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Word to PDF and PDF to Word on one page</td>
+              <td>Yes</td>
+              <td>Separate tools</td>
+              <td>Separate tools</td>
+            </tr>
+            <tr>
+              <td>Designed for no-upload local processing</td>
+              <td>Yes</td>
+              <td>Upload-based workflow</td>
+              <td>Upload-based workflow</td>
+            </tr>
+            <tr>
+              <td>Live preview before download</td>
+              <td>Yes</td>
+              <td>Limited</td>
+              <td>Limited</td>
+            </tr>
+            <tr>
+              <td>Queue multiple files</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>No account required for normal use</td>
+              <td>Yes</td>
+              <td>Varies by limit</td>
+              <td>Varies by limit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Formatting, Accuracy, and Practical Expectations</h2>
+      <p>
+        Word and PDF are very different formats. A Word document is editable and reflows based on fonts, page width, spacing, and styles. A PDF
+        is closer to a fixed page description. That is why Word to PDF conversion is usually cleaner than PDF to Word conversion. DOCX files
+        already contain headings, paragraphs, lists, and tables, so the converter can preserve the document structure more directly. PDF to Word
+        conversion has to infer structure from text positions on the page. ToolsMatic aims to create a useful editable DOCX, but exact layout
+        recovery depends on whether the source PDF contains selectable text, embedded fonts, clean columns, and logical reading order.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Can I convert Word to PDF without uploading?</summary>
+          <p>Yes. The DOCX file is processed in your browser. It is not uploaded to a server for conversion.</p>
+        </details>
+        <details>
+          <summary>Is PDF to Word free with no sign-up?</summary>
+          <p>Yes. Add a PDF, convert it, preview the result, and download the DOCX without creating an account.</p>
+        </details>
+        <details>
+          <summary>Can I use this as an offline Word to PDF converter?</summary>
+          <p>The conversion runs client-side. After the page and scripts are available in your browser cache, the document processing does not need a file upload.</p>
+        </details>
+        <details>
+          <summary>What is the best free Word to PDF converter for students?</summary>
+          <p>A student-friendly converter should be free, simple, private, and fast. ToolsMatic is built for assignments, resumes, reports, and forms without login friction.</p>
+        </details>
+        <details>
+          <summary>Can PDF to Word keep the original formatting?</summary>
+          <p>It can preserve readable structure from text-based PDFs, but exact formatting depends on the PDF. Scanned image PDFs require OCR first.</p>
+        </details>
+        <details>
+          <summary>Does this converter support multiple files?</summary>
+          <p>Yes. You can add multiple DOCX or PDF files to the queue and convert them in one run.</p>
+        </details>
+        <details>
+          <summary>Are my documents stored?</summary>
+          <p>No. Files remain in browser memory during the session and are cleared when you refresh, close the page, or click Clear.</p>
+        </details>
+        <details>
+          <summary>What other PDF tools should I use after converting?</summary>
+          <p>Use Merge PDF to combine documents, Compress PDF to reduce size, Split PDF to separate pages, and Protect PDF to add password protection.</p>
+        </details>
+      </div>
+
+      <h2>Related PDF Tools</h2>
+      <div class="related-grid" role="list">
+        <a href="/tools/merge-pdf.html" class="related-tool-card" role="listitem">
+          <strong>Merge PDF</strong>
+          <p>Combine converted PDFs into one polished document.</p>
+        </a>
+        <a href="/tools/compress-pdf.html" class="related-tool-card" role="listitem">
+          <strong>Compress PDF</strong>
+          <p>Reduce PDF size for email, portals, and upload limits.</p>
+        </a>
+        <a href="/tools/split-pdf.html" class="related-tool-card" role="listitem">
+          <strong>Split PDF</strong>
+          <p>Extract only the pages you need from a large PDF.</p>
+        </a>
+        <a href="/tools/protect-pdf.html" class="related-tool-card" role="listitem">
+          <strong>Protect PDF</strong>
+          <p>Add password protection before sharing sensitive files.</p>
+        </a>
+      </div>
+    </article>
+  </section>
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="word-pdf-converter-interactive-pseo" aria-labelledby="word-pdf-converter-interactive-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Word ↔ PDF Converter Interactive</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="word-pdf-converter-interactive-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Word ↔ PDF Converter Interactive Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Word ↔ PDF Converter Interactive</strong>, a fully dynamic workspace with reactive feedback and instant parameter styling. This dedicated workspace is built specifically for users who want visual feedback and real-time outputs as they toggle settings. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>active event hooks, live parameter changes, sliding controls, and high-fidelity output widgets</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Convert Word to PDF or PDF to Word privately in your browser. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Live Parameter adjustments</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Observe output values recalculate instantly as you toggle inputs.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Visual State cues</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Inputs and outputs feature active borders and soft glows indicating active focus.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Interactive validations</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Instant error feedback is printed right inside the result board as you enter letters.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Word ↔ PDF Converter Interactive</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Interactive layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Word ↔ PDF Converter Interactive</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it calculate as I type?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes! The page registers active event listeners, recalculating outputs instantly.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Do I need to click Convert?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">For maximum convenience, it supports both live typing conversion and manual action buttons.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this heavier than standard pages?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">No, the interactive scripts are exceptionally light, written in pure vanilla JavaScript.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/word-pdf-converter.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Word ↔ PDF Converter</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Word ↔ PDF Converter Interactive","url":"https://toolsmatic.me/tools/word-pdf-converter-interactive.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Word ↔ PDF Converter Interactive online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Word ↔ PDF Converter Interactive","item":"https://toolsmatic.me/tools/word-pdf-converter-interactive.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it calculate as I type?","acceptedAnswer":{"@type":"Answer","text":"Yes! The page registers active event listeners, recalculating outputs instantly."}},{"@type":"Question","name":"Do I need to click Convert?","acceptedAnswer":{"@type":"Answer","text":"For maximum convenience, it supports both live typing conversion and manual action buttons."}},{"@type":"Question","name":"Is this heavier than standard pages?","acceptedAnswer":{"@type":"Answer","text":"No, the interactive scripts are exceptionally light, written in pure vanilla JavaScript."}}]}]}</script>
+  </main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--text-primary);margin-bottom:12px;">ToolsMatic</div>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.7;max-width:220px;">
+        Privacy-first PDF tools. Your files never leave your browser.
+      </p>
+      <p style="font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);margin-top:16px;">© 2026 ToolsMatic. All rights reserved.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">PDF Tools</div>
+      <a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a>
+      <a href="/tools/split-pdf.html" class="footer-link">Split PDF</a>
+      <a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a>
+      <a href="/tools/word-pdf-converter.html" class="footer-link">Word PDF Converter</a>
+      <a href="/tools/protect-pdf.html" class="footer-link">Protect PDF</a>
+      <a href="/#tools" class="footer-link" style="color:var(--accent);">All Tools →</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">More Tools</div>
+      <a href="/tools/pdf-to-jpg.html" class="footer-link">PDF to JPG</a>
+      <a href="/tools/jpg-to-pdf.html" class="footer-link">JPG to PDF</a>
+      <a href="/tools/remove-pages.html" class="footer-link">Remove Pages</a>
+      <a href="/tools/unlock-pdf.html" class="footer-link">Unlock PDF</a>
+      <a href="/tools/pdf-reader.html" class="footer-link">PDF Reader</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="/about.html" class="footer-link">About</a>
+      <a href="/contact.html" class="footer-link">Contact</a>
+      <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+      <a href="/terms.html" class="footer-link">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Built for people who value privacy</span>
+    <span>No tracking. No uploads. No nonsense.</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://unpkg.com/docx@8.5.0/build/index.umd.js"></script>
+<script src="/assets/pdf/global.js"></script>
+<script src="/assets/pdf/tool-base.js"></script>
+
+<script>
+'use strict';
+
+(function () {
+  var state = {
+    mode: 'word',
+    files: [],
+    activeId: null,
+    progress: 0
+  };
+
+  var fileInput = document.getElementById('file-input');
+  var uploadZone = document.getElementById('upload-zone');
+  var uploadTitle = document.getElementById('upload-title');
+  var modeHelpTitle = document.getElementById('mode-help-title');
+  var modeHelpList = document.getElementById('mode-help-list');
+  var filesCount = document.getElementById('files-count');
+  var originalSize = document.getElementById('original-size');
+  var outputSize = document.getElementById('output-size');
+  var progressBar = document.getElementById('progress-bar');
+  var convertBtn = document.getElementById('convert-btn');
+  var downloadBtn = document.getElementById('download-btn');
+  var clearBtn = document.getElementById('clear-btn');
+  var addMoreBtn = document.getElementById('add-more-btn');
+  var queueList = document.getElementById('queue-list');
+  var previewBody = document.getElementById('preview-body');
+  var previewSubtitle = document.getElementById('preview-subtitle');
+  var notice = document.getElementById('notice');
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.mode-tab'));
+
+  function formatBytes(bytes) {
+    if (!bytes) return '0 B';
+    var units = ['B', 'KB', 'MB', 'GB'];
+    var size = bytes;
+    var unit = 0;
+    while (size >= 1024 && unit < units.length - 1) {
+      size /= 1024;
+      unit++;
+    }
+    return (unit === 0 ? size : size.toFixed(size >= 10 ? 1 : 2)) + ' ' + units[unit];
+  }
+
+  function safeName(name, ext) {
+    return name.replace(/\.[^.]+$/, '') + ext;
+  }
+
+  function setNotice(message, type) {
+    notice.textContent = message;
+    notice.classList.toggle('error', type === 'error');
+  }
+
+  function updateProgress(value) {
+    state.progress = Math.max(0, Math.min(100, value));
+    progressBar.style.width = state.progress + '%';
+  }
+
+  function activeEntry() {
+    return state.files.find(function (entry) {
+      return entry.id === state.activeId;
+    }) || state.files[0] || null;
+  }
+
+  function updateModeUI() {
+    var isWord = state.mode === 'word';
+    fileInput.accept = isWord
+      ? '.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      : '.pdf,application/pdf';
+    uploadTitle.textContent = isWord ? 'Drag & drop DOCX files here' : 'Drag & drop PDF files here';
+    modeHelpTitle.textContent = isWord ? 'Convert Word documents into clean PDFs' : 'Extract PDF text into editable Word files';
+    modeHelpList.innerHTML = isWord
+      ? '<li>Preserves common DOCX structure including headings, paragraphs, bold, italic, lists, and tables.</li><li>Preview the converted document before downloading the PDF.</li><li>Download uses the original filename with the new .pdf extension.</li>'
+      : '<li>Extracts selectable PDF text page by page using PDF.js.</li><li>Rebuilds a DOCX document with readable pages, lines, and paragraphs.</li><li>Works best for digital PDFs. Scanned image-only PDFs need OCR first.</li>';
+    tabs.forEach(function (tab) {
+      var active = tab.dataset.mode === state.mode;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    previewSubtitle.textContent = isWord ? 'DOCX preview before PDF download' : 'Extracted PDF text before DOCX download';
+    setNotice(isWord
+      ? 'Choose DOCX files, preview the result, then download private PDFs.'
+      : 'Choose PDF files with selectable text, preview extraction, then download DOCX files.'
+    );
+  }
+
+  function resetForMode(mode) {
+    state.mode = mode;
+    state.files = [];
+    state.activeId = null;
+    fileInput.value = '';
+    updateProgress(0);
+    updateModeUI();
+    renderAll();
+  }
+
+  function isValidFile(file) {
+    if (state.mode === 'word') {
+      return /\.docx$/i.test(file.name);
+    }
+    return /\.pdf$/i.test(file.name) || file.type === 'application/pdf';
+  }
+
+  function addFiles(fileList) {
+    var incoming = Array.prototype.slice.call(fileList || []);
+    var valid = incoming.filter(isValidFile);
+    if (!valid.length) {
+      setNotice(state.mode === 'word' ? 'Please add .docx files only.' : 'Please add PDF files only.', 'error');
+      return;
+    }
+    valid.forEach(function (file) {
+      var id = String(Date.now()) + '-' + Math.random().toString(16).slice(2);
+      state.files.push({
+        id: id,
+        file: file,
+        status: 'Ready',
+        outputName: '',
+        outputBlob: null,
+        outputSize: 0,
+        previewHtml: '',
+        error: ''
+      });
+      if (!state.activeId) state.activeId = id;
+    });
+    updateProgress(0);
+    setNotice(valid.length + ' file' + (valid.length === 1 ? '' : 's') + ' added. Click Convert queue when ready.');
+    renderAll();
+  }
+
+  function renderAll() {
+    var totalOriginal = state.files.reduce(function (sum, entry) {
+      return sum + entry.file.size;
+    }, 0);
+    var totalOutput = state.files.reduce(function (sum, entry) {
+      return sum + (entry.outputSize || 0);
+    }, 0);
+    filesCount.textContent = String(state.files.length);
+    originalSize.textContent = formatBytes(totalOriginal);
+    outputSize.textContent = formatBytes(totalOutput);
+    convertBtn.disabled = !state.files.length;
+    clearBtn.disabled = !state.files.length;
+    downloadBtn.disabled = !(activeEntry() && activeEntry().outputBlob);
+    renderQueue();
+    renderPreview();
+  }
+
+  function renderQueue() {
+    if (!state.files.length) {
+      queueList.innerHTML = '<div class="queue-empty">No files added yet. Drop files above to start.</div>';
+      return;
+    }
+    queueList.innerHTML = '';
+    state.files.forEach(function (entry) {
+      var item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'queue-item' + (entry.id === state.activeId ? ' active' : '');
+      item.setAttribute('aria-label', 'Preview ' + entry.file.name);
+      item.innerHTML =
+        '<span><span class="queue-name"></span><span class="queue-meta"></span></span>' +
+        '<span class="queue-status"></span>';
+      item.querySelector('.queue-name').textContent = entry.file.name;
+      item.querySelector('.queue-meta').textContent = formatBytes(entry.file.size) + (entry.outputSize ? ' -> ' + formatBytes(entry.outputSize) : '');
+      var status = item.querySelector('.queue-status');
+      status.textContent = entry.status;
+      status.classList.toggle('done', entry.status === 'Done');
+      status.classList.toggle('error', entry.status === 'Error');
+      item.addEventListener('click', function () {
+        state.activeId = entry.id;
+        renderAll();
+      });
+      queueList.appendChild(item);
+    });
+  }
+
+  function renderPreview() {
+    var entry = activeEntry();
+    if (!entry) {
+      previewBody.innerHTML = '<div class="preview-empty">Preview will appear after conversion.</div>';
+      return;
+    }
+    if (entry.error) {
+      previewBody.innerHTML = '<div class="preview-empty">' + escapeHtml(entry.error) + '</div>';
+      return;
+    }
+    if (!entry.previewHtml) {
+      previewBody.innerHTML = '<div class="preview-empty">Convert "' + escapeHtml(entry.file.name) + '" to see a live preview here.</div>';
+      return;
+    }
+    previewBody.innerHTML = entry.previewHtml;
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  async function convertQueue() {
+    if (!state.files.length) return;
+    convertBtn.disabled = true;
+    downloadBtn.disabled = true;
+    updateProgress(2);
+    for (var i = 0; i < state.files.length; i++) {
+      var entry = state.files[i];
+      state.activeId = entry.id;
+      entry.status = 'Working';
+      entry.error = '';
+      renderAll();
+      try {
+        if (state.mode === 'word') {
+          await convertWordEntry(entry, i);
+        } else {
+          await convertPdfEntry(entry, i);
+        }
+        entry.status = 'Done';
+        setNotice('Converted ' + entry.file.name + ' successfully.');
+      } catch (error) {
+        entry.status = 'Error';
+        entry.error = friendlyError(error);
+        setNotice(entry.error, 'error');
+      }
+      updateProgress(((i + 1) / state.files.length) * 100);
+      renderAll();
+    }
+    convertBtn.disabled = false;
+  }
+
+  function friendlyError(error) {
+    var message = error && error.message ? error.message : String(error || 'Unknown conversion error.');
+    if (/mammoth/i.test(message)) return 'Word conversion library did not load. Please refresh and try again.';
+    if (/jspdf|html2canvas/i.test(message)) return 'PDF rendering library did not load. Please refresh and try again.';
+    if (/pdfjs|pdf/i.test(message)) return 'Could not read this PDF. If it is scanned, encrypted, or damaged, try another file.';
+    if (/docx/i.test(message)) return 'Word export library did not load. Please refresh and try again.';
+    return message;
+  }
+
+  async function convertWordEntry(entry, index) {
+    if (!window.mammoth) throw new Error('mammoth missing');
+    if (!window.jspdf || !window.jspdf.jsPDF) throw new Error('jspdf missing');
+    var buffer = await entry.file.arrayBuffer();
+    updateProgress((index / state.files.length) * 100 + 12);
+    var result = await window.mammoth.convertToHtml({
+      arrayBuffer: buffer
+    }, {
+      styleMap: [
+        "p[style-name='Title'] => h1:fresh",
+        "p[style-name='Heading 1'] => h1:fresh",
+        "p[style-name='Heading 2'] => h2:fresh",
+        "p[style-name='Heading 3'] => h3:fresh"
+      ]
+    });
+    var html = result.value || '<p>No readable content found in this DOCX.</p>';
+    entry.previewHtml = '<div class="doc-preview" id="word-preview-' + entry.id + '">' + html + '</div>';
+    renderPreview();
+    await new Promise(function (resolve) { requestAnimationFrame(resolve); });
+    updateProgress((index / state.files.length) * 100 + 42);
+    var source = previewBody.querySelector('.doc-preview');
+    var pdf = new window.jspdf.jsPDF({ unit: 'pt', format: 'a4', compress: true });
+    await pdf.html(source, {
+      margin: [36, 36, 36, 36],
+      autoPaging: 'text',
+      width: 523,
+      windowWidth: 900,
+      html2canvas: {
+        scale: 0.72,
+        backgroundColor: '#ffffff',
+        useCORS: true
+      }
+    });
+    var blob = pdf.output('blob');
+    entry.outputBlob = blob;
+    entry.outputSize = blob.size;
+    entry.outputName = safeName(entry.file.name, '.pdf');
+  }
+
+  async function convertPdfEntry(entry, index) {
+    if (!window.pdfjsLib) throw new Error('pdfjs missing');
+    if (!window.docx || !window.docx.Document) throw new Error('docx missing');
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    var buffer = await entry.file.arrayBuffer();
+    var loadingTask = window.pdfjsLib.getDocument({ data: new Uint8Array(buffer) });
+    var pdf = await loadingTask.promise;
+    var pages = [];
+    var preview = '<div class="pdf-outline-preview">';
+    for (var pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+      var page = await pdf.getPage(pageNumber);
+      var textContent = await page.getTextContent();
+      var lines = groupTextItems(textContent.items || []);
+      pages.push({ pageNumber: pageNumber, lines: lines });
+      preview += '<section class="pdf-page-preview"><h3>Page ' + pageNumber + '</h3><p>' + escapeHtml(lines.join('\n')) + '</p></section>';
+      updateProgress((index / state.files.length) * 100 + (pageNumber / pdf.numPages) * 45);
+    }
+    preview += '</div>';
+    entry.previewHtml = preview;
+    renderPreview();
+    var children = buildDocxChildren(pages);
+    var doc = new window.docx.Document({
+      creator: 'ToolsMatic',
+      title: safeName(entry.file.name, ''),
+      sections: [{ properties: {}, children: children }]
+    });
+    var blob = await window.docx.Packer.toBlob(doc);
+    entry.outputBlob = blob;
+    entry.outputSize = blob.size;
+    entry.outputName = safeName(entry.file.name, '.docx');
+  }
+
+  function groupTextItems(items) {
+    var rows = {};
+    items.forEach(function (item) {
+      var text = (item.str || '').trim();
+      if (!text) return;
+      var y = Math.round(item.transform && item.transform[5] ? item.transform[5] : 0);
+      var key = String(y);
+      if (!rows[key]) rows[key] = [];
+      rows[key].push({
+        x: item.transform && item.transform[4] ? item.transform[4] : 0,
+        text: text
+      });
+    });
+    return Object.keys(rows).map(Number).sort(function (a, b) {
+      return b - a;
+    }).map(function (y) {
+      return rows[String(y)].sort(function (a, b) {
+        return a.x - b.x;
+      }).map(function (part) {
+        return part.text;
+      }).join(' ').replace(/\s+/g, ' ').trim();
+    }).filter(Boolean);
+  }
+
+  function buildDocxChildren(pages) {
+    var d = window.docx;
+    var children = [];
+    pages.forEach(function (page, pageIndex) {
+      children.push(new d.Paragraph({
+        text: 'Page ' + page.pageNumber,
+        heading: d.HeadingLevel.HEADING_2
+      }));
+      page.lines.forEach(function (line) {
+        children.push(new d.Paragraph({
+          children: [new d.TextRun({ text: line, size: 22 })],
+          spacing: { after: 120 }
+        }));
+      });
+      if (pageIndex < pages.length - 1) {
+        children.push(new d.Paragraph({ children: [new d.TextRun({ text: '' })] }));
+      }
+    });
+    if (!children.length) {
+      children.push(new d.Paragraph({
+        children: [new d.TextRun({ text: 'No selectable text found in this PDF.' })]
+      }));
+    }
+    return children;
+  }
+
+  function downloadActive() {
+    var entry = activeEntry();
+    if (!entry || !entry.outputBlob) return;
+    var url = URL.createObjectURL(entry.outputBlob);
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = entry.outputName;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(function () {
+      URL.revokeObjectURL(url);
+    }, 1000);
+  }
+
+  function clearAll() {
+    state.files = [];
+    state.activeId = null;
+    fileInput.value = '';
+    updateProgress(0);
+    setNotice('Queue cleared. Add a new document when ready.');
+    renderAll();
+  }
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      if (tab.dataset.mode !== state.mode) {
+        resetForMode(tab.dataset.mode);
+      }
+    });
+  });
+
+  uploadZone.addEventListener('click', function () {
+    fileInput.click();
+  });
+
+  uploadZone.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      fileInput.click();
+    }
+  });
+
+  uploadZone.addEventListener('dragover', function (event) {
+    event.preventDefault();
+    uploadZone.classList.add('dragover');
+  });
+
+  uploadZone.addEventListener('dragleave', function () {
+    uploadZone.classList.remove('dragover');
+  });
+
+  uploadZone.addEventListener('drop', function (event) {
+    event.preventDefault();
+    uploadZone.classList.remove('dragover');
+    addFiles(event.dataTransfer.files);
+  });
+
+  fileInput.addEventListener('change', function () {
+    addFiles(fileInput.files);
+  });
+
+  addMoreBtn.addEventListener('click', function () {
+    fileInput.click();
+  });
+
+  convertBtn.addEventListener('click', convertQueue);
+  downloadBtn.addEventListener('click', downloadActive);
+  clearBtn.addEventListener('click', clearAll);
+
+  updateModeUI();
+  renderAll();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,2627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Gradient Generator for Freelancers Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Gradient Generator for Freelancers online. Client-side, free, and private browser-based utility.">
+<meta name="keywords" content="gradient generator 2026, best gradient generator, css gradient maker, linear gradient creator, radial gradient tool, conic gradient, gradient editor, color gradient, gradient design, gradient codes, gradient presets, gradient background, gradient css, gradient colors, gradient builder, free gradient tool, gradient generator online" />
+  <meta name="author" content="ToolsMatic" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://toolsmatic.me/tools/gradient-generator-for-freelancers.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://toolsmatic.me/tools/gradient-generator-for-freelancers.html">
+  <meta property="og:title" content="Gradient Generator for Freelancers Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Gradient Generator for Freelancers online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/gradient-generator-preview.png" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/gradient-generator-for-freelancers.html">
+  <meta name="twitter:title" content="Gradient Generator for Freelancers Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Gradient Generator for Freelancers online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/gradient-generator-preview.png" />
+  
+  <!-- Structured Data / Schema.org -->
+  
+  
+  
+  
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="../assets/site.js" defer></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 25%, #2d1b4e 50%, #1a1a2e 75%, #0f172a 100%);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .tool-shell {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(45, 27, 78, 0.4) 100%);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .tool-shell h1 {
+      background: linear-gradient(135deg, #22d3ee 0%, #ec4899 50%, #a855f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .gradient-preview-box {
+      box-shadow: 0 10px 40px rgba(34, 211, 238, 0.2), 0 0 30px rgba(236, 72, 153, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+    }
+
+    .gradient-type-btn.active {
+      background: linear-gradient(135deg, #22d3ee 0%, #ec4899 100%);
+      border-color: rgba(34, 211, 238, 0.6);
+    }
+
+    .custom-color-btn {
+      background: linear-gradient(135deg, #22d3ee 0%, #ec4899 100%);
+    }
+
+    button {
+      border-color: rgba(34, 211, 238, 0.3);
+    }
+
+    button:hover {
+      border-color: rgba(34, 211, 238, 0.6);
+    }
+
+    .section {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(45, 27, 78, 0.4) 100%);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .section h2 {
+      background: linear-gradient(135deg, #22d3ee 0%, #a855f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .section h3 {
+      color: #ec4899;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .section p, .section ul {
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    .gradient-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+      align-items: start;
+    }
+    
+    .gradient-preview-box {
+      width: 100%;
+      height: 250px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+    }
+    
+    .color-stop-item {
+      display: grid;
+      grid-template-columns: 40px 1fr 60px 30px;
+      gap: 8px;
+      align-items: center;
+      padding: 10px;
+      background: var(--surface);
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .color-stop-item input[type="color"] {
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    
+    .color-stop-item input[type="range"] {
+      width: 100%;
+      cursor: pointer;
+      height: 6px;
+    }
+    
+    .color-stop-item input[type="number"] {
+      width: 60px;
+      padding: 6px;
+    }
+    
+    .gradient-type-btns {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .gradient-type-btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .gradient-type-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    
+    .gradient-type-btn:hover:not(.active) {
+      background: var(--hover);
+    }
+    
+    .preset-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .preset-btn {
+      padding: 12px 14px;
+      font-size: 14px;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    
+    .custom-color-btn {
+      padding: 15px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      transition: all 0.2s;
+    }
+    
+    .custom-color-btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    .custom-color-input {
+      display: none;
+    }
+    
+    .angle-control {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .angle-control input[type="range"] {
+      flex: 1;
+      height: 6px;
+      cursor: pointer;
+    }
+    
+    .angle-display {
+      width: 45px;
+      text-align: right;
+      font-weight: bold;
+    }
+    
+    .quick-angles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 10px;
+    }
+    
+    .quick-angle-btn {
+      padding: 6px 8px;
+      font-size: 12px;
+    }
+    
+    .radial-pos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-top: 10px;
+    }
+    
+    .export-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .gradient-editor-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+      gap: 20px;
+      align-items: start;
+      margin-top: 25px;
+    }
+
+    .gradient-editor-layout > * {
+      min-width: 0;
+    }
+
+    .gradient-preview-panel {
+      display: grid;
+      gap: 10px;
+    }
+
+    .gradient-preview-panel .gradient-preview-box {
+      min-height: 300px;
+    }
+
+    #presetsPanel {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+      max-height: 500px;
+      overflow-y: auto;
+      transition: all 0.3s ease;
+    }
+
+    #presetsPanel.collapsed {
+      display: none;
+    }
+
+    #togglePresetsBtn {
+      transition: transform 0.3s ease;
+    }
+
+    #togglePresetsBtn.collapsed::before {
+      content: '';
+    }
+    
+    @media (max-width: 768px) {
+      .gradient-controls {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .gradient-preview-box {
+        height: 200px;
+      }
+      
+      .tool-shell {
+        padding: 15px;
+        margin: 15px 10px;
+      }
+      
+      .tool-shell h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+      
+      .color-stop-item {
+        grid-template-columns: 35px 1fr 50px 30px;
+        gap: 6px;
+        padding: 8px;
+      }
+      
+      .color-stop-item input[type="color"] {
+        width: 35px;
+        height: 35px;
+      }
+      
+      .color-stop-item input[type="number"] {
+        width: 50px;
+        padding: 4px;
+        font-size: 14px;
+      }
+      
+      .gradient-type-btns {
+        flex-wrap: wrap;
+      }
+      
+      .gradient-type-btn {
+        padding: 8px;
+        font-size: 14px;
+      }
+      
+      .preset-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      
+      .preset-btn {
+        padding: 10px;
+        font-size: 13px;
+      }
+      
+      .quick-angles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      
+      .quick-angle-btn {
+        padding: 8px;
+        font-size: 11px;
+      }
+      
+      .export-controls {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .gradient-editor-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .gradient-preview-panel {
+        order: -1;
+      }
+      
+      #presetsPanel {
+        grid-template-columns: 1fr;
+        max-height: 300px;
+      }
+      
+      button {
+        font-size: 14px;
+        padding: 10px 14px;
+      }
+      
+      .custom-color-btn {
+        padding: 12px;
+        font-size: 14px;
+      }
+      
+      .angle-control input[type="range"] {
+        height: 8px;
+      }
+      
+      .section {
+        padding: 15px;
+        margin: 15px 10px;
+      }
+      
+      .section h2 {
+        font-size: 1.3rem;
+      }
+      
+      .section h3 {
+        font-size: 1.1rem;
+      }
+      
+      .section p, .section ul {
+        font-size: 14px;
+      }
+    }
+    
+    /* Feature Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .feature-card {
+      padding: 25px;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(45, 27, 78, 0.5) 100%);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      border-radius: 12px;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(34, 211, 238, 0.2), 0 0 20px rgba(236, 72, 153, 0.15);
+      border-color: rgba(34, 211, 238, 0.6);
+    }
+    
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    
+    .feature-card h3 {
+      margin: 10px 0;
+      color: #22d3ee;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    
+    .feature-card p {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(45, 27, 78, 0.6) 100%);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+    }
+    
+    .comparison-table th, .comparison-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(34, 211, 238, 0.1);
+      color: #cbd5e1;
+    }
+    
+    .comparison-table th {
+      background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+    
+    .comparison-table tr:hover {
+      background: rgba(34, 211, 238, 0.05);
+    }
+    
+    .comparison-table .check {
+      color: #22c55e;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .comparison-table .cross {
+      color: #ef4444;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .comparison-table .partial {
+      color: #f59e0b;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    @media (max-width: 768px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .comparison-table {
+        font-size: 13px;
+      }
+      
+      .comparison-table th, .comparison-table td {
+        padding: 10px 8px;
+      }
+    }
+
+    .gradient-controls {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.95fr);
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 30px;
+    }
+
+    .gradient-main-panel,
+    .gradient-sidebar {
+      min-width: 0;
+    }
+
+    .gradient-sidebar {
+      display: grid;
+      gap: 18px;
+      position: sticky;
+      top: 96px;
+    }
+
+    .gradient-block {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.82)),
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.08), transparent 35%);
+      box-shadow: 0 18px 40px rgba(2, 8, 23, 0.18);
+    }
+
+    .gradient-main-panel .gradient-block + .gradient-block {
+      margin-top: 18px;
+    }
+
+    .gradient-block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .gradient-block-header .label,
+    .gradient-section-title {
+      margin: 0;
+    }
+
+    .gradient-type-btns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 0;
+    }
+
+    .gradient-type-btn {
+      min-height: 52px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .control-section {
+      display: grid;
+      gap: 18px;
+    }
+
+    .control-cluster {
+      display: grid;
+      gap: 12px;
+    }
+
+    .angle-control {
+      gap: 16px;
+      margin-bottom: 0;
+    }
+
+    .angle-control input[type="range"] {
+      height: 8px;
+    }
+
+    .angle-display {
+      width: auto;
+      min-width: 76px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(34, 211, 238, 0.22);
+      background: rgba(15, 23, 42, 0.72);
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e2e8f0;
+    }
+
+    .quick-angles,
+    .radial-pos-grid {
+      gap: 10px;
+    }
+
+    .quick-angle-btn,
+    .shape-btn,
+    .position-btn,
+    .utility-btn,
+    .preset-btn,
+    #addColorBtn {
+      min-height: 48px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .quick-angle-btn.is-active,
+    .shape-btn.is-active,
+    .position-btn.is-active {
+      background: rgba(34, 211, 238, 0.16);
+      border-color: rgba(34, 211, 238, 0.55);
+      color: #ecfeff;
+      box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.14);
+    }
+
+    .gradient-editor-layout {
+      display: block;
+      margin-top: 0;
+    }
+
+    .color-stop-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    #colorStops {
+      display: grid;
+      gap: 14px;
+    }
+
+    .color-stop-item {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr) 92px auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      margin-bottom: 0;
+      border-radius: 20px;
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.86), rgba(22, 28, 47, 0.9));
+      box-shadow: 0 14px 30px rgba(2, 8, 23, 0.16);
+    }
+
+    .color-stop-swatch {
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .stop-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.22);
+      background: rgba(34, 211, 238, 0.08);
+      color: #67e8f9;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .stop-hex {
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      letter-spacing: 0.04em;
+    }
+
+    .color-stop-item input[type="color"] {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.56);
+    }
+
+    .stop-range-wrap {
+      display: grid;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .stop-range-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .stop-range-label strong {
+      color: #f8fafc;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    .stop-number-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .stop-number-wrap span {
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    .color-stop-item input[type="range"] {
+      width: 100%;
+      height: 8px;
+    }
+
+    .color-stop-item input[type="number"] {
+      width: 100%;
+      min-width: 0;
+      padding: 10px 12px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .stop-delete-btn {
+      min-width: 88px;
+      min-height: 46px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .gradient-preview-card {
+      display: grid;
+      gap: 16px;
+    }
+
+    .gradient-preview-card .gradient-preview-box {
+      min-height: 360px;
+      height: 360px;
+      border-radius: 24px;
+    }
+
+    .preview-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .preview-stat {
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      background: rgba(15, 23, 42, 0.58);
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
+    .preview-stat strong {
+      display: block;
+      margin-top: 3px;
+      color: #f8fafc;
+      font-size: 15px;
+    }
+
+    .gradient-code-card .result-box {
+      min-height: 132px;
+      max-height: none;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .export-controls {
+      gap: 12px;
+      margin-top: 0;
+    }
+
+    .export-controls > div {
+      min-width: 0;
+    }
+
+    .export-actions,
+    .utility-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .preset-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .preset-btn {
+      padding: 12px 14px;
+    }
+
+    #presetsPanel {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-height: none;
+      overflow: visible;
+    }
+
+    .custom-color-btn {
+      width: 100%;
+      min-height: 56px;
+      margin-bottom: 0;
+      border-radius: 16px;
+      font-weight: 700;
+    }
+
+    .control-inline-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .radial-pos-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: 1100px) {
+      .gradient-controls {
+        grid-template-columns: 1fr;
+      }
+
+      .gradient-sidebar {
+        position: static;
+      }
+
+      #presetsPanel,
+      .preset-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gradient-type-btns,
+      .quick-angles,
+      .export-actions,
+      .utility-actions,
+      .control-inline-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .radial-pos-grid,
+      #presetsPanel,
+      .preset-grid,
+      .preview-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .color-stop-item {
+        grid-template-columns: 1fr;
+      }
+
+      .stop-delete-btn {
+        width: 100%;
+      }
+
+      .gradient-preview-card .gradient-preview-box {
+        min-height: 260px;
+        height: 260px;
+      }
+    }
+  </style>
+
+    <style>
+      .ad-container {
+        text-align: center;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      @media (max-width: 768px) {
+        .ad-container {
+          margin: 15px 0;
+        }
+        .ad-container iframe {
+          max-width: 100% !important;
+          width: auto !important;
+          height: auto !important;
+        }
+      }
+    </style>
+    </head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode"></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1 style="text-align: center; font-size: 2em; margin: 20px 0;">Gradient Generator for Freelancers</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+<p style="text-align: center; margin-bottom: 20px; line-height: 1.6;">
+      Create beautiful CSS gradients with live preview. Generate<br>linear, radial, and conic gradients with custom colors<br>and export ready-to-use CSS code.
+    </p>
+
+    <section class="tool-shell">
+      <div class="mobile-notice" style="background: var(--primary); color: white; padding: 15px; border-radius: 10px; margin-bottom: 20px; display: none; text-align: center;">
+        <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+           <strong>Mobile Tip:</strong> For the best experience with all features, consider switching to Desktop Site in your browser menu. This gives you easier access to all color controls and advanced options!
+        </p>
+      </div>
+      <script>
+        // Show notice only on mobile devices
+        if (window.innerWidth <= 768) {
+          document.querySelector('.mobile-notice').style.display = 'block';
+        }
+      </script>
+      <h2>Advanced CSS Gradient Generator</h2>
+      
+      <div class="gradient-controls">
+        <div class="gradient-main-panel">
+          <div class="gradient-block control-section">
+            <div class="control-cluster">
+              <label class="label">Gradient Type</label>
+              <div class="gradient-type-btns">
+                <button class="gradient-type-btn active" data-type="linear">Linear</button>
+                <button class="gradient-type-btn" data-type="radial">Radial</button>
+                <button class="gradient-type-btn" data-type="conic">Conic</button>
+              </div>
+            </div>
+
+            <div id="linearControls" class="control-cluster">
+              <label class="label">Angle</label>
+              <div class="angle-control">
+                <input type="range" id="gradAngle" min="0" max="360" value="90">
+                <span class="angle-display" id="angleDisplay">90°</span>
+              </div>
+              <div class="quick-angles">
+                <button class="ghost quick-angle-btn" data-angle="0" onclick="setAngle(0)">Top</button>
+                <button class="ghost quick-angle-btn" data-angle="90" onclick="setAngle(90)">Right</button>
+                <button class="ghost quick-angle-btn" data-angle="180" onclick="setAngle(180)">Bottom</button>
+                <button class="ghost quick-angle-btn" data-angle="270" onclick="setAngle(270)">Left</button>
+                <button class="ghost quick-angle-btn" data-angle="45" onclick="setAngle(45)">45°</button>
+                <button class="ghost quick-angle-btn" data-angle="135" onclick="setAngle(135)">135°</button>
+                <button class="ghost quick-angle-btn" data-angle="225" onclick="setAngle(225)">225°</button>
+                <button class="ghost quick-angle-btn" data-angle="315" onclick="setAngle(315)">315°</button>
+              </div>
+            </div>
+
+            <div id="radialControls" class="control-cluster" style="display: none;">
+              <div>
+                <label class="label">Shape</label>
+                <div class="control-inline-buttons" style="margin-top: 10px;">
+                  <button class="ghost shape-btn" data-radial-shape="circle" onclick="setRadialShape('circle')">Circle</button>
+                  <button class="ghost shape-btn" data-radial-shape="ellipse" onclick="setRadialShape('ellipse')">Ellipse</button>
+                </div>
+              </div>
+              <div>
+                <label class="label">Position</label>
+                <div class="radial-pos-grid" style="margin-top: 10px;">
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="top left" onclick="setRadialPos('top left')">TL</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="top center" onclick="setRadialPos('top center')">TC</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="top right" onclick="setRadialPos('top right')">TR</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="center left" onclick="setRadialPos('center left')">CL</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="center" onclick="setRadialPos('center')">C</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="center right" onclick="setRadialPos('center right')">CR</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="bottom left" onclick="setRadialPos('bottom left')">BL</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="bottom center" onclick="setRadialPos('bottom center')">BC</button>
+                  <button class="ghost quick-angle-btn position-btn" data-radial-pos="bottom right" onclick="setRadialPos('bottom right')">BR</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="conicControls" class="control-cluster" style="display: none;">
+              <label class="label">Starting Angle</label>
+              <div class="angle-control">
+                <input type="range" id="conicAngle" min="0" max="360" value="0">
+                <span class="angle-display" id="conicAngleDisplay">0°</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gradient-block">
+            <div class="color-stop-toolbar">
+              <label class="label" style="margin: 0;">Color Stops</label>
+              <button class="ghost" id="addColorBtn" onclick="addColorStop()">+ Add stop</button>
+            </div>
+            <div class="gradient-editor-layout">
+              <div id="colorStops"></div>
+            </div>
+            <div style="margin-top: 18px;">
+              <label class="label">Custom Color</label>
+              <button class="custom-color-btn" onclick="document.getElementById('customColorInput').click()">
+                <span>Pick Your Own Color</span>
+              </button>
+              <input type="color" id="customColorInput" class="custom-color-input" onchange="applyCustomColor(this.value)">
+            </div>
+          </div>
+
+          <div class="gradient-block">
+            <div class="gradient-block-header">
+              <label class="label" style="margin: 0;">Gradient Presets</label>
+              <button class="ghost" id="togglePresetsBtn" onclick="togglePresetsPanel()" style="padding: 6px 12px; font-size: 14px;">Show</button>
+            </div>
+            <div style="font-size: 15px; color: var(--text-secondary); margin-bottom: 15px; opacity: 0.9;">Choose a preset to get a polished starting point, then refine the stops, angle, and export size.</div>
+            <div id="presetsPanel" class="preset-grid collapsed">
+              <button class="ghost preset-btn" onclick="applyPreset('instagram')">Instagram</button>
+              <button class="ghost preset-btn" onclick="applyPreset('neon')">Neon</button>
+              <button class="ghost preset-btn" onclick="applyPreset('pastel')">Pastel</button>
+              <button class="ghost preset-btn" onclick="applyPreset('sunset')">Sunset</button>
+              <button class="ghost preset-btn" onclick="applyPreset('ocean')">Ocean</button>
+              <button class="ghost preset-btn" onclick="applyPreset('cyberpunk')">Cyberpunk</button>
+              <button class="ghost preset-btn" onclick="applyPreset('forest')">Forest</button>
+              <button class="ghost preset-btn" onclick="applyPreset('cherry')">Cherry</button>
+              <button class="ghost preset-btn" onclick="applyPreset('lavender')">Lavender</button>
+              <button class="ghost preset-btn" onclick="applyPreset('midnight')">Midnight</button>
+              <button class="ghost preset-btn" onclick="applyPreset('fire')">Fire</button>
+              <button class="ghost preset-btn" onclick="applyPreset('aurora')">Aurora</button>
+              <button class="ghost preset-btn" onclick="applyPreset('peach')">Peach</button>
+              <button class="ghost preset-btn" onclick="applyPreset('mint')">Mint</button>
+              <button class="ghost preset-btn" onclick="applyPreset('rose')">Rose</button>
+              <button class="ghost preset-btn" onclick="applyPreset('tropical')">Tropical</button>
+              <button class="ghost preset-btn" onclick="applyPreset('candy')">Candy</button>
+              <button class="ghost preset-btn" onclick="applyPreset('autumn')">Autumn</button>
+              <button class="ghost preset-btn" onclick="applyPreset('winter')">Winter</button>
+              <button class="ghost preset-btn" onclick="applyPreset('spring')">Spring</button>
+              <button class="ghost preset-btn" onclick="applyPreset('summer')">Summer</button>
+              <button class="ghost preset-btn" onclick="applyPreset('vampire')">Vampire</button>
+              <button class="ghost preset-btn" onclick="applyPreset('cosmic')">Cosmic</button>
+              <button class="ghost preset-btn" onclick="applyPreset('desert')">Desert</button>
+              <button class="ghost preset-btn" onclick="applyPreset('arctic')">Arctic</button>
+              <button class="ghost preset-btn" onclick="applyPreset('volcano')">Volcano</button>
+              <button class="ghost preset-btn" onclick="applyPreset('emerald')">Emerald</button>
+              <button class="ghost preset-btn" onclick="applyPreset('sapphire')">Sapphire</button>
+              <button class="ghost preset-btn" onclick="applyPreset('ruby')">Ruby</button>
+              <button class="ghost preset-btn" onclick="applyPreset('gold')">Gold</button>
+              <button class="ghost preset-btn" onclick="applyPreset('silver')">Silver</button>
+              <button class="ghost preset-btn" onclick="applyPreset('bronze')">Bronze</button>
+              <button class="ghost preset-btn" onclick="applyPreset('cotton')">Cotton</button>
+              <button class="ghost preset-btn" onclick="applyPreset('bubblegum')">Bubblegum</button>
+              <button class="ghost preset-btn" onclick="applyPreset('lemon')">Lemon</button>
+              <button class="ghost preset-btn" onclick="applyPreset('grape')">Grape</button>
+              <button class="ghost preset-btn" onclick="applyPreset('watermelon')">Watermelon</button>
+              <button class="ghost preset-btn" onclick="applyPreset('blueberry')">Blueberry</button>
+              <button class="ghost preset-btn" onclick="applyPreset('strawberry')">Strawberry</button>
+              <button class="ghost preset-btn" onclick="applyPreset('mango')">Mango</button>
+              <button class="ghost preset-btn" onclick="applyPreset('kiwi')">Kiwi</button>
+              <button class="ghost preset-btn" onclick="applyPreset('matrix')">Matrix</button>
+              <button class="ghost preset-btn" onclick="applyPreset('neon-pink')">Neon Pink</button>
+              <button class="ghost preset-btn" onclick="applyPreset('neon-blue')">Neon Blue</button>
+              <button class="ghost preset-btn" onclick="applyPreset('royal')">Royal</button>
+              <button class="ghost preset-btn" onclick="applyPreset('valentine')">Valentine</button>
+              <button class="ghost preset-btn" onclick="applyPreset('halloween')">Halloween</button>
+              <button class="ghost preset-btn" onclick="applyPreset('christmas')">Christmas</button>
+              <button class="ghost preset-btn" onclick="applyPreset('earth')">Earth</button>
+              <button class="ghost preset-btn" onclick="applyPreset('mars')">Mars</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gradient-sidebar">
+          <div class="gradient-block gradient-preview-card">
+            <div class="gradient-block-header">
+              <label class="label" style="margin: 0;">Live Preview</label>
+              <span style="color: var(--text-secondary); font-size: 14px;">Instant visual feedback</span>
+            </div>
+            <div id="gradientPreview" class="gradient-preview-box" style="width: 100%;"></div>
+            <div class="preview-meta">
+              <div class="preview-stat">Type<strong id="previewTypeLabel">Linear</strong></div>
+              <div class="preview-stat">Stops<strong id="previewStopsLabel">2 stops</strong></div>
+            </div>
+          </div>
+
+          <div class="gradient-block gradient-code-card">
+            <div class="gradient-block-header" style="margin-bottom: 10px;">
+              <label class="label" style="margin: 0;">CSS Code</label>
+              <button class="ghost" onclick="copyGradientCSS()">Copy</button>
+            </div>
+            <div class="result-box" id="cssCode"></div>
+          </div>
+
+          <div class="gradient-block">
+            <label class="label">Export as Image</label>
+            <div class="export-controls">
+              <div>
+                <label class="label" style="font-size: 12px;">Width (px)</label>
+                <input type="number" id="exportWidth" value="1080" min="100" max="4000">
+              </div>
+              <div>
+                <label class="label" style="font-size: 12px;">Height (px)</label>
+                <input type="number" id="exportHeight" value="1080" min="100" max="4000">
+              </div>
+            </div>
+            <div class="export-actions">
+              <button class="ghost utility-btn" onclick="exportGradient('png')">Export PNG</button>
+              <button class="ghost utility-btn" onclick="exportGradient('jpg')">Export JPG</button>
+            </div>
+          </div>
+
+          <div class="gradient-block">
+            <label class="label">Quick Actions</label>
+            <div class="utility-actions">
+              <button class="ghost utility-btn" onclick="randomizeGradient()">Randomize</button>
+              <button class="ghost utility-btn" onclick="reverseGradient()">Reverse</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin: 30px 0;">
+    </div>
+
+    <!-- Elite Features Section -->
+    <section class="section" id="features">
+      <h2>🎨 Elite Features That Beat All Competitors</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌈</div>
+          <h3>3 Gradient Types</h3>
+          <p>Create linear (directional), radial (circular), and conic (rotating) gradients. Full control over angles, shapes, and positions.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">👁️</div>
+          <h3>Live Preview</h3>
+          <p>See changes instantly as you design. Real-time visual feedback for every color, angle, and position adjustment.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Unlimited Color Stops</h3>
+          <p>Add as many colors as you need. Fine-tune position, opacity, and color for each stop independently.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📐</div>
+          <h3>Angle Control</h3>
+          <p>Precise angle adjustment for linear gradients. Quick presets (0°, 45°, 90°, 135°, 180°) or custom angles with slider.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔮</div>
+          <h3>Radial Positioning</h3>
+          <p>Position radial gradients anywhere on canvas. Choose circle or ellipse shapes with center/corner placement.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>12 Pro Presets</h3>
+          <p>Instagram, Neon, Pastel, Sunset, Ocean, Cyberpunk, Forest, Cherry, Lavender, Midnight, Fire, Aurora—instant inspiration.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">💻</div>
+          <h3>CSS Code Export</h3>
+          <p>Copy production-ready CSS code with one click. Works in all modern browsers supporting CSS3 gradients.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🖼️</div>
+          <h3>Image Export (PNG/JPG)</h3>
+          <p>Download gradients as high-resolution images up to 4000x4000px. Perfect for graphics, backgrounds, and print.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Advanced Color Picker</h3>
+          <p>Professional HSL color picker with opacity control. Use hex codes, RGB values, or visual selection.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Performance</h3>
+          <p>Zero lag rendering. All processing happens in browser using Canvas API—no server delays or upload wait times.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>100% Private</h3>
+          <p>All gradient creation happens locally. Zero uploads, zero tracking, zero data collection. Your designs stay on your device.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Works Offline</h3>
+          <p>PWA support means you can design gradients without internet after first load. Perfect for creative work anywhere.</p>
+        </div>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin: 30px 0;">
+    </div>
+    <div style="text-align: center; margin: 30px 0;">
+    </div>
+
+    <!-- What Is Section -->
+    <section class="section" id="what-is">
+      <h2 id="gg-what">What Makes This the Best Gradient Generator Online in 2026?</h2>
+      <p>The <strong>ToolsMatic CSS Gradient Generator</strong> is the most advanced free gradient tool available, combining professional-grade features with an intuitive interface. Unlike basic gradient makers, this tool offers complete control over linear, radial, and conic gradients with unlimited color stops, precise positioning, and both CSS and image export options—all running privately in your browser.</p>
+      
+      <p>Developed specifically for web designers, frontend developers, UI/UX professionals, and digital artists, this generator handles everything from simple two-color gradients to complex multi-stop masterpieces. The client-side architecture means your creative work never leaves your device, making it safe for client projects and proprietary designs.</p>
+
+      <h3>Why Designers Choose This Over Paid Alternatives</h3>
+      <ul style="line-height: 1.8; font-size: 15px;">
+        <li><strong>3 Gradient Types:</strong> Linear, radial, AND conic gradients—many free tools only offer linear</li>
+        <li><strong>Unlimited Color Stops:</strong> Add as many colors as needed—no artificial limits or premium upsells</li>
+        <li><strong>Live Preview:</strong> Instant visual feedback as you design—see changes in real-time</li>
+        <li><strong>High-Res Image Export:</strong> Download up to 4000x4000px PNG/JPG—most free tools cap at 1000px</li>
+        <li><strong>Production CSS Code:</strong> Copy-paste ready code with vendor prefixes for maximum compatibility</li>
+        <li><strong>12 Pro Presets:</strong> Professional gradient templates for instant inspiration</li>
+        <li><strong>No Registration:</strong> Start designing immediately—no accounts, no logins, no friction</li>
+        <li><strong>100% Private:</strong> Client-side processing means zero data uploads or tracking</li>
+      </ul>
+      
+      <h2>How to Create Professional Gradients</h2>
+      <p><strong>Step 1 - Choose Gradient Type:</strong> Select Linear for directional gradients, Radial for circular effects, or Conic for rotating color wheels.</p>
+      <p><strong>Step 2 - Add Colors:</strong> Click "Add Color Stop" and use the color picker. Adjust position sliders to control color placement along the gradient.</p>
+      <p><strong>Step 3 - Fine-Tune Direction:</strong> For linear gradients, set angle (0-360°). For radial, choose shape (circle/ellipse) and position. For conic, set starting angle.</p>
+      <p><strong>Step 4 - Export Your Gradient:</strong> Copy CSS code for web use, or download as PNG/JPG image for graphics. Choose resolution up to 4000x4000px for print quality.</p>
+      
+      <h2>Gradient Generator Use Cases</h2>
+      <p><strong>Web Design & Development:</strong> Create website backgrounds, hero sections, buttons, cards, navigation bars, page headers, and UI components. CSS gradients load faster than images and scale perfectly.</p>
+      <p><strong>Graphic Design:</strong> Design social media posts, YouTube thumbnails, Instagram stories, promotional banners, and marketing materials with eye-catching gradient backgrounds.</p>
+      <p><strong>UI/UX Design:</strong> Build gradient accent walls, glassmorphism effects, color transitions, loading screens, and modern interface elements for apps and websites.</p>
+      <p><strong>Digital Art:</strong> Create gradient backgrounds for illustrations, photo overlays,texture maps, sky effects, and creative compositions.</p>
+      <p><strong>Presentations:</strong> Generate professional slide backgrounds for PowerPoint, Google Slides, Keynote, and Canva presentations.</p>
+      <p><strong>Print Design:</strong> Export high-resolution gradient images for posters, brochures, business cards, and other print materials.</p>
+      
+      <h2>Why Choose Professional Gradient Generator</h2>
+      <p><strong>Zero Setup:</strong> No Photoshop, Figma, or design software needed. Works instantly in any browser.</p>
+      <p><strong>100% Free:</strong> No premium tiers, no feature locks, no watermarks. Unlimited gradients, unlimited exports.</p>
+      <p><strong>Client-Side Privacy:</strong> All gradient creation happens in your browser. Zero uploads, zero tracking, perfect for client work.</p>
+      <p><strong>Lightning Fast:</strong> Instant rendering with Canvas API. No server processing delays or upload wait times.</p>
+      <p><strong>Production Ready:</strong> CSS code works in all modern browsers. Images export at print resolution (up to 4000px).</p>
+      
+      <h2>Advanced Gradient Techniques</h2>
+      <p><strong>Multi-Stop Gradients:</strong> Add 3, 4, 5+ color stops for complex transitions. Position stops at specific percentages (0-100%) along the gradient axis. Create smooth blends or sharp color changes by adjusting stop proximity.</p>
+      <p><strong>Radial Gradient Positioning:</strong> Move the gradient center to top-left, bottom-right, or custom positions for dramatic lighting effects. Use ellipse shapes for stretched radial gradients that follow container dimensions.</p>
+      <p><strong>Conic Gradient Magic:</strong> Create color wheels, pie chart backgrounds, and angular transitions. Adjust starting angle to rotate the entire gradient. Perfect for progress indicators and circular UI elements.</p>
+      <p><strong>Opacity Tricks:</strong> Use transparent colors (alpha < 1.0) to blend gradients with background images or colors. Create fade effects, vignettes, and subtle overlays.</p>
+      <p><strong>CSS Performance:</strong> Gradients render faster than images—no HTTP requests, instant load, perfect scaling. Use gradients for mobile-first designs to reduce bandwidth and improve page speed.</p>
+      
+      <h2>Gradient Design Best Practices</h2>
+      <p><strong>Color Harmony:</strong> Use complementary colors (opposite on color wheel) for vibrant gradients. Use analogous colors (adjacent on wheel) for smooth, harmonious transitions.</p>
+      <p><strong>Readability:</strong> If placing text over gradients, ensure sufficient contrast. Use darker gradients for light text, lighter for dark text. Test with WebAIM contrast checker.</p>
+      <p><strong>Subtlety vs Impact:</strong> Subtle gradients (similar hues) work for backgrounds. Bold gradients (contrasting colors) work for hero sections and call-to-action elements.</p>
+      <p><strong>Angle Psychology:</strong> 90° (bottom to top) suggests growth/elevation. 180° (top to bottom) suggests depth/grounding. 45° creates dynamic energy.</p>
+      <p><strong>Mobile Optimization:</strong> Test gradients on mobile devices. Gradients display differently on small screens vs desktop. Adjust stop positions if needed.</p>
+      
+      <h2>CSS Gradient Browser Support</h2>
+      <p>Modern CSS gradients work in all major browsers: Chrome, Firefox, Safari, Edge, Opera, and mobile browsers (iOS Safari, Chrome Mobile). Our generator includes vendor prefixes (-webkit-, -moz-, -o-) for maximum compatibility with older browser versions.</p>
+      <p><strong>Linear Gradients:</strong> Supported since Chrome 26, Firefox 16, Safari 6.1, IE 10. Universal support in 2026.</p>
+      <p><strong>Radial Gradients:</strong> Supported since Chrome 26, Firefox 16, Safari 6.1, IE 10. Full support across all modern browsers.</p>
+      <p><strong>Conic Gradients:</strong> Supported since Chrome 69, Firefox 83, Safari 12.1. Excellent support in 2026 with 95%+ browser coverage.</p>
+      
+      <h2>Pro Tips for Gradient Design</h2>
+      <p><strong>Use Presets for Inspiration:</strong> Start with a preset like Sunset or Cyberpunk, then customize colors to match your brand.</p>
+      <p><strong>Save Your Favorites:</strong> Screenshot or bookmark gradient settings. Copy CSS code into a snippet library for reuse across projects.</p>
+      <p><strong>Layer Gradients:</strong> Use multiple gradient backgrounds in CSS for complex effects: background: linear-gradient(...), radial-gradient(...);</p>
+      <p><strong>Test Before Export:</strong> Check how gradients look at different viewport sizes. Resize preview window or use browser DevTools.</p>
+      <p><strong>Export Smart:</strong> Use PNG for transparency needs, JPG for smaller file sizes. Choose resolution based on use case (web: 1920px, print: 4000px).</p>
+      
+      <h2>Privacy & Performance Benefits</h2>
+      <p>Processing gradients locally in your browser provides: zero data exposure (never sent to servers), instant rendering (no network latency), offline capability, zero tracking, and full design privacy. Ideal for client projects, proprietary designs, brand explorations, and confidential work. No design files uploaded = no security concerns.</p>
+    </section>
+
+    <div style="text-align: center; margin: 30px 0;">
+    </div>
+
+    <!-- Comparison Table Section -->
+    <section class="section" id="comparison">
+      <h2>⚡ ToolsMatic Gradient Generator vs Competitors</h2>
+      <p style="margin-bottom: 20px;">See how we stack up against popular alternatives (updated February 2026):</p>
+      
+      <div style="overflow-x: auto;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ToolsMatic</th>
+              <th>CSS Gradient.io</th>
+              <th>uiGradients</th>
+              <th>Paid Tools ($10-30/mo)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Linear Gradients</td>
+              <td class="check">✓ Full control</td>
+              <td class="check">✓</td>
+              <td class="check">✓</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Radial Gradients</td>
+              <td class="check">✓ With positioning</td>
+              <td class="partial">~ Basic</td>
+              <td class="cross">✗</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Conic Gradients</td>
+              <td class="check">✓ Yes</td>
+              <td class="cross">✗</td>
+              <td class="cross">✗</td>
+              <td class="partial">~ Some</td>
+            </tr>
+            <tr>
+              <td>Unlimited Color Stops</td>
+              <td class="check">✓ Yes</td>
+              <td class="partial">~ Limited</td>
+              <td class="cross">✗ 2 colors only</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Image Export (PNG/JPG)</td>
+              <td class="check">✓ Up to 4000px</td>
+              <td class="cross">✗</td>
+              <td class="cross">✗</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Live Preview</td>
+              <td class="check">✓ Real-time</td>
+              <td class="check">✓</td>
+              <td class="partial">~ Basic</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Gradient Presets</td>
+              <td class="check">✓ 12 pro presets</td>
+              <td class="partial">~ 6 presets</td>
+              <td class="check">✓ Many</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Angle Control</td>
+              <td class="check">✓ 0-360° + presets</td>
+              <td class="check">✓</td>
+              <td class="cross">✗ Fixed angles</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Works Offline</td>
+              <td class="check">✓ PWA</td>
+              <td class="cross">✗</td>
+              <td class="cross">✗</td>
+              <td class="partial">~ Some</td>
+            </tr>
+            <tr>
+              <td>No Registration Required</td>
+              <td class="check">✓ Yes</td>
+              <td class="check">✓</td>
+              <td class="check">✓</td>
+              <td class="cross">✗ Account needed</td>
+            </tr>
+            <tr>
+              <td>Completely Free</td>
+              <td class="check">✓ Forever</td>
+              <td class="check">✓ With ads</td>
+              <td class="check">✓</td>
+              <td class="cross">✗ $10-30/mo</td>
+            </tr>
+            <tr>
+              <td>Privacy (Zero Uploads)</td>
+              <td class="check">✓ 100%</td>
+              <td class="check">✓</td>
+              <td class="check">✓</td>
+              <td class="partial">~ Varies</td>
+            </tr>
+            <tr>
+              <td>CSS Code Export</td>
+              <td class="check">✓ With vendor prefixes</td>
+              <td class="check">✓</td>
+              <td class="check">✓</td>
+              <td class="check">✓</td>
+            </tr>
+            <tr>
+              <td>Radial Shape Options</td>
+              <td class="check">✓ Circle/Ellipse</td>
+              <td class="partial">~ Basic</td>
+              <td class="cross">✗</td>
+              <td class="check">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin: 30px 0;">
+    </div>
+
+    <div style="text-align: center; margin: 30px 0;">
+    </div>
+
+    <section class="section" id="gradient-next-searches">
+      <h2>Popular follow-up searches around gradients</h2>
+      <p>Gradient pages usually earn impressions from related design searches, not just the exact tool query. These links help capture that adjacent demand while keeping this page focused on the main gradient generator term.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;margin:20px 0;">
+        <a href="/guides/css-gradient-examples.html" style="padding:15px;background:var(--surface);border-radius:8px;text-decoration:none;color:inherit;border:1px solid var(--border);transition:all 0.3s;">
+          <h4 style="margin:0 0 8px 0;color:var(--primary);">CSS Gradient Examples</h4>
+          <p style="margin:0;font-size:14px;color:var(--muted);">See practical hero, button, mesh-style, and card background gradients that people search for after the basic generator query.</p>
+        </a>
+        <a href="/tools/color-picker.html" style="padding:15px;background:var(--surface);border-radius:8px;text-decoration:none;color:inherit;border:1px solid var(--border);transition:all 0.3s;">
+          <h4 style="margin:0 0 8px 0;color:var(--primary);">Color Picker</h4>
+          <p style="margin:0;font-size:14px;color:var(--muted);">Refine individual color stops in HEX, RGB, or HSL before bringing them back into the gradient builder.</p>
+        </a>
+        <a href="/tools/contrast-checker.html" style="padding:15px;background:var(--surface);border-radius:8px;text-decoration:none;color:inherit;border:1px solid var(--border);transition:all 0.3s;">
+          <h4 style="margin:0 0 8px 0;color:var(--primary);">Contrast Checker</h4>
+          <p style="margin:0;font-size:14px;color:var(--muted);">Check whether text placed on top of your gradient still meets readable contrast targets.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="section" id="related-tools">
+      <h2>🔗 Other Design Tools You Might Need</h2>
+      <p>Complete your design workflow with these complementary tools:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+        <a href="/tools/color-picker.html" style="padding: 15px; background: var(--surface); border-radius: 8px; text-decoration: none; color: inherit; border: 1px solid var(--border); transition: all 0.3s;">
+          <h4 style="margin: 0 0 8px 0; color: var(--primary);">Color Picker</h4>
+          <p style="margin: 0; font-size: 14px; color: var(--muted);">Professional color picker with HSL, RGB, HEX, and palette generation</p>
+        </a>
+        <a href="/tools/contrast-checker.html" style="padding: 15px; background: var(--surface); border-radius: 8px; text-decoration: none; color: inherit; border: 1px solid var(--border); transition: all 0.3s;">
+          <h4 style="margin: 0 0 8px 0; color: var(--primary);">Contrast Checker</h4>
+          <p style="margin: 0; font-size: 14px; color: var(--muted);">Ensure text readability over gradient backgrounds with WCAG compliance</p>
+        </a>
+        <a href="/tools/image-compressor.html" style="padding: 15px; background: var(--surface); border-radius: 8px; text-decoration: none; color: inherit; border: 1px solid var(--border); transition: all 0.3s;">
+          <h4 style="margin: 0 0 8px 0; color: var(--primary);">Image Compressor</h4>
+          <p style="margin: 0; font-size: 14px; color: var(--muted);">Compress exported gradient images for web optimization</p>
+        </a>
+      </div>
+    </section>
+      <div style="text-align: center; margin: 24px 0;">
+        </div>
+<div style="text-align: center; margin: 24px 0;">
+
+</div>
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="gradient-generator-for-freelancers-pseo" aria-labelledby="gradient-generator-for-freelancers-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Gradient Generator for Freelancers</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="gradient-generator-for-freelancers-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Gradient Generator for Freelancers Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Gradient Generator for Freelancers</strong>, a freelance-focused utility designed to assist with client deliverables and data preparation. This dedicated workspace is built specifically for independent contractors, consultants, designers, and developers working with clients. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>rapid workspace resets, secure local data calculations, and copy-paste layout readiness</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Blend colors and angles to export CSS gradients. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Rapid deliverable prep</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Format client data, calculate project metrics, or validate formatting in seconds.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">100% Client-safe privacy</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Maintain absolute client confidentiality; data never leaves your local browser sandbox.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Frictionless productivity</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Skip paid software subscriptions; keep your overhead low while delivering top quality.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Gradient Generator for Freelancers</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Freelancers layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Gradient Generator for Freelancers</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this free for commercial client work?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, all of our utilities are completely free for personal and professional use.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Do you track or store client data?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Never. Data processing happens locally, complying with strict non-disclosure agreements.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I export the workspace logs?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, click the copy button to capture your results instantly for email reports.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/gradient-generator.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Gradient Generator</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Gradient Generator for Freelancers","url":"https://toolsmatic.me/tools/gradient-generator-for-freelancers.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Gradient Generator for Freelancers online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Gradient Generator for Freelancers","item":"https://toolsmatic.me/tools/gradient-generator-for-freelancers.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this free for commercial client work?","acceptedAnswer":{"@type":"Answer","text":"Yes, all of our utilities are completely free for personal and professional use."}},{"@type":"Question","name":"Do you track or store client data?","acceptedAnswer":{"@type":"Answer","text":"Never. Data processing happens locally, complying with strict non-disclosure agreements."}},{"@type":"Question","name":"Can I export the workspace logs?","acceptedAnswer":{"@type":"Answer","text":"Yes, click the copy button to capture your results instantly for email reports."}}]}]}</script>
+  </main>
+<footer style="position: relative; z-index: 1; display: flex; flex-direction: column; gap: 12px;">
+    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+      <a href="/terms.html" class="ghost" style="padding: 8px 12px; border-radius: 8px; font-size: 14px;"> Terms</a>
+      <a href="/privacy.html" class="ghost" style="padding: 8px 12px; border-radius: 8px; font-size: 14px;"> Privacy Policy</a>
+      <a href="/contact.html" class="ghost" style="padding: 8px 12px; border-radius: 8px; font-size: 14px;"> Contact</a>
+    </div>
+    <div style="text-align: center; font-size: 14px;">
+      ToolsMatic  Fast, privacy-first utilities for the web.
+    </div>
+  </footer>
+
+  <script>
+    // Gradient State
+    let gradientState = {
+      type: 'linear',
+      angle: 90,
+      colors: [
+        { color: '#FF6B6B', position: 0 },
+        { color: '#4ECDC4', position: 100 }
+      ],
+      radialShape: 'circle',
+      radialPos: 'center',
+      conicAngle: 0
+    };
+
+    // Preset Gradients
+    const gradientPresets = {
+      instagram: {
+        type: 'linear',
+        angle: 45,
+        colors: [
+          { color: '#F09433', position: 0 },
+          { color: '#E6683C', position: 25 },
+          { color: '#DC2743', position: 50 },
+          { color: '#CC2366', position: 75 },
+          { color: '#BC1888', position: 100 }
+        ]
+      },
+      neon: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#00FF00', position: 0 },
+          { color: '#FF00FF', position: 50 },
+          { color: '#00FFFF', position: 100 }
+        ]
+      },
+      pastel: {
+        type: 'linear',
+        angle: 135,
+        colors: [
+          { color: '#FFB6C1', position: 0 },
+          { color: '#DDA0DD', position: 50 },
+          { color: '#B0E0E6', position: 100 }
+        ]
+      },
+      sunset: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#FF6B35', position: 0 },
+          { color: '#FFA500', position: 25 },
+          { color: '#FFD700', position: 50 },
+          { color: '#FF69B4', position: 100 }
+        ]
+      },
+      ocean: {
+        type: 'radial',
+        radialShape: 'circle',
+        radialPos: 'center',
+        colors: [
+          { color: '#87CEEB', position: 0 },
+          { color: '#4169E1', position: 50 },
+          { color: '#000080', position: 100 }
+        ]
+      },
+      cyberpunk: {
+        type: 'linear',
+        angle: 45,
+        colors: [
+          { color: '#0D47A1', position: 0 },
+          { color: '#7B1FA2', position: 33 },
+          { color: '#F50057', position: 66 },
+          { color: '#00BCD4', position: 100 }
+        ]
+      },
+      forest: {
+        type: 'linear',
+        angle: 180,
+        colors: [
+          { color: '#2D5016', position: 0 },
+          { color: '#4CAF50', position: 50 },
+          { color: '#8BC34A', position: 100 }
+        ]
+      },
+      cherry: {
+        type: 'conic',
+        conicAngle: 0,
+        colors: [
+          { color: '#C41E3A', position: 0 },
+          { color: '#E75C78', position: 50 },
+          { color: '#FFC0CB', position: 100 }
+        ]
+      },
+      lavender: {
+        type: 'linear',
+        angle: 135,
+        colors: [
+          { color: '#967BB6', position: 0 },
+          { color: '#B19CD9', position: 50 },
+          { color: '#E6D5E8', position: 100 }
+        ]
+      },
+      midnight: {
+        type: 'radial',
+        radialShape: 'circle',
+        radialPos: 'center',
+        colors: [
+          { color: '#0F0C29', position: 0 },
+          { color: '#302B63', position: 50 },
+          { color: '#24243E', position: 100 }
+        ]
+      },
+      fire: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#FFA500', position: 0 },
+          { color: '#FF4500', position: 33 },
+          { color: '#DC143C', position: 66 },
+          { color: '#8B0000', position: 100 }
+        ]
+      },
+      aurora: {
+        type: 'linear',
+        angle: 45,
+        colors: [
+          { color: '#00FF7F', position: 0 },
+          { color: '#00CED1', position: 50 },
+          { color: '#FF1493', position: 100 }
+        ]
+      },
+      peach: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#FFDFBA', position: 0 },
+          { color: '#FFB88C', position: 50 },
+          { color: '#FF9770', position: 100 }
+        ]
+      },
+      mint: {
+        type: 'linear',
+        angle: 135,
+        colors: [
+          { color: '#98FF98', position: 0 },
+          { color: '#7FFFD4', position: 50 },
+          { color: '#00FA9A', position: 100 }
+        ]
+      },
+      rose: {
+        type: 'radial',
+        radialShape: 'circle',
+        radialPos: 'center',
+        colors: [
+          { color: '#FF69B4', position: 0 },
+          { color: '#FF1493', position: 50 },
+          { color: '#C71585', position: 100 }
+        ]
+      },
+      tropical: {
+        type: 'linear',
+        angle: 45,
+        colors: [
+          { color: '#FFD700', position: 0 },
+          { color: '#FF6347', position: 33 },
+          { color: '#20B2AA', position: 66 },
+          { color: '#9370DB', position: 100 }
+        ]
+      },
+      candy: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#FF69B4', position: 0 },
+          { color: '#FFB6C1', position: 25 },
+          { color: '#DDA0DD', position: 50 },
+          { color: '#DA70D6', position: 75 },
+          { color: '#FF00FF', position: 100 }
+        ]
+      },
+      autumn: {
+        type: 'linear',
+        angle: 180,
+        colors: [
+          { color: '#FF4500', position: 0 },
+          { color: '#FFA500', position: 33 },
+          { color: '#DAA520', position: 66 },
+          { color: '#8B4513', position: 100 }
+        ]
+      },
+      winter: {
+        type: 'radial',
+        radialShape: 'circle',
+        radialPos: 'center',
+        colors: [
+          { color: '#E0F2F1', position: 0 },
+          { color: '#B2EBF2', position: 50 },
+          { color: '#4DD0E1', position: 100 }
+        ]
+      },
+      spring: {
+        type: 'linear',
+        angle: 45,
+        colors: [
+          { color: '#FFE4E1', position: 0 },
+          { color: '#FFB6C1', position: 33 },
+          { color: '#98FB98', position: 66 },
+          { color: '#87CEEB', position: 100 }
+        ]
+      },
+      summer: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#FFD700', position: 0 },
+          { color: '#FFA07A', position: 50 },
+          { color: '#1E90FF', position: 100 }
+        ]
+      },
+      vampire: {
+        type: 'linear',
+        angle: 180,
+        colors: [
+          { color: '#8B0000', position: 0 },
+          { color: '#DC143C', position: 50 },
+          { color: '#000000', position: 100 }
+        ]
+      },
+      cosmic: {
+        type: 'conic',
+        conicAngle: 0,
+        colors: [
+          { color: '#000080', position: 0 },
+          { color: '#4B0082', position: 25 },
+          { color: '#8B00FF', position: 50 },
+          { color: '#FF00FF', position: 75 },
+          { color: '#000080', position: 100 }
+        ]
+      },
+      desert: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#F4A460', position: 0 },
+          { color: '#D2691E', position: 50 },
+          { color: '#8B4513', position: 100 }
+        ]
+      },
+      arctic: {
+        type: 'linear',
+        angle: 180,
+        colors: [
+          { color: '#F0F8FF', position: 0 },
+          { color: '#B0E0E6', position: 50 },
+          { color: '#4682B4', position: 100 }
+        ]
+      },
+      volcano: {
+        type: 'radial',
+        radialShape: 'circle',
+        radialPos: 'center',
+        colors: [
+          { color: '#FFD700', position: 0 },
+          { color: '#FF4500', position: 33 },
+          { color: '#8B0000', position: 66 },
+          { color: '#000000', position: 100 }
+        ]
+      },
+      emerald: {
+        type: 'linear',
+        angle: 135,
+        colors: [
+          { color: '#50C878', position: 0 },
+          { color: '#00A86B', position: 50 },
+          { color: '#006400', position: 100 }
+        ]
+      },
+      sapphire: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#0F52BA', position: 0 },
+          { color: '#082567', position: 50 },
+          { color: '#000080', position: 100 }
+        ]
+      },
+      ruby: {
+        type: 'radial',
+        radialShape: 'circle',
+        radialPos: 'center',
+        colors: [
+          { color: '#E0115F', position: 0 },
+          { color: '#C41E3A', position: 50 },
+          { color: '#8B0000', position: 100 }
+        ]
+      },
+      gold: {
+        type: 'linear',
+        angle: 45,
+        colors: [
+          { color: '#FFD700', position: 0 },
+          { color: '#FFA500', position: 50 },
+          { color: '#FF8C00', position: 100 }
+        ]
+      },
+      silver: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#F8F8FF', position: 0 },
+          { color: '#C0C0C0', position: 50 },
+          { color: '#808080', position: 100 }
+        ]
+      },
+      bronze: {
+        type: 'linear',
+        angle: 135,
+        colors: [
+          { color: '#CD7F32', position: 0 },
+          { color: '#8B4513', position: 50 },
+          { color: '#654321', position: 100 }
+        ]
+      },
+      cotton: {
+        type: 'radial',
+        radialShape: 'circle',
+        radialPos: 'center',
+        colors: [
+          { color: '#FFFAFA', position: 0 },
+          { color: '#FFE4E1', position: 50 },
+          { color: '#FFB6C1', position: 100 }
+        ]
+      },
+      bubblegum: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#FFC1CC', position: 0 },
+          { color: '#FF69B4', position: 50 },
+          { color: '#FF1493', position: 100 }
+        ]
+      },
+      lemon: {
+        type: 'linear',
+        angle: 180,
+        colors: [
+          { color: '#FFFACD', position: 0 },
+          { color: '#FFFF00', position: 50 },
+          { color: '#FFD700', position: 100 }
+        ]
+      },
+      grape: {
+        type: 'linear',
+        angle: 45,
+        colors: [
+          { color: '#8B008B', position: 0 },
+          { color: '#9370DB', position: 50 },
+          { color: '#BA55D3', position: 100 }
+        ]
+      },
+      watermelon: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#FF6B6B', position: 0 },
+          { color: '#FF1744', position: 50 },
+          { color: '#4CAF50', position: 100 }
+        ]
+      },
+      blueberry: {
+        type: 'radial',
+        radialShape: 'circle',
+        radialPos: 'center',
+        colors: [
+          { color: '#8A2BE2', position: 0 },
+          { color: '#4B0082', position: 50 },
+          { color: '#191970', position: 100 }
+        ]
+      },
+      strawberry: {
+        type: 'linear',
+        angle: 135,
+        colors: [
+          { color: '#FF6B6B', position: 0 },
+          { color: '#FF1744', position: 50 },
+          { color: '#C62828', position: 100 }
+        ]
+      },
+      mango: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#FFEB3B', position: 0 },
+          { color: '#FFA726', position: 50 },
+          { color: '#FF6F00', position: 100 }
+        ]
+      },
+      kiwi: {
+        type: 'linear',
+        angle: 180,
+        colors: [
+          { color: '#8BC34A', position: 0 },
+          { color: '#558B2F', position: 50 },
+          { color: '#33691E', position: 100 }
+        ]
+      },
+      matrix: {
+        type: 'linear',
+        angle: 180,
+        colors: [
+          { color: '#00FF00', position: 0 },
+          { color: '#008000', position: 50 },
+          { color: '#003300', position: 100 }
+        ]
+      },
+      'neon-pink': {
+        type: 'linear',
+        angle: 45,
+        colors: [
+          { color: '#FF10F0', position: 0 },
+          { color: '#FF00FF', position: 50 },
+          { color: '#C71585', position: 100 }
+        ]
+      },
+      'neon-blue': {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#00FFFF', position: 0 },
+          { color: '#0080FF', position: 50 },
+          { color: '#0000FF', position: 100 }
+        ]
+      },
+      royal: {
+        type: 'linear',
+        angle: 135,
+        colors: [
+          { color: '#4B0082', position: 0 },
+          { color: '#8B008B', position: 33 },
+          { color: '#FFD700', position: 66 },
+          { color: '#FF0000', position: 100 }
+        ]
+      },
+      valentine: {
+        type: 'radial',
+        radialShape: 'circle',
+        radialPos: 'center',
+        colors: [
+          { color: '#FFC0CB', position: 0 },
+          { color: '#FF69B4', position: 50 },
+          { color: '#FF1493', position: 100 }
+        ]
+      },
+      halloween: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#FFA500', position: 0 },
+          { color: '#FF4500', position: 33 },
+          { color: '#8B008B', position: 66 },
+          { color: '#000000', position: 100 }
+        ]
+      },
+      christmas: {
+        type: 'linear',
+        angle: 45,
+        colors: [
+          { color: '#FF0000', position: 0 },
+          { color: '#228B22', position: 50 },
+          { color: '#FFFFFF', position: 100 }
+        ]
+      },
+      earth: {
+        type: 'radial',
+        radialShape: 'circle',
+        radialPos: 'center',
+        colors: [
+          { color: '#87CEEB', position: 0 },
+          { color: '#228B22', position: 50 },
+          { color: '#8B4513', position: 100 }
+        ]
+      },
+      mars: {
+        type: 'linear',
+        angle: 90,
+        colors: [
+          { color: '#CD5C5C', position: 0 },
+          { color: '#8B4513', position: 50 },
+          { color: '#A0522D', position: 100 }
+        ]
+      }
+    };
+
+    // Toggle Presets Panel
+    function togglePresetsPanel() {
+      const panel = document.getElementById('presetsPanel');
+      const btn = document.getElementById('togglePresetsBtn');
+      
+      panel.classList.toggle('collapsed');
+      
+      if (panel.classList.contains('collapsed')) {
+        btn.textContent = 'Show';
+      } else {
+        btn.textContent = 'Hide';
+      }
+    }
+
+    function formatAngle(value) {
+      return `${value}°`;
+    }
+
+    function updateAngleDisplays() {
+      document.getElementById('angleDisplay').textContent = formatAngle(gradientState.angle);
+      document.getElementById('conicAngleDisplay').textContent = formatAngle(gradientState.conicAngle);
+      document.getElementById('gradAngle').value = gradientState.angle;
+      document.getElementById('conicAngle').value = gradientState.conicAngle;
+    }
+
+    function updateSelectedControls() {
+      document.querySelectorAll('.quick-angle-btn[data-angle]').forEach((btn) => {
+        btn.classList.toggle('is-active', parseInt(btn.dataset.angle, 10) === gradientState.angle);
+      });
+
+      document.querySelectorAll('.shape-btn[data-radial-shape]').forEach((btn) => {
+        btn.classList.toggle('is-active', btn.dataset.radialShape === gradientState.radialShape);
+      });
+
+      document.querySelectorAll('.position-btn[data-radial-pos]').forEach((btn) => {
+        btn.classList.toggle('is-active', btn.dataset.radialPos === gradientState.radialPos);
+      });
+    }
+
+    // Initialize
+    function init() {
+      updateTypeControls('linear');
+      updateAngleDisplays();
+      renderColorStops();
+      updatePreview();
+      
+      // Angle slider
+      document.getElementById('gradAngle').addEventListener('input', (e) => {
+        gradientState.angle = parseInt(e.target.value);
+        updateAngleDisplays();
+        updatePreview();
+      });
+      
+      // Conic angle slider
+      document.getElementById('conicAngle').addEventListener('input', (e) => {
+        gradientState.conicAngle = parseInt(e.target.value);
+        updateAngleDisplays();
+        updatePreview();
+      });
+      
+      // Type buttons
+      document.querySelectorAll('.gradient-type-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const type = btn.dataset.type;
+          changeGradientType(type);
+        });
+      });
+    }
+
+    function updateTypeControls(type) {
+      document.querySelectorAll('.gradient-type-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.type === type);
+      });
+      
+      document.getElementById('linearControls').style.display = type === 'linear' ? 'block' : 'none';
+      document.getElementById('radialControls').style.display = type === 'radial' ? 'block' : 'none';
+      document.getElementById('conicControls').style.display = type === 'conic' ? 'block' : 'none';
+      updateSelectedControls();
+    }
+
+    function changeGradientType(type) {
+      gradientState.type = type;
+      updateTypeControls(type);
+      updatePreview();
+    }
+
+    function setAngle(angle) {
+      gradientState.angle = angle;
+      updateAngleDisplays();
+      updatePreview();
+    }
+
+    function setRadialShape(shape) {
+      gradientState.radialShape = shape;
+      updateSelectedControls();
+      updatePreview();
+    }
+
+    function setRadialPos(pos) {
+      gradientState.radialPos = pos;
+      updateSelectedControls();
+      updatePreview();
+    }
+
+    function renderColorStops() {
+      const container = document.getElementById('colorStops');
+      
+      // Only update items that have changed, don't rebuild everything
+      const existingItems = container.querySelectorAll('.color-stop-item');
+      
+      if (existingItems.length !== gradientState.colors.length) {
+        // If count changed, rebuild
+        container.innerHTML = '';
+        gradientState.colors.forEach((stop, idx) => {
+          const div = document.createElement('div');
+          div.className = 'color-stop-item';
+          div.dataset.idx = idx;
+
+          const swatchWrap = document.createElement('div');
+          swatchWrap.className = 'color-stop-swatch';
+
+          const stopChip = document.createElement('span');
+          stopChip.className = 'stop-chip';
+          stopChip.textContent = `Stop ${idx + 1}`;
+          
+          const colorInput = document.createElement('input');
+          colorInput.type = 'color';
+          colorInput.value = stop.color;
+          colorInput.addEventListener('change', (e) => updateColor(idx, e.target.value));
+
+          const hexLabel = document.createElement('span');
+          hexLabel.className = 'stop-hex';
+          hexLabel.textContent = stop.color.toUpperCase();
+          
+          swatchWrap.appendChild(stopChip);
+          swatchWrap.appendChild(colorInput);
+          swatchWrap.appendChild(hexLabel);
+
+          const rangeWrap = document.createElement('div');
+          rangeWrap.className = 'stop-range-wrap';
+
+          const rangeLabel = document.createElement('div');
+          rangeLabel.className = 'stop-range-label';
+          rangeLabel.innerHTML = `<span>Position</span><strong>${stop.position}%</strong>`;
+
+          const rangeInput = document.createElement('input');
+          rangeInput.type = 'range';
+          rangeInput.min = '0';
+          rangeInput.max = '100';
+          rangeInput.value = stop.position;
+          rangeInput.addEventListener('input', (e) => updatePositionRange(idx, e.target.value));
+
+          rangeWrap.appendChild(rangeLabel);
+          rangeWrap.appendChild(rangeInput);
+          
+          const numberWrap = document.createElement('div');
+          numberWrap.className = 'stop-number-wrap';
+
+          const numberInput = document.createElement('input');
+          numberInput.type = 'number';
+          numberInput.min = '0';
+          numberInput.max = '100';
+          numberInput.value = stop.position;
+          numberInput.addEventListener('change', (e) => updatePosition(idx, e.target.value));
+
+          const percentLabel = document.createElement('span');
+          percentLabel.textContent = '%';
+
+          numberWrap.appendChild(numberInput);
+          numberWrap.appendChild(percentLabel);
+          
+          const deleteBtn = document.createElement('button');
+          deleteBtn.className = 'ghost stop-delete-btn';
+          deleteBtn.textContent = 'Remove';
+          deleteBtn.disabled = gradientState.colors.length === 2;
+          deleteBtn.addEventListener('click', () => removeColor(idx));
+          
+          div.appendChild(swatchWrap);
+          div.appendChild(rangeWrap);
+          div.appendChild(numberWrap);
+          div.appendChild(deleteBtn);
+          container.appendChild(div);
+        });
+      } else {
+        // Update existing items without rebuilding
+        existingItems.forEach((item, idx) => {
+          const stop = gradientState.colors[idx];
+          const colorInput = item.querySelector('input[type="color"]');
+          const rangeInput = item.querySelector('input[type="range"]');
+          const numberInput = item.querySelector('input[type="number"]');
+          const deleteBtn = item.querySelector('button');
+          const stopChip = item.querySelector('.stop-chip');
+          const hexLabel = item.querySelector('.stop-hex');
+          const rangeValue = item.querySelector('.stop-range-label strong');
+          
+          stopChip.textContent = `Stop ${idx + 1}`;
+          colorInput.value = stop.color;
+          rangeInput.value = stop.position;
+          numberInput.value = stop.position;
+          hexLabel.textContent = stop.color.toUpperCase();
+          rangeValue.textContent = `${stop.position}%`;
+          deleteBtn.disabled = gradientState.colors.length === 2;
+        });
+      }
+      
+      document.getElementById('addColorBtn').disabled = gradientState.colors.length >= 6;
+    }
+
+    function updateColor(idx, color) {
+      gradientState.colors[idx].color = color;
+      const item = document.querySelectorAll('.color-stop-item')[idx];
+      if (item) {
+        const hexLabel = item.querySelector('.stop-hex');
+        if (hexLabel) hexLabel.textContent = color.toUpperCase();
+      }
+      updatePreview();
+    }
+
+    function updatePosition(idx, position) {
+      gradientState.colors[idx].position = parseInt(position);
+      const item = document.querySelectorAll('.color-stop-item')[idx];
+      const numberInput = item.querySelector('input[type="number"]');
+      const rangeInput = item.querySelector('input[type="range"]');
+      const rangeValue = item.querySelector('.stop-range-label strong');
+      numberInput.value = position;
+      rangeInput.value = position;
+      rangeValue.textContent = `${position}%`;
+      updatePreview();
+    }
+
+    function updatePositionRange(idx, position) {
+      gradientState.colors[idx].position = parseInt(position);
+      const item = document.querySelectorAll('.color-stop-item')[idx];
+      const numberInput = item.querySelector('input[type="number"]');
+      const rangeValue = item.querySelector('.stop-range-label strong');
+      numberInput.value = position;
+      rangeValue.textContent = `${position}%`;
+      updatePreview();
+    }
+
+    function addColorStop() {
+      if (gradientState.colors.length < 6) {
+        const lastPos = gradientState.colors[gradientState.colors.length - 1].position;
+        gradientState.colors.push({
+          color: '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0'),
+          position: Math.min(lastPos + 20, 100)
+        });
+        renderColorStops();
+        updatePreview();
+      }
+    }
+
+    function removeColor(idx) {
+      if (gradientState.colors.length > 2) {
+        gradientState.colors.splice(idx, 1);
+        renderColorStops();
+        updatePreview();
+      }
+    }
+
+    function updatePreview() {
+      const preview = document.getElementById('gradientPreview');
+      const css = generateGradientCSS();
+      
+      preview.style.background = css;
+      document.getElementById('cssCode').textContent = `background: ${css};`;
+      const typeLabel = gradientState.type === 'radial'
+        ? `Radial ${gradientState.radialShape === 'ellipse' ? 'Ellipse' : 'Circle'}`
+        : gradientState.type.charAt(0).toUpperCase() + gradientState.type.slice(1);
+      document.getElementById('previewTypeLabel').textContent = typeLabel;
+      document.getElementById('previewStopsLabel').textContent = `${gradientState.colors.length} stop${gradientState.colors.length === 1 ? '' : 's'}`;
+      updateSelectedControls();
+    }
+
+    function getSortedColorStops() {
+      return [...gradientState.colors].sort((a, b) => a.position - b.position);
+    }
+
+    function getRadialGradientDescriptor() {
+      if (gradientState.radialShape === 'ellipse') {
+        return `ellipse 82% 58% at ${gradientState.radialPos}`;
+      }
+      return `circle 58% at ${gradientState.radialPos}`;
+    }
+
+    function generateGradientCSS() {
+      const colorStr = getSortedColorStops()
+        .map(s => `${s.color} ${s.position}%`)
+        .join(', ');
+      
+      let css = '';
+      switch(gradientState.type) {
+        case 'linear':
+          css = `linear-gradient(${gradientState.angle}deg, ${colorStr})`;
+          break;
+        case 'radial':
+          css = `radial-gradient(${getRadialGradientDescriptor()}, ${colorStr})`;
+          break;
+        case 'conic':
+          css = `conic-gradient(from ${gradientState.conicAngle}deg, ${colorStr})`;
+          break;
+      }
+      return css;
+    }
+
+    function copyGradientCSS() {
+      const css = document.getElementById('cssCode').textContent;
+      navigator.clipboard.writeText(css).then(() => {
+        if (window.ToolsMatic) window.ToolsMatic.showToast('CSS copied!', 'success');
+      });
+    }
+
+    function applyCustomColor(color) {
+      gradientState.type = 'linear';
+      gradientState.angle = 90;
+      gradientState.colors = [
+        { color: color, position: 0 },
+        { color: adjustBrightness(color, -40), position: 100 }
+      ];
+      
+      updateTypeControls('linear');
+      renderColorStops();
+      updatePreview();
+      if (window.ToolsMatic) window.ToolsMatic.showToast('Custom color applied!', 'success');
+    }
+    
+    function adjustBrightness(color, percent) {
+      const num = parseInt(color.replace('#', ''), 16);
+      const amt = Math.round(2.55 * percent);
+      const R = Math.max(0, Math.min(255, (num >> 16) + amt));
+      const G = Math.max(0, Math.min(255, (num >> 8 & 0x00FF) + amt));
+      const B = Math.max(0, Math.min(255, (num & 0x0000FF) + amt));
+      return '#' + (0x1000000 + (R << 16) + (G << 8) + B).toString(16).slice(1);
+    }
+
+    function applyPreset(presetName) {
+      const preset = gradientPresets[presetName];
+      gradientState.type = preset.type;
+      gradientState.angle = preset.angle || 90;
+      gradientState.radialShape = preset.radialShape || 'circle';
+      gradientState.radialPos = preset.radialPos || 'center';
+      gradientState.conicAngle = preset.conicAngle || 0;
+      gradientState.colors = JSON.parse(JSON.stringify(preset.colors));
+      
+      updateTypeControls(preset.type);
+      renderColorStops();
+      updateAngleDisplays();
+      updatePreview();
+      if (window.ToolsMatic) window.ToolsMatic.showToast(`${presetName.charAt(0).toUpperCase() + presetName.slice(1)} preset applied!`, 'success');
+    }
+
+    function randomizeGradient() {
+      const randomColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+      const numColors = Math.floor(Math.random() * 5) + 2;
+      gradientState.colors = [];
+      
+      for (let i = 0; i < numColors; i++) {
+        gradientState.colors.push({
+          color: randomColor(),
+          position: Math.round((100 / (numColors - 1)) * i)
+        });
+      }
+      
+      const types = ['linear', 'radial', 'conic'];
+      gradientState.type = types[Math.floor(Math.random() * types.length)];
+      gradientState.angle = Math.floor(Math.random() * 360);
+      
+      updateTypeControls(gradientState.type);
+      renderColorStops();
+      updateAngleDisplays();
+      updatePreview();
+      if (window.ToolsMatic) window.ToolsMatic.showToast('Random gradient generated!', 'success');
+    }
+
+    function reverseGradient() {
+      gradientState.colors.reverse();
+      gradientState.colors = gradientState.colors.map((c, idx, arr) => ({
+        color: c.color,
+        position: 100 - c.position
+      }));
+      renderColorStops();
+      updatePreview();
+      if (window.ToolsMatic) window.ToolsMatic.showToast('Gradient reversed!', 'success');
+    }
+
+    function exportGradient(format) {
+      const width = parseInt(document.getElementById('exportWidth').value);
+      const height = parseInt(document.getElementById('exportHeight').value);
+      
+      if (width < 100 || width > 4000 || height < 100 || height > 4000) {
+        if (window.ToolsMatic) window.ToolsMatic.showToast('Dimensions must be 100-4000px', 'error');
+        return;
+      }
+      
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      const sortedStops = getSortedColorStops();
+      
+      // Apply gradient to canvas
+      if (gradientState.type === 'linear') {
+        const angle = gradientState.angle * Math.PI / 180;
+        const gradient = ctx.createLinearGradient(
+          width/2 - Math.cos(angle - Math.PI/2) * width/2,
+          height/2 - Math.sin(angle - Math.PI/2) * height/2,
+          width/2 + Math.cos(angle - Math.PI/2) * width/2,
+          height/2 + Math.sin(angle - Math.PI/2) * height/2
+        );
+        sortedStops.forEach(c => gradient.addColorStop(c.position / 100, c.color));
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+      } else if (gradientState.type === 'radial') {
+        const posMap = {
+          'center': [width/2, height/2],
+          'top left': [0, 0],
+          'top center': [width/2, 0],
+          'top right': [width, 0],
+          'center left': [0, height/2],
+          'center right': [width, height/2],
+          'bottom left': [0, height],
+          'bottom center': [width/2, height],
+          'bottom right': [width, height]
+        };
+        const pos = posMap[gradientState.radialPos] || [width/2, height/2];
+        if (gradientState.radialShape === 'ellipse') {
+          const offscreen = document.createElement('canvas');
+          offscreen.width = 1200;
+          offscreen.height = 1200;
+          const offCtx = offscreen.getContext('2d');
+          const gradient = offCtx.createRadialGradient(600, 600, 0, 600, 600, 600);
+          sortedStops.forEach(c => gradient.addColorStop(c.position / 100, c.color));
+          offCtx.fillStyle = gradient;
+          offCtx.fillRect(0, 0, offscreen.width, offscreen.height);
+
+          const outerColor = sortedStops[sortedStops.length - 1].color;
+          const ellipseWidth = width * 1.64;
+          const ellipseHeight = height * 1.16;
+
+          ctx.fillStyle = outerColor;
+          ctx.fillRect(0, 0, width, height);
+          ctx.drawImage(offscreen, pos[0] - ellipseWidth / 2, pos[1] - ellipseHeight / 2, ellipseWidth, ellipseHeight);
+        } else {
+          const gradient = ctx.createRadialGradient(pos[0], pos[1], 0, pos[0], pos[1], Math.min(width, height) * 0.58);
+          sortedStops.forEach(c => gradient.addColorStop(c.position / 100, c.color));
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, width, height);
+        }
+      } else if (gradientState.type === 'conic') {
+        const gradient = ctx.createConicGradient(gradientState.conicAngle * Math.PI / 180, width/2, height/2);
+        sortedStops.forEach(c => gradient.addColorStop(c.position / 100, c.color));
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+      }
+      
+      canvas.toBlob(blob => {
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `gradient.${format}`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        if (window.ToolsMatic) window.ToolsMatic.showToast(`Gradient exported as ${format.toUpperCase()}!`, 'success');
+      }, `image/${format}`);
+    }
+
+    // Initialize on page load
+    init();
+  </script>
+  <div style="text-align: center; margin: 24px 0;">
+      </div>
+  <div style="text-align: center; margin: 24px 0;">
+      </div>
+<div style="text-align: center; margin: 24px 0;">
+</div>
+<div style="text-align: center; margin: 24px 0;">
+</div>
+</script>
+</body>
+</html>
+

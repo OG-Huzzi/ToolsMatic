@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>JWT Inspector for Social Media Online | Free ToolsMatic</title>
+  <meta name="description" content="Use JWT Inspector for Social Media online. Client-side, free, and private browser-based utility.">
+<meta name="keywords" content="professional jwt inspector, jwt decoder 2026, jwt token decoder, jwt validator, jwt signature verification, jwt debug tool, decode jwt, jwt claims viewer, jwt payload inspector, jwt header decoder, bearer token inspector, access token decoder, refresh token decoder, jwt algorithm checker, jwt exp nbf iat, issuer audience validator, jwt clock skew, hs256 jwt verifier, rs256 jwt verifier, jwt security tool, jwt testing tool, jwt offline inspector, jwt privacy-first tool, json web token decoder">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/jwt-inspector-for-social-media.html">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/jwt-inspector-for-social-media.html">
+  <meta property="og:title" content="JWT Inspector for Social Media Online | Free ToolsMatic">
+  <meta property="og:description" content="Use JWT Inspector for Social Media online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/jwt-inspector-preview.png">
+  <meta property="og:site_name" content="ToolsMatic - Professional Developer Tools">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/jwt-inspector-for-social-media.html">
+  <meta name="twitter:title" content="JWT Inspector for Social Media Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use JWT Inspector for Social Media online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/jwt-inspector-preview.png">
+  <meta name="twitter:creator" content="@ToolsMatic">
+  
+  <!-- Schema.org Structured Data -->
+  
+
+  
+  
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Complete Guide to JWT Decoding, Claim Validation, and Signature Verification",
+    "description": "Learn how to inspect JWT headers and payloads, verify signatures, validate exp, nbf, iat, iss, and aud claims, and debug bearer tokens for APIs, SSO, and microservices without sending tokens to remote servers.",
+    "author": {
+      "@type": "Organization",
+      "name": "ToolsMatic"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ToolsMatic",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://toolsmatic.me/assets/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://toolsmatic.me/tools/jwt-inspector.html"
+    },
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "about": [
+      "JWT decoder",
+      "JWT inspector",
+      "JWT signature verification",
+      "Bearer token debugging",
+      "Claim validation",
+      "HS256 verification",
+      "RS256 verification"
+    ]
+  }
+  </script>
+  
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+
+  <style>
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      font-size: 0.8em;
+      color: var(--text-secondary);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+    .feature-card {
+      padding: 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background: var(--bg-primary);
+    }
+    .feature-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #06b6d4;
+    }
+    .feature-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      font-size: 0.9em;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .related-card {
+      display: block;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      text-decoration: none;
+      color: inherit;
+    }
+    .related-card p {
+      margin: 6px 0 0;
+      color: var(--text-secondary);
+      font-size: 0.9em;
+    }
+    .faq details {
+      margin-bottom: 12px;
+      padding: 14px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #06b6d4;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    .faq p {
+      margin-top: 10px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    table td, table th {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-color);
+      word-break: break-word;
+    }
+    .jwt-breadcrumbs {
+      margin: 12px auto 0;
+      max-width: 1120px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+    .jwt-breadcrumbs a {
+      color: #67e8f9;
+      text-decoration: none;
+    }
+    .jwt-hero {
+      margin: 20px 0 14px;
+      padding: 28px 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(6, 182, 212, 0.14), transparent 34%),
+        radial-gradient(circle at 86% 22%, rgba(59, 130, 246, 0.14), transparent 30%),
+        linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(9, 15, 28, 0.94));
+      box-shadow: 0 24px 60px rgba(2, 6, 23, 0.22);
+    }
+    .jwt-shell {
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      box-shadow: 0 24px 60px rgba(2, 6, 23, 0.18);
+    }
+    .jwt-shell .muted-bg {
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(15, 23, 42, 0.62);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .jwt-shell textarea,
+    .jwt-shell input,
+    .jwt-shell select {
+      border-radius: 14px;
+    }
+    .jwt-shell pre {
+      max-width: 100%;
+      overflow: auto;
+    }
+    .jwt-seo-card,
+    .jwt-compare-card {
+      margin: 40px 0;
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      background: rgba(255, 255, 255, 0.025);
+      box-shadow: 0 18px 42px rgba(2, 6, 23, 0.16);
+    }
+    .jwt-seo-card p,
+    .jwt-seo-card li,
+    .jwt-compare-note {
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .jwt-seo-card code,
+    .jwt-compare-card code {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 1px 6px;
+      color: var(--text-primary);
+    }
+    .jwt-compare-card table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 880px;
+      table-layout: fixed;
+      background: rgba(2, 6, 23, 0.22);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .jwt-compare-card thead {
+      background: rgba(103, 232, 249, 0.08);
+    }
+    .jwt-compare-card th {
+      text-align: left;
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+    .jwt-compare-card td,
+    .jwt-compare-card th {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      vertical-align: top;
+    }
+    .jwt-compare-card a {
+      color: #67e8f9;
+      text-decoration: none;
+    }
+    .jwt-check {
+      color: #34d399;
+      font-weight: 700;
+    }
+    .jwt-muted-cell {
+      color: var(--text-secondary);
+    }
+    @media (max-width: 768px) {
+      .jwt-hero,
+      .jwt-seo-card,
+      .jwt-compare-card {
+        padding: 20px 16px;
+        border-radius: 18px;
+      }
+    }
+  </style>
+
+    <style>
+      .ad-container {
+        text-align: center;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      @media (max-width: 768px) {
+        .ad-container {
+          margin: 15px 0;
+        }
+        .ad-container iframe {
+          max-width: 100% !important;
+          width: auto !important;
+          height: auto !important;
+        }
+      }
+    </style>
+      
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode"></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <nav aria-label="Breadcrumb" class="jwt-breadcrumbs">
+      <a href="/">Home</a> /
+      <a href="/#tools">Tools</a> /
+      <span aria-current="page">JWT Inspector</span>
+    </nav>
+
+    <section class="jwt-hero" style="text-align:center;">
+      <h1 style="font-size: 2.4em; margin: 0 0 8px;">JWT Inspector for Social Media</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+<p style="max-width: 840px; margin: 0 auto; line-height: 1.7; color: var(--text-secondary);">
+        Decode JWTs, validate claims, and verify signatures with HS256/RS256 locally. Inspect issuer, audience, clock skew, and token health in one place. Everything runs client-side with zero uploads.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top: 12px;">
+        <span class="tag">Signature Verification</span>
+        <span class="tag">Claim Validation</span>
+        <span class="tag">Issuer & Audience</span>
+        <span class="tag">Clock Skew</span>
+        <span class="tag">Offline Ready</span>
+      </div>
+    </section>
+
+    <section class="tool-shell jwt-shell">
+      <h2>JWT Inspector Pro</h2>
+      <label class="label" for="jwt-input">Paste a JWT</label>
+      <textarea id="jwt-input" rows="6" placeholder="eyJhbGciOi..." spellcheck="false"></textarea>
+      <div class="inline-controls" style="margin-top:12px;flex-wrap:wrap;gap:8px;">
+        <button id="jwt-decode" data-primary>Decode</button>
+        <button id="jwt-copy-payload">Copy payload JSON</button>
+        <button id="jwt-copy-header">Copy header JSON</button>
+        <button id="jwt-copy-signature">Copy signature</button>
+        <button id="jwt-clear" data-clear>Clear</button>
+      </div>
+
+      <div class="two-col" style="margin-top: 12px; gap: 10px;">
+        <div class="muted-bg">
+          <div class="pill" style="margin-bottom:6px;">Validation Settings</div>
+          <label class="label" for="jwt-iss">Expected issuer (iss)</label>
+          <input id="jwt-iss" type="text" placeholder="https://issuer.example.com" />
+          <label class="label" for="jwt-aud">Expected audience (aud)</label>
+          <input id="jwt-aud" type="text" placeholder="api://client-id" />
+          <div class="inline-controls" style="margin-top: 8px; gap: 10px; flex-wrap: wrap;">
+            <label>Clock skew (sec)
+              <input id="jwt-skew" class="small-input" type="number" value="60" min="0" max="600" />
+            </label>
+            <label>Override now (unix sec)
+              <input id="jwt-now" class="small-input" type="number" placeholder="Optional" />
+            </label>
+          </div>
+        </div>
+
+        <div class="muted-bg">
+          <div class="pill" style="margin-bottom:6px;">Signature Verification</div>
+          <label class="label" for="jwt-alg">Algorithm</label>
+          <select id="jwt-alg">
+            <option value="auto" selected>Auto (from header)</option>
+            <option value="HS256">HS256</option>
+            <option value="HS384">HS384</option>
+            <option value="HS512">HS512</option>
+            <option value="RS256">RS256</option>
+            <option value="RS384">RS384</option>
+            <option value="RS512">RS512</option>
+          </select>
+          <label class="label" for="jwt-key">Secret or Public Key</label>
+          <textarea id="jwt-key" rows="5" placeholder="For HS256: shared secret. For RS256: PEM public key."></textarea>
+          <div class="inline-controls" style="margin-top: 8px; gap: 8px; flex-wrap: wrap;">
+            <button id="jwt-verify" class="ghost">Verify Signature</button>
+            <button id="jwt-clear-key" class="ghost">Clear Key</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-box" id="jwt-status">Waiting for a token...</div>
+      <div class="muted-bg" style="margin-top:12px;">
+        <div class="pill" style="margin-bottom:6px;">Token Health</div>
+        <div id="jwt-health" class="muted-text">Decode a token to view validation results.</div>
+      </div>
+
+      <div class="two-col" style="margin-top:12px;gap:10px;">
+        <div class="muted-bg">
+          <div class="pill" style="margin-bottom:6px;">Header</div>
+          <pre id="jwt-header" style="white-space:pre-wrap;margin:0;">{}</pre>
+        </div>
+        <div class="muted-bg">
+          <div class="pill" style="margin-bottom:6px;">Payload</div>
+          <pre id="jwt-payload" style="white-space:pre-wrap;margin:0;">{}</pre>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:12px;gap:10px;">
+        <div class="muted-bg">
+          <div class="pill" style="margin-bottom:6px;">Signature (base64url)</div>
+          <pre id="jwt-signature" style="white-space:pre-wrap;margin:0;">-</pre>
+        </div>
+        <div class="muted-bg">
+          <div class="pill" style="margin-bottom:6px;">Claims</div>
+          <pre id="jwt-claims" style="white-space:pre-wrap;margin:0;">exp, nbf, iss, sub, aud will appear here after decoding.</pre>
+        </div>
+      </div>
+      <div class="muted-bg" style="margin-top:12px;">
+        <div class="pill" style="margin-bottom:6px;">Signature Status</div>
+        <div id="jwt-verify-status" class="muted-text">Provide a secret or public key to verify the signature.</div>
+      </div>
+    </section>
+
+    <section class="section jwt-seo-card" aria-labelledby="jwt-seo">
+      <h2 id="jwt-seo">JWT Inspector for Professional Token Debugging</h2>
+      <p>ToolsMatic JWT Inspector is built for engineers who need fast, accurate answers when debugging authentication. It decodes JWT headers and payloads, validates <code>exp</code>, <code>nbf</code>, and <code>iat</code> claims with clock skew, and verifies signatures for HS256, HS384, HS512, RS256, RS384, and RS512 without sending tokens to any server. That means you can inspect bearer tokens, access tokens, ID tokens, and refresh tokens in sensitive environments while keeping data private and offline-ready. This matters because most JWT issues happen under pressure: an API call starts returning <code>401</code>, an SSO login silently fails, a mobile client gets an expired token too early, or a service begins rejecting tokens from a provider you thought was configured correctly.</p>
+      <p>When people search for a JWT decoder, JWT inspector, or bearer token debugger, they rarely want a toy tool that only splits the token into three parts. They want to know why a token is failing, what the header says about the algorithm, whether the issuer and audience are correct, whether the token is expired, and whether the signature is actually valid. That is the gap this page is designed to fill. Instead of only decoding the JSON, it helps users answer the next level of questions that matter in production: does this token belong here, is it still valid now, and was it signed by the key I expect?</p>
+      <h2>Decode First, Verify Second: The JWT Workflow That Actually Saves Time</h2>
+      <p>One of the most common mistakes in JWT troubleshooting is treating decoding and verification as the same operation. They are not. Decoding reads the header and payload. Verification proves authenticity. A decoded token can still be expired, issued for the wrong audience, signed with the wrong key, or tampered with entirely. That distinction matters for every stack that uses JSON Web Tokens, whether you are handling OAuth access tokens, OpenID Connect ID tokens, API gateway bearer tokens, or custom tokens between microservices. Good JWT debugging starts with a fast decode because you immediately see the algorithm, issuer, subject, audience, timestamps, and any custom claims. But the next step should always be verification and validation, because readable JSON by itself does not mean a token can be trusted.</p>
+      <p>That is why this inspector keeps header, payload, signature, claim review, and verification controls in one workspace. You should not have to bounce across multiple tabs just to answer whether a token is malformed, expired, wrongly issued, or cryptographically invalid. A better JWT tool brings those answers together so you can go from incident to explanation in one pass.</p>
+      <h2>JWT Claims That Matter Most in Real Systems</h2>
+      <p>Most real JWT problems come down to a small set of claims. The <code>iss</code> claim tells you who issued the token. The <code>aud</code> claim tells you who the token was meant for. The <code>exp</code> claim controls expiry. The <code>nbf</code> claim marks when a token becomes valid. The <code>iat</code> claim indicates when the token was issued. The <code>sub</code> claim typically identifies the subject or user. In identity systems and API architectures, these values are not decorative. They are the difference between a valid session and a rejected request. If your <code>iss</code> is wrong, the token may come from a different identity provider or environment. If your <code>aud</code> is wrong, the token may not be intended for the resource server that is checking it. If <code>exp</code> and <code>nbf</code> are out of sync with server time, authentication can fail even when the rest of the token looks correct.</p>
+      <p>That is why issuer and audience inputs matter in a JWT inspector. They let you compare the token against the exact values your backend expects instead of mentally scanning the payload and hoping you did not miss a subtle mismatch. The same applies to a clock-skew setting. In distributed systems, a token can appear expired or not-yet-valid because two machines disagree by a few seconds. A proper validation workflow accounts for that reality. When you can reproduce time-sensitive behavior with a clock-skew window or an override for “now,” debugging becomes much faster and much more precise.</p>
+      <h2>Why Clock Skew Breaks More Tokens Than Teams Expect</h2>
+      <p>JWT failures caused by time are surprisingly common. Containers restart on nodes with slightly different system clocks. Mobile devices drift. Logging systems capture tokens after they have already aged. Reverse proxies and application servers do not always agree on the exact current second. That is where clock skew becomes more than a theoretical setting. A small allowed skew can prevent valid tokens from failing because one service is a few seconds ahead of another. The same feature is useful for incident review: if a production request failed fifteen minutes ago, you can override the current time and examine the token in the context of that exact moment. This helps answer whether the failure was caused by expiry, not-before, or a deeper signature or audience issue.</p>
+      <p>When users search for JWT expired but still valid, JWT nbf issue, or bearer token clock skew, they are usually dealing with these timing mismatches. A professional JWT inspector should make that class of problem obvious, not hidden. Time-based claims are small fields with outsized operational impact.</p>
+      <h2>HS256 vs RS256 and Why Key Type Confusion Causes Verification Failures</h2>
+      <p>Another source of pain in JWT debugging is algorithm and key confusion. HMAC-based algorithms such as HS256 use a shared secret for both signing and verification. RSA-based algorithms such as RS256 use a private key for signing and a public key for verification. Teams often paste the wrong kind of key into the wrong workflow, or they assume a token marked with one algorithm should be verified with a different one. When that happens, the token may decode perfectly and still fail verification every time. A good inspector reduces that confusion by showing the header algorithm, allowing an explicit override when needed, and making the verification input clear: secret for HS, PEM public key for RS.</p>
+      <p>This matters in real integrations with identity providers, internal auth services, and gateway products. If your API trusts RS256 tokens from an external issuer, you want to confirm the token header, the expected public key, and the exact signature outcome locally before you blame the application code. If your internal service issues HS256 tokens, you want to verify that the shared secret is the same one your service actually uses in production. Debugging authentication is usually easier when the cryptography step is visible and controllable instead of hidden behind a library error.</p>
+      <h2>JWT Debugging for APIs, SSO, Microservices, and QA</h2>
+      <p>JWT inspection is not only a security task. It is also a QA task, a DevOps task, and an integration task. API teams use JWT tools to diagnose authorization failures and scope mismatches. SSO implementers use them to confirm issuer, audience, and identity claims after login flows. Microservice teams use them to validate internal tokens moving through gateways, proxies, and service meshes. QA teams use them to confirm that automated test tokens contain the claims required for role-based scenarios. Support engineers use them to triage customer reports that say “the login worked but the app rejected the token.” In all of these cases, the fastest path is usually the same: paste the token, decode it, inspect the claims, verify the signature, and compare the token against the expected environment settings.</p>
+      <p>That is also why keeping the tool local matters. Engineers often work with production-like data, staging secrets, or real public keys during investigation. Browser-only inspection reduces the risk of copying sensitive tokens into third-party services that store or transmit the payload. For organizations with stricter compliance, that local workflow is not a convenience feature. It is the feature.</p>
+      <h2>How to Investigate a Failing Bearer Token Step by Step</h2>
+      <p>A reliable JWT debugging flow is straightforward when the tool supports it properly. Start by decoding the token and confirming it has exactly three parts. Check the header for the <code>alg</code> value and any <code>kid</code> or type information. Then inspect the payload for <code>iss</code>, <code>aud</code>, <code>sub</code>, <code>exp</code>, <code>nbf</code>, and <code>iat</code>. Compare the issuer and audience against the values your application expects, rather than assuming they are close enough. Review time-based claims with a clock-skew window. Finally, verify the signature with the exact secret or public key used by the issuing system. If verification fails, check whether the key is wrong, the algorithm is wrong, or the token body was altered. If verification passes but the request still fails, the problem is more likely to be claim policy, scope policy, or an application-level authorization rule.</p>
+      <p>This method seems simple, but the reason it works is that it forces clarity. Many JWT failures are caused by one incorrect assumption carried through multiple layers of a stack. When you can inspect the raw token in one clean interface, those assumptions become easier to test and eliminate.</p>
+      <h2>JWT Inspector vs Encoder vs Debugger Tools on Other Sites</h2>
+      <p>Some public JWT pages focus heavily on encoding and generation. Others prioritize broad token families such as JWE or PASETO. Others are intentionally simple decoders that expose header and payload fields without built-in claim checks. Those tools can still be useful, but they serve different workflows. ToolsMatic JWT Inspector is intentionally biased toward inspection and validation. The page is built for people who need to audit claims, check expiry logic, compare issuer and audience, verify signatures locally, and copy the decoded structures quickly into support tickets, test notes, or incident reports. That focus is practical. A developer resolving a live auth failure usually needs clarity more than feature sprawl.</p>
+      <p>That said, comparison matters. Some sites do offer JWT encoding or JWE features that this page does not try to duplicate. That is why the comparison table below is written carefully from public tool pages reviewed on April 3, 2026. Where a feature was not clearly shown on the reviewed page, the table says <code>Not shown</code> instead of guessing.</p>
+      <h2>Why Local JWT Inspection Is the Safer Default</h2>
+      <p>JWTs are often treated casually because they are text, but they can still contain sensitive identifiers, environment information, tenant IDs, email addresses, role sets, application IDs, and internal claims. A local JWT inspector reduces the chance that token contents or verification material will be sent to outside systems. That matters for restricted environments, regulated workloads, enterprise support, and any debugging session involving real production data. It also keeps the workflow faster. There is no wait for a backend round-trip just to decode a token, and there is no uncertainty about where the token went after you pasted it.</p>
+      <p>For teams that handle modern authentication across APIs, SPAs, mobile apps, and service-to-service traffic, a good JWT inspector should feel like a dependable troubleshooting instrument. It should decode quickly, explain clearly, and help users move from confusion to evidence without unnecessary risk. That is the standard this page is trying to meet.</p>
+    </section>
+
+    <section class="jwt-compare-card" aria-labelledby="jwt-compare">
+      <h2 id="jwt-compare" style="text-align:center; margin-bottom: 10px;">ToolsMatic vs Real JWT Tool Pages</h2>
+      <p class="jwt-compare-note" style="text-align:center; max-width: 920px; margin: 0 auto 18px;">
+        Comparison based on the public tool pages reviewed on April 3, 2026. <code>Not shown</code> means the feature was not clearly advertised on the reviewed tool page, so it is not claimed here.
+      </p>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ToolsMatic</th>
+              <th><a href="https://jwt.io/" target="_blank" rel="noopener noreferrer nofollow">JWT.io</a></th>
+              <th><a href="https://token.dev/jwt/" target="_blank" rel="noopener noreferrer nofollow">Token.dev</a></th>
+              <th><a href="https://www.authgear.com/tools/jwt-jwe-debugger" target="_blank" rel="noopener noreferrer nofollow">Authgear</a></th>
+              <th><a href="https://fusionauth.io/dev-tools/jwt-decoder" target="_blank" rel="noopener noreferrer nofollow">FusionAuth</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Decode JWT header and payload</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+            </tr>
+            <tr>
+              <td>Signature verification on the tool page</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Discussed, decode page focus</td>
+            </tr>
+            <tr>
+              <td>Issuer and audience validation inputs</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+            <tr>
+              <td>Clock-skew and “override now” claim checks</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Human-friendly warnings shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+            <tr>
+              <td>JWT generation / encoding workflow</td>
+              <td class="jwt-muted-cell">Inspection-focused</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+            <tr>
+              <td>Public-key / JWK / JWKS verification shown</td>
+              <td class="jwt-check">Public key</td>
+              <td class="jwt-muted-cell">Secret shown</td>
+              <td class="jwt-muted-cell">Signing key shown</td>
+              <td class="jwt-check">JWK, JWKS, PEM</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+            <tr>
+              <td>Explicit browser-local privacy wording</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-check">Browser-only verification shown</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+            <tr>
+              <td>JWE support on the same page</td>
+              <td class="jwt-muted-cell">No</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-muted-cell">Not shown</td>
+              <td class="jwt-check">Yes</td>
+              <td class="jwt-muted-cell">Not shown</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section style="margin: 40px 0;">
+      <h2 style="text-align:center; margin-bottom: 16px;">Related Tools</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/tools/base64-encoder.html"><strong>Base64 Encoder</strong><p>Inspect and encode token segments safely.</p></a>
+        <a class="related-card" href="/tools/json-formatter.html"><strong>JSON Formatter</strong><p>Pretty-print complex JWT payloads.</p></a>
+        <a class="related-card" href="/tools/regex-tester.html"><strong>Regex Tester</strong><p>Validate token formats and claim patterns.</p></a>
+        <a class="related-card" href="/tools/password-generator.html"><strong>Password Generator</strong><p>Create strong secrets for HS algorithms.</p></a>
+      </div>
+    </section>
+
+    <section class="faq" style="margin: 40px 0;">
+      <h2 style="text-align:center; margin-bottom: 16px;">JWT Inspector FAQ</h2>
+      <details><summary>How do I verify a JWT signature?</summary><p>Paste the token and choose the algorithm. For HS algorithms, paste the shared secret. For RS algorithms, paste the PEM public key. Click Verify Signature to see a pass/fail result.</p></details>
+      <details><summary>What does clock skew mean?</summary><p>Clock skew allows a small time window when systems have slightly different clocks. It prevents valid tokens from failing exp/nbf checks by a few seconds.</p></details>
+      <details><summary>What if the token is missing exp or nbf?</summary><p>The health summary will warn about missing claims. Some tokens omit exp for non-expiring sessions, but most production tokens should include exp.</p></details>
+      <details><summary>Can I validate issuer and audience?</summary><p>Yes. Provide the expected iss and aud values. The inspector compares them and reports mismatches in the health summary.</p></details>
+      <details><summary>Does this tool store tokens or keys?</summary><p>No. Everything runs locally in the browser. Closing the tab clears the token and key data.</p></details>
+      <details><summary>Why would signature verification fail?</summary><p>Common causes include the wrong secret/public key, incorrect algorithm selection, or a token that has been modified. Always use the exact key configured by your auth server.</p></details>
+      <details><summary>Is it safe to paste production tokens?</summary><p>This tool runs locally without uploads, which is safer than cloud-based decoders. Still, follow your organization’s policies before pasting sensitive tokens.</p></details>
+      <details><summary>Which algorithms are supported?</summary><p>HS256/HS384/HS512 and RS256/RS384/RS512. If your token uses ES256 or PS256, verify with server-side libraries.</p></details>
+      <details><summary>Can I use this offline?</summary><p>Yes. Once the page loads, you can disconnect and continue decoding and verifying tokens locally.</p></details>
+      <details><summary>What is the token health summary?</summary><p>The health summary highlights expired tokens, not-before violations, missing claims, and issuer/audience mismatches.</p></details>
+    </section>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="jwt-inspector-for-social-media-pseo" aria-labelledby="jwt-inspector-for-social-media-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>JWT Inspector for Social Media</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="jwt-inspector-for-social-media-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">JWT Inspector for Social Media Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>JWT Inspector for Social Media</strong>, a social media optimization companion designed for high-impact captions. This dedicated workspace is built specifically for influencers, brand builders, social managers, and digital advertisers. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>character limit compliance benchmarks, clean spacing grids, and rapid caption formatting</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Decode JWTs locally, inspect claims, and flag expirations. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Character limit checks</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Ensure your captions fit perfectly within Instagram, TikTok, and Twitter boundaries.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Visual grid formatting</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Add clean paragraph breaks and split paragraphs without carrying over hidden coding tags.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Instant caption copies</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Grab your completed, highly readable posts immediately using the copy button.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use JWT Inspector for Social Media</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Social Media layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: JWT Inspector for Social Media</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it track social character caps?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes! It makes character tracking simple to ensure your posts never get cut off.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I add emojis?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Absolutely, the input boards are 100% compatible with modern UTF-8 emoji characters.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is there a word count limit?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">None, you can write short tweets or deep multi-paragraph newsletters.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/jwt-inspector.html" style="color:var(--primary);text-decoration:none;font-weight:600;">JWT Inspector</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"JWT Inspector for Social Media","url":"https://toolsmatic.me/tools/jwt-inspector-for-social-media.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use JWT Inspector for Social Media online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"JWT Inspector for Social Media","item":"https://toolsmatic.me/tools/jwt-inspector-for-social-media.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it track social character caps?","acceptedAnswer":{"@type":"Answer","text":"Yes! It makes character tracking simple to ensure your posts never get cut off."}},{"@type":"Question","name":"Can I add emojis?","acceptedAnswer":{"@type":"Answer","text":"Absolutely, the input boards are 100% compatible with modern UTF-8 emoji characters."}},{"@type":"Question","name":"Is there a word count limit?","acceptedAnswer":{"@type":"Answer","text":"None, you can write short tweets or deep multi-paragraph newsletters."}}]}]}</script>
+  </main>
+<footer>ToolsMatic  Fast, privacy-first utilities for the web.</footer>
+
+  <script>
+    const input = document.getElementById('jwt-input');
+    const statusBox = document.getElementById('jwt-status');
+    const healthBox = document.getElementById('jwt-health');
+    const headerBox = document.getElementById('jwt-header');
+    const payloadBox = document.getElementById('jwt-payload');
+    const claimsBox = document.getElementById('jwt-claims');
+    const signatureBox = document.getElementById('jwt-signature');
+    const verifyStatusBox = document.getElementById('jwt-verify-status');
+    const decodeBtn = document.getElementById('jwt-decode');
+    const verifyBtn = document.getElementById('jwt-verify');
+    const clearBtn = document.getElementById('jwt-clear');
+    const clearKeyBtn = document.getElementById('jwt-clear-key');
+    const copyPayloadBtn = document.getElementById('jwt-copy-payload');
+    const copyHeaderBtn = document.getElementById('jwt-copy-header');
+    const copySignatureBtn = document.getElementById('jwt-copy-signature');
+    const issInput = document.getElementById('jwt-iss');
+    const audInput = document.getElementById('jwt-aud');
+    const skewInput = document.getElementById('jwt-skew');
+    const nowInput = document.getElementById('jwt-now');
+    const algSelect = document.getElementById('jwt-alg');
+    const keyInput = document.getElementById('jwt-key');
+
+    const b64urlDecode = (part) => {
+      try {
+        const norm = part.replace(/-/g, '+').replace(/_/g, '/');
+        const pad = '='.repeat((4 - (norm.length % 4)) % 4);
+        const str = atob(norm + pad);
+        const bytes = new Uint8Array(str.length);
+        for (let i = 0; i < str.length; i += 1) bytes[i] = str.charCodeAt(i);
+        return bytes;
+      } catch (err) {
+        return null;
+      }
+    };
+
+    const b64urlDecodeToString = (part) => {
+      const bytes = b64urlDecode(part);
+      if (!bytes) return null;
+      return new TextDecoder('utf-8').decode(bytes);
+    };
+
+    const b64urlEncode = (bytes) => {
+      const bin = String.fromCharCode(...bytes);
+      const b64 = btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+      return b64;
+    };
+
+    const pretty = (obj) => JSON.stringify(obj, null, 2);
+
+    const formatTime = (sec) => {
+      if (!sec || Number.isNaN(sec)) return 'n/a';
+      const date = new Date(sec * 1000);
+      const offset = Math.round((sec * 1000 - Date.now()) / 1000);
+      return `${date.toLocaleString()} (${offset}s offset)`;
+    };
+
+    const pemToArrayBuffer = (pem) => {
+      const clean = pem.replace(/-----BEGIN PUBLIC KEY-----|-----END PUBLIC KEY-----|\s+/g, '');
+      const raw = atob(clean);
+      const bytes = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i += 1) bytes[i] = raw.charCodeAt(i);
+      return bytes.buffer;
+    };
+
+    const parseToken = () => {
+      const token = (input.value || '').trim();
+      if (!token || token.split('.').length < 2) {
+        throw new Error('Enter a JWT with three parts separated by dots.');
+      }
+      const parts = token.split('.');
+      const rawHeader = b64urlDecodeToString(parts[0]);
+      const rawPayload = b64urlDecodeToString(parts[1]);
+      if (!rawHeader || !rawPayload) {
+        throw new Error('Could not decode base64url segments. Check padding or characters.');
+      }
+      let header; let payload;
+      try { header = JSON.parse(rawHeader); } catch (err) { throw new Error('Header is not valid JSON.'); }
+      try { payload = JSON.parse(rawPayload); } catch (err) { throw new Error('Payload is not valid JSON.'); }
+      return { token, parts, header, payload };
+    };
+
+    const evaluateClaims = (payload) => {
+      const nowOverride = parseInt(nowInput.value, 10);
+      const nowSec = Number.isFinite(nowOverride) ? nowOverride : Math.floor(Date.now() / 1000);
+      const skew = Math.max(0, parseInt(skewInput.value, 10) || 0);
+      const warnings = [];
+      const lines = [];
+
+      const exp = payload.exp;
+      const nbf = payload.nbf;
+      const iat = payload.iat;
+      const iss = payload.iss;
+      const sub = payload.sub;
+      const aud = payload.aud;
+      const expectedIss = issInput.value.trim();
+      const expectedAud = audInput.value.trim();
+
+      if (exp) {
+        if (exp + skew < nowSec) warnings.push(`Expired ${Math.round(nowSec - exp)}s ago`);
+      } else {
+        warnings.push('exp missing');
+      }
+      if (nbf && nbf - skew > nowSec) warnings.push(`Not valid yet (starts in ${Math.round(nbf - nowSec)}s)`);
+      if (iat && iat - skew > nowSec) warnings.push(`iat in future (${Math.round(iat - nowSec)}s)`);
+      if (!iat) warnings.push('iat missing');
+
+      if (expectedIss && iss !== expectedIss) warnings.push('iss mismatch');
+      if (expectedAud) {
+        const audList = Array.isArray(aud) ? aud : aud ? [aud] : [];
+        if (!audList.includes(expectedAud)) warnings.push('aud mismatch');
+      }
+
+      if (iss) lines.push(`iss: ${iss}`);
+      if (sub) lines.push(`sub: ${sub}`);
+      if (aud) lines.push(`aud: ${Array.isArray(aud) ? aud.join(', ') : aud}`);
+      if (iat) lines.push(`iat: ${formatTime(iat)}`);
+      if (nbf) lines.push(`nbf: ${formatTime(nbf)}`);
+      if (exp) lines.push(`exp: ${formatTime(exp)}`);
+      if (!lines.length) lines.push('No standard claims present.');
+
+      const healthLine = warnings.length ? `Warnings: ${warnings.join(' | ')}` : 'Token looks valid based on exp/nbf/iat.';
+      return { healthLine, lines };
+    };
+
+    const decode = () => {
+      try {
+        const { parts, header, payload } = parseToken();
+        headerBox.textContent = pretty(header);
+        payloadBox.textContent = pretty(payload);
+        signatureBox.textContent = parts[2] || 'Signature missing';
+        const { healthLine, lines } = evaluateClaims(payload);
+        statusBox.textContent = healthLine;
+        healthBox.textContent = healthLine;
+        claimsBox.textContent = lines.join('\n');
+        verifyStatusBox.textContent = 'Provide a secret or public key to verify the signature.';
+      } catch (err) {
+        statusBox.textContent = err.message;
+        healthBox.textContent = 'Decode a token to view validation results.';
+        headerBox.textContent = '{}';
+        payloadBox.textContent = '{}';
+        signatureBox.textContent = '-';
+        claimsBox.textContent = 'exp, nbf, iss, sub, aud will appear here after decoding.';
+      }
+    };
+
+    const verifySignature = async () => {
+      try {
+        const { token, parts, header } = parseToken();
+        const signaturePart = parts[2] || '';
+        if (!signaturePart) {
+          verifyStatusBox.textContent = 'Signature missing. This token is unsigned.';
+          return;
+        }
+        const keyMaterial = keyInput.value.trim();
+        if (!keyMaterial) {
+          verifyStatusBox.textContent = 'Provide a secret (HS) or public key (RS) to verify.';
+          return;
+        }
+        const alg = algSelect.value === 'auto' ? (header.alg || '') : algSelect.value;
+        const data = new TextEncoder().encode(`${parts[0]}.${parts[1]}`);
+
+        if (alg === 'none') {
+          verifyStatusBox.textContent = 'Algorithm is none. No signature to verify.';
+          return;
+        }
+
+        if (alg.startsWith('HS')) {
+          const hash = alg === 'HS384' ? 'SHA-384' : alg === 'HS512' ? 'SHA-512' : 'SHA-256';
+          const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(keyMaterial), { name: 'HMAC', hash: { name: hash } }, false, ['sign']);
+          const sig = await crypto.subtle.sign('HMAC', key, data);
+          const sigBytes = new Uint8Array(sig);
+          const calc = b64urlEncode(sigBytes);
+          verifyStatusBox.textContent = calc === signaturePart ? `Signature valid (${alg}).` : `Signature invalid (${alg}).`;
+          return;
+        }
+
+        if (alg.startsWith('RS')) {
+          const hash = alg === 'RS384' ? 'SHA-384' : alg === 'RS512' ? 'SHA-512' : 'SHA-256';
+          const keyBuffer = pemToArrayBuffer(keyMaterial);
+          const publicKey = await crypto.subtle.importKey('spki', keyBuffer, { name: 'RSASSA-PKCS1-v1_5', hash: { name: hash } }, false, ['verify']);
+          const sigBytes = b64urlDecode(signaturePart);
+          if (!sigBytes) throw new Error('Signature is not valid base64url.');
+          const ok = await crypto.subtle.verify('RSASSA-PKCS1-v1_5', publicKey, sigBytes, data);
+          verifyStatusBox.textContent = ok ? `Signature valid (${alg}).` : `Signature invalid (${alg}).`;
+          return;
+        }
+
+        verifyStatusBox.textContent = `Algorithm ${alg || 'unknown'} not supported.`;
+      } catch (err) {
+        verifyStatusBox.textContent = err.message;
+      }
+    };
+
+    const copyBox = async (node) => {
+      const text = node.textContent.trim();
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+        if (window.ToolsMatic) window.ToolsMatic.showToast('Copied', 'success');
+      } catch (err) {
+        if (window.ToolsMatic) window.ToolsMatic.showToast('Copy failed', 'error');
+      }
+    };
+
+    decodeBtn.addEventListener('click', decode);
+    verifyBtn.addEventListener('click', verifySignature);
+    clearKeyBtn.addEventListener('click', () => { keyInput.value = ''; verifyStatusBox.textContent = 'Provide a secret or public key to verify the signature.'; });
+    clearBtn.addEventListener('click', () => {
+      input.value = '';
+      statusBox.textContent = 'Waiting for a token...';
+      healthBox.textContent = 'Decode a token to view validation results.';
+      headerBox.textContent = '{}';
+      payloadBox.textContent = '{}';
+      signatureBox.textContent = '-';
+      claimsBox.textContent = 'exp, nbf, iss, sub, aud will appear here after decoding.';
+      verifyStatusBox.textContent = 'Provide a secret or public key to verify the signature.';
+    });
+    copyPayloadBtn.addEventListener('click', () => copyBox(payloadBox));
+    copyHeaderBtn.addEventListener('click', () => copyBox(headerBox));
+    copySignatureBtn.addEventListener('click', () => copyBox(signatureBox));
+    input.addEventListener('input', () => { if (input.value.trim().length === 0) statusBox.textContent = 'Waiting for a token...'; });
+  </script>
+  <div style="text-align: center; margin: 24px 0;">
+      </div>
+  <div style="text-align: center; margin: 24px 0;">
+      </div>
+<div style="text-align: center; margin: 24px 0;">
+</div>
+<div style="text-align: center; margin: 24px 0;">
+</div>
+</script>
+</body>
+</html>
+

@@ -1,0 +1,1953 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Extract PDF Pages Offline Tool Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Extract PDF Pages Offline Tool online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/extract-pages-offline.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/extract-pages-offline.html">
+  <meta property="og:title" content="Extract PDF Pages Offline Tool Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Extract PDF Pages Offline Tool online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Extract PDF Pages Offline Tool Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Extract PDF Pages Offline Tool online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  
+
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Extract Pages from a PDF Online",
+    "description": "Save specific pages from a PDF as a new document using ToolsMatic - free, private, no upload.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload your PDF",
+        "text": "Drag and drop your PDF onto the upload zone or click to browse and select it from your device."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Select pages to extract",
+        "text": "Click page thumbnails to select them. Selected pages show a green border and checkmark. Use the range input to select multiple pages quickly."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Review your selection",
+        "text": "The counter shows how many pages will be in your new PDF. Selected pages are highlighted green."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Extract and download",
+        "text": "Click Extract Pages to create and download a new PDF containing only your selected pages."
+      }
+    ]
+  }
+  </script>
+
+  
+
+  <style>
+    .extract-shell {
+      padding-bottom: 5rem;
+    }
+
+    .extract-upload-zone {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .extract-upload-zone.dragover {
+      animation: extract-drop-pulse 1s ease-in-out infinite;
+      box-shadow:
+        0 0 0 6px var(--accent-glow),
+        inset 0 0 26px rgba(245, 158, 11, 0.08);
+    }
+
+    @keyframes extract-drop-pulse {
+      0%,
+      100% {
+        border-color: var(--accent);
+      }
+
+      50% {
+        border-color: #fbbf24;
+      }
+    }
+
+    .extract-panel {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .extract-file-bar,
+    .extract-range-bar,
+    .extract-selection-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .extract-file-stats,
+    .extract-selection-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.1rem;
+      min-width: 0;
+    }
+
+    .extract-stat {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+
+    .extract-stat strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .extract-stat .extract-success {
+      color: #86efac;
+    }
+
+    .extract-range-bar {
+      align-items: end;
+    }
+
+    .extract-range-field {
+      flex: 1 1 280px;
+      min-width: 0;
+    }
+
+    .extract-label {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: var(--text-primary);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .extract-range-input {
+      width: 100%;
+      min-height: 46px;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: #0d0d0d;
+      color: var(--text-primary);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .extract-range-input:focus,
+    .extract-range-input:focus-visible {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .extract-range-input.is-invalid {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.16);
+    }
+
+    .extract-help {
+      margin-top: 0.4rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .extract-button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .extract-pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .extract-page-card {
+      position: relative;
+      display: grid;
+      overflow: hidden;
+      min-height: 220px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-card);
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+      transition: var(--transition);
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .extract-page-card:hover:not(:disabled) {
+      border-color: var(--success);
+      transform: translateY(-2px);
+    }
+
+    .extract-page-card:focus-visible,
+    .extract-control:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    .extract-page-card.is-selected {
+      border-color: var(--success);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.16);
+    }
+
+    .extract-page-card.is-dimmed {
+      opacity: 0.52;
+    }
+
+    .extract-page-card.is-dimmed:hover,
+    .extract-page-card.is-selected {
+      opacity: 1;
+    }
+
+    .extract-page-card:disabled {
+      cursor: not-allowed;
+      opacity: 0.62;
+      transform: none;
+    }
+
+    .extract-page-preview {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 178px;
+      aspect-ratio: 0.707;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .extract-page-preview canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .extract-check-overlay {
+      position: absolute;
+      top: 0.55rem;
+      right: 0.55rem;
+      display: grid;
+      place-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: var(--success);
+      color: #061207;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: var(--transition);
+      pointer-events: none;
+      z-index: 2;
+      box-shadow: 0 12px 28px rgba(34, 197, 94, 0.24);
+    }
+
+    .extract-page-card.is-selected .extract-check-overlay {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .extract-thumb-skeleton {
+      width: 100%;
+      height: 100%;
+      min-height: 178px;
+      background: linear-gradient(
+        90deg,
+        rgba(26, 26, 26, 0.9) 0%,
+        rgba(82, 82, 91, 0.3) 50%,
+        rgba(26, 26, 26, 0.9) 100%
+      );
+      background-size: 200% 100%;
+      animation: extract-shimmer 1.35s linear infinite;
+    }
+
+    @keyframes extract-shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    .extract-page-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      min-height: 44px;
+      padding: 0.6rem 0.7rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .extract-page-number {
+      color: var(--text-primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .extract-page-status {
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .extract-page-card.is-selected .extract-page-status {
+      color: #86efac;
+    }
+
+    .extract-result-box {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .extract-result-title {
+      color: #86efac;
+      font-family: "Inter", sans-serif;
+      font-size: 1.08rem;
+      font-weight: 800;
+    }
+
+    .extract-filename-preview {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      border-radius: var(--radius-btn);
+      background: rgba(245, 158, 11, 0.07);
+    }
+
+    .extract-filename-label {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .extract-filename-name {
+      color: var(--text-primary);
+      font-size: 0.94rem;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .extract-table-wrap {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .extract-shell {
+        padding-bottom: 3.5rem;
+      }
+
+      .extract-file-bar,
+      .extract-range-bar,
+      .extract-selection-bar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .extract-button-row {
+        width: 100%;
+      }
+
+      .extract-button-row .btn {
+        flex: 1 1 180px;
+      }
+
+      .extract-pages-grid {
+        grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+        gap: 0.7rem;
+      }
+
+      .extract-page-card {
+        min-height: 190px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .extract-pages-grid {
+        grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+      }
+
+      .extract-file-stats,
+      .extract-selection-stats {
+        display: grid;
+        gap: 0.35rem;
+      }
+
+      .extract-page-card {
+        min-height: 168px;
+      }
+
+      .extract-page-preview,
+      .extract-thumb-skeleton {
+        min-height: 132px;
+      }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/extract-pages-offline.html">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+        <span class="header-logo-text">ToolsMatic</span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/#tools">Tools</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a href="/#tools" class="header-cta btn">All Tools</a>
+      <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <a href="/#tools">Tools</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb content-wrap" aria-label="Breadcrumb" style="padding-top:5rem;">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <a href="/#tools" class="breadcrumb-link">Tools</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current" aria-current="page">Extract Pages</span>
+    </nav>
+
+    <section class="tool-hero content-wrap" aria-label="Extract Pages tool">
+      <div class="tool-hero-badge">Private browser processing</div>
+      <h1>Extract PDF Pages Offline Tool</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+      <p class="tool-hero-sub">
+        Pick exactly the pages you need and save them as a new PDF. Selected
+        pages stay green, unselected pages are discarded, and your file never
+        leaves your browser.
+      </p>
+    </section>
+
+    <section class="tool-section extract-shell" aria-label="Extract PDF pages workspace">
+      <div class="tool-container">
+        <input id="file-input" type="file" accept="application/pdf,.pdf" class="visually-hidden">
+
+        <div id="upload-zone" class="upload-zone extract-upload-zone" role="button" tabindex="0" aria-label="Upload a PDF file" aria-describedby="upload-hint">
+          <div class="upload-zone-icon" aria-hidden="true">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="16 16 12 12 8 16"></polyline>
+              <line x1="12" y1="12" x2="12" y2="21"></line>
+              <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+            </svg>
+          </div>
+          <div class="upload-zone-text">Drag and drop your PDF here</div>
+          <div class="upload-zone-sub" id="upload-hint">or press Enter to browse</div>
+          <div class="upload-zone-sub">Single PDF file, processed locally</div>
+        </div>
+
+        <div id="tool-area" class="extract-panel" hidden="">
+          <div class="extract-file-bar">
+            <div class="extract-file-stats" aria-live="polite" aria-atomic="true">
+              <span class="extract-stat">File: <strong id="stat-name">-</strong></span>
+              <span class="extract-stat">Total pages: <strong id="stat-pages">-</strong></span>
+              <span class="extract-stat">Size: <strong id="stat-size">-</strong></span>
+              <span class="extract-stat">Selected: <strong class="extract-success" id="stat-selected">0</strong></span>
+            </div>
+            <button id="clear-file-button" class="btn btn-ghost extract-control" type="button" data-extract-control="">
+              Clear File
+            </button>
+          </div>
+
+          <div class="extract-range-bar">
+            <div class="extract-range-field">
+              <label class="extract-label" for="range-input">Quick select pages to extract</label>
+              <input id="range-input" class="extract-range-input" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="Example: 1, 3, 5-8" aria-describedby="range-help" data-extract-control="">
+              <div id="range-help" class="extract-help">Use commas for separate pages and hyphens for ranges.</div>
+            </div>
+            <div class="extract-button-row">
+              <button id="apply-range-button" class="btn btn-secondary extract-control" type="button" data-extract-control="">
+                Apply Range
+              </button>
+              <button id="clear-selection-button" class="btn btn-ghost extract-control" type="button" data-extract-control="">
+                Clear Selection
+              </button>
+            </div>
+          </div>
+
+          <div class="extract-selection-bar">
+            <div class="extract-selection-stats" aria-live="polite" aria-atomic="true">
+              <span class="extract-stat"><strong class="extract-success" id="count-selected">0</strong> pages selected to extract</span>
+              <span class="extract-stat">Output pages follow original document order.</span>
+            </div>
+            <div class="extract-button-row">
+              <button id="select-all-button" class="btn btn-ghost extract-control" type="button" data-extract-control="">
+                Select All
+              </button>
+              <button id="deselect-all-button" class="btn btn-ghost extract-control" type="button" data-extract-control="">
+                Deselect All
+              </button>
+            </div>
+          </div>
+
+          <div id="pages-grid" class="extract-pages-grid" role="list" aria-label="PDF page thumbnails"></div>
+
+          <button id="extract-pages-button" class="btn btn-primary extract-control" type="button" data-extract-control="">
+            <span id="extract-button-text">Extract Pages</span>
+          </button>
+
+          <div id="progress-wrap" class="progress-wrap" role="region" aria-label="Extract pages progress"></div>
+
+          <div id="result-box" class="tool-result extract-result-box" aria-live="polite" hidden="">
+            <div class="extract-result-title">Pages Extracted Successfully</div>
+            <p id="result-stats"></p>
+            <div class="extract-filename-preview">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <div>
+                <div class="extract-filename-label">Your file will be saved as:</div>
+                <div id="filename-preview" class="extract-filename-name">-</div>
+              </div>
+            </div>
+            <div class="extract-button-row">
+              <button id="download-button" class="btn btn-success extract-control" type="button" data-extract-control="">
+                Download Extracted PDF
+              </button>
+              <button id="reset-button" class="btn btn-ghost extract-control" type="button" data-extract-control="">
+                Extract from Another PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <article class="seo-content" aria-label="About extracting PDF pages">
+      <h2>What Does Extracting PDF Pages Mean?</h2>
+      <p>
+        Extracting pages from a PDF means selecting specific pages you want
+        to keep and saving those pages as a new, separate PDF document. The
+        original file remains untouched. The output file contains only the
+        selected pages, copied from the source document in their original
+        order.
+      </p>
+      <p>
+        This is different from removing pages. Remove Pages is used when most
+        of the document should remain and only a few unwanted pages should be
+        deleted. Extract Pages is used when only a focused subset should be
+        pulled out, such as a few contract pages, a chapter, a set of slides,
+        or selected receipts from a longer packet.
+      </p>
+
+      <h2>How to Extract Pages from a PDF on ToolsMatic</h2>
+      <ul>
+        <li><strong>Upload your PDF:</strong> Drag the file into the upload zone or browse from your device.</li>
+        <li><strong>Select pages to keep:</strong> Click thumbnails to mark them green, or enter a range such as 1, 3, 5-8.</li>
+        <li><strong>Review the counter:</strong> The file bar shows total pages, file size, and the number of pages selected for extraction.</li>
+        <li><strong>Download the result:</strong> Click Extract Pages to generate one new PDF containing only your selected pages.</li>
+      </ul>
+
+      <h2>When Extract Pages Is the Right Tool</h2>
+      <p>
+        Use Extract Pages when the pages you need are the exception, not the
+        majority of the document. If a fifty page PDF contains only five pages
+        you need to email, extracting those pages is faster and clearer than
+        deleting the other forty-five pages. You can click non-consecutive
+        pages, use a range, or combine both methods.
+      </p>
+
+      <h3>Pull a Section from a Large Report</h3>
+      <p>
+        Reports often include executive summaries, financial tables,
+        appendices, signatures, and supporting material. If someone only
+        needs a specific section, extract those pages and send a concise PDF
+        instead of the entire document.
+      </p>
+
+      <h3>Create a Smaller Client Copy</h3>
+      <p>
+        Designers, consultants, accountants, lawyers, and operations teams
+        often need to send only selected pages from a larger working file.
+        Extracting pages creates a clean copy without exposing extra internal
+        pages or unrelated context.
+      </p>
+
+      <h3>Save Specific Receipts or Forms</h3>
+      <p>
+        Large scanned packets can include many documents in one PDF. Select
+        only the receipts, forms, IDs, invoices, or statements you need and
+        save them as a focused file that is easier to upload or archive.
+      </p>
+
+      <h2>Extract Pages vs Remove Pages vs Split PDF</h2>
+      <p>
+        Extract Pages marks pages to keep and discards everything else. Remove
+        Pages marks pages to delete and keeps everything else. Split PDF breaks
+        a document into multiple files by range. These tools overlap, but the
+        fastest choice depends on the mental model: keep a subset, delete
+        unwanted pages, or create several separate documents.
+      </p>
+      <p>
+        Extract Pages also preserves original document order. If you click
+        page 12 before page 3, the generated PDF still places page 3 before
+        page 12. That behavior prevents accidental reordering when you are
+        selecting pages from thumbnails out of sequence.
+      </p>
+
+      <h2>Privacy and Quality</h2>
+      <p>
+        ToolsMatic performs extraction locally in your browser. The file is read
+        by JavaScript, previews are rendered on your device, and selected pages
+        are copied into a new PDF without a server upload. This is important
+        for sensitive contracts, school documents, financial records, IDs,
+        medical paperwork, and internal company files.
+      </p>
+      <p>
+        Extraction is a document-level operation. The selected pages are not
+        converted into screenshots, so text remains selectable and page
+        quality is preserved. Images, fonts, vector graphics, annotations, and
+        layout remain as close as possible to the original pages supported by
+        the browser PDF library.
+      </p>
+
+      <h2>Tips for Accurate Extraction</h2>
+      <p>
+        Start by checking the total page count in the file information bar.
+        Then select pages using thumbnails when visual confirmation matters,
+        or use the range input when you already know the exact page numbers.
+        The selected count updates live, so you can compare it with the number
+        of pages you expect in the final document.
+      </p>
+      <p>
+        For longer PDFs, it helps to use the range input for large blocks and
+        thumbnails for exceptions. For example, enter 10-18 to select a full
+        chapter, then click page 22 manually if it should be included as an
+        appendix. The final output will include all selected pages in source
+        order.
+      </p>
+
+      <h2>Common Extraction Workflows</h2>
+      <h3>Extract Contract Pages</h3>
+      <p>
+        Contracts and legal packets often include cover pages, exhibits,
+        appendices, signature pages, and supporting forms. When you only need
+        the signed pages or a specific clause section, extracting pages gives
+        you a focused PDF without changing the original agreement.
+      </p>
+
+      <h3>Pull Slides from a Presentation PDF</h3>
+      <p>
+        Presentation decks are frequently exported as PDFs for sharing. If a
+        recipient only needs the agenda, results, and next steps, you can
+        select those slides and export them as a smaller PDF that is easier to
+        review and forward.
+      </p>
+
+      <h3>Save Pages from a Scanned Packet</h3>
+      <p>
+        Scanned packets often combine many unrelated papers into one file. A
+        single PDF might contain IDs, receipts, applications, letters, and
+        statements. Extract Pages lets you pull out exactly the pages needed
+        for a form submission or recordkeeping task.
+      </p>
+
+      <h3>Create a Student or Client Handout</h3>
+      <p>
+        Teachers, trainers, and consultants may want to distribute only a few
+        pages from a larger source document. Extracting pages keeps the
+        handout concise while preserving the visual quality and layout of the
+        source pages.
+      </p>
+
+      <h2>Selection Behavior</h2>
+      <p>
+        Selected pages are shown with a green border and checkmark, which is
+        intentionally different from the red visual language used by Remove
+        Pages. In this tool, green means the page will be kept and included in
+        the new PDF. Unselected pages are discarded from the output.
+      </p>
+      <p>
+        The selected page count updates immediately after every click or range
+        action. This helps prevent mistakes before processing. If you expected
+        a seven page output, the counter should show seven selected pages
+        before you click Extract Pages.
+      </p>
+
+      <h2>Keyboard and Touch Support</h2>
+      <p>
+        The extractor is built for desktop and mobile use. On touch devices,
+        tap a page card to select or deselect it. On desktop, use the keyboard
+        to tab through controls and press Enter or Space on a focused page
+        card. Focus rings remain visible so the active control is clear.
+      </p>
+      <p>
+        Range input is especially useful on phones because it avoids tapping a
+        long list of pages one by one. Type a compact selection such as 1-3,
+        8, 12-14, apply it, and review the green page highlights before
+        exporting.
+      </p>
+
+      <h2>What Happens to Unselected Pages?</h2>
+      <p>
+        Unselected pages are not included in the generated PDF. They are not
+        modified, uploaded, or deleted from your original file. The source PDF
+        remains exactly where it was on your device, and ToolsMatic creates a
+        separate output file containing only the selected pages.
+      </p>
+      <p>
+        This makes extraction safe to repeat. If you extract the wrong pages,
+        clear the selection, choose a different set, and generate another PDF.
+        Since the original file is untouched, you can create multiple custom
+        outputs from the same source document.
+      </p>
+
+      <h2>Limits and Practical Notes</h2>
+      <p>
+        ToolsMatic does not impose a fixed page count limit for extraction. The
+        practical limit depends on your browser and device memory. Large PDFs
+        with many high-resolution scanned pages need more memory than compact
+        text documents, so older phones may take longer to render thumbnails
+        and save the final file. If a document is very large, select only the
+        pages you need and wait for the progress indicator to finish before
+        starting another operation.
+      </p>
+
+      <h2>Filename and Download Behavior</h2>
+      <p>
+        After extraction, ToolsMatic shows the exact filename before download.
+        The format is extracted-pages-YYYY-MM-DD-HH-MM.pdf, which makes each
+        generated file easy to identify and avoids generic names that collide
+        with earlier downloads. The download uses the same filename shown in
+        the preview.
+      </p>
+      <p>
+        The downloadable file is created as a temporary browser object URL
+        only when you click download, then the URL is revoked after use. This
+        keeps memory usage cleaner when you are working with large PDFs or
+        repeatedly generating outputs.
+      </p>
+
+      <h2>ToolsMatic vs Other PDF Page Extraction Tools</h2>
+      <div class="extract-table-wrap">
+        <table class="comparison-table" aria-label="PDF page extraction comparison">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="col-ToolsMatic">ToolsMatic</th>
+              <th>ilovepdf</th>
+              <th>Smallpdf</th>
+              <th>Adobe Acrobat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Free to use</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Yes</td>
+              <td>Limited</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>No file upload to server</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>No</td>
+              <td>No</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>No login required</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Yes</td>
+              <td>Limited</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Visual page selector</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Range input selection</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Limited</td>
+              <td>Limited</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Non-consecutive pages</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Preserves full quality</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Extract PDF Pages: Frequently Asked Questions</h2>
+      <div class="faq-wrap" id="faq">
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            What does extracting PDF pages mean?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>It means choosing specific source pages and saving them as a new PDF. The original PDF is not modified.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Can I extract non-consecutive pages?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Select any pages, such as 1, 5, and 12. The output keeps them in original document order.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Do extracted pages lose quality?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. Selected pages are copied into a new PDF without rasterizing them as images.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Are my files uploaded?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. Upload, preview, extraction, and download preparation happen locally in your browser.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Can I extract from a password-protected PDF?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Password-protected PDFs must be unlocked first. Use the <a href="/tools/unlock-pdf.html" style="color:var(--accent);">Unlock PDF</a> tool, then return here.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>More Free PDF Tools You Might Need</h2>
+      <div class="related-tools" role="list">
+        <a class="card related-tool-card" href="/tools/remove-pages.html" role="listitem">
+          <h3>Remove Pages</h3>
+          <p>Delete unwanted pages while keeping the rest of the PDF.</p>
+        </a>
+        <a class="card related-tool-card" href="/tools/split-pdf.html" role="listitem">
+          <h3>Split PDF</h3>
+          <p>Divide a document into multiple files by page range.</p>
+        </a>
+        <a class="card related-tool-card" href="/tools/merge-pdf.html" role="listitem">
+          <h3>Merge PDF</h3>
+          <p>Combine extracted pages or multiple PDFs into one file.</p>
+        </a>
+      </div>
+    </article>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="extract-pages-offline-pseo" aria-labelledby="extract-pages-offline-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Extract PDF Pages Offline Tool</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="extract-pages-offline-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Extract PDF Pages Offline Tool Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Extract PDF Pages Offline Tool</strong>, a robust local utility designed to operate seamlessly without an active internet connection. This dedicated workspace is built specifically for travelers, remote builders, and developers working on flights, trains, or in locations with spotty connectivity. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>cached browser execution, zero remote API calls, and absolute local dependability</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Pull selected pages into a new PDF document. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Spotty Network Survival</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Keep working uninterrupted on flights, subways, or remote off-grid locations.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Local Browser Cache</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Once the page is opened, all logic files are loaded in browser cache and work without web access.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">No API Dependencies</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Unlike cloud tools, this utility relies entirely on browser native scripts.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Extract PDF Pages Offline Tool</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Offline Tool layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Extract PDF Pages Offline Tool</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">How do I run this offline?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Open the page while online, and once loaded, you can disconnect your internet. The page logic remains active.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Will the tool lose accuracy offline?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">No, all calculations are fully self-contained in local code, guaranteeing the exact same accuracy.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it require server calls?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">None. The page performs zero background server queries.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/extract-pages.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Extract PDF Pages</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Extract PDF Pages Offline Tool","url":"https://toolsmatic.me/tools/extract-pages-offline.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Extract PDF Pages Offline Tool online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Extract PDF Pages Offline Tool","item":"https://toolsmatic.me/tools/extract-pages-offline.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run this offline?","acceptedAnswer":{"@type":"Answer","text":"Open the page while online, and once loaded, you can disconnect your internet. The page logic remains active."}},{"@type":"Question","name":"Will the tool lose accuracy offline?","acceptedAnswer":{"@type":"Answer","text":"No, all calculations are fully self-contained in local code, guaranteeing the exact same accuracy."}},{"@type":"Question","name":"Does it require server calls?","acceptedAnswer":{"@type":"Answer","text":"None. The page performs zero background server queries."}}]}]}</script>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <div class="header-logo-text">ToolsMatic</div>
+        <p style="margin-top:0.75rem;max-width:240px;color:var(--text-muted);">Privacy-first PDF tools. Your files never leave your browser.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">PDF Tools</div>
+        <div class="footer-links">
+          <a class="footer-link" href="/tools/merge-pdf.html">Merge PDF</a>
+          <a class="footer-link" href="/tools/split-pdf.html">Split PDF</a>
+          <a class="footer-link" href="/tools/compress-pdf.html">Compress PDF</a>
+          <a class="footer-link" href="/tools/rotate-pdf.html">Rotate PDF</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">More Tools</div>
+        <div class="footer-links">
+          <a class="footer-link" href="/tools/remove-pages.html">Remove Pages</a>
+          <a class="footer-link" href="/tools/extract-pages.html">Extract Pages</a>
+          <a class="footer-link" href="/tools/pdf-to-jpg.html">PDF to JPG</a>
+          <a class="footer-link" href="/tools/unlock-pdf.html">Unlock PDF</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a class="footer-link" href="/about.html">About</a>
+          <a class="footer-link" href="/contact.html">Contact</a>
+          <a class="footer-link" href="/privacy.html">Privacy Policy</a>
+          <a class="footer-link" href="/terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Built for people who value privacy.</span>
+      <span>No tracking. No uploads. No nonsense.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="/assets/pdf/tool-base.js"></script>
+  <script src="/assets/pdf/global.js"></script>
+
+  <script>
+    "use strict";
+
+    (function () {
+      const state = {
+        file: null,
+        arrayBuffer: null,
+        pageCount: 0,
+        pdfJsDoc: null,
+        selectedPages: new Set(),
+        resultBytes: null,
+        resultFilename: "",
+        processing: false,
+      };
+
+      const uploadZone = document.getElementById("upload-zone");
+      const fileInput = document.getElementById("file-input");
+      const toolArea = document.getElementById("tool-area");
+      const clearFileButton = document.getElementById("clear-file-button");
+      const statName = document.getElementById("stat-name");
+      const statPages = document.getElementById("stat-pages");
+      const statSize = document.getElementById("stat-size");
+      const statSelected = document.getElementById("stat-selected");
+      const rangeInput = document.getElementById("range-input");
+      const applyRangeButton = document.getElementById("apply-range-button");
+      const clearSelectionButton = document.getElementById("clear-selection-button");
+      const countSelected = document.getElementById("count-selected");
+      const selectAllButton = document.getElementById("select-all-button");
+      const deselectAllButton = document.getElementById("deselect-all-button");
+      const pagesGrid = document.getElementById("pages-grid");
+      const extractPagesButton = document.getElementById("extract-pages-button");
+      const extractButtonText = document.getElementById("extract-button-text");
+      const progressWrap = document.getElementById("progress-wrap");
+      const resultBox = document.getElementById("result-box");
+      const resultStats = document.getElementById("result-stats");
+      const filenamePreview = document.getElementById("filename-preview");
+      const downloadButton = document.getElementById("download-button");
+      const resetButton = document.getElementById("reset-button");
+
+      function toast(message, type) {
+        if (typeof window.showToast === "function") {
+          window.showToast(message, type || "info");
+        }
+      }
+
+      function ensureToastContainer() {
+        let container = document.querySelector(".toast-container");
+
+        if (container) {
+          return container;
+        }
+
+        container = document.createElement("div");
+        container.className = "toast-container";
+        container.setAttribute("aria-live", "polite");
+        container.setAttribute("aria-atomic", "true");
+        document.body.appendChild(container);
+        return container;
+      }
+
+      function showUnlockToast() {
+        const container = ensureToastContainer();
+        const toastEl = document.createElement("div");
+        const messageEl = document.createElement("div");
+        const closeButton = document.createElement("button");
+        const link = document.createElement("a");
+
+        toastEl.className = "toast toast-warning";
+        toastEl.setAttribute("role", "status");
+        messageEl.className = "toast-message";
+        messageEl.append("This PDF is password protected. ");
+
+        link.href = "/tools/unlock-pdf.html";
+        link.textContent = "Unlock it first";
+        link.style.color = "var(--accent)";
+        link.style.fontWeight = "700";
+        messageEl.appendChild(link);
+        messageEl.append(".");
+
+        closeButton.className = "toast-close";
+        closeButton.type = "button";
+        closeButton.setAttribute("aria-label", "Dismiss notification");
+        closeButton.textContent = "x";
+        closeButton.addEventListener("click", function () {
+          toastEl.remove();
+        });
+
+        toastEl.append(messageEl, closeButton);
+        container.appendChild(toastEl);
+        window.setTimeout(function () {
+          if (toastEl.parentNode) {
+            toastEl.remove();
+          }
+        }, 7000);
+      }
+
+      function isPasswordError(error) {
+        const message = error && typeof error.message === "string" ? error.message.toLowerCase() : "";
+        return message.indexOf("encrypt") !== -1 || message.indexOf("password") !== -1;
+      }
+
+      function formatSize(bytes) {
+        if (typeof window.formatFileSize === "function") {
+          return window.formatFileSize(bytes);
+        }
+
+        if (!bytes) {
+          return "0 B";
+        }
+
+        return bytes < 1048576
+          ? Math.round(bytes / 1024) + " KB"
+          : (bytes / 1048576).toFixed(1) + " MB";
+      }
+
+      function generateFilename() {
+        const now = new Date();
+        const pad = function (value) {
+          return value < 10 ? "0" + value : String(value);
+        };
+
+        return "extracted-pages-" +
+          now.getFullYear() + "-" +
+          pad(now.getMonth() + 1) + "-" +
+          pad(now.getDate()) + "-" +
+          pad(now.getHours()) + "-" +
+          pad(now.getMinutes()) + ".pdf";
+      }
+
+      function setBusy(isBusy) {
+        const controls = document.querySelectorAll("[data-extract-control]");
+        state.processing = isBusy;
+
+        controls.forEach(function (control) {
+          control.disabled = isBusy;
+          control.setAttribute("aria-disabled", String(isBusy));
+        });
+
+        if (extractPagesButton && extractButtonText) {
+          extractPagesButton.classList.toggle("loading", isBusy);
+          extractButtonText.textContent = isBusy ? "Extracting..." : "Extract Pages";
+        }
+      }
+
+      function updateProgress(percent, label) {
+        if (progressWrap && typeof window.updateProgress === "function") {
+          window.updateProgress(progressWrap, percent, label);
+        }
+      }
+
+      function hideProgressBar() {
+        if (progressWrap && typeof window.hideProgress === "function") {
+          window.hideProgress(progressWrap);
+        }
+      }
+
+      function clearResult() {
+        state.resultBytes = null;
+        state.resultFilename = "";
+
+        if (resultBox) {
+          resultBox.hidden = true;
+        }
+
+        if (resultStats) {
+          resultStats.textContent = "";
+        }
+
+        if (filenamePreview) {
+          filenamePreview.textContent = "-";
+        }
+      }
+
+      async function destroyPreviewDocument() {
+        try {
+          if (state.pdfJsDoc && typeof state.pdfJsDoc.destroy === "function") {
+            await state.pdfJsDoc.destroy();
+          }
+        } catch (error) {
+          /* Preview cleanup is best-effort. */
+        } finally {
+          state.pdfJsDoc = null;
+        }
+      }
+
+      function getSelectedPagesInOrder() {
+        return Array.from(state.selectedPages).sort(function (left, right) {
+          return left - right;
+        });
+      }
+
+      function updateCounters() {
+        const selected = state.selectedPages.size;
+
+        if (statSelected) {
+          statSelected.textContent = String(selected);
+        }
+
+        if (countSelected) {
+          countSelected.textContent = String(selected);
+        }
+
+        if (!pagesGrid) {
+          return;
+        }
+
+        const hasSelection = selected > 0;
+        const buttons = Array.from(pagesGrid.querySelectorAll(".extract-page-card"));
+
+        buttons.forEach(function (button) {
+          const pageNumber = Number(button.dataset.page);
+          button.classList.toggle("is-dimmed", hasSelection && !state.selectedPages.has(pageNumber));
+        });
+      }
+
+      function getPageButtons() {
+        if (!pagesGrid) {
+          return [];
+        }
+
+        return Array.from(pagesGrid.querySelectorAll(".extract-page-card"));
+      }
+
+      function syncPageButton(pageNumber) {
+        if (!pagesGrid) {
+          return;
+        }
+
+        const button = pagesGrid.querySelector('[data-page="' + pageNumber + '"]');
+
+        if (!button) {
+          return;
+        }
+
+        const isSelected = state.selectedPages.has(pageNumber);
+        const status = button.querySelector(".extract-page-status");
+
+        button.classList.toggle("is-selected", isSelected);
+        button.setAttribute("aria-pressed", String(isSelected));
+        button.setAttribute(
+          "aria-label",
+          isSelected
+            ? "Page " + pageNumber + " selected for extraction. Activate to deselect it."
+            : "Page " + pageNumber + ". Activate to select it for extraction."
+        );
+
+        if (status) {
+          status.textContent = isSelected ? "Selected" : "Keep";
+        }
+      }
+
+      function setPageSelected(pageNumber, shouldSelect) {
+        if (pageNumber < 1 || pageNumber > state.pageCount) {
+          return;
+        }
+
+        if (shouldSelect) {
+          state.selectedPages.add(pageNumber);
+        } else {
+          state.selectedPages.delete(pageNumber);
+        }
+
+        syncPageButton(pageNumber);
+        updateCounters();
+        clearResult();
+      }
+
+      function togglePage(pageNumber) {
+        setPageSelected(pageNumber, !state.selectedPages.has(pageNumber));
+      }
+
+      function makeCheckIcon() {
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        const polyline = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+
+        svg.setAttribute("width", "18");
+        svg.setAttribute("height", "18");
+        svg.setAttribute("viewBox", "0 0 24 24");
+        svg.setAttribute("fill", "none");
+        svg.setAttribute("stroke", "currentColor");
+        svg.setAttribute("stroke-width", "3");
+        svg.setAttribute("aria-hidden", "true");
+        polyline.setAttribute("points", "20 6 9 17 4 12");
+        svg.appendChild(polyline);
+        return svg;
+      }
+
+      function createPageCard(pageNumber) {
+        const button = document.createElement("button");
+        const preview = document.createElement("span");
+        const skeleton = document.createElement("span");
+        const check = document.createElement("span");
+        const footer = document.createElement("span");
+        const number = document.createElement("span");
+        const status = document.createElement("span");
+
+        button.type = "button";
+        button.className = "extract-page-card extract-control";
+        button.dataset.page = String(pageNumber);
+        button.dataset.extractControl = "";
+        button.setAttribute("aria-pressed", "false");
+        button.setAttribute("aria-label", "Page " + pageNumber + ". Activate to select it for extraction.");
+
+        preview.className = "extract-page-preview";
+        skeleton.className = "extract-thumb-skeleton";
+        check.className = "extract-check-overlay";
+        footer.className = "extract-page-footer";
+        number.className = "extract-page-number";
+        status.className = "extract-page-status";
+
+        preview.dataset.previewPage = String(pageNumber);
+        number.textContent = "Page " + pageNumber;
+        status.textContent = "Keep";
+        check.appendChild(makeCheckIcon());
+        preview.append(skeleton, check);
+        footer.append(number, status);
+        button.append(preview, footer);
+        button.addEventListener("click", function () {
+          togglePage(pageNumber);
+        });
+
+        return button;
+      }
+
+      async function renderPageThumbnail(pageNumber, preview) {
+        try {
+          if (!state.pdfJsDoc || !preview) {
+            return;
+          }
+
+          const page = await state.pdfJsDoc.getPage(pageNumber);
+          const viewport = page.getViewport({ scale: 0.32 });
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+
+          if (!context) {
+            return;
+          }
+
+          canvas.width = Math.max(1, Math.floor(viewport.width));
+          canvas.height = Math.max(1, Math.floor(viewport.height));
+
+          await page.render({
+            canvasContext: context,
+            viewport: viewport,
+          }).promise;
+
+          const skeleton = preview.querySelector(".extract-thumb-skeleton");
+          const check = preview.querySelector(".extract-check-overlay");
+
+          if (skeleton) {
+            skeleton.remove();
+          }
+
+          if (check) {
+            preview.insertBefore(canvas, check);
+          } else {
+            preview.appendChild(canvas);
+          }
+        } catch (error) {
+          if (preview) {
+            preview.textContent = "Preview unavailable";
+          }
+        }
+      }
+
+      async function renderThumbnails() {
+        try {
+          if (!pagesGrid || !state.pdfJsDoc) {
+            return;
+          }
+
+          const previews = Array.from(pagesGrid.querySelectorAll("[data-preview-page]"));
+
+          for (let index = 0; index < previews.length; index += 1) {
+            const preview = previews[index];
+            const pageNumber = Number(preview.dataset.previewPage);
+            await renderPageThumbnail(pageNumber, preview);
+          }
+        } catch (error) {
+          toast("Page previews could not be rendered, but you can still extract pages.", "warning");
+        }
+      }
+
+      async function buildPageGrid() {
+        try {
+          if (!pagesGrid) {
+            return;
+          }
+
+          pagesGrid.textContent = "";
+
+          for (let pageNumber = 1; pageNumber <= state.pageCount; pageNumber += 1) {
+            pagesGrid.appendChild(createPageCard(pageNumber));
+          }
+
+          await renderThumbnails();
+        } catch (error) {
+          toast("Page previews could not be prepared.", "warning");
+        }
+      }
+
+      async function loadPreviewDocument() {
+        try {
+          await destroyPreviewDocument();
+
+          if (typeof window.pdfjsLib === "undefined" || !state.arrayBuffer) {
+            await buildPageGrid();
+            return;
+          }
+
+          state.pdfJsDoc = await window.pdfjsLib.getDocument({
+            data: state.arrayBuffer.slice(0),
+          }).promise;
+
+          await buildPageGrid();
+        } catch (error) {
+          state.pdfJsDoc = null;
+          await buildPageGrid();
+        }
+      }
+
+      function parsePageRange(value) {
+        const input = String(value || "").trim();
+        const pages = new Set();
+
+        if (!input) {
+          return null;
+        }
+
+        const parts = input.split(",");
+
+        for (let index = 0; index < parts.length; index += 1) {
+          const part = parts[index].trim();
+          const match = part.match(/^(\d+)(?:-(\d+))?$/);
+
+          if (!match) {
+            return null;
+          }
+
+          const start = Number(match[1]);
+          const end = match[2] ? Number(match[2]) : start;
+
+          if (
+            !Number.isInteger(start) ||
+            !Number.isInteger(end) ||
+            start < 1 ||
+            end < 1 ||
+            start > end ||
+            start > state.pageCount ||
+            end > state.pageCount
+          ) {
+            return null;
+          }
+
+          for (let pageNumber = start; pageNumber <= end; pageNumber += 1) {
+            pages.add(pageNumber);
+          }
+        }
+
+        return pages.size ? Array.from(pages) : null;
+      }
+
+      function applyRangeSelection() {
+        if (!rangeInput) {
+          return;
+        }
+
+        const pages = parsePageRange(rangeInput.value);
+
+        if (!state.arrayBuffer) {
+          toast("Please upload a PDF first.", "warning");
+          return;
+        }
+
+        if (!rangeInput.value.trim()) {
+          toast("Enter page numbers or ranges first.", "info");
+          return;
+        }
+
+        if (!pages) {
+          rangeInput.classList.add("is-invalid");
+          toast("Invalid page range. Use a format like 1, 3, 5-8.", "error");
+          return;
+        }
+
+        rangeInput.classList.remove("is-invalid");
+        pages.forEach(function (pageNumber) {
+          state.selectedPages.add(pageNumber);
+          syncPageButton(pageNumber);
+        });
+        updateCounters();
+        clearResult();
+
+        toast(pages.length + " page" + (pages.length === 1 ? "" : "s") + " selected for extraction.", "info");
+        rangeInput.value = "";
+      }
+
+      function selectAllPages() {
+        for (let pageNumber = 1; pageNumber <= state.pageCount; pageNumber += 1) {
+          state.selectedPages.add(pageNumber);
+          syncPageButton(pageNumber);
+        }
+
+        updateCounters();
+        clearResult();
+      }
+
+      function deselectAllPages() {
+        state.selectedPages.clear();
+        getPageButtons().forEach(function (button) {
+          const pageNumber = Number(button.dataset.page);
+          syncPageButton(pageNumber);
+        });
+        updateCounters();
+        clearResult();
+      }
+
+      async function loadPdfFile(file) {
+        try {
+          if (!file) {
+            return;
+          }
+
+          clearResult();
+          hideProgressBar();
+
+          const fileType = typeof file.type === "string" ? file.type : "";
+          const hasPdfType = fileType === "application/pdf" || fileType === "";
+          const hasPdfExtension = typeof file.name === "string" && /\.pdf$/i.test(file.name);
+
+          if (!hasPdfType || !hasPdfExtension) {
+            toast("Please upload a PDF file only", "error");
+            return;
+          }
+
+          if (file.size === 0) {
+            toast("This file appears to be empty", "error");
+            return;
+          }
+
+          if (typeof window.readFileAsArrayBuffer !== "function" ||
+              typeof window.validatePDFHeader !== "function" ||
+              typeof window.PDFLib === "undefined") {
+            toast("PDF tools failed to load. Please refresh the page.", "error");
+            return;
+          }
+
+          const buffer = await window.readFileAsArrayBuffer(file);
+
+          if (!window.validatePDFHeader(buffer)) {
+            toast("This file appears damaged", "error");
+            return;
+          }
+
+          let pdfDoc = null;
+
+          try {
+            pdfDoc = await window.PDFLib.PDFDocument.load(buffer);
+          } catch (error) {
+            if (isPasswordError(error)) {
+              showUnlockToast();
+              return;
+            }
+
+            toast("This file appears damaged", "error");
+            return;
+          }
+
+          state.file = file;
+          state.arrayBuffer = buffer;
+          state.pageCount = pdfDoc.getPageCount();
+          state.selectedPages.clear();
+
+          if (statName) {
+            statName.textContent = file.name.length > 38 ? file.name.slice(0, 35) + "..." : file.name;
+          }
+
+          if (statPages) {
+            statPages.textContent = String(state.pageCount);
+          }
+
+          if (statSize) {
+            statSize.textContent = formatSize(file.size);
+          }
+
+          if (toolArea) {
+            toolArea.hidden = false;
+          }
+
+          if (uploadZone) {
+            uploadZone.style.display = "none";
+            uploadZone.classList.remove("has-files");
+          }
+
+          updateCounters();
+          await loadPreviewDocument();
+          toast("PDF loaded. Select pages to extract.", "success");
+        } catch (error) {
+          if (isPasswordError(error)) {
+            showUnlockToast();
+            return;
+          }
+
+          toast("This file appears damaged", "error");
+        }
+      }
+
+      async function extractSelectedPages() {
+        try {
+          if (!state.arrayBuffer) {
+            toast("Please upload a PDF first.", "warning");
+            return;
+          }
+
+          if (state.selectedPages.size === 0) {
+            toast("Please select at least one page to extract.", "warning");
+            return;
+          }
+
+          if (typeof window.PDFLib === "undefined") {
+            toast("PDF tools failed to load. Please refresh the page.", "error");
+            return;
+          }
+
+          setBusy(true);
+          clearResult();
+          updateProgress(5, "Reading PDF...");
+
+          const selectedPages = getSelectedPagesInOrder();
+          const source = await window.PDFLib.PDFDocument.load(state.arrayBuffer.slice(0));
+          const output = await window.PDFLib.PDFDocument.create();
+          const indices = selectedPages.map(function (pageNumber) {
+            return pageNumber - 1;
+          });
+
+          updateProgress(35, "Copying selected pages...");
+
+          const copiedPages = await output.copyPages(source, indices);
+          copiedPages.forEach(function (page) {
+            output.addPage(page);
+          });
+
+          updateProgress(75, "Saving extracted PDF...");
+
+          const bytes = await output.save({ useObjectStreams: true });
+
+          state.resultBytes = bytes;
+          state.resultFilename = generateFilename();
+
+          if (resultStats) {
+            resultStats.textContent =
+              selectedPages.length + " page" + (selectedPages.length === 1 ? "" : "s") +
+              " extracted from " + state.pageCount + " total pages. New size: " +
+              formatSize(bytes.byteLength) + ".";
+          }
+
+          if (filenamePreview) {
+            filenamePreview.textContent = state.resultFilename;
+          }
+
+          if (resultBox) {
+            resultBox.hidden = false;
+          }
+
+          updateProgress(100, "Complete");
+          window.setTimeout(hideProgressBar, 450);
+          toast("Pages extracted successfully.", "success");
+        } catch (error) {
+          if (isPasswordError(error)) {
+            showUnlockToast();
+          } else {
+            toast("This file appears damaged", "error");
+          }
+
+          hideProgressBar();
+        } finally {
+          setBusy(false);
+        }
+      }
+
+      function downloadResult() {
+        if (!state.resultBytes || !state.resultFilename) {
+          toast("Extract pages before downloading.", "info");
+          return;
+        }
+
+        const blob = new Blob([state.resultBytes], { type: "application/pdf" });
+        const objectUrl = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+
+        link.href = objectUrl;
+        link.download = state.resultFilename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+
+        window.setTimeout(function () {
+          URL.revokeObjectURL(objectUrl);
+        }, 1000);
+
+        toast("Download started.", "success");
+      }
+
+      async function resetTool() {
+        try {
+          await destroyPreviewDocument();
+          state.file = null;
+          state.arrayBuffer = null;
+          state.pageCount = 0;
+          state.selectedPages.clear();
+          state.resultBytes = null;
+          state.resultFilename = "";
+
+          if (pagesGrid) {
+            pagesGrid.textContent = "";
+          }
+
+          if (rangeInput) {
+            rangeInput.value = "";
+            rangeInput.classList.remove("is-invalid");
+          }
+
+          if (fileInput) {
+            fileInput.value = "";
+          }
+
+          if (uploadZone) {
+            uploadZone.style.display = "";
+            uploadZone.classList.remove("has-files", "dragover");
+            uploadZone.style.transform = "";
+          }
+
+          if (toolArea) {
+            toolArea.hidden = true;
+          }
+
+          clearResult();
+          hideProgressBar();
+          updateCounters();
+          setBusy(false);
+        } catch (error) {
+          toast("The tool could not reset. Please refresh the page.", "error");
+        }
+      }
+
+      function handleFiles(files) {
+        const file = files && files[0] ? files[0] : null;
+        if (file) {
+          void loadPdfFile(file);
+        }
+      }
+
+      function initEvents() {
+        if (!uploadZone || !fileInput) {
+          return;
+        }
+
+        if (typeof window.initDropZone === "function") {
+          window.initDropZone(uploadZone, handleFiles, {
+            inputEl: fileInput,
+            maxFiles: 1,
+            validator: function () {
+              return true;
+            },
+          });
+        }
+
+        if (typeof window.initFileInput === "function") {
+          window.initFileInput(fileInput, handleFiles, {
+            maxFiles: 1,
+            validator: function () {
+              return true;
+            },
+          });
+        }
+
+        uploadZone.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            fileInput.click();
+          }
+        });
+
+        uploadZone.addEventListener("mousemove", function (event) {
+          const rect = uploadZone.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const rotateX = ((y / rect.height) - 0.5) * -5;
+          const rotateY = ((x / rect.width) - 0.5) * 5;
+          uploadZone.style.transform =
+            "perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+        });
+
+        uploadZone.addEventListener("mouseleave", function () {
+          uploadZone.style.transform = "";
+        });
+
+        if (clearFileButton) {
+          clearFileButton.addEventListener("click", function () {
+            void resetTool();
+          });
+        }
+
+        if (applyRangeButton) {
+          applyRangeButton.addEventListener("click", applyRangeSelection);
+        }
+
+        if (clearSelectionButton) {
+          clearSelectionButton.addEventListener("click", deselectAllPages);
+        }
+
+        if (rangeInput) {
+          rangeInput.addEventListener("input", function () {
+            rangeInput.classList.remove("is-invalid");
+          });
+          rangeInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              applyRangeSelection();
+            }
+          });
+        }
+
+        if (selectAllButton) {
+          selectAllButton.addEventListener("click", selectAllPages);
+        }
+
+        if (deselectAllButton) {
+          deselectAllButton.addEventListener("click", deselectAllPages);
+        }
+
+        if (extractPagesButton) {
+          extractPagesButton.addEventListener("click", function () {
+            void extractSelectedPages();
+          });
+        }
+
+        if (downloadButton) {
+          downloadButton.addEventListener("click", downloadResult);
+        }
+
+        if (resetButton) {
+          resetButton.addEventListener("click", function () {
+            void resetTool();
+          });
+        }
+      }
+
+      initEvents();
+      updateCounters();
+    })();
+  </script>
+
+  <!-- SEO Word Count: ~1500 words -->
+
+
+</body></html>

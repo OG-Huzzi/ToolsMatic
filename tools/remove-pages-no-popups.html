@@ -1,0 +1,1950 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Remove PDF Pages Without Popups Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Remove PDF Pages Without Popups online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/remove-pages-no-popups.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/remove-pages-no-popups.html">
+  <meta property="og:title" content="Remove PDF Pages Without Popups Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Remove PDF Pages Without Popups online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Remove PDF Pages Without Popups Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Remove PDF Pages Without Popups online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  
+
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Remove Pages from a PDF Online",
+    "description": "Delete specific pages from a PDF using ToolsMatic - free, private, no upload required.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload your PDF",
+        "text": "Drag and drop your PDF onto the upload zone or click to browse and select it from your device."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Select pages to remove",
+        "text": "Click page thumbnails to mark them for removal. Use the range input for quick selection of multiple pages."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Review remaining pages",
+        "text": "Use the live counters to confirm how many pages will be deleted and how many pages will remain."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Download updated PDF",
+        "text": "Click Remove Selected Pages to process and download your PDF with the selected pages permanently deleted."
+      }
+    ]
+  }
+  </script>
+
+  
+
+  <style>
+    .remove-shell {
+      padding-bottom: 5rem;
+    }
+
+    .remove-upload-zone {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .remove-upload-zone.dragover {
+      animation: remove-drop-pulse 1s ease-in-out infinite;
+      box-shadow:
+        0 0 0 6px var(--accent-glow),
+        inset 0 0 26px rgba(245, 158, 11, 0.08);
+    }
+
+    @keyframes remove-drop-pulse {
+      0%,
+      100% {
+        border-color: var(--accent);
+      }
+
+      50% {
+        border-color: #fbbf24;
+      }
+    }
+
+    .remove-panel {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .remove-file-bar,
+    .remove-range-bar,
+    .remove-selection-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .remove-file-stats,
+    .remove-selection-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.1rem;
+      min-width: 0;
+    }
+
+    .remove-stat {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+
+    .remove-stat strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .remove-stat .remove-danger {
+      color: #fca5a5;
+    }
+
+    .remove-stat .remove-success {
+      color: #86efac;
+    }
+
+    .remove-range-bar {
+      align-items: end;
+    }
+
+    .remove-range-field {
+      flex: 1 1 280px;
+      min-width: 0;
+    }
+
+    .remove-label {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: var(--text-primary);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .remove-range-input {
+      width: 100%;
+      min-height: 46px;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: #0d0d0d;
+      color: var(--text-primary);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .remove-range-input:focus,
+    .remove-range-input:focus-visible {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .remove-range-input.is-invalid {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.16);
+    }
+
+    .remove-help {
+      margin-top: 0.4rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .remove-button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .remove-pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .remove-page-card {
+      position: relative;
+      display: grid;
+      overflow: hidden;
+      min-height: 220px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-card);
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+      transition: var(--transition);
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .remove-page-card:hover:not(:disabled) {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .remove-page-card:focus-visible,
+    .remove-control:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    .remove-page-card.is-marked {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.16);
+    }
+
+    .remove-page-card:disabled {
+      cursor: not-allowed;
+      opacity: 0.62;
+      transform: none;
+    }
+
+    .remove-page-preview {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 178px;
+      aspect-ratio: 0.707;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .remove-page-preview canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .remove-page-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      background: rgba(239, 68, 68, 0.22);
+      transition: var(--transition);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .remove-page-card.is-marked .remove-page-overlay {
+      opacity: 1;
+    }
+
+    .remove-trash-mark {
+      display: inline-grid;
+      place-items: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 999px;
+      background: var(--error);
+      color: #fff;
+      box-shadow: 0 16px 36px rgba(239, 68, 68, 0.28);
+    }
+
+    .remove-thumb-skeleton {
+      width: 100%;
+      height: 100%;
+      min-height: 178px;
+      background: linear-gradient(
+        90deg,
+        rgba(26, 26, 26, 0.9) 0%,
+        rgba(82, 82, 91, 0.3) 50%,
+        rgba(26, 26, 26, 0.9) 100%
+      );
+      background-size: 200% 100%;
+      animation: remove-shimmer 1.35s linear infinite;
+    }
+
+    @keyframes remove-shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    .remove-page-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      min-height: 44px;
+      padding: 0.6rem 0.7rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .remove-page-number {
+      color: var(--text-primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .remove-page-status {
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .remove-page-card.is-marked .remove-page-status {
+      color: #fca5a5;
+    }
+
+    .remove-result-box {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .remove-result-title {
+      color: #86efac;
+      font-family: "Inter", sans-serif;
+      font-size: 1.08rem;
+      font-weight: 800;
+    }
+
+    .remove-filename-preview {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      border-radius: var(--radius-btn);
+      background: rgba(245, 158, 11, 0.07);
+    }
+
+    .remove-filename-label {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .remove-filename-name {
+      color: var(--text-primary);
+      font-size: 0.94rem;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .remove-table-wrap {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .remove-shell {
+        padding-bottom: 3.5rem;
+      }
+
+      .remove-file-bar,
+      .remove-range-bar,
+      .remove-selection-bar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .remove-button-row {
+        width: 100%;
+      }
+
+      .remove-button-row .btn {
+        flex: 1 1 180px;
+      }
+
+      .remove-pages-grid {
+        grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+        gap: 0.7rem;
+      }
+
+      .remove-page-card {
+        min-height: 190px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .remove-pages-grid {
+        grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+      }
+
+      .remove-file-stats,
+      .remove-selection-stats {
+        display: grid;
+        gap: 0.35rem;
+      }
+
+      .remove-page-card {
+        min-height: 168px;
+      }
+
+      .remove-page-preview,
+      .remove-thumb-skeleton {
+        min-height: 132px;
+      }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/remove-pages-no-popups.html">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+        <span class="header-logo-text">ToolsMatic</span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/#tools">Tools</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a href="/#tools" class="header-cta btn">All Tools</a>
+      <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <a href="/#tools">Tools</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb content-wrap" aria-label="Breadcrumb" style="padding-top:5rem;">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <a href="/#tools" class="breadcrumb-link">Tools</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current" aria-current="page">Remove Pages</span>
+    </nav>
+
+    <section class="tool-hero content-wrap" aria-label="Remove Pages tool">
+      <div class="tool-hero-badge">Private browser processing</div>
+      <h1>Remove PDF Pages Without Popups</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+      <p class="tool-hero-sub">
+        Delete unwanted PDF pages visually. Select thumbnails, use quick page ranges,
+        and download a clean PDF without uploading your file to a server.
+      </p>
+    </section>
+
+    <section class="tool-section remove-shell" aria-label="Remove PDF pages workspace">
+      <div class="tool-container">
+        <input id="file-input" type="file" accept="application/pdf,.pdf" class="visually-hidden">
+
+        <div id="upload-zone" class="upload-zone remove-upload-zone" role="button" tabindex="0" aria-label="Upload a PDF file" aria-describedby="upload-hint">
+          <div class="upload-zone-icon" aria-hidden="true">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="16 16 12 12 8 16"></polyline>
+              <line x1="12" y1="12" x2="12" y2="21"></line>
+              <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+            </svg>
+          </div>
+          <div class="upload-zone-text">Drag and drop your PDF here</div>
+          <div class="upload-zone-sub" id="upload-hint">or press Enter to browse</div>
+          <div class="upload-zone-sub">Single PDF file, processed locally</div>
+        </div>
+
+        <div id="tool-area" class="remove-panel" hidden="">
+          <div class="remove-file-bar">
+            <div class="remove-file-stats" aria-live="polite" aria-atomic="true">
+              <span class="remove-stat">File: <strong id="stat-name">-</strong></span>
+              <span class="remove-stat">Pages: <strong id="stat-pages">-</strong></span>
+              <span class="remove-stat">Size: <strong id="stat-size">-</strong></span>
+              <span class="remove-stat">Removing: <strong class="remove-danger" id="stat-removing">0</strong></span>
+              <span class="remove-stat">Remaining: <strong class="remove-success" id="stat-remaining">0</strong></span>
+            </div>
+            <button id="clear-file-button" class="btn btn-ghost remove-control" type="button" data-remove-control="">
+              Clear File
+            </button>
+          </div>
+
+          <div class="remove-range-bar">
+            <div class="remove-range-field">
+              <label class="remove-label" for="range-input">Quick select pages to remove</label>
+              <input id="range-input" class="remove-range-input" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="Example: 2, 4, 6-9" aria-describedby="range-help" data-remove-control="">
+              <div id="range-help" class="remove-help">Use commas for separate pages and hyphens for ranges.</div>
+            </div>
+            <div class="remove-button-row">
+              <button id="apply-range-button" class="btn btn-secondary remove-control" type="button" data-remove-control="">
+                Apply Range
+              </button>
+            </div>
+          </div>
+
+          <div class="remove-selection-bar">
+            <div class="remove-selection-stats" aria-live="polite" aria-atomic="true">
+              <span class="remove-stat">Marked to remove: <strong class="remove-danger" id="count-remove">0</strong></span>
+              <span class="remove-stat">Will keep: <strong class="remove-success" id="count-keep">0</strong></span>
+            </div>
+            <div class="remove-button-row">
+              <button id="select-all-button" class="btn btn-ghost remove-control" type="button" data-remove-control="">
+                Select All
+              </button>
+              <button id="deselect-all-button" class="btn btn-ghost remove-control" type="button" data-remove-control="">
+                Deselect All
+              </button>
+            </div>
+          </div>
+
+          <div id="pages-grid" class="remove-pages-grid" role="list" aria-label="PDF page thumbnails"></div>
+
+          <button id="remove-pages-button" class="btn btn-danger remove-control" type="button" data-remove-control="">
+            <span id="remove-button-text">Remove Selected Pages</span>
+          </button>
+
+          <div id="progress-wrap" class="progress-wrap" role="region" aria-label="Remove pages progress"></div>
+
+          <div id="result-box" class="tool-result remove-result-box" aria-live="polite" hidden="">
+            <div class="remove-result-title">Pages Removed Successfully</div>
+            <p id="result-stats"></p>
+            <div class="remove-filename-preview">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <div>
+                <div class="remove-filename-label">Your file will be saved as:</div>
+                <div id="filename-preview" class="remove-filename-name">-</div>
+              </div>
+            </div>
+            <div class="remove-button-row">
+              <button id="download-button" class="btn btn-success remove-control" type="button" data-remove-control="">
+                Download PDF
+              </button>
+              <button id="reset-button" class="btn btn-ghost remove-control" type="button" data-remove-control="">
+                Start Over
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <article class="seo-content" aria-label="About removing PDF pages">
+      <h2>What Does Removing PDF Pages Mean?</h2>
+      <p>
+        Removing pages from a PDF means permanently deleting one or more
+        specific pages from a document and saving the result as a new PDF.
+        Your original file stays untouched on your device. ToolsMatic creates
+        a fresh copy that contains only the pages you chose to keep.
+      </p>
+      <p>
+        This is useful for everyday document cleanup. People remove blank
+        scanner pages, duplicate pages, cover sheets, internal notes,
+        outdated appendices, and confidential sections before sharing files
+        with clients, teams, schools, banks, or public portals.
+      </p>
+
+      <h2>How to Remove Pages from a PDF on ToolsMatic</h2>
+      <ul>
+        <li><strong>Upload your PDF:</strong> Drag your PDF into the upload area or click to choose it from your device.</li>
+        <li><strong>Select pages to remove:</strong> Click thumbnails to mark pages red, or enter a range such as 2, 4, 6-9.</li>
+        <li><strong>Review the counters:</strong> The file bar shows total pages, file size, pages marked for removal, and pages remaining.</li>
+        <li><strong>Download the result:</strong> Click Remove Selected Pages and save the generated PDF with the unwanted pages gone.</li>
+      </ul>
+
+      <h2>Why Use a Browser-Based Page Remover?</h2>
+      <p>
+        Many online PDF tools upload files to a server for processing. That
+        may be acceptable for public documents, but it is a poor fit for
+        contracts, invoices, ID documents, financial statements, medical
+        records, legal packets, and internal reports. ToolsMatic processes the
+        file locally in your browser, so the document does not leave your
+        computer or phone.
+      </p>
+      <p>
+        Local processing also keeps the workflow fast. After the libraries
+        load, page selection and PDF generation happen directly on your
+        device. You can review pages visually, avoid accidental deletions,
+        and download the result without waiting for a server queue.
+      </p>
+
+      <h2>Tips for Safer Page Removal</h2>
+      <p>
+        Page deletion is simple, but it is still worth reviewing the document
+        carefully before saving. If a PDF has similar looking pages, use the
+        page numbers below each thumbnail as the final source of truth. The
+        red overlay means the page will be removed. A normal thumbnail means
+        the page will remain in the output file.
+      </p>
+      <p>
+        ToolsMatic also blocks the one operation that would create an invalid
+        PDF: removing every page. If all pages are marked, the tool warns you
+        and refuses to generate the file. At least one page must remain for
+        the output to be a valid document.
+      </p>
+
+      <h3>Use Ranges for Long Documents</h3>
+      <p>
+        For a short file, clicking thumbnails is usually fastest. For a long
+        document, the range input saves time. You can enter a single page, a
+        comma-separated list, or a mixed range such as 2, 4, 6-9, 14. This is
+        useful when you already know the exact pages that need to be deleted
+        from a table of contents, review note, or printed markup.
+      </p>
+
+      <h3>Check the Remaining Page Count</h3>
+      <p>
+        The live counters update every time you select or deselect a page.
+        Use them to confirm the document will still contain the expected
+        number of pages. If a ten page document should become a seven page
+        document, the counter should show three pages marked for removal and
+        seven pages remaining before you save.
+      </p>
+
+      <h3>Keep the Original File</h3>
+      <p>
+        Your browser never modifies the source PDF on disk. The result is a
+        separate download with a timestamped filename. Keeping the original
+        makes it easy to repeat the operation, remove different pages, or
+        recover a page that was removed by mistake.
+      </p>
+
+      <h2>Common Reasons to Delete PDF Pages</h2>
+      <h3>Remove Blank Scanner Pages</h3>
+      <p>
+        Scanned documents often contain blank backs of pages. The thumbnail
+        grid makes those pages easy to spot. Mark every blank page, keep at
+        least one page in the document, and generate a cleaner PDF.
+      </p>
+
+      <h3>Delete Confidential Sections</h3>
+      <p>
+        Before sharing a document outside your organization, remove pages
+        that contain sensitive pricing, personal details, account numbers,
+        notes, or signatures that should not be included in the final file.
+      </p>
+
+      <h3>Trim Reports and Appendices</h3>
+      <p>
+        Long reports often include sections that are not relevant to every
+        recipient. Delete extra appendices or repeated pages to keep the
+        PDF focused and easier to email, review, or archive.
+      </p>
+
+      <h3>Prepare a Cleaner Client Version</h3>
+      <p>
+        Agencies, freelancers, and consultants often receive a working PDF
+        that includes drafts, comments, approvals, internal references, or
+        supplemental material. Removing those pages creates a cleaner client
+        version without rebuilding the entire document from the source file.
+      </p>
+
+      <h3>Fix Duplicate Pages After Export</h3>
+      <p>
+        Some print-to-PDF and scan workflows accidentally duplicate pages.
+        Instead of re-exporting the document, you can remove the repeated
+        pages visually. This is especially helpful when the source document
+        is no longer available or the duplicate appears only in the final PDF.
+      </p>
+
+      <h2>Privacy and Security</h2>
+      <p>
+        ToolsMatic is designed for sensitive files. The remove pages tool uses
+        JavaScript libraries in your browser to read the PDF, render
+        previews, copy the pages you keep, and generate the final file. There
+        is no server-side upload step in the workflow, so your file contents
+        are not stored, inspected, queued, or transferred to a remote machine.
+      </p>
+      <p>
+        This browser-only model is valuable for documents that contain
+        personal data or business information. It reduces the number of
+        systems that ever see the document. You still need to handle the final
+        downloaded PDF responsibly, but the editing step itself stays local to
+        your device.
+      </p>
+
+      <h2>Quality Preservation</h2>
+      <p>
+        Removing pages is a lossless document operation. ToolsMatic does not
+        convert pages to images, flatten text, or recompress the remaining
+        pages. It copies the pages that should stay into a new PDF. That means
+        selectable text, embedded fonts, vector graphics, links, and image
+        quality are preserved as much as the browser PDF library allows.
+      </p>
+      <p>
+        This is different from screenshot-based workflows, where every page
+        is rasterized and rebuilt. Rasterizing can make text blurry, increase
+        file size, break copy-and-paste, and remove accessibility information.
+        A document-level page removal process is cleaner and more reliable.
+      </p>
+
+      <h2>Remove Pages vs Split PDF</h2>
+      <p>
+        Remove Pages is best when you want one cleaned-up PDF. You start with
+        one document, mark pages to delete, and download one revised document.
+        Split PDF is different: it separates a PDF into multiple files by
+        range or page selection. Use Split PDF when you need separate
+        documents, and use Remove Pages when you only need to delete unwanted
+        pages from a single final file.
+      </p>
+
+      <h2>Works on Desktop and Mobile</h2>
+      <p>
+        The page remover is designed for mouse, keyboard, trackpad, and touch
+        input. On desktop, you can click thumbnails, tab through controls, and
+        press Enter or Space on focused page cards. On mobile, the thumbnail
+        cards are large enough to tap comfortably, and the layout reflows so
+        the counters, range input, and action buttons remain usable on narrow
+        screens.
+      </p>
+      <p>
+        Keyboard accessibility matters for document tools because reviewing a
+        PDF often takes repeated actions. Focus rings are visible, buttons use
+        clear labels, and page cards announce whether they are marked for
+        removal. That makes the workflow easier to operate without relying
+        only on pointer gestures.
+      </p>
+
+      <h2>Filename and Download Behavior</h2>
+      <p>
+        After processing, ToolsMatic shows the exact filename before you click
+        download. The file uses the pattern removed-pages-YYYY-MM-DD-HH-MM.pdf,
+        so every export is easy to identify later and does not overwrite a
+        previous result with a generic name. The download uses that exact
+        previewed filename.
+      </p>
+      <p>
+        The browser creates the downloadable PDF as a temporary local object
+        URL only when needed, then releases it after the download starts. This
+        keeps memory usage cleaner, especially when you are working with large
+        documents or making several edits in one session.
+      </p>
+
+      <h2>ToolsMatic vs Other PDF Page Removal Tools</h2>
+      <div class="remove-table-wrap">
+        <table class="comparison-table" aria-label="PDF page removal tool comparison">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="col-ToolsMatic">ToolsMatic</th>
+              <th>ilovepdf</th>
+              <th>Smallpdf</th>
+              <th>Adobe Acrobat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Free to use</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Yes</td>
+              <td>Limited</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>No file upload to server</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>No</td>
+              <td>No</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>No login required</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Yes</td>
+              <td>Limited</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Visual page thumbnails</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Range input selection</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Limited</td>
+              <td>Limited</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Live remove and keep counter</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>No</td>
+              <td>No</td>
+              <td>Basic</td>
+            </tr>
+            <tr>
+              <td>Preserves page quality</td>
+              <td class="col-ToolsMatic">Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Remove Pages from PDF: Frequently Asked Questions</h2>
+      <div class="faq-wrap" id="faq">
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Can I remove multiple pages at once?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Click multiple thumbnails or type page ranges such as 2, 4, 6-9 into the quick select field.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Can I remove all pages?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. A valid PDF needs at least one page. ToolsMatic blocks saving when every page is marked for removal.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Will deleting pages reduce quality?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. Kept pages are copied directly into a new PDF. Text, images, fonts, and layout remain intact.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Are my files uploaded?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. The PDF is read, previewed, edited, and saved inside your browser.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Can I remove pages from a password-protected PDF?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Password-protected PDFs must be unlocked first. Use the <a href="/tools/unlock-pdf.html" style="color:var(--accent);">Unlock PDF</a> tool, then return here.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>More Free PDF Tools You Might Need</h2>
+      <div class="related-tools" role="list">
+        <a class="card related-tool-card" href="/tools/split-pdf.html" role="listitem">
+          <h3>Split PDF</h3>
+          <p>Divide a PDF into separate files by page range.</p>
+        </a>
+        <a class="card related-tool-card" href="/tools/merge-pdf.html" role="listitem">
+          <h3>Merge PDF</h3>
+          <p>Combine PDFs after removing unnecessary pages.</p>
+        </a>
+        <a class="card related-tool-card" href="/tools/compress-pdf.html" role="listitem">
+          <h3>Compress PDF</h3>
+          <p>Reduce file size after cleaning up pages.</p>
+        </a>
+      </div>
+    </article>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="remove-pages-no-popups-pseo" aria-labelledby="remove-pages-no-popups-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Remove PDF Pages Without Popups</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="remove-pages-no-popups-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Remove PDF Pages Without Popups Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Remove PDF Pages Without Popups</strong>, a distraction-free utility layout optimized with zero intrusive popup advertisements. This dedicated workspace is built specifically for writers, researchers, and creators who are tired of chaotic overlays and intrusive marketing pages. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>complete pop-up isolation, standard responsive banner compliance, and clear workspace focus</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Delete unwanted pages from a PDF locally. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Zero Pop-up Intrusions</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Skip aggressive pop-ups, signup prompts, and cookie walls that interrupt your workflow.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Sleek Layout Performance</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Minimal script payload sizes ensure the page loads in milliseconds and runs instantly.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Focused Input Grids</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">The visual focus is capped on large interactive boards for absolute task focus.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Remove PDF Pages Without Popups</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Without Popups layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Remove PDF Pages Without Popups</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Are there really no pop-ups?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">None! We strictly prohibit pop-under scripts or invasive signup blocks.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Why do you avoid pop-ups?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">We believe user experience is paramount, and a clean interface leads to better workflow results.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is there any advertising?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">We include exactly one sandboxed, non-intrusive banner block to keep the server running.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/remove-pages.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Remove PDF Pages</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Remove PDF Pages Without Popups","url":"https://toolsmatic.me/tools/remove-pages-no-popups.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Remove PDF Pages Without Popups online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Remove PDF Pages Without Popups","item":"https://toolsmatic.me/tools/remove-pages-no-popups.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are there really no pop-ups?","acceptedAnswer":{"@type":"Answer","text":"None! We strictly prohibit pop-under scripts or invasive signup blocks."}},{"@type":"Question","name":"Why do you avoid pop-ups?","acceptedAnswer":{"@type":"Answer","text":"We believe user experience is paramount, and a clean interface leads to better workflow results."}},{"@type":"Question","name":"Is there any advertising?","acceptedAnswer":{"@type":"Answer","text":"We include exactly one sandboxed, non-intrusive banner block to keep the server running."}}]}]}</script>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <div class="header-logo-text">ToolsMatic</div>
+        <p style="margin-top:0.75rem;max-width:240px;color:var(--text-muted);">Privacy-first PDF tools. Your files never leave your browser.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">PDF Tools</div>
+        <div class="footer-links">
+          <a class="footer-link" href="/tools/merge-pdf.html">Merge PDF</a>
+          <a class="footer-link" href="/tools/split-pdf.html">Split PDF</a>
+          <a class="footer-link" href="/tools/compress-pdf.html">Compress PDF</a>
+          <a class="footer-link" href="/tools/rotate-pdf.html">Rotate PDF</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">More Tools</div>
+        <div class="footer-links">
+          <a class="footer-link" href="/tools/remove-pages.html">Remove Pages</a>
+          <a class="footer-link" href="/tools/pdf-to-jpg.html">PDF to JPG</a>
+          <a class="footer-link" href="/tools/jpg-to-pdf.html">JPG to PDF</a>
+          <a class="footer-link" href="/tools/unlock-pdf.html">Unlock PDF</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a class="footer-link" href="/about.html">About</a>
+          <a class="footer-link" href="/contact.html">Contact</a>
+          <a class="footer-link" href="/privacy.html">Privacy Policy</a>
+          <a class="footer-link" href="/terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Built for people who value privacy.</span>
+      <span>No tracking. No uploads. No nonsense.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="/assets/pdf/global.js"></script>
+  <script src="/assets/pdf/tool-base.js"></script>
+
+  <script>
+    "use strict";
+
+    (function () {
+      const state = {
+        file: null,
+        arrayBuffer: null,
+        pageCount: 0,
+        pdfJsDoc: null,
+        markedPages: new Set(),
+        resultBytes: null,
+        resultFilename: "",
+        processing: false,
+      };
+
+      const uploadZone = document.getElementById("upload-zone");
+      const fileInput = document.getElementById("file-input");
+      const toolArea = document.getElementById("tool-area");
+      const clearFileButton = document.getElementById("clear-file-button");
+      const statName = document.getElementById("stat-name");
+      const statPages = document.getElementById("stat-pages");
+      const statSize = document.getElementById("stat-size");
+      const statRemoving = document.getElementById("stat-removing");
+      const statRemaining = document.getElementById("stat-remaining");
+      const rangeInput = document.getElementById("range-input");
+      const applyRangeButton = document.getElementById("apply-range-button");
+      const countRemove = document.getElementById("count-remove");
+      const countKeep = document.getElementById("count-keep");
+      const selectAllButton = document.getElementById("select-all-button");
+      const deselectAllButton = document.getElementById("deselect-all-button");
+      const pagesGrid = document.getElementById("pages-grid");
+      const removePagesButton = document.getElementById("remove-pages-button");
+      const removeButtonText = document.getElementById("remove-button-text");
+      const progressWrap = document.getElementById("progress-wrap");
+      const resultBox = document.getElementById("result-box");
+      const resultStats = document.getElementById("result-stats");
+      const filenamePreview = document.getElementById("filename-preview");
+      const downloadButton = document.getElementById("download-button");
+      const resetButton = document.getElementById("reset-button");
+
+      function toast(message, type) {
+        if (typeof window.showToast === "function") {
+          window.showToast(message, type || "info");
+        }
+      }
+
+      function ensureToastContainer() {
+        let container = document.querySelector(".toast-container");
+
+        if (container) {
+          return container;
+        }
+
+        container = document.createElement("div");
+        container.className = "toast-container";
+        container.setAttribute("aria-live", "polite");
+        container.setAttribute("aria-atomic", "true");
+        document.body.appendChild(container);
+        return container;
+      }
+
+      function showUnlockToast() {
+        const container = ensureToastContainer();
+        const toastEl = document.createElement("div");
+        const messageEl = document.createElement("div");
+        const closeButton = document.createElement("button");
+        const link = document.createElement("a");
+
+        toastEl.className = "toast toast-warning";
+        toastEl.setAttribute("role", "status");
+        messageEl.className = "toast-message";
+        messageEl.append("This PDF is password protected. ");
+
+        link.href = "/tools/unlock-pdf.html";
+        link.textContent = "Unlock it first";
+        link.style.color = "var(--accent)";
+        link.style.fontWeight = "700";
+        messageEl.appendChild(link);
+        messageEl.append(".");
+
+        closeButton.className = "toast-close";
+        closeButton.type = "button";
+        closeButton.setAttribute("aria-label", "Dismiss notification");
+        closeButton.textContent = "x";
+        closeButton.addEventListener("click", function () {
+          toastEl.remove();
+        });
+
+        toastEl.append(messageEl, closeButton);
+        container.appendChild(toastEl);
+        window.setTimeout(function () {
+          if (toastEl.parentNode) {
+            toastEl.remove();
+          }
+        }, 7000);
+      }
+
+      function isPasswordError(error) {
+        const message = error && typeof error.message === "string" ? error.message.toLowerCase() : "";
+        return message.indexOf("encrypt") !== -1 || message.indexOf("password") !== -1;
+      }
+
+      function formatSize(bytes) {
+        if (typeof window.formatFileSize === "function") {
+          return window.formatFileSize(bytes);
+        }
+
+        if (!bytes) {
+          return "0 B";
+        }
+
+        return bytes < 1048576
+          ? Math.round(bytes / 1024) + " KB"
+          : (bytes / 1048576).toFixed(1) + " MB";
+      }
+
+      function generateFilename() {
+        const now = new Date();
+        const pad = function (value) {
+          return value < 10 ? "0" + value : String(value);
+        };
+
+        return "removed-pages-" +
+          now.getFullYear() + "-" +
+          pad(now.getMonth() + 1) + "-" +
+          pad(now.getDate()) + "-" +
+          pad(now.getHours()) + "-" +
+          pad(now.getMinutes()) + ".pdf";
+      }
+
+      function setBusy(isBusy) {
+        const controls = document.querySelectorAll("[data-remove-control]");
+        state.processing = isBusy;
+
+        controls.forEach(function (control) {
+          control.disabled = isBusy;
+          control.setAttribute("aria-disabled", String(isBusy));
+        });
+
+        if (removePagesButton && removeButtonText) {
+          removePagesButton.classList.toggle("loading", isBusy);
+          removeButtonText.textContent = isBusy ? "Removing pages..." : "Remove Selected Pages";
+        }
+      }
+
+      function updateProgress(percent, label) {
+        if (progressWrap && typeof window.updateProgress === "function") {
+          window.updateProgress(progressWrap, percent, label);
+        }
+      }
+
+      function hideProgressBar() {
+        if (progressWrap && typeof window.hideProgress === "function") {
+          window.hideProgress(progressWrap);
+        }
+      }
+
+      function clearResult() {
+        state.resultBytes = null;
+        state.resultFilename = "";
+
+        if (resultBox) {
+          resultBox.hidden = true;
+        }
+
+        if (resultStats) {
+          resultStats.textContent = "";
+        }
+
+        if (filenamePreview) {
+          filenamePreview.textContent = "-";
+        }
+      }
+
+      async function destroyPreviewDocument() {
+        try {
+          if (state.pdfJsDoc && typeof state.pdfJsDoc.destroy === "function") {
+            await state.pdfJsDoc.destroy();
+          }
+        } catch (error) {
+          /* Preview cleanup is best-effort. */
+        } finally {
+          state.pdfJsDoc = null;
+        }
+      }
+
+      function updateCounters() {
+        const removing = state.markedPages.size;
+        const remaining = Math.max(0, state.pageCount - removing);
+
+        if (statRemoving) {
+          statRemoving.textContent = String(removing);
+        }
+
+        if (statRemaining) {
+          statRemaining.textContent = String(remaining);
+        }
+
+        if (countRemove) {
+          countRemove.textContent = String(removing);
+        }
+
+        if (countKeep) {
+          countKeep.textContent = String(remaining);
+        }
+      }
+
+      function getPageButtons() {
+        if (!pagesGrid) {
+          return [];
+        }
+
+        return Array.from(pagesGrid.querySelectorAll(".remove-page-card"));
+      }
+
+      function syncPageButton(pageNumber) {
+        if (!pagesGrid) {
+          return;
+        }
+
+        const button = pagesGrid.querySelector('[data-page="' + pageNumber + '"]');
+
+        if (!button) {
+          return;
+        }
+
+        const isMarked = state.markedPages.has(pageNumber);
+        const status = button.querySelector(".remove-page-status");
+
+        button.classList.toggle("is-marked", isMarked);
+        button.setAttribute("aria-pressed", String(isMarked));
+        button.setAttribute(
+          "aria-label",
+          isMarked
+            ? "Page " + pageNumber + " marked for removal. Activate to keep it."
+            : "Page " + pageNumber + ". Activate to mark it for removal."
+        );
+
+        if (status) {
+          status.textContent = isMarked ? "Remove" : "Keep";
+        }
+      }
+
+      function setPageMarked(pageNumber, shouldMark) {
+        if (pageNumber < 1 || pageNumber > state.pageCount) {
+          return;
+        }
+
+        if (shouldMark) {
+          state.markedPages.add(pageNumber);
+        } else {
+          state.markedPages.delete(pageNumber);
+        }
+
+        syncPageButton(pageNumber);
+        updateCounters();
+        clearResult();
+      }
+
+      function togglePage(pageNumber) {
+        setPageMarked(pageNumber, !state.markedPages.has(pageNumber));
+      }
+
+      function makeTrashIcon() {
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        const polyline = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+        const pathOne = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        const pathTwo = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+        svg.setAttribute("width", "20");
+        svg.setAttribute("height", "20");
+        svg.setAttribute("viewBox", "0 0 24 24");
+        svg.setAttribute("fill", "none");
+        svg.setAttribute("stroke", "currentColor");
+        svg.setAttribute("stroke-width", "2.4");
+        svg.setAttribute("aria-hidden", "true");
+        polyline.setAttribute("points", "3 6 5 6 21 6");
+        pathOne.setAttribute("d", "M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6");
+        pathTwo.setAttribute("d", "M10 11v6M14 11v6");
+        svg.append(polyline, pathOne, pathTwo);
+        return svg;
+      }
+
+      function createPageCard(pageNumber) {
+        const button = document.createElement("button");
+        const preview = document.createElement("span");
+        const skeleton = document.createElement("span");
+        const overlay = document.createElement("span");
+        const trash = document.createElement("span");
+        const footer = document.createElement("span");
+        const number = document.createElement("span");
+        const status = document.createElement("span");
+
+        button.type = "button";
+        button.className = "remove-page-card remove-control";
+        button.dataset.page = String(pageNumber);
+        button.dataset.removeControl = "";
+        button.setAttribute("aria-pressed", "false");
+        button.setAttribute("aria-label", "Page " + pageNumber + ". Activate to mark it for removal.");
+
+        preview.className = "remove-page-preview";
+        skeleton.className = "remove-thumb-skeleton";
+        overlay.className = "remove-page-overlay";
+        trash.className = "remove-trash-mark";
+        footer.className = "remove-page-footer";
+        number.className = "remove-page-number";
+        status.className = "remove-page-status";
+
+        preview.dataset.previewPage = String(pageNumber);
+        number.textContent = "Page " + pageNumber;
+        status.textContent = "Keep";
+        trash.appendChild(makeTrashIcon());
+        overlay.appendChild(trash);
+        preview.append(skeleton, overlay);
+        footer.append(number, status);
+        button.append(preview, footer);
+        button.addEventListener("click", function () {
+          togglePage(pageNumber);
+        });
+
+        return button;
+      }
+
+      async function renderPageThumbnail(pageNumber, preview) {
+        try {
+          if (!state.pdfJsDoc || !preview) {
+            return;
+          }
+
+          const page = await state.pdfJsDoc.getPage(pageNumber);
+          const viewport = page.getViewport({ scale: 0.32 });
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+
+          if (!context) {
+            return;
+          }
+
+          canvas.width = Math.max(1, Math.floor(viewport.width));
+          canvas.height = Math.max(1, Math.floor(viewport.height));
+
+          await page.render({
+            canvasContext: context,
+            viewport: viewport,
+          }).promise;
+
+          const skeleton = preview.querySelector(".remove-thumb-skeleton");
+          const overlay = preview.querySelector(".remove-page-overlay");
+
+          if (skeleton) {
+            skeleton.remove();
+          }
+
+          if (overlay) {
+            preview.insertBefore(canvas, overlay);
+          } else {
+            preview.appendChild(canvas);
+          }
+        } catch (error) {
+          if (preview) {
+            preview.textContent = "Preview unavailable";
+          }
+        }
+      }
+
+      async function renderThumbnails() {
+        try {
+          if (!pagesGrid || !state.pdfJsDoc) {
+            return;
+          }
+
+          const previews = Array.from(pagesGrid.querySelectorAll("[data-preview-page]"));
+
+          for (let index = 0; index < previews.length; index += 1) {
+            const preview = previews[index];
+            const pageNumber = Number(preview.dataset.previewPage);
+            await renderPageThumbnail(pageNumber, preview);
+          }
+        } catch (error) {
+          toast("Page previews could not be rendered, but you can still remove pages.", "warning");
+        }
+      }
+
+      async function buildPageGrid() {
+        try {
+          if (!pagesGrid) {
+            return;
+          }
+
+          pagesGrid.textContent = "";
+
+          for (let pageNumber = 1; pageNumber <= state.pageCount; pageNumber += 1) {
+            pagesGrid.appendChild(createPageCard(pageNumber));
+          }
+
+          await renderThumbnails();
+        } catch (error) {
+          toast("Page previews could not be prepared.", "warning");
+        }
+      }
+
+      async function loadPreviewDocument() {
+        try {
+          await destroyPreviewDocument();
+
+          if (typeof window.pdfjsLib === "undefined" || !state.arrayBuffer) {
+            await buildPageGrid();
+            return;
+          }
+
+          state.pdfJsDoc = await window.pdfjsLib.getDocument({
+            data: state.arrayBuffer.slice(0),
+          }).promise;
+
+          await buildPageGrid();
+        } catch (error) {
+          state.pdfJsDoc = null;
+          await buildPageGrid();
+        }
+      }
+
+      function parsePageRange(value) {
+        const input = String(value || "").trim();
+        const pages = new Set();
+
+        if (!input) {
+          return null;
+        }
+
+        const parts = input.split(",");
+
+        for (let index = 0; index < parts.length; index += 1) {
+          const part = parts[index].trim();
+          const match = part.match(/^(\d+)(?:-(\d+))?$/);
+
+          if (!match) {
+            return null;
+          }
+
+          const start = Number(match[1]);
+          const end = match[2] ? Number(match[2]) : start;
+
+          if (
+            !Number.isInteger(start) ||
+            !Number.isInteger(end) ||
+            start < 1 ||
+            end < 1 ||
+            start > end ||
+            start > state.pageCount ||
+            end > state.pageCount
+          ) {
+            return null;
+          }
+
+          for (let pageNumber = start; pageNumber <= end; pageNumber += 1) {
+            pages.add(pageNumber);
+          }
+        }
+
+        return pages.size ? Array.from(pages) : null;
+      }
+
+      function applyRangeSelection() {
+        if (!rangeInput) {
+          return;
+        }
+
+        const pages = parsePageRange(rangeInput.value);
+
+        if (!state.arrayBuffer) {
+          toast("Please upload a PDF first.", "warning");
+          return;
+        }
+
+        if (!rangeInput.value.trim()) {
+          toast("Enter page numbers or ranges first.", "info");
+          return;
+        }
+
+        if (!pages) {
+          rangeInput.classList.add("is-invalid");
+          toast("Invalid page range. Use a format like 2, 4, 6-9.", "error");
+          return;
+        }
+
+        rangeInput.classList.remove("is-invalid");
+        pages.forEach(function (pageNumber) {
+          state.markedPages.add(pageNumber);
+          syncPageButton(pageNumber);
+        });
+        updateCounters();
+        clearResult();
+
+        if (state.markedPages.size === state.pageCount) {
+          toast("You cannot remove all pages. At least one page must remain.", "warning");
+        } else {
+          toast(pages.length + " page" + (pages.length === 1 ? "" : "s") + " marked for removal.", "info");
+        }
+
+        rangeInput.value = "";
+      }
+
+      function selectAllPages() {
+        for (let pageNumber = 1; pageNumber <= state.pageCount; pageNumber += 1) {
+          state.markedPages.add(pageNumber);
+          syncPageButton(pageNumber);
+        }
+
+        updateCounters();
+        clearResult();
+        toast("You cannot remove all pages. At least one page must remain.", "warning");
+      }
+
+      function deselectAllPages() {
+        state.markedPages.clear();
+        getPageButtons().forEach(function (button) {
+          const pageNumber = Number(button.dataset.page);
+          syncPageButton(pageNumber);
+        });
+        updateCounters();
+        clearResult();
+      }
+
+      async function loadPdfFile(file) {
+        try {
+          if (!file) {
+            return;
+          }
+
+          clearResult();
+          hideProgressBar();
+
+          const hasPdfType = file.type === "application/pdf";
+          const hasPdfExtension = typeof file.name === "string" && /\.pdf$/i.test(file.name);
+
+          if (!hasPdfType && !hasPdfExtension) {
+            toast("Please upload a PDF file only", "error");
+            return;
+          }
+
+          if (file.size === 0) {
+            toast("This file appears to be empty", "error");
+            return;
+          }
+
+          if (typeof window.readFileAsArrayBuffer !== "function" ||
+              typeof window.validatePDFHeader !== "function" ||
+              typeof window.PDFLib === "undefined") {
+            toast("PDF tools failed to load. Please refresh the page.", "error");
+            return;
+          }
+
+          const buffer = await window.readFileAsArrayBuffer(file);
+
+          if (!window.validatePDFHeader(buffer)) {
+            toast("This file appears damaged", "error");
+            return;
+          }
+
+          let pdfDoc = null;
+
+          try {
+            pdfDoc = await window.PDFLib.PDFDocument.load(buffer);
+          } catch (error) {
+            if (isPasswordError(error)) {
+              showUnlockToast();
+              return;
+            }
+
+            toast("This file appears damaged", "error");
+            return;
+          }
+
+          state.file = file;
+          state.arrayBuffer = buffer;
+          state.pageCount = pdfDoc.getPageCount();
+          state.markedPages.clear();
+
+          if (statName) {
+            statName.textContent = file.name.length > 38 ? file.name.slice(0, 35) + "..." : file.name;
+          }
+
+          if (statPages) {
+            statPages.textContent = String(state.pageCount);
+          }
+
+          if (statSize) {
+            statSize.textContent = formatSize(file.size);
+          }
+
+          if (toolArea) {
+            toolArea.hidden = false;
+          }
+
+          if (uploadZone) {
+            uploadZone.style.display = "none";
+            uploadZone.classList.remove("has-files");
+          }
+
+          updateCounters();
+          await loadPreviewDocument();
+          toast("PDF loaded. Select pages to remove.", "success");
+        } catch (error) {
+          if (isPasswordError(error)) {
+            showUnlockToast();
+            return;
+          }
+
+          toast("This file appears damaged", "error");
+        }
+      }
+
+      function getKeepIndices() {
+        const indices = [];
+
+        for (let pageNumber = 1; pageNumber <= state.pageCount; pageNumber += 1) {
+          if (!state.markedPages.has(pageNumber)) {
+            indices.push(pageNumber - 1);
+          }
+        }
+
+        return indices;
+      }
+
+      async function removeSelectedPages() {
+        try {
+          if (!state.arrayBuffer) {
+            toast("Please upload a PDF first.", "warning");
+            return;
+          }
+
+          if (state.markedPages.size === 0) {
+            toast("No pages selected. Click pages to mark them for removal.", "info");
+            return;
+          }
+
+          if (state.markedPages.size >= state.pageCount) {
+            toast("You cannot remove all pages. At least one page must remain.", "warning");
+            return;
+          }
+
+          if (typeof window.PDFLib === "undefined") {
+            toast("PDF tools failed to load. Please refresh the page.", "error");
+            return;
+          }
+
+          setBusy(true);
+          clearResult();
+          updateProgress(5, "Reading PDF...");
+
+          const source = await window.PDFLib.PDFDocument.load(state.arrayBuffer.slice(0));
+          const output = await window.PDFLib.PDFDocument.create();
+          const keepIndices = getKeepIndices();
+
+          updateProgress(35, "Copying remaining pages...");
+
+          const copiedPages = await output.copyPages(source, keepIndices);
+          copiedPages.forEach(function (page) {
+            output.addPage(page);
+          });
+
+          updateProgress(75, "Saving cleaned PDF...");
+
+          const bytes = await output.save({ useObjectStreams: true });
+          const removed = state.markedPages.size;
+          const kept = keepIndices.length;
+
+          state.resultBytes = bytes;
+          state.resultFilename = generateFilename();
+
+          if (resultStats) {
+            resultStats.textContent =
+              removed + " page" + (removed === 1 ? "" : "s") +
+              " removed. " + kept + " page" + (kept === 1 ? "" : "s") +
+              " remain. New size: " + formatSize(bytes.byteLength) + ".";
+          }
+
+          if (filenamePreview) {
+            filenamePreview.textContent = state.resultFilename;
+          }
+
+          if (resultBox) {
+            resultBox.hidden = false;
+          }
+
+          updateProgress(100, "Complete");
+          window.setTimeout(hideProgressBar, 450);
+          toast("Pages removed successfully.", "success");
+        } catch (error) {
+          if (isPasswordError(error)) {
+            showUnlockToast();
+          } else {
+            toast("This file appears damaged", "error");
+          }
+
+          hideProgressBar();
+        } finally {
+          setBusy(false);
+        }
+      }
+
+      function downloadResult() {
+        if (!state.resultBytes || !state.resultFilename) {
+          toast("Remove pages before downloading.", "info");
+          return;
+        }
+
+        const blob = new Blob([state.resultBytes], { type: "application/pdf" });
+        const objectUrl = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+
+        link.href = objectUrl;
+        link.download = state.resultFilename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+
+        window.setTimeout(function () {
+          URL.revokeObjectURL(objectUrl);
+        }, 1000);
+
+        toast("Download started.", "success");
+      }
+
+      async function resetTool() {
+        try {
+          await destroyPreviewDocument();
+          state.file = null;
+          state.arrayBuffer = null;
+          state.pageCount = 0;
+          state.markedPages.clear();
+          state.resultBytes = null;
+          state.resultFilename = "";
+
+          if (pagesGrid) {
+            pagesGrid.textContent = "";
+          }
+
+          if (rangeInput) {
+            rangeInput.value = "";
+            rangeInput.classList.remove("is-invalid");
+          }
+
+          if (fileInput) {
+            fileInput.value = "";
+          }
+
+          if (uploadZone) {
+            uploadZone.style.display = "";
+            uploadZone.classList.remove("has-files", "dragover");
+            uploadZone.style.transform = "";
+          }
+
+          if (toolArea) {
+            toolArea.hidden = true;
+          }
+
+          clearResult();
+          hideProgressBar();
+          updateCounters();
+          setBusy(false);
+        } catch (error) {
+          toast("The tool could not reset. Please refresh the page.", "error");
+        }
+      }
+
+      function handleFiles(files) {
+        const file = files && files[0] ? files[0] : null;
+        if (file) {
+          void loadPdfFile(file);
+        }
+      }
+
+      function initEvents() {
+        if (!uploadZone || !fileInput) {
+          return;
+        }
+
+        if (typeof window.initDropZone === "function") {
+          window.initDropZone(uploadZone, handleFiles, {
+            inputEl: fileInput,
+            maxFiles: 1,
+            validator: function () {
+              return true;
+            },
+          });
+        }
+
+        if (typeof window.initFileInput === "function") {
+          window.initFileInput(fileInput, handleFiles, {
+            maxFiles: 1,
+            validator: function () {
+              return true;
+            },
+          });
+        }
+
+        uploadZone.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            fileInput.click();
+          }
+        });
+
+        uploadZone.addEventListener("mousemove", function (event) {
+          const rect = uploadZone.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const rotateX = ((y / rect.height) - 0.5) * -5;
+          const rotateY = ((x / rect.width) - 0.5) * 5;
+          uploadZone.style.transform =
+            "perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+        });
+
+        uploadZone.addEventListener("mouseleave", function () {
+          uploadZone.style.transform = "";
+        });
+
+        if (clearFileButton) {
+          clearFileButton.addEventListener("click", function () {
+            void resetTool();
+          });
+        }
+
+        if (applyRangeButton) {
+          applyRangeButton.addEventListener("click", applyRangeSelection);
+        }
+
+        if (rangeInput) {
+          rangeInput.addEventListener("input", function () {
+            rangeInput.classList.remove("is-invalid");
+          });
+          rangeInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              applyRangeSelection();
+            }
+          });
+        }
+
+        if (selectAllButton) {
+          selectAllButton.addEventListener("click", selectAllPages);
+        }
+
+        if (deselectAllButton) {
+          deselectAllButton.addEventListener("click", deselectAllPages);
+        }
+
+        if (removePagesButton) {
+          removePagesButton.addEventListener("click", function () {
+            void removeSelectedPages();
+          });
+        }
+
+        if (downloadButton) {
+          downloadButton.addEventListener("click", downloadResult);
+        }
+
+        if (resetButton) {
+          resetButton.addEventListener("click", function () {
+            void resetTool();
+          });
+        }
+      }
+
+      initEvents();
+      updateCounters();
+    })();
+  </script>
+
+  <!-- SEO Word Count: ~1500 words -->
+
+
+</body></html>

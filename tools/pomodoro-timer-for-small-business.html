@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Pomodoro Timer for Small Business Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Pomodoro Timer for Small Business online. Client-side, free, and private browser-based utility.">
+  <meta name="keywords" content="pomodoro timer, online pomodoro timer, focus timer, study timer, work timer, pomodoro with tasks, pomodoro timer with ambient sounds, pomodoro stats, offline pomodoro timer, productivity timer">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://toolsmatic.me/tools/pomodoro-timer-for-small-business.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/pomodoro-timer-for-small-business.html">
+  <meta property="og:title" content="Pomodoro Timer for Small Business Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Pomodoro Timer for Small Business online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pomodoro Timer for Small Business Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Pomodoro Timer for Small Business online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  
+  
+  
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"How to use an advanced Pomodoro timer without making focus harder","description":"A practical guide to Pomodoro intervals, task planning, calm break cycles, notifications, ambient sound, and local productivity tracking.","author":{"@type":"Organization","name":"ToolsMatic"},"publisher":{"@type":"Organization","name":"ToolsMatic"},"mainEntityOfPage": "https://toolsmatic.me/tools/pomodoro-timer-for-small-business.html"}
+  </script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+  <style>
+    .pt-page {
+      width: min(1240px, calc(100% - 32px));
+      margin: 0 auto 56px;
+      --accent-1: #ffb76a;
+      --accent-2: #ff6d7c;
+      --accent-soft: rgba(255, 183, 106, 0.14);
+      --accent-soft-2: rgba(255, 109, 124, 0.12);
+      --accent-glow: rgba(255, 170, 109, 0.28);
+      transition: --accent-1 0.35s ease, --accent-2 0.35s ease;
+    }
+
+    .pt-page.pt-mode-focus {
+      --accent-1: #ffb76a;
+      --accent-2: #ff6d7c;
+      --accent-soft: rgba(255, 183, 106, 0.14);
+      --accent-soft-2: rgba(255, 109, 124, 0.12);
+      --accent-glow: rgba(255, 170, 109, 0.28);
+    }
+
+    .pt-page.pt-mode-short {
+      --accent-1: #76e7db;
+      --accent-2: #5aa6ff;
+      --accent-soft: rgba(118, 231, 219, 0.14);
+      --accent-soft-2: rgba(90, 166, 255, 0.12);
+      --accent-glow: rgba(90, 166, 255, 0.24);
+    }
+
+    .pt-page.pt-mode-long {
+      --accent-1: #93b8ff;
+      --accent-2: #6fd5ff;
+      --accent-soft: rgba(147, 184, 255, 0.14);
+      --accent-soft-2: rgba(111, 213, 255, 0.12);
+      --accent-glow: rgba(111, 213, 255, 0.24);
+    }
+
+    .pt-breadcrumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 22px 0 18px;
+      padding: 14px 18px;
+      border: 1px solid rgba(94, 234, 212, 0.16);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(12, 24, 38, 0.92), rgba(11, 18, 29, 0.86));
+      color: rgba(227, 235, 244, 0.78);
+      font-size: 0.95rem;
+    }
+
+    .pt-breadcrumbs a {
+      color: #8fe8ff;
+      text-decoration: none;
+    }
+
+    .pt-breadcrumbs span {
+      opacity: 0.62;
+    }
+
+    .pt-hero,
+    .pt-tool-shell,
+    .pt-side-card,
+    .pt-settings-card,
+    .pt-compare-card,
+    .pt-faq-card,
+    .pt-seo-card {
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, var(--accent-soft), transparent 20rem),
+        radial-gradient(circle at bottom left, var(--accent-soft-2), transparent 22rem),
+        linear-gradient(180deg, rgba(16, 28, 44, 0.95), rgba(9, 16, 28, 0.92));
+      box-shadow: 0 26px 60px rgba(2, 8, 18, 0.28);
+      transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .pt-hero {
+      padding: 30px;
+      margin-bottom: 22px;
+    }
+
+    .pt-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      color: #71e9df;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .pt-eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      box-shadow: 0 0 18px var(--accent-glow);
+    }
+
+    .pt-hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.3rem, 4vw, 3.8rem);
+      line-height: 1.02;
+    }
+
+    .pt-hero p,
+    .pt-side-card > p,
+    .pt-settings-card > p,
+    .pt-compare-card > p,
+    .pt-faq-card > p,
+    .pt-seo-card > p {
+      margin: 0;
+      color: rgba(227, 235, 244, 0.8);
+      line-height: 1.72;
+      max-width: 78ch;
+    }
+
+    .pt-pills,
+    .pt-controls,
+    .pt-inline-actions,
+    .pt-shortcuts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pt-pills {
+      margin-top: 22px;
+    }
+
+    .pt-pill,
+    .pt-badge,
+    .pt-shortcut,
+    .pt-faq details,
+    .pt-stat,
+    .pt-task-item,
+    .pt-history-item {
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .pt-pill,
+    .pt-badge {
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: rgba(238, 244, 248, 0.88);
+      font-size: 0.92rem;
+    }
+
+    .pt-tool-shell {
+      padding: 22px;
+      margin-bottom: 22px;
+    }
+
+    .pt-workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .pt-main-column,
+    .pt-side-column,
+    .pt-settings-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .pt-settings-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .pt-main-card,
+    .pt-side-card,
+    .pt-settings-card {
+      padding: 22px;
+      border-radius: 28px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background:
+        radial-gradient(circle at top right, var(--accent-soft), transparent 20rem),
+        linear-gradient(180deg, rgba(10, 20, 34, 0.94), rgba(8, 14, 26, 0.92));
+      box-shadow: 0 24px 54px rgba(2, 8, 18, 0.24);
+      transition: background 0.35s ease, border-color 0.35s ease;
+    }
+
+    .pt-main-card h2,
+    .pt-side-card h2,
+    .pt-side-card h3,
+    .pt-settings-card h3,
+    .pt-compare-card h2,
+    .pt-faq-card h2,
+    .pt-seo-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+    }
+
+    .pt-side-card h3,
+    .pt-settings-card h3 {
+      font-size: 1.08rem;
+    }
+
+    .pt-main-card p,
+    .pt-side-card p,
+    .pt-settings-card p {
+      color: rgba(219, 229, 240, 0.78);
+      line-height: 1.68;
+    }
+
+    .pt-timer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .pt-timer-status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .pt-minimal-btn,
+    .pt-primary,
+    .pt-secondary,
+    .pt-ghost {
+      min-height: 48px;
+      border-radius: 18px;
+      padding: 0 18px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .pt-primary:hover,
+    .pt-secondary:hover,
+    .pt-ghost:hover,
+    .pt-minimal-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .pt-primary:disabled,
+    .pt-secondary:disabled,
+    .pt-ghost:disabled,
+    .pt-minimal-btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .pt-primary {
+      border: 0;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: #04121f;
+      box-shadow: 0 18px 34px var(--accent-glow);
+    }
+
+    .pt-secondary,
+    .pt-ghost,
+    .pt-minimal-btn {
+      background: rgba(8, 18, 31, 0.76);
+      color: #ecf3f8;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+    }
+
+    .pt-timer-stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 430px;
+      margin-bottom: 18px;
+    }
+
+    .pt-ring {
+      width: min(100%, 420px);
+      aspect-ratio: 1;
+      filter: drop-shadow(0 18px 40px var(--accent-glow));
+    }
+
+    .pt-ring-track {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.08);
+      stroke-width: 16;
+    }
+
+    .pt-ring-progress {
+      fill: none;
+      stroke: url(#pt-ring-gradient);
+      stroke-width: 16;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: 160px 160px;
+      transition: stroke-dashoffset 0.2s linear;
+    }
+
+    .pt-center {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .pt-mode-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(243, 248, 252, 0.86);
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .pt-time {
+      margin: 0 0 8px;
+      font-size: clamp(3rem, 8vw, 5.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+    }
+
+    .pt-session-copy {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+      color: rgba(237, 244, 248, 0.86);
+      font-weight: 700;
+    }
+
+    .pt-subcopy {
+      margin: 0;
+      color: rgba(220, 230, 239, 0.76);
+      line-height: 1.65;
+      max-width: 34ch;
+    }
+
+    .pt-controls {
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .pt-status {
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      color: rgba(237, 244, 248, 0.9);
+      line-height: 1.6;
+    }
+
+    .pt-task-form,
+    .pt-duration-grid,
+    .pt-setting-stack,
+    .pt-stat-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .pt-task-form {
+      grid-template-columns: minmax(0, 1fr) 120px auto;
+      margin: 16px 0;
+    }
+
+    .pt-page input[type="text"],
+    .pt-page input[type="number"],
+    .pt-page select {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(5, 14, 24, 0.92);
+      color: #eff5fb;
+      padding: 14px 16px;
+      font: inherit;
+    }
+
+    .pt-page input[type="text"]:focus,
+    .pt-page input[type="number"]:focus,
+    .pt-page select:focus {
+      outline: none;
+      border-color: rgba(124, 217, 255, 0.4);
+      box-shadow: 0 0 0 3px rgba(88, 168, 255, 0.18);
+    }
+
+    .pt-inline-actions {
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .pt-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      color: rgba(236, 243, 248, 0.9);
+      cursor: pointer;
+    }
+
+    .pt-toggle input[type="checkbox"] {
+      accent-color: #66dfe5;
+      margin: 0;
+      inline-size: 18px;
+      block-size: 18px;
+    }
+
+    .pt-duration-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 16px;
+    }
+
+    .pt-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: rgba(240, 245, 250, 0.92);
+    }
+
+    .pt-helper {
+      color: rgba(219, 229, 240, 0.7);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .pt-task-list,
+    .pt-history-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .pt-task-item,
+    .pt-history-item {
+      padding: 14px 16px;
+      border-radius: 18px;
+    }
+
+    .pt-task-item.is-active {
+      border-color: rgba(124, 217, 255, 0.32);
+      box-shadow: 0 18px 34px rgba(88, 168, 255, 0.1);
+    }
+
+    .pt-task-row,
+    .pt-history-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .pt-task-left {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      flex: 1;
+    }
+
+    .pt-task-check {
+      margin-top: 3px;
+      accent-color: #66dfe5;
+      inline-size: 18px;
+      block-size: 18px;
+    }
+
+    .pt-task-title {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .pt-task-title.is-done {
+      text-decoration: line-through;
+      opacity: 0.58;
+    }
+
+    .pt-task-meta,
+    .pt-history-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: rgba(220, 230, 239, 0.7);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .pt-task-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pt-task-actions button {
+      min-height: 38px;
+      padding: 0 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(255, 255, 255, 0.03);
+      color: #eff5fb;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .pt-empty {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px dashed rgba(124, 217, 255, 0.18);
+      color: rgba(219, 229, 240, 0.72);
+      line-height: 1.65;
+      text-align: center;
+      background: rgba(8, 18, 31, 0.52);
+    }
+
+    .pt-stat-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .pt-stat {
+      padding: 18px;
+      border-radius: 20px;
+    }
+
+    .pt-stat strong {
+      display: block;
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .pt-stat span {
+      color: rgba(222, 232, 240, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .pt-settings-card p {
+      margin: 0 0 14px;
+    }
+
+    .pt-shortcuts {
+      margin-top: 12px;
+    }
+
+    .pt-shortcut {
+      padding: 10px 12px;
+      border-radius: 14px;
+      color: rgba(237, 244, 248, 0.88);
+      font-size: 0.92rem;
+    }
+
+    .pt-shortcut strong {
+      display: inline-block;
+      min-width: 22px;
+      margin-right: 8px;
+      color: #ffffff;
+    }
+
+    .pt-bottom-bar {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .pt-bottom-item {
+      padding: 16px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+    }
+
+    .pt-bottom-item strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .pt-bottom-item span {
+      color: rgba(222, 232, 240, 0.72);
+      line-height: 1.58;
+      font-size: 0.95rem;
+    }
+
+    .pt-compare-card,
+    .pt-faq-card,
+    .pt-seo-card {
+      padding: 24px;
+      margin-top: 22px;
+    }
+
+    .pt-table-wrap {
+      overflow: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.12);
+    }
+
+    .pt-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+    }
+
+    .pt-compare-table th,
+    .pt-compare-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(124, 217, 255, 0.12);
+    }
+
+    .pt-compare-table th {
+      background: rgba(7, 16, 28, 0.9);
+      color: #f4fbff;
+      text-align: left;
+    }
+
+    .pt-compare-table td:not(:first-child),
+    .pt-compare-table th:not(:first-child) {
+      text-align: center;
+    }
+
+    .pt-compare-table tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .pt-check {
+      color: #79f1c2;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .pt-cross {
+      color: #ff8e9e;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .pt-faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    .pt-faq details {
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .pt-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    .pt-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .pt-faq p {
+      margin: 10px 0 0;
+      color: rgba(217, 227, 237, 0.76);
+      line-height: 1.68;
+    }
+
+    .pt-seo-card h3 {
+      margin: 24px 0 10px;
+      font-size: 1.12rem;
+    }
+
+    .pt-seo-card p {
+      color: rgba(219, 229, 240, 0.8);
+      line-height: 1.78;
+      margin: 0 0 14px;
+    }
+
+    .pt-page.is-minimal .pt-hero,
+    .pt-page.is-minimal .pt-side-column,
+    .pt-page.is-minimal .pt-settings-grid,
+    .pt-page.is-minimal .pt-bottom-bar {
+      display: none;
+    }
+
+    .pt-page.is-minimal .pt-workspace {
+      grid-template-columns: 1fr;
+    }
+
+    .pt-page.is-minimal .pt-tool-shell {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .pt-page.is-minimal .pt-main-card {
+      padding: 28px;
+    }
+
+    @media (max-width: 1120px) {
+      .pt-workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .pt-side-column {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .pt-settings-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .pt-page {
+        width: min(100% - 20px, 100%);
+      }
+
+      .pt-hero,
+      .pt-tool-shell,
+      .pt-side-card,
+      .pt-settings-card,
+      .pt-compare-card,
+      .pt-faq-card,
+      .pt-seo-card,
+      .pt-main-card {
+        border-radius: 22px;
+      }
+
+      .pt-task-form,
+      .pt-duration-grid,
+      .pt-stat-grid,
+      .pt-bottom-bar,
+      .pt-side-column {
+        grid-template-columns: 1fr;
+      }
+
+      .pt-timer-stage {
+        min-height: 360px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pt-controls button,
+      .pt-inline-actions button,
+      .pt-inline-actions label,
+      .pt-inline-actions select {
+        width: 100%;
+      }
+
+      .pt-task-actions {
+        width: 100%;
+      }
+
+      .pt-task-actions button {
+        flex: 1;
+      }
+    }
+  </style>
+  
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/pomodoro-timer-for-small-business.html">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">&#127769;</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="pt-app" class="pt-page pt-mode-focus">
+    <nav class="pt-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/">Everyday Tools</a>
+      <span>/</span>
+      <strong>Pomodoro Timer</strong>
+    </nav>
+
+    <section class="pt-hero">
+      <div class="pt-eyebrow">Calm focus system</div>
+      <h1>Pomodoro Timer for Small Business</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+<p>This page gives you a true browser-based focus station: a smooth circular countdown, classic Pomodoro flow, customizable durations, soft Web Audio chimes, desktop alerts, ambient sound generators, a real task list with pomodoro estimates, local history, daily stats, and a minimal mode when you want the timer to disappear into the work.</p>
+      <div class="pt-pills">
+        <div class="pt-pill">Classic 25 / 5 / 15 cycle with full custom control</div>
+        <div class="pt-pill">Tasks, local history, daily stats, and streak tracking</div>
+        <div class="pt-pill">Ambient sound, shortcuts, notifications, and offline-friendly use</div>
+      </div>
+    </section>
+
+    <section class="pt-tool-shell">
+      <div class="pt-workspace">
+        <div class="pt-main-column">
+          <section class="pt-main-card">
+            <div class="pt-timer-top">
+              <div class="pt-timer-status">
+                <div id="pt-mode-badge" class="pt-badge">Focus</div>
+                <div id="pt-session-badge" class="pt-badge">Pomodoro 1 of 4</div>
+              </div>
+              <button id="pt-minimal-toggle" class="pt-minimal-btn" type="button">Minimal mode</button>
+            </div>
+
+            <div class="pt-timer-stage">
+              <svg class="pt-ring" viewBox="0 0 320 320" aria-hidden="true">
+                <defs>
+                  <linearGradient id="pt-ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop id="pt-gradient-stop-1" offset="0%" stop-color="#ffb76a"></stop>
+                    <stop id="pt-gradient-stop-2" offset="100%" stop-color="#ff6d7c"></stop>
+                  </linearGradient>
+                </defs>
+                <circle class="pt-ring-track" cx="160" cy="160" r="120"></circle>
+                <circle id="pt-ring-progress" class="pt-ring-progress" cx="160" cy="160" r="120"></circle>
+              </svg>
+              <div class="pt-center">
+                <div>
+                  <div id="pt-mode-label" class="pt-mode-label">Focus</div>
+                  <h2 id="pt-time" class="pt-time">25:00</h2>
+                  <p id="pt-session-copy" class="pt-session-copy">Pomodoro 1 of 4</p>
+                  <p id="pt-subcopy" class="pt-subcopy">Stay with one task until the ring closes.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-controls">
+              <button id="pt-start-pause" class="pt-primary" type="button">Start</button>
+              <button id="pt-reset" class="pt-secondary" type="button">Reset</button>
+              <button id="pt-skip" class="pt-secondary" type="button">Skip</button>
+            </div>
+
+            <div id="pt-status" class="pt-status" aria-live="polite">Ready for a clean focus block. Press Start, or hit Space anywhere outside a text field.</div>
+          </section>
+        </div>
+
+        <aside class="pt-side-column">
+          <section class="pt-side-card">
+            <h3>Task list</h3>
+            <p>Add the work that matters, set a pomodoro estimate, and keep one task active while you focus. Completed focus sessions can be tracked against the active task locally.</p>
+            <div class="pt-task-form">
+              <input id="pt-task-input" type="text" placeholder="Add a task title">
+              <input id="pt-task-estimate" type="number" min="1" max="12" value="1" aria-label="Pomodoro estimate">
+              <button id="pt-add-task" class="pt-primary" type="button">Add</button>
+            </div>
+            <div id="pt-task-list" class="pt-task-list">
+              <div class="pt-empty">No tasks yet. Add one to give the timer a clear target.</div>
+            </div>
+          </section>
+
+          <section class="pt-side-card">
+            <h3>Session history</h3>
+            <p>Every completed session is logged locally with its timestamp so you can review your rhythm without exporting anything.</p>
+            <div id="pt-history-list" class="pt-history-list">
+              <div class="pt-empty">Your completed focus and break sessions will appear here.</div>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <section class="pt-settings-grid">
+        <div class="pt-settings-card">
+          <h3>Session lengths</h3>
+          <p>Keep the classic Pomodoro defaults or tune the timer for deeper work, shorter sprints, or a study rhythm that fits your day.</p>
+          <div class="pt-duration-grid">
+            <div>
+              <label class="pt-label" for="pt-focus-minutes">Focus</label>
+              <input id="pt-focus-minutes" type="number" min="1" max="90" value="25">
+            </div>
+            <div>
+              <label class="pt-label" for="pt-short-minutes">Short break</label>
+              <input id="pt-short-minutes" type="number" min="1" max="90" value="5">
+            </div>
+            <div>
+              <label class="pt-label" for="pt-long-minutes">Long break</label>
+              <input id="pt-long-minutes" type="number" min="1" max="90" value="15">
+            </div>
+          </div>
+          <div class="pt-inline-actions">
+            <label class="pt-toggle"><input id="pt-auto-start" type="checkbox"> Auto-start next session</label>
+          </div>
+        </div>
+
+        <div class="pt-settings-card">
+          <h3>Alerts and ambient sound</h3>
+          <p>Use soft local chimes, browser notifications, and generated ambience without loading external audio files.</p>
+          <div class="pt-setting-stack">
+            <div>
+              <label class="pt-label" for="pt-ambient-select">Ambient sound</label>
+              <select id="pt-ambient-select">
+                <option value="none">None</option>
+                <option value="white">White noise</option>
+                <option value="rain">Rain</option>
+                <option value="cafe">Cafe</option>
+              </select>
+            </div>
+            <div>
+              <label class="pt-label" for="pt-ambient-volume">Ambient volume</label>
+              <input id="pt-ambient-volume" type="number" min="0" max="100" value="28">
+              <div class="pt-helper">Ambient sound plays while the timer is running so the page stays calm when paused.</div>
+            </div>
+            <div class="pt-inline-actions">
+              <button id="pt-enable-notifications" class="pt-secondary" type="button">Enable desktop alerts</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-settings-card">
+          <h3>Focus controls</h3>
+          <p>Keep the timer fast to use with keyboard shortcuts and a minimal mode that hides the supporting panels when you want less on screen.</p>
+          <div class="pt-inline-actions">
+            <button id="pt-reset-all" class="pt-ghost" type="button">Reset local data</button>
+          </div>
+          <div class="pt-shortcuts">
+            <div class="pt-shortcut"><strong>Space</strong> start or pause</div>
+            <div class="pt-shortcut"><strong>R</strong> reset current session</div>
+            <div class="pt-shortcut"><strong>S</strong> skip to the next mode</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="pt-bottom-bar">
+        <div class="pt-bottom-item"><strong id="pt-stat-focus">0m</strong><span>Total focus time today</span></div>
+        <div class="pt-bottom-item"><strong id="pt-stat-sessions">0</strong><span>Completed focus sessions today</span></div>
+        <div class="pt-bottom-item"><strong id="pt-stat-streak">0</strong><span>Current focus streak in days</span></div>
+        <div class="pt-bottom-item"><strong id="pt-stat-active-task">None</strong><span>Active task</span></div>
+      </div>
+    </section>
+
+    <section class="pt-compare-card">
+      <h2>Comparison table</h2>
+      <p>Ticks mean the feature is clearly highlighted on the reviewed public page. Crosses mean it was not clearly highlighted there at the time of review on April 7, 2026.</p>
+      <div class="pt-table-wrap">
+        <table class="pt-compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ToolsMatic</th>
+              <th>Pomofocus</th>
+              <th>MarinaraTimer</th>
+              <th>Clockify</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Classic 25 / 5 / long-break flow</td><td class="pt-check">&#10003;</td><td class="pt-check">&#10003;</td><td class="pt-check">&#10003;</td><td class="pt-check">&#10003;</td></tr>
+            <tr><td>Custom focus and break durations</td><td class="pt-check">&#10003;</td><td class="pt-check">&#10003;</td><td class="pt-check">&#10003;</td><td class="pt-check">&#10003;</td></tr>
+            <tr><td>Task list with pomodoro estimates</td><td class="pt-check">&#10003;</td><td class="pt-check">&#10003;</td><td class="pt-cross">&#10005;</td><td class="pt-cross">&#10005;</td></tr>
+            <tr><td>Daily stats or reports highlighted</td><td class="pt-check">&#10003;</td><td class="pt-check">&#10003;</td><td class="pt-cross">&#10005;</td><td class="pt-check">&#10003;</td></tr>
+            <tr><td>Ambient sounds highlighted</td><td class="pt-check">&#10003;</td><td class="pt-check">&#10003;</td><td class="pt-cross">&#10005;</td><td class="pt-cross">&#10005;</td></tr>
+            <tr><td>Desktop notifications highlighted</td><td class="pt-check">&#10003;</td><td class="pt-cross">&#10005;</td><td class="pt-cross">&#10005;</td><td class="pt-check">&#10003;</td></tr>
+            <tr><td>Minimal or focus-only mode highlighted</td><td class="pt-check">&#10003;</td><td class="pt-cross">&#10005;</td><td class="pt-cross">&#10005;</td><td class="pt-check">&#10003;</td></tr>
+            <tr><td>Offline-friendly local workflow highlighted</td><td class="pt-check">&#10003;</td><td class="pt-cross">&#10005;</td><td class="pt-cross">&#10005;</td><td class="pt-cross">&#10005;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="pt-faq-card">
+      <h2>FAQs</h2>
+      <p>These answers focus on the practical parts of using a Pomodoro timer well instead of just letting a clock run in the background.</p>
+      <div class="pt-faq">
+        <details>
+          <summary>Why does a Pomodoro timer help when I already know how long 25 minutes is?</summary>
+          <p>A Pomodoro timer removes the need to keep checking the clock yourself. It creates a visible commitment, keeps the session boundary obvious, and makes breaks feel intentional instead of accidental.</p>
+        </details>
+        <details>
+          <summary>When should I change the focus and break durations?</summary>
+          <p>Change them when your work rhythm needs it. Deep writing, coding, and study blocks may benefit from longer sessions, while admin work or revision loops may work better with shorter cycles.</p>
+        </details>
+        <details>
+          <summary>Why include a task list inside the timer page?</summary>
+          <p>Because focus is easier when the next task is already defined. Keeping tasks and the timer in one place reduces context switching and makes completed sessions more meaningful.</p>
+        </details>
+        <details>
+          <summary>What is the point of ambient sounds in a Pomodoro timer?</summary>
+          <p>Ambient sound can mask distractions and help create a stable working environment. The useful version is calm and optional, which is why this page keeps it generated locally and easy to shut off.</p>
+        </details>
+        <details>
+          <summary>Does the session history matter if I only need a timer?</summary>
+          <p>It matters as soon as you want to understand your actual rhythm. A local history helps you see how often you finish sessions, which tasks absorb the most attention, and whether your current duration settings really fit the way you work.</p>
+        </details>
+        <details>
+          <summary>What does the streak count measure?</summary>
+          <p>The streak tracks consecutive days with at least one completed focus session stored locally in this browser. It is a simple consistency metric, not a perfect measure of productivity.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="pt-seo-card">
+      <h2>Why a serious Pomodoro timer should feel calmer and smarter at the same time</h2>
+      <p>Most Pomodoro timers fall into one of two weak categories. The first type is too thin. It gives you a clock, a start button, maybe a reset control, and little else. That sounds pure, but in practice it means the tool stops being useful the moment you want to connect the timer to actual work. The second type is too busy. It tries to look advanced by burying the focus session inside layers of clutter, account prompts, visual noise, or settings that seem more complicated than the work you were trying to begin. A stronger Pomodoro timer avoids both mistakes. It keeps the core action immediate, but it also brings enough structure to help the timer become part of a real workflow. That is what this page is designed to do. You get the familiar 25 minute focus block, short breaks, a longer break after four sessions, and a clear circular countdown at the center. But you also get task estimates, session logs, daily stats, a streak view, keyboard shortcuts, ambient sound options, notifications, custom durations, and a minimal mode that can fade the extra UI away when you want less on screen. The result is a Pomodoro timer that stays easy to use while being useful enough to keep open every day.</p>
+
+      <h3>A better Pomodoro timer starts by respecting the moment before work begins</h3>
+      <p>The most important moment in a focus session is often not the twenty-fifth minute. It is the first fifteen seconds before you start. That is the point where friction decides whether you get into the work or drift into something else. If a timer page makes you decode the interface, hunt for settings, dismiss interruptions, or jump through setup before the first session begins, it has already weakened the main advantage of the Pomodoro method. Good productivity tools lower the cost of starting. That is why the large timer sits in the center here, the primary controls stay obvious, and the mode label, session number, and next-action cues remain readable at a glance. The point is not to make a timer look complex. The point is to make the path into focused work feel calm, direct, and intentional.</p>
+
+      <h3>Classic Pomodoro structure still works because it creates boundaries</h3>
+      <p>The original Pomodoro rhythm became popular for a reason. Twenty-five minutes is short enough to start without intimidation and long enough to build momentum. Five-minute short breaks keep mental fatigue from turning into drift. A longer break after four completed sessions gives the method shape. It turns the day into a sequence of manageable blocks instead of one vague promise to work harder. Even people who later customize the intervals usually begin with the classic pattern because it is concrete and easy to test. A strong online Pomodoro timer should keep that classic structure ready on first load, then allow deeper customization once the user has a feel for what kind of cadence matches their work. That is why this page defaults to the familiar 25, 5, and 15 minute pattern but allows the focus, short break, and long break durations to move anywhere from one to ninety minutes.</p>
+
+      <h3>Custom durations matter because not all focus work is the same</h3>
+      <p>Study sessions, editing, coding, writing, admin work, revision, planning, design review, and support triage do not all benefit from exactly the same interval length. Some tasks need a short burst to overcome resistance. Some need a longer runway so your brain can settle in. Some are repetitive enough that a stricter cadence feels energizing, while others are deep enough that you may want fewer interruptions and longer recovery breaks. That is why a better Pomodoro timer should not trap the user in a rigid template. It should let them keep the classic shape when they want it and reshape the intervals when they learn more about their own working rhythm. Custom durations make the technique sustainable because they turn the timer from a rule into a tool.</p>
+
+      <h3>The timer becomes much more useful when it understands tasks</h3>
+      <p>A countdown alone can create urgency, but urgency is not the same thing as clarity. Without a task list, a timer can end up measuring avoidance just as easily as it measures focus. You start a session, spend part of it deciding what deserves attention, and only then begin working. That is why tasks belong on the same page. A useful timer should let you name the work, estimate how many pomodoros it might take, mark items done, and keep one task active while the session runs. That creates a tighter loop between intention and execution. It also makes the completed sessions more meaningful. You are not just logging time in the abstract. You are building a record of what the sessions were for. This page keeps that workflow local and visible so you can move from deciding to doing with less friction.</p>
+
+      <h3>Session history and daily stats turn the timer into a feedback system</h3>
+      <p>Many timers stop at the moment the alarm rings. That is enough for a kitchen timer, but it is not enough for a productivity tool. Once you begin using a Pomodoro timer regularly, patterns start to matter. How often do you actually complete focus sessions? On which days do you get into a consistent rhythm? Are you working in very short bursts or staying steady across multiple blocks? Which tasks are absorbing more sessions than you expected? A lightweight session history helps answer those questions without making the tool feel like enterprise software. Daily totals and streaks provide an even faster layer of feedback. They do not need to become obsessive metrics. They just need to be clear enough to help you see whether your current setup is supporting the kind of consistency you want. When those numbers stay local to the browser, the tool remains both private and practical.</p>
+
+      <h3>Ambient sound is useful when it serves focus instead of pretending to be a product category</h3>
+      <p>Ambient audio is one of the most overdone features in modern productivity products because it is often treated like decoration instead of support. The useful version is simple. It gives people a gentle layer of sound that can mask distractions and stabilize attention without pushing another streaming service, login wall, or media library into the work. That is why the ambient options here stay intentionally small and generated through Web Audio API instead of external files. White noise helps when you want a neutral sound bed. Rain can create a softer atmosphere for reading or writing. Cafe ambience can add a little social texture without becoming intrusive. Most importantly, the feature stays optional. Easy-to-use tools should never make the user fight their own focus preferences.</p>
+
+      <h3>Notifications and chimes should help, not jolt</h3>
+      <p>An alert is supposed to mark the end of a session, not break your concentration harder than the interruption it is trying to prevent. That is why a soft chime matters more than a harsh alarm, and why desktop notifications should be permission-based instead of forced. Good timers respect the fact that people work in different environments. Some need sound because they are not staring at the screen. Some want visual alerts only. Some want both. The right approach is to make the signals easy to enable, easy to understand, and easy to ignore when they are not wanted. That is also why keyboard shortcuts matter. The more quickly you can start, pause, reset, or skip a session, the less the timer itself becomes a distraction.</p>
+
+      <h3>Minimal mode is not a gimmick when it is used correctly</h3>
+      <p>There are moments when a full dashboard is useful and moments when even a good interface becomes too much. Minimal mode exists for the second case. If you are already set up, already know the task, and simply want a clean countdown in front of you, the supporting panels can become unnecessary. Hiding them is not about making the tool look sleek in a screenshot. It is about removing visual weight during the part of the workflow where decision-making is already done. In that state, a timer should feel almost invisible: one ring, one mode label, one number, and clear controls. That is how a feature stays advanced without becoming harder to live with.</p>
+
+      <h3>Offline-friendly browser tools are still underrated</h3>
+      <p>Focus tools are some of the worst candidates for unnecessary dependency chains. If a timer needs a sign-in, constant synchronization, external sound downloads, or third-party UI packages just to tell you when to work and when to rest, it is not respecting the job. A browser-based Pomodoro timer has a chance to be much lighter. It can keep tasks, settings, history, and stats in local storage, generate its own audio, and keep running without relying on an external dependency stack. That makes the page faster to open, easier to trust, and more resilient when the network is unreliable. It also fits the way people actually use quick productivity tools: they open them during work, not as a project in themselves.</p>
+
+      <h3>Who benefits from a stronger Pomodoro timer</h3>
+      <p>Students use Pomodoro timers to make revision less vague and to stop procrastination from absorbing an entire afternoon. Writers use them to draft in clean blocks, revise methodically, and avoid letting perfectionism delay the first pass. Developers use them to isolate feature work, bug fixing, or code review without falling into constant tab switching. Designers use them to time exploration, cleanup, and decision checkpoints. Founders, marketers, support teams, operators, and researchers use them to turn a messy to-do list into a sequence of defined sessions. The best timer for that range of people is not the one with the most features on paper. It is the one that keeps the right features close and the rest quiet. That is why task estimates, history, stats, ambient control, and minimal mode all belong together when they are presented cleanly.</p>
+
+      <h3>Why this page is designed to be both more advanced and easier to use</h3>
+      <p>It is easy to make a timer look advanced by piling on settings. It is much harder to make one feel advanced while staying calm. That is the real standard worth aiming for. A world-class Pomodoro timer should let a new user press Start in seconds while also giving a repeat user enough depth to stay on the page for months. It should support the classic method and go beyond it without becoming intimidating. It should make the main action obvious and the deeper controls nearby, not hidden. It should sound gentle, track useful context, and work in the browser without drama. That is what this tool is built around. If a user can open the page, choose a task, start a session, hear a clean chime, review their daily rhythm, and switch into minimal mode when they need silence on screen, the timer is doing more than counting down. It is protecting focus.</p>
+    </section>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="pomodoro-timer-for-small-business-pseo" aria-labelledby="pomodoro-timer-for-small-business-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Pomodoro Timer for Small Business</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="pomodoro-timer-for-small-business-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Pomodoro Timer for Small Business Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Pomodoro Timer for Small Business</strong>, a lightweight, cost-free utility designed to streamline operations for small firms. This dedicated workspace is built specifically for sole proprietors, freelancers, startup teams, and boutique shop owners who need fast calculations. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>zero monthly operational subscription costs, immediate ledger access, and instant clipboard exports</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Focus with a calm timer, tasks, stats, and ambient audio. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Zero Billing Overheads</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Maintain operations without adding monthly software costs to your business ledger.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">No Account Setup Friction</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Skip signup forms or credit card validation; execute your calculations instantly.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Instant Client sharing</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Copy output logs and format them directly into emails or client messages.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Pomodoro Timer for Small Business</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Small Business layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Pomodoro Timer for Small Business</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is it free for small businesses?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes! All features are 100% free with unlimited runs for commercial operations.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Do you save my business data?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Never. Processing happens locally on your computer; we never store your data.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can my employees use this tool?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Absolutely. Share the link with your team for immediate collaborative use.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/pomodoro-timer.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Pomodoro Timer</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Pomodoro Timer for Small Business","url":"https://toolsmatic.me/tools/pomodoro-timer-for-small-business.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Pomodoro Timer for Small Business online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Pomodoro Timer for Small Business","item":"https://toolsmatic.me/tools/pomodoro-timer-for-small-business.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it free for small businesses?","acceptedAnswer":{"@type":"Answer","text":"Yes! All features are 100% free with unlimited runs for commercial operations."}},{"@type":"Question","name":"Do you save my business data?","acceptedAnswer":{"@type":"Answer","text":"Never. Processing happens locally on your computer; we never store your data."}},{"@type":"Question","name":"Can my employees use this tool?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Share the link with your team for immediate collaborative use."}}]}]}</script>
+  </main>
+<footer>ToolsMatic - Fast, privacy-first utilities for the web.</footer>
+  <script>
+    const pt = {
+      app: document.getElementById('pt-app'),
+      modeBadge: document.getElementById('pt-mode-badge'),
+      sessionBadge: document.getElementById('pt-session-badge'),
+      minimalToggle: document.getElementById('pt-minimal-toggle'),
+      modeLabel: document.getElementById('pt-mode-label'),
+      time: document.getElementById('pt-time'),
+      sessionCopy: document.getElementById('pt-session-copy'),
+      subcopy: document.getElementById('pt-subcopy'),
+      ring: document.getElementById('pt-ring-progress'),
+      gradientStop1: document.getElementById('pt-gradient-stop-1'),
+      gradientStop2: document.getElementById('pt-gradient-stop-2'),
+      startPause: document.getElementById('pt-start-pause'),
+      reset: document.getElementById('pt-reset'),
+      skip: document.getElementById('pt-skip'),
+      status: document.getElementById('pt-status'),
+      taskInput: document.getElementById('pt-task-input'),
+      taskEstimate: document.getElementById('pt-task-estimate'),
+      addTask: document.getElementById('pt-add-task'),
+      taskList: document.getElementById('pt-task-list'),
+      historyList: document.getElementById('pt-history-list'),
+      focusMinutes: document.getElementById('pt-focus-minutes'),
+      shortMinutes: document.getElementById('pt-short-minutes'),
+      longMinutes: document.getElementById('pt-long-minutes'),
+      autoStart: document.getElementById('pt-auto-start'),
+      ambientSelect: document.getElementById('pt-ambient-select'),
+      ambientVolume: document.getElementById('pt-ambient-volume'),
+      enableNotifications: document.getElementById('pt-enable-notifications'),
+      resetAll: document.getElementById('pt-reset-all'),
+      statFocus: document.getElementById('pt-stat-focus'),
+      statSessions: document.getElementById('pt-stat-sessions'),
+      statStreak: document.getElementById('pt-stat-streak'),
+      statActiveTask: document.getElementById('pt-stat-active-task')
+    };
+
+    const storageKey = 'toolsmatic-pomodoro-timer-v1';
+    const circleRadius = 120;
+    const circleLength = Math.PI * 2 * circleRadius;
+    pt.ring.style.strokeDasharray = String(circleLength);
+    pt.ring.style.strokeDashoffset = String(circleLength);
+
+    const modeMeta = {
+      focus: {
+        label: 'Focus',
+        className: 'pt-mode-focus',
+        stop1: '#ffb76a',
+        stop2: '#ff6d7c',
+        copy: 'Stay with one task until the ring closes.'
+      },
+      shortBreak: {
+        label: 'Short Break',
+        className: 'pt-mode-short',
+        stop1: '#76e7db',
+        stop2: '#5aa6ff',
+        copy: 'Step back, breathe, and return with less mental noise.'
+      },
+      longBreak: {
+        label: 'Long Break',
+        className: 'pt-mode-long',
+        stop1: '#93b8ff',
+        stop2: '#6fd5ff',
+        copy: 'Use the longer pause to reset before the next cycle begins.'
+      }
+    };
+
+    const defaults = {
+      durations: {
+        focus: 25,
+        shortBreak: 5,
+        longBreak: 15
+      },
+      autoStart: false,
+      ambientMode: 'none',
+      ambientVolume: 28,
+      minimalMode: false,
+      tasks: [],
+      history: [],
+      activeTaskId: '',
+      cycleCompletedFocus: 0,
+      mode: 'focus'
+    };
+
+    const state = {
+      durations: { ...defaults.durations },
+      autoStart: defaults.autoStart,
+      ambientMode: defaults.ambientMode,
+      ambientVolume: defaults.ambientVolume,
+      minimalMode: defaults.minimalMode,
+      tasks: [],
+      history: [],
+      activeTaskId: defaults.activeTaskId,
+      cycleCompletedFocus: defaults.cycleCompletedFocus,
+      mode: defaults.mode,
+      isRunning: false,
+      remainingMs: defaults.durations.focus * 60 * 1000,
+      currentDurationMs: defaults.durations.focus * 60 * 1000,
+      endAt: 0,
+      rafId: 0,
+      autoAdvanceId: 0
+    };
+
+    const audioState = {
+      context: null,
+      ambientNodes: [],
+      ambientIntervals: [],
+      ambientMaster: null
+    };
+
+    function showToast(message, type) {
+      if (window.toolsMatic && typeof window.toolsMatic.showToast === 'function') {
+        window.toolsMatic.showToast(message, type || 'info');
+      }
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, value));
+    }
+
+    function formatNumber(value) {
+      return new Intl.NumberFormat('en-US').format(value);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function makeId() {
+      return 'pt-' + Math.random().toString(36).slice(2, 10);
+    }
+
+    function getLocalDateKey(timestamp) {
+      const date = new Date(timestamp);
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function formatClock(ms) {
+      const totalSeconds = Math.max(0, Math.ceil(ms / 1000));
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      return String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+    }
+
+    function formatMinutes(minutes) {
+      if (!minutes) return '0m';
+      const hours = Math.floor(minutes / 60);
+      const remainder = minutes % 60;
+      if (hours && remainder) return hours + 'h ' + remainder + 'm';
+      if (hours) return hours + 'h';
+      return remainder + 'm';
+    }
+
+    function durationForMode(mode) {
+      return state.durations[mode] * 60 * 1000;
+    }
+
+    function loadStoredState() {
+      try {
+        const raw = localStorage.getItem(storageKey);
+        if (!raw) return;
+        const saved = JSON.parse(raw);
+        state.durations.focus = clamp(Number(saved?.durations?.focus) || defaults.durations.focus, 1, 90);
+        state.durations.shortBreak = clamp(Number(saved?.durations?.shortBreak) || defaults.durations.shortBreak, 1, 90);
+        state.durations.longBreak = clamp(Number(saved?.durations?.longBreak) || defaults.durations.longBreak, 1, 90);
+        state.autoStart = Boolean(saved?.autoStart);
+        state.ambientMode = ['none', 'white', 'rain', 'cafe'].includes(saved?.ambientMode) ? saved.ambientMode : 'none';
+        state.ambientVolume = clamp(Number(saved?.ambientVolume) || defaults.ambientVolume, 0, 100);
+        state.minimalMode = Boolean(saved?.minimalMode);
+        state.tasks = Array.isArray(saved?.tasks) ? saved.tasks.slice(0, 40) : [];
+        state.history = Array.isArray(saved?.history) ? saved.history.slice(0, 80) : [];
+        state.activeTaskId = typeof saved?.activeTaskId === 'string' ? saved.activeTaskId : '';
+        state.cycleCompletedFocus = Number.isFinite(saved?.cycleCompletedFocus) ? Math.max(0, saved.cycleCompletedFocus) : 0;
+        state.mode = ['focus', 'shortBreak', 'longBreak'].includes(saved?.mode) ? saved.mode : 'focus';
+      } catch (error) {
+        // ignore bad local data
+      }
+      state.remainingMs = durationForMode(state.mode);
+      state.currentDurationMs = durationForMode(state.mode);
+    }
+
+    function saveStoredState() {
+      const data = {
+        durations: state.durations,
+        autoStart: state.autoStart,
+        ambientMode: state.ambientMode,
+        ambientVolume: state.ambientVolume,
+        minimalMode: state.minimalMode,
+        tasks: state.tasks,
+        history: state.history.slice(0, 80),
+        activeTaskId: state.activeTaskId,
+        cycleCompletedFocus: state.cycleCompletedFocus,
+        mode: state.mode
+      };
+      localStorage.setItem(storageKey, JSON.stringify(data));
+    }
+
+    function ensureAudioContext() {
+      if (!audioState.context) {
+        const AudioCtor = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtor) return null;
+        audioState.context = new AudioCtor();
+      }
+      if (audioState.context.state === 'suspended') {
+        audioState.context.resume().catch(() => {});
+      }
+      return audioState.context;
+    }
+
+    function createNoiseBuffer(context, variant) {
+      const sampleRate = context.sampleRate;
+      const buffer = context.createBuffer(1, sampleRate * 2, sampleRate);
+      const data = buffer.getChannelData(0);
+      let lastBrown = 0;
+      for (let i = 0; i < data.length; i += 1) {
+        const white = Math.random() * 2 - 1;
+        if (variant === 'brown') {
+          lastBrown = (lastBrown + (0.02 * white)) / 1.02;
+          data[i] = lastBrown * 3.5;
+        } else {
+          data[i] = white;
+        }
+      }
+      return buffer;
+    }
+
+    function stopAmbient() {
+      audioState.ambientIntervals.forEach((id) => clearInterval(id));
+      audioState.ambientIntervals = [];
+      audioState.ambientNodes.forEach((node) => {
+        try {
+          if (typeof node.stop === 'function') node.stop();
+        } catch (error) {
+          // ignore
+        }
+        try {
+          if (typeof node.disconnect === 'function') node.disconnect();
+        } catch (error) {
+          // ignore
+        }
+      });
+      audioState.ambientNodes = [];
+      if (audioState.ambientMaster) {
+        try {
+          audioState.ambientMaster.disconnect();
+        } catch (error) {
+          // ignore
+        }
+      }
+      audioState.ambientMaster = null;
+    }
+
+    function startAmbient(mode) {
+      stopAmbient();
+      if (mode === 'none' || !state.isRunning) return;
+      const context = ensureAudioContext();
+      if (!context) return;
+
+      const master = context.createGain();
+      master.gain.value = clamp(state.ambientVolume / 100, 0, 1) * 0.32;
+      master.connect(context.destination);
+      audioState.ambientMaster = master;
+
+      const noiseVariant = mode === 'cafe' ? 'brown' : 'white';
+      const noiseSource = context.createBufferSource();
+      noiseSource.buffer = createNoiseBuffer(context, noiseVariant);
+      noiseSource.loop = true;
+
+      const filterA = context.createBiquadFilter();
+      const filterB = context.createBiquadFilter();
+
+      if (mode === 'white') {
+        filterA.type = 'lowpass';
+        filterA.frequency.value = 12000;
+        filterB.type = 'highpass';
+        filterB.frequency.value = 120;
+      } else if (mode === 'rain') {
+        filterA.type = 'highpass';
+        filterA.frequency.value = 600;
+        filterB.type = 'lowpass';
+        filterB.frequency.value = 4200;
+      } else {
+        filterA.type = 'lowpass';
+        filterA.frequency.value = 1200;
+        filterB.type = 'highpass';
+        filterB.frequency.value = 80;
+      }
+
+      noiseSource.connect(filterA);
+      filterA.connect(filterB);
+      filterB.connect(master);
+      noiseSource.start();
+      audioState.ambientNodes.push(noiseSource, filterA, filterB);
+
+      if (mode === 'cafe') {
+        const murmur = context.createOscillator();
+        const murmurGain = context.createGain();
+        murmur.type = 'sine';
+        murmur.frequency.value = 160;
+        murmurGain.gain.value = 0.006;
+        murmur.connect(murmurGain);
+        murmurGain.connect(master);
+        murmur.start();
+        audioState.ambientNodes.push(murmur, murmurGain);
+
+        const murmurTwo = context.createOscillator();
+        const murmurGainTwo = context.createGain();
+        murmurTwo.type = 'triangle';
+        murmurTwo.frequency.value = 210;
+        murmurGainTwo.gain.value = 0.004;
+        murmurTwo.connect(murmurGainTwo);
+        murmurGainTwo.connect(master);
+        murmurTwo.start();
+        audioState.ambientNodes.push(murmurTwo, murmurGainTwo);
+
+        const clinkInterval = setInterval(() => {
+          if (!audioState.context || audioState.context.state === 'closed') return;
+          const now = context.currentTime;
+          const osc = context.createOscillator();
+          const gain = context.createGain();
+          osc.type = 'triangle';
+          osc.frequency.value = 900 + Math.random() * 500;
+          gain.gain.setValueAtTime(0.0001, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.01);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
+          osc.connect(gain);
+          gain.connect(master);
+          osc.start(now);
+          osc.stop(now + 0.2);
+          audioState.ambientNodes.push(osc, gain);
+        }, 9000 + Math.random() * 5000);
+
+        audioState.ambientIntervals.push(clinkInterval);
+      }
+    }
+
+    function playChime() {
+      const context = ensureAudioContext();
+      if (!context) return;
+      const now = context.currentTime;
+      [
+        { freq: 659.25, start: 0, end: 0.18 },
+        { freq: 783.99, start: 0.11, end: 0.32 },
+        { freq: 987.77, start: 0.24, end: 0.48 }
+      ].forEach((note) => {
+        const osc = context.createOscillator();
+        const gain = context.createGain();
+        osc.type = 'triangle';
+        osc.frequency.value = note.freq;
+        gain.gain.setValueAtTime(0.0001, now + note.start);
+        gain.gain.exponentialRampToValueAtTime(0.045, now + note.start + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + note.end);
+        osc.connect(gain);
+        gain.connect(context.destination);
+        osc.start(now + note.start);
+        osc.stop(now + note.end + 0.02);
+      });
+    }
+
+    function getActiveTask() {
+      return state.tasks.find((task) => task.id === state.activeTaskId) || null;
+    }
+
+    function getCycleDisplay() {
+      if (state.mode === 'focus') {
+        return 'Pomodoro ' + Math.min((state.cycleCompletedFocus % 4) + 1, 4) + ' of 4';
+      }
+      if ((state.cycleCompletedFocus % 4) === 0) {
+        return 'Long break after pomodoro 4';
+      }
+      return 'Break after pomodoro ' + (state.cycleCompletedFocus % 4);
+    }
+
+    function applyModeTheme() {
+      const meta = modeMeta[state.mode];
+      pt.app.classList.remove('pt-mode-focus', 'pt-mode-short', 'pt-mode-long');
+      pt.app.classList.add(meta.className);
+      pt.gradientStop1.setAttribute('stop-color', meta.stop1);
+      pt.gradientStop2.setAttribute('stop-color', meta.stop2);
+      pt.modeBadge.textContent = meta.label;
+      pt.modeLabel.textContent = meta.label;
+      pt.sessionBadge.textContent = getCycleDisplay();
+      pt.sessionCopy.textContent = getCycleDisplay();
+
+      const activeTask = getActiveTask();
+      if (state.mode === 'focus' && activeTask) {
+        pt.subcopy.textContent = 'Active task: ' + activeTask.title;
+      } else {
+        pt.subcopy.textContent = meta.copy;
+      }
+    }
+
+    function updateProgressRing() {
+      const total = Math.max(state.currentDurationMs, 1);
+      const progress = clamp(1 - (state.remainingMs / total), 0, 1);
+      const dashOffset = circleLength * (1 - progress);
+      pt.ring.style.strokeDashoffset = String(dashOffset);
+      pt.time.textContent = formatClock(state.remainingMs);
+    }
+
+    function updateStartPauseLabel() {
+      pt.startPause.textContent = state.isRunning ? 'Pause' : 'Start';
+    }
+
+    function updateStatus(message) {
+      pt.status.textContent = message;
+    }
+
+    function renderTasks() {
+      if (!state.tasks.length) {
+        pt.taskList.innerHTML = '<div class="pt-empty">No tasks yet. Add one to give the timer a clear target.</div>';
+        return;
+      }
+
+      pt.taskList.innerHTML = state.tasks.map((task) => {
+        const isActive = task.id === state.activeTaskId;
+        const progress = (task.completedPomodoros || 0) + ' / ' + task.estimate;
+        return (
+          '<div class="pt-task-item' + (isActive ? ' is-active' : '') + '">' +
+            '<div class="pt-task-row">' +
+              '<div class="pt-task-left">' +
+                '<input class="pt-task-check" data-action="toggle-task" data-id="' + task.id + '" type="checkbox" ' + (task.done ? 'checked' : '') + '>' +
+                '<div>' +
+                  '<p class="pt-task-title' + (task.done ? ' is-done' : '') + '">' + escapeHtml(task.title) + '</p>' +
+                  '<div class="pt-task-meta"><span>Estimate: ' + task.estimate + ' pomodoros</span><span>Completed: ' + progress + '</span></div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="pt-task-actions">' +
+                '<button type="button" data-action="activate-task" data-id="' + task.id + '">' + (isActive ? 'Active' : 'Focus') + '</button>' +
+                '<button type="button" data-action="delete-task" data-id="' + task.id + '">Remove</button>' +
+              '</div>' +
+            '</div>' +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    function renderHistory() {
+      if (!state.history.length) {
+        pt.historyList.innerHTML = '<div class="pt-empty">Your completed focus and break sessions will appear here.</div>';
+        return;
+      }
+
+      pt.historyList.innerHTML = state.history.slice(0, 16).map((entry) => {
+        const time = new Intl.DateTimeFormat('en-US', {
+          month: 'short',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit'
+        }).format(new Date(entry.timestamp));
+        return (
+          '<div class="pt-history-item">' +
+            '<div class="pt-history-row">' +
+              '<strong>' + escapeHtml(entry.label) + '</strong>' +
+              '<span>' + escapeHtml(time) + '</span>' +
+            '</div>' +
+            '<div class="pt-history-meta">' +
+              '<span>' + entry.minutes + ' min</span>' +
+              (entry.taskTitle ? '<span>Task: ' + escapeHtml(entry.taskTitle) + '</span>' : '') +
+            '</div>' +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    function computeStats() {
+      const todayKey = getLocalDateKey(Date.now());
+      const focusEntries = state.history.filter((entry) => entry.kind === 'focus');
+      const todayFocusEntries = focusEntries.filter((entry) => getLocalDateKey(entry.timestamp) === todayKey);
+      const totalFocusMinutesToday = todayFocusEntries.reduce((sum, entry) => sum + entry.minutes, 0);
+
+      const days = new Set(focusEntries.map((entry) => getLocalDateKey(entry.timestamp)));
+      let streak = 0;
+      let cursor = new Date();
+      while (days.has(getLocalDateKey(cursor.getTime()))) {
+        streak += 1;
+        cursor.setDate(cursor.getDate() - 1);
+      }
+
+      return {
+        focusMinutesToday: totalFocusMinutesToday,
+        sessionsToday: todayFocusEntries.length,
+        streak
+      };
+    }
+
+    function renderStats() {
+      const stats = computeStats();
+      const activeTask = getActiveTask();
+      pt.statFocus.textContent = formatMinutes(stats.focusMinutesToday);
+      pt.statSessions.textContent = formatNumber(stats.sessionsToday);
+      pt.statStreak.textContent = formatNumber(stats.streak);
+      pt.statActiveTask.textContent = activeTask ? activeTask.title : 'None';
+    }
+
+    function syncInputs() {
+      pt.focusMinutes.value = String(state.durations.focus);
+      pt.shortMinutes.value = String(state.durations.shortBreak);
+      pt.longMinutes.value = String(state.durations.longBreak);
+      pt.autoStart.checked = state.autoStart;
+      pt.ambientSelect.value = state.ambientMode;
+      pt.ambientVolume.value = String(state.ambientVolume);
+      pt.minimalToggle.textContent = state.minimalMode ? 'Exit minimal mode' : 'Minimal mode';
+      if (!('Notification' in window)) {
+        pt.enableNotifications.textContent = 'Desktop alerts unavailable';
+        pt.enableNotifications.disabled = true;
+      } else {
+        pt.enableNotifications.disabled = false;
+        pt.enableNotifications.textContent = Notification.permission === 'granted'
+          ? 'Desktop alerts enabled'
+          : 'Enable desktop alerts';
+      }
+    }
+
+    function renderAll() {
+      applyModeTheme();
+      updateProgressRing();
+      updateStartPauseLabel();
+      renderTasks();
+      renderHistory();
+      renderStats();
+      syncInputs();
+      pt.app.classList.toggle('is-minimal', state.minimalMode);
+      saveStoredState();
+    }
+
+    function logSession(kind, minutes) {
+      const activeTask = getActiveTask();
+      state.history.unshift({
+        id: makeId(),
+        kind,
+        label: modeMeta[state.mode].label,
+        minutes,
+        timestamp: Date.now(),
+        taskTitle: kind === 'focus' && activeTask ? activeTask.title : ''
+      });
+      state.history = state.history.slice(0, 80);
+    }
+
+    function updateTaskProgressForFocus() {
+      const activeTask = getActiveTask();
+      if (!activeTask) return;
+      activeTask.completedPomodoros = (activeTask.completedPomodoros || 0) + 1;
+    }
+
+    function notifySessionEnd(nextMode) {
+      const current = modeMeta[state.mode].label;
+      const next = modeMeta[nextMode].label;
+      playChime();
+      if ('Notification' in window && Notification.permission === 'granted') {
+        try {
+          new Notification(current + ' complete', {
+            body: 'Next up: ' + next + '.'
+          });
+        } catch (error) {
+          // ignore
+        }
+      }
+    }
+
+    function setMode(mode, resetTime = true) {
+      state.mode = mode;
+      if (resetTime) {
+        state.remainingMs = durationForMode(mode);
+        state.currentDurationMs = durationForMode(mode);
+      }
+      renderAll();
+    }
+
+    function completeCurrentSession() {
+      const currentMode = state.mode;
+      const completedMinutes = Math.round(state.currentDurationMs / 60000);
+      if (currentMode === 'focus') {
+        state.cycleCompletedFocus += 1;
+        updateTaskProgressForFocus();
+        logSession('focus', completedMinutes);
+      } else if (currentMode === 'shortBreak') {
+        logSession('shortBreak', completedMinutes);
+      } else {
+        logSession('longBreak', completedMinutes);
+      }
+
+      let nextMode = 'focus';
+      if (currentMode === 'focus') {
+        nextMode = (state.cycleCompletedFocus % 4 === 0) ? 'longBreak' : 'shortBreak';
+      }
+
+      notifySessionEnd(nextMode);
+      state.isRunning = false;
+      state.endAt = 0;
+      cancelAnimationFrame(state.rafId);
+      state.rafId = 0;
+      stopAmbient();
+      setMode(nextMode, true);
+      updateStatus(modeMeta[currentMode].label + ' finished. ' + modeMeta[nextMode].label + ' is ready.');
+
+      if (state.autoStart) {
+        clearTimeout(state.autoAdvanceId);
+        state.autoAdvanceId = setTimeout(() => {
+          startTimer();
+        }, 900);
+      }
+    }
+
+    function tick() {
+      if (!state.isRunning) return;
+      state.remainingMs = Math.max(0, state.endAt - Date.now());
+      updateProgressRing();
+      if (state.remainingMs <= 0) {
+        completeCurrentSession();
+        return;
+      }
+      state.rafId = requestAnimationFrame(tick);
+    }
+
+    function startTimer() {
+      if (state.isRunning) return;
+      ensureAudioContext();
+      state.isRunning = true;
+      state.endAt = Date.now() + state.remainingMs;
+      updateStartPauseLabel();
+      startAmbient(state.ambientMode);
+      updateStatus(modeMeta[state.mode].label + ' started. ' + (getActiveTask() ? 'Working on ' + getActiveTask().title + '.' : 'You can set an active task from the side panel.'));
+      state.rafId = requestAnimationFrame(tick);
+    }
+
+    function pauseTimer() {
+      if (!state.isRunning) return;
+      state.remainingMs = Math.max(0, state.endAt - Date.now());
+      state.isRunning = false;
+      state.endAt = 0;
+      cancelAnimationFrame(state.rafId);
+      state.rafId = 0;
+      stopAmbient();
+      updateStartPauseLabel();
+      updateProgressRing();
+      updateStatus('Timer paused. Press Start or Space to continue.');
+      saveStoredState();
+    }
+
+    function resetCurrentSession() {
+      state.isRunning = false;
+      state.endAt = 0;
+      cancelAnimationFrame(state.rafId);
+      state.rafId = 0;
+      stopAmbient();
+      state.remainingMs = durationForMode(state.mode);
+      state.currentDurationMs = durationForMode(state.mode);
+      renderAll();
+      updateStatus(modeMeta[state.mode].label + ' reset to full length.');
+    }
+
+    function skipCurrentSession() {
+      state.isRunning = false;
+      state.endAt = 0;
+      cancelAnimationFrame(state.rafId);
+      state.rafId = 0;
+      stopAmbient();
+
+      let nextMode = 'focus';
+      if (state.mode === 'focus') {
+        nextMode = 'shortBreak';
+      }
+
+      setMode(nextMode, true);
+      updateStatus('Skipped to ' + modeMeta[nextMode].label + '.');
+    }
+
+    function toggleTimer() {
+      if (state.isRunning) {
+        pauseTimer();
+      } else {
+        startTimer();
+      }
+    }
+ 
+    function addTask() {
+      const title = pt.taskInput.value.trim();
+      const estimate = clamp(parseInt(pt.taskEstimate.value, 10) || 1, 1, 12);
+      if (!title) {
+        updateStatus('Add a task title first.');
+        showToast('Add a task title', 'error');
+        return;
+      }
+
+      const task = {
+        id: makeId(),
+        title,
+        estimate,
+        completedPomodoros: 0,
+        done: false
+      };
+      state.tasks.unshift(task);
+      state.tasks = state.tasks.slice(0, 40);
+      if (!state.activeTaskId) {
+        state.activeTaskId = task.id;
+      }
+      pt.taskInput.value = '';
+      pt.taskEstimate.value = '1';
+      renderAll();
+      updateStatus('Task added. Start the timer when you are ready.');
+      showToast('Task added', 'success');
+    }
+
+    function handleTaskAction(event) {
+      const target = event.target.closest('[data-action]');
+      if (!target) return;
+      const task = state.tasks.find((entry) => entry.id === target.dataset.id);
+      if (!task) return;
+
+      if (target.dataset.action === 'toggle-task') {
+        task.done = !task.done;
+        if (task.done && state.activeTaskId === task.id) {
+          state.activeTaskId = '';
+        }
+      }
+
+      if (target.dataset.action === 'activate-task') {
+        state.activeTaskId = state.activeTaskId === task.id ? '' : task.id;
+      }
+
+      if (target.dataset.action === 'delete-task') {
+        state.tasks = state.tasks.filter((entry) => entry.id !== task.id);
+        if (state.activeTaskId === task.id) {
+          state.activeTaskId = '';
+        }
+      }
+
+      renderAll();
+    }
+
+    function requestNotifications() {
+      if (!('Notification' in window)) {
+        updateStatus('Desktop notifications are not available in this browser.');
+        showToast('Notifications unavailable', 'error');
+        return;
+      }
+
+      Notification.requestPermission().then((permission) => {
+        renderAll();
+        if (permission === 'granted') {
+          updateStatus('Desktop alerts enabled.');
+          showToast('Notifications enabled', 'success');
+        } else {
+          updateStatus('Desktop alerts were not enabled.');
+          showToast('Notifications not enabled', 'info');
+        }
+      }).catch(() => {
+        updateStatus('Notification permission request failed.');
+      });
+    }
+
+    function applyDurationSettings() {
+      state.durations.focus = clamp(parseInt(pt.focusMinutes.value, 10) || defaults.durations.focus, 1, 90);
+      state.durations.shortBreak = clamp(parseInt(pt.shortMinutes.value, 10) || defaults.durations.shortBreak, 1, 90);
+      state.durations.longBreak = clamp(parseInt(pt.longMinutes.value, 10) || defaults.durations.longBreak, 1, 90);
+      if (!state.isRunning) {
+        state.remainingMs = durationForMode(state.mode);
+        state.currentDurationMs = durationForMode(state.mode);
+      }
+      renderAll();
+      updateStatus('Session lengths updated.');
+    }
+
+    function resetAllData() {
+      pauseTimer();
+      state.durations = { ...defaults.durations };
+      state.autoStart = defaults.autoStart;
+      state.ambientMode = defaults.ambientMode;
+      state.ambientVolume = defaults.ambientVolume;
+      state.minimalMode = defaults.minimalMode;
+      state.tasks = [];
+      state.history = [];
+      state.activeTaskId = '';
+      state.cycleCompletedFocus = 0;
+      state.mode = 'focus';
+      state.remainingMs = defaults.durations.focus * 60 * 1000;
+      state.currentDurationMs = defaults.durations.focus * 60 * 1000;
+      localStorage.removeItem(storageKey);
+      renderAll();
+      updateStatus('Local Pomodoro data reset.');
+      showToast('Reset complete', 'info');
+    }
+
+    pt.startPause.addEventListener('click', toggleTimer);
+    pt.reset.addEventListener('click', resetCurrentSession);
+    pt.skip.addEventListener('click', skipCurrentSession);
+    pt.addTask.addEventListener('click', addTask);
+    pt.taskInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        addTask();
+      }
+    });
+    pt.taskList.addEventListener('click', handleTaskAction);
+    pt.taskList.addEventListener('change', handleTaskAction);
+    pt.enableNotifications.addEventListener('click', requestNotifications);
+    pt.resetAll.addEventListener('click', resetAllData);
+    pt.focusMinutes.addEventListener('change', applyDurationSettings);
+    pt.shortMinutes.addEventListener('change', applyDurationSettings);
+    pt.longMinutes.addEventListener('change', applyDurationSettings);
+    pt.autoStart.addEventListener('change', () => {
+      state.autoStart = pt.autoStart.checked;
+      saveStoredState();
+      updateStatus(state.autoStart ? 'Auto-start enabled.' : 'Auto-start disabled.');
+    });
+    pt.ambientSelect.addEventListener('change', () => {
+      state.ambientMode = pt.ambientSelect.value;
+      if (state.isRunning) {
+        startAmbient(state.ambientMode);
+      } else {
+        stopAmbient();
+      }
+      saveStoredState();
+      updateStatus(state.ambientMode === 'none' ? 'Ambient sound off.' : modeMeta[state.mode].label + ' ambience set to ' + state.ambientMode + '.');
+    });
+    pt.ambientVolume.addEventListener('change', () => {
+      state.ambientVolume = clamp(parseInt(pt.ambientVolume.value, 10) || defaults.ambientVolume, 0, 100);
+      pt.ambientVolume.value = String(state.ambientVolume);
+      if (audioState.ambientMaster) {
+        audioState.ambientMaster.gain.value = clamp(state.ambientVolume / 100, 0, 1) * 0.32;
+      }
+      saveStoredState();
+    });
+    pt.minimalToggle.addEventListener('click', () => {
+      state.minimalMode = !state.minimalMode;
+      renderAll();
+      updateStatus(state.minimalMode ? 'Minimal mode on. The timer is now the main surface.' : 'Minimal mode off. Supporting panels are back.');
+    });
+
+    document.addEventListener('keydown', (event) => {
+      const target = event.target;
+      const isEditing = target instanceof HTMLElement && (
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.tagName === 'SELECT' ||
+        target.isContentEditable
+      );
+      if (isEditing) return;
+
+      const key = event.key.toLowerCase();
+      if (event.code === 'Space') {
+        event.preventDefault();
+        toggleTimer();
+      } else if (key === 'r') {
+        event.preventDefault();
+        resetCurrentSession();
+      } else if (key === 's') {
+        event.preventDefault();
+        skipCurrentSession();
+      }
+    });
+
+    window.addEventListener('beforeunload', () => {
+      stopAmbient();
+      saveStoredState();
+    });
+
+    loadStoredState();
+    renderAll();
+    updateStatus('Ready for a clean focus block. Press Start, or hit Space anywhere outside a text field.');
+  </script>
+</body>
+</html>

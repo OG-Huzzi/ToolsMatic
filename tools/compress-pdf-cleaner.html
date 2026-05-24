@@ -1,0 +1,2609 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Compress PDF Clean Interface Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Compress PDF Clean Interface online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/compress-pdf-cleaner.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/compress-pdf-cleaner.html">
+  <meta property="og:title" content="Compress PDF Clean Interface Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Compress PDF Clean Interface online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Compress PDF Clean Interface Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Compress PDF Clean Interface online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  
+
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Compress a PDF File Online",
+    "description": "Reduce PDF file size using ToolsMatic — free, private, no upload required.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload your PDF",
+        "text": "Drag and drop your PDF file onto the upload zone or click to browse and select it."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Choose compression level",
+        "text": "Select Light, Medium, or Strong compression depending on how much you want to reduce the file size."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Click Compress PDF",
+        "text": "Click the Compress PDF button. Processing happens instantly inside your browser."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Download compressed PDF",
+        "text": "Click Download to save your compressed PDF. See exactly how much space was saved."
+      }
+    ]
+  }
+  </script>
+
+  
+
+  <style>
+    .compress-breadcrumb {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+
+    .compress-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 40px 40px;
+    }
+
+    .compress-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    .compress-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 28%), var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 24px;
+    }
+
+    .compress-card[hidden] {
+      display: none !important;
+    }
+
+    .compress-upload-note {
+      margin-top: 18px;
+      color: var(--text-muted);
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .compress-dropzone.dragover {
+      background: rgba(245, 158, 11, 0.08);
+      border-color: var(--accent);
+      box-shadow:
+        0 0 0 6px var(--accent-glow),
+        inset 0 0 28px rgba(245, 158, 11, 0.08);
+      animation: compress-upload-pulse 1s ease-in-out infinite;
+    }
+
+    @keyframes compress-upload-pulse {
+      0%,
+      100% {
+        border-color: rgba(245, 158, 11, 0.7);
+      }
+
+      50% {
+        border-color: rgba(251, 191, 36, 1);
+      }
+    }
+
+    .file-info-bar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .file-info-bar-left {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .file-stat {
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .file-stat strong {
+      color: var(--text-primary);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .btn-clear-file {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-clear-file:hover:not(:disabled) {
+      border-color: rgba(239, 68, 68, 0.55);
+      background: rgba(239, 68, 68, 0.07);
+      color: var(--error);
+    }
+
+    .btn-clear-file:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    .btn-clear-file:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    .compression-levels {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .level-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      min-height: 100%;
+      padding: 20px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-card);
+      background: var(--bg-card);
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .level-card:hover:not(:disabled) {
+      border-color: rgba(245, 158, 11, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .level-card.selected {
+      border-color: var(--accent);
+      background: rgba(245, 158, 11, 0.06);
+      box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.16);
+    }
+
+    .level-card:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+      transform: none;
+    }
+
+    .level-card:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    .level-selected-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      display: none;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #050505;
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .level-card.selected .level-selected-badge {
+      display: grid;
+    }
+
+    .level-icon {
+      margin-bottom: 10px;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .level-name {
+      margin-bottom: 6px;
+      color: var(--text-primary);
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .level-reduction {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .level-desc {
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .level-quality {
+      width: 100%;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .compression-slider-wrap {
+      margin-bottom: 24px;
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: linear-gradient(180deg, rgba(245, 158, 11, 0.04), transparent 55%), rgba(255, 255, 255, 0.02);
+    }
+
+    .compression-slider-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .compression-slider-label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .compression-slider-copy {
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .compression-slider-readout {
+      flex-shrink: 0;
+      min-width: 120px;
+      text-align: right;
+    }
+
+    .compression-slider-value {
+      display: block;
+      color: var(--accent);
+      font-family: "Inter", sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .compression-slider-caption {
+      display: block;
+      margin-top: 4px;
+      color: var(--text-muted);
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .compression-slider {
+      --slider-fill: 14.2857%;
+      width: 100%;
+      height: 10px;
+      margin: 0;
+      border-radius: 999px;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      background: linear-gradient(
+        90deg,
+        var(--accent) 0%,
+        var(--accent) var(--slider-fill),
+        rgba(255, 255, 255, 0.08) var(--slider-fill),
+        rgba(255, 255, 255, 0.08) 100%
+      );
+      touch-action: pan-y;
+      cursor: pointer;
+    }
+
+    .compression-slider::-webkit-slider-runnable-track {
+      height: 10px;
+      border-radius: 999px;
+      background: transparent;
+    }
+
+    .compression-slider::-webkit-slider-thumb {
+      width: 22px;
+      height: 22px;
+      margin-top: -6px;
+      border: 2px solid #111111;
+      border-radius: 50%;
+      background: #fbbf24;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.24);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .compression-slider::-moz-range-track {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .compression-slider::-moz-range-progress {
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .compression-slider::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border: 2px solid #111111;
+      border-radius: 50%;
+      background: #fbbf24;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.24);
+    }
+
+    .compression-slider:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 4px;
+    }
+
+    .compression-slider-scale {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 10px;
+      color: var(--text-muted);
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .compression-slider-note {
+      margin-top: 12px;
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .size-meter-wrap {
+      display: none;
+      margin-bottom: 20px;
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: linear-gradient(180deg, rgba(34, 197, 94, 0.02), transparent 50%), rgba(255, 255, 255, 0.02);
+    }
+
+    .size-meter-wrap.visible {
+      display: block;
+    }
+
+    .size-meter-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .size-meter-bar-track {
+      width: 100%;
+      height: 10px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .size-meter-bar-original {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .size-meter-bar-compressed {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #fbbf24, var(--accent));
+      transition: width 0.85s ease;
+    }
+
+    .size-meter-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 24px;
+    }
+
+    .size-stat {
+      min-width: 120px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .size-stat-label {
+      margin-bottom: 3px;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .size-stat-value {
+      color: var(--text-primary);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .size-stat-value.saved {
+      color: var(--success);
+    }
+
+    .savings-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 197, 94, 0.22);
+      background: rgba(34, 197, 94, 0.08);
+      color: var(--success);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .savings-badge.great {
+      border-color: rgba(245, 158, 11, 0.22);
+      background: rgba(245, 158, 11, 0.08);
+      color: var(--accent);
+    }
+
+    .compress-action-row {
+      margin-top: 4px;
+    }
+
+    .btn-compress {
+      width: 100%;
+    }
+
+    .btn-compress.loading svg {
+      visibility: hidden;
+    }
+
+    .compress-progress {
+      margin-top: 20px;
+    }
+
+    .compress-progress-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .compress-progress-percent {
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .result-section {
+      display: none;
+      margin-top: 24px;
+    }
+
+    .result-section.visible {
+      display: block;
+      animation: compress-fade-in 0.35s ease;
+    }
+
+    @keyframes compress-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .result-card {
+      padding: 28px;
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: var(--radius-card);
+      background: linear-gradient(180deg, rgba(34, 197, 94, 0.04), transparent 36%), var(--bg-card);
+    }
+
+    .result-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: var(--success);
+      font-family: "Inter", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .result-stats {
+      margin-bottom: 18px;
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .filename-preview {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding: 12px 14px;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: var(--radius-btn);
+      background: rgba(245, 158, 11, 0.05);
+    }
+
+    .filename-preview-icon {
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .filename-preview-text {
+      margin-bottom: 4px;
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .filename-preview-name {
+      color: var(--text-primary);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .result-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .result-actions .btn {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .comparison-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      margin: 16px 0;
+    }
+
+    .compress-seo {
+      padding: 0 40px 80px;
+    }
+
+    @media (max-width: 768px) {
+      .compress-breadcrumb,
+      .compress-hero,
+      .compress-wrapper,
+      .compress-seo {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .compress-wrapper,
+      .compress-seo {
+        padding-bottom: 60px;
+      }
+
+      .compression-levels {
+        grid-template-columns: 1fr;
+      }
+
+      .compression-slider-header {
+        flex-direction: column;
+      }
+
+      .compression-slider-readout {
+        min-width: 0;
+        text-align: left;
+      }
+
+      .result-actions {
+        flex-direction: column;
+      }
+
+      .result-actions .btn {
+        min-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .file-info-bar {
+        flex-direction: column;
+      }
+
+      .size-meter-stats {
+        gap: 14px;
+      }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/compress-pdf-cleaner.html">
+</head>
+<body>
+
+<header class="header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+      <span class="header-logo-text">ToolsMatic</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="/#tools" class="header-cta btn">All Tools</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <nav class="breadcrumb compress-breadcrumb" aria-label="Breadcrumb">
+    <a href="/" class="breadcrumb-link">Home</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="/#tools" class="breadcrumb-link">Tools</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="breadcrumb-current" aria-current="page">Compress PDF</span>
+  </nav>
+
+  <section class="tool-hero compress-hero" aria-label="Compress PDF tool">
+    <div class="tool-hero-badge">Private PDF compression in your browser</div>
+    <h1>Compress PDF Clean Interface</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+    <p class="tool-hero-sub">
+      Reduce PDF size for email, uploads, forms, and faster sharing with Light, Medium, or Strong compression.
+      Your file stays on your device from start to finish.
+    </p>
+  </section>
+
+  <section class="compress-wrapper" aria-label="PDF compression tool">
+    <input type="file" id="file-input" accept=".pdf,application/pdf" hidden="" aria-hidden="true">
+
+    <div class="upload-zone compress-dropzone" id="upload-zone" role="button" tabindex="0" aria-label="Upload PDF file" aria-describedby="upload-hint">
+      <div class="upload-zone-icon" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polyline points="16 16 12 12 8 16"></polyline>
+          <line x1="12" y1="12" x2="12" y2="21"></line>
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+        </svg>
+      </div>
+      <div class="upload-zone-text">Drag and drop your PDF here</div>
+      <div class="upload-zone-sub" id="upload-hint">or click to browse</div>
+      <div class="upload-zone-sub">One PDF at a time</div>
+    </div>
+    <div class="compress-upload-note" id="upload-note">Compression runs locally in your browser. ToolsMatic does not upload your file.</div>
+
+    <div class="compress-card" id="tool-area" hidden="">
+      <div class="file-info-bar">
+        <div class="file-info-bar-left">
+          <div class="file-stat">File: <strong id="stat-name-val">—</strong></div>
+          <div class="file-stat">Pages: <strong id="stat-pages-val">—</strong></div>
+          <div class="file-stat">Original size: <strong id="stat-size-val">—</strong></div>
+        </div>
+        <button type="button" class="btn-clear-file" id="btn-clear-file" aria-label="Clear file and reset tool">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+            <path d="M10 11v6M14 11v6"></path>
+          </svg>
+          Clear File
+        </button>
+      </div>
+
+      <div class="compression-levels" role="radiogroup" aria-label="Compression level">
+        <button type="button" class="level-card selected" data-level="light" role="radio" aria-checked="true">
+          <span class="level-selected-badge" aria-hidden="true">✓</span>
+          <span class="level-icon" aria-hidden="true">🪶</span>
+          <div class="level-name">Light</div>
+          <div class="level-reduction">~10-30% smaller</div>
+          <div class="level-desc">Optimizes structure and removes waste without noticeably changing the document.</div>
+          <div class="level-quality">Best for contracts, forms, and professional PDFs.</div>
+        </button>
+
+        <button type="button" class="level-card" data-level="medium" role="radio" aria-checked="false">
+          <span class="level-selected-badge" aria-hidden="true">✓</span>
+          <span class="level-icon" aria-hidden="true">⚖️</span>
+          <div class="level-name">Medium</div>
+          <div class="level-reduction">~30-60% smaller</div>
+          <div class="level-desc">Balances smaller size with readable output for everyday sharing and uploads.</div>
+          <div class="level-quality">Best for email, forms, portals, and client delivery.</div>
+        </button>
+
+        <button type="button" class="level-card" data-level="strong" role="radio" aria-checked="false">
+          <span class="level-selected-badge" aria-hidden="true">✓</span>
+          <span class="level-icon" aria-hidden="true">💪</span>
+          <div class="level-name">Strong</div>
+          <div class="level-reduction">~50-80% smaller</div>
+          <div class="level-desc">Prioritizes the smallest possible file size, especially for image-heavy PDFs.</div>
+          <div class="level-quality">Best when upload limits matter more than image detail.</div>
+        </button>
+      </div>
+
+      <div class="compression-slider-wrap">
+        <div class="compression-slider-header">
+          <div>
+            <label class="compression-slider-label" for="compression-slider">Fine-tune compression amount</label>
+            <div class="compression-slider-copy">
+              The Light, Medium, and Strong cards stay available as presets. Use the slider for a more precise target.
+            </div>
+          </div>
+          <div class="compression-slider-readout">
+            <span class="compression-slider-value" id="compression-amount-value">20%</span>
+            <span class="compression-slider-caption">Target reduction</span>
+          </div>
+        </div>
+        <input type="range" class="compression-slider" id="compression-slider" min="10" max="80" step="1" value="20" aria-describedby="compression-slider-scale compression-slider-note">
+        <div class="compression-slider-scale" id="compression-slider-scale">
+          <span>10%</span>
+          <span>45%</span>
+          <span>80%</span>
+        </div>
+        <div class="compression-slider-note" id="compression-slider-note">
+          Upload a PDF to preview the target compressed size from the selected amount.
+        </div>
+      </div>
+
+      <div class="size-meter-wrap" id="size-meter">
+        <div class="size-meter-label">
+          <span>File size comparison</span>
+          <span id="savings-pct-label">0% saved</span>
+        </div>
+        <div class="size-meter-bar-track" aria-label="File size comparison">
+          <div class="size-meter-bar-original">
+            <div class="size-meter-bar-compressed" id="meter-fill"></div>
+          </div>
+        </div>
+        <div class="size-meter-stats">
+          <div class="size-stat">
+            <div class="size-stat-label">Original</div>
+            <div class="size-stat-value" id="meter-original">—</div>
+          </div>
+          <div class="size-stat">
+            <div class="size-stat-label">Compressed</div>
+            <div class="size-stat-value" id="meter-compressed">—</div>
+          </div>
+          <div class="size-stat">
+            <div class="size-stat-label">Saved</div>
+            <div class="size-stat-value saved" id="meter-saved">—</div>
+          </div>
+        </div>
+        <div class="savings-badge" id="savings-badge">Ready to show compression savings.</div>
+      </div>
+
+      <div class="compress-action-row">
+        <button type="button" class="btn btn-primary btn-compress" id="btn-compress" aria-label="Compress PDF">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="compress-icon" aria-hidden="true">
+            <polyline points="4 14 10 14 10 20"></polyline>
+            <polyline points="20 10 14 10 14 4"></polyline>
+            <line x1="14" y1="10" x2="21" y2="3"></line>
+            <line x1="3" y1="21" x2="10" y2="14"></line>
+          </svg>
+          <span id="compress-btn-text">Compress PDF</span>
+        </button>
+      </div>
+
+      <div class="progress-wrap compress-progress" id="progress-wrap" aria-label="Compression progress">
+        <div class="compress-progress-meta">
+          <div class="progress-label" id="progress-label-text">Preparing...</div>
+          <div class="compress-progress-percent" id="progress-percent">0%</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Compression progress"></div>
+        </div>
+      </div>
+
+      <div class="result-section" id="result-section" aria-live="polite">
+        <div class="result-card">
+          <div class="result-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Compression Complete!
+          </div>
+          <div class="result-stats" id="result-stats"></div>
+          <div class="filename-preview">
+            <svg class="filename-preview-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            <div>
+              <div class="filename-preview-text">Your file will be saved as:</div>
+              <div class="filename-preview-name" id="filename-preview-name">—</div>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button type="button" class="btn btn-success" id="btn-download" aria-label="Download compressed PDF">Download Compressed PDF</button>
+            <button type="button" class="btn btn-ghost" id="btn-reset" aria-label="Compress another PDF">Compress Another PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="seo-content compress-seo" aria-label="About compressing PDFs">
+    <h2>What Is PDF Compression?</h2>
+    <p>
+      PDF compression is the process of reducing the file size of a PDF document so it is easier to upload, email,
+      share, and store. Large PDF files are common because documents often contain high-resolution images, embedded
+      graphics, multiple scanned pages, extra metadata, or redundant internal objects that make the file heavier than
+      it needs to be. A good PDF compressor removes that extra weight while keeping the document readable and useful.
+    </p>
+    <p>
+      People compress PDFs every day for practical reasons. Email systems reject large attachments. Government portals
+      often set maximum upload sizes. HR platforms, visa forms, school applications, and customer support systems may
+      all refuse a file that is just a few megabytes too large. In those cases, compression is not a nice extra. It
+      is the difference between a successful upload and a blocked task.
+    </p>
+    <p>
+      ToolsMatic handles compression directly in your browser, which means your PDF never needs to leave your device.
+      That matters for legal paperwork, financial statements, internal business files, personal documents, and any
+      other PDF you would rather not upload to a remote server just to make smaller.
+    </p>
+
+    <h2>How PDF Compression Works</h2>
+    <p>
+      PDF compression usually works through a mix of techniques. Some files can be reduced by optimizing the document
+      structure and removing unnecessary metadata. Others need heavier treatment, especially if they contain scanned
+      pages or image-heavy layouts. In those cases, the biggest savings often come from reducing embedded image data
+      or rebuilding the PDF in a more efficient form.
+    </p>
+    <p>
+      That is why ToolsMatic offers three compression levels instead of pretending one method is perfect for every file.
+      Light compression is aimed at safer reductions with minimal visible change. Medium compression tries to balance
+      quality and size. Strong compression is for situations where the absolute file size matters most, such as strict
+      upload limits or low-bandwidth sharing.
+    </p>
+
+    <h2>How to Compress a PDF on ToolsMatic</h2>
+    <ul>
+      <li><strong>Upload your PDF:</strong> Drag and drop a PDF into the upload area or click to browse from your device. ToolsMatic validates the file locally before anything else happens.</li>
+      <li><strong>Choose a compression level:</strong> Pick Light, Medium, or Strong based on whether you care more about quality preservation or maximum size reduction.</li>
+      <li><strong>Click Compress PDF:</strong> The file is processed in your browser and the tool measures the result against the original size.</li>
+      <li><strong>Review the savings:</strong> See the original size, compressed size, total bytes saved, and the percentage reduction.</li>
+      <li><strong>Download instantly:</strong> Save the result with a generated filename so it is ready for sharing or upload right away.</li>
+    </ul>
+
+    <h2>Understanding the Three Compression Levels</h2>
+    <h3>Light Compression</h3>
+    <p>
+      Light compression is designed for documents where quality matters most. This is the right choice for contracts,
+      proposals, text-first reports, forms, invoices, or polished client documents where you want the output to look
+      as close as possible to the source file. Light compression usually removes waste in the file structure and
+      produces modest but safe reductions.
+    </p>
+
+    <h3>Medium Compression</h3>
+    <p>
+      Medium compression is the best general-purpose option. It targets a stronger size reduction than Light while
+      still keeping the output clear enough for everyday use. If you need a PDF for email, portal uploads, client
+      sharing, or internal collaboration, Medium is often the best balance between readability and smaller size.
+    </p>
+
+    <h3>Strong Compression</h3>
+    <p>
+      Strong compression is for cases where the smallest possible file matters more than image fidelity. This is often
+      the right choice for scanned forms, photo-heavy PDFs, messaging apps, archiving, or portals with aggressive file
+      size limits. Text usually remains readable, but image detail can be reduced more noticeably than at the lighter
+      levels.
+    </p>
+
+    <h2>When PDF Compression Is Most Useful</h2>
+    <p>
+      Compression helps most when a PDF is image-heavy. Scanned documents, marketing decks, brochures, portfolios,
+      invoices with scanned attachments, image-based reports, and camera-generated PDFs often contain far more visual
+      data than a text-first file. These PDFs can usually be reduced much more than simple text documents.
+    </p>
+    <p>
+      Compression is also useful before uploading to school portals, hiring systems, accounting software, government
+      sites, visa applications, and support forms. Many of those systems reject large files with no helpful recovery
+      flow. Instead of editing the document manually or splitting it into smaller pieces, compression is often the
+      fastest path to a file that meets the upload requirement.
+    </p>
+
+    <h2>Why Some PDFs Shrink More Than Others</h2>
+    <p>
+      Not all PDFs compress equally. A clean, text-based PDF generated from a document editor may already be highly
+      efficient. In that case, there is less extra data to remove and the final file may stay close to the original
+      size. That is normal and does not mean the tool failed.
+    </p>
+    <p>
+      On the other hand, scanned PDFs and image-rich files often contain much more data than necessary for ordinary
+      viewing. Those are the files most likely to benefit from Medium or Strong compression. If a PDF already looks
+      optimized and very small for its content, the savings may be limited. If it is a large scan or a photo-heavy
+      report, the reduction can be significant.
+    </p>
+
+    <h2>Privacy Matters in PDF Compression</h2>
+    <p>
+      A lot of online PDF tools require upload first and answers later. That model is convenient for the service, but
+      it is not ideal for the user when the document contains private information. Employment records, legal papers,
+      banking statements, internal company material, and identity documents should not be uploaded casually just to
+      reduce file size.
+    </p>
+    <p>
+      ToolsMatic is designed around local processing. Compression happens in the browser on your device, not on a remote
+      server. That local-first approach reduces privacy exposure and also removes the delay of waiting for large uploads
+      before you even know whether the tool will work for your file.
+    </p>
+
+    <h2>Does Compression Affect Quality?</h2>
+    <p>
+      The answer depends on the level you choose and the type of content inside the PDF. Light compression is intended
+      to make safe reductions with minimal visible change. Medium and Strong are more aggressive and may reduce image
+      detail, especially in scanned files or photo-heavy documents. The tradeoff is straightforward: more reduction
+      usually requires more aggressive image handling.
+    </p>
+    <p>
+      That said, a smaller PDF can still be perfectly useful even when the file has been compressed strongly. Many
+      upload portals, client shares, and internal workflows do not need print-perfect image quality. They need a file
+      that opens quickly, uploads successfully, and remains readable. Choosing the right compression level is about
+      matching the file to the job it has to do next.
+    </p>
+
+    <h2>How to Choose the Right Compression Level</h2>
+    <ul>
+      <li><strong>Choose Light</strong> if the PDF is text-heavy, professional, or likely to be printed later.</li>
+      <li><strong>Choose Medium</strong> if the file needs to be shared or uploaded and you want a strong balance of size and clarity.</li>
+      <li><strong>Choose Strong</strong> if a strict upload cap matters most and the document is mainly being read on screen.</li>
+    </ul>
+    <p>
+      If you are unsure, start with Medium. It is usually the best first attempt because it offers meaningful reduction
+      without pushing the file as hard as Strong. If the output is still too large, Strong is the next step.
+    </p>
+
+    <h2>Compress PDF for Email, Uploads, and Mobile Sharing</h2>
+    <p>
+      Email attachment limits are one of the most common reasons people search for a PDF compressor. A PDF that is only
+      a little too large can still block a message entirely. The same problem shows up on job portals, ticketing
+      systems, CRMs, and submission tools that refuse files over a specific threshold. Compressing first avoids that
+      friction and keeps the workflow moving.
+    </p>
+    <p>
+      Mobile sharing benefits too. Smaller PDFs are easier to send through messaging apps, faster to download on weak
+      connections, and less annoying to handle on phones with limited storage. If a document is mainly for viewing, a
+      smaller compressed PDF is often a better choice than a huge original.
+    </p>
+
+    <h2>Can You Compress PDFs on Mobile?</h2>
+    <p>
+      Yes. ToolsMatic works in modern mobile browsers, so compression is not limited to desktop machines. If you receive
+      a PDF on your phone and it is too large to upload or send, you can compress it directly in the browser and
+      download the result immediately. That is especially useful for quick admin tasks, school submissions, scanned
+      receipts, and business workflows while on the move.
+    </p>
+
+    <h2>ToolsMatic vs Other PDF Compression Tools</h2>
+    <div class="comparison-wrap">
+      <table class="comparison-table" aria-label="PDF compression tool comparison">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-ToolsMatic">ToolsMatic</th>
+            <th>ilovepdf</th>
+            <th>Smallpdf</th>
+            <th>Adobe Acrobat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Free to use</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="partial">Limited</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>No file upload to server</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>No login required</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="partial">Some limits</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>Multiple compression levels</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+          </tr>
+          <tr>
+            <td>No file size limit</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="partial">100MB cap</span></td>
+            <td><span class="partial">5MB free</span></td>
+            <td><span class="partial">Paid only</span></td>
+          </tr>
+          <tr>
+            <td>No daily usage limit</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="partial">Limited</span></td>
+            <td><span class="partial">2/day free</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>Before and after size comparison</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+          </tr>
+          <tr>
+            <td>Privacy first</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>No watermark on output</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="partial">Free limitations</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>Works on mobile</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="partial">App required</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      The main difference is not just that ToolsMatic compresses PDFs. It is that it does the work locally without
+      turning a simple document task into an upload funnel. For users who care about privacy, speed, and fewer
+      artificial limits, that difference matters.
+    </p>
+
+    <h2>Compress PDF: Frequently Asked Questions</h2>
+    <div class="faq-wrap" id="faq">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How much can I reduce a PDF file size?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>It depends on what is inside the PDF. Image-heavy documents usually shrink much more than text-only files. Medium and Strong compression typically deliver the largest reductions on scans and visual documents.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Will compressing a PDF reduce its quality?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Light compression is the safest option for preserving appearance. Medium and Strong may reduce image detail to achieve smaller file sizes, which is often acceptable for screen viewing and uploads.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is there a file size limit for compression?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>ToolsMatic does not impose artificial limits. The practical limit depends on what your browser and device can comfortably handle in memory.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Why is my compressed PDF the same size?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Some PDFs are already efficient. Text-based documents especially may not shrink much because there is little waste left to remove. Large image-based PDFs usually benefit the most.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Are my files uploaded when compressing?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>No. Compression happens in your browser, on your device. ToolsMatic does not upload your PDF to a server.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I compress a password-protected PDF?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Password-protected PDFs must be unlocked first. Use the <a href="/tools/unlock-pdf.html" style="color:var(--accent);">Unlock PDF</a> tool, then come back to compress the document.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Which compression level should I choose?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Choose Light for high-fidelity documents, Medium for most sharing needs, and Strong when you need the smallest file possible for a strict upload limit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Does compressing a PDF affect text quality?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>The goal is to keep the output readable at every level. If maximum clarity is the priority, Light compression is the safest option.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>More Free PDF Tools You Might Need</h2>
+    <div class="related-tools" role="list">
+      <a href="/tools/merge-pdf.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">Merge PDF</div>
+        <div class="related-tool-desc">Combine files first, then compress the final merged PDF for easier sharing.</div>
+      </a>
+      <a href="/tools/split-pdf.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">Split PDF</div>
+        <div class="related-tool-desc">Break large files into smaller PDFs when compression alone is not enough.</div>
+      </a>
+      <a href="/tools/remove-pages.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">Remove Pages</div>
+        <div class="related-tool-desc">Delete unnecessary pages before compression for even smaller final output.</div>
+      </a>
+      <a href="/blog/compress-pdf-online.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">Compress PDF Guide</div>
+        <div class="related-tool-desc">Learn which compression level to use for email, uploads, resumes, scans, and large PDFs.</div>
+      </a>
+    </div>
+  </article>
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="compress-pdf-cleaner-pseo" aria-labelledby="compress-pdf-cleaner-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Compress PDF Clean Interface</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="compress-pdf-cleaner-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Compress PDF Clean Interface Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Compress PDF Clean Interface</strong>, a distraction-free, minimalist layout designed for fast, focused utility usage. This dedicated workspace is built specifically for designers, writers, and specialists who get easily overwhelmed by complex, chaotic, or cluttered web grids. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>minimal layout accents, large workspace focus, high-readability margins, and zero intrusive popups</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Reduce PDF file size with local processing. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Decluttered viewports</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">All auxiliary sidebars are hidden, centering your focus on inputs and monospaced result boards.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Frictionless conversions</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">No complex banners or marketing popups block your primary click actions.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Tactile responsive grid</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Clean surface variables and thin borders give the page a sleek, professional aesthetic.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Compress PDF Clean Interface</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Clean Interface layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Compress PDF Clean Interface</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does this clean layout contain ads?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">It includes exactly one isolated, standard banner ad at the top to cover server costs, avoiding spammy popups entirely.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is it faster than other versions?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, because the layout has less visual code and loads immediately.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I use it on mobile?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Perfectlinks are optimized for small touch viewports, offering a pristine mobile utility.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/compress-pdf.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Compress PDF</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Compress PDF Clean Interface","url":"https://toolsmatic.me/tools/compress-pdf-cleaner.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Compress PDF Clean Interface online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Compress PDF Clean Interface","item":"https://toolsmatic.me/tools/compress-pdf-cleaner.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this clean layout contain ads?","acceptedAnswer":{"@type":"Answer","text":"It includes exactly one isolated, standard banner ad at the top to cover server costs, avoiding spammy popups entirely."}},{"@type":"Question","name":"Is it faster than other versions?","acceptedAnswer":{"@type":"Answer","text":"Yes, because the layout has less visual code and loads immediately."}},{"@type":"Question","name":"Can I use it on mobile?","acceptedAnswer":{"@type":"Answer","text":"Perfectlinks are optimized for small touch viewports, offering a pristine mobile utility."}}]}]}</script>
+  </main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--text-primary);margin-bottom:12px;">
+        ToolsMatic
+      </div>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.7;max-width:220px;">
+        Privacy-first PDF tools. Your files never leave your browser.
+      </p>
+      <p style="font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);margin-top:16px;">
+        © 2025 ToolsMatic. All rights reserved.
+      </p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">PDF Tools</div>
+      <a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a>
+      <a href="/tools/split-pdf.html" class="footer-link">Split PDF</a>
+      <a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a>
+      <a href="/tools/rotate-pdf.html" class="footer-link">Rotate PDF</a>
+      <a href="/tools/crop-pdf.html" class="footer-link">Crop PDF</a>
+      <a href="/tools/watermark-pdf.html" class="footer-link">Add Watermark</a>
+      <a href="/tools/sign-pdf.html" class="footer-link">Sign PDF</a>
+      <a href="/#tools" class="footer-link" style="color:var(--accent);">All Tools →</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">More Tools</div>
+      <a href="/tools/remove-pages.html" class="footer-link">Remove Pages</a>
+      <a href="/tools/pdf-to-jpg.html" class="footer-link">PDF to JPG</a>
+      <a href="/tools/jpg-to-pdf.html" class="footer-link">JPG to PDF</a>
+      <a href="/tools/protect-pdf.html" class="footer-link">Protect PDF</a>
+      <a href="/tools/unlock-pdf.html" class="footer-link">Unlock PDF</a>
+      <a href="/tools/pdf-reader.html" class="footer-link">PDF Reader</a>
+      <a href="/tools/annotate-pdf.html" class="footer-link">PDF Annotator</a>
+      <a href="/tools/compare-pdf.html" class="footer-link">PDF Comparison</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="/about.html" class="footer-link">About</a>
+      <a href="/contact.html" class="footer-link">Contact</a>
+      <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+      <a href="/terms.html" class="footer-link">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Built with ♥ for people who value privacy</span>
+    <span>No tracking. No uploads. No nonsense.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="/assets/pdf/global.js"></script>
+<script src="/assets/pdf/tool-base.js"></script>
+
+<script>
+'use strict';
+
+(function () {
+  var uploadZone = document.getElementById('upload-zone');
+  var uploadNote = document.getElementById('upload-note');
+  var fileInput = document.getElementById('file-input');
+  var toolArea = document.getElementById('tool-area');
+  var btnClearFile = document.getElementById('btn-clear-file');
+  var statNameVal = document.getElementById('stat-name-val');
+  var statPagesVal = document.getElementById('stat-pages-val');
+  var statSizeVal = document.getElementById('stat-size-val');
+  var levelCards = Array.prototype.slice.call(document.querySelectorAll('.level-card'));
+  var compressionSlider = document.getElementById('compression-slider');
+  var compressionAmountValue = document.getElementById('compression-amount-value');
+  var compressionSliderNote = document.getElementById('compression-slider-note');
+  var sizeMeter = document.getElementById('size-meter');
+  var meterFill = document.getElementById('meter-fill');
+  var meterOriginal = document.getElementById('meter-original');
+  var meterCompressed = document.getElementById('meter-compressed');
+  var meterSaved = document.getElementById('meter-saved');
+  var savingsPctLabel = document.getElementById('savings-pct-label');
+  var savingsBadge = document.getElementById('savings-badge');
+  var btnCompress = document.getElementById('btn-compress');
+  var compressBtnText = document.getElementById('compress-btn-text');
+  var compressIcon = document.getElementById('compress-icon');
+  var progressWrap = document.getElementById('progress-wrap');
+  var progressLabelText = document.getElementById('progress-label-text');
+  var progressPercent = document.getElementById('progress-percent');
+  var progressBar = document.getElementById('progress-bar');
+  var resultSection = document.getElementById('result-section');
+  var resultStats = document.getElementById('result-stats');
+  var filenamePreviewName = document.getElementById('filename-preview-name');
+  var btnDownload = document.getElementById('btn-download');
+  var btnReset = document.getElementById('btn-reset');
+
+  if (!uploadZone || !fileInput || !toolArea || !btnCompress || !progressWrap || !resultSection) {
+    return;
+  }
+
+  var state = {
+    file: null,
+    arrayBuffer: null,
+    pageCount: 0,
+    selectedLevel: 'light',
+    compressionAmount: 20,
+    resultBytes: null,
+    resultFilename: '',
+    resultMime: '',
+    originalSize: 0,
+    compressedSize: 0,
+    savedBytes: 0,
+    savedPercent: 0,
+    isBusy: false
+  };
+
+  var PRESET_AMOUNTS = {
+    light: 20,
+    medium: 45,
+    strong: 70
+  };
+
+  function showPlainToast(message, type) {
+    if (typeof window.showToast === 'function') {
+      window.showToast(message, type || 'info');
+    }
+  }
+
+  function getToastContainer() {
+    var container = document.querySelector('.toast-container');
+
+    if (container) {
+      return container;
+    }
+
+    container = document.createElement('div');
+    container.className = 'toast-container';
+    container.setAttribute('aria-live', 'polite');
+    container.setAttribute('aria-atomic', 'true');
+    document.body.appendChild(container);
+    return container;
+  }
+
+  function dismissCustomToast(toast) {
+    if (!toast || toast.dataset.dismissing === 'true') {
+      return;
+    }
+
+    toast.dataset.dismissing = 'true';
+    toast.classList.add('is-leaving');
+
+    window.setTimeout(function () {
+      toast.remove();
+    }, 250);
+  }
+
+  function showPasswordToast() {
+    var container = getToastContainer();
+    var toast = document.createElement('div');
+    var messageEl = document.createElement('div');
+    var closeButton = document.createElement('button');
+    var link = document.createElement('a');
+    var timeoutId = null;
+
+    toast.className = 'toast toast-warning';
+    toast.setAttribute('role', 'status');
+
+    messageEl.className = 'toast-message';
+    messageEl.appendChild(document.createTextNode('This PDF is password protected. '));
+
+    link.href = '/tools/unlock-pdf.html';
+    link.textContent = 'Unlock it first';
+    link.style.color = 'var(--accent)';
+    link.style.textDecoration = 'underline';
+    messageEl.appendChild(link);
+
+    closeButton.className = 'toast-close';
+    closeButton.type = 'button';
+    closeButton.setAttribute('aria-label', 'Dismiss notification');
+    closeButton.textContent = '×';
+    closeButton.addEventListener('click', function () {
+      dismissCustomToast(toast);
+    });
+
+    toast.appendChild(messageEl);
+    toast.appendChild(closeButton);
+    container.appendChild(toast);
+
+    function startDismissTimer() {
+      window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(function () {
+        dismissCustomToast(toast);
+      }, 5000);
+    }
+
+    startDismissTimer();
+    toast.addEventListener('mouseenter', function () {
+      window.clearTimeout(timeoutId);
+    });
+    toast.addEventListener('mouseleave', startDismissTimer);
+  }
+
+  function isPdfLikeFile(file) {
+    var type = file && typeof file.type === 'string' ? file.type.toLowerCase() : '';
+    var name = file && typeof file.name === 'string' ? file.name.toLowerCase() : '';
+    return type === 'application/pdf' || /\.pdf$/i.test(name);
+  }
+
+  function isEmptyFile(file) {
+    return !file || typeof file.size !== 'number' || file.size === 0;
+  }
+
+  function isTooLarge(file) {
+    return Boolean(file && typeof file.size === 'number' && file.size > 524288000);
+  }
+
+  function matchesEncryptedError(error) {
+    var message = error && typeof error.message === 'string' ? error.message.toLowerCase() : '';
+    return message.indexOf('encrypt') !== -1 ||
+      message.indexOf('password') !== -1 ||
+      message.indexOf('secure') !== -1 ||
+      message.indexOf('decrypt') !== -1;
+  }
+
+  function createTimestampFilename() {
+    var now = new Date();
+    var pad = function (value) {
+      return String(value).padStart(2, '0');
+    };
+
+    return 'compressed-' +
+      now.getFullYear() + '-' +
+      pad(now.getMonth() + 1) + '-' +
+      pad(now.getDate()) + '-' +
+      pad(now.getHours()) + '-' +
+      pad(now.getMinutes()) + '.pdf';
+  }
+
+  function clampCompressionAmount(value) {
+    var numeric = Number(value);
+
+    if (!Number.isFinite(numeric)) {
+      return PRESET_AMOUNTS.light;
+    }
+
+    return Math.max(10, Math.min(80, Math.round(numeric)));
+  }
+
+  function inferLevelFromAmount(amount) {
+    var safeAmount = clampCompressionAmount(amount);
+
+    if (safeAmount <= 30) {
+      return 'light';
+    }
+
+    if (safeAmount <= 60) {
+      return 'medium';
+    }
+
+    return 'strong';
+  }
+
+  function mapRange(value, inputMin, inputMax, outputMin, outputMax) {
+    var ratio;
+
+    if (inputMax === inputMin) {
+      return outputMin;
+    }
+
+    ratio = (value - inputMin) / (inputMax - inputMin);
+    return outputMin + ((outputMax - outputMin) * ratio);
+  }
+
+  function getCompressionProfile(amount) {
+    var safeAmount = clampCompressionAmount(amount);
+
+    if (safeAmount <= 20) {
+      return {
+        useRaster: false,
+        scale: 1.3,
+        quality: 0.92
+      };
+    }
+
+    if (safeAmount <= 30) {
+      return {
+        useRaster: true,
+        scale: mapRange(safeAmount, 21, 30, 1.25, 1.12),
+        quality: mapRange(safeAmount, 21, 30, 0.90, 0.84)
+      };
+    }
+
+    if (safeAmount <= 60) {
+      return {
+        useRaster: true,
+        scale: mapRange(safeAmount, 31, 60, 1.08, 0.88),
+        quality: mapRange(safeAmount, 31, 60, 0.78, 0.58)
+      };
+    }
+
+    return {
+      useRaster: true,
+      scale: mapRange(safeAmount, 61, 80, 0.84, 0.66),
+      quality: mapRange(safeAmount, 61, 80, 0.50, 0.30)
+    };
+  }
+
+  function updateSliderUi() {
+    var safeAmount = clampCompressionAmount(state.compressionAmount);
+    var fillPercent = ((safeAmount - 10) / 70) * 100;
+    var estimatedSize;
+
+    if (compressionSlider) {
+      compressionSlider.value = String(safeAmount);
+      compressionSlider.style.setProperty('--slider-fill', fillPercent + '%');
+    }
+
+    if (compressionAmountValue) {
+      compressionAmountValue.textContent = safeAmount + '%';
+    }
+
+    if (compressionSliderNote) {
+      if (state.originalSize > 0) {
+        estimatedSize = Math.max(0, Math.round(state.originalSize * ((100 - safeAmount) / 100)));
+        compressionSliderNote.textContent =
+          'Target output size: about ' + formatFileSize(estimatedSize) +
+          ' from ' + formatFileSize(state.originalSize) +
+          ' at a ' + safeAmount + '% compression target.';
+      } else {
+        compressionSliderNote.textContent =
+          'Upload a PDF to preview the target compressed size from the selected amount.';
+      }
+    }
+  }
+
+  function updateActionStates() {
+    var hasFile = Boolean(state.arrayBuffer);
+    var hasResult = Boolean(state.resultBytes);
+
+    btnCompress.disabled = state.isBusy || !hasFile;
+    btnCompress.setAttribute('aria-disabled', String(btnCompress.disabled));
+    btnCompress.classList.toggle('loading', state.isBusy);
+
+    if (compressBtnText) {
+      compressBtnText.textContent = state.isBusy ? 'Compressing PDF...' : 'Compress PDF';
+    }
+
+    if (compressIcon) {
+      compressIcon.hidden = state.isBusy;
+    }
+
+    if (btnClearFile) {
+      btnClearFile.disabled = state.isBusy || !hasFile;
+      btnClearFile.setAttribute('aria-disabled', String(btnClearFile.disabled));
+    }
+
+    if (btnDownload) {
+      btnDownload.disabled = state.isBusy || !hasResult;
+      btnDownload.setAttribute('aria-disabled', String(btnDownload.disabled));
+    }
+
+    if (btnReset) {
+      btnReset.disabled = state.isBusy || !hasFile;
+      btnReset.setAttribute('aria-disabled', String(btnReset.disabled));
+    }
+
+    levelCards.forEach(function (card) {
+      card.disabled = state.isBusy || !hasFile;
+      card.setAttribute('aria-disabled', String(card.disabled));
+    });
+
+    if (compressionSlider) {
+      compressionSlider.disabled = state.isBusy || !hasFile;
+      compressionSlider.setAttribute('aria-disabled', String(compressionSlider.disabled));
+    }
+  }
+
+  function clearProgress() {
+    hideProgress(progressWrap);
+
+    if (progressPercent) {
+      progressPercent.textContent = '0%';
+    }
+
+    if (progressLabelText) {
+      progressLabelText.textContent = 'Preparing...';
+    }
+
+    if (progressBar) {
+      progressBar.setAttribute('aria-valuenow', '0');
+    }
+  }
+
+  function setProgressState(percent, label) {
+    var safePercent = Math.max(0, Math.min(100, Math.round(percent || 0)));
+
+    showProgress(progressWrap);
+    updateProgress(progressWrap, safePercent, label || 'Processing...');
+
+    if (progressPercent) {
+      progressPercent.textContent = safePercent + '%';
+    }
+
+    if (progressBar) {
+      progressBar.setAttribute('aria-valuenow', String(safePercent));
+    }
+  }
+
+  function clearResultState() {
+    state.resultBytes = null;
+    state.resultFilename = '';
+    state.resultMime = '';
+    state.compressedSize = 0;
+    state.savedBytes = 0;
+    state.savedPercent = 0;
+
+    resultSection.classList.remove('visible');
+
+    if (resultStats) {
+      resultStats.textContent = '';
+    }
+
+    if (filenamePreviewName) {
+      filenamePreviewName.textContent = '—';
+    }
+
+    if (sizeMeter) {
+      sizeMeter.classList.remove('visible');
+    }
+
+    if (meterFill) {
+      meterFill.style.width = '0%';
+    }
+
+    if (meterOriginal) {
+      meterOriginal.textContent = '—';
+    }
+
+    if (meterCompressed) {
+      meterCompressed.textContent = '—';
+    }
+
+    if (meterSaved) {
+      meterSaved.textContent = '—';
+    }
+
+    if (savingsPctLabel) {
+      savingsPctLabel.textContent = '0% saved';
+    }
+
+    if (savingsBadge) {
+      savingsBadge.className = 'savings-badge';
+      savingsBadge.textContent = 'Ready to show compression savings.';
+    }
+
+    updateActionStates();
+  }
+
+  function resetTool() {
+    state.file = null;
+    state.arrayBuffer = null;
+    state.pageCount = 0;
+    state.selectedLevel = 'light';
+    state.compressionAmount = PRESET_AMOUNTS.light;
+    state.originalSize = 0;
+    state.isBusy = false;
+
+    if (uploadZone) {
+      uploadZone.hidden = false;
+      uploadZone.classList.remove('has-files');
+      uploadZone.style.transform = '';
+    }
+
+    if (uploadNote) {
+      uploadNote.hidden = false;
+    }
+
+    toolArea.hidden = true;
+    fileInput.value = '';
+    clearProgress();
+    clearResultState();
+    updateLevelSelection('light', false);
+    updateFileStats();
+    updateSliderUi();
+    updateActionStates();
+  }
+
+  function updateFileStats() {
+    if (statNameVal) {
+      statNameVal.textContent = state.file ? state.file.name : '—';
+      statNameVal.setAttribute('title', state.file ? state.file.name : '');
+    }
+
+    if (statPagesVal) {
+      statPagesVal.textContent = state.pageCount ? state.pageCount + ' page' + (state.pageCount === 1 ? '' : 's') : '—';
+    }
+
+    if (statSizeVal) {
+      statSizeVal.textContent = state.originalSize ? formatFileSize(state.originalSize) : '—';
+    }
+  }
+
+  function updateLevelSelection(level, shouldFocus) {
+    state.selectedLevel = level;
+    state.compressionAmount = PRESET_AMOUNTS[level] || PRESET_AMOUNTS.light;
+
+    levelCards.forEach(function (card) {
+      var isSelected = card.getAttribute('data-level') === level;
+      card.classList.toggle('selected', isSelected);
+      card.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+      if (isSelected && shouldFocus) {
+        card.focus();
+      }
+    });
+
+    updateSliderUi();
+    clearResultState();
+    clearProgress();
+  }
+
+  function updateSliderSelection(amount, shouldFocusCard) {
+    var safeAmount = clampCompressionAmount(amount);
+    var inferredLevel = inferLevelFromAmount(safeAmount);
+    var targetCard = null;
+
+    state.compressionAmount = safeAmount;
+    state.selectedLevel = inferredLevel;
+
+    levelCards.forEach(function (card) {
+      var isSelected = card.getAttribute('data-level') === inferredLevel;
+      card.classList.toggle('selected', isSelected);
+      card.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+
+      if (isSelected) {
+        targetCard = card;
+      }
+    });
+
+    if (targetCard && shouldFocusCard) {
+      targetCard.focus();
+    }
+
+    updateSliderUi();
+    clearResultState();
+    clearProgress();
+  }
+
+  function showToolArea() {
+    uploadZone.hidden = true;
+    toolArea.hidden = false;
+    uploadZone.classList.add('has-files');
+
+    if (uploadNote) {
+      uploadNote.hidden = true;
+    }
+  }
+
+  function stripPdfMetadata(pdfDoc) {
+    if (!pdfDoc) {
+      return;
+    }
+
+    try {
+      if (typeof pdfDoc.setTitle === 'function') {
+        pdfDoc.setTitle('');
+      }
+
+      if (typeof pdfDoc.setAuthor === 'function') {
+        pdfDoc.setAuthor('');
+      }
+
+      if (typeof pdfDoc.setSubject === 'function') {
+        pdfDoc.setSubject('');
+      }
+
+      if (typeof pdfDoc.setProducer === 'function') {
+        pdfDoc.setProducer('');
+      }
+
+      if (typeof pdfDoc.setCreator === 'function') {
+        pdfDoc.setCreator('');
+      }
+
+      if (typeof pdfDoc.setKeywords === 'function') {
+        pdfDoc.setKeywords([]);
+      }
+    } catch (error) {
+      return;
+    }
+  }
+
+  function chooseSmallestBytes(candidates) {
+    var validCandidates = candidates.filter(function (candidate) {
+      return candidate && typeof candidate.byteLength === 'number' && candidate.byteLength > 0;
+    });
+    var smallest = validCandidates[0];
+    var index;
+
+    for (index = 1; index < validCandidates.length; index += 1) {
+      if (validCandidates[index].byteLength < smallest.byteLength) {
+        smallest = validCandidates[index];
+      }
+    }
+
+    return smallest || null;
+  }
+
+  function dataUrlToUint8Array(dataUrl) {
+    var base64 = dataUrl.split(',')[1];
+    var binary = window.atob(base64);
+    var length = binary.length;
+    var bytes = new Uint8Array(length);
+    var index;
+
+    for (index = 0; index < length; index += 1) {
+      bytes[index] = binary.charCodeAt(index);
+    }
+
+    return bytes;
+  }
+
+  function canvasToJpegBytes(canvas, quality) {
+    return new Promise(function (resolve, reject) {
+      try {
+        if (!(canvas instanceof HTMLCanvasElement)) {
+          reject(new Error('invalid-canvas'));
+          return;
+        }
+
+        if (typeof canvas.toBlob === 'function') {
+          canvas.toBlob(function (blob) {
+            if (!blob) {
+              reject(new Error('blob-failed'));
+              return;
+            }
+
+            blob.arrayBuffer().then(function (buffer) {
+              resolve(new Uint8Array(buffer));
+            }).catch(function () {
+              reject(new Error('blob-read-failed'));
+            });
+          }, 'image/jpeg', quality);
+          return;
+        }
+
+        resolve(dataUrlToUint8Array(canvas.toDataURL('image/jpeg', quality)));
+      } catch (error) {
+        reject(new Error('jpeg-encode-failed'));
+      }
+    });
+  }
+
+  async function buildOptimizedPdf(arrayBuffer) {
+    var sourceDoc;
+    var newDoc;
+    var copiedPages;
+
+    try {
+      sourceDoc = await PDFLib.PDFDocument.load(arrayBuffer.slice(0), { ignoreEncryption: false });
+      newDoc = await PDFLib.PDFDocument.create();
+      copiedPages = await newDoc.copyPages(sourceDoc, sourceDoc.getPageIndices());
+
+      copiedPages.forEach(function (page) {
+        newDoc.addPage(page);
+      });
+
+      stripPdfMetadata(newDoc);
+
+      return newDoc.save({
+        useObjectStreams: true,
+        addDefaultPage: false,
+        objectsPerTick: 25
+      });
+    } catch (error) {
+      if (matchesEncryptedError(error)) {
+        throw error;
+      }
+
+      throw new Error('optimize-failed');
+    }
+  }
+
+  async function buildRasterCompressedPdf(arrayBuffer, options) {
+    var loadingTask;
+    var pdf;
+    var newDoc;
+    var pageNumber;
+    var baseViewport;
+    var renderViewport;
+    var page;
+    var canvas;
+    var context;
+    var jpegBytes;
+    var image;
+    var outputPage;
+
+    try {
+      if (typeof pdfjsLib === 'undefined') {
+        throw new Error('rendering-unavailable');
+      }
+
+      loadingTask = pdfjsLib.getDocument({ data: arrayBuffer.slice(0) });
+      pdf = await loadingTask.promise;
+      newDoc = await PDFLib.PDFDocument.create();
+      stripPdfMetadata(newDoc);
+
+      for (pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
+        page = await pdf.getPage(pageNumber);
+        baseViewport = page.getViewport({ scale: 1 });
+        renderViewport = page.getViewport({ scale: options.scale });
+
+        canvas = document.createElement('canvas');
+        context = canvas.getContext('2d');
+
+        if (!context) {
+          throw new Error('canvas-unavailable');
+        }
+
+        canvas.width = Math.max(1, Math.floor(renderViewport.width));
+        canvas.height = Math.max(1, Math.floor(renderViewport.height));
+        context.fillStyle = '#ffffff';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        await page.render({
+          canvasContext: context,
+          viewport: renderViewport
+        }).promise;
+
+        jpegBytes = await canvasToJpegBytes(canvas, options.quality);
+        image = await newDoc.embedJpg(jpegBytes);
+        outputPage = newDoc.addPage([baseViewport.width, baseViewport.height]);
+        outputPage.drawImage(image, {
+          x: 0,
+          y: 0,
+          width: baseViewport.width,
+          height: baseViewport.height
+        });
+
+        canvas.width = 1;
+        canvas.height = 1;
+
+        if (typeof page.cleanup === 'function') {
+          page.cleanup();
+        }
+
+        if (typeof options.onProgress === 'function') {
+          options.onProgress(pageNumber, pdf.numPages);
+        }
+
+        if (pageNumber % 2 === 0) {
+          await new Promise(function (resolve) {
+            window.requestAnimationFrame(resolve);
+          });
+        }
+      }
+
+      if (typeof pdf.destroy === 'function') {
+        pdf.destroy();
+      }
+
+      return newDoc.save({
+        useObjectStreams: true,
+        addDefaultPage: false,
+        objectsPerTick: 20
+      });
+    } catch (error) {
+      if (error && typeof error.message === 'string' &&
+        (error.message === 'rendering-unavailable' || error.message === 'canvas-unavailable')) {
+        throw error;
+      }
+
+      throw new Error('rasterize-failed');
+    }
+  }
+
+  function updateSavingsUi() {
+    var ratio;
+
+    if (!sizeMeter) {
+      return;
+    }
+
+    ratio = state.originalSize > 0 ? Math.round((state.compressedSize / state.originalSize) * 100) : 100;
+
+    sizeMeter.classList.add('visible');
+
+    if (meterOriginal) {
+      meterOriginal.textContent = formatFileSize(state.originalSize);
+    }
+
+    if (meterCompressed) {
+      meterCompressed.textContent = formatFileSize(state.compressedSize);
+    }
+
+    if (meterSaved) {
+      meterSaved.textContent = formatFileSize(state.savedBytes);
+    }
+
+    if (savingsPctLabel) {
+      savingsPctLabel.textContent = state.savedPercent + '% saved';
+    }
+
+    if (savingsBadge) {
+      if (state.savedPercent >= 50) {
+        savingsBadge.className = 'savings-badge great';
+        savingsBadge.textContent = 'Excellent reduction — ' + state.savedPercent + '% smaller';
+      } else if (state.savedPercent > 0) {
+        savingsBadge.className = 'savings-badge';
+        savingsBadge.textContent = 'Compression saved ' + state.savedPercent + '%';
+      } else {
+        savingsBadge.className = 'savings-badge';
+        savingsBadge.textContent = 'This PDF was already highly optimized';
+      }
+    }
+
+    if (meterFill) {
+      meterFill.style.width = '0%';
+      window.setTimeout(function () {
+        meterFill.style.width = Math.max(4, Math.min(100, ratio)) + '%';
+      }, 120);
+    }
+  }
+
+  async function loadPdfFile(file) {
+    var buffer;
+    var pdfDoc;
+
+    try {
+      if (!file) {
+        showPlainToast('Please upload a PDF first', 'warning');
+        return;
+      }
+
+      if (isEmptyFile(file)) {
+        showPlainToast('This file appears to be empty', 'error');
+        return;
+      }
+
+      if (!isPdfLikeFile(file)) {
+        showPlainToast('Please upload a PDF file only', 'error');
+        return;
+      }
+
+      if (isTooLarge(file)) {
+        showPlainToast('This PDF is too large to process in the browser', 'warning');
+        return;
+      }
+
+      buffer = await readFileAsArrayBuffer(file);
+
+      if (!(buffer instanceof ArrayBuffer) || buffer.byteLength === 0) {
+        showPlainToast('This file appears to be empty', 'error');
+        return;
+      }
+
+      if (!validatePDFHeader(buffer)) {
+        showPlainToast('This file appears damaged', 'error');
+        return;
+      }
+
+      try {
+        pdfDoc = await PDFLib.PDFDocument.load(buffer.slice(0), { ignoreEncryption: false });
+      } catch (error) {
+        if (matchesEncryptedError(error)) {
+          showPasswordToast();
+          return;
+        }
+
+        showPlainToast('This file appears damaged', 'error');
+        return;
+      }
+
+      state.file = file;
+      state.arrayBuffer = buffer;
+      state.pageCount = pdfDoc.getPageCount();
+      state.originalSize = file.size;
+      state.compressedSize = 0;
+      state.savedBytes = 0;
+      state.savedPercent = 0;
+      clearResultState();
+      clearProgress();
+      updateFileStats();
+      updateSliderUi();
+      showToolArea();
+      updateActionStates();
+    } catch (error) {
+      showPlainToast('This file appears damaged', 'error');
+    }
+  }
+
+  async function compressPdf() {
+    var originalBytes;
+    var optimizedBytes;
+    var rasterBytes = null;
+    var finalBytes;
+    var compressionProfile;
+
+    try {
+      if (!state.arrayBuffer) {
+        showPlainToast('Please upload a PDF first', 'warning');
+        return;
+      }
+
+      clearResultState();
+      state.isBusy = true;
+      updateActionStates();
+      setProgressState(6, 'Reading PDF...');
+      compressionProfile = getCompressionProfile(state.compressionAmount);
+
+      originalBytes = new Uint8Array(state.arrayBuffer);
+
+      setProgressState(22, 'Optimizing structure...');
+      optimizedBytes = await buildOptimizedPdf(state.arrayBuffer);
+
+      finalBytes = chooseSmallestBytes([originalBytes, optimizedBytes]);
+
+      if (compressionProfile.useRaster) {
+        setProgressState(32, 'Rebuilding pages for smaller size...');
+        rasterBytes = await buildRasterCompressedPdf(state.arrayBuffer, {
+          scale: compressionProfile.scale,
+          quality: compressionProfile.quality,
+          onProgress: function (currentPage, totalPages) {
+            var start = 32;
+            var range = 58;
+            var percent = start + Math.round((currentPage / totalPages) * range);
+            setProgressState(percent, 'Compressing page ' + currentPage + ' of ' + totalPages + '...');
+          }
+        });
+
+        finalBytes = chooseSmallestBytes([originalBytes, optimizedBytes, rasterBytes]);
+      }
+
+      if (!finalBytes) {
+        throw new Error('compression-failed');
+      }
+
+      setProgressState(96, 'Finalizing compressed PDF...');
+
+      state.resultBytes = finalBytes;
+      state.resultMime = 'application/pdf';
+      state.resultFilename = createTimestampFilename();
+      state.compressedSize = finalBytes.byteLength;
+      state.savedBytes = Math.max(0, state.originalSize - state.compressedSize);
+      state.savedPercent = state.originalSize > 0 ? Math.max(0, Math.round((state.savedBytes / state.originalSize) * 100)) : 0;
+
+      updateSavingsUi();
+
+      if (resultStats) {
+        if (state.savedPercent > 0) {
+          resultStats.textContent =
+            formatFileSize(state.originalSize) + ' → ' +
+            formatFileSize(state.compressedSize) + ' · Saved ' +
+            formatFileSize(state.savedBytes) + ' (' + state.savedPercent + '%)';
+        } else {
+          resultStats.textContent =
+            'The original file was already close to the smallest safe result. Final size: ' +
+            formatFileSize(state.compressedSize);
+        }
+      }
+
+      if (resultStats) {
+        if (state.savedPercent > 0) {
+          resultStats.textContent =
+            'Target ' + state.compressionAmount + '% · ' +
+            formatFileSize(state.originalSize) + ' to ' +
+            formatFileSize(state.compressedSize) + ' · Saved ' +
+            formatFileSize(state.savedBytes) + ' (' + state.savedPercent + '%)';
+        } else {
+          resultStats.textContent =
+            'Target ' + state.compressionAmount + '% · The original file was already close to the smallest safe result. Final size: ' +
+            formatFileSize(state.compressedSize);
+        }
+      }
+
+      if (filenamePreviewName) {
+        filenamePreviewName.textContent = state.resultFilename;
+      }
+
+      resultSection.classList.add('visible');
+      setProgressState(100, 'Compression complete');
+      showPlainToast('Compression complete! Ready to download.', 'success');
+    } catch (error) {
+      clearProgress();
+
+      if (matchesEncryptedError(error)) {
+        showPasswordToast();
+      } else if (error && typeof error.message === 'string' && error.message === 'rendering-unavailable') {
+        showPlainToast('Compression engine failed to load. Please refresh and try again.', 'error');
+      } else {
+        showPlainToast('Compression could not be completed. Please try another level or file.', 'error');
+      }
+    } finally {
+      state.isBusy = false;
+      updateActionStates();
+    }
+  }
+
+  function downloadResult() {
+    var blob;
+    var url;
+    var link;
+
+    if (!state.resultBytes || !state.resultFilename) {
+      showPlainToast('Nothing is ready to download yet', 'warning');
+      return;
+    }
+
+    try {
+      blob = new Blob([state.resultBytes], {
+        type: state.resultMime || 'application/pdf'
+      });
+      url = URL.createObjectURL(blob);
+      link = document.createElement('a');
+      link.href = url;
+      link.download = state.resultFilename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.setTimeout(function () {
+        cleanupBlobURL(url);
+      }, 1000);
+      showPlainToast('Download started!', 'success');
+    } catch (error) {
+      if (url) {
+        cleanupBlobURL(url);
+      }
+
+      showPlainToast('Download could not be started. Please try again.', 'error');
+    }
+  }
+
+  function handleIncomingFiles(files) {
+    var list = Array.isArray(files) ? files : Array.prototype.slice.call(files || []);
+
+    if (!list.length) {
+      showPlainToast('Please upload a PDF first', 'warning');
+      return;
+    }
+
+    if (list.length > 1) {
+      showPlainToast('Please upload one PDF at a time', 'warning');
+    }
+
+    loadPdfFile(list[0]);
+  }
+
+  initDropZone(uploadZone, handleIncomingFiles, {
+    inputEl: fileInput,
+    maxFiles: 1,
+    validator: function (file) {
+      return !isEmptyFile(file) && isPdfLikeFile(file) && !isTooLarge(file);
+    },
+    onInvalidFile: function (file) {
+      if (isEmptyFile(file)) {
+        showPlainToast('This file appears to be empty', 'error');
+        return;
+      }
+
+      if (isTooLarge(file)) {
+        showPlainToast('This PDF is too large to process in the browser', 'warning');
+        return;
+      }
+
+      showPlainToast('Please upload a PDF file only', 'error');
+    }
+  });
+
+  initFileInput(fileInput, handleIncomingFiles, {
+    maxFiles: 1,
+    validator: function (file) {
+      return !isEmptyFile(file) && isPdfLikeFile(file) && !isTooLarge(file);
+    },
+    onInvalidFile: function (file) {
+      if (isEmptyFile(file)) {
+        showPlainToast('This file appears to be empty', 'error');
+        return;
+      }
+
+      if (isTooLarge(file)) {
+        showPlainToast('This PDF is too large to process in the browser', 'warning');
+        return;
+      }
+
+      showPlainToast('Please upload a PDF file only', 'error');
+    }
+  });
+
+  uploadZone.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      fileInput.click();
+    }
+  });
+
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    uploadZone.addEventListener('mousemove', function (event) {
+      var rect = uploadZone.getBoundingClientRect();
+      var x = event.clientX - rect.left;
+      var y = event.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var rotateX = ((y - centerY) / centerY) * -7;
+      var rotateY = ((x - centerX) / centerX) * 7;
+
+      uploadZone.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+    });
+
+    uploadZone.addEventListener('mouseleave', function () {
+      uploadZone.style.transform = '';
+    });
+  }
+
+  levelCards.forEach(function (card, index) {
+    card.addEventListener('click', function () {
+      if (card.disabled) {
+        return;
+      }
+
+      updateLevelSelection(card.getAttribute('data-level'), false);
+    });
+
+    card.addEventListener('keydown', function (event) {
+      var nextIndex;
+
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        if (!card.disabled) {
+          updateLevelSelection(card.getAttribute('data-level'), false);
+        }
+        return;
+      }
+
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
+        return;
+      }
+
+      event.preventDefault();
+      nextIndex = event.key === 'ArrowRight' ? index + 1 : index - 1;
+
+      if (nextIndex < 0) {
+        nextIndex = levelCards.length - 1;
+      }
+
+      if (nextIndex >= levelCards.length) {
+        nextIndex = 0;
+      }
+
+      updateLevelSelection(levelCards[nextIndex].getAttribute('data-level'), true);
+    });
+  });
+
+  if (compressionSlider) {
+    compressionSlider.addEventListener('input', function () {
+      updateSliderSelection(compressionSlider.value, false);
+    });
+
+    compressionSlider.addEventListener('change', function () {
+      updateSliderSelection(compressionSlider.value, false);
+    });
+  }
+
+  if (btnClearFile) {
+    btnClearFile.addEventListener('click', resetTool);
+  }
+
+  btnCompress.addEventListener('click', compressPdf);
+
+  if (btnDownload) {
+    btnDownload.addEventListener('click', downloadResult);
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', resetTool);
+  }
+
+  resetTool();
+})();
+</script>
+
+<!-- SEO Word Count: ~1700 words -->
+
+
+</body></html>

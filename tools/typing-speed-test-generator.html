@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Typing Speed Test Generator Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Typing Speed Test Generator online. Client-side, free, and private browser-based utility.">
+  <meta name="keywords" content="typing speed test, wpm test, typing test online, words per minute test, typing accuracy test, typing practice, typing speed checker">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://toolsmatic.me/tools/typing-speed-test-generator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/typing-speed-test-generator.html">
+  <meta property="og:title" content="Typing Speed Test Generator Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Typing Speed Test Generator online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Typing Speed Test Generator Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Typing Speed Test Generator online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  
+  
+  
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"How to improve typing speed without letting accuracy collapse","description":"A guide to WPM, raw speed, accuracy, consistency, targeted practice, and better typing habits.","author":{"@type":"Organization","name":"ToolsMatic"},"publisher":{"@type":"Organization","name":"ToolsMatic"},"mainEntityOfPage": "https://toolsmatic.me/tools/typing-speed-test-generator.html"}
+  </script>
+  
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/seo-suite.css">
+  <script src="/assets/site.js" defer></script>
+  <style>
+    .typing-layout,
+    .typing-toolbar,
+    .typing-toolbar-group,
+    .typing-card-stack,
+    .typing-prompt-wrap {
+      display: grid;
+      gap: 18px;
+    }
+
+    .typing-toolbar-group {
+      gap: 12px;
+    }
+
+    .typing-toolbar-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .typing-toolbar-label {
+      margin: 0;
+      min-width: 88px;
+      color: rgba(229, 236, 244, 0.72);
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .typing-toolbar-row .suite-input {
+      max-width: 150px;
+    }
+
+    .typing-stat-strip {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .typing-stat-pill {
+      display: grid;
+      gap: 8px;
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+    }
+
+    .typing-stat-pill span {
+      color: rgba(229, 236, 244, 0.62);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .typing-stat-pill strong {
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      line-height: 1;
+    }
+
+    .typing-prompt-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .typing-prompt-meta strong {
+      font-size: 1.02rem;
+    }
+
+    .typing-prompt {
+      min-height: 240px;
+      padding: 24px 26px;
+      border-radius: 24px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(5, 14, 24, 0.95);
+      font-size: clamp(1.06rem, 1.6vw, 1.18rem);
+      line-height: 1.92;
+      letter-spacing: 0.01em;
+      color: rgba(229, 236, 244, 0.46);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .typing-char {
+      position: relative;
+    }
+
+    .typing-char.current {
+      background: rgba(86, 165, 255, 0.22);
+      border-radius: 6px;
+      color: #eef6fb;
+    }
+
+    .typing-char.correct {
+      color: #e8f8f1;
+    }
+
+    .typing-char.incorrect {
+      color: #ffc7c7;
+      background: rgba(248, 113, 113, 0.18);
+      border-radius: 6px;
+    }
+
+    .typing-input {
+      min-height: 110px;
+      font-size: 1.02rem;
+    }
+
+    .typing-secondary-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    }
+
+    .typing-keyboard {
+      display: grid;
+      gap: 10px;
+    }
+
+    .typing-key-row {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(10, minmax(0, 1fr));
+    }
+
+    .typing-key {
+      min-height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(8, 18, 31, 0.72);
+      color: rgba(236, 243, 248, 0.88);
+      font-weight: 700;
+    }
+
+    .typing-test-shell {
+      display: grid;
+      gap: 22px;
+    }
+
+    .typing-test-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .typing-mode-bar,
+    .typing-source-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .typing-reader {
+      min-height: 260px;
+      max-height: 360px;
+      overflow-y: auto;
+      padding: clamp(18px, 3vw, 30px);
+      border-radius: 26px;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+      background:
+        radial-gradient(circle at top right, rgba(94, 234, 212, 0.08), transparent 18rem),
+        rgba(3, 12, 24, 0.96);
+      font-size: clamp(1.25rem, 2.5vw, 2rem);
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+      color: rgba(229, 236, 244, 0.5);
+      cursor: text;
+      user-select: none;
+    }
+
+    .typing-reader:focus {
+      outline: 3px solid rgba(94, 234, 212, 0.22);
+      outline-offset: 4px;
+    }
+
+    .typing-word {
+      display: inline-block;
+      margin: 0 0.28em 0.18em 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .typing-word.current {
+      color: #eef6fb;
+      border-color: rgba(94, 234, 212, 0.75);
+    }
+
+    .typing-word.correct {
+      color: #d9fff1;
+    }
+
+    .typing-word.incorrect {
+      color: #fecaca;
+      background: rgba(248, 113, 113, 0.12);
+      border-radius: 8px;
+    }
+
+    .typing-char-unit {
+      color: rgba(229, 236, 244, 0.42);
+      border-radius: 5px;
+      transition: color 0.08s ease, background 0.08s ease, box-shadow 0.08s ease;
+    }
+
+    .typing-char-unit.correct {
+      color: #f8fbff;
+    }
+
+    .typing-char-unit.wrong {
+      color: #fecaca;
+      background: rgba(248, 113, 113, 0.22);
+      box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.1);
+    }
+
+    .typing-char-unit.current {
+      color: rgba(229, 236, 244, 0.68);
+      box-shadow: inset 0 -3px 0 rgba(94, 234, 212, 0.9);
+    }
+
+    .typing-char-unit.wrong.current {
+      color: #fecaca;
+      background: rgba(248, 113, 113, 0.22);
+    }
+
+    .typing-char-unit.pending-space {
+      display: inline-block;
+      min-width: 0.35em;
+    }
+
+    .typing-hidden-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .typing-live-line {
+      min-height: 56px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(124, 217, 255, 0.14);
+      background: rgba(2, 10, 20, 0.78);
+      color: rgba(229, 236, 244, 0.78);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .typing-live-line strong {
+      color: #eef6fb;
+    }
+
+    .typing-score-card {
+      display: grid;
+      gap: 14px;
+      padding: 20px;
+      border-radius: 24px;
+      border: 1px solid rgba(124, 217, 255, 0.16);
+      background: rgba(4, 14, 27, 0.78);
+    }
+
+    .typing-big-score {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .typing-big-score div {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(2, 10, 20, 0.72);
+      border: 1px solid rgba(124, 217, 255, 0.12);
+    }
+
+    .typing-big-score span {
+      display: block;
+      color: rgba(229, 236, 244, 0.62);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .typing-big-score strong {
+      display: block;
+      margin-top: 8px;
+      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      line-height: 1;
+    }
+
+    @media (max-width: 900px) {
+      .typing-test-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .typing-history-table td:first-child {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 780px) {
+      .typing-stat-strip,
+      .typing-secondary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .typing-key-row {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .typing-stat-strip,
+      .typing-secondary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .typing-toolbar-label {
+        min-width: auto;
+      }
+
+      .typing-toolbar-row .suite-input {
+        max-width: none;
+      }
+    }
+  </style>
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/typing-speed-test-generator.html">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode"></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="suite-page">
+    <nav class="suite-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/">Writing Tools</a>
+      <span>/</span>
+      <strong>Typing Speed Test</strong>
+    </nav>
+
+    <section class="suite-hero">
+      <span class="suite-eyebrow">WPM Training</span>
+      <h1>Typing Speed Test Generator</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+      <p>Measure real typing performance without visual clutter. You get live WPM, raw speed, accuracy, consistency, local history, and a weak-key heatmap while still keeping the first screen obvious enough that anyone can start testing right away.</p>
+      <div class="suite-chip-row">
+        <span class="suite-chip">Live WPM and raw speed</span>
+        <span class="suite-chip">Local history</span>
+        <span class="suite-chip">Weak-key heatmap</span>
+        <span class="suite-chip">Custom text mode</span>
+      </div>
+    </section>
+
+    <section class="typing-layout">
+      <section class="suite-panel">
+        <div class="typing-toolbar">
+          <div class="typing-toolbar-group">
+            <div class="typing-toolbar-row">
+              <p class="typing-toolbar-label">Duration</p>
+              <button class="suite-toggle is-active" type="button" data-typing-duration="15">15s</button>
+              <button class="suite-toggle" type="button" data-typing-duration="30">30s</button>
+              <button class="suite-toggle" type="button" data-typing-duration="60">60s</button>
+              <button class="suite-toggle" type="button" data-typing-duration="120">120s</button>
+              <input id="typing-custom-duration" class="suite-input" type="number" min="10" max="300" placeholder="Custom">
+            </div>
+            <div class="typing-toolbar-row">
+              <p class="typing-toolbar-label">Exercise</p>
+              <button class="suite-toggle is-active" type="button" data-typing-source="paragraph">Paragraph</button>
+              <button class="suite-toggle" type="button" data-typing-source="story">Story</button>
+              <button class="suite-toggle" type="button" data-typing-source="code">Code sample</button>
+              <button class="suite-toggle" type="button" data-typing-source="custom">Custom text</button>
+            </div>
+          </div>
+
+          <div id="typing-custom-wrap" class="suite-field" style="display:none;">
+            <label for="typing-custom-text" class="suite-label">Custom passage</label>
+            <textarea id="typing-custom-text" class="suite-textarea" style="min-height:140px;">Practice with your own text so the typing test reflects your real writing workload instead of generic prompts.</textarea>
+          </div>
+        </div>
+
+        <div class="typing-stat-strip">
+          <div class="typing-stat-pill"><span>Time left</span><strong id="typing-time-left">15</strong></div>
+          <div class="typing-stat-pill"><span>WPM</span><strong id="typing-wpm">0</strong></div>
+          <div class="typing-stat-pill"><span>Raw</span><strong id="typing-raw">0</strong></div>
+          <div class="typing-stat-pill"><span>Accuracy</span><strong id="typing-accuracy">100%</strong></div>
+          <div class="typing-stat-pill"><span>Consistency</span><strong id="typing-consistency">100%</strong></div>
+          <div class="typing-stat-pill"><span>Errors</span><strong id="typing-errors">0</strong></div>
+        </div>
+
+        <div class="typing-prompt-wrap">
+          <div class="typing-prompt-meta">
+            <strong id="typing-source-label">Paragraph practice</strong>
+            <span class="suite-note">Progress: <span id="typing-progress">0%</span></span>
+          </div>
+          <div id="typing-prompt" class="typing-prompt" aria-live="polite"></div>
+          <div class="suite-field">
+            <label for="typing-input" class="suite-label">Type the text exactly as shown above</label>
+            <textarea id="typing-input" class="suite-textarea typing-input" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="Click here, start typing, and the timer will begin on your first keystroke."></textarea>
+          </div>
+          <div class="suite-progress"><span id="typing-progress-bar" style="width:0%;"></span></div>
+          <div id="typing-status" class="suite-status success"><strong>Ready.</strong> Choose a duration, pick an exercise, and start typing in the box below.</div>
+          <div class="suite-action-row">
+            <button id="typing-restart" class="suite-button primary" type="button">Restart test</button>
+            <button id="typing-new-text" class="suite-button secondary" type="button">New passage</button>
+            <button id="typing-copy-summary" class="suite-button ghost" type="button">Copy result summary</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="typing-secondary-grid">
+        <div class="typing-card-stack">
+          <section class="suite-card">
+            <h2>Session summary</h2>
+            <ul class="suite-summary-list" id="typing-summary-list">
+              <li>No completed test yet.</li>
+            </ul>
+          </section>
+
+          <section class="suite-card">
+            <h2>Recent sessions</h2>
+            <div class="suite-table-wrap">
+              <table class="suite-table typing-history-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>WPM</th>
+                    <th>Acc</th>
+                    <th>Mode</th>
+                  </tr>
+                </thead>
+                <tbody id="typing-history-body"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="typing-card-stack">
+          <section class="suite-card">
+            <h2>Weak-key heatmap</h2>
+            <div id="typing-keyboard" class="typing-keyboard"></div>
+          </section>
+
+          <section class="suite-card">
+            <h2>How to use it</h2>
+            <ul class="suite-check-list">
+              <li>Choose a time and exercise type.</li>
+              <li>Read the paragraph or code sample first.</li>
+              <li>Click inside the typing box and start typing.</li>
+              <li>The timer starts on the first keystroke and the result saves locally when time ends.</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </section>
+
+    <section class="suite-compare-card" style="margin-bottom:22px;">
+      <h2>Comparison table</h2>
+      <p>This comparison focuses on public typing test feature pages and high-level workflow differences. It compares practice features, persistence style, and how quickly a user can start typing.</p>
+      <div class="suite-table-wrap" style="margin-top:18px;">
+        <table class="suite-table suite-compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ToolsMatic</th>
+              <th>Monkeytype</th>
+              <th>10FastFingers</th>
+              <th>Typing.com</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Instant test without sign-up</td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Local history without account</td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-cross">✕</span></td>
+              <td><span class="suite-cross">✕</span></td>
+              <td><span class="suite-cross">✕</span></td>
+            </tr>
+            <tr>
+              <td>Custom text mode</td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-cross">✕</span></td>
+            </tr>
+            <tr>
+              <td>Weak-key heatmap</td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-cross">✕</span></td>
+              <td><span class="suite-cross">✕</span></td>
+              <td><span class="suite-cross">✕</span></td>
+            </tr>
+            <tr>
+              <td>Clean single-screen timer workflow</td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-check">✓</span></td>
+              <td><span class="suite-cross">✕</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="suite-faq-card" style="margin-bottom:22px;">
+      <h2>FAQs</h2>
+      <div class="suite-faq">
+        <details>
+          <summary>Should I focus on raw speed or corrected WPM first?</summary>
+          <p>Corrected WPM is usually the better primary target because it reflects usable speed. Raw speed is still valuable because it shows your ceiling, but accuracy keeps that speed practical.</p>
+        </details>
+        <details>
+          <summary>Why does consistency matter in a typing test?</summary>
+          <p>Because typing that spikes and crashes is harder to use in real work. Consistency helps show whether your pace is steady enough for writing, coding, or editing sessions.</p>
+        </details>
+        <details>
+          <summary>Can I use custom text to train for a specific job?</summary>
+          <p>Yes. Custom text mode is ideal for code snippets, product copy, legal text, support macros, or any repeated passage you want to practice realistically.</p>
+        </details>
+        <details>
+          <summary>What does the heatmap actually help with?</summary>
+          <p>It shows which letters caused the most trouble so you can target weak spots directly instead of repeating the whole test without learning anything new.</p>
+        </details>
+        <details>
+          <summary>Will refreshing the page erase my history?</summary>
+          <p>No. The recent session list is stored locally in your browser until you clear browser storage or use a different device or browser profile.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="suite-seo-card">
+      <h2>Typing Speed Test: a cleaner way to measure real typing skill instead of chasing noisy vanity numbers</h2>
+      <p>A strong typing speed test should tell you more than one headline number. It should show whether the speed is real, whether the accuracy holds under pressure, whether the pace is steady or unstable, and which keys are actually causing problems. That is exactly what this Typing Speed Test is designed to do. The interface keeps the first interaction simple enough for any user to understand immediately, but the tool still captures the metrics that serious practice needs: WPM, raw speed, accuracy, consistency, error counts, weak-key patterns, and local history. Instead of burying useful data behind accounts or cluttered modes, it keeps the workflow direct and readable.</p>
+      <p>Typing speed matters because it affects more than just typing contests. It affects how fast you can draft, code, reply, edit, and move through everyday computer work. Writers feel it in drafting pace. Developers feel it in command lines, code edits, and documentation. Support teams feel it in ticket replies. Students feel it in exams and coursework. A typing test becomes more useful when it reflects that real-world context. That is why this page offers readable paragraphs, short story passages, code samples, and custom text mode instead of forcing every session into one generic vocabulary pattern. Different work creates different typing demands, and a better test should respect that.</p>
+      <p>One of the biggest mistakes in typing practice is treating WPM as the only truth. Fast bursts with weak control can look impressive for a moment but collapse in real writing. That is why this tool shows both WPM and raw WPM. Corrected WPM reflects usable speed because it rewards correct characters. Raw WPM shows how aggressive your pace is before accuracy pulls it back down. Seeing both numbers together gives you a clearer picture of what is improving. If raw speed keeps rising while accuracy drops, you are probably outrunning control. If accuracy stays high while WPM slowly climbs, your typing is becoming more reliable, not just faster.</p>
+      <p>Consistency is another metric that deserves more attention. Many people type in waves: fast at the start, uneven in the middle, then hesitant once mistakes appear. That kind of pacing is frustrating in real work because it makes output unpredictable. The consistency signal on this page helps surface that problem. It estimates how stable the pace is over the session rather than only showing the final result. When consistency improves, the benefit goes beyond tests. It usually means the hands are settling into better rhythm, error recovery is calmer, and attention is staying closer to the text instead of bouncing between panic and sprinting.</p>
+      <p>The weak-key heatmap is included because most people do not need more random practice. They need more targeted practice. If the same letters, finger transitions, or punctuation patterns keep causing trouble, repeating generic tests without identifying those weaknesses is slow and inefficient. The heatmap turns recent mistakes into something visible. You can see which keys caused friction and use that information to decide what to practice next. Over time, that makes the test more than a measurement tool. It becomes a training aid that helps convert vague frustration into specific next steps.</p>
+      <p>Local history is equally important because improvement is easier to trust when it is visible. The last ten sessions stay in the browser so you can compare pace, accuracy, and mode without creating an account. That is especially useful for casual users who still want some continuity in practice but do not want to sign in just to see whether they are improving. It is also practical for focused practice blocks: switch between paragraph drills, story passages, code samples, and custom text, then compare results across sessions. Because the history is local, the workflow stays quick and private.</p>
+      <p>Custom text mode pushes the tool beyond casual entertainment. It lets you practice on the kind of text you actually type. That could be a support macro, a product description, a coding pattern, a study paragraph, or a repeated client intro. Practicing with your own material makes the result more useful because the test starts resembling the work itself. For many users, that is the fastest way to move from abstract typing improvement to measurable practical benefit. It is also one of the easiest ways to spot whether your typing breaks down on punctuation, long words, short repeated commands, or domain-specific vocabulary.</p>
+      <p>Another strength of a browser-based typing test is that it removes friction. You do not need to install software, create a profile, or fight through a classroom-oriented dashboard just to begin. Open the page, choose a duration, pick a source mode, and start typing. That low-friction start matters because practice habits tend to collapse when setup feels heavier than the session itself. Keeping the page light, readable, and direct makes it easier to return regularly, and regular practice is what actually changes results over time.</p>
+      <p>For users who want a typing tool that feels premium without becoming complicated, this page aims to hit the right balance. It starts fast, explains itself clearly, and still gives enough detail to make the results actionable. You can use it to benchmark current skill, practice against different text styles, identify weak keys, and track progress locally without clutter or sign-up friction. That makes it more than a simple WPM counter. It becomes a practical typing improvement tool built for everyday use, not just one-off curiosity.</p>
+    </section>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="typing-speed-test-generator-pseo" aria-labelledby="typing-speed-test-generator-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Typing Speed Test Generator</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="typing-speed-test-generator-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Typing Speed Test Generator Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Typing Speed Test Generator</strong>, an instant, browser-based asset and template generation utility. This dedicated workspace is built specifically for developers, designers, and writers who require rapid, customized mock data and outputs. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>unrestricted layout selections, rapid randomizing parameters, and clean clipboard copy buttons</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Measure WPM, accuracy, consistency, and weak keys in one clean screen. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Instant Custom Templates</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Create mock records, passwords, keys, or paragraphs on demand in seconds.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Dynamic Input Variables</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Fine-tune length, options, and characters to generate your perfect asset.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Rapid Clipboard Exports</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Generate and copy the assets immediately without downloading files.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Typing Speed Test Generator</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Generator layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Typing Speed Test Generator</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">How does the generator work?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">It utilizes secure, local browser calculation scripts to create random or structured outputs instantly.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Are the generated outputs private?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes. They are calculated in your browser sandbox, meaning only you can see the results.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is there a generation limit?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">None. You can generate unlimited files, text blocks, or keys without limits.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/typing-speed-test.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Typing Speed Test</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Typing Speed Test Generator","url":"https://toolsmatic.me/tools/typing-speed-test-generator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Typing Speed Test Generator online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Typing Speed Test Generator","item":"https://toolsmatic.me/tools/typing-speed-test-generator.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the generator work?","acceptedAnswer":{"@type":"Answer","text":"It utilizes secure, local browser calculation scripts to create random or structured outputs instantly."}},{"@type":"Question","name":"Are the generated outputs private?","acceptedAnswer":{"@type":"Answer","text":"Yes. They are calculated in your browser sandbox, meaning only you can see the results."}},{"@type":"Question","name":"Is there a generation limit?","acceptedAnswer":{"@type":"Answer","text":"None. You can generate unlimited files, text blocks, or keys without limits."}}]}]}</script>
+  </main>
+
+  <script>
+    (() => {
+      const HISTORY_KEY = 'toolsmatic-typing-history';
+      const KEY_ROWS = [['q','w','e','r','t','y','u','i','o','p'],['a','s','d','f','g','h','j','k','l',';'],['z','x','c','v','b','n','m',',','.','/']];
+      const PASSAGE_BANKS = {
+        paragraph: [
+          `A clear typing test should feel calm from the first second. The text needs room to breathe, the timer needs to stay visible, and the user should never wonder where to look next.`,
+          `Good typing practice is less about chasing one lucky score and more about building steady control. When the hands stay relaxed and the eyes follow the line smoothly, speed becomes easier to repeat.`,
+          `Short daily practice often works better than occasional marathon sessions. Ten focused minutes with real paragraphs can teach better rhythm than an hour of rushed and careless typing.`,
+          `Writers, students, and support teams all benefit from cleaner typing habits. Fewer mistakes mean less rework, and steadier pace makes long sessions feel less tiring by the end.`,
+          `The best interfaces remove doubt instead of adding it. When the prompt is readable and the controls are obvious, the typing exercise feels simpler and the results feel more trustworthy.`,
+          `Typing faster is useful, but typing accurately is what saves time in real work. A strong test should reward both so the final score reflects usable output rather than random bursts of speed.`
+        ],
+        story: [
+          `Mira reached the station early and opened her notebook while the platform was still quiet. She decided to practice for ten minutes before work, not to beat a record, but to keep her hands steady and her focus sharp for the day ahead.`,
+          `The first draft of the letter came slowly, but the second version felt different. Each sentence arrived with less hesitation, and by the final paragraph, the keyboard sounded more like a rhythm than a struggle.`,
+          `At the back of the library, a student copied lines from a history passage into a practice window. The goal was simple: stay calm, stay accurate, and finish the minute without letting one mistake break the pace.`,
+          `When the storm knocked out the office internet, Arun kept working on the local draft. He noticed that his typing improved most on days when he focused on consistency instead of forcing speed from the opening line.`,
+          `The team gathered around the launch checklist one final time. Someone read the items aloud, someone else updated the page title, and Lena quietly typed the final note with the kind of steady accuracy that only practice can build.`
+        ],
+        code: [
+          `const buildSnippet = (title, description) => {\n  const trimmedTitle = title.trim();\n  const trimmedDescription = description.trim();\n  return {\n    title: trimmedTitle,\n    description: trimmedDescription,\n    ready: Boolean(trimmedTitle && trimmedDescription)\n  };\n};`,
+          `function formatDuration(totalSeconds) {\n  const minutes = Math.floor(totalSeconds / 60);\n  const seconds = totalSeconds % 60;\n  return \`\${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}\`;\n}`,
+          `async function saveDraft(data) {\n  const response = await fetch('/api/drafts', {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify(data)\n  });\n  return response.json();\n}`,
+          `const applyTheme = (mode) => {\n  document.documentElement.dataset.theme = mode;\n  localStorage.setItem('preferred-theme', mode);\n  return mode;\n};`,
+          `const fields = ['title', 'description', 'canonical'];\nconst emptyFields = fields.filter((key) => !formState[key]);\nif (emptyFields.length) {\n  console.warn('Missing fields:', emptyFields.join(', '));\n}`
+        ]
+      };
+
+      const durationButtons = Array.from(document.querySelectorAll('[data-typing-duration]'));
+      const sourceButtons = Array.from(document.querySelectorAll('[data-typing-source]'));
+      const promptNode = document.getElementById('typing-prompt');
+      const inputNode = document.getElementById('typing-input');
+      const customWrap = document.getElementById('typing-custom-wrap');
+      const customText = document.getElementById('typing-custom-text');
+      const customDuration = document.getElementById('typing-custom-duration');
+      const keyboardNode = document.getElementById('typing-keyboard');
+      const historyBody = document.getElementById('typing-history-body');
+      const summaryList = document.getElementById('typing-summary-list');
+
+      const metricNodes = {
+        timeLeft: document.getElementById('typing-time-left'),
+        progress: document.getElementById('typing-progress'),
+        progressBar: document.getElementById('typing-progress-bar'),
+        wpm: document.getElementById('typing-wpm'),
+        raw: document.getElementById('typing-raw'),
+        accuracy: document.getElementById('typing-accuracy'),
+        consistency: document.getElementById('typing-consistency'),
+        errors: document.getElementById('typing-errors'),
+        source: document.getElementById('typing-source-label'),
+        status: document.getElementById('typing-status')
+      };
+
+      const state = {
+        duration: 15,
+        source: 'paragraph',
+        prompt: '',
+        timer: null,
+        startTime: null,
+        ended: false,
+        weakKeys: {},
+        samples: [],
+        history: JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]')
+      };
+
+      const formatSource = (value) => ({
+        paragraph: 'Paragraph practice',
+        story: 'Short story',
+        code: 'Code sample',
+        custom: 'Custom text'
+      }[value] || 'Paragraph practice');
+
+      const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+      const generatePrompt = () => {
+        if (state.source === 'custom') {
+          return customText.value.trim() || 'Add your own text here to build a custom typing passage.';
+        }
+        const bank = PASSAGE_BANKS[state.source] || PASSAGE_BANKS.paragraph;
+        const targetLength = Math.max(280, state.duration * (state.source === 'code' ? 7 : 9));
+        const chosen = [];
+        let prompt = '';
+        while (prompt.length < targetLength) {
+          const pick = bank[Math.floor(Math.random() * bank.length)];
+          if (chosen[chosen.length - 1] === pick) continue;
+          chosen.push(pick);
+          prompt = chosen.join('\n\n');
+          if (chosen.length > bank.length * 2) break;
+        }
+        return prompt.trim();
+      };
+
+      const renderPrompt = () => {
+        const typed = inputNode.value;
+        promptNode.innerHTML = Array.from(state.prompt).map((char, index) => {
+          let className = 'typing-char';
+          if (index < typed.length) {
+            className += typed[index] === char ? ' correct' : ' incorrect';
+          } else if (index === typed.length) {
+            className += ' current';
+          }
+          const safeChar = char
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+          return `<span class="${className}">${char === ' ' ? '&nbsp;' : char === '\n' ? '<br>' : safeChar}</span>`;
+        }).join('');
+      };
+
+      const computeStats = () => {
+        const typed = inputNode.value;
+        const elapsedSeconds = state.startTime ? Math.max(0.5, (Date.now() - state.startTime) / 1000) : 0.5;
+        let correct = 0;
+        let errors = 0;
+        const weakKeys = {};
+        for (let index = 0; index < typed.length; index += 1) {
+          if (typed[index] === state.prompt[index]) {
+            correct += 1;
+          } else {
+            errors += 1;
+            const expected = (state.prompt[index] || '').toLowerCase();
+            if (expected) weakKeys[expected] = (weakKeys[expected] || 0) + 1;
+          }
+        }
+
+        const rawWpm = Math.round((typed.length / 5) / (elapsedSeconds / 60));
+        const wpm = Math.round((correct / 5) / (elapsedSeconds / 60));
+        const accuracy = typed.length ? Math.max(0, Math.round((correct / typed.length) * 100)) : 100;
+
+        state.samples.push(rawWpm);
+        if (state.samples.length > 60) state.samples.shift();
+        const avg = state.samples.reduce((sum, value) => sum + value, 0) / state.samples.length;
+        const variance = state.samples.reduce((sum, value) => sum + ((value - avg) ** 2), 0) / state.samples.length;
+        const consistency = Math.max(0, Math.round(100 - Math.sqrt(variance)));
+
+        state.weakKeys = weakKeys;
+        return { correct, errors, rawWpm, wpm, accuracy, consistency };
+      };
+
+      const renderKeyboard = () => {
+        keyboardNode.innerHTML = KEY_ROWS.map((row) => {
+          return `<div class="typing-key-row">${row.map((key) => {
+            const intensity = clamp((state.weakKeys[key] || 0) * 18, 0, 90);
+            return `<div class="typing-key" style="background: linear-gradient(180deg, rgba(8,18,31,0.72), rgba(248,113,113,${intensity / 100}));">${key}</div>`;
+          }).join('')}</div>`;
+        }).join('');
+      };
+
+      const renderHistory = () => {
+        historyBody.innerHTML = state.history.length
+          ? state.history.map((item) => `<tr><td>${new Date(item.at).toLocaleString()}</td><td>${item.wpm}</td><td>${item.accuracy}%</td><td>${item.mode}</td></tr>`).join('')
+          : '<tr><td colspan="4" class="suite-empty">No saved sessions yet.</td></tr>';
+      };
+
+      const updateSummary = (summary) => {
+        if (!summary) {
+          summaryList.innerHTML = '<li>No completed test yet.</li>';
+          return;
+        }
+        summaryList.innerHTML = [
+          ` <li>WPM: ${summary.wpm}</li>`,
+          ` <li>Raw speed: ${summary.rawWpm}</li>`,
+          ` <li>Accuracy: ${summary.accuracy}%</li>`,
+          ` <li>Consistency: ${summary.consistency}%</li>`,
+          ` <li>Errors: ${summary.errors}</li>`
+        ].join('');
+      };
+
+      const stopTimer = () => {
+        if (state.timer) {
+          clearInterval(state.timer);
+          state.timer = null;
+        }
+      };
+
+      const resetSession = (newPrompt = true) => {
+        stopTimer();
+        state.startTime = null;
+        state.ended = false;
+        state.samples = [];
+        state.weakKeys = {};
+        if (newPrompt || !state.prompt) {
+          state.prompt = generatePrompt();
+        }
+        inputNode.value = '';
+        inputNode.disabled = false;
+        metricNodes.timeLeft.textContent = String(state.duration);
+        metricNodes.progress.textContent = '0%';
+        metricNodes.progressBar.style.width = '0%';
+        metricNodes.wpm.textContent = '0';
+        metricNodes.raw.textContent = '0';
+        metricNodes.accuracy.textContent = '100%';
+        metricNodes.consistency.textContent = '100%';
+        metricNodes.errors.textContent = '0';
+        metricNodes.source.textContent = formatSource(state.source);
+        metricNodes.status.className = 'suite-status success';
+        metricNodes.status.innerHTML = '<strong>Ready.</strong> Choose a duration, pick an exercise, and start typing in the box below.';
+        renderPrompt();
+        renderKeyboard();
+      };
+
+      const finishSession = () => {
+        stopTimer();
+        state.ended = true;
+        inputNode.disabled = true;
+        const summary = computeStats();
+        const record = {
+          at: Date.now(),
+          wpm: summary.wpm,
+          rawWpm: summary.rawWpm,
+          accuracy: summary.accuracy,
+          consistency: summary.consistency,
+          errors: summary.errors,
+          mode: `${state.duration}s ${formatSource(state.source)}`
+        };
+        state.history.unshift(record);
+        state.history = state.history.slice(0, 10);
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(state.history));
+        metricNodes.status.className = 'suite-status warn';
+        metricNodes.status.innerHTML = `<strong>Test complete.</strong> Finished with ${summary.wpm} WPM at ${summary.accuracy}% accuracy.`;
+        updateSummary(summary);
+        renderHistory();
+        renderKeyboard();
+      };
+
+      const updateLiveMetrics = () => {
+        const summary = computeStats();
+        const elapsed = state.startTime ? (Date.now() - state.startTime) / 1000 : 0;
+        const remaining = Math.max(0, state.duration - elapsed);
+        const progress = clamp(Math.round((elapsed / state.duration) * 100), 0, 100);
+        metricNodes.timeLeft.textContent = String(Math.ceil(remaining));
+        metricNodes.progress.textContent = `${progress}%`;
+        metricNodes.progressBar.style.width = `${progress}%`;
+        metricNodes.wpm.textContent = String(summary.wpm);
+        metricNodes.raw.textContent = String(summary.rawWpm);
+        metricNodes.accuracy.textContent = `${summary.accuracy}%`;
+        metricNodes.consistency.textContent = `${summary.consistency}%`;
+        metricNodes.errors.textContent = String(summary.errors);
+        renderKeyboard();
+        if (remaining <= 0) {
+          finishSession();
+        }
+      };
+
+      const startTimer = () => {
+        if (state.timer || state.ended) return;
+        state.startTime = Date.now();
+        metricNodes.status.className = 'suite-status success';
+        metricNodes.status.innerHTML = '<strong>Typing live.</strong> Keep going until the timer ends.';
+        state.timer = setInterval(updateLiveMetrics, 100);
+      };
+
+      durationButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          durationButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+          state.duration = Number(button.dataset.typingDuration);
+          customDuration.value = '';
+          resetSession(true);
+        });
+      });
+
+      sourceButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          sourceButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+          state.source = button.dataset.typingSource;
+          customWrap.style.display = state.source === 'custom' ? 'grid' : 'none';
+          resetSession(true);
+        });
+      });
+
+      customDuration.addEventListener('change', () => {
+        state.duration = clamp(Number(customDuration.value) || 60, 10, 300);
+        durationButtons.forEach((item) => item.classList.remove('is-active'));
+        resetSession(true);
+      });
+
+      customText.addEventListener('input', () => {
+        if (state.source === 'custom') {
+          resetSession(true);
+        }
+      });
+
+      inputNode.addEventListener('focus', () => {
+        if (!state.ended && !state.startTime && !inputNode.value.length) {
+          metricNodes.status.className = 'suite-status success';
+          metricNodes.status.innerHTML = '<strong>Ready to start.</strong> The timer begins on your first keystroke and the passage stays fixed until the test ends.';
+        }
+      });
+
+      inputNode.addEventListener('input', () => {
+        if (inputNode.value.length > state.prompt.length) {
+          inputNode.value = inputNode.value.slice(0, state.prompt.length);
+        }
+        if (!state.startTime && inputNode.value.length) startTimer();
+        renderPrompt();
+        if (state.startTime) updateLiveMetrics();
+        if (!state.ended && inputNode.value.length >= state.prompt.length) {
+          finishSession();
+        }
+      });
+
+      document.getElementById('typing-restart').addEventListener('click', () => resetSession(false));
+      document.getElementById('typing-new-text').addEventListener('click', () => resetSession(true));
+      document.getElementById('typing-copy-summary').addEventListener('click', async () => {
+        const summary = `${metricNodes.wpm.textContent} WPM | Raw ${metricNodes.raw.textContent} | Accuracy ${metricNodes.accuracy.textContent} | Consistency ${metricNodes.consistency.textContent}`;
+        try {
+          await navigator.clipboard.writeText(summary);
+          metricNodes.status.className = 'suite-status success';
+          metricNodes.status.innerHTML = '<strong>Copied.</strong> The current result summary was copied to your clipboard.';
+        } catch (error) {
+          metricNodes.status.className = 'suite-status error';
+          metricNodes.status.innerHTML = '<strong>Copy failed.</strong> Try again after focusing the page.';
+        }
+      });
+
+      renderHistory();
+      resetSession(true);
+    })();
+  </script>
+  <script>
+    (() => {
+      const layout = document.querySelector('.typing-layout');
+      if (!layout) return;
+
+      const HISTORY_KEY = 'toolsmatic-typing-history';
+      const banks = {
+        common: [
+          'Every great typing session starts with calm hands, steady eyes, and a clear passage that is easy to follow from the first word.',
+          'Practice works best when the screen removes confusion. Focus on the next word, keep a smooth rhythm, and let accuracy build speed naturally.',
+          'Fast typing is useful only when the words are correct. A clean test should reward control, rhythm, and useful speed instead of random bursts.',
+          'Small improvements become obvious when you track words per minute, accuracy, errors, and consistency across short focused sessions.'
+        ],
+        advanced: [
+          'Professional typing is not about hitting one lucky score. It is about sustaining accurate output while reading ahead, correcting calmly, and keeping pace under pressure.',
+          'A reliable words per minute test should make the target text readable, the controls obvious, and the result easy to understand without forcing an account or a complicated lesson dashboard.',
+          'The best typists do not rush every sentence. They stay relaxed, maintain rhythm through punctuation, and recover from mistakes without letting one wrong key ruin the whole test.'
+        ],
+        code: [
+          "const formatScore = (wpm, accuracy) => `${wpm} WPM at ${accuracy}% accuracy`;\nconst result = formatScore(72, 98);\nconsole.log(result);",
+          "function calculateWpm(characters, seconds) {\n  const words = characters / 5;\n  return Math.round(words / (seconds / 60));\n}",
+          "const user = { name: 'ToolsMatic', fast: true };\nif (user.fast) {\n  document.body.classList.add('typing-ready');\n}"
+        ],
+        custom: ['Paste your own text in custom mode, then press New passage to practice with a real paragraph from your work.']
+      };
+
+      layout.innerHTML = `
+        <section class="suite-panel typing-test-shell">
+          <div class="typing-test-top">
+            <div class="typing-card-stack">
+              <div class="typing-mode-bar" aria-label="Choose duration">
+                <button class="suite-toggle is-active" type="button" data-tm-duration="15">15s</button>
+                <button class="suite-toggle" type="button" data-tm-duration="30">30s</button>
+                <button class="suite-toggle" type="button" data-tm-duration="60">60s</button>
+                <button class="suite-toggle" type="button" data-tm-duration="120">120s</button>
+                <input id="tm-custom-duration" class="suite-input" type="number" min="10" max="300" placeholder="Custom seconds">
+              </div>
+              <div class="typing-source-bar" aria-label="Choose passage type">
+                <button class="suite-toggle is-active" type="button" data-tm-source="common">Common words</button>
+                <button class="suite-toggle" type="button" data-tm-source="advanced">Advanced</button>
+                <button class="suite-toggle" type="button" data-tm-source="code">Code terms</button>
+                <button class="suite-toggle" type="button" data-tm-source="custom">Custom text</button>
+              </div>
+              <div id="tm-custom-wrap" class="suite-field" style="display:none;">
+                <label for="tm-custom-text" class="suite-label">Custom text</label>
+                <textarea id="tm-custom-text" class="suite-textarea" style="min-height:110px;">Practice with your own text so the typing test matches your real writing work.</textarea>
+              </div>
+              <div id="tm-reader" class="typing-reader" tabindex="0" role="textbox" aria-label="Typing passage. Type directly to begin."></div>
+              <textarea id="tm-input" class="typing-hidden-input" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Hidden typing input"></textarea>
+              <div class="typing-live-line" id="tm-live-line"><strong>Ready.</strong> Click the passage and start typing. There is no separate typing box.</div>
+              <div class="suite-progress"><span id="tm-progress-bar" style="width:0%;"></span></div>
+              <div class="suite-action-row">
+                <button id="tm-restart" class="suite-button primary" type="button">Restart test</button>
+                <button id="tm-new-passage" class="suite-button secondary" type="button">New passage</button>
+                <button id="tm-copy" class="suite-button ghost" type="button">Copy result</button>
+              </div>
+            </div>
+            <aside class="typing-score-card">
+              <h2>Live stats</h2>
+              <div class="typing-big-score">
+                <div><span>Time</span><strong id="tm-time">15</strong></div>
+                <div><span>Progress</span><strong id="tm-progress">0%</strong></div>
+                <div><span>WPM</span><strong id="tm-wpm">0</strong></div>
+                <div><span>Raw</span><strong id="tm-raw">0</strong></div>
+                <div><span>Accuracy</span><strong id="tm-accuracy">100%</strong></div>
+                <div><span>Errors</span><strong id="tm-errors">0</strong></div>
+              </div>
+              <p class="suite-note" id="tm-source-label">Common words</p>
+            </aside>
+          </div>
+        </section>
+        <section class="typing-secondary-grid">
+          <section class="suite-card">
+            <h2>Recent sessions</h2>
+            <div class="suite-table-wrap">
+              <table class="suite-table typing-history-table">
+                <thead><tr><th>Time</th><th>WPM</th><th>Accuracy</th><th>Mode</th></tr></thead>
+                <tbody id="tm-history"></tbody>
+              </table>
+            </div>
+          </section>
+          <section class="suite-card">
+            <h2>Weak-key heatmap</h2>
+            <div id="tm-keyboard" class="typing-keyboard"></div>
+          </section>
+        </section>
+      `;
+
+      const $ = (id) => document.getElementById(id);
+      const durationButtons = Array.from(document.querySelectorAll('[data-tm-duration]'));
+      const sourceButtons = Array.from(document.querySelectorAll('[data-tm-source]'));
+      const reader = $('tm-reader');
+      const hiddenInput = $('tm-input');
+      const customWrap = $('tm-custom-wrap');
+      const customText = $('tm-custom-text');
+      const customDuration = $('tm-custom-duration');
+      const keyRows = [['q','w','e','r','t','y','u','i','o','p'], ['a','s','d','f','g','h','j','k','l',';'], ['z','x','c','v','b','n','m',',','.','/']];
+      const state = {
+        duration: 15,
+        source: 'common',
+        prompt: '',
+        index: 0,
+        statuses: [],
+        start: 0,
+        timer: null,
+        ended: false,
+        attempts: 0,
+        correct: 0,
+        errors: 0,
+        weak: {},
+        lastSummary: null,
+        history: JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]')
+      };
+
+      const sourceName = () => ({ common: 'Common words', advanced: 'Advanced passage', code: 'Code terms', custom: 'Custom text' }[state.source] || 'Common words');
+      const escapeHtml = (value) => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+      const pickPrompt = () => {
+        const text = state.source === 'custom'
+          ? (customText.value.trim() || banks.custom[0])
+          : banks[state.source][Math.floor(Math.random() * banks[state.source].length)];
+        const normalized = text.replace(/\s+/g, ' ').trim();
+        if (state.source === 'code') return text.trim();
+        const words = normalized.split(' ');
+        const target = Math.max(34, Math.ceil(state.duration * 2.6));
+        const out = [];
+        while (out.length < target) out.push(...words);
+        return out.slice(0, target).join(' ');
+      };
+
+      const renderPrompt = () => {
+        reader.innerHTML = Array.from(state.prompt).map((char, index) => {
+          const status = state.statuses[index] || '';
+          const classes = ['typing-char-unit'];
+          if (char === ' ') classes.push('pending-space');
+          if (status === 'correct') classes.push('correct');
+          if (status === 'wrong') classes.push('wrong');
+          if (index === state.index && !state.ended) classes.push('current');
+          const display = char === ' ' ? '&nbsp;' : char === '\n' ? '<br>' : escapeHtml(char);
+          return `<span class="${classes.join(' ')}" data-char-index="${index}">${display}</span>`;
+        }).join('');
+        const current = reader.querySelector('.typing-char-unit.current');
+        if (current) {
+          reader.scrollTop = Math.max(0, current.offsetTop - (reader.clientHeight / 2));
+        }
+      };
+
+      const compute = () => {
+        const elapsed = state.start ? Math.max(0.5, (performance.now() - state.start) / 1000) : 0.5;
+        const raw = Math.round((state.attempts / 5) / (elapsed / 60));
+        const wpm = Math.round((state.correct / 5) / (elapsed / 60));
+        const accuracy = state.attempts ? Math.max(0, Math.round((state.correct / state.attempts) * 100)) : 100;
+        return { wpm, raw, accuracy, errors: state.errors };
+      };
+
+      const renderKeyboard = () => {
+        $('tm-keyboard').innerHTML = keyRows.map((row) => `<div class="typing-key-row">${row.map((key) => {
+          const heat = clamp((state.weak[key] || 0) * 20, 0, 85) / 100;
+          return `<span class="typing-key" style="background:linear-gradient(180deg, rgba(8,18,31,.72), rgba(248,113,113,${heat}));">${escapeHtml(key)}</span>`;
+        }).join('')}</div>`).join('');
+      };
+
+      const renderHistory = () => {
+        $('tm-history').innerHTML = state.history.length
+          ? state.history.map((item) => `<tr><td>${new Date(item.at).toLocaleString()}</td><td>${item.wpm}</td><td>${item.accuracy}%</td><td>${escapeHtml(item.mode)}</td></tr>`).join('')
+          : '<tr><td colspan="4" class="suite-empty">No completed tests yet.</td></tr>';
+      };
+
+      const updateStats = () => {
+        const summary = compute();
+        const elapsed = state.start ? (performance.now() - state.start) / 1000 : 0;
+        const remaining = Math.max(0, state.duration - elapsed);
+        const progress = clamp(Math.round((state.index / state.prompt.length) * 100), 0, 100);
+        $('tm-time').textContent = String(Math.ceil(remaining));
+        $('tm-progress').textContent = `${progress}%`;
+        $('tm-progress-bar').style.width = `${progress}%`;
+        $('tm-wpm').textContent = String(summary.wpm);
+        $('tm-raw').textContent = String(summary.raw);
+        $('tm-accuracy').textContent = `${summary.accuracy}%`;
+        $('tm-errors').textContent = String(summary.errors);
+        renderKeyboard();
+        if (state.start && remaining <= 0) finishTest();
+      };
+
+      const startTest = () => {
+        if (state.start || state.ended) return;
+        state.start = performance.now();
+        $('tm-live-line').innerHTML = '<strong>Typing live.</strong> Type the visible characters. Wrong keys turn red and do not advance.';
+        state.timer = setInterval(updateStats, 100);
+      };
+
+      const finishTest = () => {
+        if (state.ended) return;
+        clearInterval(state.timer);
+        state.timer = null;
+        state.ended = true;
+        const summary = compute();
+        state.lastSummary = summary;
+        state.history.unshift({ at: Date.now(), wpm: summary.wpm, raw: summary.raw, accuracy: summary.accuracy, mode: `${state.duration}s ${sourceName()}` });
+        state.history = state.history.slice(0, 10);
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(state.history));
+        $('tm-live-line').innerHTML = `<strong>Complete.</strong> ${summary.wpm} WPM, ${summary.accuracy}% accuracy, ${summary.errors} errors.`;
+        renderPrompt();
+        renderHistory();
+        updateStats();
+      };
+
+      const reset = (newPassage = false) => {
+        clearInterval(state.timer);
+        state.timer = null;
+        state.start = 0;
+        state.ended = false;
+        state.index = 0;
+        state.attempts = 0;
+        state.correct = 0;
+        state.errors = 0;
+        state.weak = {};
+        if (newPassage || !state.prompt) state.prompt = pickPrompt();
+        state.statuses = Array.from({ length: state.prompt.length }, () => '');
+        hiddenInput.value = '';
+        $('tm-time').textContent = String(state.duration);
+        $('tm-progress').textContent = '0%';
+        $('tm-progress-bar').style.width = '0%';
+        $('tm-wpm').textContent = '0';
+        $('tm-raw').textContent = '0';
+        $('tm-accuracy').textContent = '100%';
+        $('tm-errors').textContent = '0';
+        $('tm-source-label').textContent = sourceName();
+        $('tm-live-line').innerHTML = '<strong>Ready.</strong> Click the passage and type directly. No separate box needed.';
+        renderPrompt();
+        renderKeyboard();
+      };
+
+      const shouldIgnoreKey = (event) => {
+        const target = event.target;
+        if (!target) return false;
+        if (target === hiddenInput || target === reader || target === document.body) return false;
+        return ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(target.tagName) || target.isContentEditable;
+      };
+
+      const handleCharacter = (char) => {
+        if (state.ended || state.index >= state.prompt.length) return;
+        startTest();
+        const expected = state.prompt[state.index];
+        state.attempts += 1;
+        if (char === expected) {
+          state.statuses[state.index] = 'correct';
+          state.index += 1;
+          state.correct += 1;
+        } else {
+          state.statuses[state.index] = 'wrong';
+          state.errors += 1;
+          const key = expected.toLowerCase();
+          if (key.trim()) state.weak[key] = (state.weak[key] || 0) + 1;
+        }
+        renderPrompt();
+        updateStats();
+        if (state.index >= state.prompt.length) finishTest();
+      };
+
+      const handleKeydown = (event) => {
+        if (shouldIgnoreKey(event)) return;
+        if (event.ctrlKey || event.metaKey || event.altKey) return;
+        if (event.key === 'Tab') return;
+        if (event.key === 'Backspace') {
+          event.preventDefault();
+          if (state.statuses[state.index] === 'wrong') {
+            state.statuses[state.index] = '';
+            renderPrompt();
+          }
+          return;
+        }
+        if (event.key.length !== 1) return;
+        event.preventDefault();
+        handleCharacter(event.key);
+      };
+
+      reader.addEventListener('click', () => {
+        reader.focus();
+        hiddenInput.focus();
+      });
+      hiddenInput.addEventListener('keydown', (event) => {
+        event.stopPropagation();
+        handleKeydown(event);
+      });
+      document.addEventListener('keydown', handleKeydown);
+
+      durationButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          durationButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+          customDuration.value = '';
+          state.duration = Number(button.dataset.tmDuration);
+          reset(true);
+          reader.focus();
+        });
+      });
+      sourceButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          sourceButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+          state.source = button.dataset.tmSource;
+          customWrap.style.display = state.source === 'custom' ? 'grid' : 'none';
+          reset(true);
+          reader.focus();
+        });
+      });
+      customDuration.addEventListener('change', () => {
+        state.duration = clamp(Number(customDuration.value) || 60, 10, 300);
+        durationButtons.forEach((button) => button.classList.remove('is-active'));
+        reset(true);
+      });
+      customText.addEventListener('input', () => {
+        if (state.source === 'custom') reset(true);
+      });
+      $('tm-restart').addEventListener('click', () => {
+        reset(false);
+        reader.focus();
+      });
+      $('tm-new-passage').addEventListener('click', () => {
+        reset(true);
+        reader.focus();
+      });
+      $('tm-copy').addEventListener('click', async () => {
+        const summary = state.lastSummary || compute();
+        const text = `Typing Speed Test: ${summary.wpm} WPM, raw ${summary.raw}, ${summary.accuracy}% accuracy, ${summary.errors} errors.`;
+        try {
+          await navigator.clipboard.writeText(text);
+          $('tm-live-line').innerHTML = '<strong>Copied.</strong> Result summary copied to clipboard.';
+        } catch (_) {
+          $('tm-live-line').innerHTML = '<strong>Copy failed.</strong> Browser clipboard permission was blocked.';
+        }
+      });
+
+      renderHistory();
+      reset(true);
+      reader.focus();
+    })();
+  </script>
+</body>
+</html>

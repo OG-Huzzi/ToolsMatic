@@ -1,0 +1,1433 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+
+  <title>Protect PDF for Writers Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Protect PDF for Writers online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/protect-pdf-for-writers.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/protect-pdf-for-writers.html">
+  <meta property="og:title" content="Protect PDF for Writers Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Protect PDF for Writers online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Protect PDF for Writers Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Protect PDF for Writers online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <!-- JSON-LD: WebApplication -->
+  
+
+  <!-- JSON-LD: BreadcrumbList -->
+  
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Password Protect a PDF Online",
+    "description": "Secure your PDF with a password and restrict permissions using ToolsMatic — free, private, and 100% offline-capable.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload your PDF",
+        "text": "Drag and drop the PDF file you want to protect into the upload zone."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Set Password and Permissions",
+        "text": "Enter a strong password. You can optionally set advanced permissions to prevent printing, copying, or modifying the document."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Encrypt and Download",
+        "text": "Click 'Protect PDF'. The file will be encrypted locally in your browser, and you can instantly download the secure PDF."
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  
+
+  <!-- Tool-specific styles -->
+  <style>
+    /* ── Layout ─────────────────────────────────────────────── */
+    .protect-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    /* ── Upload zone ────────────────────────────────────────── */
+    .upload-zone {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .upload-zone.dragover {
+      background: rgba(245,158,11,0.06);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-glow),
+        inset 0 0 24px rgba(245,158,11,0.04);
+    }
+
+    /* ── File info bar ──────────────────────────────────────── */
+    .file-info-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 14px 20px;
+    }
+
+    .file-info-left {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .file-stat {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .file-stat strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .btn-clear-file {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-clear-file:hover {
+      border-color: var(--error);
+      color: var(--error);
+      background: rgba(239,68,68,0.06);
+    }
+
+    /* ── Settings Panel ─────────────────────────────────────── */
+    .settings-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .settings-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .form-group .hint {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .password-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .password-input {
+      width: 100%;
+      padding: 14px 16px;
+      padding-right: 48px;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    .password-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(245,158,11,0.1);
+    }
+
+    .btn-toggle-visibility {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .btn-toggle-visibility:hover {
+      color: var(--text-primary);
+    }
+
+    .password-strength {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-top: 8px;
+      overflow: hidden;
+      display: none;
+    }
+
+    .password-strength-bar {
+      height: 100%;
+      width: 0%;
+      transition: all 0.3s ease;
+    }
+
+    .strength-text {
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      margin-top: 4px;
+      display: none;
+    }
+
+    /* Advanced Options */
+    .advanced-toggle {
+      background: none;
+      border: none;
+      color: var(--accent);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0;
+      margin-top: 24px;
+      transition: var(--transition);
+    }
+
+    .advanced-toggle:hover {
+      color: var(--accent-hover);
+    }
+
+    .advanced-toggle svg {
+      transition: transform 0.3s ease;
+    }
+
+    .advanced-toggle.open svg {
+      transform: rotate(180deg);
+    }
+
+    .advanced-options {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border);
+      display: none;
+    }
+
+    .advanced-options.open {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .permissions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .perm-toggle {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .perm-toggle:hover {
+      border-color: var(--text-muted);
+    }
+
+    .perm-toggle input {
+      margin-top: 4px;
+      accent-color: var(--accent);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .perm-info strong {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .perm-info span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ── Actions ────────────────────────────────────────────── */
+    .btn-convert {
+      width: 100%;
+      padding: 18px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(245,158,11,0.25);
+    }
+
+    .btn-convert:hover:not(:disabled) {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245,158,11,0.3);
+    }
+
+    .btn-convert:disabled {
+      background: var(--border);
+      color: var(--text-muted);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(0,0,0,0.2);
+      border-top-color: #000;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .btn-convert.loading .spinner { display: block; }
+
+    /* ── Result ─────────────────────────────────────────────── */
+    .result-section {
+      margin-top: 24px;
+      display: none;
+    }
+
+    .result-section.visible {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .result-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(34,197,94,0.25);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .result-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(34,197,94,0.1);
+      color: var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .result-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .result-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .result-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-download {
+      padding: 14px 28px;
+      background: var(--success);
+      color: #000;
+      border: none;
+      border-radius: var(--radius-btn);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-download:hover {
+      background: #16A34A;
+      transform: translateY(-2px);
+    }
+
+    .btn-reset {
+      padding: 14px 24px;
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-reset:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── SEO content ────────────────────────────────────────── */
+    .seo-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    .seo-section h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 32px;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+    }
+
+    .seo-section h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 24px 0 10px;
+    }
+
+    .seo-section p,
+    .seo-section ul li {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .seo-section ul { padding-left: 20px; }
+
+    /* Related tools */
+    .related-tools {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .related-tool-card {
+      display: block;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .related-tool-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .related-tool-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .related-tool-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* FAQ */
+    .faq-wrap { margin-top: 16px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: left;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      color: var(--text-muted);
+    }
+
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer p {
+      padding-bottom: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .protect-wrapper { padding: 0 20px 60px; }
+      .seo-section { padding: 0 20px 60px; }
+      .permissions-grid { grid-template-columns: 1fr; }
+      .related-tools { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/protect-pdf-for-writers.html">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+      <span class="header-logo-text">ToolsMatic</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="/#tools" class="header-cta btn">All Tools</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="/#tools">Tools</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</header>
+
+<main>
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb" style="max-width:960px;margin:0 auto;padding:80px 40px 0;">
+    <a href="/" class="breadcrumb-link">Home</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="/#tools" class="breadcrumb-link">Tools</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="breadcrumb-current" aria-current="page">Protect PDF</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="tool-hero" style="max-width:960px;margin:0 auto;padding:32px 40px 40px;">
+    <div class="tool-hero-badge">🔒 Files never leave your browser</div>
+    <h1>Protect PDF for Writers</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+    <p class="tool-hero-sub">
+      Add a password to your PDF document instantly. Encrypt your sensitive files with AES-256 military-grade protection and restrict copying, printing, or modifying.
+    </p>
+  </section>
+
+  <!-- TOOL SECTION -->
+  <section class="protect-wrapper">
+    <input type="file" id="file-input" accept=".pdf" aria-hidden="true" style="display:none;">
+
+    <!-- Upload zone -->
+    <div class="upload-zone" id="upload-zone" tabindex="0">
+      <div class="upload-zone-icon" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+      <div class="upload-zone-text">Drag &amp; drop a PDF here</div>
+      <div class="upload-zone-sub">or click to browse</div>
+      <div class="upload-zone-sub">Max file size: 50MB</div>
+    </div>
+
+    <!-- Tool area -->
+    <div id="tool-area" style="display:none;">
+      
+      <!-- File info bar -->
+      <div class="file-info-bar">
+        <div class="file-info-left">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent);">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          <div class="file-stat">File: <strong id="stat-name">—</strong></div>
+          <div class="file-stat">Size: <strong id="stat-size">—</strong></div>
+        </div>
+        <button class="btn-clear-file" id="btn-clear-file">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+            <path d="M10 11v6M14 11v6"></path>
+          </svg>
+          Clear File
+        </button>
+      </div>
+
+      <!-- Settings Panel -->
+      <div class="settings-panel">
+        <div class="settings-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          Set Password
+        </div>
+        
+        <div class="form-group">
+          <label for="input-password">Document Password (Required to Open)</label>
+          <div class="password-input-wrap">
+            <input type="password" id="input-password" class="password-input" placeholder="Type a strong password..." autocomplete="new-password">
+            <button class="btn-toggle-visibility" tabindex="-1" id="btn-toggle-pw" aria-label="Toggle password visibility">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+          <div class="password-strength" id="pw-strength-bar">
+            <div class="password-strength-bar" id="pw-strength-fill"></div>
+          </div>
+          <div class="strength-text" id="pw-strength-text">Strength: Weak</div>
+        </div>
+
+        <button class="advanced-toggle" id="advanced-toggle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+          Advanced Settings (Permissions &amp; Owner Password)
+        </button>
+
+        <div class="advanced-options" id="advanced-options">
+          <div class="form-group">
+            <label for="input-owner">Owner Password (Optional)</label>
+            <span class="hint">Required to change these permissions later. If left blank while permissions are restricted, a secure random one will be generated.</span>
+            <div class="password-input-wrap" style="margin-top:8px;">
+              <input type="password" id="input-owner" class="password-input" placeholder="Owner password..." autocomplete="new-password">
+              <button class="btn-toggle-visibility" tabindex="-1" id="btn-toggle-owner" aria-label="Toggle password visibility">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <label style="display:block;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:var(--text-primary);margin:24px 0 12px;">Restrict Permissions</label>
+          <div class="permissions-grid">
+            <label class="perm-toggle">
+              <input type="checkbox" id="perm-print" checked="">
+              <div class="perm-info">
+                <strong>Allow Printing</strong>
+                <span>Enable high-resolution printing of the document.</span>
+              </div>
+            </label>
+            <label class="perm-toggle">
+              <input type="checkbox" id="perm-copy" checked="">
+              <div class="perm-info">
+                <strong>Allow Copying</strong>
+                <span>Allow text and images to be copied to clipboard.</span>
+              </div>
+            </label>
+            <label class="perm-toggle">
+              <input type="checkbox" id="perm-modify" checked="">
+              <div class="perm-info">
+                <strong>Allow Modifying</strong>
+                <span>Allow changes to the document content.</span>
+              </div>
+            </label>
+            <label class="perm-toggle">
+              <input type="checkbox" id="perm-annotate" checked="">
+              <div class="perm-info">
+                <strong>Allow Annotating</strong>
+                <span>Allow adding text annotations and comments.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-convert" id="btn-convert" disabled="">
+        <div class="spinner"></div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="convert-icon">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span id="convert-text">Protect PDF</span>
+      </button>
+
+      <!-- Result Section -->
+      <div class="result-section" id="result-section">
+        <div class="result-card">
+          <div class="result-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="result-title">PDF Protected Successfully!</div>
+          <div class="result-desc">Your file has been encrypted with AES-256. Keep your password safe.</div>
+          <div class="result-actions">
+            <button class="btn-download" id="btn-download">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download Protected PDF
+            </button>
+            <button class="btn-reset" id="btn-reset-bottom">Protect Another</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEO Content -->
+  <article class="seo-section">
+    <h2>Secure Your Sensitive Documents with Our Free Protect PDF Tool</h2>
+    <p>
+      In an era where data breaches and unauthorized access are increasingly common, protecting your sensitive information is not just an option—it is an absolute necessity. Whether you are dealing with financial records, legal contracts, confidential human resources documents, or personal health information, adding a robust layer of security ensures that your documents remain strictly for your intended audience. ToolsMatic's Protect PDF tool offers military-grade AES-256 encryption, allowing you to quickly and easily add passwords and restrict permissions on your PDF files without compromising on privacy.
+    </p>
+
+    <h2>Why Password Protect Your PDFs?</h2>
+    <p>
+      PDF files are the standard format for sharing documents globally. However, by default, they can be easily opened, copied, edited, and printed by anyone who receives them. Password protecting your PDF is the most effective way to prevent unauthorized access and control how your document is used after it leaves your device.
+    </p>
+    <ul>
+      <li><strong>Prevent Unauthorized Viewing:</strong> Ensure only individuals with the correct password can open and read the document contents.</li>
+      <li><strong>Stop Plagiarism and Unauthorized Copying:</strong> By restricting the "Copying" permission, you can prevent users from highlighting text or extracting images, safeguarding your intellectual property.</li>
+      <li><strong>Control Printing:</strong> Disable the ability to print the document, preventing sensitive digital files from becoming uncontrollable physical copies.</li>
+      <li><strong>Prevent Modifications:</strong> Lock the document content so that no one can alter text, delete pages, or change the intent of your original file.</li>
+      <li><strong>Comply with Privacy Regulations:</strong> Ensure compliance with GDPR, HIPAA, and other data protection laws by encrypting files containing Personally Identifiable Information (PII) before transmission.</li>
+    </ul>
+
+    <h2>How to Password Protect a PDF Online</h2>
+    <p>
+      Securing your PDF with ToolsMatic is a seamless, straightforward process designed for users of all technical skill levels. Follow these simple steps to encrypt your document:
+    </p>
+    <ul>
+      <li><strong>1. Select Your File:</strong> Drag and drop the PDF you wish to protect into the upload area above, or click the area to browse your device's file system. We support files up to 50MB.</li>
+      <li><strong>2. Enter a Strong Password:</strong> In the "Document Password" field, enter a highly secure password. Our built-in password strength indicator will guide you in creating a robust password combining uppercase, lowercase, numbers, and symbols. <em>Note: Keep this password safe! It cannot be recovered.</em></li>
+      <li><strong>3. Set Advanced Permissions (Optional):</strong> Click on "Advanced Settings" to reveal granular permission controls. Here, you can specify an "Owner Password" and individually toggle the ability to print, copy, modify, or annotate the document.</li>
+      <li><strong>4. Encrypt and Download:</strong> Click the "Protect PDF" button. Our client-side encryption engine will instantly process your file locally in your browser. Once complete, click "Download Protected PDF" to save your secure file.</li>
+    </ul>
+
+    <h2>The ToolsMatic Client-Side Privacy Guarantee</h2>
+    <p>
+      The biggest risk when using online PDF tools is uploading your highly sensitive, confidential documents to remote cloud servers. Once a file leaves your device, you lose control over who can access it, how it is stored, and whether it is truly deleted. 
+    </p>
+    <p>
+      <strong>ToolsMatic is engineered differently.</strong> We utilize cutting-edge WebAssembly and modern JavaScript APIs to perform the complex AES-256 encryption entirely within your web browser. When you upload a file and click "Protect", the cryptographic operations run entirely on your local CPU. Your file never touches our servers, no data is transmitted over the internet during the encryption process, and we have absolutely zero access to your documents or your passwords. This "zero-upload" architecture makes ToolsMatic the safest online PDF tool available, perfectly compliant with strict corporate data policies and global privacy regulations.
+    </p>
+
+    <h2>Understanding PDF Security: User Password vs. Owner Password</h2>
+    <p>
+      The PDF specification defines a dual-password security model to provide flexible protection. Understanding the difference between these two passwords is key to applying the right level of security to your documents.
+    </p>
+    <ul>
+      <li><strong>User Password (Document Open Password):</strong> This is the primary gatekeeper. If a User Password is set, the PDF viewer will prompt the user to enter it immediately upon opening the file. Without it, the contents remain completely encrypted and inaccessible.</li>
+      <li><strong>Owner Password (Permissions Password):</strong> This acts as the master key for the document's security settings. It is used to restrict specific actions—like printing or copying—even if the document is successfully opened. If a user opens the PDF (either because there is no User Password, or they entered the correct one), the viewer will enforce the restrictions. The user must supply the Owner Password to unlock the document and change or remove these restrictions.</li>
+    </ul>
+    <p>
+      <em>Pro Tip:</em> You can leave the User Password blank and only set an Owner Password with restricted permissions. This creates a PDF that anyone can open and read freely, but no one can print or modify without the Owner Password.
+    </p>
+
+    <h2>Military-Grade Encryption: AES-256</h2>
+    <p>
+      Older PDF tools often rely on outdated encryption standards like 40-bit RC4 or 128-bit AES, which can be vulnerable to brute-force attacks using modern computing power. ToolsMatic utilizes the industry standard <strong>256-bit Advanced Encryption Standard (AES-256)</strong>. AES-256 is the same cryptographic standard utilized by financial institutions, government agencies, and militaries worldwide to secure top-secret information. It is mathematically virtually impossible to crack, ensuring your protected PDFs remain secure against unauthorized decryption attempts.
+    </p>
+
+    <h2>Common Use Cases for Protecting PDFs</h2>
+    <p>
+      Password protecting PDFs is an essential practice across various personal and professional scenarios:
+    </p>
+    <ul>
+      <li><strong>Human Resources:</strong> Securely distributing employee pay stubs, performance reviews, offer letters, and tax documents like W-2s to ensure confidentiality.</li>
+      <li><strong>Finance and Accounting:</strong> Sending invoices, financial statements, bank records, and audit reports to clients or stakeholders.</li>
+      <li><strong>Legal Professionals:</strong> Sharing confidential contracts, non-disclosure agreements (NDAs), court filings, and case evidence securely with clients or opposing counsel.</li>
+      <li><strong>Education:</strong> Distributing exam papers, sensitive student records, or proprietary teaching materials to prevent unauthorized copying and distribution.</li>
+      <li><strong>Personal Use:</strong> Protecting scanned copies of passports, driver's licenses, medical records, or personal tax returns before storing them in the cloud or emailing them.</li>
+    </ul>
+
+    <h2>More Free PDF Tools</h2>
+    <div class="related-tools">
+      <a href="/tools/unlock-pdf.html" class="related-tool-card">
+        <div class="related-tool-name">Unlock PDF <span style="color:var(--accent);">→</span></div>
+        <div class="related-tool-desc">Remove passwords and restrictions from PDFs if you already know the password.</div>
+      </a>
+      <a href="/tools/compress-pdf.html" class="related-tool-card">
+        <div class="related-tool-name">Compress PDF <span style="color:var(--accent);">→</span></div>
+        <div class="related-tool-desc">Reduce the file size of your PDF documents for easier sharing without losing quality.</div>
+      </a>
+      <a href="/tools/sign-pdf.html" class="related-tool-card">
+        <div class="related-tool-name">Sign PDF <span style="color:var(--accent);">→</span></div>
+        <div class="related-tool-desc">Add your digital signature securely to any document directly in your browser.</div>
+      </a>
+    </div>
+
+    <div class="faq-wrap" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is it really safe to password protect my PDF online?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, absolutely. Because ToolsMatic is a fully client-side application, your PDF file is never uploaded to any external server. The encryption happens locally in your web browser using your device's processing power. We do not have access to your files or the passwords you use, making it incredibly safe for sensitive data.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What happens if I forget the password I set?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>If you forget the password, the PDF cannot be opened or recovered. We use strong AES-256 encryption that is designed to be unbreakable without the correct key. Furthermore, since we do not store your passwords or your files, we have no way to recover or reset a forgotten password for you. Please store your passwords safely in a password manager.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What encryption algorithm is used by ToolsMatic?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>ToolsMatic utilizes modern PDF encryption standards natively supported by the PDF specification. We default to using AES-256 (Advanced Encryption Standard with a 256-bit key) to maximize security and ensure full compatibility across all modern PDF readers, including Adobe Acrobat, Google Chrome, and Apple Preview.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I restrict printing without adding a password to open the file?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! You can leave the "Document Password" field blank and instead open the "Advanced Settings" to set an "Owner Password". Uncheck the "Allow Printing" option. This will generate a PDF that anyone can open freely, but the print function will be disabled in their PDF viewer unless they enter the Owner Password.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I remove the password later?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. If you know the correct password, you can easily remove it. You can use our free <a href="/tools/unlock-pdf.html">Unlock PDF</a> tool to permanently decrypt the file and remove all restrictions, giving you back a standard, unprotected PDF document.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is there a file size limit for protecting PDFs?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>We currently support files up to 50MB. Because the encryption happens locally in your browser, very large files require significant memory and processing power, which can cause older devices or browsers to crash. For optimal performance, we recommend keeping file sizes under 50MB.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="protect-pdf-for-writers-pseo" aria-labelledby="protect-pdf-for-writers-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Protect PDF for Writers</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="protect-pdf-for-writers-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Protect PDF for Writers Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Protect PDF for Writers</strong>, a creative-focused interface optimized for drafts, readability, and content polishing. This dedicated workspace is built specifically for bloggers, novelists, copywriters, content creators, and academic editors. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>distraction-free interfaces, copy formatting safeguards, text limit analytics, and layout adjustments</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Add password protection to PDF documents. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Manuscript Polishing</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Paste chapters or drafts to analyze parameters, adjust casing, or count limits easily.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Distraction-Free Layout</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Focus fully on your draft using a clean, readable layout.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Safe Formatting Paste</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Copy outputs safely without messy formatting tags or hidden characters.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Protect PDF for Writers</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Writers layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Protect PDF for Writers</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this tool safe for book drafts?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes. Your work remains locally in your browser memory. We never save, upload, or index your content.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it support long chapters?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, it handles large text blocks easily without slowing down.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I format content for blogs?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Absolutely. Output formats are clean and ready for direct paste into WordPress or Medium.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/protect-pdf.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Protect PDF</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Protect PDF for Writers","url":"https://toolsmatic.me/tools/protect-pdf-for-writers.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Protect PDF for Writers online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Protect PDF for Writers","item":"https://toolsmatic.me/tools/protect-pdf-for-writers.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this tool safe for book drafts?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your work remains locally in your browser memory. We never save, upload, or index your content."}},{"@type":"Question","name":"Does it support long chapters?","acceptedAnswer":{"@type":"Answer","text":"Yes, it handles large text blocks easily without slowing down."}},{"@type":"Question","name":"Can I format content for blogs?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Output formats are clean and ready for direct paste into WordPress or Medium."}}]}]}</script>
+  </main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--text-primary);margin-bottom:12px;">
+        ToolsMatic
+      </div>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.7;max-width:220px;">
+        Privacy-first PDF tools. Your files never leave your browser.
+      </p>
+      <p style="font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);margin-top:16px;">
+        © 2025 ToolsMatic. All rights reserved.
+      </p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">PDF Tools</div>
+      <a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a>
+      <a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a>
+      <a href="/tools/split-pdf.html" class="footer-link">Split PDF</a>
+      <a href="/tools/protect-pdf.html" class="footer-link">Protect PDF</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="/about.html" class="footer-link">About</a>
+      <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/pdf/global.js"></script>
+<script src="/assets/pdf/tool-base.js"></script>
+
+<!-- Load pdf-lib with encryption support -->
+<script src="https://unpkg.com/pdf-lib-plus-encrypt/dist/pdf-lib-plus-encrypt.min.js"></script>
+
+<script>
+'use strict';
+
+// ── STATE ─────────────────────────────────────────────────────
+var state = {
+  file: null,
+  arrayBuffer: null,
+  encryptedBlob: null
+};
+
+// ── ELEMENTS ──────────────────────────────────────────────────
+var uploadZone    = document.getElementById('upload-zone');
+var fileInput     = document.getElementById('file-input');
+var toolArea      = document.getElementById('tool-area');
+var btnClearFile  = document.getElementById('btn-clear-file');
+var statName      = document.getElementById('stat-name');
+var statSize      = document.getElementById('stat-size');
+
+var inputPassword = document.getElementById('input-password');
+var inputOwner    = document.getElementById('input-owner');
+var btnTogglePw   = document.getElementById('btn-toggle-pw');
+var btnToggleOwn  = document.getElementById('btn-toggle-owner');
+
+var advancedToggle = document.getElementById('advanced-toggle');
+var advancedOpts   = document.getElementById('advanced-options');
+
+var permPrint     = document.getElementById('perm-print');
+var permCopy      = document.getElementById('perm-copy');
+var permModify    = document.getElementById('perm-modify');
+var permAnnotate  = document.getElementById('perm-annotate');
+
+var btnConvert    = document.getElementById('btn-convert');
+var resultSec     = document.getElementById('result-section');
+var btnDownload   = document.getElementById('btn-download');
+var btnResetBottom= document.getElementById('btn-reset-bottom');
+
+var pwStrengthBar = document.getElementById('pw-strength-bar');
+var pwStrengthFill= document.getElementById('pw-strength-fill');
+var pwStrengthText= document.getElementById('pw-strength-text');
+
+// ── HELPERS ───────────────────────────────────────────────────
+function formatSize(bytes) {
+  if (bytes === 0) return '0 B';
+  var k = 1024;
+  var sizes = ['B', 'KB', 'MB', 'GB'];
+  var i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+}
+
+function generateRandomPassword() {
+  var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+  var pw = '';
+  for(var i=0; i<16; i++) {
+    pw += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return pw;
+}
+
+// Check password strength
+inputPassword.addEventListener('input', function() {
+  var val = this.value;
+  if (!val) {
+    pwStrengthBar.style.display = 'none';
+    pwStrengthText.style.display = 'none';
+    btnConvert.disabled = true;
+    return;
+  }
+  
+  btnConvert.disabled = false;
+  pwStrengthBar.style.display = 'block';
+  pwStrengthText.style.display = 'block';
+  
+  var strength = 0;
+  if (val.length >= 6) strength += 25;
+  if (val.length >= 10) strength += 25;
+  if (/[A-Z]/.test(val)) strength += 15;
+  if (/[0-9]/.test(val)) strength += 15;
+  if (/[^A-Za-z0-9]/.test(val)) strength += 20;
+
+  var color = '#EF4444'; // Weak
+  var text = 'Weak';
+  
+  if (strength >= 80) {
+    color = '#10B981'; // Strong
+    text = 'Strong';
+  } else if (strength >= 50) {
+    color = '#F59E0B'; // Medium
+    text = 'Medium';
+  }
+  
+  pwStrengthFill.style.width = Math.min(strength, 100) + '%';
+  pwStrengthFill.style.backgroundColor = color;
+  pwStrengthText.textContent = 'Strength: ' + text;
+  pwStrengthText.style.color = color;
+});
+
+// Toggle password visibility
+function toggleVisibility(input, btn) {
+  var type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+  input.setAttribute('type', type);
+  if (type === 'text') {
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+  } else {
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+  }
+}
+
+btnTogglePw.addEventListener('click', function() { toggleVisibility(inputPassword, btnTogglePw); });
+btnToggleOwn.addEventListener('click', function() { toggleVisibility(inputOwner, btnToggleOwn); });
+
+// Advanced Toggle
+advancedToggle.addEventListener('click', function() {
+  var isOpen = advancedOpts.classList.contains('open');
+  if (isOpen) {
+    advancedOpts.classList.remove('open');
+    advancedToggle.classList.remove('open');
+  } else {
+    advancedOpts.classList.add('open');
+    advancedToggle.classList.add('open');
+  }
+});
+
+// ── FILE HANDLING ─────────────────────────────────────────────
+uploadZone.addEventListener('click', function() { fileInput.click(); });
+uploadZone.addEventListener('dragover', function(e) { e.preventDefault(); uploadZone.classList.add('dragover'); });
+uploadZone.addEventListener('dragleave', function() { uploadZone.classList.remove('dragover'); });
+uploadZone.addEventListener('drop', function(e) {
+  e.preventDefault();
+  uploadZone.classList.remove('dragover');
+  if (e.dataTransfer.files.length) loadFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', function() {
+  if (fileInput.files.length) { loadFile(fileInput.files[0]); fileInput.value = ''; }
+});
+
+function loadFile(file) {
+  if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+    if(window.showToast) showToast('Please upload a PDF file.', 'error');
+    return;
+  }
+  if (file.size > 52428800) {
+    if(window.showToast) showToast('File too large (max 50MB).', 'error');
+    return;
+  }
+
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    state.file = file;
+    state.arrayBuffer = e.target.result;
+    
+    statName.textContent = file.name.length > 30 ? file.name.substring(0,27) + '...' : file.name;
+    statSize.textContent = formatSize(file.size);
+    
+    uploadZone.style.display = 'none';
+    toolArea.style.display = 'block';
+    inputPassword.focus();
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+// ── CONVERT ───────────────────────────────────────────────────
+btnConvert.addEventListener('click', async function() {
+  var userPw = inputPassword.value.trim();
+  var ownerPw = inputOwner.value.trim();
+  
+  if (!userPw && !ownerPw && permPrint.checked && permCopy.checked && permModify.checked && permAnnotate.checked) {
+    if(window.showToast) showToast('Please enter a password or restrict permissions.', 'warning');
+    return;
+  }
+
+  // If permissions are restricted but no owner password is set, generate one to prevent bypass
+  var permissionsRestricted = !permPrint.checked || !permCopy.checked || !permModify.checked || !permAnnotate.checked;
+  if (permissionsRestricted && !ownerPw) {
+    ownerPw = generateRandomPassword();
+  }
+  
+  if(!ownerPw) ownerPw = userPw; // fallback to user password for owner
+
+  btnConvert.disabled = true;
+  btnConvert.classList.add('loading');
+  document.getElementById('convert-text').textContent = 'Encrypting...';
+  document.getElementById('convert-icon').style.display = 'none';
+
+  try {
+    // We are using PDFLib from pdf-lib-plus-encrypt
+    const pdfDoc = await PDFLib.PDFDocument.load(state.arrayBuffer, { ignoreEncryption: false });
+    
+    pdfDoc.encrypt({
+      userPassword: userPw,
+      ownerPassword: ownerPw,
+      permissions: {
+        printing: permPrint.checked ? 'highResolution' : false,
+        modifying: permModify.checked,
+        copying: permCopy.checked,
+        annotating: permAnnotate.checked,
+        fillingForms: permAnnotate.checked,
+        documentAssembly: permModify.checked
+      }
+    });
+
+    const pdfBytes = await pdfDoc.save();
+    state.encryptedBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+    
+    resultSec.classList.add('visible');
+    
+    // Auto scroll to result
+    setTimeout(function() {
+      resultSec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+    
+    if(window.showToast) showToast('PDF encrypted successfully!', 'success');
+
+  } catch (err) {
+    console.error(err);
+    var msg = 'Failed to encrypt PDF.';
+    if (err.name === 'EncryptedPDFError') {
+      msg = 'This PDF is already encrypted. Please Unlock it first.';
+    }
+    if(window.showToast) showToast(msg, 'error');
+  } finally {
+    btnConvert.classList.remove('loading');
+    btnConvert.disabled = false;
+    document.getElementById('convert-text').textContent = 'Protect PDF';
+    document.getElementById('convert-icon').style.display = 'block';
+  }
+});
+
+// ── DOWNLOAD ──────────────────────────────────────────────────
+btnDownload.addEventListener('click', function() {
+  if (!state.encryptedBlob) return;
+  var url = URL.createObjectURL(state.encryptedBlob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = state.file.name.replace('.pdf', '-protected.pdf');
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(url); }, 100);
+});
+
+// ── CLEAR / RESET ─────────────────────────────────────────────
+function resetTool() {
+  state.file = null;
+  state.arrayBuffer = null;
+  state.encryptedBlob = null;
+  
+  inputPassword.value = '';
+  inputOwner.value = '';
+  pwStrengthBar.style.display = 'none';
+  pwStrengthText.style.display = 'none';
+  
+  permPrint.checked = true;
+  permCopy.checked = true;
+  permModify.checked = true;
+  permAnnotate.checked = true;
+  
+  advancedOpts.classList.remove('open');
+  advancedToggle.classList.remove('open');
+  
+  toolArea.style.display = 'none';
+  uploadZone.style.display = 'flex';
+  resultSec.classList.remove('visible');
+  
+  btnConvert.disabled = true;
+}
+
+btnClearFile.addEventListener('click', resetTool);
+btnResetBottom.addEventListener('click', resetTool);
+
+// ── FAQ ───────────────────────────────────────────────────────
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = this.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight = '0';
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      var answer = item.querySelector('.faq-answer');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+</script>
+
+
+</body></html>

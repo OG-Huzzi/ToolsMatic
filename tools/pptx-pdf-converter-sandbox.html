@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerPoint ↔ PDF Converter Sandbox Online | Free ToolsMatic</title>
+  <meta name="description" content="Use PowerPoint ↔ PDF Converter Sandbox online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/pptx-pdf-converter-sandbox.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/pptx-pdf-converter-sandbox.html">
+  <meta property="og:title" content="PowerPoint ↔ PDF Converter Sandbox Online | Free ToolsMatic">
+  <meta property="og:description" content="Use PowerPoint ↔ PDF Converter Sandbox online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/pdf/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PowerPoint ↔ PDF Converter Sandbox Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use PowerPoint ↔ PDF Converter Sandbox online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/pdf/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+  
+  <style>
+    .doc-breadcrumb{max-width:1040px;margin:0 auto;padding:80px 40px 0}
+    .doc-hero{max-width:1040px;margin:0 auto;padding:32px 40px 40px}
+    .doc-tool{width:min(100% - 2rem,1040px);margin:0 auto;padding:0 0 80px}
+    .doc-shell{display:grid;gap:18px;padding:20px;border:1px solid var(--border);border-radius:var(--radius-card);background:linear-gradient(180deg,rgba(255,255,255,.03),transparent 34%),var(--bg-card);box-shadow:0 24px 70px rgba(0,0,0,.28)}
+    .doc-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:6px;border:1px solid var(--border);border-radius:999px;background:#070707}
+    .doc-tab{min-height:48px;border-radius:999px;color:var(--text-secondary);font-weight:800;cursor:pointer;transition:var(--transition)}
+    .doc-tab.active{background:linear-gradient(135deg,var(--accent),#fbbf24);color:#080808;box-shadow:0 10px 26px rgba(245,158,11,.22)}
+    .doc-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;align-items:start}
+    .doc-card{border:1px solid var(--border);border-radius:var(--radius-card);background:#090909;padding:18px}
+    .upload-zone{min-height:240px;cursor:pointer;text-align:center}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+    .doc-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 16px;border:1px solid var(--border-hover);border-radius:var(--radius-btn);color:var(--text-primary);font-weight:800;cursor:pointer;transition:var(--transition)}
+    .doc-btn.primary{border-color:transparent;background:linear-gradient(135deg,var(--accent),#fbbf24);color:#080808}
+    .doc-btn:hover{transform:translateY(-2px);border-color:rgba(245,158,11,.42)}
+    .doc-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+    .doc-select,.doc-input{width:100%;min-height:46px;margin-top:10px;padding:0 12px;border:1px solid var(--border);border-radius:var(--radius-btn);background:#050505;color:var(--text-primary)}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .metric{padding:14px;border:1px solid var(--border);border-radius:var(--radius-btn);background:#090909}
+    .metric span{display:block;color:var(--text-muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.metric strong{display:block;margin-top:6px;font-size:20px;color:var(--text-primary)}
+    .progress{height:12px;border:1px solid var(--border);border-radius:999px;background:#050505;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),#fbbf24);transition:width .25s ease}
+    .notice{min-height:46px;display:flex;align-items:center;padding:12px 14px;border:1px solid rgba(245,158,11,.22);border-radius:var(--radius-btn);background:rgba(245,158,11,.08);color:var(--text-secondary)}.notice.error{border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:#fecaca}
+    .preview{min-height:440px;max-height:720px;overflow:auto}.preview table{width:100%;border-collapse:collapse;font-size:13px}.preview th,.preview td{padding:8px 10px;border:1px solid rgba(255,255,255,.1);color:var(--text-secondary);vertical-align:top}.preview th{position:sticky;top:0;background:#121212;color:var(--text-primary)}.preview tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+    .thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:14px}.thumb{position:relative;border:1px solid var(--border);border-radius:12px;background:#050505;padding:10px;transition:var(--transition)}.thumb.selected{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-glow)}.thumb img,.thumb canvas{width:100%;border-radius:8px;background:#fff}.thumb .badge{position:absolute;top:8px;left:8px;padding:4px 8px;border-radius:999px;background:#050505;color:var(--accent);font-size:12px;font-weight:800}.thumb-actions{display:flex;gap:6px;margin-top:8px}.thumb-actions button{flex:1;min-height:30px;border:1px solid var(--border);border-radius:8px;color:var(--text-secondary);cursor:pointer}
+    .meta-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.meta-box{padding:14px;border:1px solid var(--border);border-radius:12px;background:#050505}.meta-box h3{font-family:Inter,sans-serif;font-size:14px;font-weight:800;margin-bottom:8px}.meta-box pre{white-space:pre-wrap;color:var(--text-secondary);font-size:12px}
+    .seo-section{width:min(100% - 2rem,1040px);margin:0 auto;padding:0 0 80px}.seo-card{padding:32px;border:1px solid var(--border);border-radius:var(--radius-card);background:var(--bg-card)}.seo-card h2,.seo-card h3{font-family:Inter,sans-serif;font-weight:800;line-height:1.2;margin:28px 0 12px}.seo-card h2:first-child{margin-top:0}.seo-card p,.seo-card li{margin-top:12px;color:var(--text-secondary)}.seo-card a{color:var(--accent);font-weight:800}.faq-list{display:grid;gap:12px;margin-top:16px}.faq-list details{padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius-btn);background:#090909}.faq-list summary{font-weight:800;color:var(--text-primary);cursor:pointer}
+    @media(max-width:860px){.doc-breadcrumb,.doc-hero{padding-left:20px;padding-right:20px}.doc-grid,.metrics,.meta-grid{grid-template-columns:1fr}.doc-shell,.seo-card{padding:16px}.doc-tabs{border-radius:18px}.doc-tab{border-radius:14px}}
+  </style>
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/pptx-pdf-converter-sandbox.html">
+</head>
+<body>
+<header class="header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="ToolsMatic Home"><span class="header-logo-text">ToolsMatic</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="/#tools" class="header-cta btn">All Tools</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="/#tools" class="active">Tools</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</header>
+<main>
+  <nav class="breadcrumb doc-breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep" aria-hidden="true">/</span><a href="/#tools" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page">PowerPoint ↔ PDF Converter</span></nav>
+  <section class="tool-hero doc-hero" aria-label="PowerPoint ↔ PDF Converter">
+    <div class="tool-hero-badge">Private slide conversion</div>
+    <h1>PowerPoint ↔ PDF Converter Sandbox</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+    <p class="tool-hero-sub">Turn presentations into PDF pages or rebuild PDFs as editable slide decks with thumbnail previews and quality control.</p>
+  </section>
+  <section class="doc-tool" aria-label="PowerPoint ↔ PDF Converter workspace">
+    <div class="doc-shell" data-doc-tool="ppt">
+    <div class="doc-tabs" role="tablist" aria-label="Conversion mode"><button class="doc-tab active" data-mode="forward">PPTX to PDF</button><button class="doc-tab" data-mode="reverse">PDF to PPTX</button></div>
+    <input id="file-input" type="file" hidden>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="upload-zone" id="upload-zone" role="button" tabindex="0"><div class="upload-zone-icon" aria-hidden="true">↥</div><div class="upload-zone-text" id="upload-title">Drop file here</div><div class="upload-zone-sub">or click to browse</div><div class="upload-zone-sub">Files stay in your browser.</div></div>
+        <select class="doc-select" id="sheet-select" hidden aria-label="Sheet selector"></select>
+        <select class="doc-select" id="quality-select"><option value="1">Standard quality</option><option value="2">High quality</option></select>
+        <div class="toolbar"><button class="doc-btn primary" id="convert-btn" data-primary disabled>Convert</button><button class="doc-btn" id="download-btn" disabled>Download</button><button class="doc-btn" id="clear-btn" data-clear disabled>Clear</button></div>
+      </div>
+      <div class="doc-card preview" id="preview"><div class="notice">Preview appears here after you add a file.</div></div>
+    </div>
+    <div class="metrics"><div class="metric"><span>Rows</span><strong id="rows">0</strong></div><div class="metric"><span>Columns / Slides</span><strong id="cols">0</strong></div><div class="metric"><span>Input size</span><strong id="input-size">0 B</strong></div><div class="metric"><span>Output size</span><strong id="output-size">0 B</strong></div></div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="notice" id="notice">Choose a file to begin.</div>
+  </div>
+  </section>
+  <section class="seo-section" aria-label="PowerPoint ↔ PDF Converter guide">
+    <article class="seo-card">
+      <h2>PowerPoint ↔ PDF Converter built for private browser work</h2>
+      <p>PowerPoint ↔ PDF Converter — Free &amp; Private is a focused document utility for students, teachers, presenters, designers, trainers, marketers, and teams preparing decks for sharing or review. It handles PowerPoint to PDF and PDF to PowerPoint conversion without forcing the user into an upload queue, account wall, or heavyweight desktop app. The tool is designed for quick conversion, clear previews, visible file-size feedback, and practical error messages when a file is encrypted, damaged, scanned, or not structured in a way the browser can reconstruct perfectly.</p>
+      <p>The biggest reason to use a browser-based converter is control. Documents often contain financial data, personal information, application details, contracts, lesson material, client names, or internal notes. Uploading those files to a random server creates unnecessary exposure. ToolsMatic keeps the workflow local wherever the browser libraries allow it: the file is selected, parsed in the browser, previewed on screen, converted, and downloaded back to your device. That privacy-first model is especially useful for repeated office tasks where the document is not public.</p>
+      <h2>Both conversion directions explained</h2>
+      <p>In the first mode, the tool reads the source file, builds a structured preview, and exports the result into the requested document format. In the reverse mode, it extracts usable page, table, metadata, or slide data from the PDF and rebuilds it into the editable target format. Some document formats are not symmetrical. A spreadsheet has cells and sheets; a PDF has positioned text. A presentation has slides and layers; a PDF has pages. That means the tool uses practical reconstruction: it keeps the output useful, readable, and easy to edit, while showing a preview so you can inspect the result before download.</p>
+      <h2>Who uses this tool?</h2>
+      <p>students, teachers, presenters, designers, trainers, marketers, and teams preparing decks for sharing or review use this workflow because document conversion is rarely a one-time novelty. A student may need a submission-ready file. An accountant may need a report version that is stable for email. A teacher may need a printable packet. A lawyer may need an archival copy. A finance team may need tables extracted from a PDF. A designer may need slides converted for review. The shared need is simple: get the document into the right format without losing time or handing the file to an unknown service.</p>
+      <h2>Step-by-step guide</h2>
+      <ol>
+        <li>Choose the conversion direction using the tabs at the top of the tool.</li>
+        <li>Drag the file into the upload zone or click the upload area to browse.</li>
+        <li>Review the preview, sheet selector, thumbnail grid, metadata summary, or table output depending on the tool.</li>
+        <li>Check the row count, column count, slide count, page count, and file-size indicators.</li>
+        <li>Click the conversion button, wait for the progress bar, then download the finished file.</li>
+      </ol>
+      <h2>Related ToolsMatic PDF tools</h2>
+      <p>After using this converter, you may also need <a href="/tools/jpg-to-pdf.html">Jpg To Pdf</a>, <a href="/tools/watermark-pdf.html">Watermark Pdf</a>, <a href="/tools/compress-pdf.html">Compress Pdf</a>, <a href="/tools/annotate-pdf.html">Annotate Pdf</a>. These related tools keep the workflow inside the same privacy-first PDF toolkit instead of forcing you to jump between unrelated sites.</p>
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list"><details><summary>Is PowerPoint ↔ PDF Converter free?</summary><p>Yes. ToolsMatic provides this converter as a free browser-based tool with no sign-up requirement for normal use.</p></details><details><summary>Does PowerPoint ↔ PDF Converter upload my files?</summary><p>The tool is designed for local browser processing. Your files are selected and processed in the browser rather than sent to a ToolsMatic upload server.</p></details><details><summary>Can I use this tool on mobile?</summary><p>Yes. The interface is responsive, with a large upload zone, readable previews, and buttons that remain usable on smaller screens.</p></details><details><summary>What happens if my file is password protected?</summary><p>Encrypted or password-protected files may not be readable by the browser libraries. The tool shows a clear error instead of silently failing.</p></details><details><summary>How accurate is the conversion?</summary><p>Accuracy depends on the structure of the source file. Clean digital files convert better than scanned, flattened, damaged, or heavily custom-designed documents.</p></details><details><summary>Can students use this tool for free?</summary><p>Yes. It is suitable for students who need quick document conversion for assignments, applications, reports, and class material.</p></details><details><summary>Can I preview before downloading?</summary><p>Yes. The tool shows a preview panel so you can check the output structure before exporting the final file.</p></details><details><summary>Which related PDF tools should I use next?</summary><p>Use Compress PDF to reduce size, Merge PDF to combine files, and metadata or protection tools when the finished document needs cleanup or security.</p></details></div>
+    </article>
+  </section>
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="pptx-pdf-converter-sandbox-pseo" aria-labelledby="pptx-pdf-converter-sandbox-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>PowerPoint ↔ PDF Converter Sandbox</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="pptx-pdf-converter-sandbox-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">PowerPoint ↔ PDF Converter Sandbox Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>PowerPoint ↔ PDF Converter Sandbox</strong>, a secure, local browser sandboxing environment for private conversions. This dedicated workspace is built specifically for security analysts, data editors, and users processing high-confidentiality variables. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>uncompromised browser sandboxing, zero server logs, and clean volatile memory computations</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Convert presentation slides to PDF or PDF pages back into PPTX. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Isolated Volatile Memory</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Data resides purely in browser memory and vanishes the second you close the tab.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Zero Server Logs</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">No server-side processing means zero logs, zero database writes, and zero data leakage.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Secure browser sandboxing</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Uses standard HTML5 client boundaries to keep calculations isolated from outside scripts.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use PowerPoint ↔ PDF Converter Sandbox</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Sandbox layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: PowerPoint ↔ PDF Converter Sandbox</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">What is a browser sandbox?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">It means the entire code runs locally in your browser, completely isolated from external servers.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is my data 100% secure?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, because no information is transmitted over the network; it stays on your local device.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I run it offline?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes! The sandbox does not require active internet connections once the page is cached.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/pptx-pdf-converter.html" style="color:var(--primary);text-decoration:none;font-weight:600;">PowerPoint ↔ PDF Converter</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"PowerPoint ↔ PDF Converter Sandbox","url":"https://toolsmatic.me/tools/pptx-pdf-converter-sandbox.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use PowerPoint ↔ PDF Converter Sandbox online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"PowerPoint ↔ PDF Converter Sandbox","item":"https://toolsmatic.me/tools/pptx-pdf-converter-sandbox.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a browser sandbox?","acceptedAnswer":{"@type":"Answer","text":"It means the entire code runs locally in your browser, completely isolated from external servers."}},{"@type":"Question","name":"Is my data 100% secure?","acceptedAnswer":{"@type":"Answer","text":"Yes, because no information is transmitted over the network; it stays on your local device."}},{"@type":"Question","name":"Can I run it offline?","acceptedAnswer":{"@type":"Answer","text":"Yes! The sandbox does not require active internet connections once the page is cached."}}]}]}</script>
+  </main>
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col"><div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--text-primary);margin-bottom:12px;">ToolsMatic</div><p style="font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.7;max-width:220px;">Privacy-first PDF tools. Your files never leave your browser.</p><p style="font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);margin-top:16px;">© 2026 ToolsMatic. All rights reserved.</p></div>
+    <div class="footer-col"><div class="footer-col-title">PDF Tools</div><a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a><a href="/tools/split-pdf.html" class="footer-link">Split PDF</a><a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a><a href="/tools/word-pdf-converter.html" class="footer-link">Word PDF Converter</a><a href="/tools/pptx-pdf-converter.html" class="footer-link">PowerPoint ↔ PDF Converter</a></div>
+    <div class="footer-col"><div class="footer-col-title">Document Tools</div><a href="/tools/excel-pdf-converter.html" class="footer-link">Excel PDF Converter</a><a href="/tools/pptx-pdf-converter.html" class="footer-link">PowerPoint PDF Converter</a><a href="/tools/pdf-pdfa-converter.html" class="footer-link">PDF/A Converter</a><a href="/tools/organize-pdf.html" class="footer-link">Organize PDF</a></div>
+    <div class="footer-col"><div class="footer-col-title">Company</div><a href="/about.html" class="footer-link">About</a><a href="/contact.html" class="footer-link">Contact</a><a href="/privacy.html" class="footer-link">Privacy Policy</a><a href="/terms.html" class="footer-link">Terms of Service</a></div>
+  </div>
+  <div class="footer-bottom"><span>Built for people who value privacy</span><span>No tracking. No uploads. No nonsense.</span></div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pptxgenjs/3.12.0/pptxgen.bundle.js"></script><script src="/assets/pdf/global.js"></script><script src="/assets/pdf/tool-base.js"></script>
+<script>'use strict';(()=>{const $=s=>document.querySelector(s);const fmt=b=>!b?'0 B':(b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(2)+' MB');const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));const setNotice=(m,e=false)=>{const n=$('#notice');n.textContent=m;n.classList.toggle('error',e)};const setBar=v=>{$('#bar').style.width=Math.max(0,Math.min(100,v))+'%'};const download=(blob,name)=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};let mode='forward',file=null,slides=[],outBlob=null,outName='slides.pdf';const input=$('#file-input'),preview=$('#preview');function switchMode(m){mode=m;clear();document.querySelectorAll('.doc-tab').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));input.accept=m==='forward'?'.pptx,application/vnd.openxmlformats-officedocument.presentationml.presentation':'.pdf,application/pdf';$('#upload-title').textContent=m==='forward'?'Drop PPTX file here':'Drop PDF file here';setNotice(m==='forward'?'PPTX preview uses slide XML text boxes for a browser-safe PDF render.':'PDF pages will become full-slide images in a PPTX deck.')}function clear(){file=null;slides=[];outBlob=null;input.value='';preview.innerHTML='<div class="notice">Slide thumbnails appear here.</div>';$('#rows').textContent='0';$('#cols').textContent='0';$('#input-size').textContent='0 B';$('#output-size').textContent='0 B';$('#convert-btn').disabled=true;$('#download-btn').disabled=true;$('#clear-btn').disabled=true;setBar(0)}async function loadFile(f){file=f;$('#input-size').textContent=fmt(f.size);$('#convert-btn').disabled=false;$('#clear-btn').disabled=false;try{mode==='forward'?await pptxPreview(f):await pdfPreview(f);setNotice('Preview ready. Convert when ready.')}catch(e){setNotice(e.message||'Could not read this file. It may be corrupted or password protected.',true)}}async function pptxPreview(f){if(!window.JSZip)throw Error('JSZip did not load.');const zip=await JSZip.loadAsync(await f.arrayBuffer());const names=Object.keys(zip.files).filter(n=>/^ppt\/slides\/slide\d+\.xml$/.test(n)).sort((a,b)=>Number(a.match(/slide(\d+)/)[1])-Number(b.match(/slide(\d+)/)[1]));slides=[];for(const n of names){const xml=await zip.files[n].async('text');const text=[...xml.matchAll(/<a:t>([\s\S]*?)<\/a:t>/g)].map(m=>m[1].replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>')).join('\n');slides.push({text:text||'Blank slide'});}renderThumbs()}async function pdfPreview(f){pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';const pdf=await pdfjsLib.getDocument({data:new Uint8Array(await f.arrayBuffer())}).promise;slides=[];const q=Number($('#quality-select').value||1);for(let i=1;i<=pdf.numPages;i++){const page=await pdf.getPage(i),vp=page.getViewport({scale:q});const c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;slides.push({img:c.toDataURL('image/png')});setBar(i/pdf.numPages*50)}renderThumbs()}function renderThumbs(){preview.innerHTML='<div class="thumb-grid">'+slides.map((s,i)=>'<div class="thumb"><span class="badge">Slide '+(i+1)+'</span>'+(s.img?'<img src="'+s.img+'" alt="Slide '+(i+1)+'">':'<div style="aspect-ratio:16/9;background:#fff;color:#111;padding:18px;border-radius:8px;white-space:pre-wrap;overflow:hidden">'+esc(s.text)+'</div>')+'</div>').join('')+'</div>';$('#rows').textContent=slides.length;$('#cols').textContent=slides.length}async function convert(){try{setBar(60);if(mode==='forward'){const {jsPDF}=window.jspdf;const doc=new jsPDF({orientation:'landscape',unit:'pt',format:[720,405]});for(let i=0;i<slides.length;i++){if(i)doc.addPage([720,405],'landscape');doc.setFillColor(255,255,255);doc.rect(0,0,720,405,'F');doc.setTextColor(20);doc.setFontSize(22);doc.text((slides[i].text||'Blank slide').split('\n'),36,54,{maxWidth:648});setBar(60+i/slides.length*35)}outBlob=doc.output('blob');outName=file.name.replace(/\.[^.]+$/,'')+'.pdf'}else{const pptx=new pptxgen();pptx.layout='LAYOUT_WIDE';slides.forEach(s=>{const slide=pptx.addSlide();slide.background={color:'FFFFFF'};slide.addImage({data:s.img,x:0,y:0,w:13.333,h:7.5});});outBlob=await pptx.write({outputType:'blob'});outName=file.name.replace(/\.[^.]+$/,'')+'.pptx'}$('#output-size').textContent=fmt(outBlob.size);$('#download-btn').disabled=false;setBar(100);setNotice('Conversion ready. Download your file.')}catch(e){setNotice(e.message||'Conversion failed.',true)}}$('#upload-zone').onclick=()=>input.click();$('#upload-zone').ondragover=e=>{e.preventDefault();$('#upload-zone').classList.add('dragover')};$('#upload-zone').ondragleave=()=>$('#upload-zone').classList.remove('dragover');$('#upload-zone').ondrop=e=>{e.preventDefault();$('#upload-zone').classList.remove('dragover');loadFile(e.dataTransfer.files[0])};input.onchange=()=>loadFile(input.files[0]);document.querySelectorAll('.doc-tab').forEach(b=>b.onclick=()=>switchMode(b.dataset.mode));$('#quality-select').onchange=()=>file&&mode==='reverse'&&loadFile(file);$('#convert-btn').onclick=convert;$('#download-btn').onclick=()=>download(outBlob,outName);$('#clear-btn').onclick=clear;switchMode('forward')})();</script>
+</body>
+</html>

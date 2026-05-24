@@ -1,0 +1,2589 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Split PDF for Students Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Split PDF for Students online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/split-pdf-for-students.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/split-pdf-for-students.html">
+  <meta property="og:title" content="Split PDF for Students Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Split PDF for Students online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Split PDF for Students Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Split PDF for Students online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://ToolsMatic.com/assets/pdf/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/pdf/global.css">
+  <link rel="stylesheet" href="/assets/pdf/tool.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  
+
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Split a PDF File Online",
+    "description": "Split a PDF by page range, extract specific pages, or split every page — free and private in browser.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload your PDF",
+        "text": "Drag and drop your PDF file onto the upload zone or click to browse and select it from your device."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Choose your split mode",
+        "text": "Select Split by Range, Extract Pages, or Split Every Page depending on your needs."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Configure your selection",
+        "text": "Enter page ranges, click page thumbnails to select specific pages, or leave defaults to split every page."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Split and download",
+        "text": "Click the Split PDF button. Download your result instantly — a single PDF or a ZIP of multiple files."
+      }
+    ]
+  }
+  </script>
+
+  
+
+  <style>
+    .split-breadcrumb {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+
+    .split-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 40px 40px;
+    }
+
+    .split-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    .split-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 28%), var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 24px;
+    }
+
+    .split-card[hidden] {
+      display: none !important;
+    }
+
+    .file-info-bar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .file-info-bar-left {
+      min-width: 0;
+      display: grid;
+      gap: 6px;
+    }
+
+    .file-stat {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .file-stat span {
+      color: var(--text-primary);
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .split-clear-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid rgba(239, 68, 68, 0.22);
+      border-radius: var(--radius-btn);
+      color: #fca5a5;
+      background: rgba(239, 68, 68, 0.04);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .split-clear-btn:hover:not(:disabled) {
+      border-color: rgba(239, 68, 68, 0.48);
+      background: rgba(239, 68, 68, 0.08);
+      color: #fecaca;
+    }
+
+    .split-clear-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    .split-clear-btn:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    .mode-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .mode-tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .mode-tab:hover:not(:disabled) {
+      border-color: rgba(245, 158, 11, 0.38);
+      color: var(--accent);
+    }
+
+    .mode-tab.active {
+      border-color: rgba(245, 158, 11, 0.5);
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--accent);
+      box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.18);
+    }
+
+    .mode-tab:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    .mode-tab:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    .mode-panel[hidden] {
+      display: none !important;
+    }
+
+    .range-stack {
+      display: grid;
+      gap: 8px;
+    }
+
+    .range-label {
+      color: var(--text-primary);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .range-input {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: #0d0d0d;
+      color: var(--text-primary);
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      transition: var(--transition);
+    }
+
+    .range-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .range-input:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+      border-color: rgba(245, 158, 11, 0.45);
+    }
+
+    .range-input.invalid {
+      border-color: rgba(239, 68, 68, 0.55);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14);
+    }
+
+    .range-hint,
+    .range-preview {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .range-preview.is-invalid {
+      color: #fca5a5;
+    }
+
+    .extract-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .extract-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .extract-mini-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .extract-mini-btn:hover:not(:disabled) {
+      border-color: rgba(245, 158, 11, 0.38);
+      color: var(--accent);
+    }
+
+    .extract-mini-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    .extract-mini-btn:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    .selected-count {
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .selected-count span {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+      gap: 12px;
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    .page-thumb-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-card);
+      cursor: pointer;
+      overflow: hidden;
+      transition: var(--transition);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .page-thumb-card:hover:not(:disabled) {
+      transform: translateY(-2px);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+
+    .page-thumb-card.selected {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .page-thumb-card.selected::after {
+      content: "✓";
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #050505;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .page-thumb-card:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    .page-thumb-card:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    .page-canvas-wrap {
+      width: 100%;
+      aspect-ratio: 0.707;
+      background: #0c0c0c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .page-canvas-wrap canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .thumb-skeleton {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--border) 0%, rgba(255, 255, 255, 0.05) 50%, var(--border) 100%);
+      background-size: 200% 100%;
+      animation: split-thumb-shimmer 1.4s infinite;
+    }
+
+    .thumb-fallback {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      color: var(--text-muted);
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    @keyframes split-thumb-shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .page-num-label {
+      padding: 8px 6px;
+      border-top: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .split-every-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: linear-gradient(180deg, rgba(245, 158, 11, 0.04), transparent 36%), var(--bg-card);
+    }
+
+    .split-every-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .split-every-text h3 {
+      margin: 0 0 8px;
+      color: var(--text-primary);
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .split-every-text p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .split-every-text strong {
+      color: var(--accent);
+    }
+
+    .split-action-row {
+      margin-top: 22px;
+    }
+
+    .btn-split {
+      width: 100%;
+    }
+
+    .split-progress {
+      margin-top: 20px;
+    }
+
+    .split-progress-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .split-progress-percent {
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .result-section {
+      display: none;
+      margin-top: 24px;
+    }
+
+    .result-section.visible {
+      display: block;
+      animation: split-fade-in 0.35s ease;
+    }
+
+    @keyframes split-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .result-card {
+      padding: 28px;
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: var(--radius-card);
+      background: linear-gradient(180deg, rgba(34, 197, 94, 0.04), transparent 36%), var(--bg-card);
+    }
+
+    .result-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: var(--success);
+      font-family: "Inter", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .result-stats {
+      margin-bottom: 18px;
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .filename-preview {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding: 12px 14px;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: var(--radius-btn);
+      background: rgba(245, 158, 11, 0.05);
+    }
+
+    .filename-preview-icon {
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .filename-preview-text {
+      margin-bottom: 4px;
+      color: var(--text-secondary);
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .filename-preview-name {
+      color: var(--text-primary);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .result-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .result-actions .btn {
+      min-width: 200px;
+      flex: 1;
+    }
+
+    .comparison-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      margin: 16px 0;
+    }
+
+    .split-seo {
+      padding: 0 40px 80px;
+    }
+
+    .split-upload-note {
+      margin-top: 18px;
+      color: var(--text-muted);
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+      .split-breadcrumb,
+      .split-hero,
+      .split-wrapper,
+      .split-seo {
+        max-width: 920px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .split-breadcrumb,
+      .split-hero,
+      .split-wrapper,
+      .split-seo {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .split-wrapper,
+      .split-seo {
+        padding-bottom: 60px;
+      }
+
+      .pages-grid {
+        grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+      }
+
+      .result-actions {
+        flex-direction: column;
+      }
+
+      .result-actions .btn {
+        min-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .file-info-bar {
+        flex-direction: column;
+      }
+
+      .mode-tabs {
+        gap: 6px;
+      }
+
+      .mode-tab {
+        flex: 1 1 calc(50% - 3px);
+        min-height: 40px;
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      .split-every-card {
+        grid-template-columns: 1fr;
+      }
+
+      .extract-toolbar {
+        align-items: stretch;
+      }
+    }
+  </style>
+
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+    <meta name="twitter:url" content="https://toolsmatic.me/tools/split-pdf-for-students.html">
+</head>
+<body>
+
+<header class="header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="ToolsMatic Home">
+      <span class="header-logo-text">ToolsMatic</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="/#tools" class="header-cta btn">All Tools</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <a href="/#tools" class="active">Tools</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <nav class="breadcrumb split-breadcrumb" aria-label="Breadcrumb">
+    <a href="/" class="breadcrumb-link">Home</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="/#tools" class="breadcrumb-link">Tools</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="breadcrumb-current" aria-current="page">Split PDF</span>
+  </nav>
+
+  <section class="tool-hero split-hero" aria-label="Split PDF tool">
+    <div class="tool-hero-badge">Private PDF splitting in your browser</div>
+    <h1>Split PDF for Students</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+    <p class="tool-hero-sub">
+      Divide a PDF by range, extract only the pages you need, or split every page into separate files.
+      No upload. No login. No waiting for a server to process your document.
+    </p>
+  </section>
+
+  <section class="split-wrapper" aria-label="PDF split tool">
+    <input type="file" id="file-input" accept=".pdf,application/pdf" hidden="" aria-hidden="true">
+
+    <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Upload PDF file" aria-describedby="upload-hint">
+      <div class="upload-zone-icon" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polyline points="16 16 12 12 8 16"></polyline>
+          <line x1="12" y1="12" x2="12" y2="21"></line>
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+        </svg>
+      </div>
+      <div class="upload-zone-text">Drag and drop your PDF here</div>
+      <div class="upload-zone-sub" id="upload-hint">or click to browse</div>
+      <div class="upload-zone-sub">One PDF at a time</div>
+    </div>
+    <div class="split-upload-note" id="upload-note">ToolsMatic processes your file locally on your device.</div>
+
+    <div class="split-card" id="tool-area" hidden="">
+      <div class="file-info-bar">
+        <div class="file-info-bar-left">
+          <div class="file-stat">File: <span id="file-name-value">—</span></div>
+          <div class="file-stat">Pages: <span id="file-pages-value">—</span></div>
+          <div class="file-stat">Size: <span id="file-size-value">—</span></div>
+        </div>
+        <button type="button" class="split-clear-btn" id="btn-clear-all" aria-label="Clear file and reset tool">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+            <path d="M10 11v6M14 11v6"></path>
+          </svg>
+          Clear File
+        </button>
+      </div>
+
+      <div class="mode-tabs" role="tablist" aria-label="Split mode selection">
+        <button type="button" class="mode-tab" id="tab-range" data-mode="range" role="tab" aria-selected="false" aria-controls="panel-range">Split by Range</button>
+        <button type="button" class="mode-tab active" id="tab-extract" data-mode="extract" role="tab" aria-selected="true" aria-controls="panel-extract">Extract Pages</button>
+        <button type="button" class="mode-tab" id="tab-every" data-mode="every" role="tab" aria-selected="false" aria-controls="panel-every">Split Every Page</button>
+      </div>
+
+      <div class="mode-panel" id="panel-range" role="tabpanel" aria-labelledby="tab-range" hidden="">
+        <div class="range-stack">
+          <label class="range-label" for="range-input">Enter page ranges</label>
+          <input type="text" id="range-input" class="range-input" placeholder="Examples: 1-3, 5, 7-9" autocomplete="off" spellcheck="false" aria-describedby="range-hint range-preview">
+          <div class="range-hint" id="range-hint">Separate ranges with commas. Each range becomes a separate PDF file.</div>
+          <div class="range-preview" id="range-preview" aria-live="polite">Enter page ranges to see a live preview of the output.</div>
+        </div>
+      </div>
+
+      <div class="mode-panel" id="panel-extract" role="tabpanel" aria-labelledby="tab-extract">
+        <div class="extract-toolbar">
+          <div class="extract-actions">
+            <button type="button" class="extract-mini-btn" id="btn-select-all">Select All</button>
+            <button type="button" class="extract-mini-btn" id="btn-deselect-all">Deselect All</button>
+          </div>
+          <div class="selected-count" aria-live="polite" aria-atomic="true"><span id="selected-count-value">0</span> pages selected</div>
+        </div>
+        <div class="pages-grid" id="pages-grid" aria-label="PDF page thumbnails"></div>
+      </div>
+
+      <div class="mode-panel" id="panel-every" role="tabpanel" aria-labelledby="tab-every" hidden="">
+        <div class="split-every-card">
+          <div class="split-every-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="8" y1="13" x2="16" y2="13"></line>
+              <line x1="8" y1="17" x2="13" y2="17"></line>
+            </svg>
+          </div>
+          <div class="split-every-text">
+            <h3>Split each page into its own file</h3>
+            <p>
+              This mode creates <strong id="every-file-count">0</strong> separate file(s) from your
+              <strong id="every-page-count">0</strong>-page PDF. If there is more than one output file,
+              ToolsMatic bundles them into a ZIP for a single download.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-action-row">
+        <button type="button" class="btn btn-primary btn-split" id="btn-split" aria-label="Split PDF">Split PDF</button>
+      </div>
+
+      <div class="progress-wrap split-progress" id="progress-wrap" aria-label="Split progress">
+        <div class="split-progress-meta">
+          <div class="progress-label" id="progress-label-text">Preparing...</div>
+          <div class="split-progress-percent" id="progress-percent">0%</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Split progress"></div>
+        </div>
+      </div>
+
+      <div class="result-section" id="result-section" aria-live="polite">
+        <div class="result-card">
+          <div class="result-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Split Complete!
+          </div>
+          <div class="result-stats" id="result-stats"></div>
+          <div class="filename-preview">
+            <svg class="filename-preview-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            <div>
+              <div class="filename-preview-text">Your file will be saved as:</div>
+              <div class="filename-preview-name" id="filename-preview-name">—</div>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button type="button" class="btn btn-success" id="btn-download" aria-label="Download result">Download</button>
+            <button type="button" class="btn btn-ghost" id="btn-reset" aria-label="Split another PDF">Split Another PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="seo-content split-seo" aria-label="About splitting PDFs">
+    <h2>What Is PDF Splitting?</h2>
+    <p>
+      PDF splitting is the process of taking one PDF document and breaking it into smaller files or extracting
+      only the pages you need. It is one of the most practical PDF operations because large documents are rarely
+      useful in their raw form forever. A report may need to be divided by chapter, a scanned packet may need
+      only a few pages, or a contract bundle may need to be separated into clean sections for different people.
+      Splitting helps you control document size, relevance, and structure without rebuilding files manually.
+    </p>
+    <p>
+      A strong Split PDF tool should handle more than one scenario. Sometimes you want multiple output files
+      based on page ranges. Sometimes you want a single PDF built from selected pages. Sometimes you need every
+      page as its own file for archiving, naming, or uploading to another system. ToolsMatic supports all three
+      workflows in one place so the page works for real day-to-day document tasks instead of only one narrow use.
+    </p>
+    <p>
+      Just as important, ToolsMatic keeps the work local. Many online PDF splitters send your document to a remote
+      server before you can do anything. That creates privacy concerns and also slows the process down. ToolsMatic
+      works directly inside your browser, which means your PDF stays on your device while you split it.
+    </p>
+
+    <h2>How to Split a PDF on ToolsMatic</h2>
+    <p>
+      The basic process is simple, but the tool stays flexible enough for more advanced needs:
+    </p>
+    <ul>
+      <li>
+        <strong>Upload your PDF:</strong> Drag and drop a PDF file into the upload zone or click to browse from
+        your device. ToolsMatic reads the file locally and prepares page data without uploading anything.
+      </li>
+      <li>
+        <strong>Pick the right mode:</strong> Choose Split by Range if you want multiple grouped outputs,
+        Extract Pages if you want one new PDF made from selected pages, or Split Every Page if each page
+        should become its own file.
+      </li>
+      <li>
+        <strong>Set your selection:</strong> Enter ranges like 1-3, 5, 7-9, click page thumbnails visually,
+        or let the every-page mode use the full document automatically.
+      </li>
+      <li>
+        <strong>Split and download:</strong> Click Split PDF and save the result immediately. Single-output
+        jobs download as PDF files. Multi-output jobs download as a ZIP archive.
+      </li>
+    </ul>
+
+    <h2>Understanding the Three Split Modes</h2>
+    <h3>Split by Range</h3>
+    <p>
+      Split by Range is the best choice when your PDF naturally falls into sections. For example, if pages 1-4
+      are a cover and summary, pages 5-9 are technical details, and pages 10-14 are pricing, you can turn that
+      single document into three clean PDF files in one operation. This mode is useful for proposals, employee
+      packets, case files, scanned bundles, and reports that contain several logical parts.
+    </p>
+    <p>
+      ToolsMatic accepts comma-separated groups like 1-3, 5, 7-9. Each group becomes its own PDF. That means you
+      are not limited to a single cut point. You can create multiple outputs from one long file without repeating
+      the upload process again and again.
+    </p>
+
+    <h3>Extract Pages</h3>
+    <p>
+      Extract Pages is ideal when the pages you want are not next to each other. Instead of writing page ranges,
+      you click the thumbnails you need and ToolsMatic builds one new PDF from those selected pages. This is easier
+      for tasks like pulling signature pages from a contract, selecting only invoice pages from a statement pack,
+      or assembling the best pages from a larger design proof.
+    </p>
+    <p>
+      Visual selection matters because many users do not want to memorize page numbers. The thumbnail grid makes
+      it easier to confirm the right pages before you split, especially for long PDFs, scans, and mixed document
+      bundles where titles are not obvious from the page count alone.
+    </p>
+
+    <h3>Split Every Page</h3>
+    <p>
+      Split Every Page takes the whole PDF and creates one file per page. This is especially useful when you are
+      processing scanned forms, need one invoice per file, want to upload each page separately to another system,
+      or need to organize a document archive page by page. When the output includes multiple files, ToolsMatic packs
+      them into a ZIP archive so the download stays clean and manageable.
+    </p>
+
+    <h2>Why People Split PDFs So Often</h2>
+    <p>
+      Splitting PDF files is not just a niche editing action. It solves common workflow problems across business,
+      education, legal work, finance, hiring, research, government forms, and daily admin tasks. A large PDF is
+      convenient for storage, but it is often inconvenient for sharing or uploading. Many systems only want the
+      relevant pages, and many recipients only need part of the file.
+    </p>
+    <p>
+      A recruiter might want only the resume pages from a combined application packet. A client may need only the
+      contract appendix. A university portal may require transcripts and recommendation letters as separate uploads.
+      An operations team may scan a stack of signed forms into one PDF, then split the pages into individual files
+      for downstream processing. A strong browser-based PDF splitter is useful because these tasks happen constantly.
+    </p>
+
+    <h2>Why Use ToolsMatic Instead of Other PDF Splitters?</h2>
+    <h3>Privacy First</h3>
+    <p>
+      ToolsMatic processes your document directly in the browser. Your file is not uploaded to a remote server for
+      splitting, previewing, or downloading. That matters when you are working with contracts, HR documents, tax
+      papers, personal IDs, internal reports, or anything else that should not travel across the internet unless it
+      absolutely has to.
+    </p>
+
+    <h3>No Login, No Signup Friction</h3>
+    <p>
+      You do not need an account to split a PDF here. There is no registration wall, no delayed download email,
+      and no upgrade prompt before you can complete a simple document task. Open the tool, upload the file, choose
+      your split mode, and download the output. That is the whole flow.
+    </p>
+
+    <h3>Quality Is Preserved</h3>
+    <p>
+      Splitting a PDF should not damage it. ToolsMatic extracts pages at the document level, preserving the original
+      text, images, fonts, and layout instead of flattening or recompressing everything. If the source PDF is high
+      quality, the split output stays high quality too.
+    </p>
+
+    <h3>Flexible Output Options</h3>
+    <p>
+      Some split tools handle only one pattern well. ToolsMatic is more practical because it supports grouped range
+      outputs, one-file extraction, and one-page-per-file splitting on the same page. That makes it useful for many
+      kinds of tasks instead of forcing you into a one-size-fits-all workflow.
+    </p>
+
+    <h2>Typical Use Cases for Split PDF</h2>
+    <h3>Business and Operations</h3>
+    <p>
+      Teams often split PDFs when they need to separate invoice batches, divide scanned purchase orders, isolate
+      employee forms, or break one long PDF report into smaller files for different departments. In operations,
+      document control matters, and smaller focused PDFs are easier to route and archive.
+    </p>
+
+    <h3>Education and Research</h3>
+    <p>
+      Students and researchers use PDF splitting to extract reading chapters, pull reference appendices, separate
+      supporting documents, or create cleaner submission files. If a portal has file count or file type rules,
+      splitting becomes the easiest way to match the format it expects.
+    </p>
+
+    <h3>Legal and Compliance Work</h3>
+    <p>
+      Legal teams often receive huge PDF bundles with exhibits, witness material, correspondence, and attachments.
+      Splitting those bundles into targeted files improves review speed and makes sharing safer because each person
+      gets only the pages they actually need.
+    </p>
+
+    <h3>Personal Document Management</h3>
+    <p>
+      On the personal side, splitting helps with insurance packets, travel records, school paperwork, receipts,
+      warranty documents, and scanned IDs. One combined PDF may be good for storage, but smaller files are often
+      better for sending, uploading, or keeping organized.
+    </p>
+
+    <h2>How Splitting a PDF Affects Quality and Formatting</h2>
+    <p>
+      A common question is whether splitting reduces PDF quality. In normal cases, no. Splitting is not the same as
+      converting the pages to screenshots or re-exporting them at a lower resolution. ToolsMatic takes the pages you
+      already have and builds new PDF outputs from them, which helps preserve the original structure and appearance.
+    </p>
+    <p>
+      The only time quality issues typically appear is when the original file already has them. If the source PDF is
+      blurry, badly scanned, or damaged, the split output will still reflect that source quality. ToolsMatic does not
+      intentionally degrade or watermark the result.
+    </p>
+
+    <h2>Can You Split PDFs on Mobile?</h2>
+    <p>
+      Yes. ToolsMatic is responsive and works in modern mobile browsers, which means you can split PDF files on a phone
+      or tablet without installing an app. That is useful when a document arrives by email, chat, or cloud storage
+      and you need to separate pages right away while away from your desktop.
+    </p>
+    <p>
+      The extract mode is touch friendly, the tabs work on small screens, and downloads remain straightforward. For
+      quick document prep on the go, mobile support is not a nice extra. It is part of what makes the tool practical.
+    </p>
+
+    <h2>Examples of Useful Split Ranges</h2>
+    <ul>
+      <li><strong>1-2, 3-7, 8-10</strong> for a proposal with cover, details, and appendix sections.</li>
+      <li><strong>1, 4, 9</strong> if you want separate one-page PDFs from selected locations in the document.</li>
+      <li><strong>5-12, 13-18</strong> when a report needs to be divided between two recipients.</li>
+      <li><strong>2-2, 6-8</strong> if one page should become a file and another group should become a second file.</li>
+    </ul>
+    <p>
+      Those examples show why range splitting is useful: one input document can become several targeted outputs with
+      only one pass through the tool.
+    </p>
+
+    <h2>ToolsMatic vs Other PDF Splitters</h2>
+    <div class="comparison-wrap">
+      <table class="comparison-table" aria-label="PDF splitter comparison">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-ToolsMatic">ToolsMatic</th>
+            <th>ilovepdf</th>
+            <th>Smallpdf</th>
+            <th>Adobe Acrobat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Free to use</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="partial">Limited</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>No file upload</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>No login required</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="partial">Some limits</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>Split by range</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+          </tr>
+          <tr>
+            <td>Extract pages visually</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+          </tr>
+          <tr>
+            <td>Split every page</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="partial">Paid only</span></td>
+            <td><span class="check">Yes</span></td>
+          </tr>
+          <tr>
+            <td>No file size limit</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="partial">100MB cap</span></td>
+            <td><span class="partial">5MB free</span></td>
+            <td><span class="partial">Paid only</span></td>
+          </tr>
+          <tr>
+            <td>No daily limit</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="partial">Limited</span></td>
+            <td><span class="partial">2/day free</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>Privacy first</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+            <td><span class="cross">No</span></td>
+          </tr>
+          <tr>
+            <td>ZIP download for multi-file output</td>
+            <td class="col-ToolsMatic"><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+            <td><span class="check">Yes</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Split PDF: Frequently Asked Questions</h2>
+    <div class="faq-wrap" id="faq">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do I split a PDF into multiple files?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Upload your PDF, choose Split by Range, enter your page groups, and click Split. Each range becomes its own PDF file. If the result contains multiple files, ToolsMatic bundles them into a ZIP archive for one clean download.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I extract specific pages from a PDF?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Switch to Extract Pages mode and click the page thumbnails you want to keep. ToolsMatic combines the selected pages into one new PDF file.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What is Split Every Page?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>This mode turns every page in the PDF into its own standalone file. It is useful for scanned packets, page-level archiving, and systems that need one page per upload.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is there a page limit for splitting?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>ToolsMatic does not impose artificial page limits. The practical limit depends on the memory available on your device and browser.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Does splitting reduce PDF quality?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>No. ToolsMatic preserves the source page quality, including text, images, and formatting, instead of recompressing the document during splitting.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Are my files uploaded to a server?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>No. ToolsMatic processes your PDF locally in the browser. Your file stays on your device while the split operation runs.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I split a password-protected PDF?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Password-protected PDFs need to be unlocked first. Use the <a href="/tools/unlock-pdf.html" style="color:var(--accent);">Unlock PDF</a> tool, then return here to split the file.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What format will the split files be in?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>All outputs are standard PDF files. When there are multiple output files, ToolsMatic packages them into a ZIP archive for convenience.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>More Free PDF Tools You Might Need</h2>
+    <div class="related-tools" role="list">
+      <a href="/tools/merge-pdf.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">Merge PDF</div>
+        <div class="related-tool-desc">Combine multiple PDF files into one organized document after splitting or extracting pages.</div>
+      </a>
+      <a href="/tools/remove-pages.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">Remove Pages</div>
+        <div class="related-tool-desc">Delete unwanted pages from a PDF when you do not need multiple separate output files.</div>
+      </a>
+      <a href="/tools/compress-pdf.html" class="related-tool-card" role="listitem">
+        <div class="related-tool-name">Compress PDF</div>
+        <div class="related-tool-desc">Reduce the size of your split PDFs or ZIP-ready files before sharing them by email or upload.</div>
+      </a>
+    </div>
+  </article>
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="split-pdf-for-students-pseo" aria-labelledby="split-pdf-for-students-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Split PDF for Students</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="split-pdf-for-students-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Split PDF for Students Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Split PDF for Students</strong>, an educational utility designed for homework, academic writing, and basic calculations. This dedicated workspace is built specifically for college students, high school learners, researchers, and academic educators. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>step-by-step logic, domain references, clean citation guides, and simple UI templates</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Divide a PDF into separate files or page ranges. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Homework Check Tool</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Verify base conversions, text lengths, or time conversions in seconds for school tasks.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Domain Learning</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Read the clear explanations below the tool to learn standard academic concepts.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Quick Citation Formatting</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Generate standard reference lengths or format bibliographies safely.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Split PDF for Students</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Students layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Split PDF for Students</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this tool acceptable for school work?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes. It is a highly accurate utility that helps you check and verify your manually calculated assignments.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it teach me how the tool works?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, each tool includes comprehensive explanations of core theories and calculations below the active grid.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is it free for schools?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">100% free for all students, educators, and schools worldwide.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/split-pdf.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Split PDF</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Split PDF for Students","url":"https://toolsmatic.me/tools/split-pdf-for-students.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Split PDF for Students online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Split PDF for Students","item":"https://toolsmatic.me/tools/split-pdf-for-students.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this tool acceptable for school work?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is a highly accurate utility that helps you check and verify your manually calculated assignments."}},{"@type":"Question","name":"Does it teach me how the tool works?","acceptedAnswer":{"@type":"Answer","text":"Yes, each tool includes comprehensive explanations of core theories and calculations below the active grid."}},{"@type":"Question","name":"Is it free for schools?","acceptedAnswer":{"@type":"Answer","text":"100% free for all students, educators, and schools worldwide."}}]}]}</script>
+  </main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--text-primary);margin-bottom:12px;">
+        ToolsMatic
+      </div>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.7;max-width:220px;">
+        Privacy-first PDF tools. Your files never leave your browser.
+      </p>
+      <p style="font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);margin-top:16px;">
+        © 2025 ToolsMatic. All rights reserved.
+      </p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">PDF Tools</div>
+      <a href="/tools/merge-pdf.html" class="footer-link">Merge PDF</a>
+      <a href="/tools/split-pdf.html" class="footer-link">Split PDF</a>
+      <a href="/tools/compress-pdf.html" class="footer-link">Compress PDF</a>
+      <a href="/tools/rotate-pdf.html" class="footer-link">Rotate PDF</a>
+      <a href="/tools/crop-pdf.html" class="footer-link">Crop PDF</a>
+      <a href="/tools/watermark-pdf.html" class="footer-link">Add Watermark</a>
+      <a href="/tools/sign-pdf.html" class="footer-link">Sign PDF</a>
+      <a href="/#tools" class="footer-link" style="color:var(--accent);">All Tools →</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">More Tools</div>
+      <a href="/tools/remove-pages.html" class="footer-link">Remove Pages</a>
+      <a href="/tools/pdf-to-jpg.html" class="footer-link">PDF to JPG</a>
+      <a href="/tools/jpg-to-pdf.html" class="footer-link">JPG to PDF</a>
+      <a href="/tools/protect-pdf.html" class="footer-link">Protect PDF</a>
+      <a href="/tools/unlock-pdf.html" class="footer-link">Unlock PDF</a>
+      <a href="/tools/pdf-reader.html" class="footer-link">PDF Reader</a>
+      <a href="/tools/annotate-pdf.html" class="footer-link">PDF Annotator</a>
+      <a href="/tools/compare-pdf.html" class="footer-link">PDF Comparison</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="/about.html" class="footer-link">About</a>
+      <a href="/contact.html" class="footer-link">Contact</a>
+      <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+      <a href="/terms.html" class="footer-link">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Built with ♥ for people who value privacy</span>
+    <span>No tracking. No uploads. No nonsense.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="/assets/pdf/global.js"></script>
+<script src="/assets/pdf/tool-base.js"></script>
+
+<script>
+'use strict';
+
+(function () {
+  var uploadZone = document.getElementById('upload-zone');
+  var uploadNote = document.getElementById('upload-note');
+  var fileInput = document.getElementById('file-input');
+  var toolArea = document.getElementById('tool-area');
+  var btnClearAll = document.getElementById('btn-clear-all');
+  var fileNameValue = document.getElementById('file-name-value');
+  var filePagesValue = document.getElementById('file-pages-value');
+  var fileSizeValue = document.getElementById('file-size-value');
+  var modeTabs = Array.prototype.slice.call(document.querySelectorAll('.mode-tab'));
+  var panelRange = document.getElementById('panel-range');
+  var panelExtract = document.getElementById('panel-extract');
+  var panelEvery = document.getElementById('panel-every');
+  var rangeInput = document.getElementById('range-input');
+  var rangePreview = document.getElementById('range-preview');
+  var pagesGrid = document.getElementById('pages-grid');
+  var btnSelectAll = document.getElementById('btn-select-all');
+  var btnDeselectAll = document.getElementById('btn-deselect-all');
+  var selectedCountValue = document.getElementById('selected-count-value');
+  var everyPageCount = document.getElementById('every-page-count');
+  var everyFileCount = document.getElementById('every-file-count');
+  var btnSplit = document.getElementById('btn-split');
+  var progressWrap = document.getElementById('progress-wrap');
+  var progressLabelText = document.getElementById('progress-label-text');
+  var progressPercent = document.getElementById('progress-percent');
+  var progressBar = document.getElementById('progress-bar');
+  var resultSection = document.getElementById('result-section');
+  var resultStats = document.getElementById('result-stats');
+  var filenamePreviewName = document.getElementById('filename-preview-name');
+  var btnDownload = document.getElementById('btn-download');
+  var btnReset = document.getElementById('btn-reset');
+
+  if (!uploadZone || !fileInput || !toolArea || !btnSplit || !progressWrap || !resultSection) {
+    return;
+  }
+
+  var state = {
+    file: null,
+    arrayBuffer: null,
+    pageCount: 0,
+    pdfJsDoc: null,
+    activeMode: 'extract',
+    selectedPages: [],
+    downloadBytes: null,
+    downloadMime: '',
+    downloadName: '',
+    renderToken: 0,
+    isBusy: false
+  };
+
+  function showPlainToast(message, type) {
+    if (typeof window.showToast === 'function') {
+      window.showToast(message, type || 'info');
+    }
+  }
+
+  function getToastContainer() {
+    var container = document.querySelector('.toast-container');
+
+    if (container) {
+      return container;
+    }
+
+    container = document.createElement('div');
+    container.className = 'toast-container';
+    container.setAttribute('aria-live', 'polite');
+    container.setAttribute('aria-atomic', 'true');
+    document.body.appendChild(container);
+    return container;
+  }
+
+  function dismissCustomToast(toast) {
+    if (!toast || toast.dataset.dismissing === 'true') {
+      return;
+    }
+
+    toast.dataset.dismissing = 'true';
+    toast.classList.add('is-leaving');
+
+    window.setTimeout(function () {
+      toast.remove();
+    }, 250);
+  }
+
+  function showPasswordToast() {
+    var container = getToastContainer();
+    var toast = document.createElement('div');
+    var messageEl = document.createElement('div');
+    var closeButton = document.createElement('button');
+    var link = document.createElement('a');
+    var timeoutId = null;
+
+    toast.className = 'toast toast-warning';
+    toast.setAttribute('role', 'status');
+
+    messageEl.className = 'toast-message';
+    messageEl.appendChild(document.createTextNode('This PDF is password protected. '));
+
+    link.href = '/tools/unlock-pdf.html';
+    link.textContent = 'Unlock it first';
+    link.style.color = 'var(--accent)';
+    link.style.textDecoration = 'underline';
+    messageEl.appendChild(link);
+
+    closeButton.className = 'toast-close';
+    closeButton.type = 'button';
+    closeButton.setAttribute('aria-label', 'Dismiss notification');
+    closeButton.textContent = '×';
+    closeButton.addEventListener('click', function () {
+      dismissCustomToast(toast);
+    });
+
+    toast.appendChild(messageEl);
+    toast.appendChild(closeButton);
+    container.appendChild(toast);
+
+    function startDismissTimer() {
+      window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(function () {
+        dismissCustomToast(toast);
+      }, 5000);
+    }
+
+    startDismissTimer();
+    toast.addEventListener('mouseenter', function () {
+      window.clearTimeout(timeoutId);
+    });
+    toast.addEventListener('mouseleave', startDismissTimer);
+  }
+
+  function cleanupPdfJsDocument() {
+    if (!state.pdfJsDoc) {
+      return;
+    }
+
+    try {
+      if (typeof state.pdfJsDoc.destroy === 'function') {
+        state.pdfJsDoc.destroy();
+      }
+    } catch (error) {
+      state.pdfJsDoc = null;
+      return;
+    }
+
+    state.pdfJsDoc = null;
+  }
+
+  function isPdfLikeFile(file) {
+    var type = file && typeof file.type === 'string' ? file.type.toLowerCase() : '';
+    var name = file && typeof file.name === 'string' ? file.name.toLowerCase() : '';
+    return type === 'application/pdf' || /\.pdf$/i.test(name);
+  }
+
+  function isEmptyFile(file) {
+    return !file || typeof file.size !== 'number' || file.size === 0;
+  }
+
+  function isTooLarge(file) {
+    return Boolean(file && typeof file.size === 'number' && file.size > 524288000);
+  }
+
+  function matchesEncryptedError(error) {
+    var message = error && typeof error.message === 'string' ? error.message.toLowerCase() : '';
+    return message.indexOf('encrypt') !== -1 ||
+      message.indexOf('password') !== -1 ||
+      message.indexOf('secure') !== -1 ||
+      message.indexOf('decrypt') !== -1;
+  }
+
+  function createTimestampFilename(extension) {
+    var now = new Date();
+    var pad = function (value) {
+      return String(value).padStart(2, '0');
+    };
+
+    return 'split-' +
+      now.getFullYear() + '-' +
+      pad(now.getMonth() + 1) + '-' +
+      pad(now.getDate()) + '-' +
+      pad(now.getHours()) + '-' +
+      pad(now.getMinutes()) + '.' + extension;
+  }
+
+  function clearDownloadPayload() {
+    state.downloadBytes = null;
+    state.downloadMime = '';
+    state.downloadName = '';
+
+    if (resultStats) {
+      resultStats.textContent = '';
+    }
+
+    if (filenamePreviewName) {
+      filenamePreviewName.textContent = '—';
+    }
+
+    resultSection.classList.remove('visible');
+  }
+
+  function clearProgress() {
+    hideProgress(progressWrap);
+
+    if (progressPercent) {
+      progressPercent.textContent = '0%';
+    }
+
+    if (progressLabelText) {
+      progressLabelText.textContent = 'Preparing...';
+    }
+
+    if (progressBar) {
+      progressBar.setAttribute('aria-valuenow', '0');
+    }
+  }
+
+  function setProgressState(percent, label) {
+    var safePercent = Math.max(0, Math.min(100, Math.round(percent || 0)));
+
+    showProgress(progressWrap);
+    updateProgress(progressWrap, safePercent, label || 'Processing...');
+
+    if (progressPercent) {
+      progressPercent.textContent = safePercent + '%';
+    }
+
+    if (progressBar) {
+      progressBar.setAttribute('aria-valuenow', String(safePercent));
+    }
+  }
+
+  function updateSelectedCount() {
+    if (selectedCountValue) {
+      selectedCountValue.textContent = String(state.selectedPages.length);
+    }
+  }
+
+  function updateFileStats() {
+    if (fileNameValue) {
+      fileNameValue.textContent = state.file ? state.file.name : '—';
+      fileNameValue.setAttribute('title', state.file ? state.file.name : '');
+    }
+
+    if (filePagesValue) {
+      filePagesValue.textContent = state.pageCount ? String(state.pageCount) : '—';
+    }
+
+    if (fileSizeValue) {
+      fileSizeValue.textContent = state.file ? formatFileSize(state.file.size) : '—';
+    }
+
+    if (everyPageCount) {
+      everyPageCount.textContent = state.pageCount ? String(state.pageCount) : '0';
+    }
+
+    if (everyFileCount) {
+      everyFileCount.textContent = state.pageCount ? String(state.pageCount) : '0';
+    }
+  }
+
+  function getPageButtons() {
+    return Array.prototype.slice.call(pagesGrid ? pagesGrid.querySelectorAll('.page-thumb-card') : []);
+  }
+
+  function syncPageButtonStates() {
+    getPageButtons().forEach(function (button) {
+      var pageNumber = Number(button.getAttribute('data-page'));
+      var isSelected = state.selectedPages.indexOf(pageNumber) !== -1;
+
+      button.classList.toggle('selected', isSelected);
+      button.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+    });
+
+    updateSelectedCount();
+  }
+
+  function setBusyState(isBusy) {
+    state.isBusy = isBusy;
+
+    btnSplit.disabled = isBusy;
+    btnSplit.setAttribute('aria-disabled', String(isBusy));
+    btnSplit.classList.toggle('loading', isBusy);
+
+    if (btnClearAll) {
+      btnClearAll.disabled = isBusy;
+    }
+
+    if (rangeInput) {
+      rangeInput.disabled = isBusy;
+    }
+
+    if (btnSelectAll) {
+      btnSelectAll.disabled = isBusy;
+    }
+
+    if (btnDeselectAll) {
+      btnDeselectAll.disabled = isBusy;
+    }
+
+    if (btnDownload) {
+      btnDownload.disabled = isBusy || !state.downloadBytes;
+    }
+
+    if (btnReset) {
+      btnReset.disabled = isBusy;
+    }
+
+    modeTabs.forEach(function (tab) {
+      tab.disabled = isBusy;
+    });
+
+    getPageButtons().forEach(function (button) {
+      button.disabled = isBusy;
+    });
+  }
+
+  function showToolArea() {
+    uploadZone.hidden = true;
+    toolArea.hidden = false;
+    uploadZone.classList.add('has-files');
+    if (uploadNote) {
+      uploadNote.hidden = true;
+    }
+  }
+
+  function showUploadZone() {
+    uploadZone.hidden = false;
+    toolArea.hidden = true;
+    uploadZone.classList.remove('has-files');
+    if (uploadNote) {
+      uploadNote.hidden = false;
+    }
+  }
+
+  function activateMode(mode, shouldFocus) {
+    state.activeMode = mode;
+
+    modeTabs.forEach(function (tab) {
+      var isActive = tab.getAttribute('data-mode') === mode;
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      if (isActive && shouldFocus) {
+        tab.focus();
+      }
+    });
+
+    if (panelRange) {
+      panelRange.hidden = mode !== 'range';
+    }
+
+    if (panelExtract) {
+      panelExtract.hidden = mode !== 'extract';
+    }
+
+    if (panelEvery) {
+      panelEvery.hidden = mode !== 'every';
+    }
+
+    clearDownloadPayload();
+    clearProgress();
+  }
+
+  function updateRangePreview() {
+    if (!rangeInput || !rangePreview) {
+      return;
+    }
+
+    var groups = parseRangeGroups(rangeInput.value, state.pageCount);
+    var hasInput = Boolean(rangeInput.value.trim());
+
+    rangeInput.classList.remove('invalid');
+    rangeInput.setAttribute('aria-invalid', 'false');
+    rangePreview.classList.remove('is-invalid');
+
+    if (!hasInput) {
+      rangePreview.textContent = 'Enter page ranges to see a live preview of the output.';
+      return;
+    }
+
+    if (!groups) {
+      rangeInput.classList.add('invalid');
+      rangeInput.setAttribute('aria-invalid', 'true');
+      rangePreview.classList.add('is-invalid');
+      rangePreview.textContent = 'Invalid range format. Use values like 1-3, 5, 7-9.';
+      return;
+    }
+
+    rangePreview.textContent = 'This will create ' + groups.length + ' file' +
+      (groups.length === 1 ? '' : 's') + ' from ' +
+      groups.map(function (group) {
+        return group.length === 1 ? 'page ' + group[0] : 'pages ' + group[0] + '-' + group[group.length - 1];
+      }).join(', ') + '.';
+  }
+
+  function parseRangeGroups(rawValue, maxPage) {
+    var text = typeof rawValue === 'string' ? rawValue.trim() : '';
+    var parts;
+    var groups = [];
+
+    if (!text || !maxPage) {
+      return null;
+    }
+
+    parts = text.split(',');
+
+    for (var index = 0; index < parts.length; index += 1) {
+      var part = parts[index].trim();
+      var match;
+      var start;
+      var end;
+      var pageNumbers = [];
+      var currentPage;
+
+      if (!part) {
+        return null;
+      }
+
+      match = part.match(/^(\d+)\s*(?:-\s*(\d+))?$/);
+
+      if (!match) {
+        return null;
+      }
+
+      start = Number(match[1]);
+      end = match[2] ? Number(match[2]) : start;
+
+      if (!start || !end || start < 1 || end < 1 || start > maxPage || end > maxPage || start > end) {
+        return null;
+      }
+
+      for (currentPage = start; currentPage <= end; currentPage += 1) {
+        pageNumbers.push(currentPage);
+      }
+
+      groups.push(pageNumbers);
+    }
+
+    return groups.length ? groups : null;
+  }
+
+  function resetStateForNewDocument() {
+    state.file = null;
+    state.arrayBuffer = null;
+    state.pageCount = 0;
+    state.selectedPages = [];
+    state.renderToken += 1;
+    cleanupPdfJsDocument();
+    clearDownloadPayload();
+    clearProgress();
+    updateSelectedCount();
+    updateFileStats();
+
+    if (rangeInput) {
+      rangeInput.value = '';
+      rangeInput.classList.remove('invalid');
+      rangeInput.setAttribute('aria-invalid', 'false');
+    }
+
+    if (rangePreview) {
+      rangePreview.textContent = 'Enter page ranges to see a live preview of the output.';
+      rangePreview.classList.remove('is-invalid');
+    }
+
+    if (pagesGrid) {
+      pagesGrid.innerHTML = '';
+    }
+
+    activateMode('extract', false);
+  }
+
+  function resetTool() {
+    resetStateForNewDocument();
+    showUploadZone();
+    setBusyState(false);
+    fileInput.value = '';
+  }
+
+  function renderThumbnailFallback(wrapEl, text) {
+    var fallback = document.createElement('div');
+    fallback.className = 'thumb-fallback';
+    fallback.textContent = text;
+    wrapEl.innerHTML = '';
+    wrapEl.appendChild(fallback);
+  }
+
+  async function renderPageThumbnail(pageNumber, wrapEl) {
+    var page;
+    var viewport;
+    var canvas;
+    var context;
+
+    try {
+      if (!state.pdfJsDoc || !wrapEl) {
+        renderThumbnailFallback(wrapEl, 'Preview unavailable');
+        return;
+      }
+
+      page = await state.pdfJsDoc.getPage(pageNumber);
+      viewport = page.getViewport({ scale: 0.24 });
+      canvas = document.createElement('canvas');
+      context = canvas.getContext('2d');
+
+      if (!context) {
+        renderThumbnailFallback(wrapEl, 'Preview unavailable');
+        return;
+      }
+
+      canvas.width = Math.max(1, Math.floor(viewport.width));
+      canvas.height = Math.max(1, Math.floor(viewport.height));
+
+      await page.render({
+        canvasContext: context,
+        viewport: viewport
+      }).promise;
+
+      wrapEl.innerHTML = '';
+      wrapEl.appendChild(canvas);
+
+      if (typeof page.cleanup === 'function') {
+        page.cleanup();
+      }
+    } catch (error) {
+      renderThumbnailFallback(wrapEl, 'Preview unavailable');
+    }
+  }
+
+  async function renderPageGrid() {
+    var fragment;
+    var renderQueue = [];
+    var token;
+    var pageNumber;
+
+    if (!pagesGrid) {
+      return;
+    }
+
+    pagesGrid.innerHTML = '';
+    state.selectedPages = [];
+    updateSelectedCount();
+    token = ++state.renderToken;
+    fragment = document.createDocumentFragment();
+
+    for (pageNumber = 1; pageNumber <= state.pageCount; pageNumber += 1) {
+      var button = document.createElement('button');
+      var canvasWrap = document.createElement('div');
+      var skeleton = document.createElement('div');
+      var label = document.createElement('div');
+
+      button.type = 'button';
+      button.className = 'page-thumb-card';
+      button.setAttribute('data-page', String(pageNumber));
+      button.setAttribute('aria-label', 'Select page ' + pageNumber);
+      button.setAttribute('aria-pressed', 'false');
+
+      canvasWrap.className = 'page-canvas-wrap';
+      skeleton.className = 'thumb-skeleton';
+      canvasWrap.appendChild(skeleton);
+
+      label.className = 'page-num-label';
+      label.textContent = 'Page ' + pageNumber;
+
+      button.appendChild(canvasWrap);
+      button.appendChild(label);
+      fragment.appendChild(button);
+
+      renderQueue.push({
+        pageNumber: pageNumber,
+        wrapEl: canvasWrap
+      });
+    }
+
+    pagesGrid.appendChild(fragment);
+    setBusyState(state.isBusy);
+
+    if (!state.pdfJsDoc) {
+      renderQueue.forEach(function (item) {
+        renderThumbnailFallback(item.wrapEl, 'No preview');
+      });
+      return;
+    }
+
+    for (pageNumber = 0; pageNumber < renderQueue.length; pageNumber += 1) {
+      if (token !== state.renderToken) {
+        return;
+      }
+
+      await renderPageThumbnail(renderQueue[pageNumber].pageNumber, renderQueue[pageNumber].wrapEl);
+
+      if (pageNumber % 6 === 5) {
+        await new Promise(function (resolve) {
+          window.requestAnimationFrame(resolve);
+        });
+      }
+    }
+  }
+
+  function toggleSelectedPage(pageNumber) {
+    var index = state.selectedPages.indexOf(pageNumber);
+
+    if (index === -1) {
+      state.selectedPages.push(pageNumber);
+    } else {
+      state.selectedPages.splice(index, 1);
+    }
+
+    state.selectedPages.sort(function (left, right) {
+      return left - right;
+    });
+
+    syncPageButtonStates();
+    clearDownloadPayload();
+    clearProgress();
+  }
+
+  async function loadPdfDocument(file) {
+    var buffer;
+    var pdfDocument;
+    var pdfJsLoadingTask;
+
+    try {
+      if (!file) {
+        showPlainToast('Please upload a PDF first.', 'warning');
+        return;
+      }
+
+      if (isEmptyFile(file)) {
+        showPlainToast('This file appears to be empty', 'error');
+        return;
+      }
+
+      if (!isPdfLikeFile(file)) {
+        showPlainToast('Please upload PDF files only', 'error');
+        return;
+      }
+
+      if (isTooLarge(file)) {
+        showPlainToast('This PDF is too large to process in the browser', 'warning');
+        return;
+      }
+
+      resetStateForNewDocument();
+
+      buffer = await readFileAsArrayBuffer(file);
+
+      if (!(buffer instanceof ArrayBuffer) || buffer.byteLength === 0) {
+        showPlainToast('This file appears to be empty', 'error');
+        return;
+      }
+
+      if (!validatePDFHeader(buffer)) {
+        showPlainToast('This file appears damaged', 'error');
+        return;
+      }
+
+      try {
+        pdfDocument = await PDFLib.PDFDocument.load(buffer.slice(0), { ignoreEncryption: false });
+      } catch (error) {
+        if (matchesEncryptedError(error)) {
+          showPasswordToast();
+          return;
+        }
+
+        showPlainToast('This file appears damaged', 'error');
+        return;
+      }
+
+      state.file = file;
+      state.arrayBuffer = buffer;
+      state.pageCount = pdfDocument.getPageCount();
+      state.selectedPages = [];
+      updateFileStats();
+      showToolArea();
+
+      if (typeof pdfjsLib !== 'undefined') {
+        try {
+          pdfJsLoadingTask = pdfjsLib.getDocument({ data: buffer.slice(0) });
+          state.pdfJsDoc = await pdfJsLoadingTask.promise;
+        } catch (error) {
+          state.pdfJsDoc = null;
+        }
+      }
+
+      await renderPageGrid();
+      updateRangePreview();
+      setBusyState(false);
+    } catch (error) {
+      resetTool();
+      showPlainToast('This file appears damaged', 'error');
+    }
+  }
+
+  async function createPdfFromPages(sourceDoc, pageNumbers) {
+    var newDoc = await PDFLib.PDFDocument.create();
+    var copiedPages = await newDoc.copyPages(sourceDoc, pageNumbers.map(function (pageNumber) {
+      return pageNumber - 1;
+    }));
+
+    copiedPages.forEach(function (page) {
+      newDoc.addPage(page);
+    });
+
+    return newDoc.save();
+  }
+
+  function setDownloadResult(bytes, mimeType, fileName, statsText) {
+    state.downloadBytes = bytes;
+    state.downloadMime = mimeType;
+    state.downloadName = fileName;
+
+    if (resultStats) {
+      resultStats.textContent = statsText;
+    }
+
+    if (filenamePreviewName) {
+      filenamePreviewName.textContent = fileName;
+    }
+
+    resultSection.classList.add('visible');
+
+    if (btnDownload) {
+      btnDownload.disabled = false;
+    }
+  }
+
+  async function splitByRange() {
+    var groups;
+    var sourceDoc;
+    var zip;
+    var totalPages = 0;
+    var groupIndex;
+
+    try {
+      if (!state.arrayBuffer) {
+        showPlainToast('Please upload a PDF first.', 'warning');
+        return;
+      }
+
+      groups = parseRangeGroups(rangeInput ? rangeInput.value : '', state.pageCount);
+
+      if (!groups) {
+        showPlainToast('Please enter a valid page range before splitting.', 'warning');
+        updateRangePreview();
+        return;
+      }
+
+      clearDownloadPayload();
+      setBusyState(true);
+      setProgressState(5, 'Loading PDF...');
+      sourceDoc = await PDFLib.PDFDocument.load(state.arrayBuffer.slice(0), { ignoreEncryption: false });
+
+      if (groups.length === 1) {
+        var singleBytes = await createPdfFromPages(sourceDoc, groups[0]);
+        setProgressState(100, 'Split complete');
+        setDownloadResult(
+          singleBytes,
+          'application/pdf',
+          createTimestampFilename('pdf'),
+          '1 PDF created from ' + groups[0].length + ' page' + (groups[0].length === 1 ? '' : 's') + '.'
+        );
+        showPlainToast('Split complete! Ready to download.', 'success');
+        return;
+      }
+
+      if (typeof JSZip === 'undefined') {
+        clearProgress();
+        showPlainToast('ZIP support failed to load. Please refresh and try again.', 'error');
+        return;
+      }
+
+      zip = new JSZip();
+
+      for (groupIndex = 0; groupIndex < groups.length; groupIndex += 1) {
+        var group = groups[groupIndex];
+        var bytes = await createPdfFromPages(sourceDoc, group);
+        var label = group.length === 1 ? 'page-' + group[0] : 'pages-' + group[0] + '-' + group[group.length - 1];
+        totalPages += group.length;
+
+        zip.file('split-' + (groupIndex + 1) + '-' + label + '.pdf', bytes);
+        setProgressState(15 + Math.round(((groupIndex + 1) / groups.length) * 70), 'Creating file ' + (groupIndex + 1) + ' of ' + groups.length + '...');
+      }
+
+      setProgressState(92, 'Building ZIP archive...');
+
+      setDownloadResult(
+        await zip.generateAsync({ type: 'uint8array' }),
+        'application/zip',
+        createTimestampFilename('zip'),
+        groups.length + ' PDF files created from ' + totalPages + ' total pages.'
+      );
+
+      setProgressState(100, 'Split complete');
+      showPlainToast('Split complete! Ready to download.', 'success');
+    } catch (error) {
+      clearProgress();
+
+      if (matchesEncryptedError(error)) {
+        showPasswordToast();
+      } else {
+        showPlainToast('This file appears damaged', 'error');
+      }
+    } finally {
+      setBusyState(false);
+    }
+  }
+
+  async function extractPages() {
+    var sourceDoc;
+    var selectedPages;
+
+    try {
+      if (!state.arrayBuffer) {
+        showPlainToast('Please upload a PDF first.', 'warning');
+        return;
+      }
+
+      if (!state.selectedPages.length) {
+        showPlainToast('Please select at least one page to extract.', 'warning');
+        return;
+      }
+
+      clearDownloadPayload();
+      setBusyState(true);
+      setProgressState(8, 'Loading PDF...');
+
+      selectedPages = state.selectedPages.slice().sort(function (left, right) {
+        return left - right;
+      });
+
+      sourceDoc = await PDFLib.PDFDocument.load(state.arrayBuffer.slice(0), { ignoreEncryption: false });
+      setProgressState(55, 'Extracting selected pages...');
+
+      setDownloadResult(
+        await createPdfFromPages(sourceDoc, selectedPages),
+        'application/pdf',
+        createTimestampFilename('pdf'),
+        selectedPages.length + ' page' + (selectedPages.length === 1 ? '' : 's') + ' extracted into 1 PDF.'
+      );
+
+      setProgressState(100, 'Extraction complete');
+      showPlainToast('Pages extracted successfully.', 'success');
+    } catch (error) {
+      clearProgress();
+
+      if (matchesEncryptedError(error)) {
+        showPasswordToast();
+      } else {
+        showPlainToast('This file appears damaged', 'error');
+      }
+    } finally {
+      setBusyState(false);
+    }
+  }
+
+  async function splitEveryPage() {
+    var sourceDoc;
+    var zip;
+    var pageNumber;
+
+    try {
+      if (!state.arrayBuffer) {
+        showPlainToast('Please upload a PDF first.', 'warning');
+        return;
+      }
+
+      clearDownloadPayload();
+      setBusyState(true);
+      setProgressState(6, 'Loading PDF...');
+      sourceDoc = await PDFLib.PDFDocument.load(state.arrayBuffer.slice(0), { ignoreEncryption: false });
+
+      if (state.pageCount === 1) {
+        setDownloadResult(
+          await createPdfFromPages(sourceDoc, [1]),
+          'application/pdf',
+          createTimestampFilename('pdf'),
+          '1 single-page PDF created.'
+        );
+        setProgressState(100, 'Split complete');
+        showPlainToast('Split complete! Ready to download.', 'success');
+        return;
+      }
+
+      if (typeof JSZip === 'undefined') {
+        clearProgress();
+        showPlainToast('ZIP support failed to load. Please refresh and try again.', 'error');
+        return;
+      }
+
+      zip = new JSZip();
+
+      for (pageNumber = 1; pageNumber <= state.pageCount; pageNumber += 1) {
+        var fileBytes = await createPdfFromPages(sourceDoc, [pageNumber]);
+        var paddedPage = String(pageNumber).padStart(3, '0');
+
+        zip.file('page-' + paddedPage + '.pdf', fileBytes);
+        setProgressState(12 + Math.round((pageNumber / state.pageCount) * 78), 'Splitting page ' + pageNumber + ' of ' + state.pageCount + '...');
+      }
+
+      setProgressState(94, 'Building ZIP archive...');
+
+      setDownloadResult(
+        await zip.generateAsync({ type: 'uint8array' }),
+        'application/zip',
+        createTimestampFilename('zip'),
+        state.pageCount + ' single-page PDF files created.'
+      );
+
+      setProgressState(100, 'Split complete');
+      showPlainToast('Split complete! Ready to download.', 'success');
+    } catch (error) {
+      clearProgress();
+
+      if (matchesEncryptedError(error)) {
+        showPasswordToast();
+      } else {
+        showPlainToast('This file appears damaged', 'error');
+      }
+    } finally {
+      setBusyState(false);
+    }
+  }
+
+  function handleSplitAction() {
+    if (!state.arrayBuffer) {
+      showPlainToast('Please upload a PDF first.', 'warning');
+      return;
+    }
+
+    if (state.activeMode === 'extract') {
+      extractPages();
+      return;
+    }
+
+    if (state.activeMode === 'every') {
+      splitEveryPage();
+      return;
+    }
+
+    splitByRange();
+  }
+
+  function handleDownload() {
+    var blob;
+    var url;
+    var link;
+
+    if (!state.downloadBytes || !state.downloadName) {
+      showPlainToast('Nothing is ready to download yet.', 'warning');
+      return;
+    }
+
+    try {
+      blob = new Blob([state.downloadBytes], {
+        type: state.downloadMime || 'application/octet-stream'
+      });
+      url = URL.createObjectURL(blob);
+      link = document.createElement('a');
+      link.href = url;
+      link.download = state.downloadName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.setTimeout(function () {
+        cleanupBlobURL(url);
+      }, 1000);
+      showPlainToast('Download started!', 'success');
+    } catch (error) {
+      if (url) {
+        cleanupBlobURL(url);
+      }
+
+      showPlainToast('Download could not be started. Please try again.', 'error');
+    }
+  }
+
+  function handleIncomingFiles(files) {
+    var list = Array.isArray(files) ? files : Array.prototype.slice.call(files || []);
+
+    if (!list.length) {
+      showPlainToast('Please upload a PDF first.', 'warning');
+      return;
+    }
+
+    if (list.length > 1) {
+      showPlainToast('Please upload one PDF at a time.', 'warning');
+    }
+
+    loadPdfDocument(list[0]);
+  }
+
+  initDropZone(uploadZone, handleIncomingFiles, {
+    inputEl: fileInput,
+    maxFiles: 1,
+    validator: function (file) {
+      return !isEmptyFile(file) && isPdfLikeFile(file) && !isTooLarge(file);
+    },
+    onInvalidFile: function (file) {
+      if (isEmptyFile(file)) {
+        showPlainToast('This file appears to be empty', 'error');
+        return;
+      }
+
+      if (isTooLarge(file)) {
+        showPlainToast('This PDF is too large to process in the browser', 'warning');
+        return;
+      }
+
+      showPlainToast('Please upload PDF files only', 'error');
+    }
+  });
+
+  initFileInput(fileInput, handleIncomingFiles, {
+    maxFiles: 1,
+    validator: function (file) {
+      return !isEmptyFile(file) && isPdfLikeFile(file) && !isTooLarge(file);
+    },
+    onInvalidFile: function (file) {
+      if (isEmptyFile(file)) {
+        showPlainToast('This file appears to be empty', 'error');
+        return;
+      }
+
+      if (isTooLarge(file)) {
+        showPlainToast('This PDF is too large to process in the browser', 'warning');
+        return;
+      }
+
+      showPlainToast('Please upload PDF files only', 'error');
+    }
+  });
+
+  uploadZone.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      fileInput.click();
+    }
+  });
+
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    uploadZone.addEventListener('mousemove', function (event) {
+      var rect = uploadZone.getBoundingClientRect();
+      var x = event.clientX - rect.left;
+      var y = event.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var rotateX = ((y - centerY) / centerY) * -7;
+      var rotateY = ((x - centerX) / centerX) * 7;
+
+      uploadZone.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+    });
+
+    uploadZone.addEventListener('mouseleave', function () {
+      uploadZone.style.transform = '';
+    });
+  }
+
+  modeTabs.forEach(function (tab, index) {
+    tab.addEventListener('click', function () {
+      if (tab.disabled) {
+        return;
+      }
+
+      activateMode(tab.getAttribute('data-mode'), false);
+    });
+
+    tab.addEventListener('keydown', function (event) {
+      var nextIndex;
+
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
+        return;
+      }
+
+      event.preventDefault();
+      nextIndex = event.key === 'ArrowRight' ? index + 1 : index - 1;
+
+      if (nextIndex < 0) {
+        nextIndex = modeTabs.length - 1;
+      }
+
+      if (nextIndex >= modeTabs.length) {
+        nextIndex = 0;
+      }
+
+      activateMode(modeTabs[nextIndex].getAttribute('data-mode'), true);
+    });
+  });
+
+  if (rangeInput) {
+    rangeInput.addEventListener('input', function () {
+      updateRangePreview();
+      clearDownloadPayload();
+      clearProgress();
+    });
+  }
+
+  if (pagesGrid) {
+    pagesGrid.addEventListener('click', function (event) {
+      var button = event.target.closest('.page-thumb-card');
+      var pageNumber;
+
+      if (!button || button.disabled) {
+        return;
+      }
+
+      pageNumber = Number(button.getAttribute('data-page'));
+
+      if (!pageNumber) {
+        return;
+      }
+
+      toggleSelectedPage(pageNumber);
+    });
+  }
+
+  if (btnSelectAll) {
+    btnSelectAll.addEventListener('click', function () {
+      state.selectedPages = [];
+
+      for (var pageNumber = 1; pageNumber <= state.pageCount; pageNumber += 1) {
+        state.selectedPages.push(pageNumber);
+      }
+
+      syncPageButtonStates();
+      clearDownloadPayload();
+      clearProgress();
+    });
+  }
+
+  if (btnDeselectAll) {
+    btnDeselectAll.addEventListener('click', function () {
+      state.selectedPages = [];
+      syncPageButtonStates();
+      clearDownloadPayload();
+      clearProgress();
+    });
+  }
+
+  if (btnClearAll) {
+    btnClearAll.addEventListener('click', resetTool);
+  }
+
+  btnSplit.addEventListener('click', handleSplitAction);
+
+  if (btnDownload) {
+    btnDownload.addEventListener('click', handleDownload);
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', resetTool);
+  }
+
+  resetTool();
+})();
+</script>
+
+<!-- SEO Word Count: ~1700 words -->
+
+
+</body></html>

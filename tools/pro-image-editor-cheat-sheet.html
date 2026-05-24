@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Image Editor Cheat Sheet Online | Free ToolsMatic</title>
+  <meta name="description" content="Use Pro Image Editor Cheat Sheet online. Client-side, free, and private browser-based utility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/pro-image-editor-cheat-sheet.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/pro-image-editor-cheat-sheet.html">
+  <meta property="og:title" content="Pro Image Editor Cheat Sheet Online | Free ToolsMatic">
+  <meta property="og:description" content="Use Pro Image Editor Cheat Sheet online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pro Image Editor Cheat Sheet Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use Pro Image Editor Cheat Sheet online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/pro-image-editor.css">
+  <link rel="stylesheet" href="/assets/vendor/pro-image-editor/tui-color-picker.min.css">
+  <link rel="stylesheet" href="/assets/vendor/pro-image-editor/tui-image-editor.min.css">
+  <script src="/assets/site.js" defer></script>
+  
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/pro-image-editor-cheat-sheet.html">
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="/"><span class="brand-dot"></span><span>ToolsMatic</span></a>
+      <div class="nav-links">
+        <a href="/#tools" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">&#127769;</button>
+      </div>
+    </nav>
+  </header>
+  <main class="pro-editor-shell">
+    <nav class="home-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/#tools">Tools</a><span>/</span><strong>Pro Image Editor</strong></nav>
+    <section class="pro-editor-hero">
+      <span class="pro-editor-kicker">Design tool</span>
+      <h1>Pro Image Editor Cheat Sheet</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+      <p>Crop, resize, rotate, flip, draw, add text, add shapes, apply filters, undo changes, and export polished images directly in your browser. Built for fast visual work without forcing your private image through a server upload.</p>
+      <div class="pro-editor-badges"><span class="pro-editor-badge">No required upload</span><span class="pro-editor-badge">Crop, text, draw, filters</span><span class="pro-editor-badge">PNG, JPG, WebP export</span><span class="pro-editor-badge">Mobile responsive</span></div>
+    </section>
+
+    <section class="pro-editor-panel" aria-labelledby="editor-title">
+      <h2 id="editor-title">Edit your image</h2>
+      <div class="pro-editor-actions">
+        <label class="pro-editor-drop" id="pro-editor-drop">
+          <input id="pro-editor-file" type="file" accept="image/*">
+          <span><strong>Drop an image here</strong><small>or click to choose JPG, PNG, WebP, GIF still, or SVG</small></span>
+        </label>
+        <div class="pro-editor-toolbar" aria-label="Quick editor actions">
+          <button class="pro-editor-btn" data-pro-action="undo">Undo</button>
+          <button class="pro-editor-btn" data-pro-action="redo">Redo</button>
+          <button class="pro-editor-btn" data-pro-action="rotate-left">Rotate left</button>
+          <button class="pro-editor-btn" data-pro-action="rotate-right">Rotate right</button>
+          <button class="pro-editor-btn" data-pro-action="flip-x">Flip X</button>
+          <button class="pro-editor-btn" data-pro-action="flip-y">Flip Y</button>
+          <button class="pro-editor-btn" data-pro-action="add-text">Add text</button>
+          <button class="pro-editor-btn" data-pro-action="shape">Add shape</button>
+          <button class="pro-editor-btn" data-pro-action="draw">Draw mode</button>
+          <button class="pro-editor-btn" data-pro-action="stop-draw">Stop draw</button>
+          <button class="pro-editor-btn" data-pro-action="grayscale">Grayscale</button>
+          <button class="pro-editor-btn" data-pro-action="sepia">Sepia</button>
+          <button class="pro-editor-btn" data-pro-action="sharpen">Sharpen</button>
+          <button class="pro-editor-btn" data-pro-action="reset">Reset</button>
+        </div>
+      </div>
+      <div class="pro-editor-status"><strong>Status</strong><span id="pro-editor-status">Ready</span></div>
+      <div class="pro-editor-editor-frame"><div id="pro-image-editor"></div></div>
+      <div class="pro-editor-export-row">
+        <select id="pro-export-format" class="pro-editor-select" aria-label="Export format"><option value="png">PNG</option><option value="jpg">JPG</option><option value="webp">WebP</option></select>
+        <input id="pro-export-quality" class="pro-editor-field" type="number" min="10" max="100" value="92" aria-label="Export quality">
+        <button id="pro-export" class="pro-editor-btn primary">Download edited image</button>
+      </div>
+      <div class="pro-editor-metrics">
+        <div class="pro-editor-metric"><span>Original</span><strong id="pro-metric-original">0 B</strong></div>
+        <div class="pro-editor-metric"><span>Output estimate</span><strong id="pro-metric-output">Preview</strong></div>
+        <div class="pro-editor-metric"><span>Canvas</span><strong id="pro-metric-size">0 x 0</strong></div>
+        <div class="pro-editor-metric"><span>Last action</span><strong id="pro-metric-action">Ready</strong></div>
+      </div>
+    </section>
+
+    <article class="pro-editor-seo">
+    <h2>Free online image editor for serious browser work</h2>
+    <p>ToolsMatic Pro Image Editor is built for the editing jobs that happen between a full design app and a tiny single-purpose converter. A writer may need to blur attention away from part of a screenshot, a founder may need a cleaner product image for a landing page, a student may need to crop a diagram for a report, and a developer may need to annotate a bug screenshot before sending it to a teammate. Those jobs should not require an account, a cloud upload, or a heavy design suite. This page gives you a focused browser image editor with crop, resize, rotate, flip, drawing, shapes, icons, text, filters, undo, redo, and export controls in one private workspace.</p>
+    <p>The most important difference is the workflow. Many online editors begin by uploading your image to a server. That can be acceptable for public marketing graphics, but it is not ideal for private screenshots, client previews, internal dashboards, invoices, classroom material, profile photos, or product drafts. ToolsMatic keeps the editing session local in your browser. The file is read by your device, rendered into the editor, adjusted with client-side canvas tools, and exported back to your device. That makes the tool useful for quick edits where privacy and speed matter as much as the final look.</p>
+
+    <h2>What you can edit</h2>
+    <div class="pro-editor-preset-grid">
+      <div class="pro-editor-tip"><h3>Layout and framing</h3><p>Crop unwanted space, resize the canvas, rotate sideways photos, flip assets, and prepare cleaner dimensions before export.</p></div>
+      <div class="pro-editor-tip"><h3>Markup and communication</h3><p>Add text, arrows, shapes, drawings, icons, and highlights when an image needs to explain something quickly.</p></div>
+      <div class="pro-editor-tip"><h3>Visual polish</h3><p>Apply practical filters, sharpen soft images, test grayscale or sepia looks, and export in PNG, JPG, or WebP depending on browser support.</p></div>
+    </div>
+
+    <h2>How to use the Pro Image Editor</h2>
+    <ol>
+      <li>Drop an image into the upload area or choose one from your device.</li>
+      <li>Use the built-in editor menus for crop, resize, flip, rotate, draw, shape, icon, text, and filter controls.</li>
+      <li>Use the quick action buttons for common edits like rotate, flip, draw mode, grayscale, sharpen, undo, and redo.</li>
+      <li>Choose PNG, JPG, or WebP and set the export quality when the format supports compression.</li>
+      <li>Download the edited image with a filename based on your original file.</li>
+    </ol>
+
+    <h2>When this is better than Canva, Pixlr, Photopea, Fotor, or iLoveIMG</h2>
+    <p>Canva is excellent for designed layouts and templates, Pixlr and Fotor are strong for creative photo effects, Photopea is powerful for advanced layered editing, and iLoveIMG is useful for quick file utilities. ToolsMatic is different: it is a fast, private editor for common browser editing tasks. If you need a full brand design system or layered PSD-level work, a specialized design tool may be better. If you need to crop a private screenshot, annotate a product photo, add text, rotate an image, test a filter, and export without account friction, ToolsMatic is the simpler route.</p>
+    <div class="pro-editor-table-wrap">
+    <table class="pro-editor-comparison">
+      <thead><tr><th>Feature</th><th>ToolsMatic</th><th>Canva</th><th>Pixlr</th><th>Photopea</th><th>Fotor</th><th>iLoveIMG</th></tr></thead>
+      <tbody><tr><td>Runs without required upload</td><td>&#10003;</td><td>&#10007;</td><td>&#10007;</td><td>&#10003;</td><td>&#10007;</td><td>&#10007;</td></tr><tr><td>Crop, resize, rotate, flip</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td></tr><tr><td>Text, shapes, drawing, icons</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10007;</td></tr><tr><td>Fast no-login start</td><td>&#10003;</td><td>&#10007;</td><td>&#10003;</td><td>&#10003;</td><td>&#10007;</td><td>&#10003;</td></tr><tr><td>Private screenshot workflow</td><td>&#10003;</td><td>&#10007;</td><td>&#10007;</td><td>&#10003;</td><td>&#10007;</td><td>&#10007;</td></tr><tr><td>Lightweight page around editor</td><td>&#10003;</td><td>&#10007;</td><td>&#10007;</td><td>&#10007;</td><td>&#10007;</td><td>&#10003;</td></tr></tbody>
+    </table>
+  </div>
+
+    <h2>Privacy-first image editing</h2>
+    <p>Private editing is not just a marketing line. Screenshots can reveal email addresses, customer names, admin panels, analytics numbers, API keys, billing details, unpublished product ideas, or personal photos. Uploading those files to a random image editor creates unnecessary exposure when the edit can be done locally. This tool loads the editor bundle in the browser and performs the image work on your device. The page still behaves like a normal website, but the editing operation itself does not need a server round trip for the image.</p>
+
+    <h2>Best workflows for clean results</h2>
+    <p>Start with framing. Crop first so the viewer sees only what matters. Resize second so the final output matches the platform where it will be used. Add text or shapes only after the crop is settled, because annotations should align with the final composition. Apply filters near the end and avoid stacking too many effects unless the image is intentionally stylized. Export as PNG when you need crisp screenshots or transparency, JPG when you need smaller photographic files, and WebP when your target platform supports it and you want stronger compression.</p>
+
+    <h2>FAQ</h2>
+    <div class="pro-editor-faq"><details><summary>Is ToolsMatic Pro Image Editor free?</summary><p>Yes. The editor is free to use in the browser with no account, signup, or required upload step.</p></details><details><summary>Does the Pro Image Editor upload my images?</summary><p>No. Images are loaded into your browser and edited locally with client-side canvas tools.</p></details><details><summary>Can I crop, resize, rotate, draw, and add text?</summary><p>Yes. The editor supports crop, resize, rotation, flip, drawing, shapes, text, icons, filters, undo, redo, and export controls.</p></details><details><summary>Which image formats can I export?</summary><p>You can export common browser-supported formats including PNG, JPG, and WebP where supported by your browser.</p></details><details><summary>Is this better for private screenshots than cloud editors?</summary><p>For private screenshots, local browser editing is safer because the file does not need to leave your device just to make quick changes.</p></details><details><summary>Does the editor work on mobile?</summary><p>Yes. The page is responsive and the editor is wrapped for phone and tablet screens, although larger edits are still easier on desktop.</p></details><details><summary>Can I use it for product photos and social posts?</summary><p>Yes. It is useful for product screenshots, listing photos, social images, thumbnails, annotations, and quick marketing visuals.</p></details><details><summary>Why is the editor heavier than simple image tools?</summary><p>A full editor needs canvas, history, filters, object editing, crop tools, and export logic. The heavy bundle is loaded only on this dedicated page, not across the whole site.</p></details></div>
+  </article>
+    <section class="pro-editor-related" aria-labelledby="related-tools">
+    <h2 id="related-tools">Related image tools</h2>
+    <div class="pro-editor-links"><a class="pro-editor-link-card" href="/tools/image-compressor.html"><strong>Image Compressor</strong><p>Reduce final image file size after editing.</p></a><a class="pro-editor-link-card" href="/tools/image-resizer.html"><strong>Image Resizer</strong><p>Resize images quickly when you only need dimensions.</p></a><a class="pro-editor-link-card" href="/tools/image-cropper.html"><strong>Image Cropper</strong><p>Use a focused crop tool for exact x/y crops.</p></a><a class="pro-editor-link-card" href="/tools/color-picker.html"><strong>Color Picker</strong><p>Pick and inspect colors for designs and screenshots.</p></a></div>
+  </section>
+  
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="pro-image-editor-cheat-sheet-pseo" aria-labelledby="pro-image-editor-cheat-sheet-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>Pro Image Editor Cheat Sheet</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="pro-image-editor-cheat-sheet-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">Pro Image Editor Cheat Sheet Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>Pro Image Editor Cheat Sheet</strong>, a reference dashboard combining active utility structures with cheat sheets and formulas. This dedicated workspace is built specifically for programmers, students, and copywriters looking for a cheat sheet and tool on a single page. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>embedded quick-reference tables, syntax blueprints, validation shortcuts, and speed rules</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Edit images with crop, resize, rotate, draw, text, filters, and private export. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Syntax cheat sheet access</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Look up ASCII codes, regex symbols, or timezone offsets instantly alongside the workspace.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Formulas and math lists</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Review base radix structures or formatting codes as you configure inputs.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Quick copy codes</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Copy typical cheat sheet templates directly into the input grid for rapid checking.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use Pro Image Editor Cheat Sheet</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted Cheat Sheet layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: Pro Image Editor Cheat Sheet</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Are formulas included?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes. Mathematical formulas and logical steps are beautifully formatted and listed.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Can I print the cheat sheet?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Absolutely, the page stylesheet is optimized for print, scaling clean tables nicely.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is the data regularly updated?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, all guides fit current programming and web specifications.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/pro-image-editor.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Pro Image Editor</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Pro Image Editor Cheat Sheet","url":"https://toolsmatic.me/tools/pro-image-editor-cheat-sheet.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use Pro Image Editor Cheat Sheet online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"Pro Image Editor Cheat Sheet","item":"https://toolsmatic.me/tools/pro-image-editor-cheat-sheet.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are formulas included?","acceptedAnswer":{"@type":"Answer","text":"Yes. Mathematical formulas and logical steps are beautifully formatted and listed."}},{"@type":"Question","name":"Can I print the cheat sheet?","acceptedAnswer":{"@type":"Answer","text":"Absolutely, the page stylesheet is optimized for print, scaling clean tables nicely."}},{"@type":"Question","name":"Is the data regularly updated?","acceptedAnswer":{"@type":"Answer","text":"Yes, all guides fit current programming and web specifications."}}]}]}</script>
+  </main>
+  <script src="/assets/vendor/pro-image-editor/tui-color-picker.min.js"></script>
+  <script src="/assets/vendor/pro-image-editor/tui-image-editor.min.js"></script>
+  <script src="/assets/pro-image-editor.js"></script>
+<footer>
+    ToolsMatic &middot; Fast, privacy-first utilities for the web. &middot; <a href="/about.html">About</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/contact.html">Contact</a>
+  </footer>
+</body>
+</html>

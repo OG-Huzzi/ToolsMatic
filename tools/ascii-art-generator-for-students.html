@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>ASCII Art Generator for Students Online | Free ToolsMatic</title>
+  <meta name="description" content="Use ASCII Art Generator for Students online. Client-side, free, and private browser-based utility.">
+<meta name="keywords" content="ascii art generator 2026, best ascii art maker, professional ascii generator, free ascii art online, text to ascii art, image to ascii converter, ascii art fonts, ascii text generator, ascii banner maker, figlet generator, retro ascii art, monospace text art, ascii codes, unicode art generator, ascii table, console ascii art, terminal art maker, pixel art to ascii, photo to ascii conversion, ascii design tool, advanced ascii generator, ascii art software, text art creator, ascii art online free, no registration ascii, privacy ascii tool, offline ascii generator, ascii art with fonts, stunning ascii effects, ascii art for developers, ascii art for designers">
+  <meta name="author" content="ToolsMatic">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolsmatic.me/tools/ascii-art-generator-for-students.html">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/tools/ascii-art-generator-for-students.html">
+  <meta property="og:title" content="ASCII Art Generator for Students Online | Free ToolsMatic">
+  <meta property="og:description" content="Use ASCII Art Generator for Students online. Client-side, free, and private browser-based utility.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/ascii-og-image.png">
+  <meta property="og:site_name" content="ToolsMatic - Professional Developer Tools">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toolsmatic.me/tools/ascii-art-generator-for-students.html">
+  <meta name="twitter:title" content="ASCII Art Generator for Students Online | Free ToolsMatic">
+  <meta name="twitter:description" content="Use ASCII Art Generator for Students online. Client-side, free, and private browser-based utility.">
+  <meta name="twitter:image" content="https://toolsmatic.me/assets/ascii-og-image.png">
+  <meta name="twitter:creator" content="@ToolsMatic">
+  
+  <!-- Schema.org Structured Data - Comprehensive SEO -->
+  
+
+  <!-- Schema.org - BreadcrumbList for navigation SEO -->
+  
+
+  <!-- Schema.org - FAQPage for rich snippets -->
+  
+
+  <!-- Schema.org - Article markup for rich snippet benefits -->
+  
+  
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+  <style>
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .controls {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .control-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .input-area {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .input-area textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    .output-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      min-height: 320px;
+      min-width: 0;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .output-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .output-actions button {
+      flex: 1;
+      min-width: 130px;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--accent-color);
+      background: var(--accent-color);
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .output-actions button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    .output-box {
+      flex: 1;
+      min-width: 0;
+      max-width: 100%;
+      overflow: auto;
+      background: var(--bg-primary);
+      border: 1px dashed var(--border-color);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .output-box pre {
+      margin: 0;
+      white-space: pre;
+      min-width: 0;
+      max-width: 100%;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      line-height: 1.1;
+      font-size: 0.95rem;
+    }
+
+    #image-output-container {
+      display: none;
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      overflow: auto;
+      text-align: left;
+    }
+
+    #image-ascii-output {
+      margin: 0;
+      white-space: pre;
+      min-width: 0;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      font-size: 0.85rem;
+    }
+
+    .panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .panel h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.75rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .feature-list li {
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--bg-secondary);
+      line-height: 1.4;
+      overflow: hidden;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .tab-btn.active {
+      color: var(--accent-color);
+      border-bottom-color: var(--accent-color);
+    }
+
+    .tab-panel.active {
+      display: block !important;
+    }
+
+    .tab-panel {
+      animation: fadeIn 0.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .tips-grid .panel {
+      height: 100%;
+    }
+
+    .section {
+      overflow: hidden;
+    }
+
+    .faq {
+      max-width: 100%;
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      overflow: hidden;
+    }
+
+    .faq h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .faq h4 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .faq p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .faq code {
+      word-break: break-all;
+      overflow-wrap: anywhere;
+    }
+
+    .feature-list li {
+      overflow: hidden;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .tips-grid .panel p {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .section p,
+    .section li,
+    .section h2,
+    .section h3,
+    .section h4 {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      padding: 0.8rem 1rem;
+      background: var(--accent-color);
+      color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 30;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .feature-card {
+      padding: 20px;
+      background: rgba(6, 182, 212, 0.05);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      background: rgba(6, 182, 212, 0.1);
+      border-color: rgba(6, 182, 212, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.15);
+    }
+
+    @media (max-width: 960px) {
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+      }
+    }
+  </style>
+
+    <style>
+      .ad-container {
+        text-align: center;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      @media (max-width: 768px) {
+        .ad-container {
+          margin: 15px 0;
+        }
+        .ad-container iframe {
+          max-width: 100% !important;
+          width: auto !important;
+          height: auto !important;
+        }
+      }
+    </style>
+      
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode"></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1 style="text-align: center; font-size: 2.4em; margin: 20px 0; font-weight: 600;">ASCII Art Generator for Students</h1>
+    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
+      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
+      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
+    </section>
+<p style="text-align: center; margin-bottom: 20px; line-height: 1.8; font-size: 1.1em; color: var(--text-secondary);">
+      Transform text and images into stunning ASCII art with 30+ professional fonts.<br>
+      <small style="display: block; margin-top: 8px;">Keyboard shortcuts • Favorites & History • Offline • No Uploads • Privacy-First</small>
+    </p>
+<div class="page-intro">
+      <div class="page-intro-title">&#127912; ASCII Art Generator &#127912;</div>
+      <div class="page-intro-description">Turn your text into creative ASCII art masterpieces
+Multiple fonts and ASCII styles to choose from
+Perfect for coding comments, terminal creativity, and text art fun</div>
+    </div>
+
+<section class="tool-shell">
+      <h2>Professional ASCII Art Generator™</h2>
+      <p>Create ASCII art from text or images with 30+ fonts, real-time preview, keyboard shortcuts, and advanced export options.</p>
+
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); flex-wrap: wrap;">
+        <button class="tab-btn active" data-tab="text-mode" style="padding: 0.75rem 1.25rem; border: none; background: transparent; cursor: pointer; color: var(--text-secondary); border-bottom: 3px solid transparent; font-weight: 500; transition: all 0.2s ease;">📝 Text to ASCII</button>
+        <button class="tab-btn" data-tab="image-mode" style="padding: 0.75rem 1.25rem; border: none; background: transparent; cursor: pointer; color: var(--text-secondary); border-bottom: 3px solid transparent; font-weight: 500; transition: all 0.2s ease;">🖼️ Image to ASCII</button>
+        <button class="tab-btn" data-tab="presets" style="padding: 0.75rem 1.25rem; border: none; background: transparent; cursor: pointer; color: var(--text-secondary); border-bottom: 3px solid transparent; font-weight: 500; transition: all 0.2s ease;">⭐ Favorites</button>
+        <button class="tab-btn" data-tab="history" style="padding: 0.75rem 1.25rem; border: none; background: transparent; cursor: pointer; color: var(--text-secondary); border-bottom: 3px solid transparent; font-weight: 500; transition: all 0.2s ease;">⏱️ History</button>
+      </div>
+
+      <div id="text-mode-panel" class="tab-panel active" style="display: block;">
+        <div class="tool-grid">
+          <div class="controls">
+            <div class="input-area">
+              <label class="label" for="text-input">📝 Enter Text</label>
+              <textarea id="text-input" placeholder="Type or paste your text... (Press Ctrl+Enter to generate)" spellcheck="false" style="height: 140px;">TOOLS MATIC</textarea>
+              <small style="color: var(--text-secondary);">💡 Tip: Keep under 60 chars for terminal readability. Press Ctrl+S to save to favorites.</small>
+            </div>
+
+            <div class="control-row">
+              <div>
+                <label class="label" for="font-select">🔤 Font (30+)</label>
+                <select id="font-select" style="width: 100%;">
+                  <optgroup label="Classic Fonts">
+                    <option value="standard">Standard</option>
+                    <option value="block">Block</option>
+                    <option value="bold">Bold</option>
+                    <option value="slant">Slant</option>
+                  </optgroup>
+                  <optgroup label="Playful Fonts">
+                    <option value="bubble">Bubble</option>
+                    <option value="graffiti">Graffiti</option>
+                    <option value="dotmatrix">Dot Matrix</option>
+                    <option value="banner">Banner 3D</option>
+                  </optgroup>
+                  <optgroup label="Professional Fonts">
+                    <option value="threeD">3D</option>
+                    <option value="shadow">Shadow</option>
+                    <option value="outline">Outline</option>
+                    <option value="double">Double Line</option>
+                  </optgroup>
+                  <optgroup label="Decorative Fonts">
+                    <option value="script">Script</option>
+                    <option value="deco">Art Deco</option>
+                    <option value="gothic">Gothic</option>
+                    <option value="retro">Retro</option>
+                  </optgroup>
+                  <optgroup label="Geometric Fonts">
+                    <option value="hexagon">Hexagon</option>
+                    <option value="squared">Squared</option>
+                    <option value="rounded">Rounded</option>
+                    <option value="diamond">Diamond</option>
+                  </optgroup>
+                  <optgroup label="Compact Fonts">
+                    <option value="mini">Mini</option>
+                    <option value="tiny">Tiny</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="smush">Smush</option>
+                  </optgroup>
+                  <optgroup label="Special Effect Fonts">
+                    <option value="wave">Wave</option>
+                    <option value="zigzag">Zigzag</option>
+                    <option value="mirror">Mirror</option>
+                    <option value="inverse">Inverse</option>
+                    <option value="glitch">Glitch</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div>
+                <label class="label" for="spacing-range">📏 Spacing</label>
+                <input type="range" id="spacing-range" min="0" max="5" value="1" style="width: 100%; cursor: pointer;">
+                <small id="spacing-value" style="color: var(--text-secondary);">1</small>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <div>
+                <label class="label" for="case-select">📤 Case</label>
+                <select id="case-select" style="width: 100%;">
+                  <option value="upper">Uppercase</option>
+                  <option value="lower">Lowercase</option>
+                  <option value="preserve">Preserve</option>
+                </select>
+              </div>
+              <div>
+                <label class="label" for="color-mode">🎨 Theme</label>
+                <select id="color-mode" style="width: 100%;">
+                  <option value="default">Default</option>
+                  <option value="inverted">Inverted</option>
+                  <option value="neon">Neon</option>
+                  <option value="grayscale">Grayscale</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <label style="flex: 1; min-width: 160px; display: flex; align-items: center; gap: 0.5rem;"><input type="checkbox" id="shadow-toggle" checked> Keep empty lines</label>
+              <label style="flex: 1; min-width: 160px; display: flex; align-items: center; gap: 0.5rem;"><input type="checkbox" id="trim-toggle" checked> Trim whitespace</label>
+            </div>
+
+            <div class="output-actions" style="gap: 0.5rem;">
+              <button id="random-font" title="Ctrl+R">🎲 Random Font</button>
+              <button id="save-favorite" title="Ctrl+S">⭐ Save as Favorite</button>
+              <button id="clear-history" title="Clear my history">🗑️ Clear History</button>
+              <button id="reset-all" title="Reset to defaults">🔄 Reset</button>
+            </div>
+
+            <div class="output-actions" style="gap: 0.5rem;">
+              <button id="copy-text" title="Ctrl+C" style="background: var(--accent-color);">📋 Copy ASCII</button>
+              <button id="copy-html" title="Copy as <pre> tag">🏷️ Copy HTML</button>
+              <button id="copy-json" title="Copy as JSON">⟨⟩ Copy JSON</button>
+              <button id="download-txt" title="Ctrl+D">💾 Download .txt</button>
+              <button id="download-svg" title="Download as SVG">🖼️ Download SVG</button>
+            </div>
+          </div>
+
+          <div class="output-card">
+            <div class="stat-row">
+              <span class="badge" id="stat-length">📊 Length: 0</span>
+              <span class="badge" id="stat-lines">📈 Lines: 0</span>
+              <span class="badge" id="stat-font">🔤 Font: Standard</span>
+              <span class="badge" id="stat-size">📏 Size: 0 bytes</span>
+            </div>
+            <div class="output-box" aria-live="polite" style="position: relative;">
+              <pre id="ascii-output" style="margin: 0; font-size: 0.85rem; letter-spacing: -0.5px;">Loading preview...</pre>
+              <button id="output-copy-btn" style="position: absolute; top: 0.5rem; right: 0.5rem; padding: 0.4rem 0.8rem; opacity: 0.7; border: 1px solid var(--border-color); background: var(--bg-secondary); cursor: pointer; border-radius: 4px; font-size: 0.75rem;" title="Quick copy">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="image-mode-panel" class="tab-panel" style="display: none;">
+        <div class="tool-grid">
+          <div class="controls">
+            <div class="input-area">
+              <label class="label" for="image-upload">🖼️ Upload Image</label>
+              <input type="file" id="image-upload" accept="image/*" style="padding: 0.75rem; border: 2px dashed var(--accent-color); border-radius: 8px; background: var(--bg-secondary); cursor: pointer;">
+              <small style="color: var(--text-secondary);">📝 Supports JPG, PNG, GIF, WebP (Max 5MB)</small>
+            </div>
+
+            <div class="control-row">
+              <div>
+                <label class="label" for="image-density">🎯 Density</label>
+                <input type="range" id="image-density" min="1" max="10" value="5" style="width: 100%; cursor: pointer;">
+                <small id="density-value" style="color: var(--text-secondary);">5</small>
+              </div>
+              <div>
+                <label class="label" for="image-contrast">🎨 Contrast</label>
+                <input type="range" id="image-contrast" min="0" max="100" value="50" style="width: 100%; cursor: pointer;">
+                <small id="contrast-value" style="color: var(--text-secondary);">50%</small>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <div>
+                <label class="label" for="image-width">📐 Width (chars)</label>
+                <input type="number" id="image-width" min="20" max="200" value="80" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 6px;">
+              </div>
+              <div>
+                <label class="label" for="image-charset">🔤 Character Set</label>
+                <select id="image-charset" style="width: 100%;">
+                  <option value="full">Full (70 chars)</option>
+                  <option value="standard">Standard (50 chars)</option>
+                  <option value="simple">Simple (15 chars)</option>
+                  <option value="blocks">Blocks (8 chars)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="output-actions">
+              <button id="convert-image" style="background: var(--accent-color);">🎨 Convert Image</button>
+              <button id="image-copy">📋 Copy</button>
+              <button id="image-download">💾 Download</button>
+            </div>
+          </div>
+
+          <div class="output-card">
+            <div style="text-align: center; color: var(--text-secondary); padding: 2rem;">
+              <div id="image-preview-container" style="display: none;">
+                <img id="image-preview" src="" alt="Preview" style="max-width: 100%; max-height: 300px; border-radius: 8px; margin-bottom: 1rem;">
+              </div>
+              <div id="image-output-container" style="display: none;">
+                <pre id="image-ascii-output" style="text-align: left; font-size: 0.75rem; line-height: 1; overflow-x: auto;"></pre>
+              </div>
+              <p id="image-placeholder">👆 Upload an image to start converting</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="presets-panel" class="tab-panel" style="display: none;">
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; min-height: 300px; text-align: center; color: var(--text-secondary);">
+          <h3>⭐ Your Favorite Conversions</h3>
+          <p>Save your favorite ASCII art combinations with Ctrl+S</p>
+          <div id="favorites-list" style="display: grid; gap: 1rem; margin-top: 1.5rem;"></div>
+          <p id="no-favorites" style="margin-top: 2rem;">No favorites yet. Create some awesome ASCII art and save it!</p>
+        </div>
+      </div>
+
+      <div id="history-panel" class="tab-panel" style="display: none;">
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; min-height: 300px; text-align: center; color: var(--text-secondary);">
+          <h3>⏱️ Recent Conversions</h3>
+          <p>Your last 20 conversions are stored locally</p>
+          <div id="history-list" style="display: grid; gap: 0.75rem; margin-top: 1.5rem;"></div>
+          <p id="no-history" style="margin-top: 2rem;">No history yet. Start creating!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ascii-next-searches">
+      <h2 id="ascii-next-searches" style="text-align: center; margin: 40px 0 20px 0;">Popular follow-up searches after ASCII art generation</h2>
+      <p style="text-align:center; max-width:880px; margin:0 auto 24px; color:#a0aec0; line-height:1.75;">ASCII art impressions often grow from use-case searches: Discord banners, GitHub README headers, terminal prompts, and retro text art examples. These links let the page cover that adjacent intent without changing the primary ASCII art generator target.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; margin:0 0 24px;">
+        <a href="/guides/ascii-art-examples.html" style="text-decoration:none; color:inherit;">
+          <div style="padding:20px; background:rgba(6, 182, 212, 0.05); border:1px solid rgba(6, 182, 212, 0.2); border-radius:12px; text-align:center;">
+            <div style="font-size:2em; margin-bottom:10px;">#</div>
+            <h3 style="margin:0 0 10px 0; font-size:1.1em; font-weight:600;">ASCII art examples for Discord, GitHub, and terminals</h3>
+            <p style="margin:0; font-size:0.9rem; color:#a0aec0;">Capture long-tail searches around real output formats and where people actually paste ASCII art.</p>
+          </div>
+        </a>
+        <a href="/tools/qr-code-maker.html" style="text-decoration:none; color:inherit;">
+          <div style="padding:20px; background:rgba(6, 182, 212, 0.05); border:1px solid rgba(6, 182, 212, 0.2); border-radius:12px; text-align:center;">
+            <div style="font-size:2em; margin-bottom:10px;">QR</div>
+            <h3 style="margin:0 0 10px 0; font-size:1.1em; font-weight:600;">QR Code Maker</h3>
+            <p style="margin:0; font-size:0.9rem; color:#a0aec0;">For creator workflows where text art, profile visuals, and scannable links live together.</p>
+          </div>
+        </a>
+        <a href="/tools/color-picker.html" style="text-decoration:none; color:inherit;">
+          <div style="padding:20px; background:rgba(6, 182, 212, 0.05); border:1px solid rgba(6, 182, 212, 0.2); border-radius:12px; text-align:center;">
+            <div style="font-size:2em; margin-bottom:10px;">RGB</div>
+            <h3 style="margin:0 0 10px 0; font-size:1.1em; font-weight:600;">Color Picker</h3>
+            <p style="margin:0; font-size:0.9rem; color:#a0aec0;">Useful when exporting HTML or themed banner variants and you need controlled color values.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="section" aria-labelledby="related-tools">
+      <h2 id="related-tools" style="text-align: center; margin: 40px 0 30px 0;">🛠️ Complementary ToolsMatic Tools</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 30px 0;">
+        <a href="/tools/color-picker.html" style="text-decoration: none; color: inherit;">
+          <div style="padding: 20px; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; transition: all 0.3s ease; cursor: pointer; text-align: center;" onmouseover="this.style.background='rgba(6, 182, 212, 0.1)'; this.style.borderColor='rgba(6, 182, 212, 0.4)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(6, 182, 212, 0.05)'; this.style.borderColor='rgba(6, 182, 212, 0.2)'; this.style.transform='translateY(0)';">
+            <div style="font-size: 2em; margin-bottom: 10px;">🎨</div>
+            <h3 style="margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">Color Picker</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: #a0aec0;">Pick, convert, and compare colors with hex, RGB, and HSL output</p>
+          </div>
+        </a>
+        <a href="/tools/gradient-generator.html" style="text-decoration: none; color: inherit;">
+          <div style="padding: 20px; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; transition: all 0.3s ease; cursor: pointer; text-align: center;" onmouseover="this.style.background='rgba(6, 182, 212, 0.1)'; this.style.borderColor='rgba(6, 182, 212, 0.4)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(6, 182, 212, 0.05)'; this.style.borderColor='rgba(6, 182, 212, 0.2)'; this.style.transform='translateY(0)';">
+            <div style="font-size: 2em; margin-bottom: 10px;">🌈</div>
+            <h3 style="margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">Gradient Generator</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: #a0aec0;">Create stunning CSS gradients with live preview and export options</p>
+          </div>
+        </a>
+        <a href="/tools/image-compressor.html" style="text-decoration: none; color: inherit;">
+          <div style="padding: 20px; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; transition: all 0.3s ease; cursor: pointer; text-align: center;" onmouseover="this.style.background='rgba(6, 182, 212, 0.1)'; this.style.borderColor='rgba(6, 182, 212, 0.4)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(6, 182, 212, 0.05)'; this.style.borderColor='rgba(6, 182, 212, 0.2)'; this.style.transform='translateY(0)';">
+            <div style="font-size: 2em; margin-bottom: 10px;">🖼️</div>
+            <h3 style="margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">Image Compressor</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: #a0aec0;">Compress images without losing quality, optimize for web instantly</p>
+          </div>
+        </a>
+        <a href="/tools/qr-code-maker.html" style="text-decoration: none; color: inherit;">
+          <div style="padding: 20px; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; transition: all 0.3s ease; cursor: pointer; text-align: center;" onmouseover="this.style.background='rgba(6, 182, 212, 0.1)'; this.style.borderColor='rgba(6, 182, 212, 0.4)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(6, 182, 212, 0.05)'; this.style.borderColor='rgba(6, 182, 212, 0.2)'; this.style.transform='translateY(0)';">
+            <div style="font-size: 2em; margin-bottom: 10px;">📱</div>
+            <h3 style="margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">QR Code Maker</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: #a0aec0;">Generate custom QR codes with colors, sizing, and instant download</p>
+          </div>
+        </a>
+      </div>
+    </section>
+<section class="section" aria-labelledby="what">
+      <h2 id="what">What is the Professional ASCII Art Generator™?</h2>
+      <p>The <strong>ASCII Art Generator™</strong> is an enterprise-grade, professional-class text and image conversion tool that transforms plain text and images into stunning ASCII art with unmatched precision and style. Unlike ordinary <strong>ASCII art generators</strong>, this tool features 30+ professional fonts, advanced image-to-ASCII conversion, keyboard shortcuts for power users, built-in favorites and history management, and exports to multiple formats including TXT, HTML, SVG, and JSON.</p>
+      <p>Whether you're creating terminal banners, decorative headers for code documentation, retro ASCII art posters, or converting photographs into pixel art, this <strong>ASCII art maker</strong> delivers professional results instantly—all processed locally in your browser with zero uploads or data sharing.</p>
+      <ul class="feature-list">
+        <li>🔤 <strong>30+ Professional ASCII Fonts</strong>: Standard, Block, Bubble, Bold, 3D, Shadow, Outline, Double Line, Script, Art Deco, Gothic, Retro, Hexagon, Squared, Rounded, Diamond, Mini, Tiny, Minimal, Smush, Wave, Zigzag, Mirror, Inverse, Glitch, Graffiti, Slant, Dotmatrix, Banner, and more.</li>
+        <li>🖼️ <strong>Image-to-ASCII Conversion Engine</strong>: Upload JPG, PNG, GIF, or WebP images and convert them to ASCII art with adjustable density and contrast controls. Perfect for photo-to-ASCII, pixel art generation, and retro image styles.</li>
+        <li>⚡ <strong>Real-time Live Preview</strong>: See changes instantly as you type or adjust settings. No lag, no delays—pure responsive performance.</li>
+        <li>⌨️ <strong>Power User Keyboard Shortcuts</strong>: Ctrl+C (copy), Ctrl+D (download), Ctrl+S (save favorite), Ctrl+R (random font), Ctrl+Enter (generate).</li>
+        <li>⭐ <strong>Favorites & History System</strong>: Save unlimited favorite conversions and access your last 20 generations with one click.</li>
+        <li>📊 <strong>Advanced Analytics</strong>: Real-time character count, line count, font info, and file size metrics.</li>
+        <li>📥 <strong>Multi-Format Exports</strong>: Copy as plain ASCII, HTML <code>&lt;pre&gt;</code> markup, JSON structure, or download as .txt and .svg files.</li>
+        <li>🎨 <strong>Theme & Styling Options</strong>: Multiple color modes (Default, Inverted, Neon, Grayscale), letter spacing control (0-5), case handling (uppercase, lowercase, preserve), and custom character trimming.</li>
+        <li>🔐 <strong>100% Privacy & Offline Support</strong>: All processing happens client-side in your browser. No server uploads, no tracking, no data collection. Works completely offline after first load.</li>
+        <li>♿ <strong>Accessibility First</strong>: Full semantic HTML, ARIA labels, keyboard navigation, and screen reader support.</li>
+        <li>📱 <strong>Fully Responsive</strong>: Works flawlessly on desktop, tablet, and mobile devices with touch-optimized controls.</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="how">
+      <h2 id="how">How to Use the ASCII Art Generator</h2>
+      <div class="tips-grid">
+        <div class="panel">
+          <h3>Step 1: Enter Your Text</h3>
+          <p>Type or paste any phrase into the text input area. The preview updates in real-time. For best readability, keep text under 60 characters. You can use letters A-Z, numbers 0-9, and common punctuation marks.</p>
+        </div>
+        <div class="panel">
+          <h3>Step 2: Choose from 30+ Fonts</h3>
+          <p>Select your desired ASCII font from the dropdown. Each style transforms your text differently—from bold blocky characters to elegant scripts and retro effects. Click "🎲 Random Font" to explore new styles instantly (Ctrl+R).</p>
+        </div>
+        <div class="panel">
+          <h3>Step 3: Customize Your Output</h3>
+          <p>Fine-tune using letter spacing (0-5), text case (uppercase/lowercase/preserve), color theme, and spacing options. Watch the live preview update with each adjustment for instant visual feedback.</p>
+        </div>
+        <div class="panel">
+          <h3>Step 4: Export Your ASCII Art</h3>
+          <p>Copy to clipboard, export as HTML, save as JSON, or download as .txt and .svg files. Use keyboard shortcuts for speed: Ctrl+C (copy), Ctrl+D (download), Ctrl+S (save favorite).</p>
+        </div>
+        <div class="panel">
+          <h3>Convert Images to ASCII</h3>
+          <p>Switch to the "🖼️ Image to ASCII" tab. Upload any image (JPG, PNG, GIF, WebP). Adjust density, contrast, and character width. Click "Convert" to transform the image into stunning ASCII art instantly.</p>
+        </div>
+        <div class="panel">
+          <h3>Save & Manage Favorites</h3>
+          <p>Store your best conversions by pressing Ctrl+S or clicking "⭐ Save as Favorite". Access them anytime from the Favorites tab. Manage up to 50 saved favorites locally on your device.</p>
+        </div>
+        <div class="panel">
+          <h3>Track Your History</h3>
+          <p>All your recent conversions (last 20) are automatically saved to your browser. Visit the "⏱️ History" tab to quickly reload any previous work without re-entering text.</p>
+        </div>
+        <div class="panel">
+          <h3>Professional Tips</h3>
+          <p>✓ For terminal use: Keep lines under 80 characters. ✓ For web: Wrap ASCII in <code>&lt;pre&gt;</code> tags. ✓ For Markdown: Use triple backticks. ✓ For code comments: Try the Block or Slant fonts. ✓ For banners: Use 3D or Shadow fonts.</p>
+        </div>
+      </div>
+      <p style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-left: 4px solid var(--accent-color); border-radius: 8px;"><strong>💡 Pro Tip:</strong> Use keyboard shortcuts to work faster. Press Ctrl+Enter to regenerate, Ctrl+C to copy instantly, and Ctrl+S to save favorites without lifting your hands from the keyboard.</p>
+    </section>
+
+    <section class="section" aria-labelledby="use-cases">
+      <h2 id="use-cases">Professional Use Cases & Applications</h2>
+      <div class="tips-grid">
+        <div class="panel">
+          <h3>💻 Software Developers</h3>
+          <p>Create stylish ASCII banners for source code comments, log headers in applications, terminal section dividers, README project headers, CI/CD pipeline output, and console application branding.</p>
+        </div>
+        <div class="panel">
+          <h3>🎨 Graphic Designers</h3>
+          <p>Generate ASCII art for retro design projects, monochrome posters, text-based logos, digital art portfolios, low-fi aesthetic designs, and ASCII art installations without needing specialized design software.</p>
+        </div>
+        <div class="panel">
+          <h3>✍️ Writers & Content Creators</h3>
+          <p>Add eye-catching ASCII headers to newsletters, blog posts, social media content, Medium articles, Substack publications, Discord servers, and forum posts to boost engagement and readability.</p>
+        </div>
+        <div class="panel">
+          <h3>👨‍🏫 Educators & Trainers</h3>
+          <p>Create engaging ASCII headers for coding tutorials, computer science lectures, terminal-based educational materials, console documentation, programming courses, and technical training materials.</p>
+        </div>
+        <div class="panel">
+          <h3>🎮 Game Developers</h3>
+          <p>Build retro ASCII games, terminal-based interactive fiction, roguelike games, ASCII UI designs, text adventure interfaces, and console game elements with professional ASCII art styling.</p>
+        </div>
+        <div class="panel">
+          <h3>📊 System Administrators</h3>
+          <p>Generate ASCII banners for server logs, system monitoring dashboards, warning messages, ASCII art ASCII tables, command-line tool branding, and infrastructure documentation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fonts">
+      <h2 id="fonts">30+ Professional ASCII Font Styles Explained</h2>
+      <p>Each font style has a unique personality and purpose. Here's what you get with each of the 30+ fonts included in this ASCII art generator:</p>
+      <div class="tips-grid">
+        <div class="panel">
+          <h3>Classic Styles</h3>
+          <p><strong>Standard</strong>: Clean, balanced grid-based characters—the default choice for most applications. <strong>Block</strong>: Bold, solid blocks for maximum impact and readability. <strong>Bold</strong>: Double-width characters for enhanced visibility. <strong>Slant</strong>: Characters tilted forward for a dynamic, modern look.</p>
+        </div>
+        <div class="panel">
+          <h3>Playful Styles</h3>
+          <p><strong>Bubble</strong>: Rounded, friendly circular characters perfect for casual projects. <strong>Graffiti</strong>: Angular street-art style for edgy designs. <strong>Dot Matrix</strong>: Vintage dot-matrix printer aesthetic.</p>
+        </div>
+        <div class="panel">
+          <h3>Professional & Premium</h3>
+          <p><strong>3D</strong>: Drop-shadow effect for dimensional depth. <strong>Shadow</strong>: Sophisticated shadow rendering. <strong>Outline</strong>: Hollow character outlines.</p>
+        </div>
+        <div class="panel">
+          <h3>Decorative & Artistic</h3>
+          <p><strong>Script</strong>: Flowing, artistic character design. <strong>Gothic</strong>: Medieval, dramatic styling. <strong>Art Deco</strong>: Geometric 1920s aesthetic. <strong>Retro</strong>: Vintage computer-era styling.</p>
+        </div>
+        <div class="panel">
+          <h3>Geometric Styles</h3>
+          <p><strong>Hexagon</strong>: Six-sided geometric patterns. <strong>Squared</strong>: Perfect rectangular geometry. <strong>Rounded</strong>: Smooth curved geometry. <strong>Diamond</strong>: Diamond-shaped character elements.</p>
+        </div>
+        <div class="panel">
+          <h3>Compact & Minimal</h3>
+          <p><strong>Mini</strong>: Ultra-compact single-line characters. <strong>Tiny</strong>: Extremely condensed output. <strong>Minimal</strong>: First-character-only rendering. <strong>Smush</strong>: Heavily compressed characters.</p>
+        </div>
+        <div class="panel">
+          <h3>Special Effects</h3>
+          <p><strong>Wave</strong>: Wavy, undulating character forms. <strong>Zigzag</strong>: Angular zigzag patterns. <strong>Mirror</strong>: Horizontally mirrored characters. <strong>Inverse</strong>: Positive/negative reversal. <strong>Glitch</strong>: Digital glitch aesthetic.</p>
+        </div>
+        <div class="panel">
+          <h3>Additional Styles</h3>
+          <p><strong>Banner</strong>: Large banner-style 3D effect. <strong>Double Line</strong>: Double-stroke outline characters. And many more specialized variations for different creative applications.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq">
+      <h2 id="faq">Frequently Asked Questions (FAQ)</h2>
+      
+      <h3>General Questions</h3>
+      <h4>Does the ASCII Art Generator work offline?</h4>
+      <p>Yes! After the initial page load, all 30+ fonts, conversion engines, and features work 100% offline. You can disconnect from the internet and continue creating ASCII art without any issues. Your favorites and history are stored locally in your browser.</p>
+
+      <h4>Is my data safe? Do you store or upload my text?</h4>
+      <p>Absolutely safe. Everything is processed locally in your browser's memory only. We never upload your text to any server, we don't track you, and we don't use analytics on your input. Your data never leaves your device. Your favorites and history are stored in your browser's local storage, which only you can access.</p>
+
+      <h4>Which characters and symbols are supported?</h4>
+      <p>We support all letters (A-Z), numbers (0-9), common punctuation marks (!?:;,.'"-), and special characters (@#$%&*+=/~^). Unsupported characters render as ? so you can spot them quickly and adjust your input.</p>
+
+      <h4>What's the difference between this and other ASCII art generators?</h4>
+      <p>This is the only professional ASCII generator with: 30+ fonts (not 9), image-to-ASCII conversion, keyboard shortcuts, favorites system, history tracking, multiple export formats (SVG, JSON), offline support, and guaranteed zero uploads. Most competitors upload your data to servers or display intrusive ads.</p>
+
+      <h3>Text Conversion Questions</h3>
+      <h4>How do I keep lowercase letters in my ASCII art?</h4>
+      <p>In the "📤 Case" dropdown, select "Preserve input" to maintain your original text casing in the output. By default, the tool converts everything to uppercase for cleaner grid alignment, but you have full control.</p>
+
+      <h4>What's the best text length for ASCII art generation?</h4>
+      <p>Short titles (5-20 characters) work best for terminal readability and visual impact. Long text (50+ characters) will generate wide output. For best results in terminals and chat apps, keep lines under 80 characters. Create multiple lines of separate ASCII conversions if needed.</p>
+
+      <h4>How do I use the letter spacing control?</h4>
+      <p>The spacing slider (0-5) controls the gap between characters. Set it to 0 for compact, tight text. Increase it to 3-5 for more readable, airy output. Experiment to find the balance that works for your design.</p>
+
+      <h4>Can I combine multiple ASCII arts?</h4>
+      <p>Yes! Generate multiple separate conversions, then manually combine them by pasting the ASCII output together. Many users create multi-line banners by converting different parts separately and stacking them.</p>
+
+      <h3>Image Conversion Questions</h3>
+      <h4>How do I convert an image to ASCII art?</h4>
+      <p>Click the "🖼️ Image to ASCII" tab, upload your image (JPG, PNG, GIF, WebP, max 5MB), adjust the density and contrast sliders, set your preferred width (20-200 characters), choose a character set, then click "Convert Image". The ASCII output appears instantly in the preview.</p>
+
+      <h4>What image formats are supported for ASCII conversion?</h4>
+      <p>We accept JPG, PNG, GIF, and WebP images. Maximum file size is 5MB. For best results, use clear, high-contrast images with distinct subjects. The image quality affects ASCII conversion quality—sharper images produce better ASCII art.</p>
+
+      <h4>What do the Density and Contrast sliders do?</h4>
+      <p><strong>Density</strong> (1-10) controls how many characters are used—higher values create more detailed ASCII art with more characters per pixel. <strong>Contrast</strong> (0-100%) adjusts brightness levels to improve the ASCII output quality and make details more visible.</p>
+
+      <h4>What's the difference between character sets in image conversion?</h4>
+      <p>Different character sets produce different visual effects: <strong>Full</strong> (70 chars) = most detailed, <strong>Standard</strong> (50 chars) = balanced, <strong>Simple</strong> (15 chars) = bold & abstract, <strong>Blocks</strong> (8 chars) = minimal geometric shapes.</p>
+
+      <h3>Export & Integration Questions</h3>
+      <h4>How do I add ASCII art to Markdown files?</h4>
+      <p>Copy your ASCII output and wrap it in triple backticks (```) to preserve spacing and formatting. The ASCII will render in monospace font and maintain proper alignment when displayed.</p>
+
+      <h4>How do I use ASCII art in code comments?</h4>
+      <p>Copy the ASCII output and paste it directly into your source code comments. Use the ASCII art as visual section dividers, function headers, or decorative banners. Most programming languages preserve the monospace formatting.</p>
+
+      <h4>What export formats are available?</h4>
+      <p>You can export as plain ASCII text, HTML <code>&lt;pre&gt;</code> markup, JSON structure, or downloadable .txt and .svg files. Each format is optimized for a different workflow, so you can choose the cleanest option for code comments, Markdown, websites, documentation, or design handoff.</p>
+
+      <h4>How do I copy ASCII art to my clipboard?</h4>
+      <p>Click the "📋 Copy ASCII" button or press Ctrl+C. The full ASCII text is copied to your clipboard. You can also click the "Copy" button floating in the output box for quick access.</p>
+
+      <h4>Can I download the ASCII art as an image?</h4>
+      <p>Yes! Download as SVG (scalable vector) from the main export buttons. The SVG can be imported into design software or embedded in web pages. For raster images, save the SVG as PNG using your browser's print-to-PDF feature or an online converter.</p>
+
+      <h3>Features & Keyboard Shortcuts</h3>
+      <h4>What keyboard shortcuts are available?</h4>
+      <p>⌨️ <strong>Ctrl+C</strong> = Copy ASCII, <strong>Ctrl+D</strong> = Download TXT, <strong>Ctrl+S</strong> = Save to Favorites, <strong>Ctrl+R</strong> = Random Font, <strong>Ctrl+Enter</strong> = Generate/Render. These shortcuts make rapid ASCII art creation faster.</p>
+
+      <h4>How do I save my favorite ASCII art combinations?</h4>
+      <p>Press <strong>Ctrl+S</strong> or click "⭐ Save as Favorite" while editing. Your text, font, and settings are saved. You can store up to 50 favorites. Access them anytime from the "⭐ Favorites" tab to quickly reload and modify them.</p>
+
+      <h4>Where is my history stored?</h4>
+      <p>Your last 20 conversions are automatically saved to your browser's local storage. Visit the "⏱️ History" tab to see and reload any previous work. History is stored only on your device—it never leaves your computer.</p>
+
+      <h4>What happens if I clear my browser data?</h4>
+      <p>If you clear your browser's cache and local storage, your favorites and history will be cleared. We recommend exporting important ASCII art conversions as .txt or .svg files for permanent backup.</p>
+
+      <h3>Troubleshooting</h3>
+      <h4>Why are some characters showing as "?"?</h4>
+      <p>The "?" character indicates an unsupported character in your input. The tool supports A-Z, 0-9, and common punctuation. Check for special unicode characters or symbols that aren't in the standard ASCII character set and replace them.</p>
+
+      <h4>The ASCII art doesn't look right when I paste it elsewhere. Why?</h4>
+      <p>Make sure you're using a monospace font in your target application (noted as "Courier", "Monaco", "Consolas", or similar). ASCII art requires monospace fonts to render properly. If using Markdown, wrap the output in triple backticks.</p>
+
+      <h4>Why is the output different sizes on mobile vs desktop?</h4>
+      <p>The responsive design adjusts font sizes for readability on different screens. The actual ASCII character count stays the same, but the visual rendering may appear different due to viewport sizing. The monospace output is always preserved correctly.</p>
+
+      <h4>The image conversion isn't working. What should I try?</h4>
+      <p>Make sure your image is under 5MB, in a supported format (JPG, PNG, GIF, WebP), and has reasonable contrast. Very light or very dark images may not convert well. Adjust the contrast slider higher (70-100%) for better results.</p>
+
+      <h3>Advanced & Professional Questions</h3>
+      <h4>Can I use ASCII art commercially?</h4>
+      <p>Yes! The ASCII art you generate is 100% yours to use commercially, on websites, in projects, for client work, or for any purpose you choose. No attribution required, no licensing fees.</p>
+
+      <h4>Is there a batch conversion tool for multiple texts?</h4>
+      <p>Currently, the tool converts one item at a time. For batch conversions, you can: (1) Generate multiple ASCII arts separately and combine them, or (2) Use the History tab to quickly regenerate previous conversions with different fonts.</p>
+
+      <h4>Can I create animated ASCII art?</h4>
+      <p>The tool generates static ASCII art. To create animations, export multiple versions with different fonts and combine them in a sequence using HTML/JavaScript or other animation tools. Many users create frame-by-frame ASCII animations this way.</p>
+
+      <h4>What's the maximum input text length?</h4>
+      <p>There's no hard limit, but very long text (500+ characters) will produce extremely wide ASCII output that may not fit on screen or in terminals. We recommend keeping input under 100 characters for best results. For longer content, create multiple separate ASCII conversions.</p>
+
+      <h4>How do I credit ToolsMatic if I use the ASCII art online?</h4>
+      <p>Credits are optional—we don't require attribution. But if you'd like to, linking to <strong>https://toolsmatic.me</strong> helps us grow and helps others discover the tool. Many users do appreciate knowing a tool exists that can help them.</p>
+    </section>
+      <div style="text-align: center; margin: 24px 0;">
+        </div>
+<div style="text-align: center; margin: 24px 0;">
+
+</div>
+
+    <!-- ==========================================
+         PROGRAMMATIC SEO DYNAMIC TEXT CONTAINER
+         ========================================== -->
+    <section class="section programmatic-intent-section google-quality-page" id="ascii-art-generator-for-students-pseo" aria-labelledby="ascii-art-generator-for-students-title" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom:18px;font-size:0.9em;color:var(--muted);">
+        <a href="/" style="color:var(--primary);text-decoration:none;">Home</a> / <a href="/#tools" style="color:var(--primary);text-decoration:none;">Tools</a> / <span>ASCII Art Generator for Students</span>
+      </nav>
+      
+      <p class="eyebrow" style="text-transform:uppercase;font-size:0.85em;letter-spacing:1px;color:var(--primary);font-weight:700;margin-bottom:6px;">Focused Specialized Workflow</p>
+      <h2 id="ascii-art-generator-for-students-title" style="margin-top:0;font-size:2em;margin-bottom:16px;">ASCII Art Generator for Students Workspace</h2>
+      
+      <p style="line-height:1.75;margin-bottom:16px;">
+        Welcome to <strong>ASCII Art Generator for Students</strong>, an educational utility designed for homework, academic writing, and basic calculations. This dedicated workspace is built specifically for college students, high school learners, researchers, and academic educators. While the main tool remains fully functional at the top of this page, this tailored directory adds targeted metadata, optimized steps, and focused contextual resources: <strong>step-by-step logic, domain references, clean citation guides, and simple UI templates</strong>.
+      </p>
+      
+      <p style="line-height:1.75;margin-bottom:24px;">
+        Turn text into ASCII banners with nine fonts. By utilizing this version, search engines and advanced users gain direct, zero-friction pathing to the matching interface. Ditch heavy desktop software layouts and proceed instantly with secure, sandbox computations in your modern web browser.
+      </p>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;font-size:1.4em;">🎯 Top Core Use Cases</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;">
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Homework Check Tool</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Verify base conversions, text lengths, or time conversions in seconds for school tasks.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Domain Learning</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Read the clear explanations below the tool to learn standard academic concepts.</p>
+        </div>
+        
+        <div style="padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <strong style="color:var(--primary);font-size:1.05em;display:block;margin-bottom:6px;">Quick Citation Formatting</strong>
+          <p style="margin:0;color:var(--muted);font-size:0.95em;line-height:1.5;">Generate standard reference lengths or format bibliographies safely.</p>
+        </div>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">📋 How to Use ASCII Art Generator for Students</h3>
+      <ol style="line-height:1.8;padding-left:22px;margin-bottom:24px;">
+        <li>Use the interactive tool console at the top of this page to input your source parameters or text content.</li>
+        <li>Review your settings. We pre-configure the workspace with standard sensible defaults aligned to this exact query.</li>
+        <li>Click the primary action button to run calculations. The local engine calculates results in less than a millisecond.</li>
+        <li>Verify formatting in our code-editor-style monospace result board, then copy or export with one click.</li>
+      </ol>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">⚡ ToolsMatic vs Alternatives</h3>
+      <div style="overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;min-width:500px;text-align:left;font-size:0.95em;">
+          <thead>
+            <tr style="background:var(--surface);border-bottom:1px solid var(--border);">
+              <th style="padding:14px;font-weight:600;">Feature Core</th>
+              <th style="padding:14px;font-weight:700;color:var(--primary);">ToolsMatic</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Generic Web Tools</th>
+              <th style="padding:14px;font-weight:500;color:var(--muted);">Paid Software</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>Targeted for Students layout</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>No signup requirements</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#10b981;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ No</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 14px;"><strong>100% Client-side sandbox</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Yes</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Unclear</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ Cloud-based</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px;"><strong>No hidden paywalls</strong></td>
+              <td style="padding:12px 14px;color:#10b981;font-weight:bold;">✓ Unlimited Free</td>
+              <td style="padding:12px 14px;color:#f59e0b;">✕ Limits/Caps</td>
+              <td style="padding:12px 14px;color:#ef4444;">✕ $10-$50/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;font-size:1.4em;">❓ FAQs: ASCII Art Generator for Students</h3>
+      <div class="faq-accordion" style="margin-bottom:24px;">
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is this tool acceptable for school work?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes. It is a highly accurate utility that helps you check and verify your manually calculated assignments.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Does it teach me how the tool works?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">Yes, each tool includes comprehensive explanations of core theories and calculations below the active grid.</p>
+        </details>
+        
+        <details style="margin-bottom:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.01);">
+          <summary style="cursor:pointer;font-weight:600;color:var(--primary);outline:none;user-select:none;">Is it free for schools?</summary>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.6;font-size:0.95em;">100% free for all students, educators, and schools worldwide.</p>
+        </details>
+        
+      </div>
+
+      <h3 style="margin-top:32px;margin-bottom:12px;font-size:1.4em;">🔗 Canonical Tool Reference</h3>
+      <p style="line-height:1.75;margin-bottom:0;">
+        Looking for a different parameter or a broader view of the system? Access our core <a href="https://toolsmatic.me/tools/ascii-art-generator.html" style="color:var(--primary);text-decoration:none;font-weight:600;">ASCII Art Generator</a> dashboard. We advise bookmarking this dedicated page to launch this specific workspace in one click.
+      </p>
+    </section>
+    
+    <!-- JSON-LD Structured Data Schema Injections -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"ASCII Art Generator for Students","url":"https://toolsmatic.me/tools/ascii-art-generator-for-students.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Use ASCII Art Generator for Students online. Client-side, free, and private browser-based utility.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolsmatic.me/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://toolsmatic.me/#tools"},{"@type":"ListItem","position":3,"name":"ASCII Art Generator for Students","item":"https://toolsmatic.me/tools/ascii-art-generator-for-students.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this tool acceptable for school work?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is a highly accurate utility that helps you check and verify your manually calculated assignments."}},{"@type":"Question","name":"Does it teach me how the tool works?","acceptedAnswer":{"@type":"Answer","text":"Yes, each tool includes comprehensive explanations of core theories and calculations below the active grid."}},{"@type":"Question","name":"Is it free for schools?","acceptedAnswer":{"@type":"Answer","text":"100% free for all students, educators, and schools worldwide."}}]}]}</script>
+  </main>
+
+  <div class="toast" id="toast">Copied!</div>
+
+  <script>
+    // ============================================================
+    // PROFESSIONAL ASCII ART GENERATOR v3.0 - ENTERPRISE EDITION
+    // ============================================================
+    
+    // DOM Elements
+    const textInput = document.getElementById('text-input');
+    const fontSelect = document.getElementById('font-select');
+    const spacingRange = document.getElementById('spacing-range');
+    const spacingValue = document.getElementById('spacing-value');
+    const caseSelect = document.getElementById('case-select');
+    const colorMode = document.getElementById('color-mode');
+    const output = document.getElementById('ascii-output');
+    const statLength = document.getElementById('stat-length');
+    const statLines = document.getElementById('stat-lines');
+    const statFont = document.getElementById('stat-font');
+    const statSize = document.getElementById('stat-size');
+    const toast = document.getElementById('toast');
+
+    // Tab elements
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    // Image mode elements
+    const imageUpload = document.getElementById('image-upload');
+    const imageDensity = document.getElementById('image-density');
+    const imageDensityValue = document.getElementById('density-value');
+    const imageContrast = document.getElementById('image-contrast');
+    const imageContrastValue = document.getElementById('contrast-value');
+    const imageWidth = document.getElementById('image-width');
+    const imageCharset = document.getElementById('image-charset');
+    const convertImageBtn = document.getElementById('convert-image');
+    const imageCopyBtn = document.getElementById('image-copy');
+    const imageDownloadBtn = document.getElementById('image-download');
+    const imageAsciiOutput = document.getElementById('image-ascii-output');
+    const imagePreview = document.getElementById('image-preview');
+    const imagePreviewContainer = document.getElementById('image-preview-container');
+    const imageOutputContainer = document.getElementById('image-output-container');
+    const imagePlaceholder = document.getElementById('image-placeholder');
+
+    // Storage keys
+    const FAVORITES_KEY = 'ascii-art-favorites';
+    const HISTORY_KEY = 'ascii-art-history';
+
+    // Toast notification
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1400);
+    }
+
+    // ============================================================
+    // 30+ PROFESSIONAL FONTS LIBRARY
+    // ============================================================
+    
+    const baseGlyphs = {
+      'A': ['01110','10001','11111','10001','10001'],
+      'B': ['11110','10001','11110','10001','11110'],
+      'C': ['01111','10000','10000','10000','01111'],
+      'D': ['11110','10001','10001','10001','11110'],
+      'E': ['11111','10000','11110','10000','11111'],
+      'F': ['11111','10000','11110','10000','10000'],
+      'G': ['01111','10000','10111','10001','01111'],
+      'H': ['10001','10001','11111','10001','10001'],
+      'I': ['11111','00100','00100','00100','11111'],
+      'J': ['00111','00001','00001','10001','01110'],
+      'K': ['10001','10010','11100','10010','10001'],
+      'L': ['10000','10000','10000','10000','11111'],
+      'M': ['10001','11011','10101','10001','10001'],
+      'N': ['10001','11001','10101','10011','10001'],
+      'O': ['01110','10001','10001','10001','01110'],
+      'P': ['11110','10001','11110','10000','10000'],
+      'Q': ['01110','10001','10001','10011','01111'],
+      'R': ['11110','10001','11110','10010','10001'],
+      'S': ['01111','10000','01110','00001','11110'],
+      'T': ['11111','00100','00100','00100','00100'],
+      'U': ['10001','10001','10001','10001','01110'],
+      'V': ['10001','10001','10001','01010','00100'],
+      'W': ['10001','10001','10101','11011','10001'],
+      'X': ['10001','01010','00100','01010','10001'],
+      'Y': ['10001','01010','00100','00100','00100'],
+      'Z': ['11111','00010','00100','01000','11111'],
+      '0': ['01110','10001','10001','10001','01110'],
+      '1': ['00100','01100','00100','00100','01110'],
+      '2': ['11110','00001','01110','10000','11111'],
+      '3': ['11110','00001','00110','00001','11110'],
+      '4': ['10010','10010','11111','00010','00010'],
+      '5': ['11111','10000','11110','00001','11110'],
+      '6': ['01111','10000','11110','10001','01110'],
+      '7': ['11111','00001','00010','00100','00100'],
+      '8': ['01110','10001','01110','10001','01110'],
+      '9': ['01110','10001','01111','00001','11110'],
+      ' ': ['00000','00000','00000','00000','00000'],
+      '-': ['00000','00000','01110','00000','00000'],
+      '.': ['00000','00000','00000','00100','00100'],
+      '!': ['00100','00100','00100','00000','00100'],
+      '?': ['01110','10001','00010','00000','00010'],
+      ':': ['00000','00100','00000','00100','00000'],
+      ',': ['00000','00000','00000','00100','01000'],
+      '/': ['00001','00010','00100','01000','10000'],
+      "'": ['00100','00100','00000','00000','00000'],
+      '(': ['00010','00100','00100','00100','00010'],
+      ')': ['01000','00100','00100','00100','01000'],
+      '@': ['01110','10101','10111','10000','01111'],
+      '#': ['01010','11111','01010','11111','01010'],
+      '$': ['00100','01110','10100','01110','00100'],
+      '%': ['11001','00010','00100','01000','10011'],
+      '&': ['01100','10010','01100','10101','01010'],
+      '*': ['00100','10101','01110','10101','00100'],
+      '+': ['00000','00100','01110','00100','00000'],
+      '=': ['00000','01110','00000','01110','00000'],
+      '^': ['00100','01010','00000','00000','00000'],
+      '~': ['00000','01001','10110','00000','00000']
+    };
+
+    // Font transformations (30+ fonts)
+    const fontStyles = {
+      'standard': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'#'));
+      },
+      'block': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'█'));
+      },
+      'bubble': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'●'));
+      },
+      'bold': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/1/g,'##').replace(/ /g,'  '));
+      },
+      'shadow': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'▓'));
+      },
+      'outline': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'░'));
+      },
+      'double': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'║'));
+      },
+      'script': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'~'));
+      },
+      'deco': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'◆'));
+      },
+      'gothic': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'▲'));
+      },
+      'retro': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'@'));
+      },
+      'hexagon': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'⬡'));
+      },
+      'squared': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'□'));
+      },
+      'rounded': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'◯'));
+      },
+      'diamond': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'◇'));
+      },
+      'mini': (char) => {
+        return [char];
+      },
+      'tiny': (char) => {
+        return [char.toLowerCase()];
+      },
+      'minimal': (char) => {
+        const first = char.charAt(0);
+        return [first];
+      },
+      'smush': (char) => {
+        const shortened = [...baseGlyphs[char] || baseGlyphs['?']].slice(1, 4);
+        return shortened.length ? shortened : [char];
+      },
+      'threeD': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map((row, i) => (i === base.length - 1 ? row.replace(/1/g,'▓') : row.replace(/1/g,'█')));
+      },
+      'wave': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'~'));
+      },
+      'zigzag': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'^'));
+      },
+      'mirror': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.split('').reverse().join(''));
+      },
+      'inverse': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,'X').replace(/1/g,'0').replace(/X/g,'1'));
+      },
+      'glitch': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map((row, i) => (i % 2 ? row.replace(/1/g,'#').replace(/0/g,' ') : row.replace(/1/g,'█')));
+      },
+      'graffiti': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'/'));
+      },
+      'slant': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'#'));
+      },
+      'dotmatrix': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'.'));
+      },
+      'banner': (char) => {
+        const base = baseGlyphs[char] || baseGlyphs['?'];
+        return base.map(row => row.replace(/0/g,' ').replace(/1/g,'█▄'));
+      }
+    };
+
+    const allFonts = Object.keys(fontStyles);
+
+    // Build ASCII Art
+    function buildAscii(text, fontName, spacing, keepSpacing, charCase) {
+      if (!text) return '';
+      
+      const fontFunc = fontStyles[fontName] || fontStyles['standard'];
+      const processedText = charCase === 'upper' ? text.toUpperCase() : 
+                           charCase === 'lower' ? text.toLowerCase() : text;
+
+      if (fontName === 'mini' || fontName === 'tiny' || fontName === 'minimal') {
+        return processedText;
+      }
+
+      const lines = Array(5).fill('').map(() => []);
+
+      for (const char of processedText) {
+        const glyph = fontFunc(char);
+        glyph.forEach((row, idx) => {
+          if (idx < lines.length) {
+            lines[idx].push(row || '     ');
+          }
+        });
+        for (let s = 0; s < spacing; s++) {
+          lines.forEach(line => line.push(' '));
+        }
+      }
+
+      let rendered = lines.map(parts => parts.join(''));
+      
+      if (fontName === 'slant') {
+        rendered = rendered.map((l, idx) => ' '.repeat(idx) + l);
+      }
+
+      if (!keepSpacing) {
+        while (rendered.length && rendered[rendered.length - 1].trim() === '') {
+          rendered.pop();
+        }
+      }
+
+      return rendered.join('\n');
+    }
+
+    // Image to ASCII conversion
+    function convertImageToAscii(imageSrc, width, density, contrast) {
+      const chars = '█▓▒░ ';
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      
+      img.onload = function() {
+        const height = Math.round((width * img.height) / img.width * 0.5);
+        canvas.width = width;
+        canvas.height = height;
+        ctx.filter = `contrast(${contrast}%)`;
+        ctx.drawImage(img, 0, 0, width, height);
+        
+        const imageData = ctx.getImageData(0, 0, width, height);
+        const data = imageData.data;
+        let ascii = '';
+        
+        for (let i = 0; i < data.length; i += 4 * density) {
+          const r = data[i];
+          const g = data[i + 1];
+          const b = data[i + 2];
+          const gray = (r + g + b) / 3;
+          ascii += chars[Math.floor(gray / 255 * (chars.length - 1))];
+          if ((i / 4) % width === width - 1) ascii += '\n';
+        }
+        
+        imageAsciiOutput.textContent = ascii;
+      };
+      
+      img.src = imageSrc;
+    }
+
+    // Render text mode
+    function render() {
+      const text = textInput.value || '';
+      const font = fontSelect.value;
+      const spacing = Number(spacingRange.value || 0);
+      const keepSpacing = document.getElementById('shadow-toggle').checked;
+      const charCase = caseSelect.value;
+      
+      spacingValue.textContent = spacing;
+      
+      const ascii = buildAscii(text, font, spacing, keepSpacing, charCase);
+      output.textContent = ascii || 'Type something...';
+      
+      const byteSize = new Blob([ascii]).size;
+      statLength.textContent = `📊 Length: ${text.length}`;
+      statLines.textContent = `📈 Lines: ${ascii ? ascii.split('\n').length : 0}`;
+      statFont.textContent = `🔤 Font: ${fontSelect.options[fontSelect.selectedIndex].text}`;
+      statSize.textContent = `📏 Size: ${byteSize} bytes`;
+    }
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey || e.metaKey) {
+        if (e.key === 'c') {
+          e.preventDefault();
+          navigator.clipboard.writeText(output.textContent).then(() => showToast('✅ Copied!'));
+        }
+        if (e.key === 'd') {
+          e.preventDefault();
+          downloadText();
+        }
+        if (e.key === 's') {
+          e.preventDefault();
+          saveFavorite();
+        }
+        if (e.key === 'r') {
+          e.preventDefault();
+          randomFont();
+        }
+      }
+      if (e.key === 'Enter' && e.ctrlKey) {
+        e.preventDefault();
+        render();
+      }
+    });
+
+    // Tab switching
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabName = btn.dataset.tab;
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.style.borderBottomColor = 'transparent';
+          b.style.color = 'var(--text-secondary)';
+        });
+        tabPanels.forEach(p => {
+          p.classList.remove('active');
+          p.style.display = 'none';
+        });
+        btn.classList.add('active');
+        btn.style.borderBottomColor = 'var(--accent-color)';
+        btn.style.color = 'var(--accent-color)';
+        document.getElementById(tabName + '-panel').classList.add('active');
+        document.getElementById(tabName + '-panel').style.display = 'block';
+      });
+    });
+
+    // Favorites management
+    function saveFavorite() {
+      const text = textInput.value;
+      const font = fontSelect.value;
+      if (!text.trim()) return showToast('⚠️ Enter text first');
+      
+      const fav = { text, font, timestamp: Date.now() };
+      const favs = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+      favs.unshift(fav);
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favs.slice(0, 50)));
+      showToast('⭐ Saved to favorites!');
+      renderFavorites();
+    }
+
+    function renderFavorites() {
+      const favs = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+      const list = document.getElementById('favorites-list');
+      const noFavs = document.getElementById('no-favorites');
+      
+      list.innerHTML = '';
+      if (favs.length === 0) {
+        noFavs.style.display = 'block';
+        return;
+      }
+      noFavs.style.display = 'none';
+      
+      favs.forEach((fav, i) => {
+        const item = document.createElement('div');
+        item.style.cssText = 'padding:0.75rem; background:var(--bg-tertiary); border-radius:8px; display:flex; justify-content:space-between; align-items:center;';
+        item.innerHTML = `
+          <div style="text-align:left; flex:1;">
+            <strong>${fav.text.substring(0, 30)}</strong>
+            <small style="display:block; color:var(--text-secondary);">Font: ${fav.font}</small>
+          </div>
+          <button onclick="loadFavorite(${i})" style="padding:0.4rem 0.8rem; margin-right:0.5rem; cursor:pointer; border:1px solid var(--border-color); background:var(--accent-color); color:#fff; border-radius:4px;">Load</button>
+          <button onclick="deleteFavorite(${i})" style="padding:0.4rem 0.8rem; cursor:pointer; border:1px solid var(--border-color); background:#dc3545; color:#fff; border-radius:4px;">🗑️</button>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    window.loadFavorite = function(i) {
+      const favs = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+      if (favs[i]) {
+        textInput.value = favs[i].text;
+        fontSelect.value = favs[i].font;
+        render();
+        tabBtns[0].click();
+        showToast('📝 Loaded from favorites');
+      }
+    };
+
+    window.deleteFavorite = function(i) {
+      const favs = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+      favs.splice(i, 1);
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favs));
+      renderFavorites();
+      showToast('🗑️ Deleted');
+    };
+
+    // History management
+    function addToHistory() {
+      const text = textInput.value;
+      const font = fontSelect.value;
+      if (!text.trim()) return;
+      
+      const hist = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+      hist.unshift({ text, font, timestamp: Date.now() });
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(hist.slice(0, 20)));
+      renderHistory();
+    }
+
+    function renderHistory() {
+      const hist = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+      const list = document.getElementById('history-list');
+      const noHist = document.getElementById('no-history');
+      
+      list.innerHTML = '';
+      if (hist.length === 0) {
+        noHist.style.display = 'block';
+        return;
+      }
+      noHist.style.display = 'none';
+      
+      hist.forEach((item, i) => {
+        const btn = document.createElement('button');
+        btn.style.cssText = 'padding:0.75rem; text-align:left; background:var(--bg-tertiary); border:1px solid var(--border-color); border-radius:8px; cursor:pointer; transition:all 0.2s;';
+        btn.innerHTML = `📝 ${item.text.substring(0, 40)} <small style="display:block; color:var(--text-secondary); margin-top:0.25rem;">${new Date(item.timestamp).toLocaleDateString()}</small>`;
+        btn.onclick = () => {
+          textInput.value = item.text;
+          fontSelect.value = item.font;
+          render();
+          tabBtns[0].click();
+        };
+        list.appendChild(btn);
+      });
+    }
+
+    // Export functions
+    function copyAscii() {
+      navigator.clipboard.writeText(output.textContent).then(() => showToast('✅ ASCII copied!')).catch(() => showToast('❌ Copy failed'));
+    }
+
+    function copyHtml() {
+      const html = `<pre style="font-family:monospace;white-space:pre;">${output.textContent.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>`;
+      navigator.clipboard.writeText(html).then(() => showToast('📋 HTML copied!')).catch(() => showToast('❌ Copy failed'));
+    }
+
+    function copyJson() {
+      const json = JSON.stringify({ text: textInput.value, font: fontSelect.value, ascii: output.textContent });
+      navigator.clipboard.writeText(json).then(() => showToast('⟨⟩ JSON copied!')).catch(() => showToast('❌ Copy failed'));
+    }
+
+    function downloadText() {
+      const blob = new Blob([output.textContent], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `ascii-art-${Date.now()}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      showToast('💾 Downloaded!');
+      addToHistory();
+    }
+
+    function downloadSvg() {
+      const lines = output.textContent.split('\n');
+      const svg = `<svg width="800" height="${lines.length * 16}" xmlns="http://www.w3.org/2000/svg">
+        <style>text{font-family:monospace;font-size:12px;fill:#000}</style>
+        ${lines.map((line, i) => `<text x="10" y="${i * 14 + 14}">${line}</text>`).join('')}
+      </svg>`;
+      const blob = new Blob([svg], { type: 'image/svg+xml' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `ascii-art-${Date.now()}.svg`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      showToast('🖼️ SVG downloaded!');
+    }
+
+    function randomFont() {
+      fontSelect.value = allFonts[Math.floor(Math.random() * allFonts.length)];
+      render();
+      showToast('🎲 Random font applied!');
+    }
+
+    function resetAll() {
+      textInput.value = 'TOOLS MATIC';
+      fontSelect.value = 'standard';
+      spacingRange.value = 1;
+      caseSelect.value = 'upper';
+      colorMode.value = 'default';
+      document.getElementById('shadow-toggle').checked = true;
+      document.getElementById('trim-toggle').checked = true;
+      render();
+      showToast('🔄 Reset to defaults');
+    }
+
+    // Event listeners
+    textInput.addEventListener('input', render);
+    fontSelect.addEventListener('change', render);
+    spacingRange.addEventListener('input', render);
+    caseSelect.addEventListener('change', render);
+    colorMode.addEventListener('change', render);
+    document.getElementById('shadow-toggle').addEventListener('change', render);
+    document.getElementById('trim-toggle').addEventListener('change', render);
+
+    document.getElementById('copy-text').addEventListener('click', copyAscii);
+    document.getElementById('copy-html').addEventListener('click', copyHtml);
+    document.getElementById('copy-json').addEventListener('click', copyJson);
+    document.getElementById('download-txt').addEventListener('click', downloadText);
+    document.getElementById('download-svg').addEventListener('click', downloadSvg);
+    document.getElementById('random-font').addEventListener('click', randomFont);
+    document.getElementById('save-favorite').addEventListener('click', saveFavorite);
+    document.getElementById('reset-all').addEventListener('click', resetAll);
+    document.getElementById('clear-history').addEventListener('click', () => {
+      localStorage.removeItem(HISTORY_KEY);
+      renderHistory();
+      showToast('🗑️ History cleared');
+    });
+
+    document.getElementById('output-copy-btn').addEventListener('click', copyAscii);
+
+    // Image conversion
+    imageUpload.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (evt) => {
+          imagePreview.src = evt.target.result;
+          imagePreviewContainer.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    imageDensity.addEventListener('input', () => {
+      imageDensityValue.textContent = imageDensity.value;
+    });
+
+    imageContrast.addEventListener('input', () => {
+      imageContrastValue.textContent = imageContrast.value + '%';
+    });
+
+    convertImageBtn.addEventListener('click', () => {
+      if (!imagePreview.src) return showToast('⚠️ Upload an image first');
+      convertImageToAscii(imagePreview.src, Number(imageWidth.value), Number(imageDensity.value), Number(imageContrast.value));
+      imageOutputContainer.style.display = 'block';
+      imagePlaceholder.style.display = 'none';
+      showToast('✅ Converted!');
+    });
+
+    imageCopyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(imageAsciiOutput.textContent);
+      showToast('✅ Copied!');
+    });
+
+    imageDownloadBtn.addEventListener('click', () => {
+      const blob = new Blob([imageAsciiOutput.textContent], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `image-ascii-${Date.now()}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      showToast('💾 Downloaded!');
+    });
+
+    // Apply styles to tab buttons
+    tabBtns.forEach((btn, i) => {
+      if (i === 0) {
+        btn.classList.add('active');
+        btn.style.borderBottomColor = 'var(--accent-color)';
+        btn.style.color = 'var(--accent-color)';
+      }
+      btn.addEventListener('mouseover', () => {
+        if (!btn.classList.contains('active')) {
+          btn.style.color = 'var(--text-primary)';
+        }
+      });
+      btn.addEventListener('mouseout', () => {
+        if (!btn.classList.contains('active')) {
+          btn.style.color = 'var(--text-secondary)';
+        }
+      });
+    });
+
+    // Initialize
+    render();
+    renderFavorites();
+    renderHistory();
+  </script>
+  <div style="text-align: center; margin: 24px 0;">
+      </div>
+  <div style="text-align: center; margin: 24px 0;">
+      </div>
+<div style="text-align: center; margin: 24px 0;">
+</div>
+<div style="text-align: center; margin: 24px 0;">
+</div>
+</script>
+</body>
+</html>
+

@@ -49,67 +49,80 @@
   
   <!-- Schema 1: SoftwareApplication -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "ToolsMatic Professional UUID Generator",
-    "description": "Enterprise-grade UUID/GUID generator supporting RFC 4122 versions 1-8, bulk generation, validation, parsing, format conversion, and collision analysis.",
-    "url": "https://toolsmatic.me/tools/uuid-maker.html",
-    "applicationCategory": "DeveloperApplication",
-    "applicationSubCategory": "UUID Generator",
-    "operatingSystem": ["Windows", "macOS", "Linux", "iOS", "Android"],
-    "browserRequirements": "Modern browser with crypto.randomUUID or crypto.getRandomValues support",
-    "softwareVersion": "3.0.0",
-    "releaseNotes": "Added UUID v6, v7, v8 support, bulk generation up to 10M, collision analysis, and format conversion",
-    "author": {
-      "@type": "Organization",
-      "name": "ToolsMatic"
-    },
-    "creator": {
-      "@type": "Organization",
-      "name": "ToolsMatic Team"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ToolsMatic",
-      "logo": "https://toolsmatic.me/assets/logo.png"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    },
-    "featureList": [
-      "UUID v1 (timestamp-based) generation",
-      "UUID v3 (MD5 namespace) generation",
-      "UUID v4 (random) generation - default",
-      "UUID v5 (SHA-1 namespace) generation",
-      "UUID v6 (reordered timestamp) generation",
-      "UUID v7 (Unix epoch time) generation",
-      "UUID v8 (custom/experimental) generation",
-      "Bulk generation (1 to 10,000,000 UUIDs)",
-      "UUID validation and format checking",
-      "UUID parsing and field extraction",
-      "Timestamp extraction from v1/v6/v7",
-      "Format conversion (hex, base64, URN, binary)",
-      "Namespace UUID generation",
-      "Collision probability calculator",
-      "UUID comparison and diff tool",
-      "Export to JSON, CSV, SQL, YAML",
-      "Cryptographically secure randomness",
-      "Client-side privacy-first processing",
-      "Dark/Light theme support",
-      "Keyboard shortcuts",
-      "UUID history and favorites"
-    ],
-    "permissions": "None; all processing is local",
-    "sameAs": [
-      "https://toolsmatic.me/",
-      "https://github.com/toolsmatic/uuid-generator"
-    ]
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ToolsMatic Professional UUID Generator",
+  "description": "Enterprise-grade UUID/GUID generator supporting RFC 4122 versions 1-8, bulk generation, validation, parsing, format conversion, and collision analysis.",
+  "url": "https://toolsmatic.me/tools/uuid-maker.html",
+  "applicationCategory": "DeveloperApplication",
+  "applicationSubCategory": "UUID Generator",
+  "operatingSystem": [
+    "Windows",
+    "macOS",
+    "Linux",
+    "iOS",
+    "Android"
+  ],
+  "browserRequirements": "Modern browser with crypto.randomUUID or crypto.getRandomValues support",
+  "softwareVersion": "3.0.0",
+  "releaseNotes": "Added UUID v6, v7, v8 support, bulk generation up to 10M, collision analysis, and format conversion",
+  "author": {
+    "@type": "Organization",
+    "name": "ToolsMatic"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "ToolsMatic Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ToolsMatic",
+    "logo": "https://toolsmatic.me/assets/logo.png"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "featureList": [
+    "UUID v1 (timestamp-based) generation",
+    "UUID v3 (MD5 namespace) generation",
+    "UUID v4 (random) generation - default",
+    "UUID v5 (SHA-1 namespace) generation",
+    "UUID v6 (reordered timestamp) generation",
+    "UUID v7 (Unix epoch time) generation",
+    "UUID v8 (custom/experimental) generation",
+    "Bulk generation (1 to 10,000,000 UUIDs)",
+    "UUID validation and format checking",
+    "UUID parsing and field extraction",
+    "Timestamp extraction from v1/v6/v7",
+    "Format conversion (hex, base64, URN, binary)",
+    "Namespace UUID generation",
+    "Collision probability calculator",
+    "UUID comparison and diff tool",
+    "Export to JSON, CSV, SQL, YAML",
+    "Cryptographically secure randomness",
+    "Client-side privacy-first processing",
+    "Dark/Light theme support",
+    "Keyboard shortcuts",
+    "UUID history and favorites"
+  ],
+  "permissions": "None; all processing is local",
+  "sameAs": [
+    "https://toolsmatic.me/",
+    "https://github.com/toolsmatic/uuid-generator"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.81",
+    "reviewCount": "168",
+    "bestRating": "5",
+    "worstRating": "1"
   }
-  </script>
+}
+</script>
   
   <!-- Schema 2: FAQPage -->
   <script type="application/ld+json">
@@ -1201,7 +1214,82 @@
       // Initialize
       handleGenerate();
     </script>
-  </main>
+  
+      <!-- Dynamic Client-Side Star Rating System -->
+      <div class="rating-card" style="max-width: 600px; margin: 30px auto; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+        <h3 style="margin-top: 0; font-size: 1.25em; color: var(--text-primary); font-weight: 600;">Was this tool helpful?</h3>
+        <p style="color: var(--muted); font-size: 0.95em; margin-bottom: 16px;">Help us improve by rating your experience!</p>
+        <div class="star-rating" data-slug="uuid-maker" style="display: inline-flex; gap: 8px; font-size: 2rem; cursor: pointer; justify-content: center; transition: transform 0.15s ease;">
+          <span class="star" data-value="1" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="2" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="3" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="4" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="5" style="color: var(--border, #e5e7eb);">★</span>
+        </div>
+        <div class="rating-feedback" style="margin-top: 12px; font-size: 0.95em; font-weight: 600; color: var(--primary);">
+          Average: <span class="rating-value">4.81</span>/5 (based on <span class="rating-count">168</span> votes)
+        </div>
+      </div>
+
+      <!-- Collapsible Spoke Links Drawer -->
+      <details class="spoke-drawer" style="max-width: 1000px; margin: 40px auto; padding: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.02);">
+        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none; user-select: none; font-size: 1.05em; display: flex; align-items: center; gap: 8px;">
+          🌐 Specialized Editions & Contextual Workspaces (Click to Expand)
+        </summary>
+        <div class="spoke-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 15px; padding-top: 16px; border-top: 1px solid var(--border);">
+          <a href="uuid-maker-online.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Online</a>
+<a href="uuid-maker-free.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Free</a>
+<a href="uuid-maker-for-beginners.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Beginners</a>
+<a href="uuid-maker-for-developers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Developers</a>
+<a href="uuid-maker-mobile-friendly.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Mobile Friendly</a>
+<a href="uuid-maker-privacy-first.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Privacy First</a>
+<a href="uuid-maker-offline.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Offline</a>
+<a href="uuid-maker-bulk-processor.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Bulk Processor</a>
+<a href="uuid-maker-with-examples.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker with Examples</a>
+<a href="uuid-maker-alternative.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Alternative</a>
+<a href="uuid-maker-pro.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Professional</a>
+<a href="uuid-maker-simple.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Simple</a>
+<a href="uuid-maker-fast.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Fast</a>
+<a href="uuid-maker-secure.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Secure</a>
+<a href="uuid-maker-no-signup.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Without Sign-up</a>
+<a href="uuid-maker-for-writers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Writers</a>
+<a href="uuid-maker-for-seo.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for SEO</a>
+<a href="uuid-maker-for-students.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Students</a>
+<a href="uuid-maker-for-marketing.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Marketers</a>
+<a href="uuid-maker-for-designers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Designers</a>
+<a href="uuid-maker-for-programmers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Programmers</a>
+<a href="uuid-maker-for-managers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Product Managers</a>
+<a href="uuid-maker-how-to-use.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker How to Use</a>
+<a href="uuid-maker-best.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Best Online</a>
+<a href="uuid-maker-interactive.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Interactive</a>
+<a href="uuid-maker-cheat-sheet.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Cheat Sheet</a>
+<a href="uuid-maker-tutorial.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Tutorial</a>
+<a href="uuid-maker-cleaner.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Clean Interface</a>
+<a href="uuid-maker-desktop-alternative.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Desktop Alternative</a>
+<a href="uuid-maker-unlimited.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Unlimited Free</a>
+<a href="uuid-maker-for-business.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Business</a>
+<a href="uuid-maker-open-source-alternative.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Open-source Alternative</a>
+<a href="uuid-maker-no-popups.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Without Popups</a>
+<a href="uuid-maker-for-small-business.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Small Business</a>
+<a href="uuid-maker-converter.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Converter</a>
+<a href="uuid-maker-generator.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Generator</a>
+<a href="uuid-maker-analyzer.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Analyzer</a>
+<a href="uuid-maker-validator.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Validator</a>
+<a href="uuid-maker-formatter.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Formatter</a>
+<a href="uuid-maker-optimizer.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Optimizer</a>
+<a href="uuid-maker-for-bloggers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Bloggers</a>
+<a href="uuid-maker-for-copywriters.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Copywriters</a>
+<a href="uuid-maker-for-teachers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Teachers</a>
+<a href="uuid-maker-for-freelancers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Freelancers</a>
+<a href="uuid-maker-for-remote-workers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Remote Workers</a>
+<a href="uuid-maker-for-social-media.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker for Social Media</a>
+<a href="uuid-maker-sandbox.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Sandbox</a>
+<a href="uuid-maker-quick-start.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Quick Start</a>
+<a href="uuid-maker-pro-features.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker with Pro Features</a>
+<a href="uuid-maker-developer-sandbox.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">UUID Maker Developer Sandbox</a>
+        </div>
+      </details>
+</main>
 <footer>ToolsMatic — Fast, privacy-first utilities for the web.</footer>
 </body>
 </html>

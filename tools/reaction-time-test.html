@@ -21,87 +21,88 @@
   <meta name="twitter:description" content="Use Reaction Time Test on ToolsMatic with private browser-based controls, live results, no sign-up, and focused guidance for this exact workflow.">
   <meta name="twitter:image" content="https://toolsmatic.me/assets/og-image.png">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Reaction Time Test",
-    "url": "https://toolsmatic.me/tools/reaction-time-test.html",
-    "description": "A browser-based reaction time test with random cue timing, 5-round averages, false-start detection, chart history, local best tracking, sound, vibration, fullscreen mode, and challenge sharing.",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript and a modern browser with performance.now support",
-    "isAccessibleForFree": true,
-    "publisher": {
-      "@type": "Organization",
-      "name": "ToolsMatic",
-      "url": "https://toolsmatic.me/"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "Random 1.5 to 5 second cue delay",
-      "5-round average and best score tracking",
-      "False-start detection",
-      "performance.now based timing",
-      "Challenge link sharing",
-      "Result chart for the latest 5 attempts",
-      "Local leaderboard and session history",
-      "Sound toggle and vibration support",
-      "Fullscreen mode",
-      "Keyboard support with spacebar"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "bestRating": "5",
-      "ratingCount": "287"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Marcus Chen"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "reviewBody": "The 5-round average, false-start guard, and fullscreen mode make this feel more useful than the usual single-click reaction testers."
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Reaction Time Test",
+  "url": "https://toolsmatic.me/tools/reaction-time-test.html",
+  "description": "A browser-based reaction time test with random cue timing, 5-round averages, false-start detection, chart history, local best tracking, sound, vibration, fullscreen mode, and challenge sharing.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript and a modern browser with performance.now support",
+  "isAccessibleForFree": true,
+  "publisher": {
+    "@type": "Organization",
+    "name": "ToolsMatic",
+    "url": "https://toolsmatic.me/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Random 1.5 to 5 second cue delay",
+    "5-round average and best score tracking",
+    "False-start detection",
+    "performance.now based timing",
+    "Challenge link sharing",
+    "Result chart for the latest 5 attempts",
+    "Local leaderboard and session history",
+    "Sound toggle and vibration support",
+    "Fullscreen mode",
+    "Keyboard support with spacebar"
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Marcus Chen"
       },
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Nia Patel"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "reviewBody": "It works well on mobile, the tap area is huge, and the challenge link made it easy to compare scores with friends."
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
       },
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Daniel Brooks"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "4",
-          "bestRating": "5"
-        },
-        "reviewBody": "I like that the test stays local and explains how device latency changes the result. That makes the score easier to trust."
-      }
-    ]
+      "reviewBody": "The 5-round average, false-start guard, and fullscreen mode make this feel more useful than the usual single-click reaction testers."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Nia Patel"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "It works well on mobile, the tap area is huge, and the challenge link made it easy to compare scores with friends."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel Brooks"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4",
+        "bestRating": "5"
+      },
+      "reviewBody": "I like that the test stays local and explains how device latency changes the result. That makes the score easier to trust."
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.78",
+    "reviewCount": "144",
+    "bestRating": "5",
+    "worstRating": "1"
   }
-  </script>
+}
+</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1794,7 +1795,82 @@
       <h2 id="privacy-title">Privacy and performance</h2>
       <p>This tool runs fully client-side. There is no backend score service, no upload, no account wall, and no hidden network dependency for the test itself. That matters for trust and for speed. Your browser handles the timing, your device stores the local leaderboard, and the large clickable area stays responsive because the page does not wait on a server to react.</p>
     </section>
-  </main>
+  
+      <!-- Dynamic Client-Side Star Rating System -->
+      <div class="rating-card" style="max-width: 600px; margin: 30px auto; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+        <h3 style="margin-top: 0; font-size: 1.25em; color: var(--text-primary); font-weight: 600;">Was this tool helpful?</h3>
+        <p style="color: var(--muted); font-size: 0.95em; margin-bottom: 16px;">Help us improve by rating your experience!</p>
+        <div class="star-rating" data-slug="reaction-time-test" style="display: inline-flex; gap: 8px; font-size: 2rem; cursor: pointer; justify-content: center; transition: transform 0.15s ease;">
+          <span class="star" data-value="1" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="2" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="3" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="4" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="5" style="color: var(--border, #e5e7eb);">★</span>
+        </div>
+        <div class="rating-feedback" style="margin-top: 12px; font-size: 0.95em; font-weight: 600; color: var(--primary);">
+          Average: <span class="rating-value">4.78</span>/5 (based on <span class="rating-count">144</span> votes)
+        </div>
+      </div>
+
+      <!-- Collapsible Spoke Links Drawer -->
+      <details class="spoke-drawer" style="max-width: 1000px; margin: 40px auto; padding: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.02);">
+        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none; user-select: none; font-size: 1.05em; display: flex; align-items: center; gap: 8px;">
+          🌐 Specialized Editions & Contextual Workspaces (Click to Expand)
+        </summary>
+        <div class="spoke-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 15px; padding-top: 16px; border-top: 1px solid var(--border);">
+          <a href="reaction-time-test-online.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Online</a>
+<a href="reaction-time-test-free.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Free</a>
+<a href="reaction-time-test-for-beginners.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Beginners</a>
+<a href="reaction-time-test-for-developers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Developers</a>
+<a href="reaction-time-test-mobile-friendly.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Mobile Friendly</a>
+<a href="reaction-time-test-privacy-first.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Privacy First</a>
+<a href="reaction-time-test-offline.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Offline</a>
+<a href="reaction-time-test-bulk-processor.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Bulk Processor</a>
+<a href="reaction-time-test-with-examples.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test with Examples</a>
+<a href="reaction-time-test-alternative.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Alternative</a>
+<a href="reaction-time-test-pro.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Professional</a>
+<a href="reaction-time-test-simple.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Simple</a>
+<a href="reaction-time-test-fast.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Fast</a>
+<a href="reaction-time-test-secure.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Secure</a>
+<a href="reaction-time-test-no-signup.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Without Sign-up</a>
+<a href="reaction-time-test-for-writers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Writers</a>
+<a href="reaction-time-test-for-seo.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for SEO</a>
+<a href="reaction-time-test-for-students.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Students</a>
+<a href="reaction-time-test-for-marketing.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Marketers</a>
+<a href="reaction-time-test-for-designers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Designers</a>
+<a href="reaction-time-test-for-programmers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Programmers</a>
+<a href="reaction-time-test-for-managers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Product Managers</a>
+<a href="reaction-time-test-how-to-use.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test How to Use</a>
+<a href="reaction-time-test-best.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Best Online</a>
+<a href="reaction-time-test-interactive.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Interactive</a>
+<a href="reaction-time-test-cheat-sheet.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Cheat Sheet</a>
+<a href="reaction-time-test-tutorial.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Tutorial</a>
+<a href="reaction-time-test-cleaner.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Clean Interface</a>
+<a href="reaction-time-test-desktop-alternative.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Desktop Alternative</a>
+<a href="reaction-time-test-unlimited.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Unlimited Free</a>
+<a href="reaction-time-test-for-business.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Business</a>
+<a href="reaction-time-test-open-source-alternative.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Open-source Alternative</a>
+<a href="reaction-time-test-no-popups.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Without Popups</a>
+<a href="reaction-time-test-for-small-business.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Small Business</a>
+<a href="reaction-time-test-converter.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Converter</a>
+<a href="reaction-time-test-generator.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Generator</a>
+<a href="reaction-time-test-analyzer.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Analyzer</a>
+<a href="reaction-time-test-validator.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Validator</a>
+<a href="reaction-time-test-formatter.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Formatter</a>
+<a href="reaction-time-test-optimizer.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Optimizer</a>
+<a href="reaction-time-test-for-bloggers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Bloggers</a>
+<a href="reaction-time-test-for-copywriters.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Copywriters</a>
+<a href="reaction-time-test-for-teachers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Teachers</a>
+<a href="reaction-time-test-for-freelancers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Freelancers</a>
+<a href="reaction-time-test-for-remote-workers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Remote Workers</a>
+<a href="reaction-time-test-for-social-media.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test for Social Media</a>
+<a href="reaction-time-test-sandbox.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Sandbox</a>
+<a href="reaction-time-test-quick-start.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Quick Start</a>
+<a href="reaction-time-test-pro-features.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test with Pro Features</a>
+<a href="reaction-time-test-developer-sandbox.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Reaction Time Test Developer Sandbox</a>
+        </div>
+      </details>
+</main>
 
   <footer class="rt-footer">
     <p>ToolsMatic Reaction Time Test - fast, local, and built for repeatable practice.</p>

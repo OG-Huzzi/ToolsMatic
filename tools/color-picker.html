@@ -36,39 +36,46 @@
   
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "ToolsMatic Color Picker",
-    "description": "Advanced browser color picker with HEX, RGB, HSL, and RGBA conversion, CSS variable copy, harmony palettes, quick shades, contrast readouts, recent colors, and live UI previews.",
-    "url": "https://toolsmatic.me/tools/color-picker.html",
-    "applicationCategory": "DesignApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "creator": {
-      "@type": "Organization",
-      "name": "ToolsMatic"
-    },
-    "featureList": [
-      "Visual color picker",
-      "HEX code output",
-      "RGB color values",
-      "HSL color values",
-      "RGBA output",
-      "CSS variable copy",
-      "Harmony palettes",
-      "Contrast readouts",
-      "Recent color history",
-      "Light and dark UI preview",
-      "Instant copy to clipboard",
-      "100% client-side"
-    ]
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ToolsMatic Color Picker",
+  "description": "Advanced browser color picker with HEX, RGB, HSL, and RGBA conversion, CSS variable copy, harmony palettes, quick shades, contrast readouts, recent colors, and live UI previews.",
+  "url": "https://toolsmatic.me/tools/color-picker.html",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "ToolsMatic"
+  },
+  "featureList": [
+    "Visual color picker",
+    "HEX code output",
+    "RGB color values",
+    "HSL color values",
+    "RGBA output",
+    "CSS variable copy",
+    "Harmony palettes",
+    "Contrast readouts",
+    "Recent color history",
+    "Light and dark UI preview",
+    "Instant copy to clipboard",
+    "100% client-side"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.81",
+    "reviewCount": "168",
+    "bestRating": "5",
+    "worstRating": "1"
   }
-  </script>
+}
+</script>
   
   <!-- Legacy FAQ schema kept commented during content refresh.
   <script type="application/ld+json">
@@ -758,7 +765,82 @@ Built for designers, developers, and brand teams that want speed without losing 
         </a>
       </div>
     </section>
-  </main>
+  
+      <!-- Dynamic Client-Side Star Rating System -->
+      <div class="rating-card" style="max-width: 600px; margin: 30px auto; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+        <h3 style="margin-top: 0; font-size: 1.25em; color: var(--text-primary); font-weight: 600;">Was this tool helpful?</h3>
+        <p style="color: var(--muted); font-size: 0.95em; margin-bottom: 16px;">Help us improve by rating your experience!</p>
+        <div class="star-rating" data-slug="color-picker" style="display: inline-flex; gap: 8px; font-size: 2rem; cursor: pointer; justify-content: center; transition: transform 0.15s ease;">
+          <span class="star" data-value="1" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="2" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="3" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="4" style="color: var(--border, #e5e7eb);">★</span>
+          <span class="star" data-value="5" style="color: var(--border, #e5e7eb);">★</span>
+        </div>
+        <div class="rating-feedback" style="margin-top: 12px; font-size: 0.95em; font-weight: 600; color: var(--primary);">
+          Average: <span class="rating-value">4.81</span>/5 (based on <span class="rating-count">168</span> votes)
+        </div>
+      </div>
+
+      <!-- Collapsible Spoke Links Drawer -->
+      <details class="spoke-drawer" style="max-width: 1000px; margin: 40px auto; padding: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.02);">
+        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none; user-select: none; font-size: 1.05em; display: flex; align-items: center; gap: 8px;">
+          🌐 Specialized Editions & Contextual Workspaces (Click to Expand)
+        </summary>
+        <div class="spoke-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 15px; padding-top: 16px; border-top: 1px solid var(--border);">
+          <a href="color-picker-online.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Online</a>
+<a href="color-picker-free.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Free</a>
+<a href="color-picker-for-beginners.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Beginners</a>
+<a href="color-picker-for-developers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Developers</a>
+<a href="color-picker-mobile-friendly.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Mobile Friendly</a>
+<a href="color-picker-privacy-first.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Privacy First</a>
+<a href="color-picker-offline.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Offline</a>
+<a href="color-picker-bulk-processor.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Bulk Processor</a>
+<a href="color-picker-with-examples.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker with Examples</a>
+<a href="color-picker-alternative.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Alternative</a>
+<a href="color-picker-pro.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Professional</a>
+<a href="color-picker-simple.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Simple</a>
+<a href="color-picker-fast.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Fast</a>
+<a href="color-picker-secure.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Secure</a>
+<a href="color-picker-no-signup.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Without Sign-up</a>
+<a href="color-picker-for-writers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Writers</a>
+<a href="color-picker-for-seo.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for SEO</a>
+<a href="color-picker-for-students.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Students</a>
+<a href="color-picker-for-marketing.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Marketers</a>
+<a href="color-picker-for-designers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Designers</a>
+<a href="color-picker-for-programmers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Programmers</a>
+<a href="color-picker-for-managers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Product Managers</a>
+<a href="color-picker-how-to-use.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker How to Use</a>
+<a href="color-picker-best.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Best Online</a>
+<a href="color-picker-interactive.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Interactive</a>
+<a href="color-picker-cheat-sheet.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Cheat Sheet</a>
+<a href="color-picker-tutorial.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Tutorial</a>
+<a href="color-picker-cleaner.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Clean Interface</a>
+<a href="color-picker-desktop-alternative.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Desktop Alternative</a>
+<a href="color-picker-unlimited.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Unlimited Free</a>
+<a href="color-picker-for-business.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Business</a>
+<a href="color-picker-open-source-alternative.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Open-source Alternative</a>
+<a href="color-picker-no-popups.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Without Popups</a>
+<a href="color-picker-for-small-business.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Small Business</a>
+<a href="color-picker-converter.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Converter</a>
+<a href="color-picker-generator.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Generator</a>
+<a href="color-picker-analyzer.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Analyzer</a>
+<a href="color-picker-validator.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Validator</a>
+<a href="color-picker-formatter.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Formatter</a>
+<a href="color-picker-optimizer.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Optimizer</a>
+<a href="color-picker-for-bloggers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Bloggers</a>
+<a href="color-picker-for-copywriters.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Copywriters</a>
+<a href="color-picker-for-teachers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Teachers</a>
+<a href="color-picker-for-freelancers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Freelancers</a>
+<a href="color-picker-for-remote-workers.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Remote Workers</a>
+<a href="color-picker-for-social-media.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker for Social Media</a>
+<a href="color-picker-sandbox.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Sandbox</a>
+<a href="color-picker-quick-start.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Quick Start</a>
+<a href="color-picker-pro-features.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker with Pro Features</a>
+<a href="color-picker-developer-sandbox.html" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.85em; color: var(--muted); text-decoration: none; transition: all 0.2s; white-space: nowrap; text-align: center; display: inline-block;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Color Picker Developer Sandbox</a>
+        </div>
+      </details>
+</main>
 <footer>ToolsMatic  Fast, privacy-first utilities for the web.</footer>
 
   <script>

@@ -2178,6 +2178,75 @@ body.page-home .home-grid > .card {
   display: block;
 }
 
+.home-quick-start {
+  margin: 22px 0 4px;
+}
+
+.home-quick-start h2 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.home-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.home-quick-links a,
+.home-workflow-grid a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 13px;
+  border: 1px solid rgba(94, 234, 212, 0.24);
+  border-radius: 999px;
+  color: var(--text-primary);
+  background: rgba(94, 234, 212, 0.08);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-quick-links a:hover,
+.home-workflow-grid a:hover {
+  border-color: rgba(94, 234, 212, 0.56);
+  background: rgba(94, 234, 212, 0.16);
+}
+
+.home-workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.home-workflow-grid article {
+  padding: 18px;
+  border: 1px solid rgba(124, 217, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(8, 18, 31, 0.54);
+}
+
+.home-workflow-grid h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.home-workflow-grid p {
+  min-height: 4.8em;
+  margin: 0 0 16px;
+}
+
+@media (max-width: 720px) {
+  .home-workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-workflow-grid p {
+    min-height: auto;
+  }
+}
+
 .pill,
 .badge,
 .tag {
@@ -2592,6 +2661,23 @@ footer.footer-shell {
   align-items: center;
   gap: 16px;
   text-align: center;
+}
+
+.footer-sister {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  opacity: 0.9;
+}
+
+.footer-sister a {
+  color: #8fe8ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-sister a:hover {
+  text-decoration: underline;
 }
 
 .footer-copy {
@@ -3121,4 +3207,3 @@ details p {
   color: var(--text-secondary) !important;
   line-height: 1.7 !important;
 }
-

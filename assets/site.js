@@ -67,6 +67,21 @@
 
     nav.classList.add('has-mobile-menu');
 
+    if (!navLinks.querySelector('[data-iconstash]')) {
+      const iconLink = document.createElement('a');
+      iconLink.className = 'nav-btn';
+      iconLink.href = 'https://iconstash.io';
+      iconLink.setAttribute('data-iconstash', '');
+      iconLink.title = 'IconStash - 134,000+ free SVG & PNG icons';
+      iconLink.textContent = 'Free Icons';
+      const allTools = navLinks.querySelector('.nav-btn');
+      if (allTools) {
+        allTools.insertAdjacentElement('afterend', iconLink);
+      } else {
+        navLinks.appendChild(iconLink);
+      }
+    }
+
     if (!navLinks.id) {
       navLinks.id = 'site-navigation';
     }
@@ -1861,6 +1876,14 @@
 
     footer.appendChild(copyEl);
     footer.appendChild(actions);
+
+    const sister = document.createElement('div');
+    sister.className = 'footer-sister';
+    const sisterLink = document.createElement('a');
+    sisterLink.href = 'https://iconstash.io';
+    sisterLink.textContent = 'IconStash';
+    sister.append('Also from the ToolsMatic team: ', sisterLink, ' — 134,000+ free SVG & PNG icons');
+    footer.appendChild(sister);
   };
   const initRelatedTools = () => {
     if (!isToolPage()) return;
@@ -2034,10 +2057,6 @@
   // Back-compat alias for pages using `ToolsMatic` casing
   window.ToolsMatic = window.toolsMatic;
   const boot = () => {
-    if (typeof reduceAndReplaceBanners === 'function') reduceAndReplaceBanners();
-    if (typeof ensureAdManagerInlineScript === 'function') ensureAdManagerInlineScript();
-    if (typeof ensureMbiAdScript === 'function') ensureMbiAdScript();
-    if (typeof ensureLegacyAdScript === 'function') ensureLegacyAdScript();
     decorateSiteShell();
     initResponsiveNav();
     initGlobalToolFinder();

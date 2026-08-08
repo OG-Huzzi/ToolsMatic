@@ -6,11 +6,7 @@ const TOOLS = path.join(ROOT, 'tools');
 const INDEX = path.join(ROOT, 'index.html');
 const SITE = 'https://toolsmatic.me';
 const TODAY = '2026-05-13';
-
-const adBlock = `    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
-      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
-      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
-    </section>`;
+const adBlock = '';
 
 const newTools = [
   {
@@ -294,7 +290,6 @@ ${header()}
   <section class="tool-hero doc-hero" aria-label="${esc(tool.cardTitle)}">
     <div class="tool-hero-badge">${esc(tool.badge)}</div>
     <h1>${esc(tool.h1)}</h1>
-${adBlock}
     <p class="tool-hero-sub">${esc(tool.sub)}</p>
   </section>
   <section class="doc-tool" aria-label="${esc(tool.cardTitle)} workspace">

@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://toolsmatic.me/tools/change-csv-separator-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/change-csv-separator-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/change-csv-separator-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -31,19 +19,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/csv-rows-to-columns-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/csv-rows-to-columns-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/csv-rows-to-columns-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -61,19 +37,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/csv-to-tsv-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/csv-to-tsv-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/csv-to-tsv-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -91,19 +55,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/csv-to-xml-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/csv-to-xml-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/csv-to-xml-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -121,19 +73,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/csv-to-yaml-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/csv-to-yaml-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/csv-to-yaml-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -151,19 +91,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/find-incomplete-csv-records-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/find-incomplete-csv-records-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/find-incomplete-csv-records-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -181,19 +109,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/insert-csv-columns-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/insert-csv-columns-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/insert-csv-columns-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -211,19 +127,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/swap-csv-columns-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/swap-csv-columns-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/swap-csv-columns-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -241,19 +145,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/tsv-to-json-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/tsv-to-json-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/tsv-to-json-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -271,19 +163,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/escape-json-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/escape-json-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/escape-json-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -301,19 +181,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/json-comparison-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/json-comparison-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/json-comparison-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -331,19 +199,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/json-to-xml-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/json-to-xml-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/json-to-xml-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -361,19 +217,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/stringify-json-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/stringify-json-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/stringify-json-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -391,19 +235,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/duplicate-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/duplicate-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/duplicate-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -421,19 +253,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/find-most-popular-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/find-most-popular-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/find-most-popular-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -451,19 +271,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/find-unique-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/find-unique-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/find-unique-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -481,19 +289,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/group-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/group-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/group-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -511,19 +307,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/reverse-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/reverse-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/reverse-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -541,19 +325,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/rotate-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/rotate-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/rotate-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -571,19 +343,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/shuffle-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/shuffle-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/shuffle-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -601,19 +361,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/sort-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/sort-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/sort-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -631,19 +379,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/truncate-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/truncate-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/truncate-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -661,19 +397,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/unwrap-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/unwrap-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/unwrap-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -691,19 +415,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/wrap-list-items-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/wrap-list-items-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/wrap-list-items-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -721,19 +433,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/arithmetic-sequence-generator-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/arithmetic-sequence-generator-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/arithmetic-sequence-generator-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -751,19 +451,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/byte-converter-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/byte-converter-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/byte-converter-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -781,19 +469,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/random-number-generator-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/random-number-generator-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/random-number-generator-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -811,19 +487,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/random-port-generator-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/random-port-generator-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/random-port-generator-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -841,19 +505,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/sum-calculator-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/sum-calculator-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/sum-calculator-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -871,19 +523,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/censor-text-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/censor-text-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/censor-text-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -901,19 +541,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/palindrome-generator-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/palindrome-generator-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/palindrome-generator-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -931,19 +559,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/extract-substring-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/extract-substring-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/extract-substring-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -961,19 +577,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/hidden-character-detector-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/hidden-character-detector-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/hidden-character-detector-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -991,19 +595,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/join-text-lines-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/join-text-lines-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/join-text-lines-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1021,19 +613,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/palindrome-checker-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/palindrome-checker-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/palindrome-checker-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1051,19 +631,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/randomize-case-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/randomize-case-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/randomize-case-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1081,19 +649,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/remove-duplicate-lines-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/remove-duplicate-lines-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/remove-duplicate-lines-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1111,19 +667,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/repeat-text-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/repeat-text-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/repeat-text-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1141,19 +685,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/reverse-text-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/reverse-text-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/reverse-text-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1171,19 +703,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/rot13-converter-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/rot13-converter-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/rot13-converter-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1201,19 +721,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/rotate-text-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/rotate-text-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/rotate-text-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1231,19 +739,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/split-text-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/split-text-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/split-text-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1261,19 +757,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/text-replacer-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/text-replacer-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/text-replacer-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1291,19 +775,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/text-to-morse-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/text-to-morse-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/text-to-morse-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1321,19 +793,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/truncate-text-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/truncate-text-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/truncate-text-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1351,19 +811,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/unicode-inspector-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/unicode-inspector-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/unicode-inspector-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1381,19 +829,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/leap-year-checker-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/leap-year-checker-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/leap-year-checker-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1411,19 +847,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/days-to-hours-converter-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/days-to-hours-converter-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/days-to-hours-converter-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1441,19 +865,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/hours-to-days-converter-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/hours-to-days-converter-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/hours-to-days-converter-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1471,19 +883,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/seconds-to-time-converter-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/seconds-to-time-converter-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/seconds-to-time-converter-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1501,19 +901,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/time-to-decimal-converter-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/time-to-decimal-converter-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/time-to-decimal-converter-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1531,19 +919,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/time-to-seconds-converter-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/time-to-seconds-converter-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/time-to-seconds-converter-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1561,19 +937,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/unix-timestamp-converter-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/unix-timestamp-converter-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/unix-timestamp-converter-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1591,19 +955,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/crontab-guru-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/crontab-guru-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/crontab-guru-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1621,19 +973,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/discord-timestamp-generator-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/discord-timestamp-generator-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/discord-timestamp-generator-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1651,19 +991,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/time-between-dates-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/time-between-dates-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/time-between-dates-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1681,19 +1009,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/truncate-clock-time-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/truncate-clock-time-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/truncate-clock-time-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1711,19 +1027,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/xml-beautifier-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/xml-beautifier-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/xml-beautifier-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>
@@ -1741,19 +1045,7 @@
     <priority>0.62</priority>
   </url>
   <url>
-    <loc>https://toolsmatic.me/tools/xml-validator-free.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
     <loc>https://toolsmatic.me/tools/xml-validator-no-upload.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.62</priority>
-  </url>
-  <url>
-    <loc>https://toolsmatic.me/tools/xml-validator-for-developers.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.62</priority>

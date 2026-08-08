@@ -7,6 +7,7 @@ const INDEX_PATH = path.join(ROOT, 'index.html');
 const SITEMAP_PATH = path.join(ROOT, 'sitemap.xml');
 const SITE = 'https://toolsmatic.me';
 const TODAY = '2026-05-07';
+const INDEX_PSEO_VARIANTS = process.env.INDEX_PSEO_VARIANTS === 'true';
 
 const intents = [
   {
@@ -112,11 +113,14 @@ function replaceOrInsertHead(html, pattern, replacement, before = '</head>') {
   return html.replace(before, `  ${replacement}\n${before}`);
 }
 
-function updateUrlFields(html, url, title, description) {
+function updateUrlFields(html, url, canonicalUrl, title, description) {
   let out = html;
   out = replaceOrInsertHead(out, /<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(title)}</title>`);
   out = replaceOrInsertHead(out, /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i, `<meta name="description" content="${escapeHtml(description)}">`);
-  out = replaceOrInsertHead(out, /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${url}">`);
+  out = replaceOrInsertHead(out, /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${canonicalUrl}">`);
+  if (!INDEX_PSEO_VARIANTS) {
+    out = replaceOrInsertHead(out, /<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i, '<meta name="robots" content="noindex,follow">');
+  }
   out = replaceOrInsertHead(out, /<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:url" content="${url}">`);
   out = replaceOrInsertHead(out, /<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:title" content="${escapeHtml(title)}">`);
   out = replaceOrInsertHead(out, /<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:description" content="${escapeHtml(description)}">`);
@@ -252,6 +256,7 @@ function ensureSingleH1(html) {
 }
 
 function updateSitemap(urls) {
+  if (!INDEX_PSEO_VARIANTS) return 0;
   let sitemap = fs.readFileSync(SITEMAP_PATH, 'utf8');
   const existing = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
   const additions = urls
@@ -292,7 +297,7 @@ for (const tool of cards) {
     }
 
     let html = baseHtml;
-    html = updateUrlFields(html, url, title, description);
+    html = updateUrlFields(html, url, INDEX_PSEO_VARIANTS ? url : baseUrl, title, description);
     html = updateFirstH1(html, heading);
     html = ensureSingleH1(html);
     html = insertSeoBlock(html, makeSeoBlock(tool, intent, url, baseUrl));

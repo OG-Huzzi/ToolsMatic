@@ -228,10 +228,7 @@ function sharedCss() {
 }
 
 function ad() {
-  return `<section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
-      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
-      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
-    </section>`;
+  return '';
 }
 
 function textPage(tool) {

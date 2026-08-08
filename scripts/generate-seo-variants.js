@@ -414,6 +414,7 @@ const config = [
 const ROOT_DIR = path.join(__dirname, '..');
 const TOOLS_DIR = path.join(ROOT_DIR, 'tools');
 const SITEMAP_PATH = path.join(ROOT_DIR, 'sitemap.xml');
+const INDEX_PSEO_VARIANTS = process.env.INDEX_PSEO_VARIANTS === 'true';
 
 let generatedCount = 0;
 const newUrls = [];
@@ -430,6 +431,8 @@ config.forEach(mapping => {
   mapping.variants.forEach(variant => {
     const variantPath = path.join(TOOLS_DIR, `${variant.slug}.html`);
     const variantUrl = `https://toolsmatic.me/tools/${variant.slug}.html`;
+    const baseUrl = `https://toolsmatic.me/tools/${mapping.baseTool}`;
+    const canonicalUrl = INDEX_PSEO_VARIANTS ? variantUrl : baseUrl;
 
     let newHtml = baseHtml;
 
@@ -443,7 +446,11 @@ config.forEach(mapping => {
     newHtml = newHtml.replace(/<h1>.*?<\/h1>/s, `<h1>${variant.h1}</h1>`);
     
     // Replace Canonical Link
-    newHtml = newHtml.replace(/<link rel="canonical" href=".*?"\s*\/>/s, `<link rel="canonical" href="${variantUrl}" />`);
+    newHtml = newHtml.replace(/<link rel="canonical" href=".*?"\s*\/>/s, `<link rel="canonical" href="${canonicalUrl}" />`);
+    if (!INDEX_PSEO_VARIANTS) {
+      newHtml = newHtml.replace(/<meta\s+name="robots"\s+content=".*?"\s*\/>/s, '');
+      newHtml = newHtml.replace('</head>', '  <meta name="robots" content="noindex,follow">\n</head>');
+    }
     
     // Replace OG Title and URL
     newHtml = newHtml.replace(/<meta property="og:title" content=".*?"\s*\/>/s, `<meta property="og:title" content="${variant.title}" />`);
@@ -465,7 +472,7 @@ config.forEach(mapping => {
 console.log(`\nSuccessfully generated ${generatedCount} SEO variant pages.`);
 
 // Update sitemap.xml
-if (fs.existsSync(SITEMAP_PATH) && newUrls.length > 0) {
+if (INDEX_PSEO_VARIANTS && fs.existsSync(SITEMAP_PATH) && newUrls.length > 0) {
   let sitemap = fs.readFileSync(SITEMAP_PATH, 'utf8');
   
   // Find where to insert (before </urlset>)
@@ -483,4 +490,8 @@ if (fs.existsSync(SITEMAP_PATH) && newUrls.length > 0) {
     fs.writeFileSync(SITEMAP_PATH, sitemap, 'utf8');
     console.log(`Injected new URLs into sitemap.xml`);
   }
+}
+
+if (!INDEX_PSEO_VARIANTS) {
+  console.log('SEO variants are canonicalized to their core tools and are not added to the sitemap.');
 }

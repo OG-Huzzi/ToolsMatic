@@ -1,12 +1,12 @@
-# Graph Report - D:\ToolsMatic  (2026-05-22)
+# Graph Report - D:\ToolsMatic  (2026-08-07)
 
 ## Corpus Check
-- 24 files · ~3,839,671 words
+- 31 files · ~4,030,517 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 315 nodes · 567 edges · 22 communities detected
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.8)
+- 341 nodes · 594 edges · 28 communities detected
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -32,10 +32,16 @@
 - [[_COMMUNITY_Community 19|Community 19]]
 - [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_Community 21|Community 21]]
+- [[_COMMUNITY_Community 22|Community 22]]
+- [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 25|Community 25]]
+- [[_COMMUNITY_Community 26|Community 26]]
+- [[_COMMUNITY_Community 27|Community 27]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `runConversion()` - 18 edges
-2. `boot()` - 18 edges
+1. `boot()` - 19 edges
+2. `runConversion()` - 18 edges
 3. `basePage()` - 12 edges
 4. `textPage()` - 10 edges
 5. `head()` - 9 edges
@@ -50,6 +56,8 @@
   D:\ToolsMatic\assets\pro-image-editor.js → D:\ToolsMatic\assets\pdf\global.js
 - `toast()` --calls--> `showToast()`  [INFERRED]
   D:\ToolsMatic\assets\team-balancer.js → D:\ToolsMatic\assets\pdf\global.js
+- `highlightStars()` --calls--> `initStarRatings()`  [INFERRED]
+  D:\ToolsMatic\assets\ratings.js → D:\ToolsMatic\assets\site.js
 - `showToast()` --calls--> `notify()`  [INFERRED]
   D:\ToolsMatic\assets\pdf\global.js → D:\ToolsMatic\assets\pdf\tool-base.js
 - `renderPDFThumbnail()` --calls--> `render()`  [INFERRED]
@@ -58,8 +66,8 @@
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.07
-Nodes (48): bindKeyboard(), boot(), collectFaqEntities(), decorateAdSlots(), decorateSiteShell(), enhanceFooter(), ensureBreadcrumbNav(), ensureNodeId() (+40 more)
+Cohesion: 0.06
+Nodes (51): highlightStars(), resetStars(), bindKeyboard(), boot(), collectFaqEntities(), decorateAdSlots(), decorateSiteShell(), enhanceFooter() (+43 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.1
@@ -98,35 +106,35 @@ Cohesion: 0.21
 Nodes (8): decodeHtml(), escapeHtml(), extractCards(), makeSeoBlock(), metaDescription(), replaceOrInsertHead(), updateFirstH1(), updateUrlFields()
 
 ### Community 10 - "Community 10"
+Cohesion: 0.22
+Nodes (6): consolidatePage(), legacyVariantMap(), listedUrls(), read(), replaceOrInsertHead(), urlsFromXml()
+
+### Community 11 - "Community 11"
 Cohesion: 0.29
 Nodes (9): categories(), filteredTools(), loadTool(), render(), renderCategories(), renderList(), toggleFavorite(), toolUrl() (+1 more)
 
-### Community 11 - "Community 11"
+### Community 12 - "Community 12"
 Cohesion: 0.31
 Nodes (7): Add-AdAfterFirstH1(), Add-HtmlExtensions(), Ensure-Dir(), Remove-FakeRatingSchema(), Set-Or-Insert-HeadTag(), Transform-Html(), Write-ZipBinary()
 
-### Community 12 - "Community 12"
+### Community 13 - "Community 13"
 Cohesion: 0.39
 Nodes (5): faqSection(), head(), pseoContent(), schemas(), shell()
 
-### Community 13 - "Community 13"
+### Community 14 - "Community 14"
 Cohesion: 0.38
 Nodes (3): esc(), page(), runtimeJs()
 
-### Community 14 - "Community 14"
+### Community 15 - "Community 15"
 Cohesion: 0.4
 Nodes (0): 
 
-### Community 15 - "Community 15"
-Cohesion: 1.0
-Nodes (0): 
-
 ### Community 16 - "Community 16"
-Cohesion: 1.0
+Cohesion: 0.67
 Nodes (0): 
 
 ### Community 17 - "Community 17"
-Cohesion: 1.0
+Cohesion: 0.67
 Nodes (0): 
 
 ### Community 18 - "Community 18"
@@ -145,31 +153,61 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
+### Community 22 - "Community 22"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 23 - "Community 23"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 24 - "Community 24"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 25 - "Community 25"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 26 - "Community 26"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 27 - "Community 27"
+Cohesion: 1.0
+Nodes (0): 
+
 ## Knowledge Gaps
-- **Thin community `Community 15`** (1 nodes): `extract.js`
+- **Thin community `Community 18`** (1 nodes): `extract.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 16`** (1 nodes): `sw.js`
+- **Thin community `Community 19`** (1 nodes): `sw.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 17`** (1 nodes): `popunder-manager.js`
+- **Thin community `Community 20`** (1 nodes): `popunder-manager.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 18`** (1 nodes): `tools-data.js`
+- **Thin community `Community 21`** (1 nodes): `tools-data.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 19`** (1 nodes): `find-canonical-mismatches.ps1`
+- **Thin community `Community 22`** (1 nodes): `find-canonical-mismatches.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 20`** (1 nodes): `generate-seo-variants.js`
+- **Thin community `Community 23`** (1 nodes): `generate-seo-variants.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 21`** (1 nodes): `normalize-banner-ads.ps1`
+- **Thin community `Community 24`** (1 nodes): `normalize-banner-ads.ps1`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 25`** (1 nodes): `remove-ads.ps1`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 26`** (1 nodes): `streamline-homepage.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 27`** (1 nodes): `verify-site-cleanup.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `showToast()` connect `Community 2` to `Community 4`, `Community 7`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **Why does `toast()` connect `Community 4` to `Community 2`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

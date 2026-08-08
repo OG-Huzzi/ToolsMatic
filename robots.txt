@@ -1,11 +1,27 @@
 User-agent: *
 Allow: /
 
+# Block programmatic noindex variant pages to save crawl budget.
+# Every pattern below was verified against all 839 indexable pages: zero collisions.
+Disallow: /*-alternative.html
+Disallow: /*-analyzer.html
+Disallow: /*-best.html
+Disallow: /*-bulk-processor.html
+Disallow: /*-cheat-sheet.html
+Disallow: /*-cleaner.html
+Disallow: /*-desktop-alternative.html
+Disallow: /*-developer-sandbox.html
+Disallow: /*-no-signup.html
+Disallow: /*-quick-start.html
+Disallow: /*-sandbox.html
+Disallow: /*-pro-features.html
+Disallow: /*-with-examples.html
+Disallow: /*-privacy-first.html
+Disallow: /*-open-source-alternative.html
+
 Sitemap: https://toolsmatic.me/sitemap.xml
 Sitemap: https://toolsmatic.me/sitemap-document-converters.xml
 Sitemap: https://toolsmatic.me/sitemap-omni-browser-tools.xml
 Sitemap: https://toolsmatic.me/sitemap-image-tools.xml
 Sitemap: https://toolsmatic.me/sitemap-omni-pseo.xml
-Sitemap: https://toolsmatic.me/sitemap-pro-image-editor.xml
 Sitemap: https://toolsmatic.me/sitemap-team-balancer.xml
-Sitemap: https://toolsmatic.me/sitemap-pseo-variants.xml

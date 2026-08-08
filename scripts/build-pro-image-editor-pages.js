@@ -14,11 +14,6 @@ const escapeAttr = (value) => String(value)
   .replace(/</g, '&lt;')
   .replace(/>/g, '&gt;');
 
-const adBlock = `    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
-      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
-      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
-    </section>`;
-
 const faq = [
   ['Is ToolsMatic Pro Image Editor free?', 'Yes. The editor is free to use in the browser with no account, signup, or required upload step.'],
   ['Does the Pro Image Editor upload my images?', 'No. Images are loaded into your browser and edited locally with client-side canvas tools.'],
@@ -301,7 +296,6 @@ ${header()}
     <section class="pro-editor-hero">
       <span class="pro-editor-kicker">Design tool</span>
       <h1>Pro Image Editor</h1>
-${adBlock}
       <p>Crop, resize, rotate, flip, draw, add text, add shapes, apply filters, undo changes, and export polished images directly in your browser. Built for fast visual work without forcing your private image through a server upload.</p>
       <div class="pro-editor-badges"><span class="pro-editor-badge">No required upload</span><span class="pro-editor-badge">Crop, text, draw, filters</span><span class="pro-editor-badge">PNG, JPG, WebP export</span><span class="pro-editor-badge">Mobile responsive</span></div>
     </section>
@@ -382,7 +376,6 @@ ${header()}
     <section class="pro-editor-hero">
       <span class="pro-editor-kicker">Image editing guide</span>
       <h1>${page.h1}</h1>
-${adBlock}
       <p>${page.desc}</p>
       <div class="pro-editor-badges"><span class="pro-editor-badge">Private browser workflow</span><span class="pro-editor-badge">Fast image edits</span><span class="pro-editor-badge">No signup required</span></div>
       <p><a class="pro-editor-btn primary" href="/tools/pro-image-editor.html">Open Pro Image Editor</a></p>

@@ -5,11 +5,6 @@ const root = process.cwd();
 const outTools = path.join(root, 'tools');
 const today = '2026-05-16';
 const site = 'https://toolsmatic.me';
-const adBlock = `<section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
-      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
-      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
-    </section>`;
-
 const mainFaqs = [
   ['How does the team balancer work?', 'The tool sorts players by skill, then distributes them with a snake draft pattern so strong and developing players are spread across the teams instead of stacked together.'],
   ['Is the Team Balancer free?', 'Yes. The Team Balancer is free to use in your browser with no account, no install, and no server-side processing.'],
@@ -75,7 +70,6 @@ ${head({ title, description, slug, keywords })}
     </nav>
     <section class="hero">
       <h1>${h1}</h1>
-      ${adBlock}
       <p>${description}</p>
     </section>
     ${body}

@@ -8,6 +8,7 @@ const ROBOTS_PATH = path.join(ROOT, 'robots.txt');
 const SITEMAP_PSEO_PATH = path.join(ROOT, 'sitemap-pseo-variants.xml');
 const SITE = 'https://toolsmatic.me';
 const TODAY = new Date().toISOString().split('T')[0];
+const INDEX_PSEO_VARIANTS = process.env.INDEX_PSEO_VARIANTS === 'true';
 
 const intents = [
   {
@@ -916,11 +917,14 @@ function replaceOrInsertHead(html, pattern, replacement, before = '</head>') {
   return html.replace(before, `  ${replacement}\n${before}`);
 }
 
-function updateUrlFields(html, url, title, description) {
+function updateUrlFields(html, url, canonicalUrl, title, description) {
   let out = html;
   out = replaceOrInsertHead(out, /<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(title)}</title>`);
   out = replaceOrInsertHead(out, /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i, `<meta name="description" content="${escapeHtml(description)}">`);
-  out = replaceOrInsertHead(out, /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${url}">`);
+  out = replaceOrInsertHead(out, /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${canonicalUrl}">`);
+  if (!INDEX_PSEO_VARIANTS) {
+    out = replaceOrInsertHead(out, /<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i, '<meta name="robots" content="noindex,follow">');
+  }
   out = replaceOrInsertHead(out, /<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:url" content="${url}">`);
   out = replaceOrInsertHead(out, /<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:title" content="${escapeHtml(title)}">`);
   out = replaceOrInsertHead(out, /<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:description" content="${escapeHtml(description)}">`);
@@ -1157,24 +1161,7 @@ function insertSeoBlock(html, block) {
 }
 
 function addAdBlockDirect(html) {
-  const adBlock = `
-    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
-      <script>atOptions={'key':'e61a3745429623f25315f86052a3ab7b','format':'iframe','height':90,'width':728,'params':{}};</script>
-      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
-    </section>`;
-    
-  // Check if ad slot already present
-  if (html.includes('fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js')) {
-    return html; // Already has it
-  }
-  
-  let out = html;
-  if (out.includes('</h1>')) {
-    out = out.replace('</h1>', `</h1>\n${adBlock}`);
-  } else if (out.includes('</main>')) {
-    out = out.replace('(<main\\b[^>]*>)', `$1\n${adBlock}`);
-  }
-  return out;
+  return html;
 }
 
 // ----------------------------------------------------
@@ -1214,7 +1201,7 @@ try {
       let html = cleanExistingPseoSectionsAndSchemas(baseHtml);
       
       // Update header metadata, first H1, and canonical tags
-      html = updateUrlFields(html, url, title, description);
+      html = updateUrlFields(html, url, INDEX_PSEO_VARIANTS ? url : baseUrl, title, description);
       html = updateFirstH1(html, heading);
       html = ensureSingleH1(html);
       
@@ -1242,6 +1229,15 @@ try {
   // GENERATE DEDICATED SEPARATE XML SITEMAP
   // ----------------------------------------------------
   
+  if (!INDEX_PSEO_VARIANTS) {
+    fs.writeFileSync(SITEMAP_PSEO_PATH, `<?xml version="1.0" encoding="utf-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <!-- Programmatic variants are intentionally not submitted for indexing. -->\n</urlset>\n`, 'utf8');
+    if (fs.existsSync(ROBOTS_PATH)) {
+      const robots = fs.readFileSync(ROBOTS_PATH, 'utf8')
+        .replace(/^Sitemap:\s*https:\/\/toolsmatic\.me\/sitemap-pseo-variants\.xml\r?\n?/gim, '');
+      fs.writeFileSync(ROBOTS_PATH, `${robots.trim()}\n`, 'utf8');
+    }
+    console.log('Programmatic variants are canonicalized to core tools and excluded from submitted sitemaps.');
+  } else {
   let sitemapContent = `<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- ToolsMatic Programmatic SEO Page Variants -->
@@ -1278,6 +1274,7 @@ try {
     }
   } else {
     console.error(`robots.txt not found at ${ROBOTS_PATH}`);
+  }
   }
   
 } catch (err) {

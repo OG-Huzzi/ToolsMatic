@@ -58,22 +58,7 @@ function Add-HtmlExtensions([string]$Html) {
 }
 
 function Add-AdAfterFirstH1([string]$Html) {
-  if ($Html -match 'e61a3745429623f25315f86052a3ab7b') { return $Html }
-  $ad = @'
-    <section class="ad-slot ad-slot-primary pdf-ad-slot" aria-label="Advertisement">
-      <script>
-        atOptions = {
-          'key' : 'e61a3745429623f25315f86052a3ab7b',
-          'format' : 'iframe',
-          'height' : 90,
-          'width' : 728,
-          'params' : {}
-        };
-      </script>
-      <script src="https://fixesconsessionconsession.com/e61a3745429623f25315f86052a3ab7b/invoke.js"></script>
-    </section>
-'@
-  return [regex]::Replace($Html, '</h1>', "</h1>`n$ad", 'IgnoreCase', [timespan]::FromSeconds(1))
+  return $Html
 }
 
 function Transform-Html([string]$Html, [string]$OutputRelative) {

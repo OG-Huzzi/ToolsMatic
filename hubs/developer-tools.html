@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VEPDS13HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9VEPDS13HT');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Developer Tools – JSON, Regex, Encoding &amp; Code Utilities | ToolsMatic</title>
+  <meta name="description" content="Free browser-based developer tools: JSON formatter and validator, regex tester, base64 and URL encoders, hash generator, JWT inspector, minifiers, and code utilities that run locally.">
+  <link rel="canonical" href="https://toolsmatic.me/hubs/developer-tools.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsmatic.me/hubs/developer-tools.html">
+  <meta property="og:title" content="Developer Tools – JSON, Regex, Encoding &amp; Code Utilities | ToolsMatic">
+  <meta property="og:description" content="Format JSON, test regex, encode data, generate hashes, inspect JWTs, and minify code — all locally in your browser.">
+  <meta property="og:image" content="https://toolsmatic.me/assets/pdf/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Developer Tools – JSON, Regex, Encoding &amp; Code Utilities | ToolsMatic">
+  <meta name="twitter:description" content="Format JSON, test regex, encode data, generate hashes, inspect JWTs, and minify code — all locally in your browser.">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/site.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolsmatic.me/"},
+      {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://toolsmatic.me/hubs/developer-tools.html"}
+    ]
+  }
+  </script>
+  <style>
+    .hub-wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto 40px; }
+    .hub-breadcrumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 22px; padding: 12px 16px; border: 1px solid rgba(94, 234, 212, 0.16); border-radius: 14px; background: linear-gradient(180deg, rgba(12, 24, 38, 0.92), rgba(11, 18, 29, 0.86)); color: rgba(227, 235, 244, 0.78); font-size: 0.92rem; }
+    .hub-breadcrumbs a { color: #8fe8ff; text-decoration: none; }
+    .hub-breadcrumbs span { opacity: 0.62; }
+    .hub-header { text-align: center; padding: 46px 20px 10px; }
+    .hub-header h1 { margin: 0 0 14px; font-size: clamp(1.9rem, 4vw, 2.6rem); }
+    .hub-header p { max-width: 720px; margin: 0 auto; color: rgba(225, 233, 241, 0.82); line-height: 1.7; }
+    .hub-intro { max-width: 780px; margin: 26px auto 10px; padding: 0 20px; line-height: 1.75; color: rgba(225, 233, 241, 0.85); }
+    .hub-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 30px; }
+    .hub-tools a.card { display: block; }
+    .hub-tools a.card h3 { margin: 0 0 6px; }
+    .hub-tools a.card p { margin: 0; color: rgba(225, 233, 241, 0.72); font-size: 0.92rem; line-height: 1.55; }
+    .hub-guides { margin-top: 44px; }
+    .hub-guides h2 { margin: 0 0 14px; }
+    .hub-guides ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .hub-guides li a { color: #8fe8ff; text-decoration: none; line-height: 1.6; }
+    .hub-guides li a:hover { text-decoration: underline; }
+    @media (max-width: 720px) {
+      .hub-wrap { width: min(100% - 20px, 100%); }
+      .hub-header { padding-top: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">ToolsMatic</a>
+      <div class="nav-links">
+        <a href="/" class="nav-btn">All tools</a>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle dark or light theme">&#127769;</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="hub-wrap">
+      <nav class="hub-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <strong>Developer Tools</strong>
+      </nav>
+
+      <div class="hub-header">
+        <h1>Developer Tools</h1>
+        <p>Format, validate, encode, and debug code and data without leaving your browser.</p>
+      </div>
+
+      <div class="hub-intro">
+        <p>These utilities cover the small jobs that interrupt development: formatting a response from an API, testing a regex against sample input, converting between encodings, generating unique IDs, and inspecting tokens. Because processing happens in your browser, code snippets and payloads are not sent to a server.</p>
+        <p>Building a UI or a design mockup? For icons, <a href="https://iconstash.io">IconStash</a> searches 134,000+ SVG and PNG icons from 28+ open-source libraries in one place.</p>
+      </div>
+
+      <div class="hub-tools">
+        <a class="card" href="/tools/json-formatter.html">
+          <h3>JSON Formatter</h3>
+          <p>Clean, indent, and validate JSON for quick reviews and debugging.</p>
+        </a>
+        <a class="card" href="/tools/regex-tester.html">
+          <h3>Regex Tester</h3>
+          <p>Test patterns against sample data with live match highlighting.</p>
+        </a>
+        <a class="card" href="/tools/base64-encoder.html">
+          <h3>Base64 Encoder</h3>
+          <p>Encode strings and files to Base64 without leaving your browser.</p>
+        </a>
+        <a class="card" href="/tools/url-encoder.html">
+          <h3>URL Encoder</h3>
+          <p>Encode and decode URLs and query parameters safely.</p>
+        </a>
+        <a class="card" href="/tools/hash-generator.html">
+          <h3>Hash Generator</h3>
+          <p>Generate, verify, and compare MD5, SHA-1, and SHA-256 digests.</p>
+        </a>
+        <a class="card" href="/tools/uuid-maker.html">
+          <h3>UUID Maker</h3>
+          <p>Generate v4 UUIDs and other identifier formats instantly.</p>
+        </a>
+        <a class="card" href="/tools/jwt-inspector.html">
+          <h3>JWT Inspector</h3>
+          <p>Decode JWTs locally, inspect claims, and flag expirations.</p>
+        </a>
+        <a class="card" href="/tools/html-minifier.html">
+          <h3>HTML Minifier</h3>
+          <p>Minify HTML before shipping to production.</p>
+        </a>
+        <a class="card" href="/tools/css-minifier.html">
+          <h3>CSS Minifier</h3>
+          <p>Minify, format, validate, and inspect CSS in one place.</p>
+        </a>
+        <a class="card" href="/tools/slug-generator.html">
+          <h3>Slug Generator</h3>
+          <p>Build cleaner URLs with bulk mode and redirect export.</p>
+        </a>
+        <a class="card" href="/tools/number-converter.html">
+          <h3>Number Converter</h3>
+          <p>Convert decimal, binary, hex, and octal values instantly.</p>
+        </a>
+        <a class="card" href="/tools/xml-validator.html">
+          <h3>XML Validator</h3>
+          <p>Validate XML syntax and show parsing errors clearly.</p>
+        </a>
+        <a class="card" href="/tools/xml-beautifier.html">
+          <h3>XML Beautifier</h3>
+          <p>Format messy XML into readable indentation.</p>
+        </a>
+        <a class="card" href="/tools/crontab-guru.html">
+          <h3>Crontab Guru</h3>
+          <p>Explain common cron expressions in plain English.</p>
+        </a>
+        <a class="card" href="/tools/unix-timestamp-converter.html">
+          <h3>Unix Timestamp Converter</h3>
+          <p>Convert Unix timestamps to readable dates and back.</p>
+        </a>
+        <a class="card" href="/tools/markdown-previewer.html">
+          <h3>Markdown Previewer</h3>
+          <p>Preview Markdown documents without installing anything.</p>
+        </a>
+      </div>
+
+      <section class="hub-guides" aria-labelledby="dev-guides-title">
+        <h2 id="dev-guides-title">Developer guides</h2>
+        <ul>
+          <li><a href="/guides/format-json-safely.html">How to format JSON safely before pasting it into code</a></li>
+          <li><a href="/guides/regex-pattern-examples.html">Regular expression examples for everyday tasks</a></li>
+        </ul>
+      </section>
+
+      <section class="hub-categories" aria-labelledby="hub-nav-title">
+        <h2 id="hub-nav-title">More tool categories</h2>
+        <ul>
+          <li><a href="/hubs/writing-tools.html">Writing tools</a></li>
+          <li><a href="/hubs/pdf-tools.html">PDF tools</a></li>
+          <li><a href="/hubs/image-tools.html">Image tools</a></li>
+          <li><a href="/hubs/data-tools.html">Data tools</a></li>
+          <li><a href="/hubs/everyday-utilities.html">Everyday utilities</a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    ToolsMatic &middot; Fast, privacy-first utilities for the web. &middot; <a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/contact.html">Contact</a>
+  </footer>
+</body>
+</html>
